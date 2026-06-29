@@ -5,5 +5,11 @@
   "status": "implemented_scaffold",
   "version": "0.21.0",
   "context_system": "conductor",
-  "safety": "read_only_or_docs_only"
+  "safety": "read_only_or_docs_only",
+  "review_status": "reviewed",
+  "archive_status": "archived",
+  "archived": true,
+  "archive_version": "0.29.0",
+  "archive_evidence": "CONDUCTOR_TRACK_CLOSEOUT_AUDIT.md",
+  "codev_review": "codev/reviews/0054-known-uncompiled-risks-review.md"
 }

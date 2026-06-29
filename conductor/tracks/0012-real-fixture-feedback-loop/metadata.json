@@ -3,5 +3,11 @@
   "capability": "M-012",
   "status": "implemented_in_package_uncompiled",
   "package": "v0.12.0",
-  "purpose": "Compare real fixture inspect output with manifest and generate follow-up task packets."
+  "purpose": "Compare real fixture inspect output with manifest and generate follow-up task packets.",
+  "review_status": "reviewed",
+  "archive_status": "archived",
+  "archived": true,
+  "archive_version": "0.29.0",
+  "archive_evidence": "CONDUCTOR_TRACK_CLOSEOUT_AUDIT.md",
+  "codev_review": "codev/reviews/0012-real-fixture-feedback-loop-review.md"
 }

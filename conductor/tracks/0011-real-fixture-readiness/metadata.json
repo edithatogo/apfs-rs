@@ -3,5 +3,11 @@
   "capability": "M-011",
   "status": "implemented_in_package_uncompiled",
   "package": "v0.11.0",
-  "purpose": "macOS real APFS fixture readiness harness."
+  "purpose": "macOS real APFS fixture readiness harness.",
+  "review_status": "reviewed",
+  "archive_status": "archived",
+  "archived": true,
+  "archive_version": "0.29.0",
+  "archive_evidence": "CONDUCTOR_TRACK_CLOSEOUT_AUDIT.md",
+  "codev_review": "codev/reviews/0011-real-fixture-readiness-review.md"
 }

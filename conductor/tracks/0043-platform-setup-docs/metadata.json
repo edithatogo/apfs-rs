@@ -2,5 +2,11 @@
   "track_id": "0043-platform-setup-docs",
   "capability_id": "M-043",
   "status": "implemented_scaffold",
-  "version": "0.20.0"
+  "version": "0.20.0",
+  "review_status": "reviewed",
+  "archive_status": "archived",
+  "archived": true,
+  "archive_version": "0.29.0",
+  "archive_evidence": "CONDUCTOR_TRACK_CLOSEOUT_AUDIT.md",
+  "codev_review": "codev/reviews/0043-platform-setup-docs-review.md"
 }

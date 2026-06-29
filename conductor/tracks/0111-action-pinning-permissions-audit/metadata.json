@@ -3,5 +3,11 @@
   "capability_id": "M-111",
   "title": "GitHub Actions pinning and permissions audit",
   "status": "implemented_python",
-  "version": "0.29.0"
+  "version": "0.29.0",
+  "review_status": "reviewed",
+  "archive_status": "archived",
+  "archived": true,
+  "archive_version": "0.29.0",
+  "archive_evidence": "CONDUCTOR_TRACK_CLOSEOUT_AUDIT.md",
+  "codev_review": "codev/reviews/111-action-pinning-permissions-audit-review.md"
 }

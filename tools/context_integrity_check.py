@@ -35,13 +35,19 @@ def main() -> int:
     track_dirs = sorted(p.name for p in (ROOT / "conductor/tracks").iterdir() if p.is_dir())
     for track in track_dirs:
         base = ROOT / "conductor/tracks" / track
-        for name in ("metadata.json", "spec.md", "plan.md"):
+        for name in ("metadata.json", "spec.md", "plan.md", "review.md"):
             path = base / name
             if not path.exists() or not path.read_text(encoding="utf-8").strip():
                 fail(f"missing or empty {path.relative_to(ROOT)}")
         metadata = json.loads((base / "metadata.json").read_text(encoding="utf-8"))
         if metadata.get("track_id") != track:
             fail(f"track_id mismatch for {track}")
+        if metadata.get("review_status") != "reviewed":
+            fail(f"{track} metadata review_status is not reviewed")
+        if metadata.get("archive_status") != "archived" or metadata.get("archived") is not True:
+            fail(f"{track} metadata archive_status is not archived")
+        if "## Archive closeout" not in (base / "review.md").read_text(encoding="utf-8"):
+            fail(f"{track} review.md missing Archive closeout section")
         if track not in tracks_text:
             fail(f"{track} missing from conductor/tracks.md")
         if track != "0000-project-context" and track not in history_text:

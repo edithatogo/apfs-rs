@@ -148,13 +148,19 @@ def check_conductor_tracks() -> None:
         fail("no Conductor track directories found")
     for track_id in track_dirs:
         base = ROOT / "conductor/tracks" / track_id
-        for name in ["metadata.json", "spec.md", "plan.md"]:
+        for name in ["metadata.json", "spec.md", "plan.md", "review.md"]:
             path = base / name
             if not path.exists() or not path.read_text(encoding="utf-8").strip():
                 fail(f"missing or empty Conductor file {path.relative_to(ROOT)}")
         metadata = json.loads((base / "metadata.json").read_text(encoding="utf-8"))
         if metadata.get("track_id") != track_id:
             fail(f"Conductor track_id mismatch in {base.relative_to(ROOT)}")
+        if metadata.get("review_status") != "reviewed":
+            fail(f"Conductor track {track_id} is not reviewed")
+        if metadata.get("archive_status") != "archived" or metadata.get("archived") is not True:
+            fail(f"Conductor track {track_id} is not archived")
+        if "## Archive closeout" not in (base / "review.md").read_text(encoding="utf-8"):
+            fail(f"Conductor track {track_id} review.md missing Archive closeout")
     tracks_text = (ROOT / "conductor/tracks.md").read_text(encoding="utf-8")
     missing_in_index = [track for track in track_dirs if track not in tracks_text]
     if missing_in_index:

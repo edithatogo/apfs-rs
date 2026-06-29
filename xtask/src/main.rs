@@ -25,6 +25,8 @@ enum Command {
     RegistryCheck,
     /// Validate Conductor context-management files and historical tracks.
     ConductorCheck,
+    /// Validate Conductor track review/archive closeout evidence.
+    ConductorTrackCloseout,
     /// Run lightweight safety policy checks.
     SafetyCheck,
     /// Run Python/static precompile checks for environments without Rust compiler access.
@@ -181,6 +183,9 @@ fn main() -> Result<()> {
     match cli.command {
         Command::RegistryCheck => registry_check(),
         Command::ConductorCheck => conductor_check(),
+        Command::ConductorTrackCloseout => {
+            run_python_tool("tools/conductor_track_closeout.py", &[])
+        }
         Command::SafetyCheck => safety_check(),
         Command::PrecompileCheck => precompile_check(),
         Command::CliContractCheck => run_python_tool("tools/cli_contract_check.py", &[]),
@@ -356,6 +361,7 @@ fn conductor_check() -> Result<()> {
     if track_count == 0 {
         anyhow::bail!("no Conductor tracks found");
     }
+    run_python_tool("tools/conductor_track_closeout.py", &[])?;
     println!("conductor-check: passed with {track_count} historical tracks");
     Ok(())
 }
@@ -442,6 +448,7 @@ fn precompile_check() -> Result<()> {
     run_python_tool("tools/known_risk_check.py", &[])?;
     run_python_tool("tools/cli_contract_check.py", &[])?;
     run_python_tool("tools/context_integrity_check.py", &[])?;
+    run_python_tool("tools/conductor_track_closeout.py", &[])?;
     run_python_tool("tools/version_consistency_check.py", &[])?;
     run_python_tool("tools/profiling_budget_check.py", &[])?;
     run_python_tool("tools/profiling_plan_audit.py", &[])?;

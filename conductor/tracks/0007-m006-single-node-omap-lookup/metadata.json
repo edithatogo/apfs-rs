@@ -3,5 +3,11 @@
   "capability": "M-006",
   "status": "implemented_in_package_uncompiled",
   "package": "v0.6.0",
-  "purpose": "Single-node synthetic OMAP lookup API and CLI."
+  "purpose": "Single-node synthetic OMAP lookup API and CLI.",
+  "review_status": "reviewed",
+  "archive_status": "archived",
+  "archived": true,
+  "archive_version": "0.29.0",
+  "archive_evidence": "CONDUCTOR_TRACK_CLOSEOUT_AUDIT.md",
+  "codev_review": "codev/reviews/0006-single-node-omap-lookup-review.md"
 }

@@ -2,5 +2,11 @@
   "track_id": "0044-release-provenance-scaffold",
   "capability_id": "M-044",
   "status": "implemented_scaffold",
-  "version": "0.20.0"
+  "version": "0.20.0",
+  "review_status": "reviewed",
+  "archive_status": "archived",
+  "archived": true,
+  "archive_version": "0.29.0",
+  "archive_evidence": "CONDUCTOR_TRACK_CLOSEOUT_AUDIT.md",
+  "codev_review": "codev/reviews/0044-release-provenance-scaffold-review.md"
 }

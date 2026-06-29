@@ -3,5 +3,11 @@
   "capability": "M-016",
   "status": "implemented_in_package_uncompiled",
   "package": "v0.15.0",
-  "purpose": "Synthetic filesystem root-tree directory-record parser."
+  "purpose": "Synthetic filesystem root-tree directory-record parser.",
+  "review_status": "reviewed",
+  "archive_status": "archived",
+  "archived": true,
+  "archive_version": "0.29.0",
+  "archive_evidence": "CONDUCTOR_TRACK_CLOSEOUT_AUDIT.md",
+  "codev_review": "codev/reviews/0015-m015-synthetic-directory-root-tree-review.md"
 }

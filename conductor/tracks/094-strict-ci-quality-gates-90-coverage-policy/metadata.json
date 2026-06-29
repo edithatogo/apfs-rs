@@ -3,5 +3,11 @@
   "capability_id": "M-094",
   "title": "Strict CI quality gates and 90% coverage policy",
   "status": "implemented_scaffold",
-  "version": "0.27.0"
+  "version": "0.27.0",
+  "review_status": "reviewed",
+  "archive_status": "archived",
+  "archived": true,
+  "archive_version": "0.29.0",
+  "archive_evidence": "CONDUCTOR_TRACK_CLOSEOUT_AUDIT.md",
+  "codev_review": "codev/reviews/094-strict-ci-quality-gates-and-90-coverage-policy-review.md"
 }

@@ -3,5 +3,11 @@
   "capability_id": "M-064",
   "title": "Batched loop policy and local stop criteria",
   "status": "completed_scaffold",
-  "version": "0.22.0"
+  "version": "0.22.0",
+  "review_status": "reviewed",
+  "archive_status": "archived",
+  "archived": true,
+  "archive_version": "0.29.0",
+  "archive_evidence": "CONDUCTOR_TRACK_CLOSEOUT_AUDIT.md",
+  "codev_review": "codev/reviews/0064-batched-loop-policy-review.md"
 }

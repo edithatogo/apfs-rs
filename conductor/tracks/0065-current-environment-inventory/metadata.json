@@ -4,5 +4,11 @@
   "title": "Current environment capability inventory",
   "status": "implemented_scaffold",
   "version": "0.23.0",
-  "phase": "handoff-hardening"
+  "phase": "handoff-hardening",
+  "review_status": "reviewed",
+  "archive_status": "archived",
+  "archived": true,
+  "archive_version": "0.29.0",
+  "archive_evidence": "CONDUCTOR_TRACK_CLOSEOUT_AUDIT.md",
+  "codev_review": "codev/reviews/0065-current-environment-inventory-review.md"
 }

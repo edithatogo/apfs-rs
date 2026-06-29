@@ -3,5 +3,11 @@
   "capability_id": "M-061",
   "title": "macOS APFS fixture dry-run validator",
   "status": "completed_scaffold",
-  "version": "0.22.0"
+  "version": "0.22.0",
+  "review_status": "reviewed",
+  "archive_status": "archived",
+  "archived": true,
+  "archive_version": "0.29.0",
+  "archive_evidence": "CONDUCTOR_TRACK_CLOSEOUT_AUDIT.md",
+  "codev_review": "codev/reviews/0061-macos-fixture-dry-run-validator-review.md"
 }

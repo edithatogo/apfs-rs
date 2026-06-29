@@ -6,6 +6,7 @@ RUST_BACKTRACE = "1"
 APFS_RS_READ_ONLY_DEFAULT = "1"
 
 [alias]
+xtask = "run -p xtask --"
 xt = "xtask"
 ci-test = "nextest run --workspace --all-features"
 coverage90 = "llvm-cov nextest --workspace --all-features --fail-under-lines 90"

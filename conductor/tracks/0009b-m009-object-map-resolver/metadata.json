@@ -3,5 +3,11 @@
   "capability": "M-009",
   "status": "implemented_in_package_uncompiled",
   "package": "v0.9.0",
-  "purpose": "Object-map resolver facade and resolver-report CLI."
+  "purpose": "Object-map resolver facade and resolver-report CLI.",
+  "review_status": "reviewed",
+  "archive_status": "archived",
+  "archived": true,
+  "archive_version": "0.29.0",
+  "archive_evidence": "CONDUCTOR_TRACK_CLOSEOUT_AUDIT.md",
+  "codev_review": "codev/reviews/0009-object-map-resolver-facade-review.md"
 }

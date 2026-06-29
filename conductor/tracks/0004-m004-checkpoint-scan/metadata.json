@@ -3,5 +3,11 @@
   "capability": "M-004",
   "status": "implemented_in_package_uncompiled",
   "package": "v0.3.0",
-  "purpose": "Bounded checkpoint candidate scanning."
+  "purpose": "Bounded checkpoint candidate scanning.",
+  "review_status": "reviewed",
+  "archive_status": "archived",
+  "archived": true,
+  "archive_version": "0.29.0",
+  "archive_evidence": "CONDUCTOR_TRACK_CLOSEOUT_AUDIT.md",
+  "codev_review": "codev/reviews/0004-checkpoint-map-and-omap-probe-review.md"
 }

@@ -3,5 +3,11 @@
   "capability_id": "M-027",
   "title": "Redacted diagnostics bundle CLI",
   "status": "implemented_or_scaffolded",
-  "version": "0.18.0"
+  "version": "0.18.0",
+  "review_status": "reviewed",
+  "archive_status": "archived",
+  "archived": true,
+  "archive_version": "0.29.0",
+  "archive_evidence": "CONDUCTOR_TRACK_CLOSEOUT_AUDIT.md",
+  "codev_review": "codev/reviews/0028-m027-diagnostics-bundle-review.md"
 }
