@@ -25,6 +25,6 @@ jobs:
       - run: python3 tools/release_preflight.py --write-manifest
       - run: cargo test --workspace
       - run: mkdir -p target/release-evidence && cp SHA256SUMS.txt target/release-evidence/SHA256SUMS.txt
-      - uses: actions/attest-build-provenance@v3
+      - uses: actions/attest-build-provenance@v4
         with:
           subject-path: apfs-rs/target/release-evidence/SHA256SUMS.txt

@@ -16,6 +16,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: mkdir -p target/provenance && echo apfs-rs-provenance-dry-run > target/provenance/subject.txt
-      - uses: actions/attest-build-provenance@v3
+      - uses: actions/attest-build-provenance@v4
         with:
           subject-path: target/provenance/subject.txt
