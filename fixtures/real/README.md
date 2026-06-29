@@ -3,3 +3,5 @@
 This directory is reserved for fixtures generated locally on macOS by `tools/macos/create_real_apfs_fixture.sh`.
 
 By default, commit scripts and redacted manifests, not large sparse images. Do not commit personal data, secrets, or images made from real user disks.
+
+Generated `.sparseimage` files are ignored by git; keep the manifest, hash, and oracle text as the tracked evidence for review and CI.

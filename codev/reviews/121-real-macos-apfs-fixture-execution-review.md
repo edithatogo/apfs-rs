@@ -2,8 +2,8 @@
 
 ## Status
 
-`planned_roadmap`.
+`implemented`.
 
 ## Notes
 
-This roadmap track exists because the mature, hardened APFS-RS release is not fully implemented. It is reviewed as a planning/evidence track only; no production APFS behavior is claimed until its plan is executed and validated.
+This roadmap track now has executed macOS evidence: a real APFS sparse image, redacted manifest, file hashes, oracle output, and feedback report. The parser currently reports the sparseimage wrapper as `not_apfs`, so the follow-up calibration work remains in `M-122`.

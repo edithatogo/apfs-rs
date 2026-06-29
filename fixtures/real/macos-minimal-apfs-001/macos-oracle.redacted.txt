@@ -1,0 +1,619 @@
+# diskutil apfs list -plist
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Containers</key>
+	<array>
+		<dict>
+			<key>APFSContainerUUID</key>
+			<string>597367FD-F8C9-4D0A-B3F6-C2ECF9E5F5B7</string>
+			<key>CapacityCeiling</key>
+			<integer>524288000</integer>
+			<key>CapacityFree</key>
+			<integer>503685120</integer>
+			<key>ContainerReference</key>
+			<string>disk1</string>
+			<key>DesignatedPhysicalStore</key>
+			<string>disk0s1</string>
+			<key>PhysicalStores</key>
+			<array>
+				<dict>
+					<key>DeviceIdentifier</key>
+					<string>disk0s1</string>
+					<key>DiskUUID</key>
+					<string>66C42618-8742-4433-B317-5A6BED4D01C7</string>
+					<key>Size</key>
+					<integer>524288000</integer>
+				</dict>
+			</array>
+			<key>Volumes</key>
+			<array>
+				<dict>
+					<key>APFSVolumeUUID</key>
+					<string>88A22964-6260-4A0C-BEED-C8EDE3E555AA</string>
+					<key>CapacityInUse</key>
+					<integer>5877760</integer>
+					<key>CapacityQuota</key>
+					<integer>0</integer>
+					<key>CapacityReserve</key>
+					<integer>0</integer>
+					<key>CryptoMigrationOn</key>
+					<false/>
+					<key>DeviceIdentifier</key>
+					<string>disk1s1</string>
+					<key>Encryption</key>
+					<false/>
+					<key>FileVault</key>
+					<false/>
+					<key>Locked</key>
+					<false/>
+					<key>Name</key>
+					<string>iSCPreboot</string>
+					<key>Roles</key>
+					<array>
+						<string>Preboot</string>
+					</array>
+				</dict>
+				<dict>
+					<key>APFSVolumeUUID</key>
+					<string>79F5796E-2374-4037-9327-F6F4EB7CFF8E</string>
+					<key>CapacityInUse</key>
+					<integer>6311936</integer>
+					<key>CapacityQuota</key>
+					<integer>0</integer>
+					<key>CapacityReserve</key>
+					<integer>0</integer>
+					<key>CryptoMigrationOn</key>
+					<false/>
+					<key>DeviceIdentifier</key>
+					<string>disk1s2</string>
+					<key>Encryption</key>
+					<false/>
+					<key>FileVault</key>
+					<false/>
+					<key>Locked</key>
+					<false/>
+					<key>Name</key>
+					<string>xART</string>
+					<key>Roles</key>
+					<array>
+						<string>xART</string>
+					</array>
+				</dict>
+				<dict>
+					<key>APFSVolumeUUID</key>
+					<string>F1EA001D-BCF6-4BF4-9EF6-09FA2F48038C</string>
+					<key>CapacityInUse</key>
+					<integer>3436544</integer>
+					<key>CapacityQuota</key>
+					<integer>0</integer>
+					<key>CapacityReserve</key>
+					<integer>0</integer>
+					<key>CryptoMigrationOn</key>
+					<false/>
+					<key>DeviceIdentifier</key>
+					<string>disk1s3</string>
+					<key>Encryption</key>
+					<false/>
+					<key>FileVault</key>
+					<false/>
+					<key>Locked</key>
+					<false/>
+					<key>Name</key>
+					<string>Hardware</string>
+					<key>Roles</key>
+					<array>
+						<string>Hardware</string>
+					</array>
+				</dict>
+				<dict>
+					<key>APFSVolumeUUID</key>
+					<string>6FEFF37A-3E16-4245-AABB-F8188847E886</string>
+					<key>CapacityInUse</key>
+					<integer>20480</integer>
+					<key>CapacityQuota</key>
+					<integer>0</integer>
+					<key>CapacityReserve</key>
+					<integer>0</integer>
+					<key>CryptoMigrationOn</key>
+					<false/>
+					<key>DeviceIdentifier</key>
+					<string>disk1s4</string>
+					<key>Encryption</key>
+					<false/>
+					<key>FileVault</key>
+					<false/>
+					<key>Locked</key>
+					<false/>
+					<key>Name</key>
+					<string>Recovery</string>
+					<key>Roles</key>
+					<array>
+						<string>Recovery</string>
+					</array>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>APFSContainerUUID</key>
+			<string>7AB7A930-0CB2-433C-ABDA-8C3175B3389E</string>
+			<key>CapacityCeiling</key>
+			<integer>5368664064</integer>
+			<key>CapacityFree</key>
+			<integer>3028537344</integer>
+			<key>ContainerReference</key>
+			<string>disk2</string>
+			<key>DesignatedPhysicalStore</key>
+			<string>disk0s3</string>
+			<key>PhysicalStores</key>
+			<array>
+				<dict>
+					<key>DeviceIdentifier</key>
+					<string>disk0s3</string>
+					<key>DiskUUID</key>
+					<string>3045AACC-2836-49CC-8AB5-9BFC3EC06E48</string>
+					<key>Size</key>
+					<integer>5368664064</integer>
+				</dict>
+			</array>
+			<key>Volumes</key>
+			<array>
+				<dict>
+					<key>APFSVolumeUUID</key>
+					<string>BE9E7FA7-3BAF-4A2A-B196-DD7B6406DE87</string>
+					<key>CapacityInUse</key>
+					<integer>2318712832</integer>
+					<key>CapacityQuota</key>
+					<integer>0</integer>
+					<key>CapacityReserve</key>
+					<integer>0</integer>
+					<key>CryptoMigrationOn</key>
+					<false/>
+					<key>DeviceIdentifier</key>
+					<string>disk2s1</string>
+					<key>Encryption</key>
+					<false/>
+					<key>FileVault</key>
+					<false/>
+					<key>Locked</key>
+					<false/>
+					<key>Name</key>
+					<string>Recovery</string>
+					<key>Roles</key>
+					<array>
+						<string>Recovery</string>
+					</array>
+				</dict>
+				<dict>
+					<key>APFSVolumeUUID</key>
+					<string>D3B744DA-0774-4665-99D2-277F5E1798F4</string>
+					<key>CapacityInUse</key>
+					<integer>1667072</integer>
+					<key>CapacityQuota</key>
+					<integer>0</integer>
+					<key>CapacityReserve</key>
+					<integer>0</integer>
+					<key>CryptoMigrationOn</key>
+					<false/>
+					<key>DeviceIdentifier</key>
+					<string>disk2s2</string>
+					<key>Encryption</key>
+					<false/>
+					<key>FileVault</key>
+					<false/>
+					<key>Locked</key>
+					<false/>
+					<key>Name</key>
+					<string>Update</string>
+					<key>Roles</key>
+					<array>
+						<string>Update</string>
+					</array>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>APFSContainerUUID</key>
+			<string>02F09094-D1CE-4E2A-BDCA-2980E9C177C9</string>
+			<key>CapacityCeiling</key>
+			<integer>494384795648</integer>
+			<key>CapacityFree</key>
+			<integer>139774918656</integer>
+			<key>ContainerReference</key>
+			<string>disk3</string>
+			<key>DesignatedPhysicalStore</key>
+			<string>disk0s2</string>
+			<key>PhysicalStores</key>
+			<array>
+				<dict>
+					<key>DeviceIdentifier</key>
+					<string>disk0s2</string>
+					<key>DiskUUID</key>
+					<string>F0457741-8F40-4DB1-94CF-4992B136C8C0</string>
+					<key>Size</key>
+					<integer>494384795648</integer>
+				</dict>
+			</array>
+			<key>Volumes</key>
+			<array>
+				<dict>
+					<key>APFSVolumeUUID</key>
+					<string>1BA859D5-E5F6-41B1-B148-00DC837087B0</string>
+					<key>CapacityInUse</key>
+					<integer>12567617536</integer>
+					<key>CapacityQuota</key>
+					<integer>0</integer>
+					<key>CapacityReserve</key>
+					<integer>0</integer>
+					<key>CryptoMigrationOn</key>
+					<false/>
+					<key>DeviceIdentifier</key>
+					<string>disk3s1</string>
+					<key>Encryption</key>
+					<true/>
+					<key>FileVault</key>
+					<true/>
+					<key>Locked</key>
+					<false/>
+					<key>Name</key>
+					<string>Macintosh HD</string>
+					<key>Roles</key>
+					<array>
+						<string>System</string>
+					</array>
+				</dict>
+				<dict>
+					<key>APFSVolumeUUID</key>
+					<string>E67B9BEA-FA00-4AC1-AEF5-E578F3FC771D</string>
+					<key>CapacityInUse</key>
+					<integer>9063116800</integer>
+					<key>CapacityQuota</key>
+					<integer>0</integer>
+					<key>CapacityReserve</key>
+					<integer>0</integer>
+					<key>CryptoMigrationOn</key>
+					<false/>
+					<key>DeviceIdentifier</key>
+					<string>disk3s2</string>
+					<key>Encryption</key>
+					<false/>
+					<key>FileVault</key>
+					<false/>
+					<key>Locked</key>
+					<false/>
+					<key>Name</key>
+					<string>Preboot</string>
+					<key>Roles</key>
+					<array>
+						<string>Preboot</string>
+					</array>
+				</dict>
+				<dict>
+					<key>APFSVolumeUUID</key>
+					<string>94DCF1D6-F267-4D1B-BCEC-CE1FEEAB2F76</string>
+					<key>CapacityInUse</key>
+					<integer>1307987968</integer>
+					<key>CapacityQuota</key>
+					<integer>0</integer>
+					<key>CapacityReserve</key>
+					<integer>0</integer>
+					<key>CryptoMigrationOn</key>
+					<false/>
+					<key>DeviceIdentifier</key>
+					<string>disk3s3</string>
+					<key>Encryption</key>
+					<false/>
+					<key>FileVault</key>
+					<false/>
+					<key>Locked</key>
+					<false/>
+					<key>Name</key>
+					<string>Recovery</string>
+					<key>Roles</key>
+					<array>
+						<string>Recovery</string>
+					</array>
+				</dict>
+				<dict>
+					<key>APFSVolumeUUID</key>
+					<string>CFC72AEE-88E7-4ADA-BA2D-5CE0D063FAD7</string>
+					<key>CapacityInUse</key>
+					<integer>6258688</integer>
+					<key>CapacityQuota</key>
+					<integer>0</integer>
+					<key>CapacityReserve</key>
+					<integer>0</integer>
+					<key>CryptoMigrationOn</key>
+					<false/>
+					<key>DeviceIdentifier</key>
+					<string>disk3s4</string>
+					<key>Encryption</key>
+					<false/>
+					<key>FileVault</key>
+					<false/>
+					<key>Locked</key>
+					<false/>
+					<key>Name</key>
+					<string>Update</string>
+					<key>Roles</key>
+					<array>
+						<string>Update</string>
+					</array>
+				</dict>
+				<dict>
+					<key>APFSVolumeUUID</key>
+					<string>7B0910C1-F0EC-4B41-8752-239BED17FAFB</string>
+					<key>CapacityInUse</key>
+					<integer>325590884352</integer>
+					<key>CapacityQuota</key>
+					<integer>0</integer>
+					<key>CapacityReserve</key>
+					<integer>0</integer>
+					<key>CryptoMigrationOn</key>
+					<false/>
+					<key>DeviceIdentifier</key>
+					<string>disk3s5</string>
+					<key>Encryption</key>
+					<true/>
+					<key>FileVault</key>
+					<true/>
+					<key>Locked</key>
+					<false/>
+					<key>Name</key>
+					<string>Data</string>
+					<key>Roles</key>
+					<array>
+						<string>Data</string>
+					</array>
+				</dict>
+				<dict>
+					<key>APFSVolumeUUID</key>
+					<string>030F9351-F849-416B-B7BE-B411CF6F60A2</string>
+					<key>CapacityInUse</key>
+					<integer>5369253888</integer>
+					<key>CapacityQuota</key>
+					<integer>0</integer>
+					<key>CapacityReserve</key>
+					<integer>0</integer>
+					<key>CryptoMigrationOn</key>
+					<false/>
+					<key>DeviceIdentifier</key>
+					<string>disk3s6</string>
+					<key>Encryption</key>
+					<false/>
+					<key>FileVault</key>
+					<false/>
+					<key>Locked</key>
+					<false/>
+					<key>Name</key>
+					<string>VM</string>
+					<key>Roles</key>
+					<array>
+						<string>VM</string>
+					</array>
+				</dict>
+				<dict>
+					<key>APFSVolumeUUID</key>
+					<string>8F98C34F-B6BB-4A12-A4BA-C1D7F1A7AB3E</string>
+					<key>CapacityInUse</key>
+					<integer>544382976</integer>
+					<key>CapacityQuota</key>
+					<integer>0</integer>
+					<key>CapacityReserve</key>
+					<integer>0</integer>
+					<key>CryptoMigrationOn</key>
+					<false/>
+					<key>DeviceIdentifier</key>
+					<string>disk3s7</string>
+					<key>Encryption</key>
+					<true/>
+					<key>FileVault</key>
+					<true/>
+					<key>Locked</key>
+					<false/>
+					<key>Name</key>
+					<string>Nix Store</string>
+					<key>Roles</key>
+					<array/>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>APFSContainerUUID</key>
+			<string>9145B329-B4FE-4EE9-A185-A6B34CD21D4B</string>
+			<key>CapacityCeiling</key>
+			<integer>999995129856</integer>
+			<key>CapacityFree</key>
+			<integer>33912696832</integer>
+			<key>ContainerReference</key>
+			<string>disk6</string>
+			<key>DesignatedPhysicalStore</key>
+			<string>disk5s2</string>
+			<key>PhysicalStores</key>
+			<array>
+				<dict>
+					<key>DeviceIdentifier</key>
+					<string>disk5s2</string>
+					<key>DiskUUID</key>
+					<string>19A6B7FE-E29E-45FE-A2AF-42F921955977</string>
+					<key>Size</key>
+					<integer>999995129856</integer>
+				</dict>
+			</array>
+			<key>Volumes</key>
+			<array>
+				<dict>
+					<key>APFSVolumeUUID</key>
+					<string>A86FD82F-B60C-41D4-80B4-07BA5F0D4A7F</string>
+					<key>CapacityInUse</key>
+					<integer>965875281920</integer>
+					<key>CapacityQuota</key>
+					<integer>0</integer>
+					<key>CapacityReserve</key>
+					<integer>0</integer>
+					<key>CryptoMigrationOn</key>
+					<false/>
+					<key>DeviceIdentifier</key>
+					<string>disk6s1</string>
+					<key>Encryption</key>
+					<false/>
+					<key>FileVault</key>
+					<false/>
+					<key>Locked</key>
+					<false/>
+					<key>Name</key>
+					<string>PortableSSD</string>
+					<key>Roles</key>
+					<array/>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>APFSContainerUUID</key>
+			<string>389A7764-BD3C-4D1B-AFA7-F5AA4FD76409</string>
+			<key>CapacityCeiling</key>
+			<integer>134176768</integer>
+			<key>CapacityFree</key>
+			<integer>132759552</integer>
+			<key>ContainerReference</key>
+			<string>disk9</string>
+			<key>DesignatedPhysicalStore</key>
+			<string>disk8s1</string>
+			<key>PhysicalStores</key>
+			<array>
+				<dict>
+					<key>DeviceIdentifier</key>
+					<string>disk8s1</string>
+					<key>DiskUUID</key>
+					<string>AC89691A-6E3E-4889-A832-1371D6C7EE44</string>
+					<key>Size</key>
+					<integer>134176768</integer>
+				</dict>
+			</array>
+			<key>Volumes</key>
+			<array>
+				<dict>
+					<key>APFSVolumeUUID</key>
+					<string>2DC73248-3DC8-4197-BCFB-2D7F6BAE55F7</string>
+					<key>CapacityInUse</key>
+					<integer>32768</integer>
+					<key>CapacityQuota</key>
+					<integer>0</integer>
+					<key>CapacityReserve</key>
+					<integer>0</integer>
+					<key>CryptoMigrationOn</key>
+					<false/>
+					<key>DeviceIdentifier</key>
+					<string>disk9s1</string>
+					<key>Encryption</key>
+					<false/>
+					<key>FileVault</key>
+					<false/>
+					<key>Locked</key>
+					<false/>
+					<key>Name</key>
+					<string>APFSRSFixture</string>
+					<key>Roles</key>
+					<array/>
+				</dict>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>
+
+# hdiutil imageinfo
+Class Name: CSparseDiskImage
+Size Information:
+	Total Bytes: 134217728
+	Compressed Ratio: 1
+	Sector Count: 262144
+	Total Non-Empty Bytes: 8388608
+	Compressed Bytes: 134217728
+	Total Empty Bytes: 125829120
+Checksum Type: none
+Format: SPRS
+partitions:
+	partition-scheme: GUID
+	block-size: 512
+	partitions:
+		0:
+			partition-name: Protective Master Boot Record
+			partition-start: 0
+			partition-synthesized: true
+			partition-length: 1
+			partition-hint: MBR
+		1:
+			partition-name: GPT Header
+			partition-start: 1
+			partition-synthesized: true
+			partition-length: 1
+			partition-hint: Primary GPT Header
+		2:
+			partition-name: GPT Partition Data
+			partition-start: 2
+			partition-synthesized: true
+			partition-length: 32
+			partition-hint: Primary GPT Table
+		3:
+			partition-name: 
+			partition-start: 34
+			partition-synthesized: true
+			partition-length: 6
+			partition-hint: Apple_Free
+		4:
+			partition-UUID: AC89691A-6E3E-4889-A832-1371D6C7EE44
+			partition-name: disk image
+			partition-hint-UUID: 7C3457EF-0000-11AA-AA11-00306543ECAC
+			partition-start: 40
+			partition-number: 1
+			partition-length: 262064
+			partition-hint: Apple_APFS
+			partition-filesystems:
+				APFS: Untitled
+		5:
+			partition-name: 
+			partition-start: 262104
+			partition-synthesized: true
+			partition-length: 7
+			partition-hint: Apple_Free
+		6:
+			partition-name: GPT Partition Data
+			partition-start: 262111
+			partition-synthesized: true
+			partition-length: 32
+			partition-hint: Backup GPT Table
+		7:
+			partition-name: GPT Header
+			partition-start: 262143
+			partition-synthesized: true
+			partition-length: 1
+			partition-hint: Backup GPT Header
+	burnable: false
+Format Description: sparse
+Checksum Value: 
+Properties:
+	Encrypted: false
+	Kernel Compatible: true
+	Checksummed: false
+	Software License Agreement: false
+	Partitioned: false
+	Compressed: no
+Segments:
+	0: /Volumes/PortableSSD/apfs-rs/fixtures/real/macos-minimal-apfs-001/macos-minimal-apfs-001.sparseimage
+Backing Store Information:
+	URL: file:///Volumes/PortableSSD/apfs-rs/fixtures/real/macos-minimal-apfs-001/macos-minimal-apfs-001.sparseimage
+	Name: macos-minimal-apfs-001.sparseimage
+	Class Name: CBSDBackingStore
+Resize limits (per hdiutil resize -limits):
+12288	262064	274877906864
+
+# find tree
+fixture-root
+fixture-root/dir-a
+fixture-root/dir-a/link-to-hello
+fixture-root/dir-a/nested.txt
+fixture-root/dir-b
+fixture-root/dir-b/pattern.bin
+fixture-root/hello.txt

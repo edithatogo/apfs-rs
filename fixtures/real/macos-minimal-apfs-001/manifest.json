@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.13.0",
+  "fixture_id": "macos-minimal-apfs-001",
+  "source_type": "macos_generated_apfs_sparseimage",
+  "created_with": {
+    "tool": "tools/macos/create_real_apfs_fixture.sh",
+    "size": "128m",
+    "volume_name": "APFSRSFixture"
+  },
+  "apfs_features": {
+    "encrypted": false,
+    "compressed": false,
+    "snapshots": false,
+    "case_sensitive": false,
+    "volume_group": false,
+    "fusion": false
+  },
+  "expected_artifacts": {
+    "image": "macos-minimal-apfs-001.sparseimage",
+    "file_hashes": "file-hashes.sha256",
+    "macos_oracle_redacted": "macos-oracle.redacted.txt"
+  },
+  "image_sha256": "d526c3881215459fe9e1661820983bdfa2deed94f5b37aafbca973f875ea6766",
+  "capability_ids": ["M-001", "M-002", "M-003", "M-004", "M-011", "M-012"],
+  "redaction": {
+    "contains_personal_data": false,
+    "contains_secret_material": false
+  },
+  "expected_inspect_fields": {
+    "status": "apfs_container_detected",
+    "safety.read_only": true,
+    "safety.physical_write_supported": false
+  },
+  "safe_to_commit": "manifest_and_scripts_only_by_default"
+}

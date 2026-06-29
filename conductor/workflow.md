@@ -58,4 +58,4 @@ Because this package was created in an environment without Rust/Cargo, the first
 
 ## Current ledger note
 
-The Conductor history now spans M-001 through M-140. Keep Codev and Conductor synchronized for every new slice, and preserve the distinction between configured scaffolds and locally or CI-executed evidence.
+The Conductor history now spans M-001 through M-140. Keep Codev and Conductor synchronized for every new slice, and preserve the distinction between configured scaffolds, locally or CI-executed evidence, and the executed real macOS fixture evidence recorded in M-121.

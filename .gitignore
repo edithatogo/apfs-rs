@@ -3,6 +3,7 @@
 /docs-site/node_modules/
 /docs-site/dist/
 /docs-site/.astro/
+fixtures/real/**/*.sparseimage
 
 .DS_Store
 **/.DS_Store

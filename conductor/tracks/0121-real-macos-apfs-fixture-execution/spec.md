@@ -1,7 +1,7 @@
 # Real macOS APFS fixture execution
 
 Capability: `M-121`  
-Status: `planned_roadmap`  
+Status: `implemented`  
 Category: `fixture-readiness`
 
 ## Goal

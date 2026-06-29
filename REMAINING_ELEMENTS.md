@@ -4,17 +4,16 @@ Document version: 0.28.0
 
 ## Counts
 
-- Implemented/scaffolded elements: **120**
-- Remaining overall production/admin elements: **12**
-- Remaining Windows read-only MVP production blockers: **8**
-- Total remaining including MVP blockers: **20**
+- Implemented/scaffolded elements: **121**
+- Remaining overall production/admin elements: **11**
+- Remaining Windows read-only MVP production blockers: **7**
+- Total remaining including MVP blockers: **19**
 - Current-environment required items remaining: **0**
 
 ## Remaining Windows read-only MVP production blockers
 
 | ID | Track | Title | Dependency |
 |---|---|---|---|
-| MVP-R002 | M-121 | Generate first real macOS APFS image and manifest | macOS |
 | MVP-R003 | M-122 | Run real-fixture feedback loop and convert mismatches into tasks | M-012/M-013 and real fixture |
 | MVP-R004 | M-123 | Correct APFS parser offsets/semantics against real APFS data | real fixture feedback |
 | MVP-R005 | M-124 | Full checkpoint ring reconstruction | corrected parser and real fixture |
@@ -75,6 +74,7 @@ Document version: 0.28.0
 | M-118 | Bleeding-edge repo hardening audit aggregator | quality | implemented_python |
 | M-119 | Executed CI logging profiling and dynamic versioning hardening | quality | implemented |
 | M-120 | Executed Rust workspace validation closeout | quality | implemented |
+| M-121 | Real macOS APFS fixture execution closeout | fixture-readiness | implemented |
 
 ## Current-environment conclusion
 
@@ -93,4 +93,4 @@ release automation dry-runs, and Astro documentation updates in local and CI gat
 
 ## Mature release roadmap update
 
-Added Conductor/Codev tracks M-121 through M-140 for every remaining MVP, post-MVP, and mature-release governance item. These tracks are reviewed and open, not implemented. M-120 closes the Rust workspace validation blocker with executed local and GitHub Actions evidence.
+Added Conductor/Codev tracks M-121 through M-140 for every remaining MVP, post-MVP, and mature-release governance item. M-120 closes the Rust workspace validation blocker with executed local and GitHub Actions evidence. M-121 now closes the real macOS fixture execution step with generated sparse-image, manifest, hash, oracle, and feedback evidence. M-122 through M-140 remain reviewed and open.

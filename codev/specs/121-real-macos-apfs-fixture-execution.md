@@ -1,6 +1,6 @@
 # Spec M-121: Real macOS APFS fixture execution
 
-Status: `planned_roadmap`.
+Status: `implemented`.
 
 ## Objective
 

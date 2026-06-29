@@ -1071,9 +1071,9 @@
     {
       "track_id": "0121-real-macos-apfs-fixture-execution",
       "capability": "M-121",
-      "status": "planned_roadmap",
+      "status": "implemented",
       "review": "conductor/tracks/0121-real-macos-apfs-fixture-execution/review.md",
-      "archive_status": "open",
+      "archive_status": "archived",
       "codev_review": "codev/reviews/121-real-macos-apfs-fixture-execution-review.md"
     },
     {

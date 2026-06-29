@@ -12,7 +12,7 @@ The first product milestone is a Windows-first read-only APFS inspection and ext
 
 ## Current implementation state
 
-Implementation is early and read-only. The package currently implements synthetic-fixture-driven APFS container inspection, GPT APFS partition detection, APFS object checksum validation, checkpoint map parsing, early object-map probing, synthetic OMAP B-tree probing, lookup, resolver, a production-shaped B-tree cursor facade, and a macOS real APFS fixture readiness harness.
+Implementation is early and read-only. The package currently implements synthetic-fixture-driven APFS container inspection, GPT APFS partition detection, APFS object checksum validation, checkpoint map parsing, early object-map probing, synthetic OMAP B-tree probing, lookup, resolver, a production-shaped B-tree cursor facade, and macOS real APFS fixture generation and feedback evidence.
 
 ## Development history
 
@@ -40,4 +40,4 @@ The project succeeds when every supported APFS claim is backed by fixture eviden
 
 ## Current ledger note
 
-The Conductor history now spans M-001 through M-140, including repository hardening, quality evidence, dynamic versioning, redacted logging, read-only APFS scaffolds, and planned mature-release roadmap tracks. Production APFS compatibility claims still require the relevant local, CI, macOS, or Windows evidence gates.
+The Conductor history now spans M-001 through M-140, including repository hardening, quality evidence, dynamic versioning, redacted logging, read-only APFS scaffolds, executed real macOS fixture evidence, and planned mature-release roadmap tracks. Production APFS compatibility claims still require the relevant local, CI, macOS, or Windows evidence gates.
