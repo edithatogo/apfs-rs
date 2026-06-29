@@ -5,6 +5,7 @@ import hashlib, json
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 EXCLUDE_FILES={'HANDOFF_MANIFEST_VERIFY.json','HANDOFF_MANIFEST_VERIFY.md','PACKAGE_INTEGRITY_AUDIT.json','PACKAGE_INTEGRITY_AUDIT.md'}
+EXCLUDE_PARTS={'.astro','.git','__pycache__','apfs-rs-impl-v0.29','dist','node_modules','target'}
 def sha256(path: Path) -> str:
     h=hashlib.sha256()
     with path.open('rb') as f:
@@ -23,6 +24,8 @@ def main():
                 entries[rel]=parts[0].strip()
     checked=0
     for rel,digest in sorted(entries.items()):
+        if any(part in EXCLUDE_PARTS for part in Path(rel).parts):
+            continue
         p=ROOT/rel
         if not p.exists(): issues.append(f'manifest entry missing file: {rel}'); continue
         actual=sha256(p); checked+=1

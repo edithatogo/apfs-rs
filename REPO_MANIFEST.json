@@ -1,20 +1,25 @@
 {
   "schema_version": "0.21.0",
-  "file_count": 1189,
+  "file_count": 1352,
   "categories": {
-    "codev_context": 411,
-    "conductor_context": 388,
+    "codev_context": 458,
+    "conductor_context": 434,
     "developer_tooling": 11,
-    "fixtures": 60,
-    "github_automation": 16,
-    "python_tools": 79,
-    "root_docs_or_config": 192,
+    "fixtures": 61,
+    "github_automation": 21,
+    "python_tools": 95,
+    "root_docs_or_config": 240,
     "rust_crates": 32
   },
   "files": [
     {
+      "path": ".DS_Store",
+      "bytes": 12292,
+      "category": "root_docs_or_config"
+    },
+    {
       "path": ".agents/skills/conductor-context-management/SKILL.md",
-      "bytes": 858,
+      "bytes": 1324,
       "category": "root_docs_or_config"
     },
     {
@@ -24,7 +29,7 @@
     },
     {
       "path": ".claude/skills/conductor-context-management/SKILL.md",
-      "bytes": 858,
+      "bytes": 1324,
       "category": "root_docs_or_config"
     },
     {
@@ -34,7 +39,7 @@
     },
     {
       "path": ".config/cargo-mutants.toml",
-      "bytes": 525,
+      "bytes": 524,
       "category": "developer_tooling"
     },
     {
@@ -44,7 +49,7 @@
     },
     {
       "path": ".config/proptest.toml",
-      "bytes": 234,
+      "bytes": 233,
       "category": "developer_tooling"
     },
     {
@@ -64,17 +69,12 @@
     },
     {
       "path": ".gemini/skills/conductor-context-management/SKILL.md",
-      "bytes": 858,
+      "bytes": 1324,
       "category": "root_docs_or_config"
     },
     {
       "path": ".github/copilot-instructions.md",
       "bytes": 843,
-      "category": "github_automation"
-    },
-    {
-      "path": ".github/dependabot.yml",
-      "bytes": 325,
       "category": "github_automation"
     },
     {
@@ -94,62 +94,92 @@
     },
     {
       "path": ".github/workflows/ci.yml",
-      "bytes": 677,
+      "bytes": 698,
       "category": "github_automation"
     },
     {
       "path": ".github/workflows/coverage.yml",
-      "bytes": 612,
+      "bytes": 658,
+      "category": "github_automation"
+    },
+    {
+      "path": ".github/workflows/docs-quality.yml",
+      "bytes": 1020,
       "category": "github_automation"
     },
     {
       "path": ".github/workflows/docs-site.yml",
-      "bytes": 483,
+      "bytes": 554,
       "category": "github_automation"
     },
     {
       "path": ".github/workflows/fuzz.yml",
-      "bytes": 417,
+      "bytes": 511,
       "category": "github_automation"
     },
     {
       "path": ".github/workflows/local-handoff.yml",
-      "bytes": 685,
+      "bytes": 822,
       "category": "github_automation"
     },
     {
       "path": ".github/workflows/mutation.yml",
-      "bytes": 587,
+      "bytes": 657,
       "category": "github_automation"
     },
     {
       "path": ".github/workflows/profiling.yml",
-      "bytes": 430,
+      "bytes": 462,
+      "category": "github_automation"
+    },
+    {
+      "path": ".github/workflows/provenance-verify.yml",
+      "bytes": 556,
+      "category": "github_automation"
+    },
+    {
+      "path": ".github/workflows/python-property.yml",
+      "bytes": 495,
       "category": "github_automation"
     },
     {
       "path": ".github/workflows/quality-gates.yml",
-      "bytes": 1720,
+      "bytes": 1197,
+      "category": "github_automation"
+    },
+    {
+      "path": ".github/workflows/release-automation.yml",
+      "bytes": 482,
       "category": "github_automation"
     },
     {
       "path": ".github/workflows/release.yml",
-      "bytes": 764,
+      "bytes": 725,
       "category": "github_automation"
     },
     {
       "path": ".github/workflows/security.yml",
-      "bytes": 346,
+      "bytes": 460,
       "category": "github_automation"
     },
     {
       "path": ".github/workflows/strict-quality.yml",
-      "bytes": 1608,
+      "bytes": 1794,
+      "category": "github_automation"
+    },
+    {
+      "path": ".github/workflows/supply-chain.yml",
+      "bytes": 1188,
+      "category": "github_automation"
+    },
+    {
+      "path": ".github/workflows/workflow-security.yml",
+      "bytes": 825,
       "category": "github_automation"
     },
     {
       "path": ".gitignore",
-      "bytes": 32,
+      "bytes": 179,
       "category": "root_docs_or_config"
     },
     {
@@ -168,18 +198,28 @@
       "category": "root_docs_or_config"
     },
     {
+      "path": "ACTION_PINNING_AUDIT.json",
+      "bytes": 7966,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "ACTION_PINNING_AUDIT.md",
+      "bytes": 177,
+      "category": "root_docs_or_config"
+    },
+    {
       "path": "AGENTS.md",
       "bytes": 2069,
       "category": "root_docs_or_config"
     },
     {
       "path": "AGENT_HANDOFF_BRIEF.json",
-      "bytes": 710,
+      "bytes": 1220,
       "category": "root_docs_or_config"
     },
     {
       "path": "AGENT_HANDOFF_BRIEF.md",
-      "bytes": 935,
+      "bytes": 929,
       "category": "root_docs_or_config"
     },
     {
@@ -203,6 +243,16 @@
       "category": "root_docs_or_config"
     },
     {
+      "path": "ASTRO7_DOCS_HARDENING_AUDIT.json",
+      "bytes": 172,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "ASTRO7_DOCS_HARDENING_AUDIT.md",
+      "bytes": 92,
+      "category": "root_docs_or_config"
+    },
+    {
       "path": "ASTRO_DOCS_PLAN.md",
       "bytes": 609,
       "category": "root_docs_or_config"
@@ -223,13 +273,38 @@
       "category": "root_docs_or_config"
     },
     {
+      "path": "BENCHMARK_REGRESSION_AUDIT.json",
+      "bytes": 146,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "BENCHMARK_REGRESSION_AUDIT.md",
+      "bytes": 92,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "BENCHMARK_REGRESSION_PLAN.md",
+      "bytes": 573,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "BLEEDING_EDGE_REPO_AUDIT.json",
+      "bytes": 721,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "BLEEDING_EDGE_REPO_AUDIT.md",
+      "bytes": 335,
+      "category": "root_docs_or_config"
+    },
+    {
       "path": "CARGOLESS_SMOKE_REPORT.json",
-      "bytes": 4278,
+      "bytes": 5177,
       "category": "root_docs_or_config"
     },
     {
       "path": "CARGOLESS_SMOKE_REPORT.md",
-      "bytes": 1736,
+      "bytes": 2095,
       "category": "root_docs_or_config"
     },
     {
@@ -245,6 +320,16 @@
     {
       "path": "CARGO_TRIAGE.md",
       "bytes": 651,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "CARGO_VET_POLICY_AUDIT.json",
+      "bytes": 203,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "CARGO_VET_POLICY_AUDIT.md",
+      "bytes": 34,
       "category": "root_docs_or_config"
     },
     {
@@ -324,12 +409,12 @@
     },
     {
       "path": "CURRENT_ENV_FINAL_REPORT.json",
-      "bytes": 914,
+      "bytes": 909,
       "category": "root_docs_or_config"
     },
     {
       "path": "CURRENT_ENV_FINAL_REPORT.md",
-      "bytes": 772,
+      "bytes": 777,
       "category": "root_docs_or_config"
     },
     {
@@ -353,13 +438,18 @@
       "category": "root_docs_or_config"
     },
     {
+      "path": "Cargo.lock",
+      "bytes": 50674,
+      "category": "root_docs_or_config"
+    },
+    {
       "path": "Cargo.toml",
       "bytes": 875,
       "category": "root_docs_or_config"
     },
     {
       "path": "DEPENDENCY_POLICY_AUDIT.json",
-      "bytes": 2622,
+      "bytes": 2686,
       "category": "root_docs_or_config"
     },
     {
@@ -369,7 +459,7 @@
     },
     {
       "path": "DESIGN.md",
-      "bytes": 17334,
+      "bytes": 19056,
       "category": "root_docs_or_config"
     },
     {
@@ -378,8 +468,23 @@
       "category": "root_docs_or_config"
     },
     {
+      "path": "DOCS_AUTOMATION.md",
+      "bytes": 523,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "DOCS_PACKAGE_AUDIT.json",
+      "bytes": 1800,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "DOCS_PACKAGE_AUDIT.md",
+      "bytes": 1108,
+      "category": "root_docs_or_config"
+    },
+    {
       "path": "DOCS_SITE_AUDIT.json",
-      "bytes": 378,
+      "bytes": 475,
       "category": "root_docs_or_config"
     },
     {
@@ -444,17 +549,42 @@
     },
     {
       "path": "FIXTURE_COVERAGE_REPORT.json",
-      "bytes": 3028,
+      "bytes": 3223,
       "category": "root_docs_or_config"
     },
     {
       "path": "FIXTURE_COVERAGE_REPORT.md",
-      "bytes": 2301,
+      "bytes": 2451,
       "category": "root_docs_or_config"
     },
     {
       "path": "GEMINI.md",
       "bytes": 991,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "GITHUB_ACTIONS_HARDENING.json",
+      "bytes": 102,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "GITHUB_ACTIONS_HARDENING.md",
+      "bytes": 836,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "GITHUB_ACTIONS_HARDENING_AUDIT.md",
+      "bytes": 69,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "GITHUB_WORKFLOW_POLICY_AUDIT.json",
+      "bytes": 6152,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "GITHUB_WORKFLOW_POLICY_AUDIT.md",
+      "bytes": 3224,
       "category": "root_docs_or_config"
     },
     {
@@ -469,12 +599,12 @@
     },
     {
       "path": "HANDOFF_ARCHIVE_AUDIT.json",
-      "bytes": 185296,
+      "bytes": 3182797,
       "category": "root_docs_or_config"
     },
     {
       "path": "HANDOFF_ARCHIVE_AUDIT.md",
-      "bytes": 29311,
+      "bytes": 27733,
       "category": "root_docs_or_config"
     },
     {
@@ -489,22 +619,32 @@
     },
     {
       "path": "HANDOFF_STATUS.json",
-      "bytes": 840,
+      "bytes": 842,
       "category": "root_docs_or_config"
     },
     {
       "path": "HANDOFF_STATUS.md",
-      "bytes": 1033,
+      "bytes": 1035,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "HYPOTHESIS_STRATEGY_AUDIT.json",
+      "bytes": 272,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "HYPOTHESIS_STRATEGY_AUDIT.md",
+      "bytes": 195,
       "category": "root_docs_or_config"
     },
     {
       "path": "IMPLEMENTATION_STATUS.md",
-      "bytes": 6285,
+      "bytes": 7167,
       "category": "root_docs_or_config"
     },
     {
       "path": "Justfile",
-      "bytes": 8339,
+      "bytes": 9274,
       "category": "root_docs_or_config"
     },
     {
@@ -519,12 +659,12 @@
     },
     {
       "path": "LOCAL_COMMAND_PLAN.json",
-      "bytes": 2218,
+      "bytes": 2209,
       "category": "root_docs_or_config"
     },
     {
       "path": "LOCAL_COMMAND_PLAN.md",
-      "bytes": 1309,
+      "bytes": 1318,
       "category": "root_docs_or_config"
     },
     {
@@ -539,7 +679,7 @@
     },
     {
       "path": "LOCAL_HANDOFF.md",
-      "bytes": 2764,
+      "bytes": 3038,
       "category": "root_docs_or_config"
     },
     {
@@ -643,6 +783,16 @@
       "category": "root_docs_or_config"
     },
     {
+      "path": "PROFILING_BUDGET_CHECK.json",
+      "bytes": 801,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "PROFILING_BUDGET_CHECK.md",
+      "bytes": 168,
+      "category": "root_docs_or_config"
+    },
+    {
       "path": "PROFILING_PLAN.md",
       "bytes": 839,
       "category": "root_docs_or_config"
@@ -655,6 +805,21 @@
     {
       "path": "PROFILING_PLAN_AUDIT.md",
       "bytes": 92,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "PROVENANCE_VERIFICATION.md",
+      "bytes": 530,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "PROVENANCE_VERIFICATION_AUDIT.json",
+      "bytes": 186,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "PROVENANCE_VERIFICATION_AUDIT.md",
+      "bytes": 135,
       "category": "root_docs_or_config"
     },
     {
@@ -673,8 +838,18 @@
       "category": "root_docs_or_config"
     },
     {
+      "path": "QUALITY_GATE_EVIDENCE.json",
+      "bytes": 1610,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "QUALITY_GATE_EVIDENCE.md",
+      "bytes": 971,
+      "category": "root_docs_or_config"
+    },
+    {
       "path": "QUALITY_GATE_POLICY.md",
-      "bytes": 1840,
+      "bytes": 3817,
       "category": "root_docs_or_config"
     },
     {
@@ -689,12 +864,27 @@
     },
     {
       "path": "README.md",
-      "bytes": 13277,
+      "bytes": 14159,
       "category": "root_docs_or_config"
     },
     {
       "path": "READY_FOR_LOCAL.md",
       "bytes": 1300,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "RELEASE_AUTOMATION.md",
+      "bytes": 561,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "RELEASE_AUTOMATION_AUDIT.json",
+      "bytes": 68,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "RELEASE_AUTOMATION_AUDIT.md",
+      "bytes": 36,
       "category": "root_docs_or_config"
     },
     {
@@ -704,32 +894,37 @@
     },
     {
       "path": "REMAINING_ELEMENTS.md",
-      "bytes": 1505,
+      "bytes": 4101,
       "category": "root_docs_or_config"
     },
     {
       "path": "REMAINING_ELEMENTS.yaml",
-      "bytes": 13774,
+      "bytes": 15687,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "REPO_HARDENING_RECOMMENDATIONS.md",
+      "bytes": 770,
       "category": "root_docs_or_config"
     },
     {
       "path": "REPO_MANIFEST.json",
-      "bytes": 109603,
+      "bytes": 2487151,
       "category": "root_docs_or_config"
     },
     {
       "path": "REPO_MANIFEST.md",
-      "bytes": 361,
+      "bytes": 367,
       "category": "root_docs_or_config"
     },
     {
       "path": "REQUIREMENTS.md",
-      "bytes": 15647,
+      "bytes": 17196,
       "category": "root_docs_or_config"
     },
     {
       "path": "RUNBOOK.md",
-      "bytes": 13695,
+      "bytes": 14577,
       "category": "root_docs_or_config"
     },
     {
@@ -753,13 +948,23 @@
       "category": "root_docs_or_config"
     },
     {
+      "path": "SCORECARD_DEPENDENCY_REVIEW_AUDIT.json",
+      "bytes": 152,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "SCORECARD_DEPENDENCY_REVIEW_AUDIT.md",
+      "bytes": 109,
+      "category": "root_docs_or_config"
+    },
+    {
       "path": "SECURITY.md",
       "bytes": 285,
       "category": "root_docs_or_config"
     },
     {
       "path": "SHA256SUMS.txt",
-      "bytes": 100739,
+      "bytes": 152141,
       "category": "root_docs_or_config"
     },
     {
@@ -774,12 +979,12 @@
     },
     {
       "path": "SOURCE_DEBT_REPORT.json",
-      "bytes": 189450,
+      "bytes": 184224,
       "category": "root_docs_or_config"
     },
     {
       "path": "SOURCE_DEBT_REPORT.md",
-      "bytes": 25050,
+      "bytes": 21271,
       "category": "root_docs_or_config"
     },
     {
@@ -790,6 +995,11 @@
     {
       "path": "SOURCE_METRICS.md",
       "bytes": 857,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "SUPPLY_CHAIN_POLICY.md",
+      "bytes": 716,
       "category": "root_docs_or_config"
     },
     {
@@ -810,6 +1020,16 @@
     {
       "path": "TEST_CONTROL_MATRIX.md",
       "bytes": 1243,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "TEST_INVENTORY_REPORT.json",
+      "bytes": 2847,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "TEST_INVENTORY_REPORT.md",
+      "bytes": 2028,
       "category": "root_docs_or_config"
     },
     {
@@ -839,17 +1059,22 @@
     },
     {
       "path": "TOOL_CAPABILITY_MATRIX.json",
-      "bytes": 7228,
+      "bytes": 7700,
       "category": "root_docs_or_config"
     },
     {
       "path": "TOOL_CAPABILITY_MATRIX.md",
-      "bytes": 2916,
+      "bytes": 3256,
       "category": "root_docs_or_config"
     },
     {
       "path": "TRACEABILITY.md",
       "bytes": 34366,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "V0_29_IMPLEMENTATION_SUMMARY.md",
+      "bytes": 781,
       "category": "root_docs_or_config"
     },
     {
@@ -888,8 +1113,13 @@
       "category": "root_docs_or_config"
     },
     {
+      "path": "codev/.DS_Store",
+      "bytes": 6148,
+      "category": "codev_context"
+    },
+    {
       "path": "codev/CHANGELOG.md",
-      "bytes": 7018,
+      "bytes": 7551,
       "category": "codev_context"
     },
     {
@@ -1413,6 +1643,36 @@
       "category": "codev_context"
     },
     {
+      "path": "codev/plans/0104-docs-package-audit.md",
+      "bytes": 187,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0105-github-workflow-policy-audit.md",
+      "bytes": 202,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0106-test-inventory-report.md",
+      "bytes": 193,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0107-hypothesis-strategy-audit.md",
+      "bytes": 174,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0108-profiling-budget-check.md",
+      "bytes": 185,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0109-quality-gate-evidence-ledger.md",
+      "bytes": 177,
+      "category": "codev_context"
+    },
+    {
       "path": "codev/plans/071-0071-apfs-offset-audit.md",
       "bytes": 339,
       "category": "codev_context"
@@ -1573,13 +1833,58 @@
       "category": "codev_context"
     },
     {
+      "path": "codev/plans/110-github-actions-hardening-zizmor-actionlint.md",
+      "bytes": 287,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/111-action-pinning-permissions-audit.md",
+      "bytes": 277,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/112-cargo-vet-supply-chain-policy.md",
+      "bytes": 269,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/113-slsa-attestation-verification.md",
+      "bytes": 280,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/114-cargo-dist-release-plz-scaffold.md",
+      "bytes": 279,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/115-scorecard-dependency-review-workflow.md",
+      "bytes": 290,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/116-astro7-docs-quality-hardened.md",
+      "bytes": 272,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/117-benchmark-regression-and-codspeed-readiness.md",
+      "bytes": 285,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/118-bleeding-edge-repo-hardening-audit.md",
+      "bytes": 278,
+      "category": "codev_context"
+    },
+    {
       "path": "codev/resources/capabilities.yaml",
-      "bytes": 44381,
+      "bytes": 48947,
       "category": "codev_context"
     },
     {
       "path": "codev/resources/safety-gates.yaml",
-      "bytes": 19585,
+      "bytes": 21718,
       "category": "codev_context"
     },
     {
@@ -1590,6 +1895,11 @@
     {
       "path": "codev/resources/schemas/safety-gates.schema.json",
       "bytes": 346,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0001-bootstrap-review-updated.md",
+      "bytes": 862,
       "category": "codev_context"
     },
     {
@@ -2108,6 +2418,36 @@
       "category": "codev_context"
     },
     {
+      "path": "codev/reviews/0104-docs-package-audit-review.md",
+      "bytes": 229,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0105-github-workflow-policy-audit-review.md",
+      "bytes": 244,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0106-test-inventory-report-review.md",
+      "bytes": 235,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0107-hypothesis-strategy-audit-review.md",
+      "bytes": 216,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0108-profiling-budget-check-review.md",
+      "bytes": 227,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0109-quality-gate-evidence-ledger-review.md",
+      "bytes": 219,
+      "category": "codev_context"
+    },
+    {
       "path": "codev/reviews/071-0071-apfs-offset-audit-review.md",
       "bytes": 519,
       "category": "codev_context"
@@ -2265,6 +2605,51 @@
     {
       "path": "codev/reviews/103-quality-and-docs-handoff-integration-review.md",
       "bytes": 262,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/110-github-actions-hardening-zizmor-actionlint-review.md",
+      "bytes": 257,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/111-action-pinning-permissions-audit-review.md",
+      "bytes": 247,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/112-cargo-vet-supply-chain-policy-review.md",
+      "bytes": 239,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/113-slsa-attestation-verification-review.md",
+      "bytes": 250,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/114-cargo-dist-release-plz-scaffold-review.md",
+      "bytes": 249,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/115-scorecard-dependency-review-workflow-review.md",
+      "bytes": 260,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/116-astro7-docs-quality-hardened-review.md",
+      "bytes": 242,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/117-benchmark-regression-and-codspeed-readiness-review.md",
+      "bytes": 255,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/118-bleeding-edge-repo-hardening-audit-review.md",
+      "bytes": 248,
       "category": "codev_context"
     },
     {
@@ -2783,6 +3168,36 @@
       "category": "codev_context"
     },
     {
+      "path": "codev/specs/0104-docs-package-audit.md",
+      "bytes": 305,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0105-github-workflow-policy-audit.md",
+      "bytes": 335,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0106-test-inventory-report.md",
+      "bytes": 317,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0107-hypothesis-strategy-audit.md",
+      "bytes": 279,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0108-profiling-budget-check.md",
+      "bytes": 301,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0109-quality-gate-evidence-ledger.md",
+      "bytes": 285,
+      "category": "codev_context"
+    },
+    {
       "path": "codev/specs/071-0071-apfs-offset-audit.md",
       "bytes": 555,
       "category": "codev_context"
@@ -2943,8 +3358,58 @@
       "category": "codev_context"
     },
     {
+      "path": "codev/specs/110-github-actions-hardening-zizmor-actionlint.md",
+      "bytes": 464,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/111-action-pinning-permissions-audit.md",
+      "bytes": 444,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/112-cargo-vet-supply-chain-policy.md",
+      "bytes": 428,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/113-slsa-attestation-verification.md",
+      "bytes": 450,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/114-cargo-dist-release-plz-scaffold.md",
+      "bytes": 448,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/115-scorecard-dependency-review-workflow.md",
+      "bytes": 470,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/116-astro7-docs-quality-hardened.md",
+      "bytes": 434,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/117-benchmark-regression-and-codspeed-readiness.md",
+      "bytes": 460,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/118-bleeding-edge-repo-hardening-audit.md",
+      "bytes": 446,
+      "category": "codev_context"
+    },
+    {
+      "path": "conductor/.DS_Store",
+      "bytes": 6148,
+      "category": "conductor_context"
+    },
+    {
       "path": "conductor/history.md",
-      "bytes": 11442,
+      "bytes": 13176,
       "category": "conductor_context"
     },
     {
@@ -2954,12 +3419,12 @@
     },
     {
       "path": "conductor/product.md",
-      "bytes": 1808,
+      "bytes": 1915,
       "category": "conductor_context"
     },
     {
       "path": "conductor/skills/conductor-context-management/SKILL.md",
-      "bytes": 858,
+      "bytes": 1324,
       "category": "conductor_context"
     },
     {
@@ -2984,7 +3449,7 @@
     },
     {
       "path": "conductor/tracks/0001-m001-container-inspect/metadata.json",
-      "bytes": 215,
+      "bytes": 214,
       "category": "conductor_context"
     },
     {
@@ -2994,7 +3459,7 @@
     },
     {
       "path": "conductor/tracks/0001-m001-container-inspect/spec.md",
-      "bytes": 300,
+      "bytes": 298,
       "category": "conductor_context"
     },
     {
@@ -4723,6 +5188,231 @@
       "category": "conductor_context"
     },
     {
+      "path": "conductor/tracks/0104-docs-package-audit/metadata.json",
+      "bytes": 182,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0104-docs-package-audit/plan.md",
+      "bytes": 201,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0104-docs-package-audit/spec.md",
+      "bytes": 282,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0105-github-workflow-policy-audit/metadata.json",
+      "bytes": 207,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0105-github-workflow-policy-audit/plan.md",
+      "bytes": 216,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0105-github-workflow-policy-audit/spec.md",
+      "bytes": 312,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0106-test-inventory-report/metadata.json",
+      "bytes": 191,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0106-test-inventory-report/plan.md",
+      "bytes": 207,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0106-test-inventory-report/spec.md",
+      "bytes": 294,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0107-hypothesis-strategy-audit/metadata.json",
+      "bytes": 176,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0107-hypothesis-strategy-audit/plan.md",
+      "bytes": 188,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0107-hypothesis-strategy-audit/spec.md",
+      "bytes": 256,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0108-profiling-budget-check/metadata.json",
+      "bytes": 184,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0108-profiling-budget-check/plan.md",
+      "bytes": 199,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0108-profiling-budget-check/spec.md",
+      "bytes": 278,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0109-quality-gate-evidence-ledger/metadata.json",
+      "bytes": 182,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0109-quality-gate-evidence-ledger/plan.md",
+      "bytes": 191,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0109-quality-gate-evidence-ledger/spec.md",
+      "bytes": 262,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0110-github-actions-hardening-zizmor-actionlint/metadata.json",
+      "bytes": 222,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0110-github-actions-hardening-zizmor-actionlint/plan.md",
+      "bytes": 204,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0110-github-actions-hardening-zizmor-actionlint/spec.md",
+      "bytes": 319,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0111-action-pinning-permissions-audit/metadata.json",
+      "bytes": 202,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0111-action-pinning-permissions-audit/plan.md",
+      "bytes": 194,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0111-action-pinning-permissions-audit/spec.md",
+      "bytes": 299,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0112-cargo-vet-supply-chain-policy/metadata.json",
+      "bytes": 191,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0112-cargo-vet-supply-chain-policy/plan.md",
+      "bytes": 186,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0112-cargo-vet-supply-chain-policy/spec.md",
+      "bytes": 283,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0113-slsa-attestation-verification/metadata.json",
+      "bytes": 202,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0113-slsa-attestation-verification/plan.md",
+      "bytes": 197,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0113-slsa-attestation-verification/spec.md",
+      "bytes": 305,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0114-cargo-dist-release-plz-scaffold/metadata.json",
+      "bytes": 203,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0114-cargo-dist-release-plz-scaffold/plan.md",
+      "bytes": 196,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0114-cargo-dist-release-plz-scaffold/spec.md",
+      "bytes": 303,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0115-scorecard-dependency-review-workflow/metadata.json",
+      "bytes": 219,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0115-scorecard-dependency-review-workflow/plan.md",
+      "bytes": 207,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0115-scorecard-dependency-review-workflow/spec.md",
+      "bytes": 325,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0116-astro7-docs-quality-hardened/metadata.json",
+      "bytes": 193,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0116-astro7-docs-quality-hardened/plan.md",
+      "bytes": 189,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0116-astro7-docs-quality-hardened/spec.md",
+      "bytes": 289,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0117-benchmark-regression-and-codspeed-readiness/metadata.json",
+      "bytes": 221,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0117-benchmark-regression-and-codspeed-readiness/plan.md",
+      "bytes": 202,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0117-benchmark-regression-and-codspeed-readiness/spec.md",
+      "bytes": 315,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0118-bleeding-edge-repo-hardening-audit/metadata.json",
+      "bytes": 205,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0118-bleeding-edge-repo-hardening-audit/plan.md",
+      "bytes": 195,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0118-bleeding-edge-repo-hardening-audit/spec.md",
+      "bytes": 301,
+      "category": "conductor_context"
+    },
+    {
       "path": "conductor/tracks/094-strict-ci-quality-gates-90-coverage-policy/metadata.json",
       "bytes": 216,
       "category": "conductor_context"
@@ -4874,12 +5564,12 @@
     },
     {
       "path": "conductor/tracks.md",
-      "bytes": 9468,
+      "bytes": 11029,
       "category": "conductor_context"
     },
     {
       "path": "conductor/workflow.md",
-      "bytes": 1697,
+      "bytes": 1769,
       "category": "conductor_context"
     },
     {
@@ -4899,17 +5589,17 @@
     },
     {
       "path": "crates/apfs-blockdev/src/lib.rs",
-      "bytes": 3693,
+      "bytes": 3985,
       "category": "rust_crates"
     },
     {
       "path": "crates/apfs-cli/Cargo.toml",
-      "bytes": 475,
+      "bytes": 525,
       "category": "rust_crates"
     },
     {
       "path": "crates/apfs-cli/src/main.rs",
-      "bytes": 40067,
+      "bytes": 42036,
       "category": "rust_crates"
     },
     {
@@ -4919,7 +5609,7 @@
     },
     {
       "path": "crates/apfs-cli/tests/e2e_synthetic_cli.rs",
-      "bytes": 487,
+      "bytes": 651,
       "category": "rust_crates"
     },
     {
@@ -4929,22 +5619,22 @@
     },
     {
       "path": "crates/apfs-core/benches/inspect_synthetic.rs",
-      "bytes": 673,
+      "bytes": 689,
       "category": "rust_crates"
     },
     {
       "path": "crates/apfs-core/src/lib.rs",
-      "bytes": 86913,
+      "bytes": 93160,
       "category": "rust_crates"
     },
     {
       "path": "crates/apfs-core/tests/integration_inspect.rs",
-      "bytes": 804,
+      "bytes": 826,
       "category": "rust_crates"
     },
     {
       "path": "crates/apfs-core/tests/synthetic_inspect.rs",
-      "bytes": 575,
+      "bytes": 597,
       "category": "rust_crates"
     },
     {
@@ -4964,7 +5654,7 @@
     },
     {
       "path": "crates/apfs-features/src/lib.rs",
-      "bytes": 10572,
+      "bytes": 12082,
       "category": "rust_crates"
     },
     {
@@ -4984,7 +5674,7 @@
     },
     {
       "path": "crates/apfs-test/src/lib.rs",
-      "bytes": 2814,
+      "bytes": 3376,
       "category": "rust_crates"
     },
     {
@@ -4994,12 +5684,12 @@
     },
     {
       "path": "crates/apfs-types/benches/nx_superblock_bench.rs",
-      "bytes": 674,
+      "bytes": 689,
       "category": "rust_crates"
     },
     {
       "path": "crates/apfs-types/src/lib.rs",
-      "bytes": 53396,
+      "bytes": 55386,
       "category": "rust_crates"
     },
     {
@@ -5019,7 +5709,7 @@
     },
     {
       "path": "crates/apfs-vfs/src/lib.rs",
-      "bytes": 3093,
+      "bytes": 3115,
       "category": "rust_crates"
     },
     {
@@ -5029,7 +5719,7 @@
     },
     {
       "path": "crates/apfs-win/src/lib.rs",
-      "bytes": 6426,
+      "bytes": 6655,
       "category": "rust_crates"
     },
     {
@@ -5053,6 +5743,11 @@
       "category": "root_docs_or_config"
     },
     {
+      "path": "dist-workspace.toml",
+      "bytes": 224,
+      "category": "root_docs_or_config"
+    },
+    {
       "path": "docs-site/README.md",
       "bytes": 243,
       "category": "root_docs_or_config"
@@ -5063,8 +5758,13 @@
       "category": "root_docs_or_config"
     },
     {
+      "path": "docs-site/package-lock.json",
+      "bytes": 292223,
+      "category": "root_docs_or_config"
+    },
+    {
       "path": "docs-site/package.json",
-      "bytes": 362,
+      "bytes": 553,
       "category": "root_docs_or_config"
     },
     {
@@ -5104,22 +5804,22 @@
     },
     {
       "path": "docs-site/src/pages/design/index.astro",
-      "bytes": 366,
+      "bytes": 331,
       "category": "root_docs_or_config"
     },
     {
       "path": "docs-site/src/pages/handoff/index.astro",
-      "bytes": 387,
-      "category": "root_docs_or_config"
-    },
-    {
-      "path": "docs-site/src/pages/handoff.astro",
-      "bytes": 392,
+      "bytes": 352,
       "category": "root_docs_or_config"
     },
     {
       "path": "docs-site/src/pages/index.astro",
       "bytes": 579,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "docs-site/src/pages/quality-evidence.astro",
+      "bytes": 246,
       "category": "root_docs_or_config"
     },
     {
@@ -5129,18 +5829,28 @@
     },
     {
       "path": "docs-site/src/pages/requirements/index.astro",
-      "bytes": 384,
+      "bytes": 349,
       "category": "root_docs_or_config"
     },
     {
       "path": "docs-site/src/pages/safety/index.astro",
-      "bytes": 381,
+      "bytes": 346,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "docs-site/src/pages/test-strategy.astro",
+      "bytes": 388,
       "category": "root_docs_or_config"
     },
     {
       "path": "docs-site/tsconfig.json",
       "bytes": 42,
       "category": "root_docs_or_config"
+    },
+    {
+      "path": "fixtures/.DS_Store",
+      "bytes": 6148,
+      "category": "fixtures"
     },
     {
       "path": "fixtures/README.md",
@@ -5509,7 +6219,22 @@
     },
     {
       "path": "python_tests/test_fixture_properties.py",
-      "bytes": 758,
+      "bytes": 1356,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "python_tests/test_negative_fixtures.py",
+      "bytes": 619,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "release-plz.toml",
+      "bytes": 122,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "renovate.json",
+      "bytes": 812,
       "category": "root_docs_or_config"
     },
     {
@@ -5520,6 +6245,16 @@
     {
       "path": "rust-toolchain.toml",
       "bytes": 98,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "supply-chain/audits.toml",
+      "bytes": 99,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "supply-chain/config.toml",
+      "bytes": 283,
       "category": "root_docs_or_config"
     },
     {
@@ -5553,6 +6288,16 @@
       "category": "root_docs_or_config"
     },
     {
+      "path": "tools/.DS_Store",
+      "bytes": 6148,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/action_pinning_audit.py",
+      "bytes": 1223,
+      "category": "python_tools"
+    },
+    {
       "path": "tools/agent_handoff_brief.py",
       "bytes": 3038,
       "category": "python_tools"
@@ -5568,8 +6313,23 @@
       "category": "python_tools"
     },
     {
+      "path": "tools/astro7_docs_hardening_audit.py",
+      "bytes": 849,
+      "category": "python_tools"
+    },
+    {
       "path": "tools/backlog_issue_export.py",
       "bytes": 2635,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/benchmark_regression_audit.py",
+      "bytes": 692,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/bleeding_edge_repo_audit.py",
+      "bytes": 1364,
       "category": "python_tools"
     },
     {
@@ -5583,13 +6343,18 @@
       "category": "python_tools"
     },
     {
+      "path": "tools/cargo_vet_policy_audit.py",
+      "bytes": 734,
+      "category": "python_tools"
+    },
+    {
       "path": "tools/cargo_workspace_audit.py",
       "bytes": 2298,
       "category": "python_tools"
     },
     {
       "path": "tools/cargoless_smoke_suite.py",
-      "bytes": 4184,
+      "bytes": 4658,
       "category": "python_tools"
     },
     {
@@ -5614,7 +6379,7 @@
     },
     {
       "path": "tools/config_sanity_check.py",
-      "bytes": 2073,
+      "bytes": 2064,
       "category": "python_tools"
     },
     {
@@ -5663,8 +6428,13 @@
       "category": "python_tools"
     },
     {
+      "path": "tools/docs_package_audit.py",
+      "bytes": 2542,
+      "category": "python_tools"
+    },
+    {
       "path": "tools/docs_site_audit.py",
-      "bytes": 1754,
+      "bytes": 1927,
       "category": "python_tools"
     },
     {
@@ -5693,13 +6463,23 @@
       "category": "python_tools"
     },
     {
+      "path": "tools/github_actions_hardening_audit.py",
+      "bytes": 1813,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/github_workflow_policy_audit.py",
+      "bytes": 3176,
+      "category": "python_tools"
+    },
+    {
       "path": "tools/golden_output_generator.py",
       "bytes": 2956,
       "category": "python_tools"
     },
     {
       "path": "tools/handoff_archive_audit.py",
-      "bytes": 2158,
+      "bytes": 2260,
       "category": "python_tools"
     },
     {
@@ -5715,6 +6495,11 @@
     {
       "path": "tools/handoff_status.py",
       "bytes": 4317,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/hypothesis_strategy_audit.py",
+      "bytes": 1711,
       "category": "python_tools"
     },
     {
@@ -5794,7 +6579,7 @@
     },
     {
       "path": "tools/precompile_static_check.py",
-      "bytes": 9523,
+      "bytes": 9571,
       "category": "python_tools"
     },
     {
@@ -5808,6 +6593,11 @@
       "category": "python_tools"
     },
     {
+      "path": "tools/profiling_budget_check.py",
+      "bytes": 1595,
+      "category": "python_tools"
+    },
+    {
       "path": "tools/profiling_plan_audit.py",
       "bytes": 1252,
       "category": "python_tools"
@@ -5818,8 +6608,18 @@
       "category": "python_tools"
     },
     {
+      "path": "tools/provenance_verification_audit.py",
+      "bytes": 936,
+      "category": "python_tools"
+    },
+    {
       "path": "tools/quality_gate_check.py",
-      "bytes": 1996,
+      "bytes": 3934,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/quality_gate_evidence.py",
+      "bytes": 2502,
       "category": "python_tools"
     },
     {
@@ -5828,8 +6628,13 @@
       "category": "python_tools"
     },
     {
+      "path": "tools/release_automation_audit.py",
+      "bytes": 692,
+      "category": "python_tools"
+    },
+    {
       "path": "tools/release_preflight.py",
-      "bytes": 4207,
+      "bytes": 4977,
       "category": "python_tools"
     },
     {
@@ -5839,7 +6644,7 @@
     },
     {
       "path": "tools/repo_manifest.py",
-      "bytes": 2409,
+      "bytes": 2496,
       "category": "python_tools"
     },
     {
@@ -5855,6 +6660,11 @@
     {
       "path": "tools/safety_case_check.py",
       "bytes": 1251,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/scorecard_dependency_review_audit.py",
+      "bytes": 814,
       "category": "python_tools"
     },
     {
@@ -5880,6 +6690,11 @@
     {
       "path": "tools/synthetic_negative_fixture_generator.py",
       "bytes": 2575,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/test_inventory_report.py",
+      "bytes": 2955,
       "category": "python_tools"
     },
     {
@@ -5954,7 +6769,7 @@
     },
     {
       "path": "xtask/src/main.rs",
-      "bytes": 27895,
+      "bytes": 29986,
       "category": "root_docs_or_config"
     }
   ]

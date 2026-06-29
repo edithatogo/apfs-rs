@@ -13,5 +13,8 @@ fn synthetic_nxsb_fixture_is_detected() {
 fn non_apfs_fixture_reports_not_apfs_or_refusal() {
     let bytes = include_bytes!("../../../fixtures/example-non-apfs.bin");
     let report = inspect_bytes(bytes);
-    assert!(matches!(report.status, InspectStatus::NotApfs | InspectStatus::Refused));
+    assert!(matches!(
+        report.status,
+        InspectStatus::NotApfs | InspectStatus::Refused
+    ));
 }
