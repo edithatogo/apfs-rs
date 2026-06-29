@@ -39,6 +39,7 @@ def main() -> int:
     checks.append({"name": "no placeholder echo", "ok": "Release automation placeholder" not in workflow})
     dist_config = (ROOT / "dist-workspace.toml").read_text(encoding="utf-8")
     release_config = (ROOT / "release-plz.toml").read_text(encoding="utf-8")
+    checks.append({"name": "cargo-dist workspace table", "ok": "[workspace]" in dist_config})
     checks.append({"name": "cargo-dist version pinned", "ok": "cargo-dist-version = \"0.29.0\"" in dist_config})
     checks.append({"name": "release-plz publish disabled", "ok": "publish = false" in release_config})
     failed = [check["name"] for check in checks if not check["ok"]]
