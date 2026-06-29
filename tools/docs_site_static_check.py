@@ -8,7 +8,11 @@ ROOT = Path(__file__).resolve().parents[1]
 def main() -> int:
     pkg = ROOT / 'docs-site/package.json'
     config = ROOT / 'docs-site/astro.config.mjs'
-    pages = [ROOT / 'docs-site/src/pages/index.astro', ROOT / 'docs-site/src/pages/quality.astro', ROOT / 'docs-site/src/pages/handoff.astro']
+    pages = [
+        ROOT / 'docs-site/src/pages/index.astro',
+        ROOT / 'docs-site/src/pages/quality.astro',
+        ROOT / 'docs-site/src/pages/handoff/index.astro',
+    ]
     issues = []
     if not pkg.exists(): issues.append('missing docs-site/package.json')
     if not config.exists(): issues.append('missing docs-site/astro.config.mjs')

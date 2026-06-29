@@ -1,6 +1,5 @@
 #![forbid(unsafe_code)]
 
-
 use apfs_types::parse_nx_superblock;
 use criterion::{criterion_group, criterion_main, Criterion};
 
@@ -15,7 +14,9 @@ fn synthetic_nxsb() -> Vec<u8> {
 
 fn bench_parse_nxsb(c: &mut Criterion) {
     let block = synthetic_nxsb();
-    c.bench_function("parse_nx_superblock_synthetic", |b| b.iter(|| parse_nx_superblock(&block)));
+    c.bench_function("parse_nx_superblock_synthetic", |b| {
+        b.iter(|| parse_nx_superblock(&block))
+    });
 }
 
 criterion_group!(benches, bench_parse_nxsb);

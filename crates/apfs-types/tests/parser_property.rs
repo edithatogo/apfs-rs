@@ -1,6 +1,6 @@
 #![forbid(unsafe_code)]
 
-use apfs_types::{parse_object_header, parse_nx_superblock};
+use apfs_types::{parse_nx_superblock, parse_object_header};
 use proptest::prelude::*;
 
 proptest! {

@@ -12,10 +12,11 @@ jobs:
   criterion:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: dtolnay/rust-toolchain@stable
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+      - run: rustup toolchain install stable --profile minimal
+      - run: rustup default stable
       - run: cargo bench -p apfs-core --bench inspect_synthetic
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
           name: criterion-report
           path: target/criterion

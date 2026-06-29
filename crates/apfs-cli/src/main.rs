@@ -1,12 +1,21 @@
 #![forbid(unsafe_code)]
 
-use std::{fs, path::{Path, PathBuf}};
+use std::{
+    fs,
+    path::{Path, PathBuf},
+};
 
 use anyhow::Context;
 use apfs_blockdev::ImageBlockDevice;
+use apfs_core::{
+    btree_cursor_report_in_device, directory_report_in_device, file_read_report_in_device,
+    inspect_device, lookup_object_in_device, read_mapped_object_in_device,
+    resolver_report_in_device, volume_report_in_device, BTreeCursorStatus, DirectoryReportStatus,
+    FileReadReportStatus, InspectReport, InspectStatus, MappedObjectReadStatus, ObjectLookupStatus,
+    ObjectMapResolverStatus, VolumeReportStatus,
+};
 use apfs_features::{analyze_unicode_case_policy, feature_readiness, metadata_feature_report};
 use apfs_win::{plan_read_only_mount, winfsp_readonly_callback_matrix};
-use apfs_core::{btree_cursor_report_in_device, directory_report_in_device, file_read_report_in_device, inspect_device, lookup_object_in_device, read_mapped_object_in_device, resolver_report_in_device, volume_report_in_device, BTreeCursorStatus, DirectoryReportStatus, FileReadReportStatus, InspectReport, InspectStatus, MappedObjectReadStatus, ObjectLookupStatus, ObjectMapResolverStatus, VolumeReportStatus};
 use clap::{Parser, Subcommand};
 
 #[derive(Debug, Parser)]
@@ -153,22 +162,22 @@ enum Command {
     },
     /// Produce a Windows read-only WinFsp mount preflight plan without mounting.
     MountPlan {
-    /// Source image path.
-    source: PathBuf,
-    /// Windows drive-letter mount point, for example X:.
-    #[arg(long)]
-    mountpoint: String,
-    /// Emit JSON output.
-    #[arg(long)]
-    json: bool,
+        /// Source image path.
+        source: PathBuf,
+        /// Windows drive-letter mount point, for example X:.
+        #[arg(long)]
+        mountpoint: String,
+        /// Emit JSON output.
+        #[arg(long)]
+        json: bool,
     },
     /// Export a redacted diagnostics bundle for bug reports and agent workflows.
     DiagnosticsBundle {
-    /// Source image path.
-    source: PathBuf,
-    /// Emit JSON output.
-    #[arg(long)]
-    json: bool,
+        /// Source image path.
+        source: PathBuf,
+        /// Emit JSON output.
+        #[arg(long)]
+        json: bool,
     },
     /// Report host/path Unicode and case-sensitivity policy for one APFS name component.
     PathPolicy {
@@ -219,29 +228,64 @@ enum Command {
 fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
     match cli.command {
-        Command::Inspect { source, json } | Command::CompatibilityReport { source, json } => inspect_command(source, json),
+        Command::Inspect { source, json } | Command::CompatibilityReport { source, json } => {
+            inspect_command(source, json)
+        }
         Command::Doctor { source, json } => doctor_command(source, json),
-        Command::DiagnosticsExport { source, out, json } => diagnostics_export_command(source, out, json),
-        Command::LookupObject { source, oid, xid, json } => lookup_object_command(source, oid, xid, json),
+        Command::DiagnosticsExport { source, out, json } => {
+            diagnostics_export_command(source, out, json)
+        }
+        Command::LookupObject {
+            source,
+            oid,
+            xid,
+            json,
+        } => lookup_object_command(source, oid, xid, json),
         Command::Volumes { source, json } => volumes_command(source, json),
         Command::ResolverReport { source, json } => resolver_report_command(source, json),
-        Command::BtreeCursorReport { source, oid, xid, json } => btree_cursor_report_command(source, oid, xid, json),
-        Command::ReadObject { source, oid, xid, json } => read_object_command(source, oid, xid, json),
+        Command::BtreeCursorReport {
+            source,
+            oid,
+            xid,
+            json,
+        } => btree_cursor_report_command(source, oid, xid, json),
+        Command::ReadObject {
+            source,
+            oid,
+            xid,
+            json,
+        } => read_object_command(source, oid, xid, json),
         Command::Ls { source, json } => ls_command(source, json),
         Command::Cat { source, name, json } => cat_command(source, name, json),
         Command::Stat { source, name, json } => stat_command(source, name, json),
         Command::WinfspCallbackMatrix { json } => winfsp_callback_matrix_command(json),
-        Command::MountPlan { source, mountpoint, json } => mount_plan_command(source, mountpoint, json),
+        Command::MountPlan {
+            source,
+            mountpoint,
+            json,
+        } => mount_plan_command(source, mountpoint, json),
         Command::DiagnosticsBundle { source, json } => diagnostics_bundle_command(source, json),
-        Command::PathPolicy { name, case_sensitive, json } => path_policy_command(name, case_sensitive, json),
+        Command::PathPolicy {
+            name,
+            case_sensitive,
+            json,
+        } => path_policy_command(name, case_sensitive, json),
         Command::FeatureReadiness { feature, json } => feature_readiness_command(feature, json),
-        Command::MetadataFeatureReport { feature, json } => metadata_feature_report_command(feature, json),
-        Command::Extract { source, name, dest, json } => extract_command(source, name, dest, json),
+        Command::MetadataFeatureReport { feature, json } => {
+            metadata_feature_report_command(feature, json)
+        }
+        Command::Extract {
+            source,
+            name,
+            dest,
+            json,
+        } => extract_command(source, name, dest, json),
     }
 }
 
 fn inspect_command(source: PathBuf, json: bool) -> anyhow::Result<()> {
-    let device = ImageBlockDevice::open(&source).with_context(|| format!("open {} read-only", source.display()))?;
+    let device = ImageBlockDevice::open(&source)
+        .with_context(|| format!("open {} read-only", source.display()))?;
     let report = inspect_device(&device).context("inspect source")?;
 
     if json {
@@ -259,7 +303,8 @@ fn inspect_command(source: PathBuf, json: bool) -> anyhow::Result<()> {
 }
 
 fn doctor_command(source: PathBuf, json: bool) -> anyhow::Result<()> {
-    let device = ImageBlockDevice::open(&source).with_context(|| format!("open {} read-only", source.display()))?;
+    let device = ImageBlockDevice::open(&source)
+        .with_context(|| format!("open {} read-only", source.display()))?;
     let inspect = inspect_device(&device).context("doctor inspect source")?;
     let volume_report = volume_report_in_device(&device).ok();
     let resolver_report = resolver_report_in_device(&device).ok();
@@ -269,16 +314,27 @@ fn doctor_command(source: PathBuf, json: bool) -> anyhow::Result<()> {
     let mut warnings: Vec<String> = Vec::new();
     match inspect.status {
         InspectStatus::ApfsContainerDetected => {}
-        InspectStatus::NotApfs => blockers.push("source is not recognised as an APFS container or GPT-wrapped APFS image".to_owned()),
+        InspectStatus::NotApfs => blockers.push(
+            "source is not recognised as an APFS container or GPT-wrapped APFS image".to_owned(),
+        ),
         InspectStatus::Refused => blockers.push("initial APFS inspection was refused".to_owned()),
     }
-    if volume_report.as_ref().map_or(true, |report| !matches!(report.status, VolumeReportStatus::Available)) {
+    if volume_report
+        .as_ref()
+        .is_none_or(|report| !matches!(report.status, VolumeReportStatus::Available))
+    {
         warnings.push("volume report is unavailable or synthetic-only".to_owned());
     }
-    if resolver_report.as_ref().map_or(true, |report| !matches!(report.status, ObjectMapResolverStatus::Available)) {
+    if resolver_report
+        .as_ref()
+        .is_none_or(|report| !matches!(report.status, ObjectMapResolverStatus::Available))
+    {
         warnings.push("object-map resolver is unavailable or synthetic-only".to_owned());
     }
-    if directory_report.as_ref().map_or(true, |report| !matches!(report.status, DirectoryReportStatus::Available)) {
+    if directory_report
+        .as_ref()
+        .is_none_or(|report| !matches!(report.status, DirectoryReportStatus::Available))
+    {
         warnings.push("directory listing is unavailable or synthetic-only".to_owned());
     }
 
@@ -328,27 +384,41 @@ fn doctor_command(source: PathBuf, json: bool) -> anyhow::Result<()> {
     println!("APFS-RS doctor report");
     println!("source: {}", source.display());
     println!("readiness: {readiness}");
-    if let Some(items) = envelope.get("blockers").and_then(serde_json::Value::as_array) {
+    if let Some(items) = envelope
+        .get("blockers")
+        .and_then(serde_json::Value::as_array)
+    {
         for item in items {
-            println!("blocker: {}", item.as_str().unwrap_or("<non-string blocker>"));
+            println!(
+                "blocker: {}",
+                item.as_str().unwrap_or("<non-string blocker>")
+            );
         }
     }
-    if let Some(items) = envelope.get("warnings").and_then(serde_json::Value::as_array) {
+    if let Some(items) = envelope
+        .get("warnings")
+        .and_then(serde_json::Value::as_array)
+    {
         for item in items {
-            println!("warning: {}", item.as_str().unwrap_or("<non-string warning>"));
+            println!(
+                "warning: {}",
+                item.as_str().unwrap_or("<non-string warning>")
+            );
         }
     }
     Ok(())
 }
 
 fn diagnostics_export_command(source: PathBuf, out: PathBuf, json: bool) -> anyhow::Result<()> {
-    let device = ImageBlockDevice::open(&source).with_context(|| format!("open {} read-only", source.display()))?;
+    let device = ImageBlockDevice::open(&source)
+        .with_context(|| format!("open {} read-only", source.display()))?;
     let inspect = inspect_device(&device).context("diagnostic inspect source")?;
     let volume_report = volume_report_in_device(&device).ok();
     let resolver_report = resolver_report_in_device(&device).ok();
     let directory_report = directory_report_in_device(&device).ok();
 
-    fs::create_dir_all(&out).with_context(|| format!("create diagnostics output directory {}", out.display()))?;
+    fs::create_dir_all(&out)
+        .with_context(|| format!("create diagnostics output directory {}", out.display()))?;
     let bundle_path = out.join("apfs-diagnostics-redacted.json");
     let bundle = serde_json::json!({
         "schema_version": "0.18.0",
@@ -393,7 +463,8 @@ fn diagnostics_export_command(source: PathBuf, out: PathBuf, json: bool) -> anyh
 }
 
 fn lookup_object_command(source: PathBuf, oid: u64, xid: u64, json: bool) -> anyhow::Result<()> {
-    let device = ImageBlockDevice::open(&source).with_context(|| format!("open {} read-only", source.display()))?;
+    let device = ImageBlockDevice::open(&source)
+        .with_context(|| format!("open {} read-only", source.display()))?;
     let report = lookup_object_in_device(&device, oid, xid).context("lookup object")?;
 
     if json {
@@ -413,7 +484,10 @@ fn lookup_object_command(source: PathBuf, oid: u64, xid: u64, json: bool) -> any
     if let Some(lookup) = &report.lookup {
         if lookup.matched {
             println!("matched xid: {}", lookup.matched_xid.unwrap_or_default());
-            println!("physical block: {}", lookup.physical_address.unwrap_or_default());
+            println!(
+                "physical block: {}",
+                lookup.physical_address.unwrap_or_default()
+            );
             println!("size bytes: {}", lookup.size_bytes.unwrap_or_default());
         }
     }
@@ -425,14 +499,17 @@ fn lookup_object_command(source: PathBuf, oid: u64, xid: u64, json: bool) -> any
     }
 
     if !matches!(report.status, ObjectLookupStatus::Found) {
-        anyhow::bail!("object lookup did not find a record; rerun with --json for structured diagnostics");
+        anyhow::bail!(
+            "object lookup did not find a record; rerun with --json for structured diagnostics"
+        );
     }
 
     Ok(())
 }
 
 fn volumes_command(source: PathBuf, json: bool) -> anyhow::Result<()> {
-    let device = ImageBlockDevice::open(&source).with_context(|| format!("open {} read-only", source.display()))?;
+    let device = ImageBlockDevice::open(&source)
+        .with_context(|| format!("open {} read-only", source.display()))?;
     let report = volume_report_in_device(&device).context("build APFS volume report")?;
 
     if json {
@@ -465,14 +542,17 @@ fn volumes_command(source: PathBuf, json: bool) -> anyhow::Result<()> {
     }
 
     if !matches!(report.status, VolumeReportStatus::Available) {
-        anyhow::bail!("volume report is not available; rerun with --json for structured diagnostics");
+        anyhow::bail!(
+            "volume report is not available; rerun with --json for structured diagnostics"
+        );
     }
 
     Ok(())
 }
 
 fn resolver_report_command(source: PathBuf, json: bool) -> anyhow::Result<()> {
-    let device = ImageBlockDevice::open(&source).with_context(|| format!("open {} read-only", source.display()))?;
+    let device = ImageBlockDevice::open(&source)
+        .with_context(|| format!("open {} read-only", source.display()))?;
     let report = resolver_report_in_device(&device).context("build object-map resolver report")?;
 
     if json {
@@ -488,7 +568,10 @@ fn resolver_report_command(source: PathBuf, json: bool) -> anyhow::Result<()> {
         println!("root block: {}", resolver.root_block_index);
         println!("root level: {}", resolver.root_level);
         println!("index records: {}", resolver.index_record_count);
-        println!("additional leaf nodes: {}", resolver.additional_leaf_node_count);
+        println!(
+            "additional leaf nodes: {}",
+            resolver.additional_leaf_node_count
+        );
         println!("aggregate records: {}", resolver.aggregate_record_count);
         println!("lookup strategy: {}", resolver.lookup_strategy);
     }
@@ -500,15 +583,24 @@ fn resolver_report_command(source: PathBuf, json: bool) -> anyhow::Result<()> {
     }
 
     if !matches!(report.status, ObjectMapResolverStatus::Available) {
-        anyhow::bail!("object-map resolver is not available; rerun with --json for structured diagnostics");
+        anyhow::bail!(
+            "object-map resolver is not available; rerun with --json for structured diagnostics"
+        );
     }
 
     Ok(())
 }
 
-fn btree_cursor_report_command(source: PathBuf, oid: u64, xid: u64, json: bool) -> anyhow::Result<()> {
-    let device = ImageBlockDevice::open(&source).with_context(|| format!("open {} read-only", source.display()))?;
-    let report = btree_cursor_report_in_device(&device, oid, xid).context("build B-tree cursor report")?;
+fn btree_cursor_report_command(
+    source: PathBuf,
+    oid: u64,
+    xid: u64,
+    json: bool,
+) -> anyhow::Result<()> {
+    let device = ImageBlockDevice::open(&source)
+        .with_context(|| format!("open {} read-only", source.display()))?;
+    let report =
+        btree_cursor_report_in_device(&device, oid, xid).context("build B-tree cursor report")?;
 
     if json {
         println!("{}", serde_json::to_string_pretty(&report)?);
@@ -526,8 +618,14 @@ fn btree_cursor_report_command(source: PathBuf, oid: u64, xid: u64, json: bool) 
         println!("root level: {}", cursor.root_level);
         println!("steps: {}", cursor.steps.len());
         if cursor.lookup.matched {
-            println!("matched xid: {}", cursor.lookup.matched_xid.unwrap_or_default());
-            println!("physical block: {}", cursor.lookup.physical_address.unwrap_or_default());
+            println!(
+                "matched xid: {}",
+                cursor.lookup.matched_xid.unwrap_or_default()
+            );
+            println!(
+                "physical block: {}",
+                cursor.lookup.physical_address.unwrap_or_default()
+            );
         }
     }
     for warning in &report.warnings {
@@ -538,15 +636,17 @@ fn btree_cursor_report_command(source: PathBuf, oid: u64, xid: u64, json: bool) 
     }
 
     if !matches!(report.status, BTreeCursorStatus::Available) {
-        anyhow::bail!("B-tree cursor is not available; rerun with --json for structured diagnostics");
+        anyhow::bail!(
+            "B-tree cursor is not available; rerun with --json for structured diagnostics"
+        );
     }
 
     Ok(())
 }
 
-
 fn read_object_command(source: PathBuf, oid: u64, xid: u64, json: bool) -> anyhow::Result<()> {
-    let device = ImageBlockDevice::open(&source).with_context(|| format!("open {} read-only", source.display()))?;
+    let device = ImageBlockDevice::open(&source)
+        .with_context(|| format!("open {} read-only", source.display()))?;
     let report = read_mapped_object_in_device(&device, oid, xid).context("read mapped object")?;
 
     if json {
@@ -581,7 +681,8 @@ fn read_object_command(source: PathBuf, oid: u64, xid: u64, json: bool) -> anyho
 }
 
 fn ls_command(source: PathBuf, json: bool) -> anyhow::Result<()> {
-    let device = ImageBlockDevice::open(&source).with_context(|| format!("open {} read-only", source.display()))?;
+    let device = ImageBlockDevice::open(&source)
+        .with_context(|| format!("open {} read-only", source.display()))?;
     let report = directory_report_in_device(&device).context("directory report")?;
 
     if json {
@@ -592,9 +693,15 @@ fn ls_command(source: PathBuf, json: bool) -> anyhow::Result<()> {
     println!("APFS-RS synthetic directory report");
     println!("source: {}", source.display());
     println!("status: {:?}", report.status);
-    println!("volume: {}", report.volume_name.as_deref().unwrap_or("<unknown>"));
+    println!(
+        "volume: {}",
+        report.volume_name.as_deref().unwrap_or("<unknown>")
+    );
     for entry in &report.entries {
-        println!("{}\t{}\t{}\t{}", entry.object_id, entry.item_kind_raw, entry.logical_size, entry.name);
+        println!(
+            "{}\t{}\t{}\t{}",
+            entry.object_id, entry.item_kind_raw, entry.logical_size, entry.name
+        );
     }
     for warning in &report.warnings {
         eprintln!("warning {}: {}", warning.code, warning.message);
@@ -610,7 +717,8 @@ fn ls_command(source: PathBuf, json: bool) -> anyhow::Result<()> {
 }
 
 fn cat_command(source: PathBuf, name: String, json: bool) -> anyhow::Result<()> {
-    let device = ImageBlockDevice::open(&source).with_context(|| format!("open {} read-only", source.display()))?;
+    let device = ImageBlockDevice::open(&source)
+        .with_context(|| format!("open {} read-only", source.display()))?;
     let report = file_read_report_in_device(&device, &name).context("synthetic file preview")?;
 
     if json {
@@ -638,9 +746,6 @@ fn cat_command(source: PathBuf, name: String, json: bool) -> anyhow::Result<()> 
     Ok(())
 }
 
-
-
-
 fn winfsp_callback_matrix_command(json: bool) -> anyhow::Result<()> {
     let matrix = winfsp_readonly_callback_matrix();
     if json {
@@ -649,7 +754,10 @@ fn winfsp_callback_matrix_command(json: bool) -> anyhow::Result<()> {
     }
     println!("APFS-RS WinFsp read-only callback matrix");
     for callback in &matrix.callbacks {
-        println!("{}\t{}\t{}", callback.callback, callback.decision, callback.note);
+        println!(
+            "{}\t{}\t{}",
+            callback.callback, callback.decision, callback.note
+        );
     }
     println!("safety: {}", matrix.safety_note);
     Ok(())
@@ -681,7 +789,8 @@ fn mount_plan_command(source: PathBuf, mountpoint: String, json: bool) -> anyhow
 }
 
 fn diagnostics_bundle_command(source: PathBuf, json: bool) -> anyhow::Result<()> {
-    let device = ImageBlockDevice::open(&source).with_context(|| format!("open {} read-only", source.display()))?;
+    let device = ImageBlockDevice::open(&source)
+        .with_context(|| format!("open {} read-only", source.display()))?;
     let inspect = inspect_device(&device).context("inspect for diagnostics bundle")?;
     let resolver = resolver_report_in_device(&device).ok();
     let volumes = volume_report_in_device(&device).ok();
@@ -758,10 +867,21 @@ fn diagnostics_bundle_command(source: PathBuf, json: bool) -> anyhow::Result<()>
 }
 
 fn stat_command(source: PathBuf, name: String, json: bool) -> anyhow::Result<()> {
-    let device = ImageBlockDevice::open(&source).with_context(|| format!("open {} read-only", source.display()))?;
+    let device = ImageBlockDevice::open(&source)
+        .with_context(|| format!("open {} read-only", source.display()))?;
     let report = directory_report_in_device(&device).context("directory report for stat")?;
-    let entry = report.entries.iter().find(|entry| entry.name == name).cloned();
-    let status = if entry.is_some() { "found" } else if matches!(report.status, DirectoryReportStatus::Available) { "not_found" } else { "refused" };
+    let entry = report
+        .entries
+        .iter()
+        .find(|entry| entry.name == name)
+        .cloned();
+    let status = if entry.is_some() {
+        "found"
+    } else if matches!(report.status, DirectoryReportStatus::Available) {
+        "not_found"
+    } else {
+        "refused"
+    };
     let envelope = serde_json::json!({
         "schema_version": "0.18.0",
         "source_kind": "image",
@@ -811,7 +931,9 @@ fn path_policy_command(name: String, case_sensitive: bool, json: bool) -> anyhow
         eprintln!("error: {error}");
     }
     if !report.safe_for_host_path {
-        anyhow::bail!("path policy refused this APFS name component; rerun with --json for details");
+        anyhow::bail!(
+            "path policy refused this APFS name component; rerun with --json for details"
+        );
     }
     Ok(())
 }
@@ -843,8 +965,14 @@ fn metadata_feature_report_command(feature: String, json: bool) -> anyhow::Resul
     println!("APFS-RS metadata feature report");
     println!("feature: {}", report.feature_family);
     println!("synthetic support: {}", report.synthetic_support);
-    println!("production read support: {}", report.production_read_support);
-    println!("production write support: {}", report.production_write_support);
+    println!(
+        "production read support: {}",
+        report.production_read_support
+    );
+    println!(
+        "production write support: {}",
+        report.production_write_support
+    );
     println!("modeled fields: {}", report.modeled_fields.join(", "));
     for missing in &report.missing_fields {
         println!("missing: {missing}");
@@ -854,7 +982,8 @@ fn metadata_feature_report_command(feature: String, json: bool) -> anyhow::Resul
 
 fn extract_command(source: PathBuf, name: String, dest: PathBuf, json: bool) -> anyhow::Result<()> {
     validate_safe_output_name(&name)?;
-    let device = ImageBlockDevice::open(&source).with_context(|| format!("open {} read-only", source.display()))?;
+    let device = ImageBlockDevice::open(&source)
+        .with_context(|| format!("open {} read-only", source.display()))?;
     let report = file_read_report_in_device(&device, &name).context("synthetic extract preview")?;
     let mut wrote_path: Option<String> = None;
     let mut wrote_bytes: Option<usize> = None;
@@ -865,9 +994,11 @@ fn extract_command(source: PathBuf, name: String, dest: PathBuf, json: bool) -> 
             anyhow::bail!("synthetic file report did not include a hex payload preview");
         };
         let bytes = decode_hex(hex)?;
-        fs::create_dir_all(&dest).with_context(|| format!("create destination directory {}", dest.display()))?;
+        fs::create_dir_all(&dest)
+            .with_context(|| format!("create destination directory {}", dest.display()))?;
         let out_path = dest.join(&name);
-        fs::write(&out_path, &bytes).with_context(|| format!("write extracted preview {}", out_path.display()))?;
+        fs::write(&out_path, &bytes)
+            .with_context(|| format!("write extracted preview {}", out_path.display()))?;
         wrote_bytes = Some(bytes.len());
         wrote_path = Some(out_path.display().to_string());
         status = "written";
@@ -895,7 +1026,10 @@ fn extract_command(source: PathBuf, name: String, dest: PathBuf, json: bool) -> 
     println!("APFS-RS synthetic extract report");
     println!("source: {}", source.display());
     println!("status: {status}");
-    if let Some(path) = envelope.get("wrote_path").and_then(serde_json::Value::as_str) {
+    if let Some(path) = envelope
+        .get("wrote_path")
+        .and_then(serde_json::Value::as_str)
+    {
         println!("wrote: {path}");
     }
     if status != "written" {
@@ -906,7 +1040,14 @@ fn extract_command(source: PathBuf, name: String, dest: PathBuf, json: bool) -> 
 
 fn validate_safe_output_name(name: &str) -> anyhow::Result<()> {
     let path = Path::new(name);
-    if name.is_empty() || name.contains('/') || name.contains('\\') || name == "." || name == ".." || path.is_absolute() || path.components().count() != 1 {
+    if name.is_empty()
+        || name.contains('/')
+        || name.contains('\\')
+        || name == "."
+        || name == ".."
+        || path.is_absolute()
+        || path.components().count() != 1
+    {
         anyhow::bail!("unsafe synthetic extraction name `{name}`; provide a single file name without path separators");
     }
     Ok(())
@@ -947,8 +1088,14 @@ fn print_human_report(source: &std::path::Path, report: &InspectReport) {
         println!("container: {}", container.uuid);
         println!("block size: {}", container.block_size);
         println!("block count: {}", container.block_count);
-        println!("incompatible features: 0x{:016x}", container.incompatible_features);
-        println!("filesystem OIDs parsed from superblock prefix: {:?}", container.filesystem_oids);
+        println!(
+            "incompatible features: 0x{:016x}",
+            container.incompatible_features
+        );
+        println!(
+            "filesystem OIDs parsed from superblock prefix: {:?}",
+            container.filesystem_oids
+        );
         if let Some(checksum) = &container.checksum {
             println!("object checksum valid: {}", checksum.valid);
             println!("stored checksum: {}", checksum.stored_checksum_hex);
@@ -956,24 +1103,54 @@ fn print_human_report(source: &std::path::Path, report: &InspectReport) {
         }
     }
     if let Some(checkpoints) = &report.checkpoint_scan {
-        println!("checkpoint descriptor base block: {}", checkpoints.descriptor_base_block);
-        println!("checkpoint descriptor len blocks: {}", checkpoints.descriptor_len_blocks);
+        println!(
+            "checkpoint descriptor base block: {}",
+            checkpoints.descriptor_base_block
+        );
+        println!(
+            "checkpoint descriptor len blocks: {}",
+            checkpoints.descriptor_len_blocks
+        );
         println!("checkpoint candidates: {}", checkpoints.candidates.len());
-        println!("checkpoint map blocks: {}", checkpoints.checkpoint_maps.len());
+        println!(
+            "checkpoint map blocks: {}",
+            checkpoints.checkpoint_maps.len()
+        );
         if let Some(xid) = checkpoints.latest_valid_xid {
             println!("latest valid checkpoint candidate xid: {xid}");
         }
         if let Some(omap) = &checkpoints.container_object_map {
             println!("container object map block: {}", omap.object_block_index);
-            println!("container object map tree oid: {}", omap.object_map.tree_oid);
-            println!("container object map checksum valid: {}", omap.object_map.checksum.valid);
+            println!(
+                "container object map tree oid: {}",
+                omap.object_map.tree_oid
+            );
+            println!(
+                "container object map checksum valid: {}",
+                omap.object_map.checksum.valid
+            );
             if let Some(tree_root) = &omap.tree_root {
-                println!("container object map B-tree root block: {}", tree_root.object_block_index);
+                println!(
+                    "container object map B-tree root block: {}",
+                    tree_root.object_block_index
+                );
                 println!("B-tree root key count: {}", tree_root.node.key_count);
-                println!("B-tree root checksum valid: {}", tree_root.node.checksum.valid);
-                println!("root preliminary OMAP records decoded: {}", tree_root.preliminary_omap_records.len());
-                println!("additional mapped OMAP leaf nodes: {}", tree_root.additional_mapped_leaf_nodes.len());
-                println!("aggregate OMAP records decoded: {}", tree_root.aggregate_omap_record_count);
+                println!(
+                    "B-tree root checksum valid: {}",
+                    tree_root.node.checksum.valid
+                );
+                println!(
+                    "root preliminary OMAP records decoded: {}",
+                    tree_root.preliminary_omap_records.len()
+                );
+                println!(
+                    "additional mapped OMAP leaf nodes: {}",
+                    tree_root.additional_mapped_leaf_nodes.len()
+                );
+                println!(
+                    "aggregate OMAP records decoded: {}",
+                    tree_root.aggregate_omap_record_count
+                );
                 println!("lookup samples: {}", tree_root.lookup_samples.len());
             }
         }

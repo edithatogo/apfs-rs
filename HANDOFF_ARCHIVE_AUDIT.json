@@ -1,32 +1,47 @@
 {
-  "schema_version": "0.26.0",
-  "file_count": 1030,
+  "schema_version": "0.29.0",
+  "file_count": 1352,
   "large_files_over_5mb": [],
   "files": [
     {
+      "path": ".DS_Store",
+      "size": 12292,
+      "sha256": "d9e3756f5602e31c75b3ff870e4f37c632bc1635fdd3ba950b67a0d0272e23fe"
+    },
+    {
       "path": ".agents/skills/conductor-context-management/SKILL.md",
-      "size": 646,
-      "sha256": "a3933185d9650d008ea8ae93fa386a73bae172ec55328f86f9069e7163e4ad93"
+      "size": 1324,
+      "sha256": "26faa354d6d82dee5c86b54e77f881b34d3243db7635e19e9dbfe0f2abda26b1"
     },
     {
       "path": ".cargo/config.toml",
-      "size": 168,
-      "sha256": "809b083ba04052bab23cff9b850296b27a6e15017d33be7765e6950a5191fb3f"
+      "size": 281,
+      "sha256": "0d4c131c6ed2804c7ed6cf741af0fc507708acef185afaffd8db470ce6ccf00f"
     },
     {
       "path": ".claude/skills/conductor-context-management/SKILL.md",
-      "size": 646,
-      "sha256": "a3933185d9650d008ea8ae93fa386a73bae172ec55328f86f9069e7163e4ad93"
+      "size": 1324,
+      "sha256": "26faa354d6d82dee5c86b54e77f881b34d3243db7635e19e9dbfe0f2abda26b1"
     },
     {
       "path": ".config/cargo-llvm-cov.toml",
-      "size": 341,
-      "sha256": "3fbbfbd6a72049e9783f6743db028bc9d8643e30722353b976bd901bd3cb87e2"
+      "size": 540,
+      "sha256": "7777a1a38dd70928dab7e52d00293d342cedb2c3329f4f22921816cc397954a3"
+    },
+    {
+      "path": ".config/cargo-mutants.toml",
+      "size": 524,
+      "sha256": "42b33aba009f42321da292bbe4834e1cd1cc4360a3b0f410432ee76a9310248b"
     },
     {
       "path": ".config/nextest.toml",
       "size": 246,
       "sha256": "8c167fcc86634a4d9b8e336b5cd669af5eb40d2fa0980d973f924a7a26fcbdb1"
+    },
+    {
+      "path": ".config/proptest.toml",
+      "size": 233,
+      "sha256": "fc2e1807af8fb26bb9122b05f8691e93cdc19a54a9e5cbb3edcd9a0a33ec384b"
     },
     {
       "path": ".devcontainer/Dockerfile",
@@ -45,18 +60,13 @@
     },
     {
       "path": ".gemini/skills/conductor-context-management/SKILL.md",
-      "size": 646,
-      "sha256": "a3933185d9650d008ea8ae93fa386a73bae172ec55328f86f9069e7163e4ad93"
+      "size": 1324,
+      "sha256": "26faa354d6d82dee5c86b54e77f881b34d3243db7635e19e9dbfe0f2abda26b1"
     },
     {
       "path": ".github/copilot-instructions.md",
       "size": 843,
       "sha256": "621cd70a011ae76f8dccbd7cbb31769d88867b4165b519ce165725e5fb274786"
-    },
-    {
-      "path": ".github/dependabot.yml",
-      "size": 325,
-      "sha256": "e6ea7e37efcddc1497ae36a5aeec4592b4ed149f61b8e19df3a4a78a4989d33b"
     },
     {
       "path": ".github/instructions/apfs-core.instructions.md",
@@ -75,28 +85,93 @@
     },
     {
       "path": ".github/workflows/ci.yml",
-      "size": 677,
-      "sha256": "d715c705d7dbcd5ae55dfdfc34a99ad8913e703cb1b5035675b1ba91de330d24"
+      "size": 698,
+      "sha256": "64e51636f349d769b0f48514903b9f386964ff2dc549a2a6a1e51cce30716a38"
+    },
+    {
+      "path": ".github/workflows/coverage.yml",
+      "size": 658,
+      "sha256": "527c1b700a93d3286b8663be8740588a717915b912597ee8bc7534c7c9923469"
+    },
+    {
+      "path": ".github/workflows/docs-quality.yml",
+      "size": 1020,
+      "sha256": "4909c8af12f25afd000f28a44e663cc13a1b0af811f3c686d0cdf24253075a66"
+    },
+    {
+      "path": ".github/workflows/docs-site.yml",
+      "size": 554,
+      "sha256": "f0fd5154407cc624efca5db1be78130d3fb0804545485675733e8e7607206977"
+    },
+    {
+      "path": ".github/workflows/fuzz.yml",
+      "size": 511,
+      "sha256": "de1ec063e3c8b7dd47e0e9eafab7def3f2a22afb06d4eb60e50ccd2f42455e73"
     },
     {
       "path": ".github/workflows/local-handoff.yml",
-      "size": 685,
-      "sha256": "43f4e340f5c7a38b44b9d1fc5668cdb4d798b11151813d5bb7ef2878956bdb66"
+      "size": 822,
+      "sha256": "eb678b47722633424969defdde0c59dff0dea560a9f2eb38dec9634517e16c02"
+    },
+    {
+      "path": ".github/workflows/mutation.yml",
+      "size": 657,
+      "sha256": "ed9e2191d6949217c507ccd7b586c1315a3af4b1d9b6f966bbb42dd5ae85f6bf"
+    },
+    {
+      "path": ".github/workflows/profiling.yml",
+      "size": 462,
+      "sha256": "8f066386d5bbfa9758c9bb6657fd84bdbd845732c089a31ae47124e60c25d918"
+    },
+    {
+      "path": ".github/workflows/provenance-verify.yml",
+      "size": 556,
+      "sha256": "65c07f96b653a5896c06e4cb0b619cdb3cf13e384a83bc21738e2179681fca72"
+    },
+    {
+      "path": ".github/workflows/python-property.yml",
+      "size": 495,
+      "sha256": "98e887cab03b121260f95acf61002e03d7fdb8b9167f5a2a303c350b95f34de0"
+    },
+    {
+      "path": ".github/workflows/quality-gates.yml",
+      "size": 1197,
+      "sha256": "29fe4b78ecc224fc150c642305607e3c79fd6466681a94ee50d2eb41436a5377"
+    },
+    {
+      "path": ".github/workflows/release-automation.yml",
+      "size": 482,
+      "sha256": "7eef530da79afc32da94fe454b185442618beeb110a0b79fd02529c75f8439b1"
     },
     {
       "path": ".github/workflows/release.yml",
-      "size": 764,
-      "sha256": "80a7aaf13c9f624f8bbfb467d4f3ba30ac3e26af6a89bcb7543b5d54e019df7d"
+      "size": 725,
+      "sha256": "bfbef6a7cba37ee8937e012e2bd895c9401b563e73a0130f9392e157cd5e057f"
     },
     {
       "path": ".github/workflows/security.yml",
-      "size": 346,
-      "sha256": "88d022e435c821d16d9c8bb710c3c4a8e32585dd192fb7a82a0cb912db790502"
+      "size": 460,
+      "sha256": "bf91b6309a72089d9dfaadc3988636c25f9cb925e4a2d5e193e156d2eae829ef"
+    },
+    {
+      "path": ".github/workflows/strict-quality.yml",
+      "size": 1794,
+      "sha256": "45d912f93872b51bec08bb75d37ba585a39ef3c4c86f7980972d446be2c6cecf"
+    },
+    {
+      "path": ".github/workflows/supply-chain.yml",
+      "size": 1188,
+      "sha256": "6aa8cbcdcbe4b4bae25af0f75df91ed1d03110f7c092d0037cc28131430d2e3b"
+    },
+    {
+      "path": ".github/workflows/workflow-security.yml",
+      "size": 825,
+      "sha256": "da085b716c582ae64d63e82e8fa81765331e2db47e6aafcd48e5d2ec2627f4e1"
     },
     {
       "path": ".gitignore",
-      "size": 32,
-      "sha256": "b865edb97204d1b4d111f2822107215fcc430e49ef9cbf531dd3e97dcb0440f0"
+      "size": 179,
+      "sha256": "24ccc8fe078e6d1612f15e94c93d09f35f990e4506f52b085bcd434d669698b2"
     },
     {
       "path": ".markdownlint.yaml",
@@ -114,19 +189,29 @@
       "sha256": "3584f7823c0d77dbf2a1e0f9b413384bbb930c42324733ecbd2c8ab1538ed7a2"
     },
     {
+      "path": "ACTION_PINNING_AUDIT.json",
+      "size": 7966,
+      "sha256": "2fee19752e328988b1a8d842f021d7002aba95601f5f55d64f71f9cc3658fc18"
+    },
+    {
+      "path": "ACTION_PINNING_AUDIT.md",
+      "size": 177,
+      "sha256": "5ee56095524f5679cfe5f46d393e2ca173e9671a3df698adb6e10bf87e524186"
+    },
+    {
       "path": "AGENTS.md",
       "size": 2069,
-      "sha256": "1b06a6419f4aee69cddc0769372fb8d9522287791135338544702fb65add18af"
+      "sha256": "599432e6c246f78a417845459756cdb72b2f45a45bf5fdd289e1a839e798af04"
     },
     {
       "path": "AGENT_HANDOFF_BRIEF.json",
-      "size": 1114,
-      "sha256": "c5c191acb18b73d4893107551aa31297349505aab9b196b0cf314048ffe55631"
+      "size": 1220,
+      "sha256": "aaa55aeee287b1c9d0a9a29e1d42a09660c76c67cfa67e7a1ed39f6ac5ece139"
     },
     {
       "path": "AGENT_HANDOFF_BRIEF.md",
-      "size": 928,
-      "sha256": "6e90c6ea476f06eca8d799aa74bc8ddcdb44c7d7176e44c18ab85746490ccf26"
+      "size": 929,
+      "sha256": "851a61ab7de679ade399ea65c053561ed049daacb494667207cca2feba5d80b6"
     },
     {
       "path": "APFS_OFFSET_AUDIT.json",
@@ -141,12 +226,27 @@
     {
       "path": "API_SURFACE.json",
       "size": 28526,
-      "sha256": "90c36ff4e248335ff152da99efd765cf9b25048d18a48a02af502fbea5b0be2e"
+      "sha256": "c8b091c566df098720bccfe0053827be14b335801bd1876781ad169d0a5cd2f9"
     },
     {
       "path": "API_SURFACE.md",
       "size": 16465,
       "sha256": "4ce5630bb508779624567765767c523bf2af58290724234fc2c90e9caa66acc5"
+    },
+    {
+      "path": "ASTRO7_DOCS_HARDENING_AUDIT.json",
+      "size": 172,
+      "sha256": "147956ca682bb9e25771207c142cdaf42ad9d8c0c9cd950dfac4dc9ffad08140"
+    },
+    {
+      "path": "ASTRO7_DOCS_HARDENING_AUDIT.md",
+      "size": 92,
+      "sha256": "bc5844ef634b14250144122f60dde0d813e635a49b129d27be0a5e2c0be2f744"
+    },
+    {
+      "path": "ASTRO_DOCS_PLAN.md",
+      "size": 609,
+      "sha256": "9a903c18b29bec688facd08c25ab11f47b6875507caf37118f7a54ad9b81e291"
     },
     {
       "path": "BACKLOG_ISSUE_EXPORT.json",
@@ -164,14 +264,39 @@
       "sha256": "d4231f95ceb708a154914137c98cd0654d38404615af49409cc5e10ddf056721"
     },
     {
+      "path": "BENCHMARK_REGRESSION_AUDIT.json",
+      "size": 146,
+      "sha256": "b738e8efb10cf3a7f1338b7df65f5f9f75c766c93b2a2b9e7c0baaa2f5769e07"
+    },
+    {
+      "path": "BENCHMARK_REGRESSION_AUDIT.md",
+      "size": 92,
+      "sha256": "033b5c8a1433e67d61d86ef0cc6504b2a99889a4278df7d1368b05784b78f495"
+    },
+    {
+      "path": "BENCHMARK_REGRESSION_PLAN.md",
+      "size": 573,
+      "sha256": "6427010876983440115a3d6e4af8c040fe9b8f046a774ae4a8bfd89bedcfcce0"
+    },
+    {
+      "path": "BLEEDING_EDGE_REPO_AUDIT.json",
+      "size": 721,
+      "sha256": "f1ff74b699413c9fb6eb999b8ed3e4af9a5dd91819094f47b5777446ae8811e6"
+    },
+    {
+      "path": "BLEEDING_EDGE_REPO_AUDIT.md",
+      "size": 335,
+      "sha256": "fc4649dc504e599d9e522dce74fda6eb794bae0166b0a0382780be2eb976ec51"
+    },
+    {
       "path": "CARGOLESS_SMOKE_REPORT.json",
-      "size": 3381,
-      "sha256": "14c343b1cff522188eb1aa3c0469e84e27ea5822598e807b82b1b5a1299b5308"
+      "size": 5177,
+      "sha256": "f89fcbf322994079ea6a3a1c9e9ce5b3c06ad7a5613ff6ccec1330a10a2ff76f"
     },
     {
       "path": "CARGOLESS_SMOKE_REPORT.md",
-      "size": 1379,
-      "sha256": "269085a71e7fb9d3a3873c5ec952f09a77ba819c15b6cd387cb25039dd1a00c1"
+      "size": 2095,
+      "sha256": "9529fdfe2948414b7ea8192633c2989358645158ac0dc9ac8a3f7c22523bbad4"
     },
     {
       "path": "CARGO_DEPENDENCY_GRAPH.json",
@@ -189,6 +314,16 @@
       "sha256": "eac939395ecb458e7798610140a24c0ec4d4fb28d793af796482c113d79f3b1e"
     },
     {
+      "path": "CARGO_VET_POLICY_AUDIT.json",
+      "size": 203,
+      "sha256": "c5f1e81ad10ac1b166c85fe71d61ff458e60320822f64572330bc83c2728bc15"
+    },
+    {
+      "path": "CARGO_VET_POLICY_AUDIT.md",
+      "size": 34,
+      "sha256": "51ec14647f1dabe7b6120977b1702f8b20f265b5358a45048a5347a03df3e984"
+    },
+    {
       "path": "CARGO_WORKSPACE_AUDIT.json",
       "size": 1108,
       "sha256": "642837b3b9c9c46d6dd353d5b1eb99ef600b16c4b3fd6cf5ee7ca35b7c658810"
@@ -199,6 +334,21 @@
       "sha256": "fd62815f23c263476963f29b3e426020eb869e27c6d1dac9bdd4202585f1cdc1"
     },
     {
+      "path": "CI_QUALITY_GATES.json",
+      "size": 283,
+      "sha256": "2f4a3bc2f0f28ed8466f60778fe66a7ade0baf2c252f89d8f0f8da79008a9a89"
+    },
+    {
+      "path": "CI_QUALITY_GATES.md",
+      "size": 154,
+      "sha256": "3ee9569582a5b4d6d7d70ea13e19e7f4e73e32af8d3fde706bed1d5095a55078"
+    },
+    {
+      "path": "CI_TESTING_PROFILING_PLAN.md",
+      "size": 1053,
+      "sha256": "d7113e24066d456cc31d4cbbe6a7c9825ac858d8a417780dfb8d07ac26b5ed9c"
+    },
+    {
       "path": "CLAUDE.md",
       "size": 2069,
       "sha256": "1b06a6419f4aee69cddc0769372fb8d9522287791135338544702fb65add18af"
@@ -206,12 +356,12 @@
     {
       "path": "CLI_CONTRACT.json",
       "size": 4238,
-      "sha256": "b961e6b6f6151fb3ef42fa9e6975098bb5d73dfdb1f83b49a293c0d7edeb24c9"
+      "sha256": "b974400c47aa52c36ee53e142f91c0280dbed91cdf08dd364ad11170c8455634"
     },
     {
       "path": "CLI_CONTRACT.md",
       "size": 2132,
-      "sha256": "f61041c2fa47afdbb66e4d0304daac756eba9fecc1a743956331d881ac28c2c2"
+      "sha256": "d61ac167572630bd40f335fa875ede6b990ed295a439573c2cc223d86fa48745"
     },
     {
       "path": "CONTEXT.md",
@@ -221,17 +371,17 @@
     {
       "path": "CURRENT_ENVIRONMENT.json",
       "size": 6020,
-      "sha256": "7a4e9ea766aa585173aa164ae90102a9f997fd4298693c4cdd179772a5e298c3"
+      "sha256": "13b0574dea2ea672d38ca8c60bd5a95239823994d1b3ed6d8516770f066e31df"
     },
     {
       "path": "CURRENT_ENVIRONMENT.md",
       "size": 2323,
-      "sha256": "505b04d40a742225f97791ae2eb618f7fd7d75bfaa1e6961e60553378d3ea4f9"
+      "sha256": "1d69e31222bd7f57c68e35c57e3570cce043dda4d8353fd396a8ad9b8e20d098"
     },
     {
       "path": "CURRENT_ENVIRONMENT_REMAINING.json",
       "size": 4856,
-      "sha256": "8d4270ec98befe443f8c2f08d0099566f502d616ad5a296f9f0d421d428e2c9b"
+      "sha256": "455894eee2f892178748dc61140a8489a9f890915340cc68dd6423cd3ef06f30"
     },
     {
       "path": "CURRENT_ENVIRONMENT_REMAINING.md",
@@ -250,48 +400,118 @@
     },
     {
       "path": "CURRENT_ENV_FINAL_REPORT.json",
-      "size": 914,
-      "sha256": "eab8854ef65d3c6c27ed963745d9cda4e49e6e6d7be743eea2846b1610a567a2"
+      "size": 909,
+      "sha256": "c140341ba25df40945a640bfbadba94f59d82a72a331962bb4df169d4eee36f4"
     },
     {
       "path": "CURRENT_ENV_FINAL_REPORT.md",
-      "size": 772,
-      "sha256": "a61dbb369f7f498e7af12041335676cded90b5001cfcb2ebb88fcb8f811b6371"
+      "size": 777,
+      "sha256": "df2b208f43d432a3d91add3cfec0f47c785d3d33f6248486c8389ffd5ff0462b"
     },
     {
       "path": "CURRENT_ENV_SELFTEST.json",
       "size": 2007,
-      "sha256": "7373a86ea057dfbfa8c9def7c6dfd9ba11ec704c536c674c1274ef53eed2c4d2"
+      "sha256": "5169dae2dbe048ddfbb2e16ad45580bc4c52a245142828731c71cde155965284"
     },
     {
       "path": "CURRENT_ENV_SELFTEST.md",
       "size": 824,
-      "sha256": "813a5936092b380b5c238919a2227940bafd10fce43daca014dde997915cc36e"
+      "sha256": "8bb159f7e3b80a4deb10fba143b98e1e1f5270460d84fd82330f76573afa08a7"
+    },
+    {
+      "path": "CURRENT_ENV_TOOL_INVENTORY_EXTENDED.json",
+      "size": 2840,
+      "sha256": "383b8a30749f2cca4ca3a96296c758325301884eadf1200826453a94e3a60585"
+    },
+    {
+      "path": "CURRENT_ENV_TOOL_INVENTORY_EXTENDED.md",
+      "size": 846,
+      "sha256": "d3af8675e9ac6c2a081f7a3ca6d131f1730b14413c0f81145717dbb55d4f8808"
+    },
+    {
+      "path": "Cargo.lock",
+      "size": 50674,
+      "sha256": "88483b0960d865047457203150673890f462ec1f9ce7d76a77b166f53d3dbec7"
     },
     {
       "path": "Cargo.toml",
-      "size": 799,
-      "sha256": "53bdeb11189651fd957613fc0aeebcc300a7c088c3f12c9826b95eaa46c3b157"
+      "size": 875,
+      "sha256": "15e93d851324bfc52c096df8dcadf68b456edd47a1d9ca49658b0a4108545080"
     },
     {
       "path": "DEPENDENCY_POLICY_AUDIT.json",
-      "size": 2466,
-      "sha256": "517ea894fbb7bab0ad68f813aa038542b06ee6547d3bea352ab8659403375a41"
+      "size": 2686,
+      "sha256": "03978d3dfb4f2612638f7f21a31884915e4626261fae25f61a250540e7a5b7a0"
     },
     {
       "path": "DEPENDENCY_POLICY_AUDIT.md",
-      "size": 426,
-      "sha256": "58cdc63cb93820e6c3a84814bb401a0b22e8bbb1f33fef497bf96f0b825ec9a2"
+      "size": 454,
+      "sha256": "1413170511229ce2091d431534ca86484d500d54d19b3a11ced9fc603dfe76f2"
     },
     {
       "path": "DESIGN.md",
-      "size": 14970,
-      "sha256": "af0c0ea37ebcdc43a32d9caa32685f9fb0e762c6b055c379932e07edfad258f3"
+      "size": 19056,
+      "sha256": "f5adcbd914bf5f0172ab8fe482cd8367a3b3a8e565164010478a6728f7569e2d"
     },
     {
       "path": "DEVELOPMENT_LOOP.md",
       "size": 765,
       "sha256": "aa2ba42acaa5dc5dbc907105140561f6b8acec113f7709b0f071cb793d84afe9"
+    },
+    {
+      "path": "DOCS_AUTOMATION.md",
+      "size": 523,
+      "sha256": "783c5d1045e1d5b9ffb11715d9400da633c773d87dd643609ac18f7b1385d815"
+    },
+    {
+      "path": "DOCS_PACKAGE_AUDIT.json",
+      "size": 1800,
+      "sha256": "263432359dca66fa19a5c8b49e7a282343c63ea91ab041bbca72af7b0d38a278"
+    },
+    {
+      "path": "DOCS_PACKAGE_AUDIT.md",
+      "size": 1108,
+      "sha256": "ab136b90c3ceffbd8de12ac8a609317a14482aa7f79cbe5231c89f0953cf24f9"
+    },
+    {
+      "path": "DOCS_SITE_AUDIT.json",
+      "size": 475,
+      "sha256": "77be3b32cfce353207a0eada9dff01761897aaaa496e42053a663b978f8ff0a0"
+    },
+    {
+      "path": "DOCS_SITE_AUDIT.md",
+      "size": 109,
+      "sha256": "47d55bd2d9d12bfb30225d9bc1527884269414044c71bda9963d64bcb12d20fe"
+    },
+    {
+      "path": "DOCS_SITE_CHECK.json",
+      "size": 102,
+      "sha256": "3f70e707fc5c1a18f1905bc10a4a4ddec704194a3efa0da1474b06af0d65c032"
+    },
+    {
+      "path": "DOCS_SITE_CHECK.md",
+      "size": 80,
+      "sha256": "6c5c2e24ac43faf1e8d85602c328ca3aadb9b2ad50ffe0105435394d15590879"
+    },
+    {
+      "path": "DOCS_SITE_REPORT.json",
+      "size": 256,
+      "sha256": "8324dce948e94729de62998f709c5305a16085326a5271596e10375db62b71e0"
+    },
+    {
+      "path": "DOCS_SITE_REPORT.md",
+      "size": 225,
+      "sha256": "0995ea28dea1f65a8374e1b48a2a1239856f291eb0a0526a6bcc6ca5239fd166"
+    },
+    {
+      "path": "DOCS_SITE_STATIC_CHECK.json",
+      "size": 102,
+      "sha256": "807c6be187ae39b47cc1a12e273a5d63059779453e574db3afd8b8cda7668317"
+    },
+    {
+      "path": "DOCS_SITE_STATIC_CHECK.md",
+      "size": 43,
+      "sha256": "10f48ce5888a60d5727fd7eedc0ce82cd4cf3b2628b1f8eb93da367b59cba2bb"
     },
     {
       "path": "DOCUMENTATION_INDEX_AUDIT.json",
@@ -306,7 +526,7 @@
     {
       "path": "FEATURE_READINESS.json",
       "size": 2033,
-      "sha256": "75fadabbad66d0247b83503540eb67d9d6cfc408e7ebe9a50d54c8cc953b03c1"
+      "sha256": "df643bcaad32f1d807f9e4367c693b8e62b0d3f9de2e6357b5f0eba8d80866ca"
     },
     {
       "path": "FEATURE_READINESS.md",
@@ -320,18 +540,43 @@
     },
     {
       "path": "FIXTURE_COVERAGE_REPORT.json",
-      "size": 2898,
-      "sha256": "866a0000fbb6703f4878bf3c37af2fee10f5c1e7d9016a268d9d94c589ff1d9b"
+      "size": 3223,
+      "sha256": "687e2fd2bf13add9aaae3a875d23bda5d4168edbe485c0db14d736f6ca492635"
     },
     {
       "path": "FIXTURE_COVERAGE_REPORT.md",
-      "size": 2201,
-      "sha256": "09deedc6853ddc6f9f967121df2065990a987b97d9e6fb2c4e25864f385c3909"
+      "size": 2451,
+      "sha256": "a084c4ea85669f728be7b6d3033611b98d954994399ae146b83fc8e8590dc02d"
     },
     {
       "path": "GEMINI.md",
       "size": 991,
       "sha256": "92307e699ac6db13ef963e309606d2175bbeef2677a779296c6c14c3157f9f71"
+    },
+    {
+      "path": "GITHUB_ACTIONS_HARDENING.json",
+      "size": 102,
+      "sha256": "0cb53b62fc354d294dc9d6cb2b8e9c4d3438f1967a59ce3ac4a98505de66f4c5"
+    },
+    {
+      "path": "GITHUB_ACTIONS_HARDENING.md",
+      "size": 836,
+      "sha256": "ee077e99a6e20ca8930772b07f456a7d734b6c7205ff4001a536de145cf5d380"
+    },
+    {
+      "path": "GITHUB_ACTIONS_HARDENING_AUDIT.md",
+      "size": 69,
+      "sha256": "7557efc31e7f6ff26272a8aa2b0e94f7918875cd7c765ef42eba3c4adbc0d693"
+    },
+    {
+      "path": "GITHUB_WORKFLOW_POLICY_AUDIT.json",
+      "size": 6152,
+      "sha256": "a7cde363c97a14e13b2ccdf27c6857bc54bb3380dd0cbe7dc0c9651a7808b003"
+    },
+    {
+      "path": "GITHUB_WORKFLOW_POLICY_AUDIT.md",
+      "size": 3224,
+      "sha256": "8cc0512e3934a081e8a04c6ab56b07c5c7ea1879c3c475b7c188d5a51a8d964c"
     },
     {
       "path": "GOLDEN_OUTPUTS.json",
@@ -345,33 +590,53 @@
     },
     {
       "path": "HANDOFF_ARCHIVE_AUDIT.json",
-      "size": 157242,
-      "sha256": "c57745abac40c22419f8e5d6b5b2a86d9713d743ea4f87466aeed872f52b127a"
+      "size": 3182797,
+      "sha256": "0a1c67f95cba0753a9f0206e9c5d2c22c40f2fde879409db4169fea58526d760"
     },
     {
       "path": "HANDOFF_ARCHIVE_AUDIT.md",
-      "size": 30095,
-      "sha256": "dec79e7e375c903182aa1ff0c30465880dd67d722824a4de8a01b0d1611b3e2f"
+      "size": 27733,
+      "sha256": "b97f670f0b6708941c3eb9b464cbf41277adbdf3b5868548536df4f3d00680cc"
+    },
+    {
+      "path": "HANDOFF_MANIFEST_VERIFY.json",
+      "size": 97,
+      "sha256": "fb95c59ad956c77017d1e9fe6f69bec446129de2099b361110457fb3ec88c3d8"
+    },
+    {
+      "path": "HANDOFF_MANIFEST_VERIFY.md",
+      "size": 91,
+      "sha256": "42a313930625d46dfb6ed0f1f008fb6a4bcade1141d67923347dc49c9e61a719"
     },
     {
       "path": "HANDOFF_STATUS.json",
-      "size": 840,
-      "sha256": "c3e59c1fedd2241e5527c0234f345ffc79ab18f5797c67c63a0620b3adecbf43"
+      "size": 842,
+      "sha256": "aedf0af852a47f4911abb0a59a8887eba988ce7a65be3802e68bb6ee96d5a782"
     },
     {
       "path": "HANDOFF_STATUS.md",
-      "size": 1033,
-      "sha256": "47080ae00466ca3210f0344c4f6832a7b8f1f6f9210792bb4bf88919418c714a"
+      "size": 1035,
+      "sha256": "38a572676f98a5c91b5bb82b2e13a347dbacb1dee8a3600c2f9cfff169bfb169"
+    },
+    {
+      "path": "HYPOTHESIS_STRATEGY_AUDIT.json",
+      "size": 272,
+      "sha256": "964bf013b3e681d3ecf8437184bdeabb4c8947c26a172bb3a9ab9365f3e9bbfe"
+    },
+    {
+      "path": "HYPOTHESIS_STRATEGY_AUDIT.md",
+      "size": 195,
+      "sha256": "6d7f2e18cc52f07a792f27a9b82512af3279441f3e558a6dd4c22861a8d8a8ba"
     },
     {
       "path": "IMPLEMENTATION_STATUS.md",
-      "size": 6035,
-      "sha256": "6d6e28cd340c0b6901d44d069d3dc6b124f4bdc19ae1c5ad2a9d2ec6455173a2"
+      "size": 7167,
+      "sha256": "62a77d40af8687b363997bed6260d0afb362d00c787f20b8bba61ee8edb25034"
     },
     {
       "path": "Justfile",
-      "size": 7092,
-      "sha256": "3b1350960422010808223a030b0771e1006d11c1c9928f7c6fff7148491e2c61"
+      "size": 9274,
+      "sha256": "811339d0e9322803ff6a50a498a67d2f96bbcdf30363a9a30f4ab72dc443358f"
     },
     {
       "path": "KNOWN_UNCOMPILED_RISKS.md",
@@ -385,13 +650,13 @@
     },
     {
       "path": "LOCAL_COMMAND_PLAN.json",
-      "size": 2218,
-      "sha256": "1f12675e3061bb281dd6c5508577d706cc6f60708cea83e12f58f2b343c00b03"
+      "size": 2209,
+      "sha256": "97fc49feb5c97cefd99fe85d86cf465e00073589125711e5ffc5b69990a1b32e"
     },
     {
       "path": "LOCAL_COMMAND_PLAN.md",
-      "size": 1309,
-      "sha256": "bfca001c7af5c65c0d66109c0554f999eaccfdf0e6df6449fedc3f40c4b8124d"
+      "size": 1318,
+      "sha256": "81b62e43a70520c88115b51e65a0de8438fe19733a8bfab1ebbdd322d0913a1c"
     },
     {
       "path": "LOCAL_COMPILE_LOOP.md",
@@ -405,13 +670,13 @@
     },
     {
       "path": "LOCAL_HANDOFF.md",
-      "size": 2764,
-      "sha256": "db2db4ee6525f5c16c58f1518df5a594a63e3a4f6b215153d65571f9154b2c84"
+      "size": 3038,
+      "sha256": "b790f8d4d347b04371aa927d05d04b66cef182cfacf15db1fe21d2e2a1477a6c"
     },
     {
       "path": "LOCAL_MIGRATION_COMMANDS.json",
       "size": 1591,
-      "sha256": "07ec8f642d24c478a41ff33e31bcab6f0e845aa5bbfd22fd3d6ecf3a148ad38a"
+      "sha256": "e8ab4c44e7d2ef654d153dff7462b11eb147eda4e078118f2f23cc75ab9379b9"
     },
     {
       "path": "LOCAL_MIGRATION_COMMANDS.md",
@@ -420,8 +685,8 @@
     },
     {
       "path": "LOOP_DASHBOARD.md",
-      "size": 5523,
-      "sha256": "572d27b0f175a99a7f1b9b22f615141b2a3f6d638038b22e59d286deab6b8a81"
+      "size": 7162,
+      "sha256": "dabd2989c309e42455ceb02b6af5b0698b965bec2ea53d874bafa3d3c19f8e03"
     },
     {
       "path": "MACOS_FIXTURE_DRY_RUN.json",
@@ -446,7 +711,7 @@
     {
       "path": "MVP_BLOCKER_DAG.json",
       "size": 1704,
-      "sha256": "805a695bc6cfc373a0aca27ca72f3574e89783256582b1028f4d14c3d155da67"
+      "sha256": "14c6f6e1f8ff7516ad7aa84663b5a0332bef83226e223c631564672b8c1b20d3"
     },
     {
       "path": "MVP_BLOCKER_DAG.md",
@@ -456,7 +721,7 @@
     {
       "path": "MVP_BLOCKER_TASKLIST.json",
       "size": 3451,
-      "sha256": "000c527cbb58d2e9a7db9065723641d2d385928c232defd705b09262fbbde2c5"
+      "sha256": "db0dd140e63297033361e21ac552204df9c192b5a73e31842532f4ef4d31791a"
     },
     {
       "path": "MVP_BLOCKER_TASKLIST.md",
@@ -470,13 +735,13 @@
     },
     {
       "path": "PACKAGE_INTEGRITY_AUDIT.json",
-      "size": 9296,
-      "sha256": "9f3fba45bd549c1453b42f50e21b7866b95ab0cf6052ebd3439109acb98d90b2"
+      "size": 156,
+      "sha256": "66fa6f4434c98eb895b427b4461af5c6f33ae933a26d018a810d3fbf02927e33"
     },
     {
       "path": "PACKAGE_INTEGRITY_AUDIT.md",
-      "size": 8751,
-      "sha256": "82cda3718140fad1321779a31a6d5f761bc020fa490e912b07651e88c8c4aa81"
+      "size": 165,
+      "sha256": "55e25508d148ebf6255540d6d80596ad9e3563c6fe3ef2a71a313b7382947950"
     },
     {
       "path": "PLATFORM_SETUP.md",
@@ -486,7 +751,7 @@
     {
       "path": "PRODUCTION_CLAIM_GUARD.json",
       "size": 95,
-      "sha256": "b19617bf9a48a0bd82db9b9604c6259567342b937473b99e1d6d0a73adf370be"
+      "sha256": "7a80ff240ec97affdc0b1e82705e31c6a25a7658e1bb2b1d4ebd395025fe5c52"
     },
     {
       "path": "PRODUCTION_CLAIM_GUARD.md",
@@ -495,23 +760,123 @@
     },
     {
       "path": "PRODUCTION_GAP_REPORT.json",
-      "size": 3647,
-      "sha256": "80d89863204a273e048bd2f67082bbd9cb7fb6ceca8e332895a69f8503ae8a87"
+      "size": 3589,
+      "sha256": "dfac6678d06bd36428de6faa619f8f484423656e28f455eee71fe360ef6eb296"
     },
     {
       "path": "PRODUCTION_GAP_REPORT.md",
       "size": 1735,
-      "sha256": "c59470c185689d770310706cc7db6556e325e8344946ef8ce9a263183fa8d9d5"
+      "sha256": "f2b6582a7fc68258d760675bbfb8147e753366127a7a0f95ec7726e9acb23031"
+    },
+    {
+      "path": "PROFILING.md",
+      "size": 673,
+      "sha256": "3654d5a8f529ddbd3965399b1e31edeaa6845478c123d26da189c36e4bc996ba"
+    },
+    {
+      "path": "PROFILING_BUDGET_CHECK.json",
+      "size": 801,
+      "sha256": "7cc66eede5e6fbce630f060b6eb9d66bbd91fe952d8ae7f1057b7d64ee759a4d"
+    },
+    {
+      "path": "PROFILING_BUDGET_CHECK.md",
+      "size": 168,
+      "sha256": "03d5397e6db812316b7cfb2f69768b0ff057ee0fbd7b4f9778b0d05a52953979"
+    },
+    {
+      "path": "PROFILING_PLAN.md",
+      "size": 839,
+      "sha256": "5408306f9eceb46a2714e07148b3d96c63400b22886b21fcef346c8ccbb753cc"
+    },
+    {
+      "path": "PROFILING_PLAN_AUDIT.json",
+      "size": 585,
+      "sha256": "4b2ae0cbfbb6dd1a8b292eeaf4c88b553be81f829c23489ad56e9cbd61755846"
+    },
+    {
+      "path": "PROFILING_PLAN_AUDIT.md",
+      "size": 92,
+      "sha256": "577a3b6621f178efc46b41ff97591e1ee3b3fddfe882e87efad6f093eff95cf3"
+    },
+    {
+      "path": "PROVENANCE_VERIFICATION.md",
+      "size": 530,
+      "sha256": "53a13e9a728b7d3b8c5904349fb93e57c95aa5ea97363c79d0b8687ee9350e7c"
+    },
+    {
+      "path": "PROVENANCE_VERIFICATION_AUDIT.json",
+      "size": 186,
+      "sha256": "2b9bff175105c316a3c06eb161a05afe47199a9f8dc4648444ce54bf13c7180d"
+    },
+    {
+      "path": "PROVENANCE_VERIFICATION_AUDIT.md",
+      "size": 135,
+      "sha256": "5552fb4fb073cdc69f473bf551f99b577cf047a8913c0c9796743b77a953adf7"
+    },
+    {
+      "path": "QUALITY_GATES.md",
+      "size": 1160,
+      "sha256": "283f9f651a6f32c91582a0c597084970d3bdd38cfe185c5f28db18275739ceb9"
+    },
+    {
+      "path": "QUALITY_GATE_CHECK.json",
+      "size": 71,
+      "sha256": "3425ae4f12a7cad572dc7dbb50160301cb595e78e126819faef4d84a2424fe86"
+    },
+    {
+      "path": "QUALITY_GATE_CHECK.md",
+      "size": 57,
+      "sha256": "6a1a2eb8bd34327e7f61fb446e46074a2aa633959b33507884fcc80957c814fd"
+    },
+    {
+      "path": "QUALITY_GATE_EVIDENCE.json",
+      "size": 1610,
+      "sha256": "cb4d60c5c8c111644ad86bb2dfee5284f7a67d263f0187c8d3baaa1c1ec31e3e"
+    },
+    {
+      "path": "QUALITY_GATE_EVIDENCE.md",
+      "size": 971,
+      "sha256": "42bbb4aa5902bbd601df22fa432a3612df1d29b7ad78cf1f58c0dbe249d6fc11"
+    },
+    {
+      "path": "QUALITY_GATE_POLICY.md",
+      "size": 3817,
+      "sha256": "8eed39723b67af615a64fff8f8fb85aa3bf0bf90e8c45f2efc4d4e677d6396f9"
+    },
+    {
+      "path": "QUALITY_GATE_REPORT.json",
+      "size": 508,
+      "sha256": "5c0996fb0112364b840c6bdbdb72f0e9d72b5558c94a1449c4b97ddd4ff3934a"
+    },
+    {
+      "path": "QUALITY_GATE_REPORT.md",
+      "size": 422,
+      "sha256": "27f2624924ef8b0159cedc56bfb113bf56370f435c4371cd0e78a79e653adc76"
     },
     {
       "path": "README.md",
-      "size": 12106,
-      "sha256": "243a9f8aabd0164233eec143b91864d882288376329aa823643ba2bd3c6dc296"
+      "size": 14159,
+      "sha256": "58439919dcf6a99eaed5caf46fce54a7e7b3dd935fea295bc0104b6e93e9cb4b"
     },
     {
       "path": "READY_FOR_LOCAL.md",
       "size": 1300,
       "sha256": "936176302b1de1ddb02afbc6d5eb4373bf964f93705cf84d865932f5829b0275"
+    },
+    {
+      "path": "RELEASE_AUTOMATION.md",
+      "size": 561,
+      "sha256": "80c22a97a80c598cfbb57a4761102910c1919c42cf5e6b17df5718a090013b9a"
+    },
+    {
+      "path": "RELEASE_AUTOMATION_AUDIT.json",
+      "size": 68,
+      "sha256": "059907152881ed7fe7cda39dfb0a3a18ea758c20f796836ea010ee667d6fe162"
+    },
+    {
+      "path": "RELEASE_AUTOMATION_AUDIT.md",
+      "size": 36,
+      "sha256": "9c5e27015e0213477b5f6e493839aab4cdfefb4d5d9c080401d51a60ec154fb2"
     },
     {
       "path": "RELEASE_SCAFFOLD.md",
@@ -520,33 +885,38 @@
     },
     {
       "path": "REMAINING_ELEMENTS.md",
-      "size": 388,
-      "sha256": "eb8ac921fcdec36887dd40e08dc25fbd799a9b3a3067c2063a1934a789f63086"
+      "size": 4101,
+      "sha256": "c96faa10c01e706ca799bde6e67ab3c35483197c563c30b714bb073b6062c1b0"
     },
     {
       "path": "REMAINING_ELEMENTS.yaml",
-      "size": 12322,
-      "sha256": "36d9853d31753d0fc4ec6d4f9f1b38822a2aaacc16f2dcf186ddd6da203349ea"
+      "size": 15687,
+      "sha256": "903869f32a6b4f20c8e599cb626b4569ac902224824ce3f4b8275d3935aecd0f"
+    },
+    {
+      "path": "REPO_HARDENING_RECOMMENDATIONS.md",
+      "size": 770,
+      "sha256": "499a34981644c29d439ea4481780c6f2f462416565de4f666be4489103728108"
     },
     {
       "path": "REPO_MANIFEST.json",
-      "size": 109603,
-      "sha256": "7006d64da3abf44d1b3931bb0323f858a1643e2df598657a9d11b701c418b2f9"
+      "size": 180932,
+      "sha256": "9b15bc81f736c2fb8521b16a1fdcb67790eb2ae7cf324f4b9176645160274972"
     },
     {
       "path": "REPO_MANIFEST.md",
-      "size": 361,
-      "sha256": "9309ba4da62270d2e0ab4a289c579acbff664158648d70308aa420dbecbcd452"
+      "size": 364,
+      "sha256": "ef02b3ab0bf15b58b50c22e9948840a142d2449c204f98635d14ae7a537ed6ee"
     },
     {
       "path": "REQUIREMENTS.md",
-      "size": 13393,
-      "sha256": "10372526b282189a7657ccb7d466adbfd7982888e7dc4bb1f5330f1075156806"
+      "size": 17196,
+      "sha256": "6abe80806aacb6eb379e85272c9a54c7c07c192ccd63cc74a5cf2a269f6ca4f9"
     },
     {
       "path": "RUNBOOK.md",
-      "size": 12891,
-      "sha256": "5515540313dc1b026b6ab42c5c9e76bed5498856e11c8681021bd86df3c70b4e"
+      "size": 14577,
+      "sha256": "2b203c771210ecf5b3cb80aef0098b34e16b3af625e1a70ca7ecc7526d503d0e"
     },
     {
       "path": "RUST_API_MAP.md",
@@ -556,17 +926,27 @@
     {
       "path": "RUST_STATIC_LINT.json",
       "size": 726,
-      "sha256": "9d87ca16b2a6fc36d09f07b1bac8dc00870f41c05b61721fb83f02316f91f88e"
+      "sha256": "04b409826435c2e957ab872037d4bbeeb9e2853be3df2277fe1855a5e9ed2d6f"
     },
     {
       "path": "RUST_STATIC_LINT.md",
       "size": 446,
-      "sha256": "dd27e4c1ff7064f253bbc837c6f32cb46d420f15844f3bed41940fb1f33d12cb"
+      "sha256": "ae1f69cf91efa63cf38e89c1654f4adf5668593d259d8c0a9344d372b9cd848c"
     },
     {
       "path": "SAFETY_CASE.md",
       "size": 3889,
       "sha256": "6299eafe6a5ce91959b4da6b3a21ca469e04859656be674ad2dfb9856de63140"
+    },
+    {
+      "path": "SCORECARD_DEPENDENCY_REVIEW_AUDIT.json",
+      "size": 152,
+      "sha256": "682cb34a45fc212df7f669ca7f542cb4508e07b90799619655df06750faf6be2"
+    },
+    {
+      "path": "SCORECARD_DEPENDENCY_REVIEW_AUDIT.md",
+      "size": 109,
+      "sha256": "af2f9043376f5a058ca95bb127d5951f65abb5ad78f0cb387fd684420916cf1a"
     },
     {
       "path": "SECURITY.md",
@@ -575,8 +955,8 @@
     },
     {
       "path": "SHA256SUMS.txt",
-      "size": 92845,
-      "sha256": "6bf0ca4dae3a97588dd3ec8f8261bf0e0b1e2ffd211ab131ca1a80f6f47c394d"
+      "size": 152141,
+      "sha256": "b61a2557429c47e42f9d40af32797c5151e0b74bda18bb1f351a96dba2b1a611"
     },
     {
       "path": "SHELL_SCRIPT_AUDIT.json",
@@ -590,23 +970,38 @@
     },
     {
       "path": "SOURCE_DEBT_REPORT.json",
-      "size": 188276,
-      "sha256": "e95c206d1b59f5a9d88bd164efb86d3fc4325caca174d0c3445e751fbdcad60c"
+      "size": 184224,
+      "sha256": "e71755a634a10c9861e0bbbb39d591826b90c708a0ec544078487e1bd79d3c41"
     },
     {
       "path": "SOURCE_DEBT_REPORT.md",
-      "size": 25325,
-      "sha256": "5d0edd01762e00cab8fff83db14c0a17d0c83e284fa5e9579ef7cf0df5a56fb3"
+      "size": 21271,
+      "sha256": "1912f2c4253063403067f1678b4c5aab8adef622efac48fab8d86cdc657b5178"
     },
     {
       "path": "SOURCE_METRICS.json",
-      "size": 1181,
-      "sha256": "0e06d6ef98773f331ae69736b4862862dc5bd5fba5a78bd6e985ba2923317471"
+      "size": 1182,
+      "sha256": "534d460cf4b56b9196cad63b697063453d53b942e8bf8f491d06e47422d9674c"
     },
     {
       "path": "SOURCE_METRICS.md",
-      "size": 856,
-      "sha256": "40a7e3a6fa1cf2a4c6ab42840a7238f3ed34410d3302fe3412af00ff7626342f"
+      "size": 857,
+      "sha256": "7de08b7a6d018454d4939ff8587ab6efbf091ea7ee8a9c30b44b2f68c6bd2031"
+    },
+    {
+      "path": "SUPPLY_CHAIN_POLICY.md",
+      "size": 716,
+      "sha256": "fcc55235a899824e6d1a7b4578b5a361c437cf806cb44b4c344c48a7db7bcce1"
+    },
+    {
+      "path": "TESTING_INFRASTRUCTURE_REPORT.json",
+      "size": 1348,
+      "sha256": "f4d328d4e95d68ebc1d28becc026bec77d80666381bdac9b70dc9059aca7c455"
+    },
+    {
+      "path": "TESTING_INFRASTRUCTURE_REPORT.md",
+      "size": 826,
+      "sha256": "f2430baef8472fa5e689e4d0b3087de6422d3dd254727acd85b7d16839adb473"
     },
     {
       "path": "TEST_CONTROL_MATRIX.json",
@@ -619,34 +1014,74 @@
       "sha256": "98468bcb31789c372cd22e9976bc89349405496026f33b9dac34f4785bf4d77e"
     },
     {
+      "path": "TEST_INVENTORY_REPORT.json",
+      "size": 2847,
+      "sha256": "4db5a05f211c52134546b583929aef23f8c9e8587b12b7647ccd230654b8d1e3"
+    },
+    {
+      "path": "TEST_INVENTORY_REPORT.md",
+      "size": 2028,
+      "sha256": "b23406dc3e6abf035313ddedeed58dbcb457bc57fb75724fdfb2bcfb93e18f31"
+    },
+    {
+      "path": "TEST_SCAFFOLD_AUDIT.json",
+      "size": 463,
+      "sha256": "86284f44a31c4bbb308f1a375db4b56444146ded46ac4091df4873c0cbbb8c9a"
+    },
+    {
+      "path": "TEST_SCAFFOLD_AUDIT.md",
+      "size": 432,
+      "sha256": "f84955e81a89be9b4dbf22a70767dc5dc77e873428abc6cc50dbf462de7c6e1c"
+    },
+    {
+      "path": "TEST_STRATEGY.md",
+      "size": 1165,
+      "sha256": "86613fad0118726c0a8aa8ec52b9737d2987bcdc6c6ff6a8a2f589e3e08b01da"
+    },
+    {
+      "path": "TEST_STRATEGY_AUDIT.json",
+      "size": 460,
+      "sha256": "d8434935fed8804e9949219fc684672e60c49b5efc24dc54a370eef0b6eca6ea"
+    },
+    {
+      "path": "TEST_STRATEGY_AUDIT.md",
+      "size": 136,
+      "sha256": "56ad41849897328e0457c9a38a6b0bd8ae08c6801b15038f9d16b868aafcc0e2"
+    },
+    {
       "path": "TOOL_CAPABILITY_MATRIX.json",
-      "size": 7228,
-      "sha256": "8d6a3223a9bf267bc0a927df72a1a78cfffaed6ca9edf21bdc41fe830fb7ffbc"
+      "size": 7700,
+      "sha256": "ddd2b9284163d9cf3b8bcbd82d044f600538808a6a0cdb49d6f0271744803869"
     },
     {
       "path": "TOOL_CAPABILITY_MATRIX.md",
-      "size": 2916,
-      "sha256": "3f24f8b9aa3e4d89b908b94a3f22f7686505530fdeded791bdee1600d8ae6a63"
+      "size": 3256,
+      "sha256": "8d3919aa557f8cd36625b53a137aebe11289828e2e52f2f37c0dee06041bf574"
     },
     {
       "path": "TRACEABILITY.md",
-      "size": 26423,
-      "sha256": "f9c4f39ed8ca3e8a4e33468efae680b5bc78685bd645f67d68d946554a471524"
+      "size": 34366,
+      "sha256": "119064f2d6abdfb831a1751b9c2adc9d1c0c11a4e7dac738ccae275f9fbbc4e2"
+    },
+    {
+      "path": "V0_29_IMPLEMENTATION_SUMMARY.md",
+      "size": 781,
+      "sha256": "46d329ca744cd1b819c8528d564677915cead81f4abb29ca9ff03e518e95578f"
     },
     {
       "path": "VERSION",
       "size": 7,
-      "sha256": "8cbb8cbe0eca7be97a239a2dd808c0b06f9f7b9bf40b38291bdd78eced81164b"
+      "sha256": "a68641c6aacd345c4931a6217331d2bf43398c7bc134666a2f756953eab407aa"
     },
     {
       "path": "VERSION_CONSISTENCY.json",
       "size": 1661,
-      "sha256": "e6f2f663e6df70fdd751652a78cb60150f218ac787506db1ad1118fe824833fc"
+      "sha256": "2698f76d7736296c47caa0539e9f9d18ad98e2d4ed322f42b92a0fed76a8524d"
     },
     {
       "path": "VERSION_CONSISTENCY.md",
       "size": 745,
-      "sha256": "34d18a0a8c4e8155a43792768a04f1c24bf5646bdc18d72af9ff94006f95703e"
+      "sha256": "c5f7a4649f76a76719ca69bc25676ab8ccc7cfd0ab1feff2d8bb853e5fffe61a"
     },
     {
       "path": "WINFSP_CALLBACK_MATRIX.json",
@@ -664,9 +1099,19 @@
       "sha256": "0fbd31e3ac08fc65c0c7f990df8906cc07583eca13da26ec225fe0ef11ffe203"
     },
     {
+      "path": "benches/README.md",
+      "size": 332,
+      "sha256": "852fbbb35f64fe24bbd4b7a5cb914c39c5ef0aa3909e7a6b7017b863f45d048a"
+    },
+    {
+      "path": "codev/.DS_Store",
+      "size": 6148,
+      "sha256": "29cefb72766e9ddea749d9c41d1272d695dc744a13bf30e7904c5953a2c6e421"
+    },
+    {
       "path": "codev/CHANGELOG.md",
-      "size": 6253,
-      "sha256": "577b12a24ed54df0d1859bf9cc3da5b2daa250e0b6876a411ac19d1f1a27c175"
+      "size": 7551,
+      "sha256": "cd1641ca4c5f0c2b282bf318b3cb6cefeafdb954b8c2751680e93ed4e7316be0"
     },
     {
       "path": "codev/README.md",
@@ -1149,6 +1594,76 @@
       "sha256": "a42435848927fd685f846eef71d7c973c77651c7fa844457210f89750eb39de2"
     },
     {
+      "path": "codev/plans/0094-strict-ci-cd-quality-gates-with-90-coverage-target.md",
+      "size": 254,
+      "sha256": "ddde2365701d28e0b461af939b742e4f66d03b212888a70b33385e5a2ba220c7"
+    },
+    {
+      "path": "codev/plans/0095-unit-integration-e2e-property-mutation-fuzz-test-s.md",
+      "size": 259,
+      "sha256": "addb452dca815db2de741492a6897cb95b75fb3c78c4a3385a17a4f77ae0759b"
+    },
+    {
+      "path": "codev/plans/0096-profiling-and-benchmark-scaffold.md",
+      "size": 233,
+      "sha256": "a7d3a57d45deef5bc9fa12833b2b706ebd9d6fdb839f12fc880d3601bd442f64"
+    },
+    {
+      "path": "codev/plans/0097-astro-7-and-starlight-documentation-site-scaffold.md",
+      "size": 250,
+      "sha256": "860414525253517aab1deb9625c1afaf706a3340acb9dfa9498650733fd4fc14"
+    },
+    {
+      "path": "codev/plans/0098-docs-site-cargoless-validation-and-ci-workflow.md",
+      "size": 247,
+      "sha256": "3caec1317399834ad0e5a28522b0ab858affa67dc97a3b03eb2ffc6973563e9e"
+    },
+    {
+      "path": "codev/plans/0099-testing-infrastructure-report-generator.md",
+      "size": 240,
+      "sha256": "402b1eb3fd6bb2d23c57d0e27d3df9227ff25942ccfd4a340d63210f3dbe6739"
+    },
+    {
+      "path": "codev/plans/0100-quality-gate-static-checker.md",
+      "size": 228,
+      "sha256": "dc614b16aded10b336b64912c8462247a9e1455a3b7ed472afface647a313a4f"
+    },
+    {
+      "path": "codev/plans/0101-documentation-build-policy-and-astro-7-adoption-de.md",
+      "size": 257,
+      "sha256": "6d3ce7105d8b483c4f97732f8e042cefb25d749b1ceba641908b70d36b0e0ae9"
+    },
+    {
+      "path": "codev/plans/0104-docs-package-audit.md",
+      "size": 187,
+      "sha256": "968d4d77e74727a5dfff9b7ab889ce313c4e0cd4c10753cd5cd254f2905785f0"
+    },
+    {
+      "path": "codev/plans/0105-github-workflow-policy-audit.md",
+      "size": 202,
+      "sha256": "a913b966c357ae6cbe19b4ac83d4a1bdfa3da11c4b663c6ef6e703d6ab982505"
+    },
+    {
+      "path": "codev/plans/0106-test-inventory-report.md",
+      "size": 193,
+      "sha256": "d7c755549d78cabb2e69969b1d78c27ac1f22211aa2f0fcef0b1b92ecc2e421f"
+    },
+    {
+      "path": "codev/plans/0107-hypothesis-strategy-audit.md",
+      "size": 174,
+      "sha256": "0d4b35acbf05771bffc7f012477167fb105b1a4c632506932f7dbf59dc3f5648"
+    },
+    {
+      "path": "codev/plans/0108-profiling-budget-check.md",
+      "size": 185,
+      "sha256": "c83b96f4f1531d643c9be0092b041f7c168b3eb257404b83002fb1f0f3b59c17"
+    },
+    {
+      "path": "codev/plans/0109-quality-gate-evidence-ledger.md",
+      "size": 177,
+      "sha256": "382af928fcb236c6e34476a2e4f966d1d1f08c99d4e7f1d85d844bbc0d1d2fc5"
+    },
+    {
       "path": "codev/plans/071-0071-apfs-offset-audit.md",
       "size": 339,
       "sha256": "6d854ea3318229ed4eb1b2b6ee4c2e0df4d325790a7289def3d8159ad969c03e"
@@ -1259,14 +1774,109 @@
       "sha256": "7c8d26a927fc78a2548f043c2305431e23b765d7256f91add6323d522493fc39"
     },
     {
+      "path": "codev/plans/094-strict-ci-quality-gates-and-90-coverage-policy.md",
+      "size": 309,
+      "sha256": "c519c3863d1a3de45ea2f7dcc6b37edd2c8990b5c7b239cb22168e2dc96e0baf"
+    },
+    {
+      "path": "codev/plans/095-unit-integration-e2e-property-fuzz-mutation-and-.md",
+      "size": 339,
+      "sha256": "f3c53d18053e527ff07909ff5eb8dfaf14b30dc484ef7cdc1550ec1cb341dc69"
+    },
+    {
+      "path": "codev/plans/096-property-and-hypothesis-style-testing-scaffold.md",
+      "size": 308,
+      "sha256": "90b173ab06f7fabf2fcbb82a36aebfec3d2034cbe0cd68db4143bc41e903a98e"
+    },
+    {
+      "path": "codev/plans/097-mutation-testing-scaffold.md",
+      "size": 287,
+      "sha256": "2c07e40e539a1d1d77433acd18ce6a46ca4d8b6946ef5f0db8a2b9584713679a"
+    },
+    {
+      "path": "codev/plans/098-profiling-and-benchmark-scaffold.md",
+      "size": 294,
+      "sha256": "a07d192cbe39c7691809f700980e79df9fd4e7ec3a802d72d93ac3661a71728d"
+    },
+    {
+      "path": "codev/plans/099-astro-7-documentation-site-scaffold.md",
+      "size": 297,
+      "sha256": "2d5352b4e6ab83a7b6214886d7429f8e622c81f3387fb42c2ed13f77f45ab319"
+    },
+    {
+      "path": "codev/plans/100-documentation-site-audit-and-quality-gate.md",
+      "size": 303,
+      "sha256": "ddfdbceeaac0882a2e5ce0e8fe9f5c500ce315f00a0dfde00166b6f2ed181975"
+    },
+    {
+      "path": "codev/plans/101-ci-quality-gate-audit.md",
+      "size": 283,
+      "sha256": "73bfa673b3681048a99141a98ac75d115a092570981baa453a0eed9bc50ac262"
+    },
+    {
+      "path": "codev/plans/102-extended-current-environment-tool-inventory.md",
+      "size": 305,
+      "sha256": "bd3ed8ef1d5bd06b3c7d3fabb3b10288d0f199b7a918f25d52f07bba502b96f2"
+    },
+    {
+      "path": "codev/plans/103-quality-and-docs-handoff-integration.md",
+      "size": 298,
+      "sha256": "653202d39fb20147d11454083c55b7c7ba0144977e1fe6294e664c94469f7d2f"
+    },
+    {
+      "path": "codev/plans/110-github-actions-hardening-zizmor-actionlint.md",
+      "size": 287,
+      "sha256": "c8cd1f8d38f3e8f5ef8a3ea7109d75721be68f6328a3a900875b7193834d4a81"
+    },
+    {
+      "path": "codev/plans/111-action-pinning-permissions-audit.md",
+      "size": 277,
+      "sha256": "cf1f381776561ce92ffd84b1afc8187b58b90b45601d7dcfda14a4a46d344e88"
+    },
+    {
+      "path": "codev/plans/112-cargo-vet-supply-chain-policy.md",
+      "size": 269,
+      "sha256": "80d3b4943aa3812d2dbaee8a08504c7f09d88d22e3afbcf8ec93a6bd0515082d"
+    },
+    {
+      "path": "codev/plans/113-slsa-attestation-verification.md",
+      "size": 280,
+      "sha256": "7f151962e829c34842085bc4d3d9104a7d75090def97e7227939e261314616c7"
+    },
+    {
+      "path": "codev/plans/114-cargo-dist-release-plz-scaffold.md",
+      "size": 279,
+      "sha256": "46a7932ea8d463a8660c203f053d4e38f15c9315b509e27460da2d1c709143cd"
+    },
+    {
+      "path": "codev/plans/115-scorecard-dependency-review-workflow.md",
+      "size": 290,
+      "sha256": "d5152883372d90e204932144924184dacf516f01b92fdbde6318a7e7b0d7eec5"
+    },
+    {
+      "path": "codev/plans/116-astro7-docs-quality-hardened.md",
+      "size": 272,
+      "sha256": "c16e76fde9b237bb115f094bdc13258f59e9a3b156c64ec383df4ca1c94c5b7d"
+    },
+    {
+      "path": "codev/plans/117-benchmark-regression-and-codspeed-readiness.md",
+      "size": 285,
+      "sha256": "46e07309c2917e81bc0a421eded0c95a890d9f86629530569874b7d39f8384bd"
+    },
+    {
+      "path": "codev/plans/118-bleeding-edge-repo-hardening-audit.md",
+      "size": 278,
+      "sha256": "72e379c50c47c139af6e071046619b4dd28a9d0ed4bb44ec3898ec9bb59b1e27"
+    },
+    {
       "path": "codev/resources/capabilities.yaml",
-      "size": 41167,
-      "sha256": "b09c00dcb21004822d8b2f8556b164f8826a41c3a370817adc53c3a5e394b94f"
+      "size": 48947,
+      "sha256": "d253bcc3102434c47b72e2453032f357abbd7ba4ee08b7389a36af0a28fd61da"
     },
     {
       "path": "codev/resources/safety-gates.yaml",
-      "size": 16419,
-      "sha256": "e3ccee135bb98afd3f98ee8d261f7b71293a5d373045b8c57eab3dbce2a1006b"
+      "size": 21718,
+      "sha256": "794cdbe42d587e1ecd7f750b604ed701f496f64f78fbc178479220c75ce3ebe6"
     },
     {
       "path": "codev/resources/schemas/capabilities.schema.json",
@@ -1277,6 +1887,11 @@
       "path": "codev/resources/schemas/safety-gates.schema.json",
       "size": 346,
       "sha256": "4c833e36c081c5950a6e9e47fc8df78df97f15deb39f139e433e8a1231cd942d"
+    },
+    {
+      "path": "codev/reviews/0001-bootstrap-review-updated.md",
+      "size": 862,
+      "sha256": "a5521055fa73c708a9aed37a9093ad1191804e1e447e8e07f7ae383c45a68ebe"
     },
     {
       "path": "codev/reviews/0001-bootstrap-review.md",
@@ -1754,6 +2369,76 @@
       "sha256": "6dea666f2747d46d66570cd8147d7103705fc381f5441e1bf3af72c781f76ee2"
     },
     {
+      "path": "codev/reviews/0094-strict-ci-cd-quality-gates-with-90-coverage-target-review.md",
+      "size": 151,
+      "sha256": "fade184d7d7c40dcf543b4e96befdb676476cc592bb6e8a08e2bf460f26ed85e"
+    },
+    {
+      "path": "codev/reviews/0095-unit-integration-e2e-property-mutation-fuzz-test-s-review.md",
+      "size": 156,
+      "sha256": "deaa9ae395a442a013c1af8a34ef4c1b40c9f33cf84ecb11e6cee104c90b8030"
+    },
+    {
+      "path": "codev/reviews/0096-profiling-and-benchmark-scaffold-review.md",
+      "size": 130,
+      "sha256": "9ef39e7224eeafed4d88e9be6df7a22911bfefd3bb2051495cf5056db185b384"
+    },
+    {
+      "path": "codev/reviews/0097-astro-7-and-starlight-documentation-site-scaffold-review.md",
+      "size": 147,
+      "sha256": "f8274b800f62c489610e4ae6d82ca60762268ba20323986724e7fb44fc8b4ae8"
+    },
+    {
+      "path": "codev/reviews/0098-docs-site-cargoless-validation-and-ci-workflow-review.md",
+      "size": 144,
+      "sha256": "c566a2ce61964b35f7ff421b6013705aa157b09174f8d16ca9eb6822bddb26fb"
+    },
+    {
+      "path": "codev/reviews/0099-testing-infrastructure-report-generator-review.md",
+      "size": 137,
+      "sha256": "a43eed84c4b0164501c3b04daf5363a3414505d31b0c593867e525107e44b17f"
+    },
+    {
+      "path": "codev/reviews/0100-quality-gate-static-checker-review.md",
+      "size": 125,
+      "sha256": "884254bb0ff8a54e4849ec86257292ad9eb298c921ca50c0e9ae9ec91a255565"
+    },
+    {
+      "path": "codev/reviews/0101-documentation-build-policy-and-astro-7-adoption-de-review.md",
+      "size": 154,
+      "sha256": "e7a45809eb3ba6839b45822ff6e5dc39ca0c77d4cd0d617fae28e8e384ec4f03"
+    },
+    {
+      "path": "codev/reviews/0104-docs-package-audit-review.md",
+      "size": 229,
+      "sha256": "68d6a46341e0614c0a2afd19da13b0bf5158c32605032f9b4b3aebb17439ca36"
+    },
+    {
+      "path": "codev/reviews/0105-github-workflow-policy-audit-review.md",
+      "size": 244,
+      "sha256": "f20912ae8d620bdaea08535d2521f768cbdf188e6dfa95f5de201c0d1aa334e7"
+    },
+    {
+      "path": "codev/reviews/0106-test-inventory-report-review.md",
+      "size": 235,
+      "sha256": "35a77754f51066cccfbe7f0c62a93e0a1bad61ffe5199e1d4ef66a3691f75114"
+    },
+    {
+      "path": "codev/reviews/0107-hypothesis-strategy-audit-review.md",
+      "size": 216,
+      "sha256": "11f4499189f198ad0e7198ced316a70b02a5f4ac29266525f3a87fd27ae55570"
+    },
+    {
+      "path": "codev/reviews/0108-profiling-budget-check-review.md",
+      "size": 227,
+      "sha256": "3c07f15295da09d3d8f1b8a75e7550a42a7dc349259c626a4deb4c77fadb5c18"
+    },
+    {
+      "path": "codev/reviews/0109-quality-gate-evidence-ledger-review.md",
+      "size": 219,
+      "sha256": "0b51e6f8c9965494c2e15db748467999c2cf31957a93442c5733727da8937dec"
+    },
+    {
       "path": "codev/reviews/071-0071-apfs-offset-audit-review.md",
       "size": 519,
       "sha256": "9c51a9430afe37e628c7983d66d08f086a1a0da73c88df25af2a587f701c3389"
@@ -1862,6 +2547,101 @@
       "path": "codev/reviews/087-m-087-local-command-plan-generator-review.md",
       "size": 486,
       "sha256": "afd92fd9182fe34ca5b3d5cbd7bc4be81f13cd23da0bd09e378d53c6594ec699"
+    },
+    {
+      "path": "codev/reviews/094-strict-ci-quality-gates-and-90-coverage-policy-review.md",
+      "size": 273,
+      "sha256": "80471d69bb5e16645841c21d5095752c898957503e462c002873c58ccef05a11"
+    },
+    {
+      "path": "codev/reviews/095-unit-integration-e2e-property-fuzz-mutation-and--review.md",
+      "size": 303,
+      "sha256": "42c43adf1b3708155dae5c9e77b172d2d7fd0e75d9a84c1d07dd437a438e3d1d"
+    },
+    {
+      "path": "codev/reviews/096-property-and-hypothesis-style-testing-scaffold-review.md",
+      "size": 272,
+      "sha256": "2bc6ddd6c1d57d170aab2fb1b25cd8ba407cd87a83738648f84f9a0d290c0155"
+    },
+    {
+      "path": "codev/reviews/097-mutation-testing-scaffold-review.md",
+      "size": 251,
+      "sha256": "daa0c302aa018d567fc67e937a71d957a9f6d692de642a86566947fe3e3e4dc0"
+    },
+    {
+      "path": "codev/reviews/098-profiling-and-benchmark-scaffold-review.md",
+      "size": 258,
+      "sha256": "f83541063d88c2f7c463271a195d94f4b1ea27eb050836fddff58904e5c51a18"
+    },
+    {
+      "path": "codev/reviews/099-astro-7-documentation-site-scaffold-review.md",
+      "size": 261,
+      "sha256": "715720eaa01543171a2fb61ed3dc000a102f9dd98d893957c237b8d3fdce502b"
+    },
+    {
+      "path": "codev/reviews/100-documentation-site-audit-and-quality-gate-review.md",
+      "size": 267,
+      "sha256": "343762f3803aa9d84f4b18e08c3af1bebc05265264761850583864f54a592059"
+    },
+    {
+      "path": "codev/reviews/101-ci-quality-gate-audit-review.md",
+      "size": 247,
+      "sha256": "0adc6aeff4df9ef19d5c2be7068b09cbf4026625df76a067b4aea92b9f1e0e2c"
+    },
+    {
+      "path": "codev/reviews/102-extended-current-environment-tool-inventory-review.md",
+      "size": 269,
+      "sha256": "0a62a28200a039031f5f0ec514707a879aa7c784c40e9c1ac80ea7d4340cc627"
+    },
+    {
+      "path": "codev/reviews/103-quality-and-docs-handoff-integration-review.md",
+      "size": 262,
+      "sha256": "c99e1f038b46c104e0ecc17d85359199ba4d8382ce673e7aed86d48b1abddb09"
+    },
+    {
+      "path": "codev/reviews/110-github-actions-hardening-zizmor-actionlint-review.md",
+      "size": 257,
+      "sha256": "b87de1aee30b0f99819c7fcca0a6d425ad97b56732e4ac853cfa58657ca69023"
+    },
+    {
+      "path": "codev/reviews/111-action-pinning-permissions-audit-review.md",
+      "size": 247,
+      "sha256": "834c865805a39660455eb9b3ac3871859d0854f6cb427478d16fd62383fc98c5"
+    },
+    {
+      "path": "codev/reviews/112-cargo-vet-supply-chain-policy-review.md",
+      "size": 239,
+      "sha256": "500d2b0c28026c49e6f81f883d06ae11cfd1aa243af9d719aac7aa59e85f5196"
+    },
+    {
+      "path": "codev/reviews/113-slsa-attestation-verification-review.md",
+      "size": 250,
+      "sha256": "0f5a237e885116edbb406643bddd55f438c33a04944b6f673ab8e7e18b72e500"
+    },
+    {
+      "path": "codev/reviews/114-cargo-dist-release-plz-scaffold-review.md",
+      "size": 249,
+      "sha256": "fc811da507bdc8bae059f7e62c328a516ae8644d5081b3cbaf8edce810a7eb69"
+    },
+    {
+      "path": "codev/reviews/115-scorecard-dependency-review-workflow-review.md",
+      "size": 260,
+      "sha256": "a5650707329791fbcc0ed27d97320eb928791df57fc32d241f534a7c2a317bce"
+    },
+    {
+      "path": "codev/reviews/116-astro7-docs-quality-hardened-review.md",
+      "size": 242,
+      "sha256": "38b5dd818600dac46318e101c1310ee37183fcaf6e5a6311bd34d012911261d0"
+    },
+    {
+      "path": "codev/reviews/117-benchmark-regression-and-codspeed-readiness-review.md",
+      "size": 255,
+      "sha256": "29679e48a15a2847a114aefd3947114f809df912e1a2d4f3360e7610821fbebd"
+    },
+    {
+      "path": "codev/reviews/118-bleeding-edge-repo-hardening-audit-review.md",
+      "size": 248,
+      "sha256": "4b78d77581055dfeb809ece773856044e97ea7ff36ce4b514342381e8e3cd24a"
     },
     {
       "path": "codev/specs/0001-m001-inspect.md",
@@ -2339,6 +3119,76 @@
       "sha256": "d487a631460d7a58211272ad197848dca9f41bab19128e3148e4855a590c0648"
     },
     {
+      "path": "codev/specs/0094-strict-ci-cd-quality-gates-with-90-coverage-target.md",
+      "size": 272,
+      "sha256": "3236d27f5ebd9a288534f7d37217a6b087eeb1ac07113a65468b26fd1a77b2ec"
+    },
+    {
+      "path": "codev/specs/0095-unit-integration-e2e-property-mutation-fuzz-test-s.md",
+      "size": 277,
+      "sha256": "7ff78d70041e91ecfcda6c7e6a936c3682c7ad229f1f8fbe3f9c28a4ed863083"
+    },
+    {
+      "path": "codev/specs/0096-profiling-and-benchmark-scaffold.md",
+      "size": 251,
+      "sha256": "3eb01bd44069c4ae9e5c8952104aa4f7d3e689fe26ba4cb4b4a8b6efb389e308"
+    },
+    {
+      "path": "codev/specs/0097-astro-7-and-starlight-documentation-site-scaffold.md",
+      "size": 268,
+      "sha256": "c6a0830182eca21f8f453dd3ae9de022d7cffb739f500146a0230b485c36cc1f"
+    },
+    {
+      "path": "codev/specs/0098-docs-site-cargoless-validation-and-ci-workflow.md",
+      "size": 265,
+      "sha256": "3a32a04ec8a01566d92775d45efde7eabc26ae21b27127664b0975588aac16ca"
+    },
+    {
+      "path": "codev/specs/0099-testing-infrastructure-report-generator.md",
+      "size": 258,
+      "sha256": "9e2218686d78052c942891a7205b45c88aa7e64abddef780e2626bf1b6006f2c"
+    },
+    {
+      "path": "codev/specs/0100-quality-gate-static-checker.md",
+      "size": 246,
+      "sha256": "ef3683e6a16da86d9837d629f916967a926a2d949cd0a808a889e9cba500ea4b"
+    },
+    {
+      "path": "codev/specs/0101-documentation-build-policy-and-astro-7-adoption-de.md",
+      "size": 275,
+      "sha256": "db84a3f3571f840d6265027487dbc5c9ee17c76987d5dd747f2ec808f0bcce22"
+    },
+    {
+      "path": "codev/specs/0104-docs-package-audit.md",
+      "size": 305,
+      "sha256": "b402386f768809f6ea9cd797ba2a6a4a3887c5ed2b090c25fcd108a393317913"
+    },
+    {
+      "path": "codev/specs/0105-github-workflow-policy-audit.md",
+      "size": 335,
+      "sha256": "d9637376ed5bd41a3e2f0f88be74f7bca33eedf80a25e4660a8156b8435b9aaf"
+    },
+    {
+      "path": "codev/specs/0106-test-inventory-report.md",
+      "size": 317,
+      "sha256": "6f480e115edadd720e49525450cb6671884c351601a3ce75877bf070d275bd2a"
+    },
+    {
+      "path": "codev/specs/0107-hypothesis-strategy-audit.md",
+      "size": 279,
+      "sha256": "3032799627b173e08f9e2a8428dfd7e276c29453c4761f6307bd903e61e9c618"
+    },
+    {
+      "path": "codev/specs/0108-profiling-budget-check.md",
+      "size": 301,
+      "sha256": "374442320db095c9579a0c945ed20801f05818c9d77e9e4999730c383f2e21bd"
+    },
+    {
+      "path": "codev/specs/0109-quality-gate-evidence-ledger.md",
+      "size": 285,
+      "sha256": "644c95dcd21c64011d5e9d27596e8f97bdf99fa91d217f53f327d528dbabca2f"
+    },
+    {
       "path": "codev/specs/071-0071-apfs-offset-audit.md",
       "size": 555,
       "sha256": "f2e65cde102f94e8d96d1d835c3715287af8e14683272846dc2c93c2faa06543"
@@ -2449,9 +3299,109 @@
       "sha256": "341bb4e97b69ffe3a47c337f03999f9e35a4bf74799c4e65ceaa67f5335fa4c8"
     },
     {
+      "path": "codev/specs/094-strict-ci-quality-gates-and-90-coverage-policy.md",
+      "size": 434,
+      "sha256": "27f99920badf6fc858de86186308f991fd4005f944706d9256db4986725b8c27"
+    },
+    {
+      "path": "codev/specs/095-unit-integration-e2e-property-fuzz-mutation-and-.md",
+      "size": 494,
+      "sha256": "49cec4d4bda4b6097b29ec28a28aa4581e1afe9def2bba57aa1d12fa4123108f"
+    },
+    {
+      "path": "codev/specs/096-property-and-hypothesis-style-testing-scaffold.md",
+      "size": 432,
+      "sha256": "7c489fe26ebb89e705de322989b0f17840cce052dc87b32450cc3463ae4253fe"
+    },
+    {
+      "path": "codev/specs/097-mutation-testing-scaffold.md",
+      "size": 390,
+      "sha256": "7b81b1ca9a510c292b8a135e444c34301f73d7202897b953f3db02cd1952fcda"
+    },
+    {
+      "path": "codev/specs/098-profiling-and-benchmark-scaffold.md",
+      "size": 404,
+      "sha256": "e39718d0b39af5ead439ea9f2702750ee6407d8e8dcf9fbfea1093d1bdd4730f"
+    },
+    {
+      "path": "codev/specs/099-astro-7-documentation-site-scaffold.md",
+      "size": 410,
+      "sha256": "24a0eaba7da2329fbdbbe8c972c94b6525c227bb16c871f0ff28dcb682a8832c"
+    },
+    {
+      "path": "codev/specs/100-documentation-site-audit-and-quality-gate.md",
+      "size": 422,
+      "sha256": "f5c9760ce635ba412c48c41be8f60b8b4bed5e783418a5943bec17e93cd69b5b"
+    },
+    {
+      "path": "codev/specs/101-ci-quality-gate-audit.md",
+      "size": 382,
+      "sha256": "c819968ad1564f6ae8b552750a9ae48ec4fc113a6b2a36b51a8805d403535906"
+    },
+    {
+      "path": "codev/specs/102-extended-current-environment-tool-inventory.md",
+      "size": 426,
+      "sha256": "dc44440970211c840acc7ac13fa01b988d0a39e11dd0c62c621244b9c102313e"
+    },
+    {
+      "path": "codev/specs/103-quality-and-docs-handoff-integration.md",
+      "size": 412,
+      "sha256": "2590349c1f77c17c5c27d85cd234aa5bc9158a49a4719a87a50c50a76273e9cb"
+    },
+    {
+      "path": "codev/specs/110-github-actions-hardening-zizmor-actionlint.md",
+      "size": 464,
+      "sha256": "babd3d7ddb6daed9d878d0f6657635d00f80e663fb7a00fbf24d0a4593a830e5"
+    },
+    {
+      "path": "codev/specs/111-action-pinning-permissions-audit.md",
+      "size": 444,
+      "sha256": "9797c07a9624448828eea6a55b4e91cf14760d68572818c0e5ac2b00324634d0"
+    },
+    {
+      "path": "codev/specs/112-cargo-vet-supply-chain-policy.md",
+      "size": 428,
+      "sha256": "b61485ea452adaf3de6456c32520a77421a1821cfd86cb6bfb5bcdf76726790c"
+    },
+    {
+      "path": "codev/specs/113-slsa-attestation-verification.md",
+      "size": 450,
+      "sha256": "dde9e35d35c228b2dabf9f7317af8fa2bd6a15fdd6c0ebc7d32df484fe9c63f5"
+    },
+    {
+      "path": "codev/specs/114-cargo-dist-release-plz-scaffold.md",
+      "size": 448,
+      "sha256": "81402bae776923bfc9857d77c55520db52a6c95732f904149d17f566de8781cc"
+    },
+    {
+      "path": "codev/specs/115-scorecard-dependency-review-workflow.md",
+      "size": 470,
+      "sha256": "64aef4cc1263d0cb7979b950aef9f4d7b74431b49b52f9801e5731cbd8b16f15"
+    },
+    {
+      "path": "codev/specs/116-astro7-docs-quality-hardened.md",
+      "size": 434,
+      "sha256": "3b2800b06f0fbf0b7150f8aed858087e2ba9050fec1819dca8147a54b6abc09e"
+    },
+    {
+      "path": "codev/specs/117-benchmark-regression-and-codspeed-readiness.md",
+      "size": 460,
+      "sha256": "e26bc7b1946186161a68b4975a8bd1e88e2da138c16268603104336d1dcda680"
+    },
+    {
+      "path": "codev/specs/118-bleeding-edge-repo-hardening-audit.md",
+      "size": 446,
+      "sha256": "e195c8182f3a1c50f342d6dbad92446370601c79b295a8ab6e582b29e3d5530a"
+    },
+    {
+      "path": "conductor/.DS_Store",
+      "size": 6148,
+      "sha256": "069a98d9b39fcf80425c6888a441f053c7301da98cd8e634d4afcef37dc3e16b"
+    },
+    {
       "path": "conductor/history.md",
-      "size": 6880,
-      "sha256": "8720de8a6adbf9840dee8f6b580dee9cdffde9de3fc017945e02462900e50c82"
+      "size": 13176,
+      "sha256": "a6a3699be4f55149cb120de8751e69eeb6abcab0cbd7d5b858f2ed7fafa11caf"
     },
     {
       "path": "conductor/product-guidelines.md",
@@ -2460,13 +3410,13 @@
     },
     {
       "path": "conductor/product.md",
-      "size": 1808,
-      "sha256": "48ebc7770271e78309ec1719c6a1629dfaf8742b32db16e37a422db6c2ccc9c8"
+      "size": 1915,
+      "sha256": "4e06cf7d12e26aedd9fa2acd29712709397c9ced9bad27d288370cad0a655a57"
     },
     {
       "path": "conductor/skills/conductor-context-management/SKILL.md",
-      "size": 646,
-      "sha256": "a3933185d9650d008ea8ae93fa386a73bae172ec55328f86f9069e7163e4ad93"
+      "size": 1324,
+      "sha256": "26faa354d6d82dee5c86b54e77f881b34d3243db7635e19e9dbfe0f2abda26b1"
     },
     {
       "path": "conductor/tech-stack.md",
@@ -2490,8 +3440,8 @@
     },
     {
       "path": "conductor/tracks/0001-m001-container-inspect/metadata.json",
-      "size": 215,
-      "sha256": "1d2103622ddc6e1918c4e39a96690b3c277194179f973c46904c2c08cc314fb5"
+      "size": 214,
+      "sha256": "89d202839e42be840adf107c0d0a6f05162821ccb464997af0f98233f0c8f5a4"
     },
     {
       "path": "conductor/tracks/0001-m001-container-inspect/plan.md",
@@ -2500,8 +3450,8 @@
     },
     {
       "path": "conductor/tracks/0001-m001-container-inspect/spec.md",
-      "size": 300,
-      "sha256": "3d08c8966b9186c8677de865b80cb88c7c780d36f7a7d18a9dbc365a35adf214"
+      "size": 298,
+      "sha256": "41a10fbe24eb0554a53b46450f20ecbadbe341be02d5742ef67185410fc55e0e"
     },
     {
       "path": "conductor/tracks/0002-m002-gpt-apfs-probe/metadata.json",
@@ -4004,14 +4954,614 @@
       "sha256": "2ccf461d68bbeec5c255b67cbaacafda4105716c775396e3ebc17238f3a8d9a9"
     },
     {
+      "path": "conductor/tracks/0094-strict-ci-cd-quality-gates-with-90-coverage-target/metadata.json",
+      "size": 221,
+      "sha256": "ffe17bb02627bf27588326ce963969f752f26c117f622e3bb56c95947c91fb1f"
+    },
+    {
+      "path": "conductor/tracks/0094-strict-ci-cd-quality-gates-with-90-coverage-target/plan.md",
+      "size": 253,
+      "sha256": "b26bbf4a5d061943c7b89041cdbfa98613b9d9b773044d9b95237d8370a392d4"
+    },
+    {
+      "path": "conductor/tracks/0094-strict-ci-cd-quality-gates-with-90-coverage-target/spec.md",
+      "size": 215,
+      "sha256": "ec8a540d94c1aec34ca9ab7096883879b77d899dcfb8528c6ce0b60dcbdeaecb"
+    },
+    {
+      "path": "conductor/tracks/0094-strict-ci-quality-gates/metadata.json",
+      "size": 174,
+      "sha256": "73092c217562d97b4dd5b567f655835cae47cff5bf2e2393b20abf6210335ddc"
+    },
+    {
+      "path": "conductor/tracks/0094-strict-ci-quality-gates/plan.md",
+      "size": 188,
+      "sha256": "267dccbb99e154f3e086dbca6f621483f04135e50681bc7222cb88174c7efc63"
+    },
+    {
+      "path": "conductor/tracks/0094-strict-ci-quality-gates/spec.md",
+      "size": 233,
+      "sha256": "e3c88bf39a0170cf87e1474f9d462d019b9120c7bec934272288578f2a2c57ee"
+    },
+    {
+      "path": "conductor/tracks/0095-coverage-90-policy/metadata.json",
+      "size": 181,
+      "sha256": "fc1891e6aaf4b9be530dd5c1232cdbaccd8370cb0f5f92ff76f818096745afc5"
+    },
+    {
+      "path": "conductor/tracks/0095-coverage-90-policy/plan.md",
+      "size": 200,
+      "sha256": "b5857cc6590d92cb058980313fd5c7c06b2139776e5cfa0af12e33025fd27d58"
+    },
+    {
+      "path": "conductor/tracks/0095-coverage-90-policy/spec.md",
+      "size": 257,
+      "sha256": "e5ff732dbfe321b1af0b412fcccb26770c743889f9c929458e49f6ca59460962"
+    },
+    {
+      "path": "conductor/tracks/0095-unit-integration-e2e-property-mutation-fuzz-test-s/metadata.json",
+      "size": 226,
+      "sha256": "d5ab838e755ae81ac755400546c146e3fa0808c17316dea7be54bd0d3eb3d6f5"
+    },
+    {
+      "path": "conductor/tracks/0095-unit-integration-e2e-property-mutation-fuzz-test-s/plan.md",
+      "size": 258,
+      "sha256": "7767584e900a9ae9a9a000ce92c724693b5c4a0270dc454469be8ab869ea31ea"
+    },
+    {
+      "path": "conductor/tracks/0095-unit-integration-e2e-property-mutation-fuzz-test-s/spec.md",
+      "size": 220,
+      "sha256": "b59df2e41317ea9e0b9b1bf185d5dc78e74ed68b9a852668ce07ebaccaf2b3af"
+    },
+    {
+      "path": "conductor/tracks/0096-profiling-and-benchmark-scaffold/metadata.json",
+      "size": 182,
+      "sha256": "d90ca668de5e1b7880792c0b59be4158e435d8efbf10d306ee81929f7720a02f"
+    },
+    {
+      "path": "conductor/tracks/0096-profiling-and-benchmark-scaffold/plan.md",
+      "size": 232,
+      "sha256": "8465ea65964fbc2a67007149129e35c721e18f326ed6a2f1333a95748f235444"
+    },
+    {
+      "path": "conductor/tracks/0096-profiling-and-benchmark-scaffold/spec.md",
+      "size": 194,
+      "sha256": "ea47f18fe2ddac169a71d5d352141ac181e261e649ee83afe5346f5793b40a1d"
+    },
+    {
+      "path": "conductor/tracks/0096-property-hypothesis-tests/metadata.json",
+      "size": 191,
+      "sha256": "a410220eaa8657d1e3384515aeac40fdd43f994173e88a7ca20fc0b6d048f8a4"
+    },
+    {
+      "path": "conductor/tracks/0096-property-hypothesis-tests/plan.md",
+      "size": 203,
+      "sha256": "124a139e3d2049828dd5d41c6a5a44b7a05782ab71e59275ebab479432b8fc4a"
+    },
+    {
+      "path": "conductor/tracks/0096-property-hypothesis-tests/spec.md",
+      "size": 263,
+      "sha256": "c956fe4107ba96325b77586858f4a164fc206c5502c16c6d709d7d9e4bb78a40"
+    },
+    {
+      "path": "conductor/tracks/0097-astro-7-and-starlight-documentation-site-scaffold/metadata.json",
+      "size": 216,
+      "sha256": "bddebdd42bda31f28b74d9817f8ac679dc93d1a03fd2768d7094b3522ba83872"
+    },
+    {
+      "path": "conductor/tracks/0097-astro-7-and-starlight-documentation-site-scaffold/plan.md",
+      "size": 249,
+      "sha256": "dbc4554ce69c81465cd980c41586fe585e5658f1077de43aa01dd9ffee31afa4"
+    },
+    {
+      "path": "conductor/tracks/0097-astro-7-and-starlight-documentation-site-scaffold/spec.md",
+      "size": 211,
+      "sha256": "7b7a25d9d008e813d826dc376a2f4233a7d63d13af67f5f0087c01022e5dcabc"
+    },
+    {
+      "path": "conductor/tracks/0097-mutation-testing-scaffold/metadata.json",
+      "size": 178,
+      "sha256": "560711a7e0759bffe16f0355d3f0134e3a5f68270955ae94dcab382916b0d7ae"
+    },
+    {
+      "path": "conductor/tracks/0097-mutation-testing-scaffold/plan.md",
+      "size": 190,
+      "sha256": "2a5be53ae18c82e6347dbc0b72726a3ff22599c0cea63ebf3077ace635971903"
+    },
+    {
+      "path": "conductor/tracks/0097-mutation-testing-scaffold/spec.md",
+      "size": 237,
+      "sha256": "201d99b088b89bbc3ee7c4e2d7fda0c91a1bb957f89f1c02f49a560ac6596107"
+    },
+    {
+      "path": "conductor/tracks/0098-docs-site-cargoless-validation-and-ci-workflow/metadata.json",
+      "size": 210,
+      "sha256": "818cd87ab4c010e9b9e11744f33ab3652dd5f01d930b3427d472323eb0b8c949"
+    },
+    {
+      "path": "conductor/tracks/0098-docs-site-cargoless-validation-and-ci-workflow/plan.md",
+      "size": 246,
+      "sha256": "f36f624f7e7ecfec5a7972dfb226a0f0ec1c6ac73d4a2c50129eb37cdbc45178"
+    },
+    {
+      "path": "conductor/tracks/0098-docs-site-cargoless-validation-and-ci-workflow/spec.md",
+      "size": 208,
+      "sha256": "57ad7b60f923ac14fdf2bba3af42e618b0833a732e3d622878ddabc8908c9cc7"
+    },
+    {
+      "path": "conductor/tracks/0098-profiling-benchmark-scaffold/metadata.json",
+      "size": 188,
+      "sha256": "ac74960be736bae739ad215465890a9dd95a43f52fd9fde3feed0d720b954f9d"
+    },
+    {
+      "path": "conductor/tracks/0098-profiling-benchmark-scaffold/plan.md",
+      "size": 197,
+      "sha256": "9f0b31f68d20a2a24c1f31dae09109b4bf2953f7dad687904f6d0ff45327dfaf"
+    },
+    {
+      "path": "conductor/tracks/0098-profiling-benchmark-scaffold/spec.md",
+      "size": 251,
+      "sha256": "a521cc3227cb9ee66f32c9b8d81c99db2c31cc971848d1702fbcad3fcfde5f87"
+    },
+    {
+      "path": "conductor/tracks/0099-astro7-docs-site/metadata.json",
+      "size": 179,
+      "sha256": "db4572934a73e75868cfe2a4f189b176e473a072f57188dfd58cdb14f959ef5e"
+    },
+    {
+      "path": "conductor/tracks/0099-astro7-docs-site/plan.md",
+      "size": 200,
+      "sha256": "ec6b66c7b95a1557007b9519c6795dc5959c70130c1a95af81d20f64ea0f78b8"
+    },
+    {
+      "path": "conductor/tracks/0099-astro7-docs-site/spec.md",
+      "size": 257,
+      "sha256": "7d18007a28955e9886f11933eb473e24f678bf1b1245bae24944818297ebb3f4"
+    },
+    {
+      "path": "conductor/tracks/0099-testing-infrastructure-report-generator/metadata.json",
+      "size": 196,
+      "sha256": "b328f1d37d03ac072fce24966317677ba69b4e055435b970c253ab7a7a8e7bf3"
+    },
+    {
+      "path": "conductor/tracks/0099-testing-infrastructure-report-generator/plan.md",
+      "size": 239,
+      "sha256": "33fcbf724197b88377166e6f0378bdaada8d57992284fac80c8a9dab51587961"
+    },
+    {
+      "path": "conductor/tracks/0099-testing-infrastructure-report-generator/spec.md",
+      "size": 201,
+      "sha256": "df30eb313ba3564a9ea85b890ddaa40a1fc5716d8c44b549870086b9bc144aa9"
+    },
+    {
+      "path": "conductor/tracks/0100-qa-readiness-report/metadata.json",
+      "size": 185,
+      "sha256": "c5bdb5984c0d30441876ec8d2d047813ddd282af82edef5812c34cacf04c3328"
+    },
+    {
+      "path": "conductor/tracks/0100-qa-readiness-report/plan.md",
+      "size": 203,
+      "sha256": "f0bbc9f275602ecc6b1dbf2cc6c3ba3f33ef8239b6e1521c38a42fadae797f35"
+    },
+    {
+      "path": "conductor/tracks/0100-qa-readiness-report/spec.md",
+      "size": 263,
+      "sha256": "9e1e36fb653b99db870869574209cb01123c76101eab202e71a6ac907acc0417"
+    },
+    {
+      "path": "conductor/tracks/0100-quality-gate-static-checker/metadata.json",
+      "size": 172,
+      "sha256": "5a030c5989542d2560f8fc3942ddd2c51be4ab4d3d622b99796f48a8114dd958"
+    },
+    {
+      "path": "conductor/tracks/0100-quality-gate-static-checker/plan.md",
+      "size": 227,
+      "sha256": "395912c8628a708908fa33100fc67c1c330cae1012a53d93a1d34579f9d0ff0f"
+    },
+    {
+      "path": "conductor/tracks/0100-quality-gate-static-checker/spec.md",
+      "size": 189,
+      "sha256": "e3fd23c5e4766a5b2717c01400aaa7f5dc96b2c31ffafa8cd5c9be7067d3c49b"
+    },
+    {
+      "path": "conductor/tracks/0101-documentation-build-policy-and-astro-7-adoption-de/metadata.json",
+      "size": 224,
+      "sha256": "05aa40ca71a6d023584b99826ea5cb07fcb16bf996b58f059e92dea0be0cee72"
+    },
+    {
+      "path": "conductor/tracks/0101-documentation-build-policy-and-astro-7-adoption-de/plan.md",
+      "size": 256,
+      "sha256": "f941c9ebab0efca3d01e4ce98b157f8ac835276a847943b986a3bfc14a1618ab"
+    },
+    {
+      "path": "conductor/tracks/0101-documentation-build-policy-and-astro-7-adoption-de/spec.md",
+      "size": 218,
+      "sha256": "8d0c89bf60c2ee991bab94eac9a1a6ca1467d7fabda169a19b30ca62cab86e7d"
+    },
+    {
+      "path": "conductor/tracks/0104-docs-package-audit/metadata.json",
+      "size": 182,
+      "sha256": "07af86303ad57ad2c0a08e12b531d83b44bdb71c905eae8e4170c229dd035d13"
+    },
+    {
+      "path": "conductor/tracks/0104-docs-package-audit/plan.md",
+      "size": 201,
+      "sha256": "1659bdd0facc9ca5c18b0a617dc96e82e4e8f0fed3259eec0c940ce02cd08446"
+    },
+    {
+      "path": "conductor/tracks/0104-docs-package-audit/spec.md",
+      "size": 282,
+      "sha256": "e1661f935b7d3b998c86041b4add885e0bc73addd467dde6dc1d649e4e18897a"
+    },
+    {
+      "path": "conductor/tracks/0105-github-workflow-policy-audit/metadata.json",
+      "size": 207,
+      "sha256": "61d61d75b0ec866deb8826ccfadeb614b02ed765b60eec57d8be8a19ee24d9c9"
+    },
+    {
+      "path": "conductor/tracks/0105-github-workflow-policy-audit/plan.md",
+      "size": 216,
+      "sha256": "07e60932c9c928bf1778252fca585bf6a1e3c0a84460de3153fac10648e2f83f"
+    },
+    {
+      "path": "conductor/tracks/0105-github-workflow-policy-audit/spec.md",
+      "size": 312,
+      "sha256": "eb3d607585433e3220c23482f4edc543abcb354e0d40916b38797dbfcaa71d0e"
+    },
+    {
+      "path": "conductor/tracks/0106-test-inventory-report/metadata.json",
+      "size": 191,
+      "sha256": "b4ae5978ffc22489d1737fa1d9eb8deecc77364de782316b6384fa1d522abdff"
+    },
+    {
+      "path": "conductor/tracks/0106-test-inventory-report/plan.md",
+      "size": 207,
+      "sha256": "bb4c11c8c0c538355a194fb700704598e1273d5f6d5743e0bfd56dfc9d9ab43b"
+    },
+    {
+      "path": "conductor/tracks/0106-test-inventory-report/spec.md",
+      "size": 294,
+      "sha256": "56020788fb725398724d5230944b69da7f2d6cdce32e9b57a8137c51da8028a3"
+    },
+    {
+      "path": "conductor/tracks/0107-hypothesis-strategy-audit/metadata.json",
+      "size": 176,
+      "sha256": "23373da620a01b4dff43f6e3e3cd8954e2b354bb3a8ed28e494117022e534efb"
+    },
+    {
+      "path": "conductor/tracks/0107-hypothesis-strategy-audit/plan.md",
+      "size": 188,
+      "sha256": "18b7625672341a30e4e0ce4d3a86bc82cfe32d202b0236951e76777f753ad463"
+    },
+    {
+      "path": "conductor/tracks/0107-hypothesis-strategy-audit/spec.md",
+      "size": 256,
+      "sha256": "978cbbe837fc4323df2d810413f803d3dc2bcf47e60292459b3ac11ee05accf2"
+    },
+    {
+      "path": "conductor/tracks/0108-profiling-budget-check/metadata.json",
+      "size": 184,
+      "sha256": "c63df4f3e11f7f1ee66afe561ef3866ce7b91a41b4ad95df70f53d366576e6bd"
+    },
+    {
+      "path": "conductor/tracks/0108-profiling-budget-check/plan.md",
+      "size": 199,
+      "sha256": "c3d3494c89de81c63c5d8fa4b06a865431e13f4100aceb74b5b16e14ea265b62"
+    },
+    {
+      "path": "conductor/tracks/0108-profiling-budget-check/spec.md",
+      "size": 278,
+      "sha256": "9429ad41cacdf3361d244d219432dd7c0622f2c820e5e5149ad6dac0e65fbb6a"
+    },
+    {
+      "path": "conductor/tracks/0109-quality-gate-evidence-ledger/metadata.json",
+      "size": 182,
+      "sha256": "1710b26dacf8b2f35c2fec9446c60fdfa32679acf18845fde8165e9c0d701bc9"
+    },
+    {
+      "path": "conductor/tracks/0109-quality-gate-evidence-ledger/plan.md",
+      "size": 191,
+      "sha256": "f71d9b2f8c0513510902d6858fa1d7a511627675fa9a2b112d3c81bce3d9a860"
+    },
+    {
+      "path": "conductor/tracks/0109-quality-gate-evidence-ledger/spec.md",
+      "size": 262,
+      "sha256": "6dc04fa38aee4cafe80809dd1b6374426f1201ff025802b3cb9bf17391d40ea7"
+    },
+    {
+      "path": "conductor/tracks/0110-github-actions-hardening-zizmor-actionlint/metadata.json",
+      "size": 222,
+      "sha256": "c025864a977dc777860582127f660d8257c77351e617759d6dc519ccbbf4ac38"
+    },
+    {
+      "path": "conductor/tracks/0110-github-actions-hardening-zizmor-actionlint/plan.md",
+      "size": 204,
+      "sha256": "b8571e16773a4eadc1fc102e3730c0796d7dda6d634ac66995ebbc02e1f39767"
+    },
+    {
+      "path": "conductor/tracks/0110-github-actions-hardening-zizmor-actionlint/spec.md",
+      "size": 319,
+      "sha256": "fdad6a0d5ad4ef20a783375215f26fcb842552ea7d716a09eb6c7ea98e5761ea"
+    },
+    {
+      "path": "conductor/tracks/0111-action-pinning-permissions-audit/metadata.json",
+      "size": 202,
+      "sha256": "941372a45271335eeb33842dc980f36ee72afcff2b0e3dd914e971945a4854e8"
+    },
+    {
+      "path": "conductor/tracks/0111-action-pinning-permissions-audit/plan.md",
+      "size": 194,
+      "sha256": "6bdd70dc66f697d92ee9b5edc0ec62bfacfd538302fe06652c179576aad243c1"
+    },
+    {
+      "path": "conductor/tracks/0111-action-pinning-permissions-audit/spec.md",
+      "size": 299,
+      "sha256": "e609f6e4b2e77b8538be0331521604f5bd9a58380a241777d838f49111351248"
+    },
+    {
+      "path": "conductor/tracks/0112-cargo-vet-supply-chain-policy/metadata.json",
+      "size": 191,
+      "sha256": "fdcc831d590623340f201721a2f50f72c6e181cf20c387eb162f8b9ac09df149"
+    },
+    {
+      "path": "conductor/tracks/0112-cargo-vet-supply-chain-policy/plan.md",
+      "size": 186,
+      "sha256": "6b456021a26865e4eef7f3877732d5796fc7c25d6b0c8f4222cd5659ac36e7ce"
+    },
+    {
+      "path": "conductor/tracks/0112-cargo-vet-supply-chain-policy/spec.md",
+      "size": 283,
+      "sha256": "156675d8046ae554a0dc8ab5ecb64edcb842307728d648cc0a8596638ea4e756"
+    },
+    {
+      "path": "conductor/tracks/0113-slsa-attestation-verification/metadata.json",
+      "size": 202,
+      "sha256": "16344de24120d43f22e4a7f341486027759aa50812cfaa67789eb63383c900b9"
+    },
+    {
+      "path": "conductor/tracks/0113-slsa-attestation-verification/plan.md",
+      "size": 197,
+      "sha256": "b606018410e04a0b5c688eb59b9a29647d668dbcfc97e46a18bd7b94360fc987"
+    },
+    {
+      "path": "conductor/tracks/0113-slsa-attestation-verification/spec.md",
+      "size": 305,
+      "sha256": "41b09f6734f1a15779fce2ad154ca7875a726bc17ee33338bf28294ece8879ce"
+    },
+    {
+      "path": "conductor/tracks/0114-cargo-dist-release-plz-scaffold/metadata.json",
+      "size": 203,
+      "sha256": "2cfc950ea708ea48111f6433fec1a756cc69f15005d602198e78354696147068"
+    },
+    {
+      "path": "conductor/tracks/0114-cargo-dist-release-plz-scaffold/plan.md",
+      "size": 196,
+      "sha256": "3fdcd0287bb7ebf8d44475e875ee021ca0f3e5700215b7aab0ea715fa5b7a8a8"
+    },
+    {
+      "path": "conductor/tracks/0114-cargo-dist-release-plz-scaffold/spec.md",
+      "size": 303,
+      "sha256": "0c9bb8e2c80349371ea8ebb13103c5e23f789485ad2df1bf62c57c66de14dc9e"
+    },
+    {
+      "path": "conductor/tracks/0115-scorecard-dependency-review-workflow/metadata.json",
+      "size": 219,
+      "sha256": "33091df55dad0ebb984f7ce07f851abbf2b2ecc2b8bfc57fddd1ceb87a855683"
+    },
+    {
+      "path": "conductor/tracks/0115-scorecard-dependency-review-workflow/plan.md",
+      "size": 207,
+      "sha256": "b40ffa792410be622dfaf8096b1cefe60ef5dfefbcef2103ba3ef6fca2f19337"
+    },
+    {
+      "path": "conductor/tracks/0115-scorecard-dependency-review-workflow/spec.md",
+      "size": 325,
+      "sha256": "a05d94c9b0b06e948637e42f2e26bac759f19898231018955290e659878e017d"
+    },
+    {
+      "path": "conductor/tracks/0116-astro7-docs-quality-hardened/metadata.json",
+      "size": 193,
+      "sha256": "c2608161590bf395482f14f19212ff9a803f528d5f89a288b693f37c1c2e07f0"
+    },
+    {
+      "path": "conductor/tracks/0116-astro7-docs-quality-hardened/plan.md",
+      "size": 189,
+      "sha256": "01e75bbcb280ed9efb09a7b7d155e7d9e1b5bc1c0e12b7533d0374520fcfc40b"
+    },
+    {
+      "path": "conductor/tracks/0116-astro7-docs-quality-hardened/spec.md",
+      "size": 289,
+      "sha256": "2b1ef4b106f9289289777dcefd5e698278ef6c3ccc5c8f955de3b1ce84b16a33"
+    },
+    {
+      "path": "conductor/tracks/0117-benchmark-regression-and-codspeed-readiness/metadata.json",
+      "size": 221,
+      "sha256": "0e48e1cedce4ea3a5528a858ae7f827cb43e8342bc23f8c20f76862b7f052291"
+    },
+    {
+      "path": "conductor/tracks/0117-benchmark-regression-and-codspeed-readiness/plan.md",
+      "size": 202,
+      "sha256": "cc88dd4100b645b61fe71921a6507b30815fd375c3a069bae3b7cc941ce7d0a1"
+    },
+    {
+      "path": "conductor/tracks/0117-benchmark-regression-and-codspeed-readiness/spec.md",
+      "size": 315,
+      "sha256": "6b9e0c4fecb8193824fd77dfbb05763435b28df72a46e5cd59ae941503b5de61"
+    },
+    {
+      "path": "conductor/tracks/0118-bleeding-edge-repo-hardening-audit/metadata.json",
+      "size": 205,
+      "sha256": "ed4385d1e2a7ca8b22a1386a3b4b91ce8a57eb9392538726da7cd1236e1ea0f9"
+    },
+    {
+      "path": "conductor/tracks/0118-bleeding-edge-repo-hardening-audit/plan.md",
+      "size": 195,
+      "sha256": "5dac1d92019c4623b8e68f561d791f1f86fb143ec8dbd33eb50df81ef1c85fe3"
+    },
+    {
+      "path": "conductor/tracks/0118-bleeding-edge-repo-hardening-audit/spec.md",
+      "size": 301,
+      "sha256": "3321f7e379ab8462b0efcc544008ef0a0fa951a9c3052b858d120fd768e51a66"
+    },
+    {
+      "path": "conductor/tracks/094-strict-ci-quality-gates-90-coverage-policy/metadata.json",
+      "size": 216,
+      "sha256": "3747675e8fe9cb7137b43290db11579cd6be3fd7c6e32c1043c8f3d32c264667"
+    },
+    {
+      "path": "conductor/tracks/094-strict-ci-quality-gates-90-coverage-policy/plan.md",
+      "size": 148,
+      "sha256": "6ad97ca36f209fceb5d9662ac924ee19f85040490c3dafd3c533620b6a81be7d"
+    },
+    {
+      "path": "conductor/tracks/094-strict-ci-quality-gates-90-coverage-policy/spec.md",
+      "size": 201,
+      "sha256": "130e3c9c401990cd83ec5dd57a57208799ad857bfcb990b9bd6abbfd9e97d456"
+    },
+    {
+      "path": "conductor/tracks/095-unit-integration-e2e-property-fuzz-mutation-prof/metadata.json",
+      "size": 252,
+      "sha256": "26765831551c0faa6e030dcf52ce45bd88e29dcacbc92e3f6033ba3e86439f1d"
+    },
+    {
+      "path": "conductor/tracks/095-unit-integration-e2e-property-fuzz-mutation-prof/plan.md",
+      "size": 148,
+      "sha256": "b58a56b7b29468bcb93114c7ff0b048fe2f34dce0cb5a138e127bc99e0275c2c"
+    },
+    {
+      "path": "conductor/tracks/095-unit-integration-e2e-property-fuzz-mutation-prof/spec.md",
+      "size": 231,
+      "sha256": "be371a3f23eb7fe69069851d5128c7f94e44e325e90a444434631cac6c90b4e8"
+    },
+    {
+      "path": "conductor/tracks/096-property-hypothesis-style-testing-scaffold/metadata.json",
+      "size": 215,
+      "sha256": "8756152924fc9a23e9445709cffad055e171b7cd691d0323fb260860d8a72772"
+    },
+    {
+      "path": "conductor/tracks/096-property-hypothesis-style-testing-scaffold/plan.md",
+      "size": 148,
+      "sha256": "6e716e209aa752de1f9d61fd5433fb529e19d4f03a7adb640696d61fa206a38d"
+    },
+    {
+      "path": "conductor/tracks/096-property-hypothesis-style-testing-scaffold/spec.md",
+      "size": 200,
+      "sha256": "543616caf27f2260cd9846d7e6f19b2a5ed22b4c051324ccba2849e0622487c1"
+    },
+    {
+      "path": "conductor/tracks/097-mutation-testing-scaffold/metadata.json",
+      "size": 177,
+      "sha256": "769484c7c3dc19222a753493cc8c6734256e37ce984680002e9e42ba502c1a5a"
+    },
+    {
+      "path": "conductor/tracks/097-mutation-testing-scaffold/plan.md",
+      "size": 148,
+      "sha256": "afa16ccae463d47605765e0d5f6fff19b8bb5637cdee3748ccb381e7458f0d1a"
+    },
+    {
+      "path": "conductor/tracks/097-mutation-testing-scaffold/spec.md",
+      "size": 179,
+      "sha256": "1bdca5fb13f5cf716c0d5bab36e79ab82cce06ebb7e89f45cf8959877459fa57"
+    },
+    {
+      "path": "conductor/tracks/098-profiling-benchmark-scaffold/metadata.json",
+      "size": 187,
+      "sha256": "7e381651241172f873d7cfb356bb56f4c85f1d49f2ce0ec3c0b5907552ec7acb"
+    },
+    {
+      "path": "conductor/tracks/098-profiling-benchmark-scaffold/plan.md",
+      "size": 148,
+      "sha256": "0191aab6a08e492fa941a2e55646db6f4404006618380973f01f630de1da8b92"
+    },
+    {
+      "path": "conductor/tracks/098-profiling-benchmark-scaffold/spec.md",
+      "size": 186,
+      "sha256": "972e9227fde49196f864bd7b3d6be70ae80b639ea59909d4d7168fbf4fd49a7d"
+    },
+    {
+      "path": "conductor/tracks/099-astro-7-documentation-site-scaffold/metadata.json",
+      "size": 197,
+      "sha256": "c573f69ecd8a3f575e92f093a0be8eb4baaa7a3fecad687b74dabcf8025e1257"
+    },
+    {
+      "path": "conductor/tracks/099-astro-7-documentation-site-scaffold/plan.md",
+      "size": 148,
+      "sha256": "ff8d161caecb1c9ad6fadf6102f8c3aa780480a38daa302f4da52cfc48383e37"
+    },
+    {
+      "path": "conductor/tracks/099-astro-7-documentation-site-scaffold/spec.md",
+      "size": 189,
+      "sha256": "240f530792274ff2ebaf245dfa47bee0e0668438e5ad5ea0963da0cf2acdab4b"
+    },
+    {
+      "path": "conductor/tracks/100-documentation-site-audit-quality-gate/metadata.json",
+      "size": 205,
+      "sha256": "dce592acdd20b2c4d201bed5fb0d600c73c9ed23018b3954522f8fd75f314021"
+    },
+    {
+      "path": "conductor/tracks/100-documentation-site-audit-quality-gate/plan.md",
+      "size": 148,
+      "sha256": "7c140a1d5a9fc5416642a4ee2d65c5eef0b31c0d22877f3b2262bc7eb5e60566"
+    },
+    {
+      "path": "conductor/tracks/100-documentation-site-audit-quality-gate/spec.md",
+      "size": 195,
+      "sha256": "8bfd8153b164fec6acaecfde51d4ade3a14f0539fefa1a2a05e1dfc33e333848"
+    },
+    {
+      "path": "conductor/tracks/101-ci-quality-gate-audit/metadata.json",
+      "size": 169,
+      "sha256": "286b260b916a1e430d300cfc41ce3cef26dadd5648803cd1f3323e0546c303ed"
+    },
+    {
+      "path": "conductor/tracks/101-ci-quality-gate-audit/plan.md",
+      "size": 148,
+      "sha256": "8c3c0141d98289b7ac17e3e97b523d94d383e4dbe9d826c1250dab5184939341"
+    },
+    {
+      "path": "conductor/tracks/101-ci-quality-gate-audit/spec.md",
+      "size": 175,
+      "sha256": "8832c6315e618b5f01f049e87da515d2defee7a93728368cb497ba5445ccf2a0"
+    },
+    {
+      "path": "conductor/tracks/102-extended-current-environment-tool-inventory/metadata.json",
+      "size": 213,
+      "sha256": "4879537113142694207e666425c64ae6c93a33b3039c9aa10f87307a00d3d870"
+    },
+    {
+      "path": "conductor/tracks/102-extended-current-environment-tool-inventory/plan.md",
+      "size": 148,
+      "sha256": "42fb9cc64b36180181754d478bc81438f1d01853b403468b63d7c02083732b3f"
+    },
+    {
+      "path": "conductor/tracks/102-extended-current-environment-tool-inventory/spec.md",
+      "size": 197,
+      "sha256": "99277ab9af60dbdff289bdd8cd19e516f078ab9f7dbbd07e02ced8455829db18"
+    },
+    {
+      "path": "conductor/tracks/103-quality-docs-handoff-integration/metadata.json",
+      "size": 195,
+      "sha256": "60f427897e5aa8fcad575a0e845e1d134724fe6d7087ac8dabdb46121ef15fef"
+    },
+    {
+      "path": "conductor/tracks/103-quality-docs-handoff-integration/plan.md",
+      "size": 148,
+      "sha256": "9d9b2ac01ffb5a7a9778497bbe9dd45372a1f68ae1066f3b9dccc3525c53a0a9"
+    },
+    {
+      "path": "conductor/tracks/103-quality-docs-handoff-integration/spec.md",
+      "size": 190,
+      "sha256": "bb4370d063f4549dcb13fba8527b89832a4506c036abc893e7167b7bb44854ae"
+    },
+    {
       "path": "conductor/tracks.md",
-      "size": 7014,
-      "sha256": "13d0406e742491328b64aeeaa97927f8c812802dbc50efdeb79c475c56a65389"
+      "size": 11029,
+      "sha256": "8f4194064c7a6d84f4349919bb2eefda2e7d709174142034a6d60c4a8b33f459"
     },
     {
       "path": "conductor/workflow.md",
-      "size": 1697,
-      "sha256": "3ecd572ec8241eb341d694a68586669aa5899a3a15f2cf3b7b3263853788064e"
+      "size": 1769,
+      "sha256": "29cd9965c2e7e79a5b6c7b7cbc0f804c622a95bc51ef0c5b8d0ad01c9072eaab"
     },
     {
       "path": "crates/apfs-android/Cargo.toml",
@@ -4030,28 +5580,53 @@
     },
     {
       "path": "crates/apfs-blockdev/src/lib.rs",
-      "size": 3693,
-      "sha256": "773251f031ab9e059f6bdb454980e29fca9ab23130a220f07d817ffc16cf6016"
+      "size": 3985,
+      "sha256": "1323c2f5a65a2ba099f5c7ef397617bbb4a6feead55adf63e46b2583ecb9bd6f"
     },
     {
       "path": "crates/apfs-cli/Cargo.toml",
-      "size": 427,
-      "sha256": "f5d9e13f07bf1ab7151d6269f0d83c4191193d6e6aae6a3d004c1bb4d4b16ce9"
+      "size": 525,
+      "sha256": "41bd76e53da1e0027d690da19ca24b04dd483abcf3151a44b910b54c64e8ace2"
     },
     {
       "path": "crates/apfs-cli/src/main.rs",
-      "size": 40067,
-      "sha256": "c077e3338e71390e3b2a77d0f3139668124db85de5b1cf390558e6a06a4c4389"
+      "size": 42036,
+      "sha256": "33fd618e88874cb5bd44f7b5b21d57314a1b87413689ed458d221cff3e4dfd34"
+    },
+    {
+      "path": "crates/apfs-cli/tests/e2e_cli.rs",
+      "size": 496,
+      "sha256": "91623eab2ba2b2d3e566a504a04f28f727e2b728ea47d5e48692907a207ea762"
+    },
+    {
+      "path": "crates/apfs-cli/tests/e2e_synthetic_cli.rs",
+      "size": 651,
+      "sha256": "0e0ab396f750bee4686f5f9ffb2219b7e22121687ad93b3e292e365c5b43ef8b"
     },
     {
       "path": "crates/apfs-core/Cargo.toml",
-      "size": 280,
-      "sha256": "8fcb0250ccc8f2faf56743b0cd17dd54cce36e77b773ef144be288670d532c76"
+      "size": 406,
+      "sha256": "62c5a3daa173fb0864fb6e1dff8a9362f9eec66c9de7069c7605045df7bc1969"
+    },
+    {
+      "path": "crates/apfs-core/benches/inspect_synthetic.rs",
+      "size": 689,
+      "sha256": "6664f9a3f436830587cec2ae5fa0833d6060f12485d70e695de8902b6c4f8162"
     },
     {
       "path": "crates/apfs-core/src/lib.rs",
-      "size": 86913,
-      "sha256": "97778eda2ff73941ab235234782e844ec62252dfc8c121ef1df3fd430cda3960"
+      "size": 93160,
+      "sha256": "1ee0cd28dcd53b0157a607ff2d147b16309c41ae864d87e704e7e9ed5ed4a447"
+    },
+    {
+      "path": "crates/apfs-core/tests/integration_inspect.rs",
+      "size": 826,
+      "sha256": "231b1d0f046521665f03e35a35715add8bac7e41bbb51aba7552252f3e3e3c72"
+    },
+    {
+      "path": "crates/apfs-core/tests/synthetic_inspect.rs",
+      "size": 597,
+      "sha256": "3603642f89b840b1970efde6f2dd6c6f3dd59f0595980c0301036d69fa469461"
     },
     {
       "path": "crates/apfs-crypto/Cargo.toml",
@@ -4070,8 +5645,8 @@
     },
     {
       "path": "crates/apfs-features/src/lib.rs",
-      "size": 10572,
-      "sha256": "772642ff0719c8b8592c99db25719ba41422f34a2b4d5c4b5e07826f8fc67328"
+      "size": 12082,
+      "sha256": "2e7684f77d22051d23d5e9e1fda29d2e464de53517f04f41282e5fe9e189b8f8"
     },
     {
       "path": "crates/apfs-fuse/Cargo.toml",
@@ -4090,18 +5665,33 @@
     },
     {
       "path": "crates/apfs-test/src/lib.rs",
-      "size": 2814,
-      "sha256": "40aa4c6c9f75a4a9db1dad77d59853edf15982919dbfc4d2424312d7cd4f8f76"
+      "size": 3376,
+      "sha256": "497ac0dde7a07dd5939640f36aecfdfde8c98e66fca651db75be7c8c861a42ab"
     },
     {
       "path": "crates/apfs-types/Cargo.toml",
-      "size": 195,
-      "sha256": "01e309c04aa0372ed34addd5f8a840c495ac3d9278ceb2a14dddf842153205b3"
+      "size": 324,
+      "sha256": "db64f193722ce834c9e660cb736925a8bf93cbf2207d4b2e2a70193d98e944a1"
+    },
+    {
+      "path": "crates/apfs-types/benches/nx_superblock_bench.rs",
+      "size": 689,
+      "sha256": "9cd2b60951e3c9e95d1e0f6d28e07cdd75746081dcf629e692c5eb6cfc8a8cff"
     },
     {
       "path": "crates/apfs-types/src/lib.rs",
-      "size": 53396,
-      "sha256": "5bfad84681a05a230c42dfed36bf335e42c95e790a13d99a8fe84a9fc64175f5"
+      "size": 55386,
+      "sha256": "839b741f443218a94ecb702fd118454bf83d04715fb0264756a1bcecd9fe9631"
+    },
+    {
+      "path": "crates/apfs-types/tests/parser_property.rs",
+      "size": 451,
+      "sha256": "52ce3787d86cd71579b1ff5c765f1533830f6056499b6db49a9b1e1c9d016760"
+    },
+    {
+      "path": "crates/apfs-types/tests/property_nx_superblock.rs",
+      "size": 1098,
+      "sha256": "1e2248cc2657603253fe82a1b15b37ff8d7b02b786dd04b498e0be3605621960"
     },
     {
       "path": "crates/apfs-vfs/Cargo.toml",
@@ -4110,8 +5700,8 @@
     },
     {
       "path": "crates/apfs-vfs/src/lib.rs",
-      "size": 3093,
-      "sha256": "536630e9a1c005e7302f80afe86a9e8e0b90d1fa318ecfbfacd5f10333030583"
+      "size": 3115,
+      "sha256": "885ae57e6027f33d9b846ff5d87bdc7f2feaaf56664558a819449cedd5161b73"
     },
     {
       "path": "crates/apfs-win/Cargo.toml",
@@ -4120,8 +5710,8 @@
     },
     {
       "path": "crates/apfs-win/src/lib.rs",
-      "size": 6426,
-      "sha256": "de52828ea94b435cd78d4d819d15918beb10551d612b734a88c7f711a52a1026"
+      "size": 6655,
+      "sha256": "59f15dff84f2d4c971300ef92608b0db93e6649f0ba0927c25c7fe7c49ea98db"
     },
     {
       "path": "crates/apfs-write-lab/Cargo.toml",
@@ -4134,9 +5724,124 @@
       "sha256": "bf63b6672549b3f66fe9665f24812b71ddb051164abec5f1638a00e77a48d506"
     },
     {
+      "path": "criterion.toml",
+      "size": 199,
+      "sha256": "c00d7873434b93862bd21e800d6396832590fb49f41b1538461e030fbb3d2cdf"
+    },
+    {
       "path": "deny.toml",
       "size": 403,
       "sha256": "1879aeb4859d8d9726500e6f1ccc3668d8ce2e89d62536fb36c01010d0b318cb"
+    },
+    {
+      "path": "dist-workspace.toml",
+      "size": 224,
+      "sha256": "cf343308ae70f90dc04fecf25bd9c85b0991572f1923f46b9ab857a82d91d722"
+    },
+    {
+      "path": "docs-site/README.md",
+      "size": 243,
+      "sha256": "d32aa66f9ec63742327ec8fac8861666f3de1a1d25ddbe489bfda7bd81ddacb4"
+    },
+    {
+      "path": "docs-site/astro.config.mjs",
+      "size": 143,
+      "sha256": "f64b05cd0b7ed0511b084139af8559b92d9bf2dcee3eaace6bf6e7251f554315"
+    },
+    {
+      "path": "docs-site/package-lock.json",
+      "size": 292223,
+      "sha256": "9c2c248bfc68d496eb0a334bb7261a30f0b02170229ffbf6ed8eeda397fffc00"
+    },
+    {
+      "path": "docs-site/package.json",
+      "size": 553,
+      "sha256": "96128787b7591fcf5faa355d49aa81137eac9b7594b4e68a46f83c9097304e4a"
+    },
+    {
+      "path": "docs-site/src/content/docs/architecture.mdx",
+      "size": 337,
+      "sha256": "2529caadad42f8efad2d7ac21891e54581b475eeb6d0187e05b9d3f76d62d3e2"
+    },
+    {
+      "path": "docs-site/src/content/docs/index.mdx",
+      "size": 296,
+      "sha256": "0dfb2a3175076b10a312f07667f1ad35b46a2252b7db0db4b194fc7c7b0f7635"
+    },
+    {
+      "path": "docs-site/src/content/docs/local-handoff.mdx",
+      "size": 346,
+      "sha256": "2ee2710287ace96a2e76330210a6ee44e8c7db458a95d9d9f0bebd63b198cdcf"
+    },
+    {
+      "path": "docs-site/src/content/docs/quality-gates.mdx",
+      "size": 388,
+      "sha256": "89e8218c59906f9e9884a7f19c6403f3e61cd3052424d1f5daea3de576449e2d"
+    },
+    {
+      "path": "docs-site/src/content.config.ts",
+      "size": 107,
+      "sha256": "d520273196d6284b368823f346dc142e8bcd7426a2efdcca8c50a5d4bf981448"
+    },
+    {
+      "path": "docs-site/src/layouts/Base.astro",
+      "size": 919,
+      "sha256": "c83292410e1df3a08c448faa1c6d0660b559e368cd2ef4b6a0f3e7336ad45fd2"
+    },
+    {
+      "path": "docs-site/src/pages/conductor.astro",
+      "size": 392,
+      "sha256": "42b238f3801818163216b14fd89accbeed86fd2946b45b14833c2b6b912b9ea9"
+    },
+    {
+      "path": "docs-site/src/pages/design/index.astro",
+      "size": 331,
+      "sha256": "fb3152db38fe468d08305c3d0069c326553aab2ca0a496fb36dea56b62d15f14"
+    },
+    {
+      "path": "docs-site/src/pages/handoff/index.astro",
+      "size": 352,
+      "sha256": "0a7190b605a370ad8503609f1341e7d5654234317b2f27b300fdf5a535f10fe1"
+    },
+    {
+      "path": "docs-site/src/pages/index.astro",
+      "size": 579,
+      "sha256": "355c117f885d15403042b17164c256de90c0d28d62817a98aa93542eeb05fb46"
+    },
+    {
+      "path": "docs-site/src/pages/quality-evidence.astro",
+      "size": 246,
+      "sha256": "67503a981cb55df8702d6bd066b50b35b930b96275b95ef606201341a36107b6"
+    },
+    {
+      "path": "docs-site/src/pages/quality.astro",
+      "size": 438,
+      "sha256": "04336886b73a9050b6022aeb66465d76108576a89ebd42da7b8939a19c9ae691"
+    },
+    {
+      "path": "docs-site/src/pages/requirements/index.astro",
+      "size": 349,
+      "sha256": "1645b2c7699156e17ebea68f2da69a3d901802432063141fffed660cb6d8e0cd"
+    },
+    {
+      "path": "docs-site/src/pages/safety/index.astro",
+      "size": 346,
+      "sha256": "417b3060ae3c6e6cb796235f8175ca3aae389b77564b2471dbf090def13e789a"
+    },
+    {
+      "path": "docs-site/src/pages/test-strategy.astro",
+      "size": 388,
+      "sha256": "96b4de936896cb8d674bf711e3f6c253e964afb1c98a059f0d0245e5e7a2faee"
+    },
+    {
+      "path": "docs-site/tsconfig.json",
+      "size": 42,
+      "sha256": "974b0a3b37e52f3649d9df63e72e374794e9e797c8ae61eca4812f844406f7ef"
+    },
+    {
+      "path": "fixtures/.DS_Store",
+      "size": 6148,
+      "sha256": "47e77a8a547d94b06acdc47226bfbd96022f6bfce786398af540de89f894d42a"
     },
     {
       "path": "fixtures/README.md",
@@ -4445,18 +6150,23 @@
     },
     {
       "path": "fuzz/fuzz_targets/nx_superblock.rs",
-      "size": 144,
-      "sha256": "fffa07403663fa96704e1ee9923215381eddbe868cf2bd759f4adadd7214196f"
+      "size": 169,
+      "sha256": "752c514347b942d6ab8b232125b8f23981d8cfc7fc3c5136c0591f643ff2f872"
     },
     {
       "path": "fuzz/fuzz_targets/object_header.rs",
-      "size": 130,
-      "sha256": "0067abd580fc0d39aed118a604aa5a77a90ac2843e33530584ad6bdde8d00f30"
+      "size": 155,
+      "sha256": "f2a6a1377b0f6496e3acaa9f88abee952c867418e96fa90d847c2fb983a982be"
     },
     {
       "path": "mise.toml",
       "size": 262,
       "sha256": "a4efb422d4edcf8b916a130e4cdc6ea3cd056b72778efefc0aa04b85af839f17"
+    },
+    {
+      "path": "mutants.toml",
+      "size": 188,
+      "sha256": "dc2e7b5ac6ef7bb7e21debd32ee6b676ed66104a6f71dcca3f479e385a620301"
     },
     {
       "path": "packaging/README.md",
@@ -4479,9 +6189,64 @@
       "sha256": "790bb5587ee060e2b9d7e6b16a105e982c562b7b3dfedeae88d23c1311c27478"
     },
     {
+      "path": "profiling/README.md",
+      "size": 369,
+      "sha256": "5bbacfebb96bccc64b4664d70e292b4960e56b5c75821b8ae652f891a1ea9879"
+    },
+    {
+      "path": "profiling/profile_plan.json",
+      "size": 562,
+      "sha256": "2bc1b3075e53bd6cff3832753ebc848bc5ea4915ff47e5f4504ec89ddb4d9d6e"
+    },
+    {
+      "path": "pytest.ini",
+      "size": 166,
+      "sha256": "492d3ff52f75ec67d01c978905bad2e566c2110d0231e3cbf3e735ed82e8c489"
+    },
+    {
+      "path": "python_tests/requirements-dev.txt",
+      "size": 24,
+      "sha256": "586c73d5679219a649511f731a8e2d371199b7dc2a8653e060a54a7df9570a69"
+    },
+    {
+      "path": "python_tests/test_fixture_properties.py",
+      "size": 1356,
+      "sha256": "9a478dbdfaa3ec838d02e6466af026f2f1d0b3959603715f7b104a18cd1726b0"
+    },
+    {
+      "path": "python_tests/test_negative_fixtures.py",
+      "size": 619,
+      "sha256": "95dc8793bd1dd72f66ac9724f9643ac8d662313cfb1d24fea15eedc9ffec7764"
+    },
+    {
+      "path": "release-plz.toml",
+      "size": 122,
+      "sha256": "6ccefe801c9e0e916bb66583ea26717498becddd171e9ba1edbe84cab8b8b90c"
+    },
+    {
+      "path": "renovate.json",
+      "size": 812,
+      "sha256": "7c5ab3ffd8e2706b75a219f8d5fac02ef01154b5f6f5b4649ecee48613789c9e"
+    },
+    {
+      "path": "requirements-dev.txt",
+      "size": 59,
+      "sha256": "095f0d3dd355b32ab67eda7930807323d2fd9d504462287d37f4d0a29ca2408f"
+    },
+    {
       "path": "rust-toolchain.toml",
       "size": 98,
       "sha256": "a021b2887e72900fc74120cc1f3ed6a552f6b8c538b67b8dc45396a5d69c89b4"
+    },
+    {
+      "path": "supply-chain/audits.toml",
+      "size": 99,
+      "sha256": "3ff871cbceb8f69e88bcfa7a987b02b63389147f8c961e3de4b614f08271a211"
+    },
+    {
+      "path": "supply-chain/config.toml",
+      "size": 283,
+      "sha256": "1587be51ca914a59b97dc489969601a26e035cce1b5ab8a623d94c4a3b0e55ba"
     },
     {
       "path": "taplo.toml",
@@ -4489,324 +6254,44 @@
       "sha256": "a95205e599df14c996fb79188dc60f160cd15de202cee14f8395b3d219c37a1a"
     },
     {
-      "path": "tools/__pycache__/agent_handoff_brief.cpython-313.pyc",
-      "size": 5664,
-      "sha256": "6a43c4c7ec7951012677cc22a1a562c13cf278110c3a77928e29fa1f5307794d"
+      "path": "tests/README.md",
+      "size": 154,
+      "sha256": "e266648c3dd1b2472ae4762b4abfd2fcf92a0afb7801fc8954f3b3faae183ccd"
     },
     {
-      "path": "tools/__pycache__/apfs_offset_audit.cpython-313.pyc",
-      "size": 7461,
-      "sha256": "dcc10a6dd6745673b306595ba7763fa1eabcea5a65b65e4fc526f56def520ba8"
+      "path": "tests/e2e/README.md",
+      "size": 172,
+      "sha256": "0e27c72870f0deae767b84267370d057aa2f207f37068f7adc8ed8d3b6ea1901"
     },
     {
-      "path": "tools/__pycache__/api_surface_snapshot.cpython-313.pyc",
-      "size": 3471,
-      "sha256": "d66090c46a6a5921eb259e4566125d2ef8e55288a3f7aa404525857069891455"
+      "path": "tests/e2e/cli_smoke_commands.md",
+      "size": 474,
+      "sha256": "3991383a1d156c59cb87efc81b3798361efee264b86d41f18491ec26abc14fd1"
     },
     {
-      "path": "tools/__pycache__/backlog_issue_export.cpython-313.pyc",
-      "size": 4329,
-      "sha256": "f5eb6cf4de40fa53cd8f55e001244bdb2ed07d36e386ead43191d524b477b1da"
+      "path": "tests/integration/README.md",
+      "size": 182,
+      "sha256": "e576ee255457f14a98d49d9f2d58551534321fe7d5327e653793054dbbdcb797"
     },
     {
-      "path": "tools/__pycache__/cargo_dependency_graph.cpython-313.pyc",
-      "size": 5402,
-      "sha256": "3948e8849b0e594453d7715b04820773c363d212527ef25e3b27288b39d4eb58"
+      "path": "tests/property/README.md",
+      "size": 150,
+      "sha256": "2a610dc51f5883084d745b6f4a6624e4fb049a48fc95de841c9271854c482ef8"
     },
     {
-      "path": "tools/__pycache__/cargo_error_to_tracks.cpython-313.pyc",
-      "size": 6415,
-      "sha256": "e479eafd654fd75f160466ba33aef4d206743367836616c112f17ef48f5de826"
+      "path": "tools/.DS_Store",
+      "size": 6148,
+      "sha256": "d23d1961e0a01c958ea46fc36def83c4385378af96d0df609eb1b6cd1e0c8b82"
     },
     {
-      "path": "tools/__pycache__/cargo_workspace_audit.cpython-313.pyc",
-      "size": 3847,
-      "sha256": "7d51d9a883276c316703a511679780e595cfbea5be342ab4bf8466bad97ab5db"
-    },
-    {
-      "path": "tools/__pycache__/cargoless_smoke_suite.cpython-313.pyc",
-      "size": 4937,
-      "sha256": "d0d257afea4745ade6d3614f71896a23eed45512dea899b6bb005836c34f271f"
-    },
-    {
-      "path": "tools/__pycache__/cli_contract_check.cpython-313.pyc",
-      "size": 2610,
-      "sha256": "92616e476cb8c9c7958d2990b43ffe9fb39fef0e8b937a17024e4433bd0af0d5"
-    },
-    {
-      "path": "tools/__pycache__/cli_contract_snapshot.cpython-313.pyc",
-      "size": 6777,
-      "sha256": "28ecdbe350e4cceb28db6f6716f0daf21cc923310d54715a6371b8a652cae6f9"
-    },
-    {
-      "path": "tools/__pycache__/compare_inspect_to_manifest.cpython-313.pyc",
-      "size": 3111,
-      "sha256": "d71660990d6c79fe3e2d4a69f84403223bf8ab79f6294e4bb919eac06c552477"
-    },
-    {
-      "path": "tools/__pycache__/config_sanity_check.cpython-313.pyc",
-      "size": 3301,
-      "sha256": "6714317b3a28e1a73fa400beae36c1160673ead11eb7c211fbe5a03b13ca2cc1"
-    },
-    {
-      "path": "tools/__pycache__/context_integrity_check.cpython-313.pyc",
-      "size": 4194,
-      "sha256": "991b81c14b06d43379f72fce828d30b5249dcadf18434b0334f428e46c2be32f"
-    },
-    {
-      "path": "tools/__pycache__/current_env_completion_report.cpython-313.pyc",
-      "size": 3038,
-      "sha256": "d4f34e03c3d1dc66fc7603e2faa39b7fb9c50237673a290d150a59d423f23e5c"
-    },
-    {
-      "path": "tools/__pycache__/current_env_final_report.cpython-313.pyc",
-      "size": 2748,
-      "sha256": "9a6384472bcd3056ac80478b60ae840133ad2b14f7f6c20fd8e331f38cd70377"
-    },
-    {
-      "path": "tools/__pycache__/current_env_remaining.cpython-313.pyc",
-      "size": 6586,
-      "sha256": "652a20c2a7172f688d4d03a8a24c4bf5a0955983e2ff99aa1e82e0e7a21da633"
-    },
-    {
-      "path": "tools/__pycache__/current_env_selftest.cpython-313.pyc",
-      "size": 5577,
-      "sha256": "d02457b68e25b863e6941cfe31ec525edd1eb7028cea148aecbd6e93ac7ae615"
-    },
-    {
-      "path": "tools/__pycache__/current_environment_inventory.cpython-313.pyc",
-      "size": 7536,
-      "sha256": "23add62e3a5cae0d46b5805da6bc786d5f103c5ff19d5a0ab3c55becf7c38977"
-    },
-    {
-      "path": "tools/__pycache__/dependency_license_policy_check.cpython-313.pyc",
-      "size": 4834,
-      "sha256": "86c7076c7e91cee8e0e2a06f4a56b00d22b12c8e3dcec971ff2e906b88594337"
-    },
-    {
-      "path": "tools/__pycache__/diagnostics_bundle.cpython-313.pyc",
-      "size": 5252,
-      "sha256": "c7d6d714e60338494333cd02021bc0a3b07ddfa36e528531227d7470fde6f4f8"
-    },
-    {
-      "path": "tools/__pycache__/documentation_index_audit.cpython-313.pyc",
-      "size": 3475,
-      "sha256": "33b2ffb135b9cb8aab64a636ff04fd1212ae95faf37d87babe0cef45400f6deb"
-    },
-    {
-      "path": "tools/__pycache__/feature_readiness_snapshot.cpython-313.pyc",
-      "size": 4801,
-      "sha256": "af2f9d43c0f51dcaf50adf74a8d67d52560f688292d83c09858fdf21213ae7c0"
-    },
-    {
-      "path": "tools/__pycache__/fixture_coverage_report.cpython-313.pyc",
-      "size": 4160,
-      "sha256": "8de6c998824a2ad1c9517ca8bc75186264e87e05f022e36838cdb24452df47d8"
-    },
-    {
-      "path": "tools/__pycache__/golden_output_generator.cpython-313.pyc",
-      "size": 4539,
-      "sha256": "8d95e54316bb14aa219e5503cd49153fce9a148a1f9ee0953ac18bf3879f452b"
-    },
-    {
-      "path": "tools/__pycache__/handoff_archive_audit.cpython-313.pyc",
-      "size": 4594,
-      "sha256": "75d98a97e82c7e078deaf4a73128362811beb525a45e98fd15372c3965aede6e"
-    },
-    {
-      "path": "tools/__pycache__/handoff_manifest_verify.cpython-313.pyc",
-      "size": 3677,
-      "sha256": "746a00b3142b876e6681e00eda72a46ac2fe22724ed665eab9d3207afa60948d"
-    },
-    {
-      "path": "tools/__pycache__/handoff_readiness_check.cpython-313.pyc",
-      "size": 2619,
-      "sha256": "c3fb6efdef15b441090eab3ffcf347e15c19f10fe919d2be6c05d5504e183953"
-    },
-    {
-      "path": "tools/__pycache__/handoff_status.cpython-313.pyc",
-      "size": 6395,
-      "sha256": "e1a09cb8936f69dc03c030b5d308fff0e867b5c4b4f6868eda099e5ce13ac886"
-    },
-    {
-      "path": "tools/__pycache__/known_risk_check.cpython-313.pyc",
-      "size": 1583,
-      "sha256": "de7c7299d07520591a9b862b49ba75bf26a4d77a085be83392b97b8848e02298"
-    },
-    {
-      "path": "tools/__pycache__/local_command_plan.cpython-313.pyc",
-      "size": 4101,
-      "sha256": "ab5254a68be4141fb377584149c3f8b74e5dcee9a26be4c29a3e46a1c4539b91"
-    },
-    {
-      "path": "tools/__pycache__/local_compile_loop.cpython-313.pyc",
-      "size": 5410,
-      "sha256": "a0d1252c9e9fb3e4a999b621dfc53f8a2552646a3831ad9a508effc8dd0a5f57"
-    },
-    {
-      "path": "tools/__pycache__/local_env_doctor.cpython-313.pyc",
-      "size": 4276,
-      "sha256": "d7cf496e545e23eda052903e5fc48e4ed1cc46d04b88270ad7b47400228ba2c5"
-    },
-    {
-      "path": "tools/__pycache__/local_migration_commands.cpython-313.pyc",
-      "size": 2968,
-      "sha256": "dcf66f65d2e67e64137530d5f31950c5c1f8e06235e9896b71407e5cbbcdba0f"
-    },
-    {
-      "path": "tools/__pycache__/loop_dashboard.cpython-313.pyc",
-      "size": 4830,
-      "sha256": "0f1af3f3a86bdb4e3c8351d4cbf6d0ce66d922d1042f2bae873e03b6fe33dff3"
-    },
-    {
-      "path": "tools/__pycache__/macos_fixture_dry_run.cpython-313.pyc",
-      "size": 2749,
-      "sha256": "e759aaf0e6e68077059bcd1468ec33fdb95156a472c9a7e921e748804713f9a4"
-    },
-    {
-      "path": "tools/__pycache__/make_synthetic_fixtures.cpython-313.pyc",
-      "size": 34123,
-      "sha256": "01841ea8ec36cb3daf0cbe13c7979cad2912ffa6cfa8809cd0a29418997eb6d4"
-    },
-    {
-      "path": "tools/__pycache__/markdown_link_audit.cpython-313.pyc",
-      "size": 5775,
-      "sha256": "fc275788e6ca01caa077e3985074224ea54ebc061eaf57e33687ed58fca599e2"
-    },
-    {
-      "path": "tools/__pycache__/mvp_blocker_dag.cpython-313.pyc",
-      "size": 3134,
-      "sha256": "896184ce77a39d1cc78b6647650708104eabfeaf8b107d3fb3069d09fea5ce92"
-    },
-    {
-      "path": "tools/__pycache__/mvp_blocker_tasklist.cpython-313.pyc",
-      "size": 4175,
-      "sha256": "7f9a1c87a2b07a1deb009270916f25c4637b4af327e240766e4d8a1735d925a2"
-    },
-    {
-      "path": "tools/__pycache__/next_loop_plan.cpython-313.pyc",
-      "size": 3347,
-      "sha256": "3082f5beae63b7a0eab7892a9aba54ac6effa0102727e5b3868dbd5f839edc25"
-    },
-    {
-      "path": "tools/__pycache__/package_integrity_audit.cpython-313.pyc",
-      "size": 5724,
-      "sha256": "fca7c26bd3ce523746509e0aaff185d2d19ca1d153881cf4f581ec0bea1003ab"
-    },
-    {
-      "path": "tools/__pycache__/precompile_static_check.cpython-313.pyc",
-      "size": 14415,
-      "sha256": "283b5fee49f99353827b1524921d2434e81700c92b17463486483be959e17cc5"
-    },
-    {
-      "path": "tools/__pycache__/production_claim_guard.cpython-313.pyc",
-      "size": 5122,
-      "sha256": "74e2fd1e44565a08d10e215519012db005c5fb5a7833d4d12bcee4db9b4598c7"
-    },
-    {
-      "path": "tools/__pycache__/production_gap_report.cpython-313.pyc",
-      "size": 3413,
-      "sha256": "6b656666fb5e7fc79d499e9bb58e8c654bdc59bd746cd0cb6ca6d8ba1c7e470f"
-    },
-    {
-      "path": "tools/__pycache__/promote_feedback_to_tracks.cpython-313.pyc",
-      "size": 13256,
-      "sha256": "7c5a317297ef09a70009f2afa6d51a4c82efb1e4333017be8668a6bf75c010a6"
-    },
-    {
-      "path": "tools/__pycache__/real_fixture_feedback.cpython-313.pyc",
-      "size": 10750,
-      "sha256": "4f06f75897c335b103ee78d73a8dc9b12ba747f8a13d431ea2a3bfb8263c601e"
-    },
-    {
-      "path": "tools/__pycache__/release_preflight.cpython-313.pyc",
-      "size": 6071,
-      "sha256": "3473a0ccaf31cc4e6fa9f5b840ff6291562cc1b5148709bc032d252122815efd"
-    },
-    {
-      "path": "tools/__pycache__/release_scaffold_check.cpython-313.pyc",
-      "size": 1813,
-      "sha256": "4416d58b788fda137caa02641437e729710dfdf06c9b845cdb2c2793408fb1a2"
-    },
-    {
-      "path": "tools/__pycache__/repo_manifest.cpython-313.pyc",
-      "size": 4267,
-      "sha256": "8f7f5bdea8acdaee1407f57a6820e27c1a6b3c454c1ec4c632f94e32efcfa777"
-    },
-    {
-      "path": "tools/__pycache__/rust_api_map.cpython-313.pyc",
-      "size": 3257,
-      "sha256": "4f73215dc5588c7cf3297a82c18dd2e5e0947607d6d20a723a232635f77d5005"
-    },
-    {
-      "path": "tools/__pycache__/rust_static_lint.cpython-313.pyc",
-      "size": 6002,
-      "sha256": "7787b130ce6d72ea9d353cdf717fbe0ae1370e689c89163fd793c84cf94e7006"
-    },
-    {
-      "path": "tools/__pycache__/safety_case_check.cpython-313.pyc",
-      "size": 2144,
-      "sha256": "a5f15d8a560587bcfe4a7fad880e4289947820a8fcab23be91916ba80071e7a9"
-    },
-    {
-      "path": "tools/__pycache__/shell_script_static_check.cpython-313.pyc",
-      "size": 4059,
-      "sha256": "8bbb7e2c7e4471f0a596a66a308767383da5c9a9c732ec818db5b29cb2755047"
-    },
-    {
-      "path": "tools/__pycache__/source_debt_report.cpython-313.pyc",
-      "size": 4359,
-      "sha256": "f67c766fde7d5aecc712f1e10a0eb36ed6ffc22734f0accd72a9c914dbe3c0e4"
-    },
-    {
-      "path": "tools/__pycache__/source_metrics.cpython-313.pyc",
-      "size": 4741,
-      "sha256": "a81864d698a2a5db97c0ddb2e64fdcce8c174130a962a7eda22882887a078e04"
-    },
-    {
-      "path": "tools/__pycache__/synthetic_fixture_oracle.cpython-313.pyc",
-      "size": 13599,
-      "sha256": "8b037668d3ed808a6fe11cb934e2b991cc02cbd41d7b052367a98a5de6c0a7b4"
-    },
-    {
-      "path": "tools/__pycache__/synthetic_negative_fixture_generator.cpython-313.pyc",
-      "size": 4350,
-      "sha256": "8360302e27dc7e997d8b64264790e1f56caf7c7c7ea7b46f3ebc1d444daf62fe"
-    },
-    {
-      "path": "tools/__pycache__/test_matrix_generator.cpython-313.pyc",
-      "size": 3507,
-      "sha256": "f363f62f4e00d08e6ed2323ed52e6f6f2620fc5377854fca120479154b01e8bf"
-    },
-    {
-      "path": "tools/__pycache__/tool_capability_matrix.cpython-313.pyc",
-      "size": 6605,
-      "sha256": "51f4996e3ef934e2fab9c39863ccd823f14623eb28d289b50228d62913e68689"
-    },
-    {
-      "path": "tools/__pycache__/traceability_matrix.cpython-313.pyc",
-      "size": 5491,
-      "sha256": "4c8ee16b585921dc13d51880041b10b7098e4fe079389c08836ce721a7e4dfd7"
-    },
-    {
-      "path": "tools/__pycache__/version_consistency_check.cpython-313.pyc",
-      "size": 5236,
-      "sha256": "f076a0b15320547ee1be55a7b6711f2466b029ec2ae81f1fa2678631d21c0ff8"
-    },
-    {
-      "path": "tools/__pycache__/windows_readiness_check.cpython-313.pyc",
-      "size": 1678,
-      "sha256": "42693bdecc82dcc6d3f1f66ef86701392445e8df7644df5eba9a4e29fa00bde6"
-    },
-    {
-      "path": "tools/__pycache__/winfsp_callback_matrix.cpython-313.pyc",
-      "size": 2808,
-      "sha256": "988322fcd8d0a951448f2eec9e2298f3544848f97aadd3b9ec1c42818a83d4ab"
+      "path": "tools/action_pinning_audit.py",
+      "size": 1223,
+      "sha256": "78a7bcab8b197165bdc5bed33de5744760007c0e97ac88f84bd0c9078a2c650c"
     },
     {
       "path": "tools/agent_handoff_brief.py",
       "size": 3038,
-      "sha256": "992df64f7b7f1f2fb64c87cbac1b25d684fa6b0cdfcb0e5f55c84cf42da758c9"
+      "sha256": "320aa32800b7ed1ccf61d6dc031cc56376d481d1e4baa41ba5331de4fb217993"
     },
     {
       "path": "tools/apfs_offset_audit.py",
@@ -4819,9 +6304,24 @@
       "sha256": "1645e5f419fc04563fd09c6aec90b7b3fd0cbe9db2443ac2449a39453306303c"
     },
     {
+      "path": "tools/astro7_docs_hardening_audit.py",
+      "size": 849,
+      "sha256": "06c527ed3b81abf4151552dc0cd777d91f9e94aba30be99bd01471c4ff973335"
+    },
+    {
       "path": "tools/backlog_issue_export.py",
       "size": 2635,
       "sha256": "752f1ec349495fdf2a04e414acd25b939e085aeb04afac11c69ce9815a05b044"
+    },
+    {
+      "path": "tools/benchmark_regression_audit.py",
+      "size": 692,
+      "sha256": "1230cad0261f8e80e6be3a5ccd6643a32e3722946cc812f7a8abf0c692d43f50"
+    },
+    {
+      "path": "tools/bleeding_edge_repo_audit.py",
+      "size": 1364,
+      "sha256": "a9e19ebe5a7dea991961e5101868469df1ef7a803e382d9df133918c4e490694"
     },
     {
       "path": "tools/cargo_dependency_graph.py",
@@ -4834,14 +6334,24 @@
       "sha256": "d41ca705beecf4d49fc3e8d8b9074d154760b4d8f9bb5f529018151d328f28c7"
     },
     {
+      "path": "tools/cargo_vet_policy_audit.py",
+      "size": 734,
+      "sha256": "5a7d4841c728be2bfd4c8f3d0456a8eed95ec534e13a5ae44bc6ce5374d14ed7"
+    },
+    {
       "path": "tools/cargo_workspace_audit.py",
       "size": 2298,
       "sha256": "319f8b59d1e8198fe48f4d4256a838467d393b00cf23db4ed598055c499d1ec1"
     },
     {
       "path": "tools/cargoless_smoke_suite.py",
-      "size": 3380,
-      "sha256": "209c99295f84dc0c08da3ced20569cfc5e5f4fd1a7fa287af7fcc927bf3c8979"
+      "size": 4658,
+      "sha256": "6631f1f0441f5b6aa6226aa634979c23710a5273647bbc002281f5f5c9a13973"
+    },
+    {
+      "path": "tools/ci_quality_gate_audit.py",
+      "size": 1789,
+      "sha256": "a30be843a6745be7215ac7fe2ba45c68e89139f77bbc6e3f2159dcac050b12d4"
     },
     {
       "path": "tools/cli_contract_check.py",
@@ -4860,8 +6370,8 @@
     },
     {
       "path": "tools/config_sanity_check.py",
-      "size": 2073,
-      "sha256": "29c30044526b97504f1e3461ef34a0f2dcf79ba08332ba218c4751ada3dff11e"
+      "size": 2064,
+      "sha256": "f4973cb5a5c48f5715594ba4c4208436595ff957245a04cb246f62694957920a"
     },
     {
       "path": "tools/context_integrity_check.py",
@@ -4876,7 +6386,7 @@
     {
       "path": "tools/current_env_final_report.py",
       "size": 1697,
-      "sha256": "73712604dbbe16a5140ae3ec496bdd2f613e70764adc2a8f44a08ef1177c58bf"
+      "sha256": "2a59d08324dc8f750a97b034d91039d13d9082d5d21eb4a6d09632ff65521645"
     },
     {
       "path": "tools/current_env_remaining.py",
@@ -4886,7 +6396,12 @@
     {
       "path": "tools/current_env_selftest.py",
       "size": 3506,
-      "sha256": "69ac25f206f7006394042de4ab7911bec8db7a5b05d3a1684ae7026111add735"
+      "sha256": "e14e6bc2dd50ef108626bc83557d5c56c088a8ca9ecc16aa5a1aa4553e176e7b"
+    },
+    {
+      "path": "tools/current_env_tool_inventory_extended.py",
+      "size": 1988,
+      "sha256": "669d03800da341c563b9cae5f7f6b86653cb822c015ac6c0f1a30f89562197ab"
     },
     {
       "path": "tools/current_environment_inventory.py",
@@ -4904,6 +6419,26 @@
       "sha256": "a8d81f3028d3eaa4f0e3ac61db6d3e477430f42578d0ce3df74f8ec6c2daf876"
     },
     {
+      "path": "tools/docs_package_audit.py",
+      "size": 2542,
+      "sha256": "2cf265a67955f91f3f914fe2eedb7c4a94fb4df9cc3fee085ad280e6db8d85d9"
+    },
+    {
+      "path": "tools/docs_site_audit.py",
+      "size": 1927,
+      "sha256": "02e046d695834cd30c7803ed7a9a090615c2b0bb47a2b4634ca02df34752dfbf"
+    },
+    {
+      "path": "tools/docs_site_check.py",
+      "size": 1995,
+      "sha256": "7fa689ce3ba7da3e27f38342b0b07ddeb22679c655e4be9c57fc065bede064be"
+    },
+    {
+      "path": "tools/docs_site_static_check.py",
+      "size": 1645,
+      "sha256": "f8df0e75c3fccf5dce5f188ef26e81d285ff3a1a2d0f6711cce7cb4032442465"
+    },
+    {
       "path": "tools/documentation_index_audit.py",
       "size": 1974,
       "sha256": "09c57eeb8402968358af575ce811fff106ef779468999bd062ab75b37e71628f"
@@ -4919,19 +6454,29 @@
       "sha256": "6bce0e80f40303884955edf402af4bfda97cb56312a78fbab45587607c850fe5"
     },
     {
+      "path": "tools/github_actions_hardening_audit.py",
+      "size": 1813,
+      "sha256": "15da21de08a04f729321d0fb85fdbc925e67dacce6a9c1fe8580d758b17906ea"
+    },
+    {
+      "path": "tools/github_workflow_policy_audit.py",
+      "size": 3176,
+      "sha256": "0ceb66999fd4bd26f29b8bad579c7835fbced425805653940c5e225984939df8"
+    },
+    {
       "path": "tools/golden_output_generator.py",
       "size": 2956,
       "sha256": "7f3c4aaeee8361cde3d85a83564ba1fa4586756dea53aec5747cd44d98ce512c"
     },
     {
       "path": "tools/handoff_archive_audit.py",
-      "size": 2158,
-      "sha256": "fbeb229b60e57f8ca5050828c7afbd31f72cbacc07624e4adae3b4ec13fa36ff"
+      "size": 2260,
+      "sha256": "7a2a7cecdfa7b89f91a7280e2732bc9ab977147a20f22061754e37d4d3210991"
     },
     {
       "path": "tools/handoff_manifest_verify.py",
-      "size": 1797,
-      "sha256": "b42f2a62bd9e0665b1339844af19688d7596711e7e5c57ccdf92a47bf8b85275"
+      "size": 1998,
+      "sha256": "fbe69c8568a874464e249f01191041e31bf508fd7eb42d4ce026b837c616b5da"
     },
     {
       "path": "tools/handoff_readiness_check.py",
@@ -4944,6 +6489,11 @@
       "sha256": "558dd441f4bb23d08d42da4d5519799a26fb3ba4aaa4a298249f5955c3f8048c"
     },
     {
+      "path": "tools/hypothesis_strategy_audit.py",
+      "size": 1711,
+      "sha256": "03c5ad5a9b0ff6bae518f028a09c9250a7faa92e4e26c19bb44284bde95ac2c0"
+    },
+    {
       "path": "tools/known_risk_check.py",
       "size": 955,
       "sha256": "40a178bbdad682f35b537db5f727ca3184724988a3fc236d3fcb75bbf9d8334f"
@@ -4951,7 +6501,7 @@
     {
       "path": "tools/local_command_plan.py",
       "size": 2698,
-      "sha256": "8f6a5202daace0b3d6a1b2a3e7ecd470c60b391d9091481211aaa9bb117b360c"
+      "sha256": "42db2a9e16c503c62f27a9f80127c7ad62bd16d16c4569a1f938d03ef0bc7e94"
     },
     {
       "path": "tools/local_compile_loop.py",
@@ -4966,7 +6516,7 @@
     {
       "path": "tools/local_migration_commands.py",
       "size": 2141,
-      "sha256": "8a30d01e600f795d00555ab461ef134365b95f3bc62c0b125d1fe33d5a86e5a4"
+      "sha256": "4e665c580cdcb2f913c443cdb4d2c07aa33028c410ff74e8858ff900665d51f8"
     },
     {
       "path": "tools/loop_dashboard.py",
@@ -5001,12 +6551,12 @@
     {
       "path": "tools/mvp_blocker_dag.py",
       "size": 1900,
-      "sha256": "ddfb238d9f9fd79f96349d9c5adaaa0df7912fe1a47da731b8c700b233cdf98c"
+      "sha256": "df012f59806ab340372a05cea490550108ab3a737f3b742b51ebcdc430887fdc"
     },
     {
       "path": "tools/mvp_blocker_tasklist.py",
       "size": 2806,
-      "sha256": "f336ada2fd852e15723c296328c7390c5bb47d3127152a05a121b37211e8689f"
+      "sha256": "22d825f02c250eb98c508b371f9f240b9fe3b16692ba07ef699ad05a318f66c5"
     },
     {
       "path": "tools/next_loop_plan.py",
@@ -5015,18 +6565,18 @@
     },
     {
       "path": "tools/package_integrity_audit.py",
-      "size": 2781,
-      "sha256": "45caff90051ecd12a93dcb6ea7b5eec8fbbb0539185aca1339cde68c59ca1586"
+      "size": 3034,
+      "sha256": "2a1f1c56a3706de3a8ba1eae56fb2247be6e1206e48c9258561b08acffcfb7d4"
     },
     {
       "path": "tools/precompile_static_check.py",
-      "size": 9523,
-      "sha256": "a780409aa85f320e6b53bc8573d30c01474616dc2998f3cda4356f3fb3daaf73"
+      "size": 9571,
+      "sha256": "59a25a9e1e02e7e14dd56a29718e6a5ba1ef7abe65e318e244e48f28ff4c4b8c"
     },
     {
       "path": "tools/production_claim_guard.py",
       "size": 2863,
-      "sha256": "a9208484de48fda188b6c2753258ee494ccaa31c1fa278bf31c26a5e2abe0e0e"
+      "sha256": "8cbf58d8f5c7e50f439a3742026ab7ff9bd6a2e5d6a6d1d88c5e78a10a75f379"
     },
     {
       "path": "tools/production_gap_report.py",
@@ -5034,9 +6584,34 @@
       "sha256": "8330c7c4bd8d50e65927bbfe8906ab5b1a440ccc37dcf758c336e7c6899fa2ee"
     },
     {
+      "path": "tools/profiling_budget_check.py",
+      "size": 1595,
+      "sha256": "fb8bdb1a2325e6f977348904adc8ec16734e0139d9cf1e1e2e8e724ea67ab414"
+    },
+    {
+      "path": "tools/profiling_plan_audit.py",
+      "size": 1252,
+      "sha256": "89feb1d23af47dd6909799dd9e85dc7b38e09f9bd10a517e682f183735d5b22d"
+    },
+    {
       "path": "tools/promote_feedback_to_tracks.py",
       "size": 10072,
       "sha256": "fea46e774cfcac6461f0b4a85773afd5891fa17820d6d9386e79d595f040f6d0"
+    },
+    {
+      "path": "tools/provenance_verification_audit.py",
+      "size": 936,
+      "sha256": "cdb2a7b7fc355a4c3ec042fa8a393d667a102e79309df8544809dba4c268430b"
+    },
+    {
+      "path": "tools/quality_gate_check.py",
+      "size": 3934,
+      "sha256": "97ca93876efa7e10bd3ce6e31569412b0b7f4fbdf3973cae327804865ef8d011"
+    },
+    {
+      "path": "tools/quality_gate_evidence.py",
+      "size": 2502,
+      "sha256": "9bb7ce9093550d930f0ed9722797775c07d80ebb99d18bba841a8e1cecb46941"
     },
     {
       "path": "tools/real_fixture_feedback.py",
@@ -5044,9 +6619,14 @@
       "sha256": "fc56aa9ff68d176ea5eb4992116a541665822a4d36a7aff6b370b09a7d716c8e"
     },
     {
+      "path": "tools/release_automation_audit.py",
+      "size": 692,
+      "sha256": "ebb9858320ba393c88ef77efffcdb24160137dc3d914b09cd6969a20049eb0a0"
+    },
+    {
       "path": "tools/release_preflight.py",
-      "size": 3682,
-      "sha256": "c8da56d4d247a6c74ffece1ad2071437964bfa3212a671b6700cc0b23b306677"
+      "size": 4977,
+      "sha256": "c4a80c97f4e0b8b72840a076e4957897afdb14411e194484e1db93ebabc1a4f0"
     },
     {
       "path": "tools/release_scaffold_check.py",
@@ -5055,8 +6635,8 @@
     },
     {
       "path": "tools/repo_manifest.py",
-      "size": 2409,
-      "sha256": "2108f09246dcacc225b7fae75a396576379af17f2888f4a03e532eb9f7fe6132"
+      "size": 2496,
+      "sha256": "b3e4ab7e59ff36a0687cfcd913199efd26a7b9153283be4347c861415358abc6"
     },
     {
       "path": "tools/rust_api_map.py",
@@ -5066,12 +6646,17 @@
     {
       "path": "tools/rust_static_lint.py",
       "size": 3896,
-      "sha256": "5db692d257785b71cb81100d5f1c0f684861f5da6c3a9571f50e505588ec0e57"
+      "sha256": "95c190776e1f5e6e9d32dcda2767b64dad07379b573cc1c270986b6716524d70"
     },
     {
       "path": "tools/safety_case_check.py",
       "size": 1251,
       "sha256": "3c9124564eb0a7dfa178b63d29b44d47e36562902ff8e74d284b50ecb9fe977d"
+    },
+    {
+      "path": "tools/scorecard_dependency_review_audit.py",
+      "size": 814,
+      "sha256": "e9d353c7e95c44cab35965c1b9ea31c7c65f155f47daae1b443b44c2da3dc873"
     },
     {
       "path": "tools/shell_script_static_check.py",
@@ -5081,7 +6666,7 @@
     {
       "path": "tools/source_debt_report.py",
       "size": 2379,
-      "sha256": "bb1e830aafb9baf7296bbafe9dace92e5e594180e7318b89458d07dee4593cca"
+      "sha256": "93d2f2ae930fda939a3315ccbe927c73d07ba0345286a954264085950d0e54e2"
     },
     {
       "path": "tools/source_metrics.py",
@@ -5099,9 +6684,34 @@
       "sha256": "e3cc6b9030ca2182aae4553eba77d6f52e56c9202964852ca3a6777588359857"
     },
     {
+      "path": "tools/test_inventory_report.py",
+      "size": 2955,
+      "sha256": "657addbdf9de3327ff002805299aa817132caafe2eda03c934b50200cc2b381c"
+    },
+    {
       "path": "tools/test_matrix_generator.py",
       "size": 2781,
       "sha256": "6ccec3600ba5fa563c02be5ebd1c669da5c9133ff3ccd75459d2fa358079f66d"
+    },
+    {
+      "path": "tools/test_scaffold_audit.py",
+      "size": 1972,
+      "sha256": "c673cb39000010cc2786c371cf5f5951631fc6214a53083331e3b8c3016a8fc5"
+    },
+    {
+      "path": "tools/test_strategy_audit.py",
+      "size": 1785,
+      "sha256": "1f554a10db1257800004f944db3aa7bd2c881f5b772ebb4faa1de30efe3f7562"
+    },
+    {
+      "path": "tools/testing_infrastructure_report.py",
+      "size": 1599,
+      "sha256": "2d40c69beb5c5bce53fd1715c5a5f455978cd91d3b8980b42e45c0a6920b8d87"
+    },
+    {
+      "path": "tools/tests/test_manifest_properties.py",
+      "size": 661,
+      "sha256": "6c50f0f209f5596db023bf026e4156ce7cf2b09d047933d408b442b3c41d15a1"
     },
     {
       "path": "tools/tool_capability_matrix.py",
@@ -5150,8 +6760,8 @@
     },
     {
       "path": "xtask/src/main.rs",
-      "size": 27558,
-      "sha256": "204e4dddbf34c3482450fe8576340aa51aac9ea9a6435ac67c44c355474f7633"
+      "size": 29986,
+      "sha256": "3811c4c4f20afd8636fc06cf21a3491282577df0e02bbbf727918ef1686f3bf4"
     }
   ]
 }

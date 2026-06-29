@@ -1,7 +1,7 @@
 # Handoff Manifest Verification
 
 Status: `passed`
-Checked entries: `964`
+Checked entries: `1347`
 
 ## Issues
 - None

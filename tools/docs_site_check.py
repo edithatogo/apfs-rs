@@ -11,7 +11,7 @@ REQ = [
     'docs-site/src/pages/index.astro',
     'docs-site/src/pages/quality.astro',
     'docs-site/src/pages/conductor.astro',
-    'docs-site/src/pages/handoff.astro',
+    'docs-site/src/pages/handoff/index.astro',
 ]
 
 def main() -> int:

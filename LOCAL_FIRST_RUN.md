@@ -18,7 +18,7 @@ python3 tools/handoff_status.py --write
 Recommended first path:
 
 ```bash
-rustup toolchain install 1.80.0
+rustup toolchain install stable
 rustup component add rustfmt clippy
 ```
 
