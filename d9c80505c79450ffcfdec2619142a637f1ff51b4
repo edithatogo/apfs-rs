@@ -1,0 +1,1 @@
+M-123 review closeout: fixed synthetic fixture manifest schema, regenerated manifests and coverage, archived the track folder, removed it from conductor/tracks.md, and validated with cargo xtask precompile-check plus registry-check.
