@@ -7,49 +7,49 @@
     {
       "command": "py_compile selected tools",
       "returncode": 0,
-      "duration_seconds": 0.015,
+      "duration_seconds": 0.012,
       "status": "pass",
       "error_tail": ""
     },
     {
       "command": "runpy tools/apfs_offset_audit.py",
       "returncode": 0,
-      "duration_seconds": 0.005,
+      "duration_seconds": 0.004,
       "status": "pass",
       "error_tail": ""
     },
     {
       "command": "runpy tools/golden_output_generator.py",
       "returncode": 0,
-      "duration_seconds": 0.025,
+      "duration_seconds": 0.016,
       "status": "pass",
       "error_tail": ""
     },
     {
       "command": "runpy tools/dependency_license_policy_check.py",
       "returncode": 0,
-      "duration_seconds": 0.015,
+      "duration_seconds": 0.005,
       "status": "pass",
       "error_tail": ""
     },
     {
       "command": "runpy tools/backlog_issue_export.py",
       "returncode": 0,
-      "duration_seconds": 0.063,
+      "duration_seconds": 0.046,
       "status": "pass",
       "error_tail": ""
     },
     {
       "command": "runpy tools/synthetic_fixture_oracle.py",
       "returncode": 0,
-      "duration_seconds": 0.022,
+      "duration_seconds": 0.038,
       "status": "pass",
       "error_tail": ""
     },
     {
       "command": "runpy tools/tool_capability_matrix.py",
       "returncode": 0,
-      "duration_seconds": 1.538,
+      "duration_seconds": 0.805,
       "status": "pass",
       "error_tail": ""
     },
@@ -63,21 +63,21 @@
     {
       "command": "runpy tools/local_command_plan.py",
       "returncode": 0,
-      "duration_seconds": 0.003,
+      "duration_seconds": 0.002,
       "status": "pass",
       "error_tail": ""
     },
     {
       "command": "runpy tools/mvp_blocker_tasklist.py",
       "returncode": 0,
-      "duration_seconds": 0.022,
+      "duration_seconds": 0.024,
       "status": "pass",
       "error_tail": ""
     },
     {
       "command": "runpy tools/agent_handoff_brief.py",
       "returncode": 0,
-      "duration_seconds": 0.074,
+      "duration_seconds": 0.087,
       "status": "pass",
       "error_tail": ""
     }

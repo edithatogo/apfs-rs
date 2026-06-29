@@ -16,7 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
-      - run: rustup component add rustfmt clippy
+      - run: rustup toolchain install stable --profile minimal --component rustfmt --component clippy
+      - run: rustup default stable
       - run: python3 tools/release_preflight.py --write-manifest
       - run: cargo test --workspace
       - run: mkdir -p target/release-evidence && cp SHA256SUMS.txt target/release-evidence/SHA256SUMS.txt

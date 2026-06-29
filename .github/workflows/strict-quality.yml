@@ -15,7 +15,8 @@ jobs:
     continue-on-error: true
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
-      - run: rustup component add rustfmt clippy llvm-tools-preview
+      - run: rustup toolchain install stable --profile minimal --component rustfmt --component clippy --component llvm-tools-preview
+      - run: rustup default stable
       - uses: taiki-e/install-action@9bcaee1dcae34154180f412e2fa69355a7cda9f6
         with:
           tool: nextest,cargo-llvm-cov,cargo-deny,cargo-audit,cargo-mutants
