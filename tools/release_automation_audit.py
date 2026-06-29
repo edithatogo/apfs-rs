@@ -40,6 +40,8 @@ def main() -> int:
     dist_config = (ROOT / "dist-workspace.toml").read_text(encoding="utf-8")
     release_config = (ROOT / "release-plz.toml").read_text(encoding="utf-8")
     checks.append({"name": "cargo-dist workspace table", "ok": "[workspace]" in dist_config})
+    checks.append({"name": "cargo-dist cargo workspace member", "ok": 'members = ["cargo:."]' in dist_config})
+    checks.append({"name": "cargo-dist dist table", "ok": "[dist]" in dist_config})
     checks.append({"name": "cargo-dist version pinned", "ok": "cargo-dist-version = \"0.29.0\"" in dist_config})
     checks.append({"name": "release-plz publish disabled", "ok": "publish = false" in release_config})
     failed = [check["name"] for check in checks if not check["ok"]]

@@ -15,5 +15,7 @@ Status: `passed`.
 | workflow invokes cargo run -p xtask -- release-automation-audit | true |
 | no placeholder echo | true |
 | cargo-dist workspace table | true |
+| cargo-dist cargo workspace member | true |
+| cargo-dist dist table | true |
 | cargo-dist version pinned | true |
 | release-plz publish disabled | true |

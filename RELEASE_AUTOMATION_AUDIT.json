@@ -46,6 +46,14 @@
       "ok": true
     },
     {
+      "name": "cargo-dist cargo workspace member",
+      "ok": true
+    },
+    {
+      "name": "cargo-dist dist table",
+      "ok": true
+    },
+    {
       "name": "cargo-dist version pinned",
       "ok": true
     },
