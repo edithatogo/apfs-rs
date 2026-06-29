@@ -1,0 +1,7 @@
+{
+  "track_id": "0014-volume-superblock-probe",
+  "capability": "M-014",
+  "status": "implemented_in_package_uncompiled",
+  "package": "v0.14.0",
+  "purpose": "Synthetic APSB-like volume-superblock parser and volumes CLI."
+}

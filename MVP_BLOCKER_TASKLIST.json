@@ -1,0 +1,104 @@
+{
+  "schema_version": "0.27.0",
+  "generated_utc": "2026-06-25T11:28:57.686899+00:00",
+  "remaining_mvp_blockers": 9,
+  "blockers": [
+    {
+      "id": "MVP-R001",
+      "title": "Compile, lint, test, and fix the current workspace on Rust-enabled machines",
+      "dependency": "Rust-enabled machine",
+      "next_actions": [
+        "Run cargo fmt/test/clippy",
+        "Use cargo_error_to_tracks.py on failures",
+        "Fix one compiler class at a time"
+      ],
+      "current_environment_completable": false
+    },
+    {
+      "id": "MVP-R002",
+      "title": "Generate first real macOS APFS image and manifest",
+      "dependency": "macOS",
+      "next_actions": [
+        "Run tools/macos/create_real_apfs_fixture.sh on macOS",
+        "Validate manifest with cargo xtask fixture-manifest-check"
+      ],
+      "current_environment_completable": false
+    },
+    {
+      "id": "MVP-R003",
+      "title": "Run real-fixture feedback loop and convert mismatches into tasks",
+      "dependency": "M-012/M-013 and real fixture",
+      "next_actions": [
+        "Run real-fixture-feedback",
+        "Run promote-feedback",
+        "Review generated Codev/Conductor tasks"
+      ],
+      "current_environment_completable": false
+    },
+    {
+      "id": "MVP-R004",
+      "title": "Correct APFS parser offsets/semantics against real APFS data",
+      "dependency": "real fixture feedback",
+      "next_actions": [
+        "Compare inspect JSON to manifest",
+        "Correct offsets/semantics",
+        "Add regression fixture"
+      ],
+      "current_environment_completable": false
+    },
+    {
+      "id": "MVP-R005",
+      "title": "Full checkpoint ring reconstruction",
+      "dependency": "corrected parser and real fixture",
+      "next_actions": [
+        "Parse checkpoint descriptor ring",
+        "Validate newest checkpoint selection",
+        "Add corrupt/fallback fixtures"
+      ],
+      "current_environment_completable": false
+    },
+    {
+      "id": "MVP-R006",
+      "title": "Production APFS object-map B-tree traversal",
+      "dependency": "corrected checkpoint and B-tree parsing",
+      "next_actions": [
+        "Replace synthetic traversal internals with production B-tree cursor",
+        "Validate OMAP lookup against real fixture"
+      ],
+      "current_environment_completable": false
+    },
+    {
+      "id": "MVP-R007",
+      "title": "Production APFS filesystem tree record decoding and metadata/stat mapping",
+      "dependency": "production OMAP traversal",
+      "next_actions": [
+        "Parse APFS volume superblock",
+        "Decode root filesystem tree records",
+        "Map metadata/stat fields"
+      ],
+      "current_environment_completable": false
+    },
+    {
+      "id": "MVP-R008",
+      "title": "Production file extent resolution and extraction",
+      "dependency": "production filesystem records",
+      "next_actions": [
+        "Resolve file extents",
+        "Extract byte-identical regular files",
+        "Compare SHA-256 hashes"
+      ],
+      "current_environment_completable": false
+    },
+    {
+      "id": "MVP-R009",
+      "title": "Windows WinFsp read-only mount adapter, smoke tests, and packaging baseline",
+      "dependency": "stable read API",
+      "next_actions": [
+        "Implement WinFsp adapter read-only callbacks",
+        "Run Windows smoke tests",
+        "Package baseline installer/portable zip"
+      ],
+      "current_environment_completable": false
+    }
+  ]
+}

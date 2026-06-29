@@ -1,0 +1,7 @@
+{
+  "track_id": "0107-hypothesis-strategy-audit",
+  "capability_id": "M-107",
+  "title": "Hypothesis strategy audit",
+  "status": "implemented_python",
+  "version": "0.28.0"
+}

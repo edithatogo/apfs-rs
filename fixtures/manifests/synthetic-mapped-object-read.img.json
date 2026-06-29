@@ -1,0 +1,26 @@
+{
+  "apfs_features": {
+    "not_a_complete_filesystem": true,
+    "synthetic": true
+  },
+  "capability_ids": [
+    "M-015"
+  ],
+  "created_with": {
+    "note": "synthetic parser-development fixture",
+    "tool": "tools/make_synthetic_fixtures.py"
+  },
+  "description": "Direct APFS-like image resolving synthetic OMAP records to signed generic object blocks for read-object reporting",
+  "expected_artifacts": [],
+  "fixture_id": "synthetic-mapped-object-read.img",
+  "not_a_complete_filesystem": true,
+  "redaction": {
+    "contains_personal_data": false,
+    "contains_secret_material": false
+  },
+  "schema_version": "0.16.0",
+  "sha256": "c68f2930e2dd9b67fb42491f6081851e37e32e9cccf1eabc23f2fa98d9f3638d",
+  "size_bytes": 262144,
+  "source_type": "synthetic_apfs_parser_development_image",
+  "synthetic": true
+}

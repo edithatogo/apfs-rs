@@ -1,0 +1,9 @@
+{
+  "track_id": "0054-known-uncompiled-risks",
+  "capability_id": "M-054",
+  "title": "Known Uncompiled Risks Registry",
+  "status": "implemented_scaffold",
+  "version": "0.21.0",
+  "context_system": "conductor",
+  "safety": "read_only_or_docs_only"
+}

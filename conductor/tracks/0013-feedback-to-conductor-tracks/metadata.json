@@ -1,0 +1,7 @@
+{
+  "track_id": "0013-feedback-to-conductor-tracks",
+  "capability": "M-013",
+  "status": "implemented_in_package_uncompiled",
+  "package": "v0.13.0",
+  "purpose": "Promote feedback-loop findings into Codev and Conductor task stubs."
+}

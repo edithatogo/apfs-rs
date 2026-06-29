@@ -1,0 +1,75 @@
+{
+  "schema_version": "0.27.0",
+  "blocker_count": 9,
+  "blockers": [
+    {
+      "id": "B1",
+      "title": "Compile/lint/test and fix workspace",
+      "depends_on": [],
+      "environment": "local-rust"
+    },
+    {
+      "id": "B2",
+      "title": "Generate first real macOS APFS image and manifest",
+      "depends_on": [],
+      "environment": "macos"
+    },
+    {
+      "id": "B3",
+      "title": "Run real-fixture feedback and convert mismatches into tasks",
+      "depends_on": [
+        "B1",
+        "B2"
+      ],
+      "environment": "local-rust-macos"
+    },
+    {
+      "id": "B4",
+      "title": "Correct APFS parser offsets/semantics against real APFS data",
+      "depends_on": [
+        "B3"
+      ],
+      "environment": "local-rust-macos"
+    },
+    {
+      "id": "B5",
+      "title": "Full checkpoint ring reconstruction",
+      "depends_on": [
+        "B4"
+      ],
+      "environment": "local-rust-macos"
+    },
+    {
+      "id": "B6",
+      "title": "Production APFS object-map B-tree traversal",
+      "depends_on": [
+        "B5"
+      ],
+      "environment": "local-rust-macos"
+    },
+    {
+      "id": "B7",
+      "title": "Production filesystem tree record decoding and metadata/stat mapping",
+      "depends_on": [
+        "B6"
+      ],
+      "environment": "local-rust-macos"
+    },
+    {
+      "id": "B8",
+      "title": "Production file extent resolution and extraction",
+      "depends_on": [
+        "B7"
+      ],
+      "environment": "local-rust-macos"
+    },
+    {
+      "id": "B9",
+      "title": "Windows WinFsp read-only mount adapter, smoke tests, packaging baseline",
+      "depends_on": [
+        "B8"
+      ],
+      "environment": "windows-winfsp"
+    }
+  ]
+}

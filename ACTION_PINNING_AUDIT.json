@@ -1,0 +1,307 @@
+{
+  "schema_version": "0.29.0",
+  "uses_count": 60,
+  "unpinned_count": 59,
+  "items": [
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "uses": "actions/checkout@v4",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "uses": "dtolnay/rust-toolchain@stable",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/coverage.yml",
+      "uses": "actions/checkout@v4",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/coverage.yml",
+      "uses": "dtolnay/rust-toolchain@stable",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/coverage.yml",
+      "uses": "taiki-e/install-action@v2",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/coverage.yml",
+      "uses": "actions/upload-artifact@v4",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/docs-quality.yml",
+      "uses": "actions/checkout@v4",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/docs-quality.yml",
+      "uses": "actions/setup-python@v5",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/docs-quality.yml",
+      "uses": "actions/checkout@v4",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/docs-quality.yml",
+      "uses": "actions/setup-node@v4",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/docs-site.yml",
+      "uses": "actions/checkout@v4",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/docs-site.yml",
+      "uses": "actions/setup-node@v4",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/fuzz.yml",
+      "uses": "actions/checkout@v4",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/fuzz.yml",
+      "uses": "dtolnay/rust-toolchain@stable",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/local-handoff.yml",
+      "uses": "actions/checkout@v4",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/local-handoff.yml",
+      "uses": "actions/setup-python@v5",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/mutation.yml",
+      "uses": "actions/checkout@v4",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/mutation.yml",
+      "uses": "dtolnay/rust-toolchain@stable",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/mutation.yml",
+      "uses": "taiki-e/install-action@v2",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/mutation.yml",
+      "uses": "actions/upload-artifact@v4",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/profiling.yml",
+      "uses": "actions/checkout@v4",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/profiling.yml",
+      "uses": "dtolnay/rust-toolchain@stable",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/profiling.yml",
+      "uses": "actions/upload-artifact@v4",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/provenance-verify.yml",
+      "uses": "actions/checkout@v4",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/provenance-verify.yml",
+      "uses": "actions/attest-build-provenance@v3",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/python-property.yml",
+      "uses": "actions/checkout@v4",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/python-property.yml",
+      "uses": "actions/setup-python@v5",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/quality-gates.yml",
+      "uses": "actions/checkout@v4",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/quality-gates.yml",
+      "uses": "dtolnay/rust-toolchain@stable",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/quality-gates.yml",
+      "uses": "taiki-e/install-action@v2",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/quality-gates.yml",
+      "uses": "actions/checkout@v4",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/quality-gates.yml",
+      "uses": "dtolnay/rust-toolchain@stable",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/quality-gates.yml",
+      "uses": "actions/checkout@v4",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/quality-gates.yml",
+      "uses": "dtolnay/rust-toolchain@nightly",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/quality-gates.yml",
+      "uses": "actions/checkout@v4",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/quality-gates.yml",
+      "uses": "dtolnay/rust-toolchain@stable",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/release-automation.yml",
+      "uses": "actions/checkout@v4",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/release.yml",
+      "uses": "actions/checkout@v4",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/release.yml",
+      "uses": "dtolnay/rust-toolchain@stable",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/release.yml",
+      "uses": "actions/attest-build-provenance@v3",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/security.yml",
+      "uses": "actions/checkout@v4",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/security.yml",
+      "uses": "github/codeql-action/init@v4",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/security.yml",
+      "uses": "github/codeql-action/analyze@v4",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/strict-quality.yml",
+      "uses": "actions/checkout@v4",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/strict-quality.yml",
+      "uses": "dtolnay/rust-toolchain@stable",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/strict-quality.yml",
+      "uses": "taiki-e/install-action@v2",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/strict-quality.yml",
+      "uses": "actions/checkout@v4",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/strict-quality.yml",
+      "uses": "dtolnay/rust-toolchain@nightly",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/strict-quality.yml",
+      "uses": "actions/checkout@v4",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/strict-quality.yml",
+      "uses": "dtolnay/rust-toolchain@nightly",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/supply-chain.yml",
+      "uses": "actions/checkout@v4",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/supply-chain.yml",
+      "uses": "actions/dependency-review-action@v4",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/supply-chain.yml",
+      "uses": "actions/checkout@v4",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/supply-chain.yml",
+      "uses": "ossf/scorecard-action@v2.4.0",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/supply-chain.yml",
+      "uses": "github/codeql-action/upload-sarif@v4",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/supply-chain.yml",
+      "uses": "actions/checkout@v4",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/workflow-security.yml",
+      "uses": "actions/checkout@v4",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/workflow-security.yml",
+      "uses": "docker://rhysd/actionlint:latest",
+      "pinned_to_sha": true
+    },
+    {
+      "workflow": ".github/workflows/workflow-security.yml",
+      "uses": "actions/checkout@v4",
+      "pinned_to_sha": false
+    },
+    {
+      "workflow": ".github/workflows/workflow-security.yml",
+      "uses": "zizmorcore/zizmor-action@v0.2.1",
+      "pinned_to_sha": false
+    }
+  ]
+}

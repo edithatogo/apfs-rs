@@ -1,0 +1,8 @@
+{
+  "track_id": "0082-tool-capability-matrix-and-fallback-command-planne",
+  "capability_id": "M-082",
+  "title": "Tool capability matrix and fallback command planner",
+  "status": "implemented_python",
+  "version": "0.26.0",
+  "updated": "2026-06-25"
+}

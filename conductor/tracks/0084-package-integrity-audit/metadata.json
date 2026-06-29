@@ -1,0 +1,8 @@
+{
+  "track_id": "0084-package-integrity-audit",
+  "capability_id": "M-084",
+  "title": "Package integrity audit",
+  "status": "implemented_python",
+  "version": "0.26.0",
+  "updated": "2026-06-25"
+}

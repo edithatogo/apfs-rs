@@ -1,0 +1,312 @@
+{
+  "schema_version": "0.29.0",
+  "status": "passed",
+  "workflow_count": 17,
+  "checks": [
+    {
+      "workflow": "ci.yml",
+      "check": "has permissions",
+      "ok": true
+    },
+    {
+      "workflow": "ci.yml",
+      "check": "least privilege contents",
+      "ok": true
+    },
+    {
+      "workflow": "ci.yml",
+      "check": "has checkout",
+      "ok": true
+    },
+    {
+      "workflow": "coverage.yml",
+      "check": "has permissions",
+      "ok": true
+    },
+    {
+      "workflow": "coverage.yml",
+      "check": "least privilege contents",
+      "ok": true
+    },
+    {
+      "workflow": "coverage.yml",
+      "check": "has checkout",
+      "ok": true
+    },
+    {
+      "workflow": "docs-quality.yml",
+      "check": "has permissions",
+      "ok": true
+    },
+    {
+      "workflow": "docs-quality.yml",
+      "check": "least privilege contents",
+      "ok": true
+    },
+    {
+      "workflow": "docs-quality.yml",
+      "check": "has checkout",
+      "ok": true
+    },
+    {
+      "workflow": "docs-site.yml",
+      "check": "has permissions",
+      "ok": true
+    },
+    {
+      "workflow": "docs-site.yml",
+      "check": "least privilege contents",
+      "ok": true
+    },
+    {
+      "workflow": "docs-site.yml",
+      "check": "has checkout",
+      "ok": true
+    },
+    {
+      "workflow": "fuzz.yml",
+      "check": "has permissions",
+      "ok": true
+    },
+    {
+      "workflow": "fuzz.yml",
+      "check": "least privilege contents",
+      "ok": true
+    },
+    {
+      "workflow": "local-handoff.yml",
+      "check": "has permissions",
+      "ok": true
+    },
+    {
+      "workflow": "local-handoff.yml",
+      "check": "least privilege contents",
+      "ok": true
+    },
+    {
+      "workflow": "local-handoff.yml",
+      "check": "has checkout",
+      "ok": true
+    },
+    {
+      "workflow": "mutation.yml",
+      "check": "has permissions",
+      "ok": true
+    },
+    {
+      "workflow": "mutation.yml",
+      "check": "least privilege contents",
+      "ok": true
+    },
+    {
+      "workflow": "profiling.yml",
+      "check": "has permissions",
+      "ok": true
+    },
+    {
+      "workflow": "profiling.yml",
+      "check": "least privilege contents",
+      "ok": true
+    },
+    {
+      "workflow": "provenance-verify.yml",
+      "check": "has permissions",
+      "ok": true
+    },
+    {
+      "workflow": "provenance-verify.yml",
+      "check": "least privilege contents",
+      "ok": true
+    },
+    {
+      "workflow": "python-property.yml",
+      "check": "has permissions",
+      "ok": true
+    },
+    {
+      "workflow": "python-property.yml",
+      "check": "least privilege contents",
+      "ok": true
+    },
+    {
+      "workflow": "python-property.yml",
+      "check": "has checkout",
+      "ok": true
+    },
+    {
+      "workflow": "quality-gates.yml",
+      "check": "has permissions",
+      "ok": true
+    },
+    {
+      "workflow": "quality-gates.yml",
+      "check": "least privilege contents",
+      "ok": true
+    },
+    {
+      "workflow": "quality-gates.yml",
+      "check": "has checkout",
+      "ok": true
+    },
+    {
+      "workflow": "release-automation.yml",
+      "check": "has permissions",
+      "ok": true
+    },
+    {
+      "workflow": "release-automation.yml",
+      "check": "least privilege contents",
+      "ok": true
+    },
+    {
+      "workflow": "release-automation.yml",
+      "check": "has checkout",
+      "ok": true
+    },
+    {
+      "workflow": "release.yml",
+      "check": "has permissions",
+      "ok": true
+    },
+    {
+      "workflow": "release.yml",
+      "check": "least privilege contents",
+      "ok": true
+    },
+    {
+      "workflow": "release.yml",
+      "check": "has checkout",
+      "ok": true
+    },
+    {
+      "workflow": "security.yml",
+      "check": "has permissions",
+      "ok": true
+    },
+    {
+      "workflow": "security.yml",
+      "check": "least privilege contents",
+      "ok": true
+    },
+    {
+      "workflow": "security.yml",
+      "check": "has checkout",
+      "ok": true
+    },
+    {
+      "workflow": "strict-quality.yml",
+      "check": "has permissions",
+      "ok": true
+    },
+    {
+      "workflow": "strict-quality.yml",
+      "check": "least privilege contents",
+      "ok": true
+    },
+    {
+      "workflow": "strict-quality.yml",
+      "check": "has checkout",
+      "ok": true
+    },
+    {
+      "workflow": "supply-chain.yml",
+      "check": "has permissions",
+      "ok": true
+    },
+    {
+      "workflow": "supply-chain.yml",
+      "check": "least privilege contents",
+      "ok": true
+    },
+    {
+      "workflow": "supply-chain.yml",
+      "check": "has checkout",
+      "ok": true
+    },
+    {
+      "workflow": "workflow-security.yml",
+      "check": "has permissions",
+      "ok": true
+    },
+    {
+      "workflow": "workflow-security.yml",
+      "check": "least privilege contents",
+      "ok": true
+    },
+    {
+      "workflow": "workflow-security.yml",
+      "check": "has checkout",
+      "ok": true
+    },
+    {
+      "workflow": "strict-quality.yml",
+      "check": "cargo fmt",
+      "ok": true
+    },
+    {
+      "workflow": "strict-quality.yml",
+      "check": "cargo clippy",
+      "ok": true
+    },
+    {
+      "workflow": "strict-quality.yml",
+      "check": "cargo nextest",
+      "ok": true
+    },
+    {
+      "workflow": "strict-quality.yml",
+      "check": "cargo llvm-cov",
+      "ok": true
+    },
+    {
+      "workflow": "strict-quality.yml",
+      "check": "--fail-under-lines 90",
+      "ok": true
+    },
+    {
+      "workflow": "strict-quality.yml",
+      "check": "cargo deny",
+      "ok": true
+    },
+    {
+      "workflow": "strict-quality.yml",
+      "check": "cargo audit",
+      "ok": true
+    },
+    {
+      "workflow": "strict-quality.yml",
+      "check": "cargo mutants",
+      "ok": true
+    },
+    {
+      "workflow": "strict-quality.yml",
+      "check": "cargo fuzz run",
+      "ok": true
+    },
+    {
+      "workflow": "strict-quality.yml",
+      "check": "miri test",
+      "ok": true
+    },
+    {
+      "workflow": "docs-site.yml",
+      "check": "setup-node",
+      "ok": true
+    },
+    {
+      "workflow": "docs-site.yml",
+      "check": "docs-site",
+      "ok": true
+    },
+    {
+      "workflow": "docs-site.yml",
+      "check": "npm",
+      "ok": true
+    },
+    {
+      "workflow": "docs-site.yml",
+      "check": "npm run build",
+      "ok": true
+    }
+  ]
+}

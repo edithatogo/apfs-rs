@@ -1,0 +1,18 @@
+{
+  "schema_version": "0.27.0",
+  "status": "passed",
+  "profiles": [
+    {
+      "name": "inspect_synthetic_nxsb",
+      "command": "cargo run -p apfs-cli --release -- inspect --json fixtures/synthetic-nxsb-block0.bin"
+    },
+    {
+      "name": "lookup_synthetic_resolver",
+      "command": "cargo run -p apfs-cli --release -- lookup-object --json fixtures/synthetic-resolver-facade.img --oid 1500 --xid 70"
+    },
+    {
+      "name": "directory_listing_synthetic",
+      "command": "cargo run -p apfs-cli --release -- ls --json fixtures/synthetic-directory-listing.img"
+    }
+  ]
+}

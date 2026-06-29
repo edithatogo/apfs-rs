@@ -1,0 +1,300 @@
+{
+  "schema_version": "0.27.0",
+  "environment": {
+    "platform": "linux",
+    "cwd": "/mnt/data/apfs-rs-impl-v0.27"
+  },
+  "tools": [
+    {
+      "tool": "python3",
+      "available": true,
+      "path": "/opt/pyvenv/bin/python3",
+      "version": "Python 3.13.5"
+    },
+    {
+      "tool": "jq",
+      "available": true,
+      "path": "/usr/bin/jq",
+      "version": "jq-1.7"
+    },
+    {
+      "tool": "rg",
+      "available": true,
+      "path": "/usr/bin/rg",
+      "version": "ripgrep 14.1.1"
+    },
+    {
+      "tool": "grep",
+      "available": true,
+      "path": "/usr/bin/grep",
+      "version": "grep (GNU grep) 3.11"
+    },
+    {
+      "tool": "sed",
+      "available": true,
+      "path": "/usr/bin/sed",
+      "version": "/usr/bin/sed (GNU sed) 4.9"
+    },
+    {
+      "tool": "awk",
+      "available": true,
+      "path": "/usr/bin/awk",
+      "version": "mawk 1.3.4 20250131"
+    },
+    {
+      "tool": "find",
+      "available": true,
+      "path": "/usr/bin/find",
+      "version": "find (GNU findutils) 4.10.0"
+    },
+    {
+      "tool": "zip",
+      "available": true,
+      "path": "/usr/bin/zip",
+      "version": "Copyright (c) 1990-2008 Info-ZIP - Type 'zip \"-L\"' for software license."
+    },
+    {
+      "tool": "unzip",
+      "available": true,
+      "path": "/usr/bin/unzip",
+      "version": "caution:  both -n and -o specified; ignoring -o"
+    },
+    {
+      "tool": "sha256sum",
+      "available": true,
+      "path": "/usr/bin/sha256sum",
+      "version": "sha256sum (GNU coreutils) 9.7"
+    },
+    {
+      "tool": "git",
+      "available": true,
+      "path": "/usr/bin/git",
+      "version": "git version 2.47.3"
+    },
+    {
+      "tool": "make",
+      "available": true,
+      "path": "/usr/bin/make",
+      "version": "GNU Make 4.4.1"
+    },
+    {
+      "tool": "gcc",
+      "available": true,
+      "path": "/usr/bin/gcc",
+      "version": "gcc (Debian 14.2.0-19) 14.2.0"
+    },
+    {
+      "tool": "clang",
+      "available": true,
+      "path": "/usr/local/swift/usr/bin/clang",
+      "version": "clang version 17.0.0 (https://github.com/swiftlang/llvm-project.git 10999b6d034fe318f3d56c83bddb6572593a8bb0)"
+    },
+    {
+      "tool": "node",
+      "available": true,
+      "path": "/opt/nvm/versions/node/v22.16.0/bin/node",
+      "version": "v22.16.0"
+    },
+    {
+      "tool": "npm",
+      "available": true,
+      "path": "/opt/nvm/versions/node/v22.16.0/bin/npm",
+      "version": "10.9.2"
+    },
+    {
+      "tool": "cargo",
+      "available": false,
+      "path": null,
+      "version": null
+    },
+    {
+      "tool": "rustc",
+      "available": false,
+      "path": null,
+      "version": null
+    },
+    {
+      "tool": "shellcheck",
+      "available": false,
+      "path": null,
+      "version": null
+    },
+    {
+      "tool": "yamllint",
+      "available": false,
+      "path": null,
+      "version": null
+    },
+    {
+      "tool": "markdownlint",
+      "available": false,
+      "path": null,
+      "version": null
+    },
+    {
+      "tool": "mdl",
+      "available": false,
+      "path": null,
+      "version": null
+    },
+    {
+      "tool": "typos",
+      "available": false,
+      "path": null,
+      "version": null
+    },
+    {
+      "tool": "taplo",
+      "available": false,
+      "path": null,
+      "version": null
+    },
+    {
+      "tool": "hdiutil",
+      "available": false,
+      "path": null,
+      "version": null
+    },
+    {
+      "tool": "diskutil",
+      "available": false,
+      "path": null,
+      "version": null
+    },
+    {
+      "tool": "fsck_apfs",
+      "available": false,
+      "path": null,
+      "version": null
+    },
+    {
+      "tool": "powershell",
+      "available": false,
+      "path": null,
+      "version": null
+    },
+    {
+      "tool": "pwsh",
+      "available": false,
+      "path": null,
+      "version": null
+    }
+  ],
+  "python_modules": [
+    {
+      "module": "json",
+      "available": true
+    },
+    {
+      "module": "tomllib",
+      "available": true
+    },
+    {
+      "module": "zipfile",
+      "available": true
+    },
+    {
+      "module": "hashlib",
+      "available": true
+    },
+    {
+      "module": "yaml",
+      "available": true
+    }
+  ],
+  "capabilities": [
+    {
+      "capability": "python_static_checks",
+      "available": true,
+      "required_tools": [
+        "python3"
+      ],
+      "missing_tools": []
+    },
+    {
+      "capability": "json_queries",
+      "available": true,
+      "required_tools": [
+        "jq"
+      ],
+      "missing_tools": []
+    },
+    {
+      "capability": "source_search",
+      "available": true,
+      "required_tools": [
+        "rg",
+        "grep"
+      ],
+      "missing_tools": []
+    },
+    {
+      "capability": "archive_validation",
+      "available": true,
+      "required_tools": [
+        "zip",
+        "unzip",
+        "sha256sum"
+      ],
+      "missing_tools": []
+    },
+    {
+      "capability": "c_compiler_available_for_small_helpers",
+      "available": true,
+      "required_tools": [
+        "gcc",
+        "clang"
+      ],
+      "missing_tools": []
+    },
+    {
+      "capability": "node_available_for_future_docs_tools",
+      "available": true,
+      "required_tools": [
+        "node",
+        "npm"
+      ],
+      "missing_tools": []
+    },
+    {
+      "capability": "rust_compile",
+      "available": false,
+      "required_tools": [
+        "cargo",
+        "rustc"
+      ],
+      "missing_tools": [
+        "cargo",
+        "rustc"
+      ]
+    },
+    {
+      "capability": "macos_apfs_fixture_generation",
+      "available": false,
+      "required_tools": [
+        "hdiutil",
+        "diskutil"
+      ],
+      "missing_tools": [
+        "hdiutil",
+        "diskutil"
+      ]
+    },
+    {
+      "capability": "windows_mount_validation",
+      "available": false,
+      "required_tools": [
+        "powershell"
+      ],
+      "missing_tools": [
+        "powershell"
+      ]
+    }
+  ],
+  "summary": {
+    "available_tools": 16,
+    "missing_tools": 13,
+    "available_capabilities": 6,
+    "missing_capabilities": 3
+  }
+}

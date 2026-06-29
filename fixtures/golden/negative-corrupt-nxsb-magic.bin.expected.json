@@ -1,0 +1,6 @@
+{
+  "fixture": "fixtures/negative/negative-corrupt-nxsb-magic.bin",
+  "sha256": "11218c293d56d3ced1042d0a1936c39b4f87b70c51df59e58aa3d90c2abebcca",
+  "expected_status": "not_apfs",
+  "reason": "no NXSB or GPT signature"
+}

@@ -1,0 +1,410 @@
+schema_version: 0.29.0
+status: implementing
+updated: '2026-06-25'
+gates:
+  read_only_default:
+    description: All current operations are read-only.
+  bounds_checked_reads:
+    description: All parsed reads are length checked.
+  typed_error_no_panic:
+    description: Corrupt or unsupported input returns structured errors or diagnostic
+      reports.
+  checksum_refusal:
+    description: Invalid APFS object checksums block normal container acceptance.
+  scan_limit:
+    description: Checkpoint scans are bounded to avoid unbounded reads.
+  no_write_path:
+    description: No write, mount-write, repair, or format path exists in the implementation.
+  unsafe_without_review:
+    description: Low-level memory-risk code is forbidden unless explicitly reviewed.
+  single_node_lookup_limit:
+    description: Object lookup can operate over decoded records from one OMAP B-tree
+      root/leaf node.
+  checkpoint_mapped_lookup_limit:
+    description: Multi-node object lookup is currently bounded to checkpoint-map-mapped
+      synthetic B-tree leaf nodes, not full APFS B-tree traversal.
+  synthetic_btree_traversal_limit:
+    description: B-tree traversal is bounded to one synthetic root/index node plus
+      one selected leaf node; no recursive production APFS traversal yet.
+  object_map_resolver_facade_boundary:
+    description: Object lookup must go through the resolver facade so later real APFS
+      B-tree traversal can replace synthetic traversal without changing CLI callers.
+  bounded_btree_cursor:
+    description: B-tree cursor traversal is bounded to synthetic two-level fixtures
+      until production traversal is specified and validated.
+  macos_fixture_no_personal_data:
+    description: Real APFS fixtures must be synthetic, generated in disk images, and
+      marked as containing no personal data or secret material.
+  oracle_manifest_required:
+    description: Real APFS fixtures require a redacted manifest and macOS oracle output
+      before they can support compatibility claims.
+  real_fixture_not_production_claim:
+    description: Real fixture generation and feedback validate only covered scenarios
+      and must not be used to claim broad APFS support.
+  real_fixture_feedback_redacted:
+    description: Real-fixture feedback artifacts must be generated from redacted inspect
+      and manifest JSON only.
+  synthetic_volume_probe_limit:
+    description: Volume-superblock probing is currently limited to synthetic fixtures
+      and must not be treated as production APFS volume enumeration until real macOS
+      fixture validation passes.
+  mapped_object_read_limit:
+    description: Mapped-object reads are limited to resolver-backed synthetic fixtures
+      and report object headers/checksums only; no payload semantics, extraction,
+      or write behaviour is implemented.
+  synthetic_only_warning:
+    description: Synthetic parser-development code must emit warnings and not claim
+      production APFS support.
+  bounded_file_preview:
+    description: Synthetic file preview reads at most one mapped block and returns
+      a bounded preview only.
+  conductor_history_complete:
+    description: Conductor tracks must reflect every implemented/scaffolded slice
+      in the development history.
+  synthetic_directory_limit:
+    description: Directory listing is limited to synthetic filesystem tree records
+      and is not production APFS filesystem traversal.
+  synthetic_file_preview_limit:
+    description: File preview is limited to bounded reads from synthetic direct-block
+      fixture records and is not production APFS file extent resolution.
+  synthetic_metadata_limit:
+    description: Synthetic stat reports expose only synthetic directory-record metadata
+      and do not claim production APFS inode/stat semantics.
+  path_traversal_protection:
+    description: Host extraction and VFS paths reject absolute paths, parent traversal,
+      NUL bytes, and separator tricks.
+  host_output_only:
+    description: Extraction scaffolds may write only to the requested host output
+      directory and must never write to APFS media.
+  precompile_validation_available:
+    description: A Python/static validation path must exist for environments where
+      Rust/Cargo is unavailable.
+  synthetic_oracle_no_media_mutation:
+    description: Synthetic fixture oracle scripts may read fixture bytes and manifests
+      only; they must not mount, decrypt, repair, format, or write APFS media.
+  traceability_matrix_required:
+    description: Capability changes must remain traceable through requirements, Codev
+      specs/plans/reviews, and Conductor tracks.
+  loop_dashboard_required:
+    description: The loop dashboard and machine-readable remaining-elements ledger
+      must be updated whenever implementation counts change.
+  release_preflight_required:
+    description: Source packages should pass cargoless preflight validation before
+      handoff to a Rust-enabled computer.
+  read_only_vfs_boundary:
+    description: Platform adapters must consume read-only VFS traits and must not
+      embed APFS mutation semantics.
+  windows_adapter_no_mount_yet:
+    description: Windows adapter crate is a readiness scaffold only; no WinFsp mount
+      lifecycle is implemented yet.
+  diagnostics_redaction:
+    description: Diagnostics bundle tools redact secret-like fields, path-like strings,
+      raw bytes, payloads, and long strings.
+  fuzz_scaffold_no_raw_images:
+    description: Fuzz targets use in-memory arbitrary bytes and must not open raw
+      devices or personal disk images.
+  loop_planning_no_autonomous_background:
+    description: Loop planning tools generate a next-turn plan only and must not promise
+      or run background work.
+  windows_user_mode_adapter:
+    description: Windows mounting must remain user-mode and read-only until a later
+      accepted adapter spec.
+  no_physical_write_path:
+    description: No raw physical-device write path may be introduced before accepted
+      write-beta governance.
+  secret_redaction:
+    description: Diagnostics and logs must not contain secrets, recovery keys, passwords,
+      or derived key material.
+  diagnostic_redaction:
+    description: Diagnostics bundles must avoid file contents, raw blocks, secrets,
+      and unredacted personal paths by default.
+  context_history_integrity:
+    description: Codev, Conductor, requirements, and remaining-element ledgers must
+      stay aligned.
+  doctor_readiness_report:
+    description: Doctor reports must aggregate read-only status and blockers without
+      mounting, decrypting, repairing, formatting, or writing APFS media.
+  cli_contract_snapshot:
+    description: CLI commands must be discoverable through a generated contract snapshot
+      for humans, agents, and release review.
+  api_surface_snapshot:
+    description: Public Rust API surfaces must be snapshot-visible before release
+      or large refactors.
+  source_metrics_required:
+    description: Source metrics must be generated in the cargoless loop so growth,
+      unsafe tokens, and track counts remain visible.
+  safety_case_required:
+    description: A safety case must document critical hazards, mitigations, evidence,
+      and non-goals before handoff.
+  path_policy_safety:
+    description: Host-facing APFS name policy must refuse NUL, separator, absolute,
+      dot, and parent-traversal components; Unicode normalization must not be silently
+      lossy.
+  metadata_readiness_scaffold:
+    description: Xattr/resource-fork readiness reports must not claim production byte
+      extraction or write host alternate data streams by default.
+  extent_readiness_scaffold:
+    description: Sparse/clone readiness reports must not materialize holes or double-count
+      shared extents until production extent parsing is validated.
+  compression_not_claimed_supported:
+    description: Compression readiness reports must not claim decompression support
+      until algorithm dependencies, bounds checks, and real APFS fixtures pass.
+  snapshot_role_readiness_scaffold:
+    description: Snapshot and volume-role reports must remain read-only and must not
+      create, delete, or mutate snapshots.
+  feature_readiness_snapshot_required:
+    description: Advanced feature readiness scaffolds must be visible in generated
+      FEATURE_READINESS.md/json and must not claim production support prematurely.
+  version_consistency_required:
+    description: Current package version should be consistent across root ledgers,
+      registry schema versions, generated snapshots, and Conductor history.
+  no_media_mutation:
+    description: Triage/promotion tools may write planning artifacts only and must
+      not open, mount, decrypt, repair, format, or mutate APFS media.
+  platform_setup_readiness:
+    description: Platform setup docs must preserve read-only defaults and separate
+      Rust/macOS/Windows/FUSE/Android requirements.
+  release_provenance_required:
+    description: Public binaries require checksums, SBOM/provenance planning, and
+      release preflight; scaffold does not equal a signed release.
+  read_only_adapter_scaffold:
+    description: Cross-platform adapter crates are readiness scaffolds only and must
+      not implement write or unverified mount lifecycles.
+  android_no_raw_device_assumption:
+    description: Android support must not assume root, raw block devices, or FUSE
+      availability.
+  no_access_bypass:
+    description: Encryption-related scaffolds must not implement password recovery,
+      cracking, bypass, or hardware-bound unlock.
+  image_only_write_lab:
+    description: Write-lab scaffolds are limited to disposable image planning and
+      must not mutate APFS media.
+  reproducible_toolchain_config:
+    description: Rust toolchain, cargo, nextest, coverage, and deny configs exist
+      for local handoff.
+  devcontainer_setup:
+    description: A devcontainer is available for reproducible Linux-based first compile.
+  precommit_quality_gate:
+    description: Pre-commit, typos, markdownlint, and TOML formatting configs are
+      present.
+  config_sanity_required:
+    description: Config sanity check must pass before handoff.
+  local_environment_doctor:
+    description: Local environment doctor reports available tools and missing Rust/macOS/Windows
+      dependencies.
+  known_uncompiled_risks:
+    description: Known compile and APFS semantic risks are documented for first local
+      triage.
+  repo_manifest_required:
+    description: Repository manifest can be regenerated for handoff packages.
+  handoff_status_required:
+    description: Handoff status summary can be regenerated and reports remaining blockers.
+  dependency_policy_config:
+    description: Dependency policy and cargo-deny configuration exist before dependency
+      expansion.
+  local_handoff_readiness:
+    description: Handoff docs and checks exist before moving to local compile.
+  local_compile_loop_host_only:
+    description: Local compile loop runs host-side Cargo commands only and never opens
+      APFS media.
+  cargo_workspace_audit_cargoless:
+    description: Cargo workspace audit is static/cargoless and does not replace cargo
+      test.
+  macos_fixture_dry_run_image_only:
+    description: macOS fixture generator dry-run checks enforce sparse-image-only
+      expectations.
+  winfsp_callback_matrix_read_only:
+    description: WinFsp callback matrix must refuse write-like operations until a
+      live read-only adapter spec is accepted.
+  production_gap_report_required:
+    description: Production gap report must remain current with remaining-elements
+      ledger.
+  batched_loop_stop_criteria:
+    description: Batched loops must stop before pretending to complete local/platform-dependent
+      production work.
+  environment_inventory_required:
+    description: Current environment inventory must report available and missing tools
+      before handoff claims.
+  current_environment_remaining_classified:
+    description: Remaining work must distinguish current-environment-completable scaffolding
+      from Rust/macOS/Windows production blockers.
+  cargo_dependency_graph_required:
+    description: Cargo workspace path dependencies should be visible in a cargoless
+      graph before local compile.
+  negative_fixture_generation_safe:
+    description: Synthetic negative fixtures must be generated from synthetic data
+      only and must not contain personal data or secrets.
+  test_control_matrix_required:
+    description: Test/control matrix must identify which checks run here and which
+      require local Rust/macOS/Windows.
+  handoff_archive_audit_required:
+    description: Handoff archive audit must include file counts and checksums before
+      packaging.
+  apfs_offset_audit_required:
+    description: APFS parser-development offsets and synthetic fixture byte layouts
+      must be auditable without Rust before handoff.
+  golden_output_expectations_required:
+    description: Synthetic fixtures should have cargoless golden-output expectations
+      for first local CLI checks.
+  dependency_policy_audit_required:
+    description: Declared dependencies must be inventoried before local cargo-deny/audit/vet
+      execution.
+  backlog_issue_export_required:
+    description: Remaining production blockers should be exportable as reviewable
+      local issue stubs.
+  current_environment_selftest_required:
+    description: A single current-environment self-test should exercise all cargoless
+      checks before packaging.
+  markdown_link_audit_required:
+    description: Markdown/internal link audit should be generated before handoff to
+      reduce broken context paths.
+  shell_script_safety_audit:
+    description: Shell scripts must preserve sparse-image-only fixture generation
+      and avoid destructive disk operations.
+  cargoless_smoke_suite_required:
+    description: A single smoke-suite entry point must run the fastest current-environment
+      validators.
+  documentation_index_required:
+    description: Key handoff, design, requirement, safety, and context documents must
+      remain present and discoverable.
+  fixture_coverage_report_required:
+    description: Fixture manifests should be mapped to capabilities so untested scaffolds
+      remain visible.
+  current_environment_stop_condition:
+    description: The handoff must explicitly state when no remaining production item
+      can be completed in the current environment.
+  current_environment_tool_inventory:
+    description: Tool availability and missing local/platform tools must be explicit
+      before handoff claims.
+  rust_static_lint_required:
+    description: Cargoless Rust static linter must run or be generated during current-environment
+      handoff validation.
+  package_integrity_audit_required:
+    description: Package integrity audit must run or be generated during current-environment
+      handoff validation.
+  mvp_blocker_tasklist_required:
+    description: MVP blocker tasklist generator must run or be generated during current-environment
+      handoff validation.
+  agent_handoff_brief_required:
+    description: Agent handoff brief generator must run or be generated during current-environment
+      handoff validation.
+  local_command_plan_required:
+    description: Local command plan generator must run or be generated during current-environment
+      handoff validation.
+  source_debt_report_required:
+    description: Source debt report must run or be generated during current-environment
+      handoff validation.
+  production_claim_guard_required:
+    description: Production claim guard must run or be generated during current-environment
+      handoff validation.
+  handoff_manifest_verify_required:
+    description: Handoff manifest verifier must run or be generated during current-environment
+      handoff validation.
+  mvp_blocker_dag_required:
+    description: MVP blocker dependency DAG must run or be generated during current-environment
+      handoff validation.
+  local_migration_commands_required:
+    description: Local migration command generator must run or be generated during
+      current-environment handoff validation.
+  current_environment_final_report_required:
+    description: Current-environment final report must run or be generated during
+      current-environment handoff validation.
+  tool_capability_matrix_required:
+    description: Tool capability matrix and fallback command planner must run or be
+      generated during current-environment handoff validation.
+  quality_gate_check_required:
+    description: Strict CI quality gates must remain configured and visible in current-environment
+      handoff.
+  coverage_90_required:
+    description: Coverage configuration must enforce at least 90 percent line coverage
+      with cargo-llvm-cov once Rust is available.
+  property_hypothesis_required:
+    description: Property and Hypothesis test scaffolds must remain configured and
+      visible in current-environment handoff.
+  mutation_testing_required:
+    description: Mutation testing scaffold must be present, auditable, and kept in
+      sync before local handoff claims.
+  profiling_required:
+    description: Benchmark regression and optional CodSpeed readiness must remain
+      configured and auditable before local/CI handoff.
+  astro7_docs_required:
+    description: Astro 7 documentation site scaffold must remain configured and visible
+      in current-environment handoff.
+  qa_readiness_required:
+    description: QA readiness report and scaffold audit must remain configured and
+      visible in current-environment handoff.
+  strict_ci_quality_gates_required:
+    description: Strict CI quality gates and 90% coverage policy must be present,
+      auditable, and kept in sync before local handoff claims.
+  test_strategy_required:
+    description: Unit, integration, E2E, property, fuzz, mutation, and profiling test
+      strategy must be present, auditable, and kept in sync before local handoff claims.
+  property_testing_required:
+    description: Property and Hypothesis-style testing scaffold must be present, auditable,
+      and kept in sync before local handoff claims.
+  astro_docs_site_required:
+    description: Astro 7 documentation site scaffold must be present, auditable, and
+      kept in sync before local handoff claims.
+  docs_site_audit_required:
+    description: Documentation site audit and quality gate must be present, auditable,
+      and kept in sync before local handoff claims.
+  ci_quality_gate_audit_required:
+    description: CI quality gate audit must be present, auditable, and kept in sync
+      before local handoff claims.
+  extended_tool_inventory_required:
+    description: Extended current-environment tool inventory must be present, auditable,
+      and kept in sync before local handoff claims.
+  quality_docs_handoff_required:
+    description: Quality and docs handoff integration must be present, auditable,
+      and kept in sync before local handoff claims.
+  strict_quality_gate:
+    description: Strict CI gates must include fmt, clippy, unit/integration/e2e tests,
+      coverage, fuzz, mutation, and context checks before production claims.
+  property_mutation_fuzz_gate:
+    description: Parser and safety-critical paths must have property tests, fuzz targets,
+      and mutation-testing configuration before MVP release.
+  profiling_no_media_mutation:
+    description: Profiling and benchmarks must use synthetic fixtures or read-only
+      real fixtures and never mutate APFS media.
+  docs_site_astro7:
+    description: Documentation site scaffold uses Astro 7 and Starlight and remains
+      documentation-only; it must not be required for core library safety.
+  docs_package_audit_required:
+    description: Docs package audit must verify Astro 7 package pinning, scripts,
+      and docs-site package metadata before local handoff.
+  github_workflow_policy_required:
+    description: GitHub workflow audit must verify strict CI workflow, least-privilege
+      permissions, docs build, coverage, fuzz, mutation, and profiling scaffolds.
+  test_inventory_required:
+    description: Test inventory report must show unit, integration, e2e, property,
+      Hypothesis, fuzz, mutation, benchmark, and coverage scaffolds.
+  hypothesis_strategy_required:
+    description: Python Hypothesis-style property tests must be present and auditable
+      as a complement to Rust proptest tests.
+  profiling_budget_required:
+    description: Profiling and benchmark budget checks must remain present and tied
+      to read-only synthetic fixtures.
+  quality_gate_evidence_required:
+    description: Quality gate evidence ledger must distinguish configured gates from
+      gates requiring local Rust/npm execution.
+  security_automation:
+    description: GitHub Actions pinning and permissions audit must remain configured
+      and auditable before local/CI handoff.
+  supply_chain_review:
+    description: cargo-vet supply-chain review policy must remain configured and auditable
+      before local/CI handoff.
+  provenance_required:
+    description: SLSA and artifact attestation verification plan must remain configured
+      and auditable before local/CI handoff.
+  release_automation:
+    description: cargo-dist and release-plz automation scaffold must remain configured
+      and auditable before local/CI handoff.
+  scorecard_dependency_review:
+    description: OpenSSF Scorecard and dependency-review workflow scaffold must remain
+      configured and auditable before local/CI handoff.
+  docs_quality_required:
+    description: Astro 7 documentation quality hardening must remain configured and
+      auditable before local/CI handoff.
+  repo_hardening_audit:
+    description: Bleeding-edge repo hardening audit aggregator must remain configured
+      and auditable before local/CI handoff.

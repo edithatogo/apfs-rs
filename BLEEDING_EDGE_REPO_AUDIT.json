@@ -1,0 +1,38 @@
+{
+  "schema_version": "0.29.0",
+  "results": [
+    {
+      "tool": "github_actions_hardening_audit.py",
+      "passed": true
+    },
+    {
+      "tool": "action_pinning_audit.py",
+      "passed": true
+    },
+    {
+      "tool": "cargo_vet_policy_audit.py",
+      "passed": true
+    },
+    {
+      "tool": "provenance_verification_audit.py",
+      "passed": true
+    },
+    {
+      "tool": "release_automation_audit.py",
+      "passed": true
+    },
+    {
+      "tool": "scorecard_dependency_review_audit.py",
+      "passed": true
+    },
+    {
+      "tool": "astro7_docs_hardening_audit.py",
+      "passed": true
+    },
+    {
+      "tool": "benchmark_regression_audit.py",
+      "passed": true
+    }
+  ],
+  "passed": true
+}

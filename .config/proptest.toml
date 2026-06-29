@@ -1,0 +1,5 @@
+# Property-test policy for Rust tests using proptest.
+# These values document the intended CI defaults; individual tests can tune cases locally.
+cases = 256
+max_shrink_iters = 1024
+failure_persistence = "target/proptest-regressions"

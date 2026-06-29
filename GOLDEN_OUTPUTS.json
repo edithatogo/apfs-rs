@@ -1,0 +1,116 @@
+{
+  "schema_version": "0.25.0",
+  "golden_count": 18,
+  "golden_dir": "fixtures/golden",
+  "items": [
+    {
+      "fixture": "fixtures/example-non-apfs.bin",
+      "sha256": "2d24a33a3112d305b1ad407e60dcf94bd3dff6bd2b40fd415d06c7ff095842fa",
+      "expected_status": "refused",
+      "reason": "shorter than nx_superblock_min_size"
+    },
+    {
+      "fixture": "fixtures/negative/negative-corrupt-nxsb-magic.bin",
+      "sha256": "11218c293d56d3ced1042d0a1936c39b4f87b70c51df59e58aa3d90c2abebcca",
+      "expected_status": "not_apfs",
+      "reason": "no NXSB or GPT signature"
+    },
+    {
+      "fixture": "fixtures/negative/negative-invalid-block-size.bin",
+      "sha256": "99d8c72a508252e4d2600765c95ee747654e57617ea4e338577e03ea6cd1562d",
+      "expected_status": "refused",
+      "reason": "invalid block size"
+    },
+    {
+      "fixture": "fixtures/negative/negative-truncated-nxsb.bin",
+      "sha256": "5a294df31f603faa76642a1eb6926e8e20119ec0be67a906bd5339c8bd8f40d4",
+      "expected_status": "refused",
+      "reason": "shorter than nx_superblock_min_size"
+    },
+    {
+      "fixture": "fixtures/synthetic-btree-cursor.img",
+      "sha256": "5a4afef3304f928b4ff59af19f384da7f4b5e42c2b86fc7f17e50fc572b1e2e2",
+      "expected_status": "apfs_container_detected",
+      "reason": "NXSB magic at block zero"
+    },
+    {
+      "fixture": "fixtures/synthetic-btree-traversal.img",
+      "sha256": "5a4afef3304f928b4ff59af19f384da7f4b5e42c2b86fc7f17e50fc572b1e2e2",
+      "expected_status": "apfs_container_detected",
+      "reason": "NXSB magic at block zero"
+    },
+    {
+      "fixture": "fixtures/synthetic-checkpoint-map-omap.img",
+      "sha256": "0d1b78fba9a6e233fb3f2b2c397d2e695feb6e713dd7db8f414b60cdcb7b472b",
+      "expected_status": "apfs_container_detected",
+      "reason": "NXSB magic at block zero"
+    },
+    {
+      "fixture": "fixtures/synthetic-checkpoint-ring.img",
+      "sha256": "4f99f2c83770a4555f50f40cc321b50f2e0084d1104bcaadb55ba60a6e29f2f8",
+      "expected_status": "apfs_container_detected",
+      "reason": "NXSB magic at block zero"
+    },
+    {
+      "fixture": "fixtures/synthetic-directory-listing.img",
+      "sha256": "afb6c4d676d03fbd5313b6c29518a3470543c5e7aa77dd01c0f397691cbec36d",
+      "expected_status": "apfs_container_detected",
+      "reason": "NXSB magic at block zero"
+    },
+    {
+      "fixture": "fixtures/synthetic-file-preview.img",
+      "sha256": "afb6c4d676d03fbd5313b6c29518a3470543c5e7aa77dd01c0f397691cbec36d",
+      "expected_status": "apfs_container_detected",
+      "reason": "NXSB magic at block zero"
+    },
+    {
+      "fixture": "fixtures/synthetic-gpt-apfs.img",
+      "sha256": "ef526acfda66f03403abae908eb2bc11e0b73707cb00419506605a4555e069aa",
+      "expected_status": "gpt_probe",
+      "reason": "GPT signature present; APFS partition probe expected"
+    },
+    {
+      "fixture": "fixtures/synthetic-mapped-object-read.img",
+      "sha256": "c68f2930e2dd9b67fb42491f6081851e37e32e9cccf1eabc23f2fa98d9f3638d",
+      "expected_status": "apfs_container_detected",
+      "reason": "NXSB magic at block zero"
+    },
+    {
+      "fixture": "fixtures/synthetic-nxsb-block0.bin",
+      "sha256": "cbc30eb55d92b9f6a18cad888bb25fc47897fcea3915b0e917cc6b242a506c46",
+      "expected_status": "apfs_container_detected",
+      "reason": "NXSB magic at block zero"
+    },
+    {
+      "fixture": "fixtures/synthetic-omap-btree-root.img",
+      "sha256": "8540e053a0c7b4041cd0c5b4943b9f544bb3c30461ec9053cd6e4d8fb4920e74",
+      "expected_status": "apfs_container_detected",
+      "reason": "NXSB magic at block zero"
+    },
+    {
+      "fixture": "fixtures/synthetic-omap-lookup.img",
+      "sha256": "981191a25d3bebc010dd5baf765797444d9db359e8dd7ea72bbfde9f15f12044",
+      "expected_status": "apfs_container_detected",
+      "reason": "NXSB magic at block zero"
+    },
+    {
+      "fixture": "fixtures/synthetic-omap-multinode-lookup.img",
+      "sha256": "0e283ad4dc3e01f178a0bde5e37cbce8226395c870a5a3b2d634308d7f57ad10",
+      "expected_status": "apfs_container_detected",
+      "reason": "NXSB magic at block zero"
+    },
+    {
+      "fixture": "fixtures/synthetic-resolver-facade.img",
+      "sha256": "5a4afef3304f928b4ff59af19f384da7f4b5e42c2b86fc7f17e50fc572b1e2e2",
+      "expected_status": "apfs_container_detected",
+      "reason": "NXSB magic at block zero"
+    },
+    {
+      "fixture": "fixtures/synthetic-volume-superblock.img",
+      "sha256": "03382d646d5dad79aa88fc0219ad400cf25058fd9feddde868d89967f7dbde3b",
+      "expected_status": "apfs_container_detected",
+      "reason": "NXSB magic at block zero"
+    }
+  ],
+  "note": "Cargoless high-level fixture expectations for future CLI tests."
+}

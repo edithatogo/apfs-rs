@@ -1,0 +1,318 @@
+{
+  "schema_version": "0.26.0",
+  "generated_utc": "2026-06-25T11:28:57.595070+00:00",
+  "summary": {
+    "available_here_tools": 16,
+    "missing_platform_tools": 5,
+    "total_tracked_tools": 30
+  },
+  "tools": [
+    {
+      "tool": "python3",
+      "available": true,
+      "path": "/opt/homebrew/bin/python3",
+      "version": "Python 3.14.5",
+      "category": "available_here_core",
+      "uses": [
+        "all cargoless validators",
+        "fixture generation",
+        "JSON/YAML/TOML parsing"
+      ]
+    },
+    {
+      "tool": "jq",
+      "available": true,
+      "path": "/usr/bin/jq",
+      "version": "jq-1.7.1-apple",
+      "category": "available_here_optional",
+      "uses": [
+        "JSON inspection",
+        "release evidence spot checks"
+      ]
+    },
+    {
+      "tool": "rg",
+      "available": true,
+      "path": "/Applications/Codex.app/Contents/Resources/rg",
+      "version": "ripgrep 15.1.0 (rev af60c2de9d)",
+      "category": "available_here_optional",
+      "uses": [
+        "source and docs grep",
+        "unsafe/write token scanning"
+      ]
+    },
+    {
+      "tool": "grep",
+      "available": true,
+      "path": "/usr/bin/grep",
+      "version": "grep (BSD grep, GNU compatible) 2.6.0-FreeBSD",
+      "category": "available_here_core",
+      "uses": [
+        "portable text search"
+      ]
+    },
+    {
+      "tool": "sed",
+      "available": true,
+      "path": "/usr/bin/sed",
+      "version": "sed: illegal option -- -",
+      "category": "available_here_core",
+      "uses": [
+        "text transformations"
+      ]
+    },
+    {
+      "tool": "awk",
+      "available": true,
+      "path": "/usr/bin/awk",
+      "version": "awk version 20200816",
+      "category": "available_here_core",
+      "uses": [
+        "text summaries"
+      ]
+    },
+    {
+      "tool": "find",
+      "available": true,
+      "path": "/usr/bin/find",
+      "version": "find: illegal option -- -",
+      "category": "available_here_core",
+      "uses": [
+        "file inventory"
+      ]
+    },
+    {
+      "tool": "zip",
+      "available": true,
+      "path": "/usr/bin/zip",
+      "version": "Copyright (c) 1990-2008 Info-ZIP - Type 'zip \"-L\"' for software license.",
+      "category": "available_here_core",
+      "uses": [
+        "artifact packaging"
+      ]
+    },
+    {
+      "tool": "unzip",
+      "available": true,
+      "path": "/usr/bin/unzip",
+      "version": "caution:  both -n and -o specified; ignoring -o",
+      "category": "available_here_core",
+      "uses": [
+        "archive validation"
+      ]
+    },
+    {
+      "tool": "sha256sum",
+      "available": true,
+      "path": "/sbin/sha256sum",
+      "version": "sha256sum (Darwin) 1.0",
+      "category": "available_here_core",
+      "uses": [
+        "checksum manifests"
+      ]
+    },
+    {
+      "tool": "git",
+      "available": true,
+      "path": "/usr/bin/git",
+      "version": "git version 2.50.1 (Apple Git-155)",
+      "category": "available_here_optional",
+      "uses": [
+        "future local version-control checks"
+      ]
+    },
+    {
+      "tool": "make",
+      "available": true,
+      "path": "/usr/bin/make",
+      "version": "GNU Make 3.81",
+      "category": "available_here_optional",
+      "uses": [
+        "developer command wrappers"
+      ]
+    },
+    {
+      "tool": "gcc",
+      "available": true,
+      "path": "/usr/bin/gcc",
+      "version": "Apple clang version 21.0.0 (clang-2100.1.1.101)",
+      "category": "available_here_optional",
+      "uses": [
+        "future C shim experiments, not required now"
+      ]
+    },
+    {
+      "tool": "clang",
+      "available": true,
+      "path": "/usr/bin/clang",
+      "version": "Apple clang version 21.0.0 (clang-2100.1.1.101)",
+      "category": "available_here_optional",
+      "uses": [
+        "future FFI/header checks, not required now"
+      ]
+    },
+    {
+      "tool": "node",
+      "available": true,
+      "path": "/opt/homebrew/bin/node",
+      "version": "v26.0.0",
+      "category": "available_here_optional",
+      "uses": [
+        "markdown tooling if installed through npm"
+      ]
+    },
+    {
+      "tool": "npm",
+      "available": true,
+      "path": "/opt/homebrew/bin/npm",
+      "version": "11.12.1",
+      "category": "available_here_optional",
+      "uses": [
+        "optional markdown/mermaid tooling"
+      ]
+    },
+    {
+      "tool": "cargo",
+      "available": true,
+      "path": "/opt/homebrew/bin/cargo",
+      "version": "cargo 1.95.0 (f2d3ce0bd 2026-03-21) (Homebrew)",
+      "category": "local_required",
+      "uses": [
+        "compile",
+        "test",
+        "clippy",
+        "xtask"
+      ]
+    },
+    {
+      "tool": "rustc",
+      "available": true,
+      "path": "/opt/homebrew/bin/rustc",
+      "version": "rustc 1.95.0 (59807616e 2026-04-14) (Homebrew)",
+      "category": "local_required",
+      "uses": [
+        "Rust compiler"
+      ]
+    },
+    {
+      "tool": "rustfmt",
+      "available": true,
+      "path": "/opt/homebrew/bin/rustfmt",
+      "version": "rustfmt 1.9.0",
+      "category": "local_required",
+      "uses": [
+        "Rust formatting"
+      ]
+    },
+    {
+      "tool": "cargo-nextest",
+      "available": true,
+      "path": "/opt/homebrew/bin/cargo-nextest",
+      "version": "cargo-nextest 0.9.136",
+      "category": "local_recommended",
+      "uses": [
+        "faster test runner"
+      ]
+    },
+    {
+      "tool": "cargo-deny",
+      "available": true,
+      "path": "/opt/homebrew/bin/cargo-deny",
+      "version": "cargo-deny 0.19.7",
+      "category": "local_recommended",
+      "uses": [
+        "license/advisory checks"
+      ]
+    },
+    {
+      "tool": "cargo-audit",
+      "available": false,
+      "path": null,
+      "version": null,
+      "category": "local_recommended",
+      "uses": [
+        "security advisory checks"
+      ]
+    },
+    {
+      "tool": "cargo-vet",
+      "available": false,
+      "path": null,
+      "version": null,
+      "category": "local_recommended",
+      "uses": [
+        "dependency review attestation"
+      ]
+    },
+    {
+      "tool": "cargo-fuzz",
+      "available": false,
+      "path": null,
+      "version": null,
+      "category": "local_recommended",
+      "uses": [
+        "parser fuzzing"
+      ]
+    },
+    {
+      "tool": "cargo-llvm-cov",
+      "available": false,
+      "path": null,
+      "version": null,
+      "category": "local_recommended",
+      "uses": [
+        "coverage"
+      ]
+    },
+    {
+      "tool": "hdiutil",
+      "available": true,
+      "path": "/usr/bin/hdiutil",
+      "version": "hdiutil: --version: verb not recognized",
+      "category": "macos_required",
+      "uses": [
+        "real APFS sparseimage fixture generation"
+      ]
+    },
+    {
+      "tool": "diskutil",
+      "available": true,
+      "path": "/usr/sbin/diskutil",
+      "version": "diskutil: did not recognize verb \"--version\"; type \"diskutil\" for a list",
+      "category": "macos_required",
+      "uses": [
+        "APFS formatting/oracle metadata"
+      ]
+    },
+    {
+      "tool": "fsck_apfs",
+      "available": true,
+      "path": "/sbin/fsck_apfs",
+      "version": "fsck_apfs: unrecognized option `--version'",
+      "category": "macos_recommended",
+      "uses": [
+        "APFS fixture verification"
+      ]
+    },
+    {
+      "tool": "powershell",
+      "available": false,
+      "path": null,
+      "version": null,
+      "category": "windows_required",
+      "uses": [
+        "Windows smoke scripts"
+      ]
+    },
+    {
+      "tool": "pwsh",
+      "available": true,
+      "path": "/opt/homebrew/bin/pwsh",
+      "version": "PowerShell 7.6.2",
+      "category": "windows_or_cross_platform_optional",
+      "uses": [
+        "PowerShell scripts"
+      ]
+    }
+  ]
+}

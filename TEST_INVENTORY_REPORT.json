@@ -1,0 +1,114 @@
+{
+  "schema_version": "0.29.0",
+  "status": "passed",
+  "checks": [
+    {
+      "category": "unit_tests",
+      "count": 11,
+      "minimum": 1,
+      "ok": true,
+      "files": [
+        "crates/apfs-android/src/lib.rs",
+        "crates/apfs-blockdev/src/lib.rs",
+        "crates/apfs-core/src/lib.rs",
+        "crates/apfs-crypto/src/lib.rs",
+        "crates/apfs-features/src/lib.rs",
+        "crates/apfs-fuse/src/lib.rs",
+        "crates/apfs-test/src/lib.rs",
+        "crates/apfs-types/src/lib.rs",
+        "crates/apfs-vfs/src/lib.rs",
+        "crates/apfs-win/src/lib.rs",
+        "crates/apfs-write-lab/src/lib.rs"
+      ]
+    },
+    {
+      "category": "integration_tests",
+      "count": 7,
+      "minimum": 1,
+      "ok": true,
+      "files": [
+        "crates/apfs-cli/tests/e2e_cli.rs",
+        "crates/apfs-cli/tests/e2e_synthetic_cli.rs",
+        "crates/apfs-core/tests/integration_inspect.rs",
+        "crates/apfs-core/tests/synthetic_inspect.rs",
+        "crates/apfs-types/tests/parser_property.rs",
+        "crates/apfs-types/tests/property_nx_superblock.rs",
+        "tests/integration/README.md"
+      ]
+    },
+    {
+      "category": "e2e_tests",
+      "count": 4,
+      "minimum": 1,
+      "ok": true,
+      "files": [
+        "crates/apfs-cli/tests/e2e_cli.rs",
+        "crates/apfs-cli/tests/e2e_synthetic_cli.rs",
+        "tests/e2e/README.md",
+        "tests/e2e/cli_smoke_commands.md"
+      ]
+    },
+    {
+      "category": "property_tests_rust",
+      "count": 3,
+      "minimum": 1,
+      "ok": true,
+      "files": [
+        "crates/apfs-types/tests/parser_property.rs",
+        "crates/apfs-types/tests/property_nx_superblock.rs",
+        "tests/property/README.md"
+      ]
+    },
+    {
+      "category": "hypothesis_tests_python",
+      "count": 2,
+      "minimum": 1,
+      "ok": true,
+      "files": [
+        "python_tests/test_fixture_properties.py",
+        "python_tests/test_negative_fixtures.py"
+      ]
+    },
+    {
+      "category": "fuzz_targets",
+      "count": 2,
+      "minimum": 2,
+      "ok": true,
+      "files": [
+        "fuzz/fuzz_targets/nx_superblock.rs",
+        "fuzz/fuzz_targets/object_header.rs"
+      ]
+    },
+    {
+      "category": "mutation_config",
+      "count": 1,
+      "minimum": 1,
+      "ok": true,
+      "files": [
+        "mutants.toml"
+      ]
+    },
+    {
+      "category": "benchmarks",
+      "count": 5,
+      "minimum": 1,
+      "ok": true,
+      "files": [
+        "crates/apfs-core/benches/inspect_synthetic.rs",
+        "crates/apfs-types/benches/nx_superblock_bench.rs",
+        "benches/README.md",
+        "profiling/README.md",
+        "profiling/profile_plan.json"
+      ]
+    },
+    {
+      "category": "coverage_config",
+      "count": 1,
+      "minimum": 1,
+      "ok": true,
+      "files": [
+        ".github/workflows/coverage.yml"
+      ]
+    }
+  ]
+}

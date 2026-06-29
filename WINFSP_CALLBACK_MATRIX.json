@@ -1,0 +1,96 @@
+{
+  "schema_version": "0.22.0",
+  "adapter": "WinFsp",
+  "mode": "read_only_mvp_contract",
+  "callbacks": [
+    {
+      "callback": "Init",
+      "decision": "allow",
+      "note": "initialise read-only filesystem instance"
+    },
+    {
+      "callback": "GetVolumeInfo",
+      "decision": "allow",
+      "note": "report read-only volume metadata"
+    },
+    {
+      "callback": "GetSecurityByName",
+      "decision": "allow",
+      "note": "conservative read-only security metadata"
+    },
+    {
+      "callback": "Create",
+      "decision": "refuse",
+      "note": "no file creation in read-only MVP"
+    },
+    {
+      "callback": "Open",
+      "decision": "allow_readonly",
+      "note": "open existing files/directories read-only"
+    },
+    {
+      "callback": "Read",
+      "decision": "allow",
+      "note": "read file data through apfs-vfs"
+    },
+    {
+      "callback": "Write",
+      "decision": "refuse",
+      "note": "all writes refused"
+    },
+    {
+      "callback": "Flush",
+      "decision": "allow_noop",
+      "note": "no APFS media mutation"
+    },
+    {
+      "callback": "GetFileInfo",
+      "decision": "allow",
+      "note": "stat/getattr mapping"
+    },
+    {
+      "callback": "SetBasicInfo",
+      "decision": "refuse",
+      "note": "metadata mutation refused"
+    },
+    {
+      "callback": "SetFileSize",
+      "decision": "refuse",
+      "note": "truncate/extend refused"
+    },
+    {
+      "callback": "CanDelete",
+      "decision": "refuse",
+      "note": "deletion refused"
+    },
+    {
+      "callback": "Rename",
+      "decision": "refuse",
+      "note": "rename refused"
+    },
+    {
+      "callback": "ReadDirectory",
+      "decision": "allow",
+      "note": "directory listing through apfs-vfs"
+    },
+    {
+      "callback": "GetReparsePoint",
+      "decision": "allow_if_symlink",
+      "note": "symlink metadata only where supported"
+    },
+    {
+      "callback": "SetReparsePoint",
+      "decision": "refuse",
+      "note": "metadata mutation refused"
+    },
+    {
+      "callback": "DeleteReparsePoint",
+      "decision": "refuse",
+      "note": "metadata mutation refused"
+    }
+  ],
+  "safety": {
+    "writes_refused": true,
+    "physical_write_handles": false
+  }
+}

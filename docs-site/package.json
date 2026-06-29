@@ -1,0 +1,22 @@
+{
+  "name": "apfs-rs-docs-site",
+  "version": "0.29.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "audit:docs": "node --version && npm --version && astro --version || true"
+  },
+  "devDependencies": {
+    "astro": "7.0.2",
+    "typescript": "^5.9.0",
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/starlight": "latest"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}

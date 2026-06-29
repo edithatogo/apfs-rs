@@ -1,0 +1,26 @@
+{
+  "apfs_features": {
+    "not_a_complete_filesystem": true,
+    "synthetic": true
+  },
+  "capability_ids": [
+    "M-007"
+  ],
+  "created_with": {
+    "note": "synthetic parser-development fixture",
+    "tool": "tools/make_synthetic_fixtures.py"
+  },
+  "description": "Direct APFS-like image with checkpoint-map-backed OMAP lookup records across multiple synthetic B-tree leaf nodes",
+  "expected_artifacts": [],
+  "fixture_id": "synthetic-omap-multinode-lookup.img",
+  "not_a_complete_filesystem": true,
+  "redaction": {
+    "contains_personal_data": false,
+    "contains_secret_material": false
+  },
+  "schema_version": "0.16.0",
+  "sha256": "0e283ad4dc3e01f178a0bde5e37cbce8226395c870a5a3b2d634308d7f57ad10",
+  "size_bytes": 196608,
+  "source_type": "synthetic_apfs_parser_development_image",
+  "synthetic": true
+}

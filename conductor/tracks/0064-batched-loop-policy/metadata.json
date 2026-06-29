@@ -1,0 +1,7 @@
+{
+  "track_id": "0064-batched-loop-policy",
+  "capability_id": "M-064",
+  "title": "Batched loop policy and local stop criteria",
+  "status": "completed_scaffold",
+  "version": "0.22.0"
+}

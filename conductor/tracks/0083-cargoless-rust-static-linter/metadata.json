@@ -1,0 +1,8 @@
+{
+  "track_id": "0083-cargoless-rust-static-linter",
+  "capability_id": "M-083",
+  "title": "Cargoless Rust static linter",
+  "status": "implemented_python",
+  "version": "0.26.0",
+  "updated": "2026-06-25"
+}

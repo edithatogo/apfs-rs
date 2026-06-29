@@ -1,0 +1,7 @@
+{
+  "track_id": "0005-m004-checkpoint-map-omap-probe",
+  "capability": "M-004",
+  "status": "implemented_in_package_uncompiled",
+  "package": "v0.4.0",
+  "purpose": "Checkpoint map parsing and early OMAP probe."
+}

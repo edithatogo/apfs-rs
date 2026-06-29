@@ -1,0 +1,14 @@
+---
+title: Local Handoff
+---
+
+Start with the cargoless checks, then run Rust checks:
+
+```bash
+python3 tools/cargoless_smoke_suite.py
+cargo fmt --all -- --check
+cargo test --workspace
+cargo clippy --workspace --all-targets --all-features -- -D warnings
+```
+
+Generate the first real APFS fixture on macOS before claiming production parser support.

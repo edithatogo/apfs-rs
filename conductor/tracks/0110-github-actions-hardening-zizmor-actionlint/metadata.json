@@ -1,0 +1,7 @@
+{
+  "track_id": "0110-github-actions-hardening-zizmor-actionlint",
+  "capability_id": "M-110",
+  "title": "GitHub Actions hardening with zizmor/actionlint policy",
+  "status": "implemented_python",
+  "version": "0.29.0"
+}

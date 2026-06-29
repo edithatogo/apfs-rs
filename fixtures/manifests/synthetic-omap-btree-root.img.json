@@ -1,0 +1,26 @@
+{
+  "apfs_features": {
+    "not_a_complete_filesystem": true,
+    "synthetic": true
+  },
+  "capability_ids": [
+    "M-005"
+  ],
+  "created_with": {
+    "note": "synthetic parser-development fixture",
+    "tool": "tools/make_synthetic_fixtures.py"
+  },
+  "description": "Direct APFS-like image with checkpoint mappings for the container OMAP and its B-tree root node",
+  "expected_artifacts": [],
+  "fixture_id": "synthetic-omap-btree-root.img",
+  "not_a_complete_filesystem": true,
+  "redaction": {
+    "contains_personal_data": false,
+    "contains_secret_material": false
+  },
+  "schema_version": "0.16.0",
+  "sha256": "8540e053a0c7b4041cd0c5b4943b9f544bb3c30461ec9053cd6e4d8fb4920e74",
+  "size_bytes": 131072,
+  "source_type": "synthetic_apfs_parser_development_image",
+  "synthetic": true
+}

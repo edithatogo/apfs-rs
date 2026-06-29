@@ -1,0 +1,5 @@
+
+hypothesis>=6.100
+pytest>=8.0
+pyyaml>=6.0
+jsonschema>=4.0

@@ -1,0 +1,9 @@
+{
+  "track_id": "0051-devcontainer-tool-bootstrap",
+  "capability_id": "M-051",
+  "title": "Devcontainer and Tool-Version Bootstrap",
+  "status": "implemented_scaffold",
+  "version": "0.21.0",
+  "context_system": "conductor",
+  "safety": "read_only_or_docs_only"
+}

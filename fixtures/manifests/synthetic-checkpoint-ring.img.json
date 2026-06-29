@@ -1,0 +1,26 @@
+{
+  "apfs_features": {
+    "not_a_complete_filesystem": true,
+    "synthetic": true
+  },
+  "capability_ids": [
+    "M-004"
+  ],
+  "created_with": {
+    "note": "synthetic parser-development fixture",
+    "tool": "tools/make_synthetic_fixtures.py"
+  },
+  "description": "Direct APFS-like image with checkpoint descriptor NXSB candidates",
+  "expected_artifacts": [],
+  "fixture_id": "synthetic-checkpoint-ring.img",
+  "not_a_complete_filesystem": true,
+  "redaction": {
+    "contains_personal_data": false,
+    "contains_secret_material": false
+  },
+  "schema_version": "0.16.0",
+  "sha256": "4f99f2c83770a4555f50f40cc321b50f2e0084d1104bcaadb55ba60a6e29f2f8",
+  "size_bytes": 65536,
+  "source_type": "synthetic_apfs_parser_development_image",
+  "synthetic": true
+}

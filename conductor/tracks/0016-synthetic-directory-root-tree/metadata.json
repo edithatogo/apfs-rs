@@ -1,0 +1,7 @@
+{
+  "track_id": "0016-synthetic-directory-root-tree",
+  "capability": "M-016",
+  "status": "implemented_in_package_uncompiled",
+  "package": "v0.15.0",
+  "purpose": "Synthetic filesystem root-tree directory-record parser."
+}

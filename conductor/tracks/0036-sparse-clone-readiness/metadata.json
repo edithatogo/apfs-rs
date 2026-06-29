@@ -1,0 +1,7 @@
+{
+  "track_id": "0036-sparse-clone-readiness",
+  "capability_id": "M-036",
+  "package": "v0.19.0",
+  "status": "implemented_scaffold",
+  "title": "Sparse file and clone readiness"
+}

@@ -1,0 +1,9 @@
+{
+  "track_id": "0055-local-environment-doctor",
+  "capability_id": "M-055",
+  "title": "Local Environment Doctor",
+  "status": "implemented_scaffold",
+  "version": "0.21.0",
+  "context_system": "conductor",
+  "safety": "read_only_or_docs_only"
+}

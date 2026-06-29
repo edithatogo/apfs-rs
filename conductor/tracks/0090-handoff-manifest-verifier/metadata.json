@@ -1,0 +1,7 @@
+{
+  "track_id": "0090-handoff-manifest-verifier",
+  "capability_id": "M-090",
+  "title": "Handoff manifest verifier",
+  "status": "implemented_python",
+  "version": "0.26.0"
+}

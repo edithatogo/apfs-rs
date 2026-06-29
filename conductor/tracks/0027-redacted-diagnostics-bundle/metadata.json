@@ -1,0 +1,7 @@
+{
+  "track_id": "0027-redacted-diagnostics-bundle",
+  "capability_id": "M-027",
+  "title": "Redacted diagnostics bundle CLI",
+  "status": "implemented_or_scaffolded",
+  "version": "0.18.0"
+}

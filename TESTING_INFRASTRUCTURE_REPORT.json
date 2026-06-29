@@ -1,0 +1,51 @@
+{
+  "schema_version": "0.29.0",
+  "items": [
+    {
+      "id": "unit_tests",
+      "command_or_file": "cargo test --workspace",
+      "status": "configured"
+    },
+    {
+      "id": "integration_tests",
+      "command_or_file": "crates/apfs-core/tests/integration_inspect.rs",
+      "status": "configured"
+    },
+    {
+      "id": "end_to_end_tests",
+      "command_or_file": "crates/apfs-cli/tests/e2e_cli.rs",
+      "status": "configured"
+    },
+    {
+      "id": "property_tests",
+      "command_or_file": "Rust proptest + optional Python Hypothesis",
+      "status": "configured"
+    },
+    {
+      "id": "fuzz_tests",
+      "command_or_file": "cargo fuzz object_header/nx_superblock",
+      "status": "configured"
+    },
+    {
+      "id": "mutation_tests",
+      "command_or_file": "cargo mutants scheduled/manual",
+      "status": "configured"
+    },
+    {
+      "id": "coverage",
+      "command_or_file": "cargo llvm-cov nextest --fail-under-lines 90",
+      "status": "configured"
+    },
+    {
+      "id": "profiling",
+      "command_or_file": "Criterion bench and profiling workflow",
+      "status": "configured"
+    },
+    {
+      "id": "docs_site",
+      "command_or_file": "Astro 7 + Starlight scaffold",
+      "status": "configured"
+    }
+  ],
+  "note": "Configured here; must be executed and fixed on a Rust/Node-enabled machine."
+}

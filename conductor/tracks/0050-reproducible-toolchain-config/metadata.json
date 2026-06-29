@@ -1,0 +1,9 @@
+{
+  "track_id": "0050-reproducible-toolchain-config",
+  "capability_id": "M-050",
+  "title": "Reproducible Rust Toolchain and Cargo QA Configuration",
+  "status": "implemented_scaffold",
+  "version": "0.21.0",
+  "context_system": "conductor",
+  "safety": "read_only_or_docs_only"
+}

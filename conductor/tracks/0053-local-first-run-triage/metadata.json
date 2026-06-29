@@ -1,0 +1,9 @@
+{
+  "track_id": "0053-local-first-run-triage",
+  "capability_id": "M-053",
+  "title": "Local First-Run Triage Checklist",
+  "status": "implemented_scaffold",
+  "version": "0.21.0",
+  "context_system": "conductor",
+  "safety": "read_only_or_docs_only"
+}

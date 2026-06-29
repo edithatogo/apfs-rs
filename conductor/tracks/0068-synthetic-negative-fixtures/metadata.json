@@ -1,0 +1,8 @@
+{
+  "track_id": "0068-synthetic-negative-fixtures",
+  "capability_id": "M-068",
+  "title": "Synthetic negative fixture generator",
+  "status": "implemented_scaffold",
+  "version": "0.23.0",
+  "phase": "handoff-hardening"
+}

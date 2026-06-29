@@ -1,0 +1,7 @@
+{
+  "track_id": "100-documentation-site-audit-quality-gate",
+  "capability_id": "M-100",
+  "title": "Documentation site audit and quality gate",
+  "status": "implemented_scaffold",
+  "version": "0.27.0"
+}

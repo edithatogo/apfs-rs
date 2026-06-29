@@ -1,0 +1,8 @@
+{
+  "track_id": "0069-test-control-matrix",
+  "capability_id": "M-069",
+  "title": "Test/control matrix generator",
+  "status": "implemented_scaffold",
+  "version": "0.23.0",
+  "phase": "handoff-hardening"
+}

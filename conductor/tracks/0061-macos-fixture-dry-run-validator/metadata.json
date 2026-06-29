@@ -1,0 +1,7 @@
+{
+  "track_id": "0061-macos-fixture-dry-run-validator",
+  "capability_id": "M-061",
+  "title": "macOS APFS fixture dry-run validator",
+  "status": "completed_scaffold",
+  "version": "0.22.0"
+}

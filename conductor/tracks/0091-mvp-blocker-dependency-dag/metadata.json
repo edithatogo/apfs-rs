@@ -1,0 +1,7 @@
+{
+  "track_id": "0091-mvp-blocker-dependency-dag",
+  "capability_id": "M-091",
+  "title": "MVP blocker dependency DAG",
+  "status": "implemented_python",
+  "version": "0.26.0"
+}

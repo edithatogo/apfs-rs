@@ -1,0 +1,8 @@
+{
+  "track_id": "0073-cargoless-smoke-suite",
+  "capability_id": "M-073",
+  "title": "Cargoless smoke suite aggregator",
+  "status": "implemented",
+  "version": "0.25.0",
+  "updated": "2026-06-25"
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": "0.23.0",
+  "fixture_id": "negative-invalid-block-size",
+  "source_type": "synthetic_negative_apfs_image",
+  "filename": "negative-invalid-block-size.bin",
+  "sha256": "99d8c72a508252e4d2600765c95ee747654e57617ea4e338577e03ea6cd1562d",
+  "apfs_features": {
+    "synthetic": true,
+    "negative_fixture": true
+  },
+  "capability_ids": [
+    "M-001",
+    "M-003",
+    "M-065"
+  ],
+  "expected_result": "invalid_block_size_refusal",
+  "redaction": {
+    "contains_personal_data": false,
+    "contains_secret_material": false
+  }
+}

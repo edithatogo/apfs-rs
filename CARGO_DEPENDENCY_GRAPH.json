@@ -1,0 +1,96 @@
+{
+  "schema_version": "0.26.0",
+  "crates": [
+    {
+      "name": "apfs-types",
+      "member": "crates/apfs-types",
+      "version": "0.13.0"
+    },
+    {
+      "name": "apfs-blockdev",
+      "member": "crates/apfs-blockdev",
+      "version": "0.13.0"
+    },
+    {
+      "name": "apfs-core",
+      "member": "crates/apfs-core",
+      "version": "0.13.0"
+    },
+    {
+      "name": "apfs-vfs",
+      "member": "crates/apfs-vfs",
+      "version": "0.18.0"
+    },
+    {
+      "name": "apfs-win",
+      "member": "crates/apfs-win",
+      "version": "0.18.0"
+    },
+    {
+      "name": "apfs-features",
+      "member": "crates/apfs-features",
+      "version": "0.19.0"
+    },
+    {
+      "name": "apfs-fuse",
+      "member": "crates/apfs-fuse",
+      "version": "0.1.0"
+    },
+    {
+      "name": "apfs-android",
+      "member": "crates/apfs-android",
+      "version": "0.1.0"
+    },
+    {
+      "name": "apfs-crypto",
+      "member": "crates/apfs-crypto",
+      "version": "0.1.0"
+    },
+    {
+      "name": "apfs-write-lab",
+      "member": "crates/apfs-write-lab",
+      "version": "0.1.0"
+    },
+    {
+      "name": "apfs-cli",
+      "member": "crates/apfs-cli",
+      "version": "0.13.0"
+    },
+    {
+      "name": "apfs-test",
+      "member": "crates/apfs-test",
+      "version": "0.13.0"
+    },
+    {
+      "name": "xtask",
+      "member": "xtask",
+      "version": "0.13.0"
+    }
+  ],
+  "edges": [
+    {
+      "from": "apfs-core",
+      "to": "apfs-blockdev"
+    },
+    {
+      "from": "apfs-core",
+      "to": "apfs-types"
+    },
+    {
+      "from": "apfs-cli",
+      "to": "apfs-blockdev"
+    },
+    {
+      "from": "apfs-cli",
+      "to": "apfs-core"
+    },
+    {
+      "from": "apfs-cli",
+      "to": "apfs-features"
+    },
+    {
+      "from": "apfs-cli",
+      "to": "apfs-win"
+    }
+  ]
+}

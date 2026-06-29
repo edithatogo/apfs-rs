@@ -1,0 +1,8 @@
+{
+  "track_id": "0071-markdown-link-audit",
+  "capability_id": "M-071",
+  "title": "Markdown internal link audit",
+  "status": "implemented",
+  "version": "0.25.0",
+  "updated": "2026-06-25"
+}

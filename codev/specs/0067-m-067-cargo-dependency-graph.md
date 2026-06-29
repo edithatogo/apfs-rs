@@ -1,0 +1,21 @@
+# Spec 0067: Cargoless Cargo dependency graph generator
+
+Document version: 0.23.0
+Status: Implemented scaffold
+Codev phase: Specify
+
+## Goal
+
+Generate a path-dependency graph without cargo metadata.
+
+## Non-goals
+
+- No APFS media writes.
+- No raw physical-device access.
+- No claim that cargoless checks replace `cargo test`.
+
+## Acceptance
+
+- Tooling exists and can run in the current sandbox.
+- Capability and Conductor history are updated.
+- Output artifacts are regenerated for handoff.

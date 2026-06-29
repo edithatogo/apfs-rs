@@ -1,0 +1,19 @@
+[package]
+name = "apfs-core"
+version = "0.13.0"
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+apfs-blockdev = { path = "../apfs-blockdev" }
+apfs-types = { path = "../apfs-types" }
+serde.workspace = true
+thiserror.workspace = true
+[dev-dependencies]
+criterion.workspace = true
+proptest.workspace = true
+
+[[bench]]
+name = "inspect_synthetic"
+harness = false

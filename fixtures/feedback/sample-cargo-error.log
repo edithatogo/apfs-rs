@@ -1,0 +1,7 @@
+error[E0432]: unresolved import `apfs_core::missing_symbol`
+  --> crates/apfs-cli/src/main.rs:12:5
+   |
+12 | use apfs_core::missing_symbol;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^ no `missing_symbol` in the root
+
+error: could not compile `apfs-cli` due to previous error

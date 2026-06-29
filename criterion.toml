@@ -1,0 +1,7 @@
+# Criterion/profiling policy for local benchmarking.
+# Recommended after compile baseline:
+# cargo bench --workspace
+[profiling]
+minimum_benchmarks = 3
+html_reports = true
+flamegraph_optional = true

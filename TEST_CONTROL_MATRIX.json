@@ -1,0 +1,65 @@
+{
+  "schema_version": "0.26.0",
+  "checks": [
+    {
+      "phase": "current_environment",
+      "command": "python3 tools/precompile_static_check.py",
+      "purpose": "cargoless source/context/fixture sanity",
+      "required_now": true
+    },
+    {
+      "phase": "current_environment",
+      "command": "python3 tools/synthetic_fixture_oracle.py",
+      "purpose": "synthetic fixture shape/oracle checks",
+      "required_now": true
+    },
+    {
+      "phase": "current_environment",
+      "command": "python3 tools/current_environment_inventory.py",
+      "purpose": "available tool inventory",
+      "required_now": true
+    },
+    {
+      "phase": "current_environment",
+      "command": "python3 tools/current_env_remaining.py",
+      "purpose": "classify remaining work by environment",
+      "required_now": true
+    },
+    {
+      "phase": "current_environment",
+      "command": "python3 tools/cargo_dependency_graph.py",
+      "purpose": "workspace path dependency graph",
+      "required_now": true
+    },
+    {
+      "phase": "local_rust",
+      "command": "cargo fmt --all -- --check",
+      "purpose": "Rust formatting",
+      "required_now": false
+    },
+    {
+      "phase": "local_rust",
+      "command": "cargo test --workspace",
+      "purpose": "compile and unit tests",
+      "required_now": false
+    },
+    {
+      "phase": "local_rust",
+      "command": "cargo clippy --workspace --all-targets --all-features -- -D warnings",
+      "purpose": "Rust linting",
+      "required_now": false
+    },
+    {
+      "phase": "macos_fixture",
+      "command": "./tools/macos/create_real_apfs_fixture.sh",
+      "purpose": "real APFS sparse image fixture",
+      "required_now": false
+    },
+    {
+      "phase": "windows_winfsp",
+      "command": "cargo run -p apfs-cli -- winfsp-callback-matrix --json",
+      "purpose": "read-only mount contract before live adapter",
+      "required_now": false
+    }
+  ]
+}

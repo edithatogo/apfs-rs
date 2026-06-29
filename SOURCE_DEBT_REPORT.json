@@ -1,0 +1,6013 @@
+{
+  "schema_version": "0.27.0",
+  "status": "informational",
+  "finding_count": 5518,
+  "by_kind": {
+    "scaffold": 5451,
+    "write_risk_term": 41,
+    "todo": 3,
+    "panic_risk": 23
+  },
+  "findings": [
+    {
+      "kind": "scaffold",
+      "path": "AGENT_HANDOFF_BRIEF.json",
+      "line": 8,
+      "text": "\"implemented_or_scaffolded\": 109,"
+    },
+    {
+      "kind": "scaffold",
+      "path": "AGENT_HANDOFF_BRIEF.md",
+      "line": 8,
+      "text": "- Capabilities/scaffolds: 109"
+    },
+    {
+      "kind": "scaffold",
+      "path": "APFS_OFFSET_AUDIT.json",
+      "line": 104,
+      "text": "\"path\": \"fixtures/synthetic-nxsb-block0.bin\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "APFS_OFFSET_AUDIT.json",
+      "line": 112,
+      "text": "\"path\": \"fixtures/synthetic-checkpoint-ring.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "APFS_OFFSET_AUDIT.json",
+      "line": 120,
+      "text": "\"path\": \"fixtures/synthetic-gpt-apfs.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "APFS_OFFSET_AUDIT.json",
+      "line": 128,
+      "text": "\"path\": \"fixtures/synthetic-volume-superblock.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "APFS_OFFSET_AUDIT.json",
+      "line": 136,
+      "text": "\"path\": \"fixtures/synthetic-gpt-apfs.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "APFS_OFFSET_AUDIT.md",
+      "line": 32,
+      "text": "| `fixtures/synthetic-nxsb-block0.bin` | block-zero NXSB magic | 32 | `pass` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "APFS_OFFSET_AUDIT.md",
+      "line": 33,
+      "text": "| `fixtures/synthetic-checkpoint-ring.img` | checkpoint-ring block-zero NXSB magic | 32 | `pass` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "APFS_OFFSET_AUDIT.md",
+      "line": 34,
+      "text": "| `fixtures/synthetic-gpt-apfs.img` | GPT header signature | 512 | `pass` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "APFS_OFFSET_AUDIT.md",
+      "line": 35,
+      "text": "| `fixtures/synthetic-volume-superblock.img` | volume fixture container NXSB | 32 | `pass` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "APFS_OFFSET_AUDIT.md",
+      "line": 36,
+      "text": "| `fixtures/synthetic-gpt-apfs.img` | APFS GPT type GUID bytes at first partition entry | 1024 | `pass` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.json",
+      "line": 15,
+      "text": "\"name\": \"AndroidReadiness\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.json",
+      "line": 21,
+      "text": "\"name\": \"android_readiness\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.json",
+      "line": 219,
+      "text": "\"name\": \"SyntheticBTreeTraversalReport\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.json",
+      "line": 405,
+      "text": "\"name\": \"CryptoReadinessStatus\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.json",
+      "line": 411,
+      "text": "\"name\": \"CryptoReadiness\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.json",
+      "line": 417,
+      "text": "\"name\": \"crypto_readiness\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.json",
+      "line": 423,
+      "text": "\"name\": \"FeatureReadinessStatus\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.json",
+      "line": 429,
+      "text": "\"name\": \"FeatureReadinessReport\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.json",
+      "line": 453,
+      "text": "\"name\": \"feature_readiness\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.json",
+      "line": 465,
+      "text": "\"name\": \"FuseAdapterReadiness\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.json",
+      "line": 471,
+      "text": "\"name\": \"fuse_adapter_readiness\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.json",
+      "line": 723,
+      "text": "\"name\": \"SYNTHETIC_DIR_KEY_SIZE\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.json",
+      "line": 729,
+      "text": "\"name\": \"SYNTHETIC_DIR_VALUE_HEADER_SIZE\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.json",
+      "line": 735,
+      "text": "\"name\": \"SYNTHETIC_EXTENT_KEY_SIZE\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.json",
+      "line": 741,
+      "text": "\"name\": \"SYNTHETIC_EXTENT_VALUE_SIZE\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.json",
+      "line": 747,
+      "text": "\"name\": \"SYNTHETIC_FILE_KIND_FILE\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.json",
+      "line": 753,
+      "text": "\"name\": \"SYNTHETIC_FILE_KIND_DIRECTORY\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.json",
+      "line": 759,
+      "text": "\"name\": \"SYNTHETIC_FILE_KIND_SYMLINK\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.json",
+      "line": 765,
+      "text": "\"name\": \"SYNTHETIC_FS_DIR_KEY_SIZE\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.json",
+      "line": 771,
+      "text": "\"name\": \"SYNTHETIC_FS_DIR_VALUE_HEADER_SIZE\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.json",
+      "line": 885,
+      "text": "\"name\": \"SyntheticDirectoryRecord\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.json",
+      "line": 891,
+      "text": "\"name\": \"SyntheticFileExtentRecord\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.json",
+      "line": 975,
+      "text": "\"name\": \"select_synthetic_btree_child\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.json",
+      "line": 981,
+      "text": "\"name\": \"parse_synthetic_directory_records_from_btree_node\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.json",
+      "line": 993,
+      "text": "\"name\": \"parse_synthetic_directory_records_v2_from_btree_node\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.json",
+      "line": 999,
+      "text": "\"name\": \"parse_synthetic_file_extent_records_from_btree_node\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.json",
+      "line": 1155,
+      "text": "\"name\": \"WriteLabReadiness\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.json",
+      "line": 1161,
+      "text": "\"name\": \"write_lab_readiness\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.md",
+      "line": 10,
+      "text": "| `apfs-android` | `struct` | `AndroidReadiness` | `crates/apfs-android/src/lib.rs` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.md",
+      "line": 11,
+      "text": "| `apfs-android` | `fn` | `android_readiness` | `crates/apfs-android/src/lib.rs` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.md",
+      "line": 44,
+      "text": "| `apfs-core` | `struct` | `SyntheticBTreeTraversalReport` | `crates/apfs-core/src/lib.rs` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.md",
+      "line": 75,
+      "text": "| `apfs-crypto` | `enum` | `CryptoReadinessStatus` | `crates/apfs-crypto/src/lib.rs` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.md",
+      "line": 76,
+      "text": "| `apfs-crypto` | `struct` | `CryptoReadiness` | `crates/apfs-crypto/src/lib.rs` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.md",
+      "line": 77,
+      "text": "| `apfs-crypto` | `fn` | `crypto_readiness` | `crates/apfs-crypto/src/lib.rs` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.md",
+      "line": 78,
+      "text": "| `apfs-features` | `enum` | `FeatureReadinessStatus` | `crates/apfs-features/src/lib.rs` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.md",
+      "line": 79,
+      "text": "| `apfs-features` | `struct` | `FeatureReadinessReport` | `crates/apfs-features/src/lib.rs` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.md",
+      "line": 83,
+      "text": "| `apfs-features` | `fn` | `feature_readiness` | `crates/apfs-features/src/lib.rs` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.md",
+      "line": 85,
+      "text": "| `apfs-fuse` | `struct` | `FuseAdapterReadiness` | `crates/apfs-fuse/src/lib.rs` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.md",
+      "line": 86,
+      "text": "| `apfs-fuse` | `fn` | `fuse_adapter_readiness` | `crates/apfs-fuse/src/lib.rs` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.md",
+      "line": 128,
+      "text": "| `apfs-types` | `const` | `SYNTHETIC_DIR_KEY_SIZE` | `crates/apfs-types/src/lib.rs` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.md",
+      "line": 129,
+      "text": "| `apfs-types` | `const` | `SYNTHETIC_DIR_VALUE_HEADER_SIZE` | `crates/apfs-types/src/lib.rs` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.md",
+      "line": 130,
+      "text": "| `apfs-types` | `const` | `SYNTHETIC_EXTENT_KEY_SIZE` | `crates/apfs-types/src/lib.rs` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.md",
+      "line": 131,
+      "text": "| `apfs-types` | `const` | `SYNTHETIC_EXTENT_VALUE_SIZE` | `crates/apfs-types/src/lib.rs` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.md",
+      "line": 132,
+      "text": "| `apfs-types` | `const` | `SYNTHETIC_FILE_KIND_FILE` | `crates/apfs-types/src/lib.rs` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.md",
+      "line": 133,
+      "text": "| `apfs-types` | `const` | `SYNTHETIC_FILE_KIND_DIRECTORY` | `crates/apfs-types/src/lib.rs` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.md",
+      "line": 134,
+      "text": "| `apfs-types` | `const` | `SYNTHETIC_FILE_KIND_SYMLINK` | `crates/apfs-types/src/lib.rs` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.md",
+      "line": 135,
+      "text": "| `apfs-types` | `const` | `SYNTHETIC_FS_DIR_KEY_SIZE` | `crates/apfs-types/src/lib.rs` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.md",
+      "line": 136,
+      "text": "| `apfs-types` | `const` | `SYNTHETIC_FS_DIR_VALUE_HEADER_SIZE` | `crates/apfs-types/src/lib.rs` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.md",
+      "line": 155,
+      "text": "| `apfs-types` | `struct` | `SyntheticDirectoryRecord` | `crates/apfs-types/src/lib.rs` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.md",
+      "line": 156,
+      "text": "| `apfs-types` | `struct` | `SyntheticFileExtentRecord` | `crates/apfs-types/src/lib.rs` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.md",
+      "line": 170,
+      "text": "| `apfs-types` | `fn` | `select_synthetic_btree_child` | `crates/apfs-types/src/lib.rs` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.md",
+      "line": 171,
+      "text": "| `apfs-types` | `fn` | `parse_synthetic_directory_records_from_btree_node` | `crates/apfs-types/src/lib.rs` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.md",
+      "line": 173,
+      "text": "| `apfs-types` | `fn` | `parse_synthetic_directory_records_v2_from_btree_node` | `crates/apfs-types/src/lib.rs` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.md",
+      "line": 174,
+      "text": "| `apfs-types` | `fn` | `parse_synthetic_file_extent_records_from_btree_node` | `crates/apfs-types/src/lib.rs` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.md",
+      "line": 200,
+      "text": "| `apfs-write-lab` | `struct` | `WriteLabReadiness` | `crates/apfs-write-lab/src/lib.rs` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "API_SURFACE.md",
+      "line": 201,
+      "text": "| `apfs-write-lab` | `fn` | `write_lab_readiness` | `crates/apfs-write-lab/src/lib.rs` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "ASTRO_DOCS_PLAN.md",
+      "line": 7,
+      "text": "Use a static Astro 7 docs site scaffold under `docs-site/`, pinned to `astro@7.0.2` for this handoff."
+    },
+    {
+      "kind": "scaffold",
+      "path": "BATCHED_LOOP_POLICY.md",
+      "line": 20,
+      "text": "Stop adding scaffolding when the only remaining high-value work requires:"
+    },
+    {
+      "kind": "scaffold",
+      "path": "BATCHED_LOOP_POLICY.md",
+      "line": 32,
+      "text": "Added current environment inventory, remaining-work classifier, dependency graph, synthetic negative fixtures, test/control matrix, and archive audit."
+    },
+    {
+      "kind": "scaffold",
+      "path": "CARGOLESS_SMOKE_REPORT.json",
+      "line": 31,
+      "text": "\"command\": \"runpy tools/synthetic_fixture_oracle.py\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "CARGOLESS_SMOKE_REPORT.md",
+      "line": 12,
+      "text": "- `runpy tools/synthetic_fixture_oracle.py` \u2192 `0` in 0.063s"
+    },
+    {
+      "kind": "scaffold",
+      "path": "CI_QUALITY_GATES.md",
+      "line": 3,
+      "text": "Status: passed. Strict CI scaffolding includes format, lint, tests, 90% coverage, fuzz, mutation, Miri, and supply-chain gates."
+    },
+    {
+      "kind": "scaffold",
+      "path": "CI_TESTING_PROFILING_PLAN.md",
+      "line": 25,
+      "text": "- Integration tests: synthetic fixture library APIs."
+    },
+    {
+      "kind": "scaffold",
+      "path": "CI_TESTING_PROFILING_PLAN.md",
+      "line": 26,
+      "text": "- End-to-end tests: CLI commands against synthetic and later real APFS fixtures."
+    },
+    {
+      "kind": "scaffold",
+      "path": "CLI_CONTRACT.json",
+      "line": 22,
+      "text": "\"description\": \"Aggregated read-only readiness and blocker report.\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "CLI_CONTRACT.json",
+      "line": 36,
+      "text": "\"description\": \"Synthetic/read-only object-map lookup facade.\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "CLI_CONTRACT.json",
+      "line": 43,
+      "text": "\"description\": \"Synthetic/read-only APFS volume report.\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "CLI_CONTRACT.json",
+      "line": 71,
+      "text": "\"description\": \"Synthetic directory listing.\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "CLI_CONTRACT.json",
+      "line": 78,
+      "text": "\"description\": \"Synthetic file preview.\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "CLI_CONTRACT.json",
+      "line": 85,
+      "text": "\"description\": \"Synthetic directory-entry metadata report.\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "CLI_CONTRACT.json",
+      "line": 118,
+      "text": "\"rust_variant\": \"FeatureReadiness\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "CLI_CONTRACT.json",
+      "line": 119,
+      "text": "\"command\": \"feature-readiness\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "CLI_CONTRACT.json",
+      "line": 120,
+      "text": "\"description\": \"Advanced APFS feature readiness report.\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "CLI_CONTRACT.json",
+      "line": 127,
+      "text": "\"description\": \"Synthetic metadata feature model report.\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "CLI_CONTRACT.json",
+      "line": 134,
+      "text": "\"description\": \"Synthetic safe host-side extract preview.\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "CLI_CONTRACT.json",
+      "line": 139,
+      "text": "\"safety_note\": \"All current commands are read-only with respect to APFS media. extract writes only to a host destination directory for synthetic fixture previews.\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "CLI_CONTRACT.md",
+      "line": 11,
+      "text": "| `apfs doctor` | `Doctor` | Aggregated read-only readiness and blocker report. | `false` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "CLI_CONTRACT.md",
+      "line": 13,
+      "text": "| `apfs lookup-object` | `LookupObject` | Synthetic/read-only object-map lookup facade. | `false` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "CLI_CONTRACT.md",
+      "line": 14,
+      "text": "| `apfs volumes` | `Volumes` | Synthetic/read-only APFS volume report. | `false` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "CLI_CONTRACT.md",
+      "line": 18,
+      "text": "| `apfs ls` | `Ls` | Synthetic directory listing. | `false` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "CLI_CONTRACT.md",
+      "line": 19,
+      "text": "| `apfs cat` | `Cat` | Synthetic file preview. | `false` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "CLI_CONTRACT.md",
+      "line": 20,
+      "text": "| `apfs stat` | `Stat` | Synthetic directory-entry metadata report. | `false` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "CLI_CONTRACT.md",
+      "line": 25,
+      "text": "| `apfs feature-readiness` | `FeatureReadiness` | Advanced APFS feature readiness report. | `false` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "CLI_CONTRACT.md",
+      "line": 26,
+      "text": "| `apfs metadata-feature-report` | `MetadataFeatureReport` | Synthetic metadata feature model report. | `false` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "CLI_CONTRACT.md",
+      "line": 27,
+      "text": "| `apfs extract` | `Extract` | Synthetic safe host-side extract preview. | `false` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "CLI_CONTRACT.md",
+      "line": 31,
+      "text": "All current commands are read-only with respect to APFS media. extract writes only to a host destination directory for synthetic fixture previews."
+    },
+    {
+      "kind": "scaffold",
+      "path": "CURRENT_ENVIRONMENT_REMAINING.json",
+      "line": 127,
+      "text": "\"Add still more synthetic negative fixtures.\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "CURRENT_ENVIRONMENT_REMAINING.md",
+      "line": 27,
+      "text": "- Add still more synthetic negative fixtures."
+    },
+    {
+      "kind": "scaffold",
+      "path": "CURRENT_ENV_COMPLETION_REPORT.json",
+      "line": 10,
+      "text": "\"More synthetic negative fixtures for malformed B-tree and OMAP edge cases\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "CURRENT_ENV_COMPLETION_REPORT.md",
+      "line": 11,
+      "text": "- More synthetic negative fixtures for malformed B-tree and OMAP edge cases"
+    },
+    {
+      "kind": "scaffold",
+      "path": "CURRENT_ENV_SELFTEST.json",
+      "line": 43,
+      "text": "\"command\": \"runpy tools/synthetic_fixture_oracle.py\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "CURRENT_ENV_SELFTEST.md",
+      "line": 16,
+      "text": "| `pass` | `runpy tools/synthetic_fixture_oracle.py` | 0.063 |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 17,
+      "text": "Fixtures[Synthetic fixtures]"
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 45,
+      "text": "CORE->>OMAP: build synthetic resolver report"
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 50,
+      "text": "## Current directory/file-preview scaffold"
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 56,
+      "text": "APSB --> RootTree[Synthetic filesystem root B-tree]"
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 57,
+      "text": "RootTree --> DirRecords[Synthetic directory records]"
+    },
+    {
+      "kind": "write_risk_term",
+      "path": "DESIGN.md",
+      "line": 82,
+      "text": "Write[Physical writes] -. blocked .-> Safety[Safety gates]"
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 105,
+      "text": "## v0.16 Additions: synthetic stat/extract and precompile validation"
+    },
+    {
+      "kind": "write_risk_term",
+      "path": "DESIGN.md",
+      "line": 135,
+      "text": "Safety[Unsafe/raw-write term scan]"
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 160,
+      "text": "Oracle[synthetic_fixture_oracle.py]"
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 192,
+      "text": "## v0.18.0 read-only adapter readiness"
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 196,
+      "text": "Core[apfs-core synthetic/read reports]"
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 198,
+      "text": "Win[apfs-win readiness scaffold]"
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 199,
+      "text": "Scripts[tools/windows smoke scaffolds]"
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 216,
+      "text": "Oracle[tools/synthetic_fixture_oracle.py]"
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 228,
+      "text": "## Windows mount-plan scaffold"
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 237,
+      "text": "Future -. not implemented yet .-> Explorer[Windows Explorer]"
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 270,
+      "text": "Image[Synthetic or real fixture image] --> Doctor[apfs doctor --json]"
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 297,
+      "text": "The diagnostics path is deliberately host-output-only and read-only with respect to APFS media. The cargoless review loop improves confidence before Rust compilation by checking context, CLI surface, API surface, source "
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 300,
+      "text": "## v0.20.0 Advanced feature readiness layer"
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 306,
+      "text": "Features --> MetadataReadiness[Xattr/resource fork readiness]"
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 307,
+      "text": "Features --> ExtentReadiness[Sparse/clone readiness]"
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 308,
+      "text": "Features --> CompressionReadiness[Compression readiness]"
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 309,
+      "text": "Features --> SnapshotReadiness[Snapshot/role readiness]"
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 315,
+      "text": "## v0.20.0 Feature readiness snapshot"
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 319,
+      "text": "Capabilities[capabilities.yaml] --> FeatureSnapshot[tools/feature_readiness_snapshot.py]"
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 320,
+      "text": "FeatureSnapshot --> FeatureJson[FEATURE_READINESS.json]"
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 321,
+      "text": "FeatureSnapshot --> FeatureMd[FEATURE_READINESS.md]"
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 326,
+      "text": "The snapshot keeps advanced feature readiness visible without claiming production support."
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 340,
+      "text": "The version check reduces handoff drift when multiple scaffold loops run without Cargo."
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 343,
+      "text": "## v0.20.0 handoff and adapter-readiness loop"
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 366,
+      "text": "Win[apfs-win readiness]"
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 367,
+      "text": "Fuse[apfs-fuse readiness]"
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 368,
+      "text": "Android[apfs-android readiness]"
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 369,
+      "text": "Crypto[apfs-crypto readiness]"
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 370,
+      "text": "WriteLab[apfs-write-lab readiness]"
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 420,
+      "text": "Matrix --> Neg[Negative synthetic fixtures]"
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 434,
+      "text": "Source[Source tree and synthetic fixtures]"
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 459,
+      "text": "Source[Source tree and synthetic fixtures]"
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 494,
+      "text": "The v0.26.0 layer makes the handoff boundary explicit: the current environment can validate context, packaging, synthetic fixtures, static source shape, and task planning, but production APFS behaviour still requires loc"
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 543,
+      "text": "Added strict CI quality gate scaffolding, >=90% coverage policy, unit/integration/E2E/property/fuzz/mutation/profiling test strategy, Astro 7 documentation-site scaffold, and cargoless audits for those additions."
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 615,
+      "text": "- `M-114` \u2014 cargo-dist and release-plz automation scaffold."
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 616,
+      "text": "- `M-115` \u2014 OpenSSF Scorecard and dependency-review workflow scaffold."
+    },
+    {
+      "kind": "scaffold",
+      "path": "DESIGN.md",
+      "line": 618,
+      "text": "- `M-117` \u2014 Benchmark regression and optional CodSpeed readiness."
+    },
+    {
+      "kind": "scaffold",
+      "path": "DOCS_SITE_AUDIT.md",
+      "line": 3,
+      "text": "Status: passed. Astro 7 documentation-site scaffold is present and pinned to astro@7.0.2."
+    },
+    {
+      "kind": "scaffold",
+      "path": "FEATURE_READINESS.json",
+      "line": 3,
+      "text": "\"status\": \"readiness_snapshot\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "FEATURE_READINESS.json",
+      "line": 10,
+      "text": "\"status\": \"policy_scaffold\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "FEATURE_READINESS.json",
+      "line": 21,
+      "text": "\"status\": \"readiness_scaffold\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "FEATURE_READINESS.json",
+      "line": 22,
+      "text": "\"cli\": \"apfs feature-readiness --json --feature xattrs\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "FEATURE_READINESS.json",
+      "line": 33,
+      "text": "\"status\": \"readiness_scaffold\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "FEATURE_READINESS.json",
+      "line": 34,
+      "text": "\"cli\": \"apfs feature-readiness --json --feature sparse-clone\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "FEATURE_READINESS.json",
+      "line": 45,
+      "text": "\"status\": \"readiness_scaffold\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "FEATURE_READINESS.json",
+      "line": 46,
+      "text": "\"cli\": \"apfs feature-readiness --json --feature compression\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "FEATURE_READINESS.json",
+      "line": 57,
+      "text": "\"status\": \"readiness_scaffold\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "FEATURE_READINESS.json",
+      "line": 58,
+      "text": "\"cli\": \"apfs feature-readiness --json --feature snapshots\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "FEATURE_READINESS.md",
+      "line": 1,
+      "text": "# APFS-RS Advanced Feature Readiness"
+    },
+    {
+      "kind": "scaffold",
+      "path": "FEATURE_READINESS.md",
+      "line": 3,
+      "text": "Generated by `tools/feature_readiness_snapshot.py`."
+    },
+    {
+      "kind": "scaffold",
+      "path": "FEATURE_READINESS.md",
+      "line": 5,
+      "text": "- Feature readiness entries: **5**"
+    },
+    {
+      "kind": "scaffold",
+      "path": "FEATURE_READINESS.md",
+      "line": 11,
+      "text": "| unicode-case-policy | M-034 | policy_scaffold | `apfs path-policy --json --name <component>` | macOS APFS normalization fixture<br>case-insensitive collision handling |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "FEATURE_READINESS.md",
+      "line": 12,
+      "text": "| xattrs-resource-forks | M-035 | readiness_scaffold | `apfs feature-readiness --json --feature xattrs` | APFS extended-field parser<br>resource fork payload extents<br>hash oracle fixtures |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "FEATURE_READINESS.md",
+      "line": 13,
+      "text": "| sparse-clones | M-036 | readiness_scaffold | `apfs feature-readiness --json --feature sparse-clone` | extent hole detection<br>shared physical extent accounting<br>streaming extraction policy |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "FEATURE_READINESS.md",
+      "line": 14,
+      "text": "| compression | M-037 | readiness_scaffold | `apfs feature-readiness --json --feature compression` | decmpfs metadata parser<br>zlib/lzvn/lzfse dependency review<br>decompression bomb guards |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "FEATURE_READINESS.md",
+      "line": 15,
+      "text": "| snapshots-volume-roles | M-038 | readiness_scaffold | `apfs feature-readiness --json --feature snapshots` | volume role validation<br>snapshot metadata discovery<br>read-only snapshot view selection |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "FIXTURE_COVERAGE_REPORT.json",
+      "line": 6,
+      "text": "\"synthetic_apfs_parser_development_image\": 14,"
+    },
+    {
+      "kind": "scaffold",
+      "path": "FIXTURE_COVERAGE_REPORT.json",
+      "line": 7,
+      "text": "\"synthetic_negative_apfs_image\": 3"
+    },
+    {
+      "kind": "scaffold",
+      "path": "FIXTURE_COVERAGE_REPORT.json",
+      "line": 15,
+      "text": "\"synthetic-nxsb-block0.bin\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "FIXTURE_COVERAGE_REPORT.json",
+      "line": 19,
+      "text": "\"synthetic-gpt-apfs.img\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "FIXTURE_COVERAGE_REPORT.json",
+      "line": 26,
+      "text": "\"synthetic-nxsb-block0.bin\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "FIXTURE_COVERAGE_REPORT.json",
+      "line": 30,
+      "text": "\"synthetic-checkpoint-map-omap.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "FIXTURE_COVERAGE_REPORT.json",
+      "line": 31,
+      "text": "\"synthetic-checkpoint-ring.img\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "FIXTURE_COVERAGE_REPORT.json",
+      "line": 34,
+      "text": "\"synthetic-omap-btree-root.img\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "FIXTURE_COVERAGE_REPORT.json",
+      "line": 37,
+      "text": "\"synthetic-omap-lookup.img\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "FIXTURE_COVERAGE_REPORT.json",
+      "line": 40,
+      "text": "\"synthetic-omap-multinode-lookup.img\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "FIXTURE_COVERAGE_REPORT.json",
+      "line": 43,
+      "text": "\"synthetic-btree-traversal.img\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "FIXTURE_COVERAGE_REPORT.json",
+      "line": 46,
+      "text": "\"synthetic-resolver-facade.img\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "FIXTURE_COVERAGE_REPORT.json",
+      "line": 49,
+      "text": "\"synthetic-btree-cursor.img\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "FIXTURE_COVERAGE_REPORT.json",
+      "line": 58,
+      "text": "\"synthetic-volume-superblock.img\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "FIXTURE_COVERAGE_REPORT.json",
+      "line": 61,
+      "text": "\"synthetic-mapped-object-read.img\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "FIXTURE_COVERAGE_REPORT.json",
+      "line": 64,
+      "text": "\"synthetic-directory-listing.img\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "FIXTURE_COVERAGE_REPORT.json",
+      "line": 67,
+      "text": "\"synthetic-directory-listing.img\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "FIXTURE_COVERAGE_REPORT.json",
+      "line": 70,
+      "text": "\"synthetic-file-preview.img\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "FIXTURE_COVERAGE_REPORT.json",
+      "line": 73,
+      "text": "\"synthetic-directory-listing.img\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "FIXTURE_COVERAGE_REPORT.json",
+      "line": 76,
+      "text": "\"synthetic-file-preview.img\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "FIXTURE_COVERAGE_REPORT.md",
+      "line": 8,
+      "text": "- `synthetic_apfs_parser_development_image`: 14"
+    },
+    {
+      "kind": "scaffold",
+      "path": "FIXTURE_COVERAGE_REPORT.md",
+      "line": 9,
+      "text": "- `synthetic_negative_apfs_image`: 3"
+    },
+    {
+      "kind": "scaffold",
+      "path": "FIXTURE_COVERAGE_REPORT.md",
+      "line": 13,
+      "text": "- `M-001`: `macos-minimal-apfs-001`, `negative-corrupt-nxsb-magic`, `negative-invalid-block-size`, `negative-truncated-nxsb`, `synthetic-nxsb-block0.bin`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "FIXTURE_COVERAGE_REPORT.md",
+      "line": 14,
+      "text": "- `M-002`: `macos-minimal-apfs-001`, `synthetic-gpt-apfs.img`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "FIXTURE_COVERAGE_REPORT.md",
+      "line": 15,
+      "text": "- `M-003`: `macos-minimal-apfs-001`, `negative-corrupt-nxsb-magic`, `negative-invalid-block-size`, `negative-truncated-nxsb`, `synthetic-nxsb-block0.bin`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "FIXTURE_COVERAGE_REPORT.md",
+      "line": 16,
+      "text": "- `M-004`: `macos-minimal-apfs-001`, `synthetic-checkpoint-map-omap.img`, `synthetic-checkpoint-ring.img`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "FIXTURE_COVERAGE_REPORT.md",
+      "line": 17,
+      "text": "- `M-005`: `synthetic-omap-btree-root.img`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "FIXTURE_COVERAGE_REPORT.md",
+      "line": 18,
+      "text": "- `M-006`: `synthetic-omap-lookup.img`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "FIXTURE_COVERAGE_REPORT.md",
+      "line": 19,
+      "text": "- `M-007`: `synthetic-omap-multinode-lookup.img`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "FIXTURE_COVERAGE_REPORT.md",
+      "line": 20,
+      "text": "- `M-008`: `synthetic-btree-traversal.img`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "FIXTURE_COVERAGE_REPORT.md",
+      "line": 21,
+      "text": "- `M-009`: `synthetic-resolver-facade.img`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "FIXTURE_COVERAGE_REPORT.md",
+      "line": 22,
+      "text": "- `M-010`: `synthetic-btree-cursor.img`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "FIXTURE_COVERAGE_REPORT.md",
+      "line": 25,
+      "text": "- `M-014`: `synthetic-volume-superblock.img`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "FIXTURE_COVERAGE_REPORT.md",
+      "line": 26,
+      "text": "- `M-015`: `synthetic-mapped-object-read.img`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "FIXTURE_COVERAGE_REPORT.md",
+      "line": 27,
+      "text": "- `M-016`: `synthetic-directory-listing.img`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "FIXTURE_COVERAGE_REPORT.md",
+      "line": 28,
+      "text": "- `M-017`: `synthetic-directory-listing.img`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "FIXTURE_COVERAGE_REPORT.md",
+      "line": 29,
+      "text": "- `M-018`: `synthetic-file-preview.img`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "FIXTURE_COVERAGE_REPORT.md",
+      "line": 30,
+      "text": "- `M-019`: `synthetic-directory-listing.img`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "FIXTURE_COVERAGE_REPORT.md",
+      "line": 31,
+      "text": "- `M-020`: `synthetic-file-preview.img`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "GOLDEN_OUTPUTS.json",
+      "line": 31,
+      "text": "\"fixture\": \"fixtures/synthetic-btree-cursor.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "GOLDEN_OUTPUTS.json",
+      "line": 37,
+      "text": "\"fixture\": \"fixtures/synthetic-btree-traversal.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "GOLDEN_OUTPUTS.json",
+      "line": 43,
+      "text": "\"fixture\": \"fixtures/synthetic-checkpoint-map-omap.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "GOLDEN_OUTPUTS.json",
+      "line": 49,
+      "text": "\"fixture\": \"fixtures/synthetic-checkpoint-ring.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "GOLDEN_OUTPUTS.json",
+      "line": 55,
+      "text": "\"fixture\": \"fixtures/synthetic-directory-listing.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "GOLDEN_OUTPUTS.json",
+      "line": 61,
+      "text": "\"fixture\": \"fixtures/synthetic-file-preview.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "GOLDEN_OUTPUTS.json",
+      "line": 67,
+      "text": "\"fixture\": \"fixtures/synthetic-gpt-apfs.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "GOLDEN_OUTPUTS.json",
+      "line": 73,
+      "text": "\"fixture\": \"fixtures/synthetic-mapped-object-read.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "GOLDEN_OUTPUTS.json",
+      "line": 79,
+      "text": "\"fixture\": \"fixtures/synthetic-nxsb-block0.bin\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "GOLDEN_OUTPUTS.json",
+      "line": 85,
+      "text": "\"fixture\": \"fixtures/synthetic-omap-btree-root.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "GOLDEN_OUTPUTS.json",
+      "line": 91,
+      "text": "\"fixture\": \"fixtures/synthetic-omap-lookup.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "GOLDEN_OUTPUTS.json",
+      "line": 97,
+      "text": "\"fixture\": \"fixtures/synthetic-omap-multinode-lookup.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "GOLDEN_OUTPUTS.json",
+      "line": 103,
+      "text": "\"fixture\": \"fixtures/synthetic-resolver-facade.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "GOLDEN_OUTPUTS.json",
+      "line": 109,
+      "text": "\"fixture\": \"fixtures/synthetic-volume-superblock.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "GOLDEN_OUTPUTS.md",
+      "line": 11,
+      "text": "| `fixtures/synthetic-btree-cursor.img` | `apfs_container_detected` | NXSB magic at block zero |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "GOLDEN_OUTPUTS.md",
+      "line": 12,
+      "text": "| `fixtures/synthetic-btree-traversal.img` | `apfs_container_detected` | NXSB magic at block zero |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "GOLDEN_OUTPUTS.md",
+      "line": 13,
+      "text": "| `fixtures/synthetic-checkpoint-map-omap.img` | `apfs_container_detected` | NXSB magic at block zero |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "GOLDEN_OUTPUTS.md",
+      "line": 14,
+      "text": "| `fixtures/synthetic-checkpoint-ring.img` | `apfs_container_detected` | NXSB magic at block zero |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "GOLDEN_OUTPUTS.md",
+      "line": 15,
+      "text": "| `fixtures/synthetic-directory-listing.img` | `apfs_container_detected` | NXSB magic at block zero |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "GOLDEN_OUTPUTS.md",
+      "line": 16,
+      "text": "| `fixtures/synthetic-file-preview.img` | `apfs_container_detected` | NXSB magic at block zero |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "GOLDEN_OUTPUTS.md",
+      "line": 17,
+      "text": "| `fixtures/synthetic-gpt-apfs.img` | `gpt_probe` | GPT signature present; APFS partition probe expected |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "GOLDEN_OUTPUTS.md",
+      "line": 18,
+      "text": "| `fixtures/synthetic-mapped-object-read.img` | `apfs_container_detected` | NXSB magic at block zero |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "GOLDEN_OUTPUTS.md",
+      "line": 19,
+      "text": "| `fixtures/synthetic-nxsb-block0.bin` | `apfs_container_detected` | NXSB magic at block zero |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "GOLDEN_OUTPUTS.md",
+      "line": 20,
+      "text": "| `fixtures/synthetic-omap-btree-root.img` | `apfs_container_detected` | NXSB magic at block zero |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "GOLDEN_OUTPUTS.md",
+      "line": 21,
+      "text": "| `fixtures/synthetic-omap-lookup.img` | `apfs_container_detected` | NXSB magic at block zero |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "GOLDEN_OUTPUTS.md",
+      "line": 22,
+      "text": "| `fixtures/synthetic-omap-multinode-lookup.img` | `apfs_container_detected` | NXSB magic at block zero |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "GOLDEN_OUTPUTS.md",
+      "line": 23,
+      "text": "| `fixtures/synthetic-resolver-facade.img` | `apfs_container_detected` | NXSB magic at block zero |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "GOLDEN_OUTPUTS.md",
+      "line": 24,
+      "text": "| `fixtures/synthetic-volume-superblock.img` | `apfs_container_detected` | NXSB magic at block zero |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 307,
+      "text": "\"path\": \"FEATURE_READINESS.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 312,
+      "text": "\"path\": \"FEATURE_READINESS.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 517,
+      "text": "\"path\": \"RELEASE_SCAFFOLD.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 727,
+      "text": "\"path\": \"codev/plans/0011-real-fixture-readiness.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 747,
+      "text": "\"path\": \"codev/plans/0015-m015-synthetic-directory-root-tree.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 762,
+      "text": "\"path\": \"codev/plans/0016-synthetic-directory-record-parser.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 767,
+      "text": "\"path\": \"codev/plans/0017-m017-synthetic-file-preview.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 772,
+      "text": "\"path\": \"codev/plans/0017-synthetic-directory-listing.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 777,
+      "text": "\"path\": \"codev/plans/0018-synthetic-file-preview.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 782,
+      "text": "\"path\": \"codev/plans/0020-m019-synthetic-stat-cli.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 787,
+      "text": "\"path\": \"codev/plans/0021-m020-synthetic-safe-extract-cli.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 797,
+      "text": "\"path\": \"codev/plans/0023-m-022-synthetic-fixture-oracle.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 822,
+      "text": "\"path\": \"codev/plans/0027-m-027-windows-read-only-adapter-readiness-scaffold.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 842,
+      "text": "\"path\": \"codev/plans/0029-m-029-fuzz-target-scaffold-for-parser-entry-points.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 862,
+      "text": "\"path\": \"codev/plans/0031-m-031-doctor-readiness-cli.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 882,
+      "text": "\"path\": \"codev/plans/0035-xattr-resource-fork-readiness.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 887,
+      "text": "\"path\": \"codev/plans/0036-sparse-clone-readiness.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 892,
+      "text": "\"path\": \"codev/plans/0037-compression-readiness.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 897,
+      "text": "\"path\": \"codev/plans/0038-snapshot-role-readiness.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 902,
+      "text": "\"path\": \"codev/plans/0039-feature-readiness-snapshot.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 927,
+      "text": "\"path\": \"codev/plans/0044-release-provenance-scaffold.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 932,
+      "text": "\"path\": \"codev/plans/0045-fuse-cross-platform-readiness.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 937,
+      "text": "\"path\": \"codev/plans/0046-android-access-readiness.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 942,
+      "text": "\"path\": \"codev/plans/0047-encryption-read-readiness.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 947,
+      "text": "\"path\": \"codev/plans/0048-image-write-lab-readiness.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 1047,
+      "text": "\"path\": \"codev/plans/0068-synthetic-negative-fixtures.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 1332,
+      "text": "\"path\": \"codev/reviews/0011-real-fixture-readiness-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 1352,
+      "text": "\"path\": \"codev/reviews/0015-m015-synthetic-directory-root-tree-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 1367,
+      "text": "\"path\": \"codev/reviews/0016-synthetic-directory-record-parser-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 1372,
+      "text": "\"path\": \"codev/reviews/0017-m017-synthetic-file-preview-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 1377,
+      "text": "\"path\": \"codev/reviews/0017-synthetic-directory-listing-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 1382,
+      "text": "\"path\": \"codev/reviews/0018-synthetic-file-preview-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 1387,
+      "text": "\"path\": \"codev/reviews/0020-m019-synthetic-stat-cli-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 1392,
+      "text": "\"path\": \"codev/reviews/0021-m020-synthetic-safe-extract-cli-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 1402,
+      "text": "\"path\": \"codev/reviews/0023-m-022-synthetic-fixture-oracle-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 1427,
+      "text": "\"path\": \"codev/reviews/0027-m-027-windows-read-only-adapter-readiness-scaffold-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 1447,
+      "text": "\"path\": \"codev/reviews/0029-m-029-fuzz-target-scaffold-for-parser-entry-points-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 1467,
+      "text": "\"path\": \"codev/reviews/0031-m-031-doctor-readiness-cli-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 1487,
+      "text": "\"path\": \"codev/reviews/0035-xattr-resource-fork-readiness-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 1492,
+      "text": "\"path\": \"codev/reviews/0036-sparse-clone-readiness-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 1497,
+      "text": "\"path\": \"codev/reviews/0037-compression-readiness-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 1502,
+      "text": "\"path\": \"codev/reviews/0038-snapshot-role-readiness-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 1507,
+      "text": "\"path\": \"codev/reviews/0039-feature-readiness-snapshot-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 1532,
+      "text": "\"path\": \"codev/reviews/0044-release-provenance-scaffold-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 1537,
+      "text": "\"path\": \"codev/reviews/0045-fuse-cross-platform-readiness-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 1542,
+      "text": "\"path\": \"codev/reviews/0046-android-access-readiness-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 1547,
+      "text": "\"path\": \"codev/reviews/0047-encryption-read-readiness-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 1552,
+      "text": "\"path\": \"codev/reviews/0048-image-write-lab-readiness-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 1652,
+      "text": "\"path\": \"codev/reviews/0068-synthetic-negative-fixtures-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 1922,
+      "text": "\"path\": \"codev/specs/0012-m011-real-fixture-readiness.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 1947,
+      "text": "\"path\": \"codev/specs/0016-m015-synthetic-directory-root-tree.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 1957,
+      "text": "\"path\": \"codev/specs/0017-m016-synthetic-directory-record-parser.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 1962,
+      "text": "\"path\": \"codev/specs/0018-m017-synthetic-directory-listing.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 1967,
+      "text": "\"path\": \"codev/specs/0019-m018-synthetic-file-preview.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 1972,
+      "text": "\"path\": \"codev/specs/0020-m019-synthetic-stat-cli.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 1977,
+      "text": "\"path\": \"codev/specs/0021-m020-synthetic-safe-extract-cli.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 1987,
+      "text": "\"path\": \"codev/specs/0023-m-022-synthetic-fixture-oracle.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2012,
+      "text": "\"path\": \"codev/specs/0027-m-027-windows-read-only-adapter-readiness-scaffold.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2032,
+      "text": "\"path\": \"codev/specs/0029-m-029-fuzz-target-scaffold-for-parser-entry-points.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2052,
+      "text": "\"path\": \"codev/specs/0031-m-031-doctor-readiness-cli.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2072,
+      "text": "\"path\": \"codev/specs/0035-m-035-xattr-resource-fork-readiness.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2077,
+      "text": "\"path\": \"codev/specs/0036-m-036-sparse-clone-readiness.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2082,
+      "text": "\"path\": \"codev/specs/0037-m-037-compression-readiness.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2087,
+      "text": "\"path\": \"codev/specs/0038-m-038-snapshot-role-readiness.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2092,
+      "text": "\"path\": \"codev/specs/0039-m039-feature-readiness-snapshot.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2117,
+      "text": "\"path\": \"codev/specs/0044-release-provenance-scaffold.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2122,
+      "text": "\"path\": \"codev/specs/0045-fuse-cross-platform-readiness.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2127,
+      "text": "\"path\": \"codev/specs/0046-android-access-readiness.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2132,
+      "text": "\"path\": \"codev/specs/0047-encryption-read-readiness.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2137,
+      "text": "\"path\": \"codev/specs/0048-image-write-lab-readiness.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2237,
+      "text": "\"path\": \"codev/specs/0068-m-068-synthetic-negative-fixtures.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2657,
+      "text": "\"path\": \"conductor/tracks/0011-real-fixture-readiness/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2662,
+      "text": "\"path\": \"conductor/tracks/0011-real-fixture-readiness/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2667,
+      "text": "\"path\": \"conductor/tracks/0011-real-fixture-readiness/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2732,
+      "text": "\"path\": \"conductor/tracks/0016-synthetic-directory-record-parser/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2737,
+      "text": "\"path\": \"conductor/tracks/0016-synthetic-directory-record-parser/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2742,
+      "text": "\"path\": \"conductor/tracks/0016-synthetic-directory-record-parser/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2747,
+      "text": "\"path\": \"conductor/tracks/0016-synthetic-directory-root-tree/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2752,
+      "text": "\"path\": \"conductor/tracks/0016-synthetic-directory-root-tree/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2757,
+      "text": "\"path\": \"conductor/tracks/0016-synthetic-directory-root-tree/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2777,
+      "text": "\"path\": \"conductor/tracks/0017-synthetic-directory-listing/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2782,
+      "text": "\"path\": \"conductor/tracks/0017-synthetic-directory-listing/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2787,
+      "text": "\"path\": \"conductor/tracks/0017-synthetic-directory-listing/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2792,
+      "text": "\"path\": \"conductor/tracks/0018-synthetic-file-preview/0017-synthetic-file-preview/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2797,
+      "text": "\"path\": \"conductor/tracks/0018-synthetic-file-preview/0017-synthetic-file-preview/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2802,
+      "text": "\"path\": \"conductor/tracks/0018-synthetic-file-preview/0017-synthetic-file-preview/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2807,
+      "text": "\"path\": \"conductor/tracks/0018-synthetic-file-preview/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2812,
+      "text": "\"path\": \"conductor/tracks/0018-synthetic-file-preview/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2817,
+      "text": "\"path\": \"conductor/tracks/0018-synthetic-file-preview/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2822,
+      "text": "\"path\": \"conductor/tracks/0019-synthetic-stat-cli/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2827,
+      "text": "\"path\": \"conductor/tracks/0019-synthetic-stat-cli/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2832,
+      "text": "\"path\": \"conductor/tracks/0019-synthetic-stat-cli/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2837,
+      "text": "\"path\": \"conductor/tracks/0020-synthetic-safe-extract-cli/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2842,
+      "text": "\"path\": \"conductor/tracks/0020-synthetic-safe-extract-cli/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2847,
+      "text": "\"path\": \"conductor/tracks/0020-synthetic-safe-extract-cli/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2867,
+      "text": "\"path\": \"conductor/tracks/0022-synthetic-fixture-oracle/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2872,
+      "text": "\"path\": \"conductor/tracks/0022-synthetic-fixture-oracle/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2877,
+      "text": "\"path\": \"conductor/tracks/0022-synthetic-fixture-oracle/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2972,
+      "text": "\"path\": \"conductor/tracks/0027-windows-readiness-scaffold/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2977,
+      "text": "\"path\": \"conductor/tracks/0027-windows-readiness-scaffold/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 2982,
+      "text": "\"path\": \"conductor/tracks/0027-windows-readiness-scaffold/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 3032,
+      "text": "\"path\": \"conductor/tracks/0029-fuzz-target-scaffold/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 3037,
+      "text": "\"path\": \"conductor/tracks/0029-fuzz-target-scaffold/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 3042,
+      "text": "\"path\": \"conductor/tracks/0029-fuzz-target-scaffold/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 3062,
+      "text": "\"path\": \"conductor/tracks/0031-doctor-readiness-cli/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 3067,
+      "text": "\"path\": \"conductor/tracks/0031-doctor-readiness-cli/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 3072,
+      "text": "\"path\": \"conductor/tracks/0031-doctor-readiness-cli/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 3122,
+      "text": "\"path\": \"conductor/tracks/0035-xattr-resource-fork-readiness/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 3127,
+      "text": "\"path\": \"conductor/tracks/0035-xattr-resource-fork-readiness/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 3132,
+      "text": "\"path\": \"conductor/tracks/0035-xattr-resource-fork-readiness/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 3137,
+      "text": "\"path\": \"conductor/tracks/0036-sparse-clone-readiness/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 3142,
+      "text": "\"path\": \"conductor/tracks/0036-sparse-clone-readiness/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 3147,
+      "text": "\"path\": \"conductor/tracks/0036-sparse-clone-readiness/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 3152,
+      "text": "\"path\": \"conductor/tracks/0037-compression-readiness/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 3157,
+      "text": "\"path\": \"conductor/tracks/0037-compression-readiness/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 3162,
+      "text": "\"path\": \"conductor/tracks/0037-compression-readiness/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 3167,
+      "text": "\"path\": \"conductor/tracks/0038-snapshot-role-readiness/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 3172,
+      "text": "\"path\": \"conductor/tracks/0038-snapshot-role-readiness/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 3177,
+      "text": "\"path\": \"conductor/tracks/0038-snapshot-role-readiness/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 3182,
+      "text": "\"path\": \"conductor/tracks/0039-feature-readiness-snapshot/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 3187,
+      "text": "\"path\": \"conductor/tracks/0039-feature-readiness-snapshot/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 3192,
+      "text": "\"path\": \"conductor/tracks/0039-feature-readiness-snapshot/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 3257,
+      "text": "\"path\": \"conductor/tracks/0044-release-provenance-scaffold/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 3262,
+      "text": "\"path\": \"conductor/tracks/0044-release-provenance-scaffold/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 3267,
+      "text": "\"path\": \"conductor/tracks/0044-release-provenance-scaffold/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 3272,
+      "text": "\"path\": \"conductor/tracks/0045-fuse-cross-platform-readiness/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 3277,
+      "text": "\"path\": \"conductor/tracks/0045-fuse-cross-platform-readiness/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 3282,
+      "text": "\"path\": \"conductor/tracks/0045-fuse-cross-platform-readiness/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 3287,
+      "text": "\"path\": \"conductor/tracks/0046-android-access-readiness/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 3292,
+      "text": "\"path\": \"conductor/tracks/0046-android-access-readiness/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 3297,
+      "text": "\"path\": \"conductor/tracks/0046-android-access-readiness/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 3302,
+      "text": "\"path\": \"conductor/tracks/0047-encryption-read-readiness/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 3307,
+      "text": "\"path\": \"conductor/tracks/0047-encryption-read-readiness/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 3312,
+      "text": "\"path\": \"conductor/tracks/0047-encryption-read-readiness/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 3317,
+      "text": "\"path\": \"conductor/tracks/0048-image-write-lab-readiness/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 3322,
+      "text": "\"path\": \"conductor/tracks/0048-image-write-lab-readiness/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 3327,
+      "text": "\"path\": \"conductor/tracks/0048-image-write-lab-readiness/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 3617,
+      "text": "\"path\": \"conductor/tracks/0068-synthetic-negative-fixtures/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 3622,
+      "text": "\"path\": \"conductor/tracks/0068-synthetic-negative-fixtures/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 3627,
+      "text": "\"path\": \"conductor/tracks/0068-synthetic-negative-fixtures/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4192,
+      "text": "\"path\": \"fixtures/golden/synthetic-btree-cursor.img.expected.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4197,
+      "text": "\"path\": \"fixtures/golden/synthetic-btree-traversal.img.expected.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4202,
+      "text": "\"path\": \"fixtures/golden/synthetic-checkpoint-map-omap.img.expected.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4207,
+      "text": "\"path\": \"fixtures/golden/synthetic-checkpoint-ring.img.expected.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4212,
+      "text": "\"path\": \"fixtures/golden/synthetic-directory-listing.img.expected.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4217,
+      "text": "\"path\": \"fixtures/golden/synthetic-file-preview.img.expected.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4222,
+      "text": "\"path\": \"fixtures/golden/synthetic-gpt-apfs.img.expected.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4227,
+      "text": "\"path\": \"fixtures/golden/synthetic-mapped-object-read.img.expected.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4232,
+      "text": "\"path\": \"fixtures/golden/synthetic-nxsb-block0.bin.expected.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4237,
+      "text": "\"path\": \"fixtures/golden/synthetic-omap-btree-root.img.expected.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4242,
+      "text": "\"path\": \"fixtures/golden/synthetic-omap-lookup.img.expected.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4247,
+      "text": "\"path\": \"fixtures/golden/synthetic-omap-multinode-lookup.img.expected.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4252,
+      "text": "\"path\": \"fixtures/golden/synthetic-resolver-facade.img.expected.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4257,
+      "text": "\"path\": \"fixtures/golden/synthetic-volume-superblock.img.expected.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4282,
+      "text": "\"path\": \"fixtures/manifests/synthetic-btree-cursor.img.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4287,
+      "text": "\"path\": \"fixtures/manifests/synthetic-btree-traversal.img.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4292,
+      "text": "\"path\": \"fixtures/manifests/synthetic-checkpoint-map-omap.img.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4297,
+      "text": "\"path\": \"fixtures/manifests/synthetic-checkpoint-ring.img.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4302,
+      "text": "\"path\": \"fixtures/manifests/synthetic-directory-listing.img.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4307,
+      "text": "\"path\": \"fixtures/manifests/synthetic-file-preview.img.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4312,
+      "text": "\"path\": \"fixtures/manifests/synthetic-gpt-apfs.img.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4317,
+      "text": "\"path\": \"fixtures/manifests/synthetic-mapped-object-read.img.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4322,
+      "text": "\"path\": \"fixtures/manifests/synthetic-nxsb-block0.bin.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4327,
+      "text": "\"path\": \"fixtures/manifests/synthetic-omap-btree-root.img.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4332,
+      "text": "\"path\": \"fixtures/manifests/synthetic-omap-lookup.img.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4337,
+      "text": "\"path\": \"fixtures/manifests/synthetic-omap-multinode-lookup.img.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4342,
+      "text": "\"path\": \"fixtures/manifests/synthetic-resolver-facade.img.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4347,
+      "text": "\"path\": \"fixtures/manifests/synthetic-volume-superblock.img.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4372,
+      "text": "\"path\": \"fixtures/synthetic-btree-cursor.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4377,
+      "text": "\"path\": \"fixtures/synthetic-btree-traversal.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4382,
+      "text": "\"path\": \"fixtures/synthetic-checkpoint-map-omap.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4387,
+      "text": "\"path\": \"fixtures/synthetic-checkpoint-ring.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4392,
+      "text": "\"path\": \"fixtures/synthetic-directory-listing.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4397,
+      "text": "\"path\": \"fixtures/synthetic-file-preview.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4402,
+      "text": "\"path\": \"fixtures/synthetic-gpt-apfs.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4407,
+      "text": "\"path\": \"fixtures/synthetic-mapped-object-read.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4412,
+      "text": "\"path\": \"fixtures/synthetic-nxsb-block0.bin\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4417,
+      "text": "\"path\": \"fixtures/synthetic-omap-btree-root.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4422,
+      "text": "\"path\": \"fixtures/synthetic-omap-lookup.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4427,
+      "text": "\"path\": \"fixtures/synthetic-omap-multinode-lookup.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4432,
+      "text": "\"path\": \"fixtures/synthetic-resolver-facade.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4437,
+      "text": "\"path\": \"fixtures/synthetic-volume-superblock.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4597,
+      "text": "\"path\": \"tools/__pycache__/feature_readiness_snapshot.cpython-313.pyc\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4622,
+      "text": "\"path\": \"tools/__pycache__/handoff_readiness_check.cpython-313.pyc\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4667,
+      "text": "\"path\": \"tools/__pycache__/make_synthetic_fixtures.cpython-313.pyc\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4727,
+      "text": "\"path\": \"tools/__pycache__/release_scaffold_check.cpython-313.pyc\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4767,
+      "text": "\"path\": \"tools/__pycache__/synthetic_fixture_oracle.cpython-313.pyc\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4772,
+      "text": "\"path\": \"tools/__pycache__/synthetic_negative_fixture_generator.cpython-313.pyc\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4797,
+      "text": "\"path\": \"tools/__pycache__/windows_readiness_check.cpython-313.pyc\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4912,
+      "text": "\"path\": \"tools/feature_readiness_snapshot.py\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4937,
+      "text": "\"path\": \"tools/handoff_readiness_check.py\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 4992,
+      "text": "\"path\": \"tools/make_synthetic_fixtures.py\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 5052,
+      "text": "\"path\": \"tools/release_scaffold_check.py\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 5092,
+      "text": "\"path\": \"tools/synthetic_fixture_oracle.py\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 5097,
+      "text": "\"path\": \"tools/synthetic_negative_fixture_generator.py\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 5127,
+      "text": "\"path\": \"tools/windows/adapter_readiness_check.ps1\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "line": 5137,
+      "text": "\"path\": \"tools/windows_readiness_check.py\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.md",
+      "line": 70,
+      "text": "| `FEATURE_READINESS.json` | 2033 | `75fadabbad66d0247b83503540eb67d9d6cfc408e7ebe9a50d54c8cc953b03c1` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.md",
+      "line": 71,
+      "text": "| `FEATURE_READINESS.md` | 1269 | `4e624b031fab88c674654c26775bcc2ba13591c558ea957d80b199fef500b5a6` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.md",
+      "line": 112,
+      "text": "| `RELEASE_SCAFFOLD.md` | 1119 | `ba7faa3c7842f36cb111c74749187936b07899f2028d3ee16261056743a0582e` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.md",
+      "line": 154,
+      "text": "| `codev/plans/0011-real-fixture-readiness.md` | 827 | `a0b3521a7a3292cad4da4648738173207715d915ff0bd9652b55606fca4d734e` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.md",
+      "line": 158,
+      "text": "| `codev/plans/0015-m015-synthetic-directory-root-tree.md` | 444 | `556f5e6b4ffe809e96607c03037e1b107ed3b3465668de8849a71d5fbb3d3292` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.md",
+      "line": 161,
+      "text": "| `codev/plans/0016-synthetic-directory-record-parser.md` | 422 | `f4c391e0b02e838c194e6d6f676c216d79282c8bc2eb80da151c8b48b38d2a8f` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.md",
+      "line": 162,
+      "text": "| `codev/plans/0017-m017-synthetic-file-preview.md` | 428 | `f3c45021ccb7316da374147572aaeec795eb8068983d0d4c2a06a279b1de40ac` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.md",
+      "line": 163,
+      "text": "| `codev/plans/0017-synthetic-directory-listing.md` | 281 | `3aa5287d405baa10fec3ff82e756d4554d3d80810914eb9ee26ed1a0dd1f129a` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.md",
+      "line": 164,
+      "text": "| `codev/plans/0018-synthetic-file-preview.md` | 311 | `32348a00de5afcf649cbb589c1882c3d4988d9ed20e3e850e33814d8f7a9b80e` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.md",
+      "line": 165,
+      "text": "| `codev/plans/0020-m019-synthetic-stat-cli.md` | 602 | `cb48b53b326b28f2ca1795c82b5e6336510e13323099a58db67b861d668cf4ee` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.md",
+      "line": 166,
+      "text": "| `codev/plans/0021-m020-synthetic-safe-extract-cli.md` | 618 | `a5141cd5cce156176169400741963e875b74c7404eba5f3b606d34a7ec89bad2` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.md",
+      "line": 168,
+      "text": "| `codev/plans/0023-m-022-synthetic-fixture-oracle.md` | 370 | `1cfd04248632b9b882314ac4f599c1efd412bee8609c296dd0f37a2993a3067e` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.md",
+      "line": 173,
+      "text": "| `codev/plans/0027-m-027-windows-read-only-adapter-readiness-scaffold.md` | 265 | `84b60c31b986b6dce562d4aacf8dd1df71832c6b80301e972a490547c791fb50` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.md",
+      "line": 177,
+      "text": "| `codev/plans/0029-m-029-fuzz-target-scaffold-for-parser-entry-points.md` | 265 | `170ea51afde1d80e181aa54af71fc975d8e9c6a6720e7c8e97dc25e0a273f91d` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.md",
+      "line": 181,
+      "text": "| `codev/plans/0031-m-031-doctor-readiness-cli.md` | 337 | `a2243a1ba717e98429dcd55b5e23cece8994117a717fb8cddcf29bcdbb801774` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.md",
+      "line": 185,
+      "text": "| `codev/plans/0035-xattr-resource-fork-readiness.md` | 329 | `fbf86709b2e00c0c1ca0fc397e01d37ef24daa9b0e413209a2fa7e5c39d3938e` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.md",
+      "line": 186,
+      "text": "| `codev/plans/0036-sparse-clone-readiness.md` | 327 | `2582a718161cb4c9d9efc40b20c9389cdfdf6aaf16548562a3b145b7258db6c7` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.md",
+      "line": 187,
+      "text": "| `codev/plans/0037-compression-readiness.md` | 317 | `de0a2850b45eb465f3e868daaa15fba362331ea6a45b06e0393eb522b7d9e680` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.md",
+      "line": 188,
+      "text": "| `codev/plans/0038-snapshot-role-readiness.md` | 330 | `a0ce0ba2caadfedd100aa6efa8e3430e9661e9a018ccb7505194f2d09e6aa723` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.md",
+      "line": 189,
+      "text": "| `codev/plans/0039-feature-readiness-snapshot.md` | 201 | `f3d74d8205345b194cdfad0bf2f674bda42b1fd1ba5ee634ad6cff41e6d73c46` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.md",
+      "line": 194,
+      "text": "| `codev/plans/0044-release-provenance-scaffold.md` | 418 | `149f24c51794e6269288ab3aca61649690b378bd8400027f7084d0a328ed80b4` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.md",
+      "line": 195,
+      "text": "| `codev/plans/0045-fuse-cross-platform-readiness.md` | 416 | `2f187fc32482ee3459d36ee15d3f9929f3867aae6461738c351315352c97bf6f` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.md",
+      "line": 196,
+      "text": "| `codev/plans/0046-android-access-readiness.md` | 390 | `251404d8ad00a9b0449ef885b99b99f04485f75af0c7eb378f992349832e3bbc` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.md",
+      "line": 197,
+      "text": "| `codev/plans/0047-encryption-read-readiness.md` | 398 | `25008bd31557d2165c0d303e73e4942d073d4d0468c7e1e55ed51d007e36a702` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.md",
+      "line": 198,
+      "text": "| `codev/plans/0048-image-write-lab-readiness.md` | 390 | `bf6d30fd2f11a33cdf466beebe7e5689138044ffd7049179ac4a5b7f963411d0` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_ARCHIVE_AUDIT.md",
+      "line": 218,
+      "text": "| `codev/plans/0068-synthetic-negative-fixtures.md` | 347 | `e847f685613502f1870e4627304a801b709787a1bdd27b859262d54ae14aa47d` |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_STATUS.json",
+      "line": 3,
+      "text": "\"implemented_or_scaffolded\": 103,"
+    },
+    {
+      "kind": "scaffold",
+      "path": "HANDOFF_STATUS.md",
+      "line": 5,
+      "text": "Implemented or scaffolded elements: **103**"
+    },
+    {
+      "kind": "scaffold",
+      "path": "IMPLEMENTATION_STATUS.md",
+      "line": 6,
+      "text": "## Implemented/scaffolded in this package"
+    },
+    {
+      "kind": "scaffold",
+      "path": "IMPLEMENTATION_STATUS.md",
+      "line": 19,
+      "text": "- Preliminary synthetic OMAP record decoding."
+    },
+    {
+      "kind": "scaffold",
+      "path": "IMPLEMENTATION_STATUS.md",
+      "line": 20,
+      "text": "- Single-node, checkpoint-map-backed multi-node, and bounded synthetic two-level OMAP lookup paths."
+    },
+    {
+      "kind": "scaffold",
+      "path": "IMPLEMENTATION_STATUS.md",
+      "line": 23,
+      "text": "- macOS real APFS fixture readiness harness."
+    },
+    {
+      "kind": "scaffold",
+      "path": "IMPLEMENTATION_STATUS.md",
+      "line": 24,
+      "text": "- Real-fixture feedback loop and feedback-to-track promotion scaffold."
+    },
+    {
+      "kind": "scaffold",
+      "path": "IMPLEMENTATION_STATUS.md",
+      "line": 25,
+      "text": "- Synthetic APFS volume-superblock parser and `apfs volumes --json`."
+    },
+    {
+      "kind": "scaffold",
+      "path": "IMPLEMENTATION_STATUS.md",
+      "line": 27,
+      "text": "- Synthetic filesystem root-tree directory-record parser."
+    },
+    {
+      "kind": "scaffold",
+      "path": "IMPLEMENTATION_STATUS.md",
+      "line": 28,
+      "text": "- Synthetic root directory listing and `apfs ls --json`."
+    },
+    {
+      "kind": "scaffold",
+      "path": "IMPLEMENTATION_STATUS.md",
+      "line": 29,
+      "text": "- Synthetic direct-block file preview and `apfs cat --json --name <name>`."
+    },
+    {
+      "kind": "scaffold",
+      "path": "IMPLEMENTATION_STATUS.md",
+      "line": 32,
+      "text": "- Synthetic metadata/stat report and `apfs stat --json --name <name>`."
+    },
+    {
+      "kind": "scaffold",
+      "path": "IMPLEMENTATION_STATUS.md",
+      "line": 33,
+      "text": "- Safe host-side synthetic extract-preview and `apfs extract --json --name <name> --dest <dir>`."
+    },
+    {
+      "kind": "scaffold",
+      "path": "IMPLEMENTATION_STATUS.md",
+      "line": 40,
+      "text": "cargo run -p apfs-cli -- inspect --json fixtures/synthetic-nxsb-block0.bin"
+    },
+    {
+      "kind": "scaffold",
+      "path": "IMPLEMENTATION_STATUS.md",
+      "line": 41,
+      "text": "cargo run -p apfs-cli -- volumes --json fixtures/synthetic-volume-superblock.img"
+    },
+    {
+      "kind": "scaffold",
+      "path": "IMPLEMENTATION_STATUS.md",
+      "line": 42,
+      "text": "cargo run -p apfs-cli -- read-object --json fixtures/synthetic-mapped-object-read.img --oid 1500 --xid 70"
+    },
+    {
+      "kind": "scaffold",
+      "path": "IMPLEMENTATION_STATUS.md",
+      "line": 43,
+      "text": "cargo run -p apfs-cli -- ls --json fixtures/synthetic-directory-listing.img"
+    },
+    {
+      "kind": "scaffold",
+      "path": "IMPLEMENTATION_STATUS.md",
+      "line": 44,
+      "text": "cargo run -p apfs-cli -- cat --json fixtures/synthetic-file-preview.img --name hello.txt"
+    },
+    {
+      "kind": "scaffold",
+      "path": "IMPLEMENTATION_STATUS.md",
+      "line": 45,
+      "text": "cargo run -p apfs-cli -- resolver-report --json fixtures/synthetic-resolver-facade.img"
+    },
+    {
+      "kind": "scaffold",
+      "path": "IMPLEMENTATION_STATUS.md",
+      "line": 46,
+      "text": "cargo run -p apfs-cli -- btree-cursor-report --json fixtures/synthetic-btree-cursor.img --oid 1500 --xid 70"
+    },
+    {
+      "kind": "scaffold",
+      "path": "IMPLEMENTATION_STATUS.md",
+      "line": 53,
+      "text": "## Not implemented"
+    },
+    {
+      "kind": "scaffold",
+      "path": "IMPLEMENTATION_STATUS.md",
+      "line": 59,
+      "text": "- Recursive/general APFS filesystem B-tree traversal beyond synthetic fixtures."
+    },
+    {
+      "kind": "scaffold",
+      "path": "IMPLEMENTATION_STATUS.md",
+      "line": 70,
+      "text": "The package was created in an environment without Rust/Cargo, so Rust compilation has not been executed here. The ZIP archive, YAML registries, Conductor track history, synthetic fixture layout, and package manifest are "
+    },
+    {
+      "kind": "scaffold",
+      "path": "IMPLEMENTATION_STATUS.md",
+      "line": 74,
+      "text": "Added M-019 synthetic stat CLI, M-020 safe synthetic extract-preview CLI, and M-021 Python/static precompile validation. Conductor history now covers M-001 through M-021."
+    },
+    {
+      "kind": "scaffold",
+      "path": "IMPLEMENTATION_STATUS.md",
+      "line": 77,
+      "text": "Added M-022 through M-025: synthetic fixture oracle, traceability matrix generator, loop dashboard/backlog counter, and cargoless release preflight. Remaining counts are now generated from `REMAINING_ELEMENTS.yaml`."
+    },
+    {
+      "kind": "scaffold",
+      "path": "IMPLEMENTATION_STATUS.md",
+      "line": 83,
+      "text": "- Added `apfs-win` Windows readiness scaffold."
+    },
+    {
+      "kind": "scaffold",
+      "path": "IMPLEMENTATION_STATUS.md",
+      "line": 85,
+      "text": "- Added fuzz target scaffolds."
+    },
+    {
+      "kind": "scaffold",
+      "path": "IMPLEMENTATION_STATUS.md",
+      "line": 94,
+      "text": "python3 tools/windows_readiness_check.py"
+    },
+    {
+      "kind": "scaffold",
+      "path": "IMPLEMENTATION_STATUS.md",
+      "line": 107,
+      "text": "Added read-only doctor and redacted diagnostics export CLI scaffolds, CLI/API/source-metrics snapshots, SAFETY_CASE.md, and dynamic Conductor track validation. Rust compilation remains pending on a Rust-enabled computer."
+    },
+    {
+      "kind": "scaffold",
+      "path": "IMPLEMENTATION_STATUS.md",
+      "line": 112,
+      "text": "Added M-034 through M-040: advanced feature readiness surfaces, feature readiness snapshots, and version consistency checks. These remain read-only/report-only scaffolds until real APFS fixtures and Rust compilation are "
+    },
+    {
+      "kind": "scaffold",
+      "path": "IMPLEMENTATION_STATUS.md",
+      "line": 117,
+      "text": "M-041 through M-049 are implemented as local handoff, triage, platform, release, adapter-readiness, encryption-readiness, and write-lab-readiness scaffolds. Production validation still requires Rust, macOS APFS fixture d"
+    },
+    {
+      "kind": "scaffold",
+      "path": "IMPLEMENTATION_STATUS.md",
+      "line": 141,
+      "text": "Added strict CI quality gate scaffolding, >=90% coverage policy, unit/integration/E2E/property/fuzz/mutation/profiling test strategy, Astro 7 documentation-site scaffold, and cargoless audits for those additions."
+    },
+    {
+      "kind": "scaffold",
+      "path": "IMPLEMENTATION_STATUS.md",
+      "line": 146,
+      "text": "This handoff adds docs-package, GitHub workflow, test inventory, Hypothesis, profiling budget, and quality-gate evidence audits. These are cargoless checks that validate configuration and scaffolding before Rust/Cargo/np"
+    },
+    {
+      "kind": "scaffold",
+      "path": "IMPLEMENTATION_STATUS.md",
+      "line": 155,
+      "text": "- `M-114` \u2014 cargo-dist and release-plz automation scaffold."
+    },
+    {
+      "kind": "scaffold",
+      "path": "IMPLEMENTATION_STATUS.md",
+      "line": 156,
+      "text": "- `M-115` \u2014 OpenSSF Scorecard and dependency-review workflow scaffold."
+    },
+    {
+      "kind": "scaffold",
+      "path": "IMPLEMENTATION_STATUS.md",
+      "line": 158,
+      "text": "- `M-117` \u2014 Benchmark regression and optional CodSpeed readiness."
+    },
+    {
+      "kind": "scaffold",
+      "path": "KNOWN_UNCOMPILED_RISKS.md",
+      "line": 10,
+      "text": "- Generated/scaffold crates may need missing dependency declarations after the first real `cargo check`."
+    },
+    {
+      "kind": "scaffold",
+      "path": "KNOWN_UNCOMPILED_RISKS.md",
+      "line": 12,
+      "text": "- Some scaffolds intentionally return readiness reports and may trigger clippy `must_use` or `uninlined_format_args` warnings."
+    },
+    {
+      "kind": "scaffold",
+      "path": "KNOWN_UNCOMPILED_RISKS.md",
+      "line": 17,
+      "text": "- Synthetic fixture offsets may not match real APFS metadata produced by current macOS."
+    },
+    {
+      "kind": "scaffold",
+      "path": "KNOWN_UNCOMPILED_RISKS.md",
+      "line": 19,
+      "text": "- B-tree traversal currently supports synthetic shapes only."
+    },
+    {
+      "kind": "scaffold",
+      "path": "KNOWN_UNCOMPILED_RISKS.md",
+      "line": 20,
+      "text": "- Filesystem directory/file records are synthetic scaffolds, not production APFS file-system records."
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOCAL_FIRST_RUN.md",
+      "line": 42,
+      "text": "## Step 3: run current synthetic checks"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOCAL_FIRST_RUN.md",
+      "line": 45,
+      "text": "cargo run -p apfs-cli -- inspect --json fixtures/synthetic-nxsb-block0.bin"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOCAL_FIRST_RUN.md",
+      "line": 46,
+      "text": "cargo run -p apfs-cli -- doctor --json fixtures/synthetic-file-preview.img"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOCAL_FIRST_RUN.md",
+      "line": 47,
+      "text": "cargo run -p apfs-cli -- stat --json fixtures/synthetic-file-preview.img --name hello.txt"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOCAL_FIRST_RUN.md",
+      "line": 52,
+      "text": "Only use synthetic sparse images. Do not point scripts at physical disks."
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOCAL_FIRST_RUN.md",
+      "line": 66,
+      "text": "3. Synthetic fixture mismatches."
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOCAL_FIRST_RUN.md",
+      "line": 68,
+      "text": "5. Windows/WinFsp readiness."
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOCAL_HANDOFF.md",
+      "line": 11,
+      "text": "python3 tools/synthetic_fixture_oracle.py"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOCAL_HANDOFF.md",
+      "line": 60,
+      "text": "Added current environment inventory, remaining-work classifier, dependency graph, synthetic negative fixtures, test/control matrix, and archive audit."
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOCAL_HANDOFF.md",
+      "line": 85,
+      "text": "This handoff adds docs-package, GitHub workflow, test inventory, Hypothesis, profiling budget, and quality-gate evidence audits. These are cargoless checks that validate configuration and scaffolding before Rust/Cargo/np"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOCAL_MIGRATION_COMMANDS.json",
+      "line": 30,
+      "text": "\"windows_readonly_readiness\": ["
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOCAL_MIGRATION_COMMANDS.json",
+      "line": 33,
+      "text": "\"python3 tools/windows_readiness_check.py\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOCAL_MIGRATION_COMMANDS.md",
+      "line": 43,
+      "text": "## windows_readonly_readiness"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOCAL_MIGRATION_COMMANDS.md",
+      "line": 48,
+      "text": "python3 tools/windows_readiness_check.py"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOOP_DASHBOARD.md",
+      "line": 7,
+      "text": "- Implemented/scaffolded elements: **103**"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOOP_DASHBOARD.md",
+      "line": 33,
+      "text": "## Recent implemented/scaffolded elements"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOOP_DASHBOARD.md",
+      "line": 38,
+      "text": "| M-095 | Unit integration e2e property mutation fuzz test scaffolds | quality | configured_not_executed |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOOP_DASHBOARD.md",
+      "line": 39,
+      "text": "| M-096 | Profiling and benchmark scaffold | quality | configured_not_executed |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOOP_DASHBOARD.md",
+      "line": 40,
+      "text": "| M-097 | Astro 7 and Starlight documentation site scaffold | documentation | configured_not_executed |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOOP_DASHBOARD.md",
+      "line": 45,
+      "text": "| M-102 | Extended current-environment tool inventory | handoff | implemented_python_scaffold |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOOP_DASHBOARD.md",
+      "line": 46,
+      "text": "| M-103 | Quality and docs handoff integration | handoff | implemented_python_scaffold |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOOP_DASHBOARD.md",
+      "line": 62,
+      "text": "- `0011-real-fixture-readiness`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOOP_DASHBOARD.md",
+      "line": 67,
+      "text": "- `0016-synthetic-directory-record-parser`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOOP_DASHBOARD.md",
+      "line": 68,
+      "text": "- `0016-synthetic-directory-root-tree`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOOP_DASHBOARD.md",
+      "line": 70,
+      "text": "- `0017-synthetic-directory-listing`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOOP_DASHBOARD.md",
+      "line": 71,
+      "text": "- `0018-synthetic-file-preview`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOOP_DASHBOARD.md",
+      "line": 72,
+      "text": "- `0019-synthetic-stat-cli`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOOP_DASHBOARD.md",
+      "line": 73,
+      "text": "- `0020-synthetic-safe-extract-cli`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOOP_DASHBOARD.md",
+      "line": 75,
+      "text": "- `0022-synthetic-fixture-oracle`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOOP_DASHBOARD.md",
+      "line": 82,
+      "text": "- `0027-windows-readiness-scaffold`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOOP_DASHBOARD.md",
+      "line": 86,
+      "text": "- `0029-fuzz-target-scaffold`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOOP_DASHBOARD.md",
+      "line": 88,
+      "text": "- `0031-doctor-readiness-cli`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOOP_DASHBOARD.md",
+      "line": 92,
+      "text": "- `0035-xattr-resource-fork-readiness`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOOP_DASHBOARD.md",
+      "line": 93,
+      "text": "- `0036-sparse-clone-readiness`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOOP_DASHBOARD.md",
+      "line": 94,
+      "text": "- `0037-compression-readiness`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOOP_DASHBOARD.md",
+      "line": 95,
+      "text": "- `0038-snapshot-role-readiness`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOOP_DASHBOARD.md",
+      "line": 96,
+      "text": "- `0039-feature-readiness-snapshot`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOOP_DASHBOARD.md",
+      "line": 101,
+      "text": "- `0044-release-provenance-scaffold`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOOP_DASHBOARD.md",
+      "line": 102,
+      "text": "- `0045-fuse-cross-platform-readiness`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOOP_DASHBOARD.md",
+      "line": 103,
+      "text": "- `0046-android-access-readiness`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOOP_DASHBOARD.md",
+      "line": 104,
+      "text": "- `0047-encryption-read-readiness`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOOP_DASHBOARD.md",
+      "line": 105,
+      "text": "- `0048-image-write-lab-readiness`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOOP_DASHBOARD.md",
+      "line": 125,
+      "text": "- `0068-synthetic-negative-fixtures`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOOP_DASHBOARD.md",
+      "line": 155,
+      "text": "- `0096-profiling-and-benchmark-scaffold`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOOP_DASHBOARD.md",
+      "line": 157,
+      "text": "- `0097-astro-7-and-starlight-documentation-site-scaffold`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOOP_DASHBOARD.md",
+      "line": 158,
+      "text": "- `0097-mutation-testing-scaffold`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOOP_DASHBOARD.md",
+      "line": 160,
+      "text": "- `0098-profiling-benchmark-scaffold`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOOP_DASHBOARD.md",
+      "line": 163,
+      "text": "- `0100-qa-readiness-report`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOOP_DASHBOARD.md",
+      "line": 168,
+      "text": "- `096-property-hypothesis-style-testing-scaffold`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOOP_DASHBOARD.md",
+      "line": 169,
+      "text": "- `097-mutation-testing-scaffold`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOOP_DASHBOARD.md",
+      "line": 170,
+      "text": "- `098-profiling-benchmark-scaffold`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "LOOP_DASHBOARD.md",
+      "line": 171,
+      "text": "- `099-astro-7-documentation-site-scaffold`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "MVP_BLOCKER_TASKLIST.json",
+      "line": 65,
+      "text": "\"Replace synthetic traversal internals with production B-tree cursor\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "MVP_BLOCKER_TASKLIST.md",
+      "line": 48,
+      "text": "- Replace synthetic traversal internals with production B-tree cursor"
+    },
+    {
+      "kind": "scaffold",
+      "path": "PLATFORM_SETUP.md",
+      "line": 22,
+      "text": "- synthetic data only"
+    },
+    {
+      "kind": "scaffold",
+      "path": "PLATFORM_SETUP.md",
+      "line": 33,
+      "text": "- synthetic image fixtures first"
+    },
+    {
+      "kind": "scaffold",
+      "path": "PLATFORM_SETUP.md",
+      "line": 35,
+      "text": "The current Windows crate is a readiness scaffold only; no verified mount lifecycle exists yet."
+    },
+    {
+      "kind": "scaffold",
+      "path": "PRODUCTION_GAP_REPORT.json",
+      "line": 4,
+      "text": "\"implemented_or_scaffolded\": 93,"
+    },
+    {
+      "kind": "scaffold",
+      "path": "PRODUCTION_GAP_REPORT.md",
+      "line": 3,
+      "text": "Implemented/scaffolded: `93`"
+    },
+    {
+      "kind": "scaffold",
+      "path": "PROFILING.md",
+      "line": 11,
+      "text": "- Criterion benchmark: `crates/apfs-core/benches/inspect_synthetic.rs`."
+    },
+    {
+      "kind": "scaffold",
+      "path": "PROFILING.md",
+      "line": 18,
+      "text": "cargo bench -p apfs-core --bench inspect_synthetic"
+    },
+    {
+      "kind": "scaffold",
+      "path": "PROFILING_PLAN.md",
+      "line": 21,
+      "text": "- `parse_nx_superblock_synthetic`."
+    },
+    {
+      "kind": "scaffold",
+      "path": "PROFILING_PLAN.md",
+      "line": 29,
+      "text": "Profiling cannot execute in this environment because Rust/Cargo are unavailable. The benchmark scaffolds and CI workflow are present for local execution."
+    },
+    {
+      "kind": "scaffold",
+      "path": "PROFILING_PLAN_AUDIT.json",
+      "line": 6,
+      "text": "\"name\": \"inspect_synthetic_nxsb\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "PROFILING_PLAN_AUDIT.json",
+      "line": 7,
+      "text": "\"command\": \"cargo run -p apfs-cli --release -- inspect --json fixtures/synthetic-nxsb-block0.bin\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "PROFILING_PLAN_AUDIT.json",
+      "line": 10,
+      "text": "\"name\": \"lookup_synthetic_resolver\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "PROFILING_PLAN_AUDIT.json",
+      "line": 11,
+      "text": "\"command\": \"cargo run -p apfs-cli --release -- lookup-object --json fixtures/synthetic-resolver-facade.img --oid 1500 --xid 70\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "PROFILING_PLAN_AUDIT.json",
+      "line": 14,
+      "text": "\"name\": \"directory_listing_synthetic\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "PROFILING_PLAN_AUDIT.json",
+      "line": 15,
+      "text": "\"command\": \"cargo run -p apfs-cli --release -- ls --json fixtures/synthetic-directory-listing.img\""
+    },
+    {
+      "kind": "scaffold",
+      "path": "QUALITY_GATES.md",
+      "line": 16,
+      "text": "| Fuzz smoke | `cargo fuzz` parser targets | scaffolded |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "QUALITY_GATE_POLICY.md",
+      "line": 19,
+      "text": "| Profiling | Configured with Criterion benchmark scaffold | Requires Cargo |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "QUALITY_GATE_POLICY.md",
+      "line": 42,
+      "text": "Criterion benchmark scaffolds exist for hot parser paths. The first production profiling target is APFS superblock parsing, then B-tree traversal and extent resolution."
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 25,
+      "text": "- Preliminary OMAP leaf-record decoding from synthetic B-tree TOC offsets."
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 26,
+      "text": "- Single-node, checkpoint-map-backed multi-node, bounded synthetic B-tree traversal, object-map resolver facade, and production-shaped B-tree cursor facade over synthetic OMAP lookup paths."
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 35,
+      "text": "- Synthetic fixture generation for direct NXSB, GPT-wrapped APFS, checkpoint-candidate scan, checkpoint-map/object-map probe, OMAP B-tree root probe, single-node OMAP lookup, checkpoint-map-backed multi-node OMAP lookup,"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 43,
+      "text": "## Still not implemented"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 49,
+      "text": "- Production B-tree traversal beyond the bounded synthetic two-level traversal/cursor fixtures."
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 50,
+      "text": "- Production APFS directory listing beyond synthetic fixtures."
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 51,
+      "text": "- Production file extent resolution/extraction beyond synthetic preview."
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 61,
+      "text": "cargo run -p apfs-cli -- inspect --json fixtures/synthetic-nxsb-block0.bin"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 62,
+      "text": "cargo run -p apfs-cli -- inspect --json fixtures/synthetic-gpt-apfs.img"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 63,
+      "text": "cargo run -p apfs-cli -- inspect --json fixtures/synthetic-checkpoint-ring.img"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 64,
+      "text": "cargo run -p apfs-cli -- inspect --json fixtures/synthetic-checkpoint-map-omap.img"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 65,
+      "text": "cargo run -p apfs-cli -- inspect --json fixtures/synthetic-omap-btree-root.img"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 66,
+      "text": "cargo run -p apfs-cli -- compatibility-report --json fixtures/synthetic-omap-btree-root.img"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 67,
+      "text": "cargo run -p apfs-cli -- inspect --json fixtures/synthetic-omap-lookup.img"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 68,
+      "text": "cargo run -p apfs-cli -- lookup-object --json fixtures/synthetic-omap-lookup.img --oid 500 --xid 50"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 69,
+      "text": "cargo run -p apfs-cli -- inspect --json fixtures/synthetic-omap-multinode-lookup.img"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 70,
+      "text": "cargo run -p apfs-cli -- lookup-object --json fixtures/synthetic-omap-multinode-lookup.img --oid 700 --xid 60"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 71,
+      "text": "cargo run -p apfs-cli -- lookup-object --json fixtures/synthetic-omap-multinode-lookup.img --oid 800 --xid 59"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 72,
+      "text": "cargo run -p apfs-cli -- inspect --json fixtures/synthetic-btree-traversal.img"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 73,
+      "text": "cargo run -p apfs-cli -- lookup-object --json fixtures/synthetic-btree-traversal.img --oid 1500 --xid 70"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 74,
+      "text": "cargo run -p apfs-cli -- lookup-object --json fixtures/synthetic-btree-traversal.img --oid 2500 --xid 70"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 75,
+      "text": "cargo run -p apfs-cli -- resolver-report --json fixtures/synthetic-resolver-facade.img"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 76,
+      "text": "cargo run -p apfs-cli -- btree-cursor-report --json fixtures/synthetic-btree-cursor.img --oid 1500 --xid 70"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 77,
+      "text": "cargo run -p apfs-cli -- volumes --json fixtures/synthetic-volume-superblock.img"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 78,
+      "text": "cargo run -p apfs-cli -- read-object --json fixtures/synthetic-mapped-object-read.img --oid 1500 --xid 70"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 79,
+      "text": "cargo run -p apfs-cli -- ls --json fixtures/synthetic-directory-listing.img"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 80,
+      "text": "cargo run -p apfs-cli -- cat --json fixtures/synthetic-file-preview.img --name hello.txt"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 82,
+      "text": "cargo run -p apfs-cli -- feature-readiness --json --feature compression"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 84,
+      "text": "cargo run -p apfs-cli -- lookup-object --json fixtures/synthetic-resolver-facade.img --oid 1500 --xid 70"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 94,
+      "text": "The bundled fixtures are synthetic parser-development images, not complete macOS-generated APFS filesystems."
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 97,
+      "text": "## Real APFS fixture readiness"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 115,
+      "text": "This package adds synthetic filesystem-root and file-preview scaffolding:"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 118,
+      "text": "cargo run -p apfs-cli -- ls --json fixtures/synthetic-directory-listing.img"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 119,
+      "text": "cargo run -p apfs-cli -- cat --json fixtures/synthetic-file-preview.img --name hello.txt"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 121,
+      "text": "cargo run -p apfs-cli -- feature-readiness --json --feature compression"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 125,
+      "text": "These are not production APFS directory or extent readers yet. They are bounded, read-only scaffolds that exercise the planned API shape while real macOS APFS fixture validation remains pending."
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 128,
+      "text": "## Current synthetic CLI surface"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 144,
+      "text": "`stat` and `extract` are synthetic-fixture scaffolds. `extract` writes only to the requested host destination directory and never writes to APFS media."
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 147,
+      "text": "This package adds a cargoless quality loop for constrained environments: synthetic fixture oracle validation, traceability matrix generation, a loop dashboard/backlog counter, and a release/preflight bundle. These checks"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 153,
+      "text": "- Added `apfs-win` Windows readiness scaffold."
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 155,
+      "text": "- Added fuzz target scaffolds."
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 164,
+      "text": "python3 tools/windows_readiness_check.py"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 177,
+      "text": "This package adds the read-only `apfs doctor` readiness report, `apfs diagnostics-export` redacted host-side bundle export, generated CLI/API/source-metrics snapshots, and `SAFETY_CASE.md`. The Conductor checker now disc"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 192,
+      "text": "cargo run -p apfs-cli -- doctor --json fixtures/synthetic-file-preview.img"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 193,
+      "text": "cargo run -p apfs-cli -- diagnostics-export --json fixtures/synthetic-file-preview.img --out target/redacted-diagnostics"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 199,
+      "text": "Adds read-only advanced-feature readiness surfaces for Unicode/case policy, xattrs/resource forks, sparse/clones, compression, and snapshots/roles. These are diagnostic scaffolds only; production APFS support still requi"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 204,
+      "text": "This package adds `LOCAL_HANDOFF.md`, `PLATFORM_SETUP.md`, `READY_FOR_LOCAL.md`, `CARGO_TRIAGE.md`, release/provenance scaffolding, and adapter-readiness crates for FUSE, Android, software-encryption policy, and image-on"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 213,
+      "text": "Added current environment inventory, remaining-work classifier, dependency graph, synthetic negative fixtures, test/control matrix, and archive audit."
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 247,
+      "text": "The repo now includes strict CI workflow scaffolds, a 90% coverage gate policy, unit/integration/E2E/property/Hypothesis/mutation/fuzz/profiling scaffolds, and an Astro 7 docs-site scaffold. These are configured but stil"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 252,
+      "text": "Added strict CI quality gate scaffolding, >=90% coverage policy, unit/integration/E2E/property/fuzz/mutation/profiling test strategy, Astro 7 documentation-site scaffold, and cargoless audits for those additions."
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 254,
+      "text": "## v0.27.0 strict quality and Astro documentation scaffold"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 256,
+      "text": "This package now includes strict CI/CD quality-gate scaffolding:"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 263,
+      "text": "- Criterion profiling scaffold;"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 264,
+      "text": "- Astro 7 + Starlight documentation site scaffold under `docs-site/`."
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 271,
+      "text": "This handoff adds docs-package, GitHub workflow, test inventory, Hypothesis, profiling budget, and quality-gate evidence audits. These are cargoless checks that validate configuration and scaffolding before Rust/Cargo/np"
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 280,
+      "text": "- `M-114` \u2014 cargo-dist and release-plz automation scaffold."
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 281,
+      "text": "- `M-115` \u2014 OpenSSF Scorecard and dependency-review workflow scaffold."
+    },
+    {
+      "kind": "scaffold",
+      "path": "README.md",
+      "line": 283,
+      "text": "- `M-117` \u2014 Benchmark regression and optional CodSpeed readiness."
+    },
+    {
+      "kind": "scaffold",
+      "path": "READY_FOR_LOCAL.md",
+      "line": 11,
+      "text": "- Synthetic fixtures and oracles exist."
+    },
+    {
+      "kind": "scaffold",
+      "path": "READY_FOR_LOCAL.md",
+      "line": 14,
+      "text": "- Release/provenance scaffolding exists."
+    },
+    {
+      "kind": "scaffold",
+      "path": "READY_FOR_LOCAL.md",
+      "line": 15,
+      "text": "- Non-Windows adapter readiness crates exist."
+    },
+    {
+      "kind": "scaffold",
+      "path": "READY_FOR_LOCAL.md",
+      "line": 16,
+      "text": "- Software-encryption and image-only write-lab readiness crates exist."
+    },
+    {
+      "kind": "scaffold",
+      "path": "RELEASE_SCAFFOLD.md",
+      "line": 1,
+      "text": "# Release, Provenance, and Packaging Scaffold"
+    },
+    {
+      "kind": "scaffold",
+      "path": "RELEASE_SCAFFOLD.md",
+      "line": 7,
+      "text": "This is release-readiness scaffolding, not a signed production release."
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.md",
+      "line": 7,
+      "text": "- Implemented/scaffolded elements: **109**"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.md",
+      "line": 40,
+      "text": "## Recent implemented or scaffolded elements"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.md",
+      "line": 49,
+      "text": "| M-095 | Unit integration e2e property mutation fuzz test scaffolds | quality | configured_not_executed |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.md",
+      "line": 50,
+      "text": "| M-096 | Profiling and benchmark scaffold | quality | configured_not_executed |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.md",
+      "line": 51,
+      "text": "| M-097 | Astro 7 and Starlight documentation site scaffold | documentation | configured_not_executed |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.md",
+      "line": 56,
+      "text": "| M-102 | Extended current-environment tool inventory | handoff | implemented_python_scaffold |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.md",
+      "line": 57,
+      "text": "| M-103 | Quality and docs handoff integration | handoff | implemented_python_scaffold |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.md",
+      "line": 67,
+      "text": "All required current-environment-completable controls are scaffolded. Remaining production work requires Rust/Cargo, macOS APFS tooling, Windows/WinFsp, or long-running CI execution."
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.md",
+      "line": 72,
+      "text": "Added bleeding-edge repo hardening and automation scaffolds M-110 through M-118."
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 2,
+      "text": "implemented_or_scaffolded: &id001"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 28,
+      "text": "title: Checkpoint-map-backed multi-node synthetic OMAP lookup"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 32,
+      "text": "title: Bounded synthetic B-tree traversal lookup"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 42,
+      "text": "status: scaffolded"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 44,
+      "text": "title: Real APFS fixture readiness harness"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 45,
+      "text": "category: fixture-readiness"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 46,
+      "text": "status: implemented_scaffold"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 49,
+      "text": "category: fixture-readiness"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 50,
+      "text": "status: implemented_scaffold"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 53,
+      "text": "category: fixture-readiness"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 54,
+      "text": "status: implemented_scaffold"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 56,
+      "text": "title: Synthetic APFS volume superblock probe and volume report CLI"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 64,
+      "text": "title: Synthetic filesystem root-tree directory-record parser"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 68,
+      "text": "title: Synthetic directory listing CLI"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 72,
+      "text": "title: Synthetic file preview CLI"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 76,
+      "text": "title: Synthetic metadata/stat report CLI"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 80,
+      "text": "title: Synthetic safe extract-preview CLI"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 86,
+      "text": "status: implemented_scaffold"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 88,
+      "text": "title: Synthetic fixture oracle and smoke-test harness"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 100,
+      "text": "title: Cargoless release-readiness/preflight bundle"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 104,
+      "text": "title: Read-only VFS facade and Windows mount-plan/readiness scaffold"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 106,
+      "text": "status: implemented_scaffold"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 116,
+      "text": "title: Fuzz scaffold and context integrity static check"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 118,
+      "text": "status: implemented_scaffold"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 124,
+      "text": "title: Read-only doctor/readiness CLI"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 126,
+      "text": "status: implemented_scaffold"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 138,
+      "text": "status: implemented_scaffold"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 140,
+      "text": "title: Xattr and resource fork readiness report"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 142,
+      "text": "status: implemented_scaffold"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 144,
+      "text": "title: Sparse file and clone readiness report"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 146,
+      "text": "status: implemented_scaffold"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 148,
+      "text": "title: Compression readiness report"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 150,
+      "text": "status: implemented_scaffold"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 152,
+      "text": "title: Snapshot and volume-role readiness report"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 154,
+      "text": "status: implemented_scaffold"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 156,
+      "text": "title: Advanced feature readiness snapshot"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 176,
+      "text": "title: Release signing SBOM provenance installer scaffold"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 178,
+      "text": "status: implemented_scaffold"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 180,
+      "text": "title: FUSE Linux macOS ChromeOS adapter readiness crate"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 182,
+      "text": "status: implemented_scaffold"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 184,
+      "text": "title: Android access layer readiness crate"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 186,
+      "text": "status: implemented_scaffold"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 188,
+      "text": "title: Software-encryption read readiness crate"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 190,
+      "text": "status: implemented_scaffold"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 192,
+      "text": "title: Image-only write-lab readiness crate"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 194,
+      "text": "status: implemented_scaffold"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 250,
+      "text": "status: implemented_scaffold"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 272,
+      "text": "title: Synthetic negative fixture generator"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 308,
+      "text": "title: APFS offset and synthetic fixture byte-layout audit"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 380,
+      "text": "title: Unit integration e2e property mutation fuzz test scaffolds"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 384,
+      "text": "title: Profiling and benchmark scaffold"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 388,
+      "text": "title: Astro 7 and Starlight documentation site scaffold"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 410,
+      "text": "status: implemented_python_scaffold"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 414,
+      "text": "status: implemented_python_scaffold"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 456,
+      "text": "title: cargo-dist and release-plz automation scaffold"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 460,
+      "text": "title: OpenSSF Scorecard and dependency-review workflow scaffold"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 468,
+      "text": "title: Benchmark regression and optional CodSpeed readiness"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 523,
+      "text": "implemented_or_scaffolded: 118"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REMAINING_ELEMENTS.yaml",
+      "line": 530,
+      "text": "release automation, Astro 7 docs hardening, and bleeding-edge repo audit scaffolds;"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 431,
+      "text": "\"path\": \"FEATURE_READINESS.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 436,
+      "text": "\"path\": \"FEATURE_READINESS.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 701,
+      "text": "\"path\": \"RELEASE_SCAFFOLD.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 816,
+      "text": "\"path\": \"TEST_SCAFFOLD_AUDIT.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 821,
+      "text": "\"path\": \"TEST_SCAFFOLD_AUDIT.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 951,
+      "text": "\"path\": \"codev/plans/0011-real-fixture-readiness.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 971,
+      "text": "\"path\": \"codev/plans/0015-m015-synthetic-directory-root-tree.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 986,
+      "text": "\"path\": \"codev/plans/0016-synthetic-directory-record-parser.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 991,
+      "text": "\"path\": \"codev/plans/0017-m017-synthetic-file-preview.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 996,
+      "text": "\"path\": \"codev/plans/0017-synthetic-directory-listing.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1001,
+      "text": "\"path\": \"codev/plans/0018-synthetic-file-preview.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1006,
+      "text": "\"path\": \"codev/plans/0020-m019-synthetic-stat-cli.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1011,
+      "text": "\"path\": \"codev/plans/0021-m020-synthetic-safe-extract-cli.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1021,
+      "text": "\"path\": \"codev/plans/0023-m-022-synthetic-fixture-oracle.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1046,
+      "text": "\"path\": \"codev/plans/0027-m-027-windows-read-only-adapter-readiness-scaffold.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1066,
+      "text": "\"path\": \"codev/plans/0029-m-029-fuzz-target-scaffold-for-parser-entry-points.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1086,
+      "text": "\"path\": \"codev/plans/0031-m-031-doctor-readiness-cli.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1106,
+      "text": "\"path\": \"codev/plans/0035-xattr-resource-fork-readiness.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1111,
+      "text": "\"path\": \"codev/plans/0036-sparse-clone-readiness.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1116,
+      "text": "\"path\": \"codev/plans/0037-compression-readiness.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1121,
+      "text": "\"path\": \"codev/plans/0038-snapshot-role-readiness.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1126,
+      "text": "\"path\": \"codev/plans/0039-feature-readiness-snapshot.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1151,
+      "text": "\"path\": \"codev/plans/0044-release-provenance-scaffold.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1156,
+      "text": "\"path\": \"codev/plans/0045-fuse-cross-platform-readiness.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1161,
+      "text": "\"path\": \"codev/plans/0046-android-access-readiness.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1166,
+      "text": "\"path\": \"codev/plans/0047-encryption-read-readiness.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1171,
+      "text": "\"path\": \"codev/plans/0048-image-write-lab-readiness.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1271,
+      "text": "\"path\": \"codev/plans/0068-synthetic-negative-fixtures.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1386,
+      "text": "\"path\": \"codev/plans/0096-profiling-and-benchmark-scaffold.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1391,
+      "text": "\"path\": \"codev/plans/0097-astro-7-and-starlight-documentation-site-scaffold.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1536,
+      "text": "\"path\": \"codev/plans/096-property-and-hypothesis-style-testing-scaffold.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1541,
+      "text": "\"path\": \"codev/plans/097-mutation-testing-scaffold.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1546,
+      "text": "\"path\": \"codev/plans/098-profiling-and-benchmark-scaffold.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1551,
+      "text": "\"path\": \"codev/plans/099-astro-7-documentation-site-scaffold.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1646,
+      "text": "\"path\": \"codev/reviews/0011-real-fixture-readiness-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1666,
+      "text": "\"path\": \"codev/reviews/0015-m015-synthetic-directory-root-tree-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1681,
+      "text": "\"path\": \"codev/reviews/0016-synthetic-directory-record-parser-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1686,
+      "text": "\"path\": \"codev/reviews/0017-m017-synthetic-file-preview-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1691,
+      "text": "\"path\": \"codev/reviews/0017-synthetic-directory-listing-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1696,
+      "text": "\"path\": \"codev/reviews/0018-synthetic-file-preview-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1701,
+      "text": "\"path\": \"codev/reviews/0020-m019-synthetic-stat-cli-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1706,
+      "text": "\"path\": \"codev/reviews/0021-m020-synthetic-safe-extract-cli-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1716,
+      "text": "\"path\": \"codev/reviews/0023-m-022-synthetic-fixture-oracle-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1741,
+      "text": "\"path\": \"codev/reviews/0027-m-027-windows-read-only-adapter-readiness-scaffold-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1761,
+      "text": "\"path\": \"codev/reviews/0029-m-029-fuzz-target-scaffold-for-parser-entry-points-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1781,
+      "text": "\"path\": \"codev/reviews/0031-m-031-doctor-readiness-cli-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1801,
+      "text": "\"path\": \"codev/reviews/0035-xattr-resource-fork-readiness-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1806,
+      "text": "\"path\": \"codev/reviews/0036-sparse-clone-readiness-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1811,
+      "text": "\"path\": \"codev/reviews/0037-compression-readiness-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1816,
+      "text": "\"path\": \"codev/reviews/0038-snapshot-role-readiness-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1821,
+      "text": "\"path\": \"codev/reviews/0039-feature-readiness-snapshot-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1846,
+      "text": "\"path\": \"codev/reviews/0044-release-provenance-scaffold-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1851,
+      "text": "\"path\": \"codev/reviews/0045-fuse-cross-platform-readiness-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1856,
+      "text": "\"path\": \"codev/reviews/0046-android-access-readiness-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1861,
+      "text": "\"path\": \"codev/reviews/0047-encryption-read-readiness-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1866,
+      "text": "\"path\": \"codev/reviews/0048-image-write-lab-readiness-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 1966,
+      "text": "\"path\": \"codev/reviews/0068-synthetic-negative-fixtures-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 2081,
+      "text": "\"path\": \"codev/reviews/0096-profiling-and-benchmark-scaffold-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 2086,
+      "text": "\"path\": \"codev/reviews/0097-astro-7-and-starlight-documentation-site-scaffold-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 2231,
+      "text": "\"path\": \"codev/reviews/096-property-and-hypothesis-style-testing-scaffold-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 2236,
+      "text": "\"path\": \"codev/reviews/097-mutation-testing-scaffold-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 2241,
+      "text": "\"path\": \"codev/reviews/098-profiling-and-benchmark-scaffold-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 2246,
+      "text": "\"path\": \"codev/reviews/099-astro-7-documentation-site-scaffold-review.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 2326,
+      "text": "\"path\": \"codev/specs/0012-m011-real-fixture-readiness.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 2351,
+      "text": "\"path\": \"codev/specs/0016-m015-synthetic-directory-root-tree.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 2361,
+      "text": "\"path\": \"codev/specs/0017-m016-synthetic-directory-record-parser.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 2366,
+      "text": "\"path\": \"codev/specs/0018-m017-synthetic-directory-listing.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 2371,
+      "text": "\"path\": \"codev/specs/0019-m018-synthetic-file-preview.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 2376,
+      "text": "\"path\": \"codev/specs/0020-m019-synthetic-stat-cli.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 2381,
+      "text": "\"path\": \"codev/specs/0021-m020-synthetic-safe-extract-cli.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 2391,
+      "text": "\"path\": \"codev/specs/0023-m-022-synthetic-fixture-oracle.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 2416,
+      "text": "\"path\": \"codev/specs/0027-m-027-windows-read-only-adapter-readiness-scaffold.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 2436,
+      "text": "\"path\": \"codev/specs/0029-m-029-fuzz-target-scaffold-for-parser-entry-points.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 2456,
+      "text": "\"path\": \"codev/specs/0031-m-031-doctor-readiness-cli.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 2476,
+      "text": "\"path\": \"codev/specs/0035-m-035-xattr-resource-fork-readiness.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 2481,
+      "text": "\"path\": \"codev/specs/0036-m-036-sparse-clone-readiness.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 2486,
+      "text": "\"path\": \"codev/specs/0037-m-037-compression-readiness.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 2491,
+      "text": "\"path\": \"codev/specs/0038-m-038-snapshot-role-readiness.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 2496,
+      "text": "\"path\": \"codev/specs/0039-m039-feature-readiness-snapshot.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 2521,
+      "text": "\"path\": \"codev/specs/0044-release-provenance-scaffold.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 2526,
+      "text": "\"path\": \"codev/specs/0045-fuse-cross-platform-readiness.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 2531,
+      "text": "\"path\": \"codev/specs/0046-android-access-readiness.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 2536,
+      "text": "\"path\": \"codev/specs/0047-encryption-read-readiness.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 2541,
+      "text": "\"path\": \"codev/specs/0048-image-write-lab-readiness.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 2641,
+      "text": "\"path\": \"codev/specs/0068-m-068-synthetic-negative-fixtures.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 2756,
+      "text": "\"path\": \"codev/specs/0096-profiling-and-benchmark-scaffold.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 2761,
+      "text": "\"path\": \"codev/specs/0097-astro-7-and-starlight-documentation-site-scaffold.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 2906,
+      "text": "\"path\": \"codev/specs/096-property-and-hypothesis-style-testing-scaffold.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 2911,
+      "text": "\"path\": \"codev/specs/097-mutation-testing-scaffold.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 2916,
+      "text": "\"path\": \"codev/specs/098-profiling-and-benchmark-scaffold.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 2921,
+      "text": "\"path\": \"codev/specs/099-astro-7-documentation-site-scaffold.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3151,
+      "text": "\"path\": \"conductor/tracks/0011-real-fixture-readiness/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3156,
+      "text": "\"path\": \"conductor/tracks/0011-real-fixture-readiness/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3161,
+      "text": "\"path\": \"conductor/tracks/0011-real-fixture-readiness/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3226,
+      "text": "\"path\": \"conductor/tracks/0016-synthetic-directory-record-parser/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3231,
+      "text": "\"path\": \"conductor/tracks/0016-synthetic-directory-record-parser/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3236,
+      "text": "\"path\": \"conductor/tracks/0016-synthetic-directory-record-parser/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3241,
+      "text": "\"path\": \"conductor/tracks/0016-synthetic-directory-root-tree/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3246,
+      "text": "\"path\": \"conductor/tracks/0016-synthetic-directory-root-tree/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3251,
+      "text": "\"path\": \"conductor/tracks/0016-synthetic-directory-root-tree/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3271,
+      "text": "\"path\": \"conductor/tracks/0017-synthetic-directory-listing/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3276,
+      "text": "\"path\": \"conductor/tracks/0017-synthetic-directory-listing/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3281,
+      "text": "\"path\": \"conductor/tracks/0017-synthetic-directory-listing/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3286,
+      "text": "\"path\": \"conductor/tracks/0018-synthetic-file-preview/0017-synthetic-file-preview/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3291,
+      "text": "\"path\": \"conductor/tracks/0018-synthetic-file-preview/0017-synthetic-file-preview/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3296,
+      "text": "\"path\": \"conductor/tracks/0018-synthetic-file-preview/0017-synthetic-file-preview/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3301,
+      "text": "\"path\": \"conductor/tracks/0018-synthetic-file-preview/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3306,
+      "text": "\"path\": \"conductor/tracks/0018-synthetic-file-preview/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3311,
+      "text": "\"path\": \"conductor/tracks/0018-synthetic-file-preview/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3316,
+      "text": "\"path\": \"conductor/tracks/0019-synthetic-stat-cli/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3321,
+      "text": "\"path\": \"conductor/tracks/0019-synthetic-stat-cli/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3326,
+      "text": "\"path\": \"conductor/tracks/0019-synthetic-stat-cli/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3331,
+      "text": "\"path\": \"conductor/tracks/0020-synthetic-safe-extract-cli/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3336,
+      "text": "\"path\": \"conductor/tracks/0020-synthetic-safe-extract-cli/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3341,
+      "text": "\"path\": \"conductor/tracks/0020-synthetic-safe-extract-cli/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3361,
+      "text": "\"path\": \"conductor/tracks/0022-synthetic-fixture-oracle/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3366,
+      "text": "\"path\": \"conductor/tracks/0022-synthetic-fixture-oracle/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3371,
+      "text": "\"path\": \"conductor/tracks/0022-synthetic-fixture-oracle/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3466,
+      "text": "\"path\": \"conductor/tracks/0027-windows-readiness-scaffold/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3471,
+      "text": "\"path\": \"conductor/tracks/0027-windows-readiness-scaffold/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3476,
+      "text": "\"path\": \"conductor/tracks/0027-windows-readiness-scaffold/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3526,
+      "text": "\"path\": \"conductor/tracks/0029-fuzz-target-scaffold/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3531,
+      "text": "\"path\": \"conductor/tracks/0029-fuzz-target-scaffold/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3536,
+      "text": "\"path\": \"conductor/tracks/0029-fuzz-target-scaffold/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3556,
+      "text": "\"path\": \"conductor/tracks/0031-doctor-readiness-cli/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3561,
+      "text": "\"path\": \"conductor/tracks/0031-doctor-readiness-cli/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3566,
+      "text": "\"path\": \"conductor/tracks/0031-doctor-readiness-cli/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3616,
+      "text": "\"path\": \"conductor/tracks/0035-xattr-resource-fork-readiness/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3621,
+      "text": "\"path\": \"conductor/tracks/0035-xattr-resource-fork-readiness/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3626,
+      "text": "\"path\": \"conductor/tracks/0035-xattr-resource-fork-readiness/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3631,
+      "text": "\"path\": \"conductor/tracks/0036-sparse-clone-readiness/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3636,
+      "text": "\"path\": \"conductor/tracks/0036-sparse-clone-readiness/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3641,
+      "text": "\"path\": \"conductor/tracks/0036-sparse-clone-readiness/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3646,
+      "text": "\"path\": \"conductor/tracks/0037-compression-readiness/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3651,
+      "text": "\"path\": \"conductor/tracks/0037-compression-readiness/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3656,
+      "text": "\"path\": \"conductor/tracks/0037-compression-readiness/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3661,
+      "text": "\"path\": \"conductor/tracks/0038-snapshot-role-readiness/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3666,
+      "text": "\"path\": \"conductor/tracks/0038-snapshot-role-readiness/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3671,
+      "text": "\"path\": \"conductor/tracks/0038-snapshot-role-readiness/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3676,
+      "text": "\"path\": \"conductor/tracks/0039-feature-readiness-snapshot/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3681,
+      "text": "\"path\": \"conductor/tracks/0039-feature-readiness-snapshot/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3686,
+      "text": "\"path\": \"conductor/tracks/0039-feature-readiness-snapshot/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3751,
+      "text": "\"path\": \"conductor/tracks/0044-release-provenance-scaffold/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3756,
+      "text": "\"path\": \"conductor/tracks/0044-release-provenance-scaffold/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3761,
+      "text": "\"path\": \"conductor/tracks/0044-release-provenance-scaffold/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3766,
+      "text": "\"path\": \"conductor/tracks/0045-fuse-cross-platform-readiness/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3771,
+      "text": "\"path\": \"conductor/tracks/0045-fuse-cross-platform-readiness/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3776,
+      "text": "\"path\": \"conductor/tracks/0045-fuse-cross-platform-readiness/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3781,
+      "text": "\"path\": \"conductor/tracks/0046-android-access-readiness/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3786,
+      "text": "\"path\": \"conductor/tracks/0046-android-access-readiness/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3791,
+      "text": "\"path\": \"conductor/tracks/0046-android-access-readiness/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3796,
+      "text": "\"path\": \"conductor/tracks/0047-encryption-read-readiness/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3801,
+      "text": "\"path\": \"conductor/tracks/0047-encryption-read-readiness/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3806,
+      "text": "\"path\": \"conductor/tracks/0047-encryption-read-readiness/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3811,
+      "text": "\"path\": \"conductor/tracks/0048-image-write-lab-readiness/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3816,
+      "text": "\"path\": \"conductor/tracks/0048-image-write-lab-readiness/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 3821,
+      "text": "\"path\": \"conductor/tracks/0048-image-write-lab-readiness/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 4111,
+      "text": "\"path\": \"conductor/tracks/0068-synthetic-negative-fixtures/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 4116,
+      "text": "\"path\": \"conductor/tracks/0068-synthetic-negative-fixtures/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 4121,
+      "text": "\"path\": \"conductor/tracks/0068-synthetic-negative-fixtures/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 4561,
+      "text": "\"path\": \"conductor/tracks/0096-profiling-and-benchmark-scaffold/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 4566,
+      "text": "\"path\": \"conductor/tracks/0096-profiling-and-benchmark-scaffold/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 4571,
+      "text": "\"path\": \"conductor/tracks/0096-profiling-and-benchmark-scaffold/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 4591,
+      "text": "\"path\": \"conductor/tracks/0097-astro-7-and-starlight-documentation-site-scaffold/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 4596,
+      "text": "\"path\": \"conductor/tracks/0097-astro-7-and-starlight-documentation-site-scaffold/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 4601,
+      "text": "\"path\": \"conductor/tracks/0097-astro-7-and-starlight-documentation-site-scaffold/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 4606,
+      "text": "\"path\": \"conductor/tracks/0097-mutation-testing-scaffold/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 4611,
+      "text": "\"path\": \"conductor/tracks/0097-mutation-testing-scaffold/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 4616,
+      "text": "\"path\": \"conductor/tracks/0097-mutation-testing-scaffold/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 4636,
+      "text": "\"path\": \"conductor/tracks/0098-profiling-benchmark-scaffold/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 4641,
+      "text": "\"path\": \"conductor/tracks/0098-profiling-benchmark-scaffold/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 4646,
+      "text": "\"path\": \"conductor/tracks/0098-profiling-benchmark-scaffold/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 4681,
+      "text": "\"path\": \"conductor/tracks/0100-qa-readiness-report/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 4686,
+      "text": "\"path\": \"conductor/tracks/0100-qa-readiness-report/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 4691,
+      "text": "\"path\": \"conductor/tracks/0100-qa-readiness-report/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 4756,
+      "text": "\"path\": \"conductor/tracks/096-property-hypothesis-style-testing-scaffold/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 4761,
+      "text": "\"path\": \"conductor/tracks/096-property-hypothesis-style-testing-scaffold/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 4766,
+      "text": "\"path\": \"conductor/tracks/096-property-hypothesis-style-testing-scaffold/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 4771,
+      "text": "\"path\": \"conductor/tracks/097-mutation-testing-scaffold/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 4776,
+      "text": "\"path\": \"conductor/tracks/097-mutation-testing-scaffold/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 4781,
+      "text": "\"path\": \"conductor/tracks/097-mutation-testing-scaffold/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 4786,
+      "text": "\"path\": \"conductor/tracks/098-profiling-benchmark-scaffold/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 4791,
+      "text": "\"path\": \"conductor/tracks/098-profiling-benchmark-scaffold/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 4796,
+      "text": "\"path\": \"conductor/tracks/098-profiling-benchmark-scaffold/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 4801,
+      "text": "\"path\": \"conductor/tracks/099-astro-7-documentation-site-scaffold/metadata.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 4806,
+      "text": "\"path\": \"conductor/tracks/099-astro-7-documentation-site-scaffold/plan.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 4811,
+      "text": "\"path\": \"conductor/tracks/099-astro-7-documentation-site-scaffold/spec.md\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 4921,
+      "text": "\"path\": \"crates/apfs-cli/tests/e2e_synthetic_cli.rs\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 4931,
+      "text": "\"path\": \"crates/apfs-core/benches/inspect_synthetic.rs\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 4946,
+      "text": "\"path\": \"crates/apfs-core/tests/synthetic_inspect.rs\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5196,
+      "text": "\"path\": \"fixtures/golden/synthetic-btree-cursor.img.expected.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5201,
+      "text": "\"path\": \"fixtures/golden/synthetic-btree-traversal.img.expected.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5206,
+      "text": "\"path\": \"fixtures/golden/synthetic-checkpoint-map-omap.img.expected.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5211,
+      "text": "\"path\": \"fixtures/golden/synthetic-checkpoint-ring.img.expected.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5216,
+      "text": "\"path\": \"fixtures/golden/synthetic-directory-listing.img.expected.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5221,
+      "text": "\"path\": \"fixtures/golden/synthetic-file-preview.img.expected.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5226,
+      "text": "\"path\": \"fixtures/golden/synthetic-gpt-apfs.img.expected.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5231,
+      "text": "\"path\": \"fixtures/golden/synthetic-mapped-object-read.img.expected.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5236,
+      "text": "\"path\": \"fixtures/golden/synthetic-nxsb-block0.bin.expected.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5241,
+      "text": "\"path\": \"fixtures/golden/synthetic-omap-btree-root.img.expected.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5246,
+      "text": "\"path\": \"fixtures/golden/synthetic-omap-lookup.img.expected.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5251,
+      "text": "\"path\": \"fixtures/golden/synthetic-omap-multinode-lookup.img.expected.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5256,
+      "text": "\"path\": \"fixtures/golden/synthetic-resolver-facade.img.expected.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5261,
+      "text": "\"path\": \"fixtures/golden/synthetic-volume-superblock.img.expected.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5286,
+      "text": "\"path\": \"fixtures/manifests/synthetic-btree-cursor.img.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5291,
+      "text": "\"path\": \"fixtures/manifests/synthetic-btree-traversal.img.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5296,
+      "text": "\"path\": \"fixtures/manifests/synthetic-checkpoint-map-omap.img.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5301,
+      "text": "\"path\": \"fixtures/manifests/synthetic-checkpoint-ring.img.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5306,
+      "text": "\"path\": \"fixtures/manifests/synthetic-directory-listing.img.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5311,
+      "text": "\"path\": \"fixtures/manifests/synthetic-file-preview.img.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5316,
+      "text": "\"path\": \"fixtures/manifests/synthetic-gpt-apfs.img.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5321,
+      "text": "\"path\": \"fixtures/manifests/synthetic-mapped-object-read.img.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5326,
+      "text": "\"path\": \"fixtures/manifests/synthetic-nxsb-block0.bin.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5331,
+      "text": "\"path\": \"fixtures/manifests/synthetic-omap-btree-root.img.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5336,
+      "text": "\"path\": \"fixtures/manifests/synthetic-omap-lookup.img.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5341,
+      "text": "\"path\": \"fixtures/manifests/synthetic-omap-multinode-lookup.img.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5346,
+      "text": "\"path\": \"fixtures/manifests/synthetic-resolver-facade.img.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5351,
+      "text": "\"path\": \"fixtures/manifests/synthetic-volume-superblock.img.json\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5376,
+      "text": "\"path\": \"fixtures/synthetic-btree-cursor.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5381,
+      "text": "\"path\": \"fixtures/synthetic-btree-traversal.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5386,
+      "text": "\"path\": \"fixtures/synthetic-checkpoint-map-omap.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5391,
+      "text": "\"path\": \"fixtures/synthetic-checkpoint-ring.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5396,
+      "text": "\"path\": \"fixtures/synthetic-directory-listing.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5401,
+      "text": "\"path\": \"fixtures/synthetic-file-preview.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5406,
+      "text": "\"path\": \"fixtures/synthetic-gpt-apfs.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5411,
+      "text": "\"path\": \"fixtures/synthetic-mapped-object-read.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5416,
+      "text": "\"path\": \"fixtures/synthetic-nxsb-block0.bin\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5421,
+      "text": "\"path\": \"fixtures/synthetic-omap-btree-root.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5426,
+      "text": "\"path\": \"fixtures/synthetic-omap-lookup.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5431,
+      "text": "\"path\": \"fixtures/synthetic-omap-multinode-lookup.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5436,
+      "text": "\"path\": \"fixtures/synthetic-resolver-facade.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5441,
+      "text": "\"path\": \"fixtures/synthetic-volume-superblock.img\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5686,
+      "text": "\"path\": \"tools/feature_readiness_snapshot.py\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5711,
+      "text": "\"path\": \"tools/handoff_readiness_check.py\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5766,
+      "text": "\"path\": \"tools/make_synthetic_fixtures.py\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5836,
+      "text": "\"path\": \"tools/release_scaffold_check.py\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5876,
+      "text": "\"path\": \"tools/synthetic_fixture_oracle.py\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5881,
+      "text": "\"path\": \"tools/synthetic_negative_fixture_generator.py\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5891,
+      "text": "\"path\": \"tools/test_scaffold_audit.py\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5931,
+      "text": "\"path\": \"tools/windows/adapter_readiness_check.ps1\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REPO_MANIFEST.json",
+      "line": 5941,
+      "text": "\"path\": \"tools/windows_readiness_check.py\","
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 13,
+      "text": "### Must / implemented or scaffolded so far"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 17,
+      "text": "| M-001 | APFS image/container detection | partial_synthetic |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 18,
+      "text": "| M-002 | GPT-wrapped APFS partition probe | partial_synthetic |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 19,
+      "text": "| M-003 | APFS Fletcher-64 checksum validation | partial_synthetic |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 20,
+      "text": "| M-004 | Checkpoint scan, checkpoint-map parsing, and early OMAP probe | partial_synthetic |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 21,
+      "text": "| M-005 | B-tree node header/TOC probe and preliminary OMAP records | partial_synthetic |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 22,
+      "text": "| M-006 | Single-node synthetic OMAP lookup API and CLI | partial_synthetic |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 23,
+      "text": "| M-007 | Checkpoint-map-backed multi-node synthetic OMAP lookup | partial_synthetic |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 24,
+      "text": "| M-008 | Bounded synthetic two-level OMAP traversal | partial_synthetic |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 25,
+      "text": "| M-009 | Object-map resolver facade and resolver-report CLI | facade_scaffold |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 26,
+      "text": "| M-010 | Production-shaped B-tree cursor facade | facade_scaffold |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 27,
+      "text": "| M-011 | Real APFS fixture readiness harness | scaffold |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 28,
+      "text": "| M-012 | Real-fixture feedback loop | scaffold |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 29,
+      "text": "| M-013 | Feedback-to-Codev/Conductor promotion | scaffold |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 30,
+      "text": "| M-014 | Synthetic volume-superblock probe and apfs volumes | partial_synthetic |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 31,
+      "text": "| M-015 | Resolver-backed mapped object read report | partial_synthetic |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 32,
+      "text": "| M-016 | Synthetic filesystem root-tree directory-record parser | partial_synthetic |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 33,
+      "text": "| M-017 | Synthetic directory listing CLI | partial_synthetic |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 34,
+      "text": "| M-018 | Synthetic direct-block file preview CLI | partial_synthetic |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 35,
+      "text": "| M-019 | Synthetic metadata/stat report CLI | partial_synthetic |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 36,
+      "text": "| M-020 | Synthetic safe extract-preview CLI | partial_synthetic |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 37,
+      "text": "| M-021 | Precompile static validation harness | scaffold |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 38,
+      "text": "| M-022 | Synthetic fixture oracle and smoke-test harness | implemented_python |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 41,
+      "text": "| M-025 | Cargoless release-readiness/preflight bundle | implemented_python |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 66,
+      "text": "| S-006 | Cargoless release/preflight bundle | Implemented scaffold in M-025 |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 89,
+      "text": "v0.17.0 is a synthetic, uncompiled source package. It is suitable for continuing development and first compilation, not for end-user APFS access."
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 97,
+      "text": "- `M-027`: Windows read-only adapter readiness scaffold and smoke-test scripts."
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 99,
+      "text": "- `M-029`: Fuzz target scaffold for parser entry points."
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 118,
+      "text": "- M-031 `apfs doctor --json` should aggregate implemented read-only readiness surfaces and blockers."
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 132,
+      "text": "- `M-034` \u2014 Unicode/case policy command scaffold."
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 133,
+      "text": "- `M-035` \u2014 Xattr/resource-fork readiness report."
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 134,
+      "text": "- `M-036` \u2014 Sparse/clone readiness report."
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 135,
+      "text": "- `M-037` \u2014 Compression readiness report."
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 136,
+      "text": "- `M-038` \u2014 Snapshot and volume-role readiness report."
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 149,
+      "text": "- `M-039` \u2014 Generate `FEATURE_READINESS.md` and `FEATURE_READINESS.json` so advanced feature scaffolds remain reviewable before Rust compilation."
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 158,
+      "text": "## v0.20.0 Handoff, platform, release, and adapter scaffolds"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 163,
+      "text": "- **M-044** \u2014 Release signing, SBOM, provenance, installer, and winget scaffold. **Should**."
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 164,
+      "text": "- **M-045** \u2014 FUSE/Linux/macOS/ChromeOS adapter readiness crate. **Could**."
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 165,
+      "text": "- **M-046** \u2014 Android access layer readiness crate. **Could**."
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 166,
+      "text": "- **M-047** \u2014 Software-encryption read readiness crate. **Should**."
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 167,
+      "text": "- **M-048** \u2014 Image-only write-lab readiness crate. **Could**."
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 170,
+      "text": "These are scaffolds/readiness layers unless explicitly marked production-ready. They do not implement APFS media mutation, decryption, repair, format, or live mount lifecycle."
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 202,
+      "text": "- **M-059** \u2014 Local compile loop orchestrator. MoSCoW: Should. Track: `0059-local-compile-loop-orchestrator`. Status: scaffold/tooling implemented."
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 203,
+      "text": "- **M-060** \u2014 Cargoless Cargo workspace audit. MoSCoW: Should. Track: `0060-cargo-workspace-audit`. Status: scaffold/tooling implemented."
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 204,
+      "text": "- **M-061** \u2014 macOS APFS fixture dry-run validator. MoSCoW: Should. Track: `0061-macos-fixture-dry-run-validator`. Status: scaffold/tooling implemented."
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 205,
+      "text": "- **M-062** \u2014 WinFsp read-only callback contract matrix. MoSCoW: Should. Track: `0062-winfsp-callback-contract-matrix`. Status: scaffold/tooling implemented."
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 206,
+      "text": "- **M-063** \u2014 Production gap report generator. MoSCoW: Should. Track: `0063-production-gap-report`. Status: scaffold/tooling implemented."
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 207,
+      "text": "- **M-064** \u2014 Batched loop policy and local stop criteria. MoSCoW: Should. Track: `0064-batched-loop-policy`. Status: scaffold/tooling implemented."
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 213,
+      "text": "| M-065 | Should | Current environment capability inventory: Inventory available tools and classify what checks can run before Rust/macOS/Windows. | Implemented scaffold |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 214,
+      "text": "| M-066 | Should | Current-environment remaining-work classifier: Separate production blockers from current-environment-completable work. | Implemented scaffold |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 215,
+      "text": "| M-067 | Should | Cargoless Cargo dependency graph generator: Generate a path-dependency graph without cargo metadata. | Implemented scaffold |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 216,
+      "text": "| M-068 | Should | Synthetic negative fixture generator: Create safe parser-refusal fixtures from synthetic NXSB images. | Implemented scaffold |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 217,
+      "text": "| M-069 | Should | Test/control matrix generator: Map validation commands to current, Rust, macOS, and Windows phases. | Implemented scaffold |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 218,
+      "text": "| M-070 | Should | Handoff archive audit generator: Generate file-level archive audit with sizes and checksums. | Implemented scaffold |"
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 224,
+      "text": "- `M-071` \u2014 APFS offset and synthetic fixture byte-layout audit."
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 238,
+      "text": "- `M-077` \u2014 APFS offset and synthetic fixture byte-layout audit."
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 287,
+      "text": "- **M-096 Should:** property/Hypothesis test scaffolds exist."
+    },
+    {
+      "kind": "scaffold",
+      "path": "REQUIREMENTS.md",
+      "line": 288,
+      "text": "- **M-097 Should:** mutation-testing scaffold exists."
+    }
+  ]
+}

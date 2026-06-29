@@ -1,0 +1,1780 @@
+schema_version: 0.29.0
+status: implementing
+updated: '2026-06-25'
+capabilities:
+  M-001:
+    name: APFS image container detection
+    milestone: windows_readonly_mvp
+    moscow: Must
+    track: core-read
+    crates:
+    - apfs-types
+    - apfs-blockdev
+    - apfs-core
+    - apfs-cli
+    required_tests:
+    - unit_valid_image
+    - unit_corrupt_header
+    - fixture_inspect
+    - gpt_apfs_probe
+    safety_gates:
+    - read_only_default
+    - bounds_checked_reads
+    - typed_error_no_panic
+    status: partial_implemented
+  M-002:
+    name: GPT-wrapped APFS partition probe for image files
+    milestone: windows_readonly_mvp
+    moscow: Should
+    track: core-read
+    crates:
+    - apfs-types
+    - apfs-core
+    required_tests:
+    - gpt_header_crc
+    - gpt_entries_crc
+    - apfs_partition_entry_probe
+    safety_gates:
+    - read_only_default
+    - bounds_checked_reads
+    status: partial_implemented
+  M-003:
+    name: Object header and Fletcher-64 checksum validation
+    milestone: windows_readonly_mvp
+    moscow: Must
+    track: core-read
+    crates:
+    - apfs-types
+    - apfs-core
+    required_tests:
+    - unit_checksum_valid
+    - unit_checksum_corrupt
+    - fixture_checksum_valid
+    safety_gates:
+    - typed_error_no_panic
+    - checksum_refusal
+    status: partial_implemented
+  M-004:
+    name: Checkpoint scan, checkpoint map parsing, and early OMAP probe
+    milestone: windows_readonly_mvp
+    moscow: Must
+    track: core-read
+    crates:
+    - apfs-types
+    - apfs-core
+    required_tests:
+    - synthetic_checkpoint_candidate_scan
+    - synthetic_checkpoint_map_parse
+    - synthetic_omap_header_probe
+    safety_gates:
+    - read_only_default
+    - bounds_checked_reads
+    - scan_limit
+    status: partial_implemented
+    note: parses checkpoint-map blocks and OMAP headers, but full checkpoint reconstruction
+      is not implemented yet
+  M-005:
+    name: B-tree node header and table-of-contents probe
+    milestone: windows_readonly_mvp
+    moscow: Must
+    track: core-read
+    crates:
+    - apfs-types
+    - apfs-core
+    required_tests:
+    - synthetic_btree_node_parse
+    - synthetic_omap_btree_root_probe
+    safety_gates:
+    - read_only_default
+    - bounds_checked_reads
+    - typed_error_no_panic
+    status: partial_implemented
+    note: parses B-tree node headers, TOC offsets, and preliminary synthetic OMAP
+      records; general APFS B-tree traversal is not implemented yet
+  M-006:
+    name: Single-node OMAP lookup API
+    milestone: windows_readonly_mvp
+    moscow: Must
+    track: core-read
+    crates:
+    - apfs-types
+    - apfs-core
+    - apfs-cli
+    required_tests:
+    - synthetic_single_node_omap_lookup
+    - lookup_not_found
+    safety_gates:
+    - read_only_default
+    - bounds_checked_reads
+    - typed_error_no_panic
+    - single_node_lookup_limit
+    status: partial_implemented
+    note: lookup works against decoded records from a synthetic OMAP B-tree root/leaf
+      node and is retained as the simplest lookup path
+  M-007:
+    name: Checkpoint-map-backed multi-node synthetic OMAP lookup
+    milestone: windows_readonly_mvp
+    moscow: Must
+    track: core-read
+    crates:
+    - apfs-types
+    - apfs-core
+    - apfs-cli
+    required_tests:
+    - synthetic_multinode_omap_lookup
+    - aggregate_leaf_records
+    - lookup_not_found
+    safety_gates:
+    - read_only_default
+    - bounds_checked_reads
+    - typed_error_no_panic
+    - checkpoint_mapped_lookup_limit
+    status: partial_implemented
+    note: aggregates decoded synthetic OMAP records from checkpoint-map-mapped B-tree
+      leaf nodes; true APFS B-tree traversal is still not implemented
+  M-008:
+    name: Bounded synthetic B-tree traversal lookup
+    milestone: windows_readonly_mvp
+    moscow: Must
+    track: core-read
+    crates:
+    - apfs-types
+    - apfs-core
+    - apfs-cli
+    required_tests:
+    - synthetic_bounded_btree_traversal
+    - traversal_child_selection
+    - lookup_not_found
+    safety_gates:
+    - read_only_default
+    - bounds_checked_reads
+    - typed_error_no_panic
+    - synthetic_btree_traversal_limit
+    status: partial_implemented
+    note: traverses one synthetic two-level OMAP B-tree by selecting a child leaf
+      from root index records; production APFS B-tree traversal is still not implemented
+  M-009:
+    name: Object-map resolver facade and resolver report CLI
+    milestone: windows_readonly_mvp
+    moscow: Must
+    track: core-read
+    crates:
+    - apfs-core
+    - apfs-cli
+    required_tests:
+    - resolver_report_available
+    - resolver_report_unavailable
+    - lookup_uses_resolver_facade
+    safety_gates:
+    - read_only_default
+    - bounds_checked_reads
+    - typed_error_no_panic
+    - object_map_resolver_facade_boundary
+    status: partial_implemented
+    note: introduces a stable object-map resolver boundary around the current synthetic
+      lookup/traversal implementation; production APFS B-tree traversal can later
+      plug into this facade
+  M-010:
+    name: Production-shaped B-tree cursor facade
+    milestone: windows_readonly_mvp
+    moscow: Must
+    track: core-read
+    crates:
+    - apfs-types
+    - apfs-core
+    - apfs-cli
+    required_tests:
+    - synthetic_btree_cursor_report
+    safety_gates:
+    - read_only_default
+    - bounded_btree_cursor
+    - typed_error_no_panic
+    status_note: synthetic cursor API boundary only; general APFS B-tree traversal
+      is not implemented yet
+  M-011:
+    name: Real APFS fixture readiness harness
+    milestone: windows_readonly_mvp
+    moscow: Must
+    track: fixture-readiness
+    crates:
+    - apfs-test
+    - xtask
+    required_tests:
+    - fixture_manifest_check
+    - macos_fixture_generation_manual
+    - inspect_manifest_compare
+    safety_gates:
+    - read_only_default
+    - macos_fixture_no_personal_data
+    - oracle_manifest_required
+    - real_fixture_not_production_claim
+    status: implemented_scaffold
+    note: adds macOS image fixture generation and redacted oracle manifest harness;
+      must be run on macOS before production APFS compatibility claims
+  M-012:
+    name: Real-fixture feedback loop
+    milestone: windows_readonly_mvp
+    moscow: Must
+    track: fixture-readiness
+    crates:
+    - apfs-test
+    - xtask
+    required_tests:
+    - real_fixture_feedback_report
+    - inspect_manifest_compare
+    - conductor_history_updated
+    safety_gates:
+    - read_only_default
+    - macos_fixture_no_personal_data
+    - real_fixture_feedback_redacted
+    - real_fixture_not_production_claim
+    status: implemented_scaffold
+    note: compares inspect JSON and fixture manifests to produce Codev/Conductor task
+      packets; reads JSON artifacts only and does not open APFS media
+  M-013:
+    name: Real-fixture feedback promotion into Codev and Conductor tracks
+    milestone: windows_readonly_mvp
+    moscow: Must
+    track: fixture-readiness
+    crates:
+    - xtask
+    required_tests:
+    - sample_feedback_promotion
+    - conductor_history_updated
+    safety_gates:
+    - read_only_default
+    - real_fixture_feedback_redacted
+    - conductor_history_complete
+    status: implemented_scaffold
+    note: promotes real-fixture feedback JSON into reviewable Codev and Conductor
+      task stubs without touching APFS media
+  M-014:
+    name: Synthetic APFS volume superblock probe and volume report CLI
+    milestone: windows_readonly_mvp
+    moscow: Must
+    track: core-read
+    crates:
+    - apfs-types
+    - apfs-core
+    - apfs-cli
+    required_tests:
+    - synthetic_volume_superblock_parse
+    - volume_report_available
+    - unresolved_volume_probe_error
+    safety_gates:
+    - read_only_default
+    - bounds_checked_reads
+    - typed_error_no_panic
+    - object_map_resolver_facade_boundary
+    - synthetic_volume_probe_limit
+    status: partial_implemented
+    note: resolves NX filesystem OIDs through the existing synthetic object-map resolver
+      and parses an APSB-like synthetic volume superblock; real APFS validation remains
+      required
+  M-015:
+    name: Resolver-backed mapped object read report
+    milestone: windows_readonly_mvp
+    moscow: Should
+    track: core-read
+    crates:
+    - apfs-core
+    - apfs-cli
+    required_tests:
+    - synthetic_mapped_object_read
+    - checksum_valid_mapped_object
+    - read_object_not_found
+    safety_gates:
+    - read_only_default
+    - bounds_checked_reads
+    - typed_error_no_panic
+    - object_map_resolver_facade_boundary
+    - mapped_object_read_limit
+    status: partial_implemented
+    note: resolves a synthetic object through the object-map resolver, reads its mapped
+      physical block, validates the APFS object checksum, and reports the object header
+      without decoding production payload semantics
+  M-016:
+    name: Synthetic filesystem root-tree directory-record parser
+    milestone: windows_readonly_mvp
+    moscow: Must
+    track: core-read
+    crates:
+    - apfs-types
+    - apfs-core
+    required_tests:
+    - synthetic_directory_record_parse
+    - root_tree_mapping
+    - directory_not_available
+    safety_gates:
+    - read_only_default
+    - bounds_checked_reads
+    - typed_error_no_panic
+    - synthetic_directory_limit
+    status: partial_implemented
+    note: parses synthetic filesystem directory records through the volume root tree;
+      production APFS filesystem key/value decoding remains future work
+  M-017:
+    name: Synthetic directory listing CLI
+    milestone: windows_readonly_mvp
+    moscow: Must
+    track: core-read
+    crates:
+    - apfs-core
+    - apfs-cli
+    required_tests:
+    - synthetic_directory_listing
+    - ls_json_output
+    - directory_not_available
+    safety_gates:
+    - read_only_default
+    - bounds_checked_reads
+    - typed_error_no_panic
+    - synthetic_directory_limit
+    status: partial_implemented
+    note: exposes `apfs ls` over the current synthetic directory-report API; production
+      directory traversal remains future work
+  M-018:
+    name: Synthetic file preview CLI
+    milestone: windows_readonly_mvp
+    moscow: Should
+    track: core-read
+    crates:
+    - apfs-core
+    - apfs-cli
+    required_tests:
+    - synthetic_file_preview
+    - file_not_found
+    - bounded_preview
+    safety_gates:
+    - read_only_default
+    - bounds_checked_reads
+    - typed_error_no_panic
+    - synthetic_file_preview_limit
+    status: partial_implemented
+    note: reads a bounded preview from a synthetic direct physical block pointer;
+      production APFS extent resolution and extraction remain future work
+  M-019:
+    name: Synthetic metadata/stat report CLI
+    milestone: windows_readonly_mvp
+    moscow: Should
+    track: core-read
+    crates:
+    - apfs-core
+    - apfs-cli
+    required_tests:
+    - synthetic_stat_found
+    - synthetic_stat_not_found
+    - stat_json_output
+    safety_gates:
+    - read_only_default
+    - bounds_checked_reads
+    - typed_error_no_panic
+    - synthetic_metadata_limit
+    status: partial_implemented
+    note: exposes apfs stat over synthetic directory entries; production APFS inode/stat
+      decoding and timestamp/permission mapping remain future work
+  M-020:
+    name: Synthetic safe extract-preview CLI
+    milestone: windows_readonly_mvp
+    moscow: Should
+    track: core-read
+    crates:
+    - apfs-core
+    - apfs-cli
+    required_tests:
+    - synthetic_extract_preview
+    - extract_path_traversal_refusal
+    - extract_json_output
+    safety_gates:
+    - read_only_default
+    - path_traversal_protection
+    - synthetic_file_preview_limit
+    - host_output_only
+    status: partial_implemented
+    note: writes a bounded synthetic direct-block preview to a host destination directory;
+      this is not production APFS extent extraction and never writes to APFS media
+  M-021:
+    name: Precompile static validation harness
+    milestone: developer_quality
+    moscow: Must
+    track: quality-automation
+    crates:
+    - xtask
+    required_tests:
+    - python_precompile_static_check
+    - conductor_track_completeness
+    - registry_cross_links
+    - json_manifest_parse
+    safety_gates:
+    - conductor_history_complete
+    - no_write_path
+    - unsafe_without_review
+    - precompile_validation_available
+    status: implemented_scaffold
+    note: adds Python/static validation and cargo xtask precompile-check for environments
+      where Rust/Cargo cannot run
+  M-022:
+    name: Synthetic fixture oracle and smoke-test harness
+    milestone: developer_quality
+    moscow: Must
+    track: quality-automation
+    crates:
+    - apfs-test
+    - xtask
+    required_tests:
+    - synthetic_fixture_oracle
+    - manifest_hash_validation
+    - synthetic_lookup_oracle
+    safety_gates:
+    - read_only_default
+    - synthetic_oracle_no_media_mutation
+    - precompile_validation_available
+    status: implemented_python
+    note: Adds cargoless Python oracle validation for synthetic fixture structure,
+      checksums, lookup expectations, and synthetic file content.
+  M-023:
+    name: Requirements-to-Codev-to-Conductor traceability matrix generator
+    milestone: developer_quality
+    moscow: Must
+    track: traceability
+    crates:
+    - xtask
+    required_tests:
+    - traceability_matrix_generation
+    - conductor_history_complete
+    safety_gates:
+    - conductor_history_complete
+    - traceability_matrix_required
+    status: implemented_python
+    note: Generates TRACEABILITY.md linking capabilities to Codev specs/plans/reviews
+      and Conductor tracks.
+  M-024:
+    name: Loop dashboard and backlog counter
+    milestone: developer_quality
+    moscow: Must
+    track: workflow-automation
+    crates:
+    - xtask
+    required_tests:
+    - loop_dashboard_generation
+    - remaining_elements_yaml_parse
+    safety_gates:
+    - conductor_history_complete
+    - loop_dashboard_required
+    status: implemented_python
+    note: Adds REMAINING_ELEMENTS.yaml and LOOP_DASHBOARD.md generation so future
+      batched loops can use a machine-readable backlog.
+  M-025:
+    name: Cargoless release-readiness/preflight bundle
+    milestone: developer_quality
+    moscow: Should
+    track: release-automation
+    crates:
+    - xtask
+    required_tests:
+    - release_preflight
+    - sha256_manifest_regeneration
+    safety_gates:
+    - no_write_path
+    - release_preflight_required
+    - precompile_validation_available
+    status: implemented_python
+    note: Adds a non-Rust preflight that runs precompile checks, synthetic oracle,
+      traceability generation, loop dashboard generation, and SHA256 manifest regeneration.
+  M-026:
+    name: Read-only VFS facade and Windows mount-plan/readiness scaffold
+    milestone: windows_readonly_mvp
+    moscow: Should
+    track: windows-mvp
+    crates:
+    - apfs-vfs
+    - apfs-win
+    - apfs-cli
+    required_tests:
+    - vfs_readonly_refusal
+    - mount_plan_drive_letter
+    - windows_readiness_check
+    - write_operations_refused
+    safety_gates:
+    - read_only_default
+    - windows_user_mode_adapter
+    - no_physical_write_path
+    status: implemented_scaffold
+    note: Adds read-only VFS boundary, Windows mount-plan/readiness scaffold, and
+      PowerShell smoke-test templates; no live WinFsp mount lifecycle yet.
+  M-027:
+    name: Redacted diagnostics bundle CLI
+    milestone: windows_readonly_mvp
+    moscow: Should
+    track: diagnostics
+    crates:
+    - apfs-cli
+    - apfs-core
+    required_tests:
+    - diagnostics_redaction
+    - no_file_contents
+    - no_raw_blocks
+    safety_gates:
+    - read_only_default
+    - secret_redaction
+    - diagnostic_redaction
+    status: implemented_cli
+    note: Redacted diagnostics export is now available through apfs diagnostics-export
+      and the JSON-only diagnostics bundle tool.
+  M-028:
+    name: CLI contract static check
+    milestone: quality_precompile
+    moscow: Should
+    track: quality
+    crates:
+    - apfs-cli
+    - xtask
+    required_tests:
+    - cli_contract_check
+    safety_gates:
+    - typed_error_no_panic
+    status: implemented_python
+    note: CLI contract snapshot generation now writes CLI_CONTRACT.md and CLI_CONTRACT.json.
+  M-029:
+    name: Fuzz scaffold and context integrity static check
+    milestone: quality_precompile
+    moscow: Should
+    track: context
+    crates:
+    - xtask
+    required_tests:
+    - context_integrity_check
+    - fuzz_scaffold_check
+    safety_gates:
+    - context_history_integrity
+    status: implemented_scaffold
+    note: Adds fuzz target scaffolding and context-integrity checks without opening
+      raw media.
+  M-030:
+    name: Cargoless API map and next-loop planning tools
+    milestone: workflow_hardening
+    moscow: Should
+    track: workflow
+    crates:
+    - xtask
+    required_tests:
+    - rust_api_map
+    - next_loop_plan
+    safety_gates:
+    - loop_planning_no_autonomous_background
+    - read_only_default
+    status: implemented_python
+    note: API map, API surface snapshot, source metrics, and next-loop planning tools
+      are available while Cargo is unavailable.
+  M-031:
+    name: Read-only doctor/readiness CLI
+    milestone: developer_quality
+    moscow: Should
+    track: diagnostics
+    crates:
+    - apfs-cli
+    required_tests:
+    - doctor_report_synthetic
+    - doctor_no_media_write
+    safety_gates:
+    - read_only_default
+    - doctor_readiness_report
+    - diagnostic_redaction
+    status: implemented_scaffold
+    note: Adds apfs doctor --json to aggregate inspection, volume, resolver, and directory
+      readiness without mounting or writing APFS media.
+  M-032:
+    name: CLI/API surface and source metrics snapshots
+    milestone: quality_precompile
+    moscow: Should
+    track: quality
+    crates:
+    - apfs-cli
+    - xtask
+    required_tests:
+    - cli_contract_snapshot
+    - api_surface_snapshot
+    - source_metrics_generation
+    safety_gates:
+    - cli_contract_snapshot
+    - api_surface_snapshot
+    - source_metrics_required
+    - precompile_validation_available
+    status: implemented_python
+    note: Adds cargoless CLI contract, public API surface, and source metrics snapshots
+      for review before Rust compilation.
+  M-033:
+    name: Safety case and safety-case preflight
+    milestone: safety_governance
+    moscow: Must
+    track: safety
+    crates:
+    - xtask
+    required_tests:
+    - safety_case_check
+    - release_preflight
+    safety_gates:
+    - safety_case_required
+    - no_write_path
+    - secret_redaction
+    - path_traversal_protection
+    status: implemented_python
+    note: Adds SAFETY_CASE.md and a cargoless checker ensuring critical hazards and
+      mitigations stay documented.
+  M-034:
+    name: Unicode and case-sensitivity policy CLI
+    milestone: post_mvp_readiness
+    moscow: Should
+    track: unicode
+    crates:
+    - apfs-features
+    - apfs-cli
+    required_tests:
+    - path_policy_command
+    - precompile_static_check
+    safety_gates:
+    - path_policy_safety
+    - read_only_default
+    - typed_error_no_panic
+    status: implemented_scaffold
+    note: v0.19.0 adds a read-only diagnostic/readiness scaffold for Unicode and case-sensitivity
+      policy CLI; production APFS support still requires real fixtures and parser
+      work.
+  M-035:
+    name: Xattr and resource fork readiness report
+    milestone: post_mvp_readiness
+    moscow: Should
+    track: metadata
+    crates:
+    - apfs-features
+    - apfs-cli
+    required_tests:
+    - feature_readiness_xattrs
+    - precompile_static_check
+    safety_gates:
+    - metadata_readiness_scaffold
+    - read_only_default
+    - typed_error_no_panic
+    status: implemented_scaffold
+    note: v0.19.0 adds a read-only diagnostic/readiness scaffold for Xattr and resource
+      fork readiness report; production APFS support still requires real fixtures
+      and parser work.
+  M-036:
+    name: Sparse file and clone readiness report
+    milestone: post_mvp_readiness
+    moscow: Should
+    track: metadata
+    crates:
+    - apfs-features
+    - apfs-cli
+    required_tests:
+    - feature_readiness_sparse_clones
+    - precompile_static_check
+    safety_gates:
+    - extent_readiness_scaffold
+    - read_only_default
+    - typed_error_no_panic
+    status: implemented_scaffold
+    note: v0.19.0 adds a read-only diagnostic/readiness scaffold for Sparse file and
+      clone readiness report; production APFS support still requires real fixtures
+      and parser work.
+  M-037:
+    name: Compression readiness report
+    milestone: post_mvp_readiness
+    moscow: Should
+    track: compression
+    crates:
+    - apfs-features
+    - apfs-cli
+    required_tests:
+    - feature_readiness_compression
+    - precompile_static_check
+    safety_gates:
+    - compression_not_claimed_supported
+    - read_only_default
+    - typed_error_no_panic
+    status: implemented_scaffold
+    note: v0.19.0 adds a read-only diagnostic/readiness scaffold for Compression readiness
+      report; production APFS support still requires real fixtures and parser work.
+  M-038:
+    name: Snapshot and volume-role readiness report
+    milestone: post_mvp_readiness
+    moscow: Should
+    track: snapshots
+    crates:
+    - apfs-features
+    - apfs-cli
+    required_tests:
+    - feature_readiness_snapshots
+    - precompile_static_check
+    safety_gates:
+    - snapshot_role_readiness_scaffold
+    - read_only_default
+    - typed_error_no_panic
+    status: implemented_scaffold
+    note: v0.19.0 adds a read-only diagnostic/readiness scaffold for Snapshot and
+      volume-role readiness report; production APFS support still requires real fixtures
+      and parser work.
+  M-039:
+    name: Advanced feature readiness snapshot
+    milestone: quality_precompile
+    moscow: Should
+    track: quality
+    crates:
+    - tools
+    - xtask
+    required_tests:
+    - feature_readiness_snapshot
+    - release_preflight
+    safety_gates:
+    - feature_readiness_snapshot_required
+    - read_only_default
+    status: implemented_python
+    note: Generates FEATURE_READINESS.md/json so advanced feature scaffolds remain
+      visible before Rust compilation.
+  M-040:
+    name: Version consistency checker
+    milestone: quality_precompile
+    moscow: Should
+    track: quality
+    crates:
+    - tools
+    - xtask
+    required_tests:
+    - version_consistency_check
+    - release_preflight
+    safety_gates:
+    - version_consistency_required
+    - context_history_integrity
+    status: implemented_python
+    note: Checks current package version consistency across root ledgers, registries,
+      and generated snapshots.
+  M-041:
+    name: Cargo error triage to Codev/Conductor task stubs
+    milestone: handoff_quality
+    moscow: Should
+    track: quality
+    crates:
+    - tools
+    - xtask
+    required_tests:
+    - cargo_triage_sample
+    - precompile_static_check
+    safety_gates:
+    - context_history_integrity
+    - no_media_mutation
+    status: implemented_python
+    note: Converts Cargo output into reviewable task stubs without applying changes.
+  M-042:
+    name: Local handoff runbook and ready-for-local checklist
+    milestone: handoff_quality
+    moscow: Must
+    track: handoff
+    crates:
+    - docs
+    required_tests:
+    - handoff_readiness_check
+    safety_gates:
+    - context_history_integrity
+    status: implemented_docs
+    note: Documents local first-run, expected failures, and safety boundaries.
+  M-043:
+    name: Platform setup documentation
+    milestone: handoff_quality
+    moscow: Must
+    track: handoff
+    crates:
+    - docs
+    required_tests:
+    - handoff_readiness_check
+    safety_gates:
+    - platform_setup_readiness
+    status: implemented_docs
+    note: Documents Rust, macOS fixture, Windows WinFsp, Linux/FUSE, Android, and
+      ChromeOS setup.
+  M-044:
+    name: Release signing SBOM provenance installer scaffold
+    milestone: release_readiness
+    moscow: Should
+    track: release
+    crates:
+    - packaging
+    - workflows
+    - tools
+    required_tests:
+    - release_scaffold_check
+    - release_preflight
+    safety_gates:
+    - release_provenance_required
+    - no_write_path
+    status: implemented_scaffold
+    note: Adds release workflow/packaging/SBOM/winget scaffolds but no public binary
+      release.
+  M-045:
+    name: FUSE Linux macOS ChromeOS adapter readiness crate
+    milestone: cross_platform_readiness
+    moscow: Could
+    track: cross-platform
+    crates:
+    - apfs-fuse
+    required_tests:
+    - precompile_static_check
+    safety_gates:
+    - read_only_adapter_scaffold
+    - read_only_default
+    status: implemented_scaffold
+    note: Read-only adapter readiness only; no production mount lifecycle.
+  M-046:
+    name: Android access layer readiness crate
+    milestone: cross_platform_readiness
+    moscow: Could
+    track: android
+    crates:
+    - apfs-android
+    required_tests:
+    - precompile_static_check
+    safety_gates:
+    - android_no_raw_device_assumption
+    - read_only_default
+    status: implemented_scaffold
+    note: Library-first Android readiness scaffold; no root/raw-device assumptions.
+  M-047:
+    name: Software-encryption read readiness crate
+    milestone: encryption_readiness
+    moscow: Should
+    track: encryption
+    crates:
+    - apfs-crypto
+    required_tests:
+    - precompile_static_check
+    safety_gates:
+    - no_access_bypass
+    - secret_redaction
+    status: implemented_scaffold
+    note: Policy/readiness only; no crypto primitives, no password recovery, no hardware-bound
+      unlock.
+  M-048:
+    name: Image-only write-lab readiness crate
+    milestone: write_lab_readiness
+    moscow: Could
+    track: write-lab
+    crates:
+    - apfs-write-lab
+    required_tests:
+    - precompile_static_check
+    safety_gates:
+    - image_only_write_lab
+    - no_physical_write_path
+    status: implemented_scaffold
+    note: Planning model only; no APFS media mutation is implemented.
+  M-049:
+    name: Handoff release preflight integration
+    milestone: handoff_quality
+    moscow: Should
+    track: quality
+    crates:
+    - tools
+    - xtask
+    required_tests:
+    - release_preflight
+    - handoff_readiness_check
+    - release_scaffold_check
+    safety_gates:
+    - release_preflight_required
+    - context_history_integrity
+    status: implemented_python
+    note: Integrates local handoff, release scaffold, and static checks into the pre-Rust
+      loop.
+  M-050:
+    name: Reproducible Rust toolchain and Cargo QA configuration
+    milestone: local_handoff_candidate
+    moscow: Should
+    track: handoff
+    crates:
+    - config
+    - .cargo
+    - .config
+    required_tests:
+    - config_sanity_check
+    - precompile_static_check
+    safety_gates:
+    - reproducible_toolchain_config
+    - dependency_policy_config
+    status: implemented_config
+    note: Adds rust-toolchain, cargo config, cargo-deny, nextest, coverage, and editor
+      configs.
+  M-051:
+    name: Devcontainer and tool-version bootstrap
+    milestone: local_handoff_candidate
+    moscow: Should
+    track: handoff
+    crates:
+    - devcontainer
+    - tooling
+    required_tests:
+    - config_sanity_check
+    - local_env_doctor
+    safety_gates:
+    - devcontainer_setup
+    - local_environment_doctor
+    status: implemented_config
+    note: Adds devcontainer, mise, and tool-version files for reproducible first compile.
+  M-052:
+    name: Pre-commit, typos, markdownlint, and TOML quality configs
+    milestone: local_handoff_candidate
+    moscow: Should
+    track: quality
+    crates:
+    - quality-config
+    required_tests:
+    - config_sanity_check
+    - precompile_static_check
+    safety_gates:
+    - precommit_quality_gate
+    - config_sanity_required
+    status: implemented_config
+    note: Adds repo quality configs that can run before or alongside Cargo.
+  M-053:
+    name: Local first-run triage checklist
+    milestone: local_handoff_candidate
+    moscow: Must
+    track: handoff
+    crates:
+    - docs
+    required_tests:
+    - handoff_readiness_check
+    - handoff_status
+    safety_gates:
+    - local_handoff_readiness
+    - handoff_status_required
+    status: implemented_docs
+    note: Adds LOCAL_FIRST_RUN.md and extends handoff docs.
+  M-054:
+    name: Known uncompiled risks registry
+    milestone: local_handoff_candidate
+    moscow: Must
+    track: handoff
+    crates:
+    - docs
+    - tools
+    required_tests:
+    - known_risk_check
+    safety_gates:
+    - known_uncompiled_risks
+    - local_handoff_readiness
+    status: implemented_docs
+    note: Captures likely Cargo/APFS/platform risks before first local compile.
+  M-055:
+    name: Local environment doctor
+    milestone: local_handoff_candidate
+    moscow: Should
+    track: handoff
+    crates:
+    - tools
+    - xtask
+    required_tests:
+    - local_env_doctor
+    - precompile_static_check
+    safety_gates:
+    - local_environment_doctor
+    - config_sanity_required
+    status: implemented_python
+    note: Checks availability of cargo, rustc, macOS tooling, Windows tooling, and
+      helper commands.
+  M-056:
+    name: Repository manifest generator
+    milestone: local_handoff_candidate
+    moscow: Should
+    track: quality
+    crates:
+    - tools
+    required_tests:
+    - repo_manifest
+    safety_gates:
+    - repo_manifest_required
+    - context_history_integrity
+    status: implemented_python
+    note: Generates REPO_MANIFEST.md/json for source package review.
+  M-057:
+    name: Handoff status reporter
+    milestone: local_handoff_candidate
+    moscow: Should
+    track: handoff
+    crates:
+    - tools
+    - xtask
+    required_tests:
+    - handoff_status
+    safety_gates:
+    - handoff_status_required
+    - local_handoff_readiness
+    status: implemented_python
+    note: Reports remaining blockers, conductor track count, and handoff file completeness.
+  M-058:
+    name: Local handoff preflight integration
+    milestone: local_handoff_candidate
+    moscow: Must
+    track: quality
+    crates:
+    - tools
+    - xtask
+    required_tests:
+    - release_preflight
+    - config_sanity_check
+    - known_risk_check
+    - repo_manifest
+    - handoff_status
+    safety_gates:
+    - config_sanity_required
+    - handoff_status_required
+    - repo_manifest_required
+    status: implemented_python
+    note: Integrates local-handoff configs into pre-Rust validation and xtask commands.
+  M-059:
+    name: Local compile loop orchestrator
+    milestone: local_handoff_hardening
+    moscow: Should
+    track: quality
+    crates:
+    - xtask
+    required_tests:
+    - 0059_local_compile_loop_orchestrator
+    safety_gates:
+    - read_only_default
+    - no_media_mutation
+    - conductor_history_complete
+    status: implemented_python
+  M-060:
+    name: Cargoless Cargo workspace audit
+    milestone: local_handoff_hardening
+    moscow: Should
+    track: quality
+    crates:
+    - xtask
+    required_tests:
+    - 0060_cargo_workspace_audit
+    safety_gates:
+    - read_only_default
+    - no_media_mutation
+    - conductor_history_complete
+    status: implemented_python
+  M-061:
+    name: macOS APFS fixture dry-run validator
+    milestone: local_handoff_hardening
+    moscow: Should
+    track: fixture
+    crates:
+    - xtask
+    required_tests:
+    - 0061_macos_fixture_dry_run_validator
+    safety_gates:
+    - read_only_default
+    - no_media_mutation
+    - conductor_history_complete
+    status: implemented_python
+  M-062:
+    name: WinFsp read-only callback contract matrix
+    milestone: local_handoff_hardening
+    moscow: Should
+    track: windows
+    crates:
+    - apfs-cli
+    - xtask
+    required_tests:
+    - 0062_winfsp_callback_contract_matrix
+    safety_gates:
+    - read_only_default
+    - no_media_mutation
+    - conductor_history_complete
+    status: implemented_scaffold
+  M-063:
+    name: Production gap report generator
+    milestone: local_handoff_hardening
+    moscow: Should
+    track: workflow
+    crates:
+    - xtask
+    required_tests:
+    - 0063_production_gap_report
+    safety_gates:
+    - read_only_default
+    - no_media_mutation
+    - conductor_history_complete
+    status: implemented_python
+  M-064:
+    name: Batched loop policy and local stop criteria
+    milestone: local_handoff_hardening
+    moscow: Should
+    track: workflow
+    crates:
+    - xtask
+    required_tests:
+    - 0064_batched_loop_policy
+    safety_gates:
+    - read_only_default
+    - no_media_mutation
+    - conductor_history_complete
+    status: implemented_docs
+  M-065:
+    name: Current environment capability inventory
+    milestone: local_handoff_hardening
+    moscow: Should
+    track: environment
+    crates:
+    - tools
+    - xtask
+    required_tests:
+    - m_065
+    safety_gates:
+    - environment_inventory_required
+    - local_handoff_readiness
+    status: implemented_python
+  M-066:
+    name: Current-environment remaining-work classifier
+    milestone: local_handoff_hardening
+    moscow: Should
+    track: workflow
+    crates:
+    - tools
+    - xtask
+    required_tests:
+    - m_066
+    safety_gates:
+    - current_environment_remaining_classified
+    - production_gap_report_required
+    status: implemented_python
+  M-067:
+    name: Cargoless Cargo dependency graph generator
+    milestone: local_handoff_hardening
+    moscow: Should
+    track: quality
+    crates:
+    - tools
+    - xtask
+    required_tests:
+    - m_067
+    safety_gates:
+    - cargo_dependency_graph_required
+    - local_handoff_readiness
+    status: implemented_python
+  M-068:
+    name: Synthetic negative fixture generator
+    milestone: local_handoff_hardening
+    moscow: Should
+    track: fixture
+    crates:
+    - tools
+    - xtask
+    required_tests:
+    - m_068
+    safety_gates:
+    - negative_fixture_generation_safe
+    - read_only_default
+    - no_media_mutation
+    status: implemented_python
+  M-069:
+    name: Test/control matrix generator
+    milestone: local_handoff_hardening
+    moscow: Should
+    track: quality
+    crates:
+    - tools
+    - xtask
+    required_tests:
+    - m_069
+    safety_gates:
+    - test_control_matrix_required
+    - local_handoff_readiness
+    status: implemented_python
+  M-070:
+    name: Handoff archive audit generator
+    milestone: local_handoff_hardening
+    moscow: Should
+    track: handoff
+    crates:
+    - tools
+    - xtask
+    required_tests:
+    - m_070
+    safety_gates:
+    - handoff_archive_audit_required
+    - repo_manifest_required
+    status: implemented_python
+  M-071:
+    name: Markdown internal link audit
+    milestone: current_environment_handoff_hardening
+    moscow: Should
+    track: quality
+    crates:
+    - tools
+    required_tests:
+    - m_071
+    safety_gates:
+    - markdown_link_audit_required
+    - context_history_integrity
+    status: implemented_python
+  M-072:
+    name: Shell and macOS fixture script safety audit
+    milestone: current_environment_handoff_hardening
+    moscow: Should
+    track: quality
+    crates:
+    - tools
+    required_tests:
+    - m_072
+    safety_gates:
+    - shell_script_safety_audit
+    - macos_fixture_dry_run_image_only
+    - no_media_mutation
+    status: implemented_python
+  M-073:
+    name: Cargoless smoke suite aggregator
+    milestone: current_environment_handoff_hardening
+    moscow: Should
+    track: quality
+    crates:
+    - tools
+    required_tests:
+    - m_073
+    safety_gates:
+    - cargoless_smoke_suite_required
+    - release_preflight_required
+    status: implemented_python
+  M-074:
+    name: Documentation index consistency audit
+    milestone: current_environment_handoff_hardening
+    moscow: Should
+    track: handoff
+    crates:
+    - tools
+    required_tests:
+    - m_074
+    safety_gates:
+    - documentation_index_required
+    - local_handoff_readiness
+    status: implemented_python
+  M-075:
+    name: Fixture coverage gap report
+    milestone: current_environment_handoff_hardening
+    moscow: Should
+    track: fixture
+    crates:
+    - tools
+    required_tests:
+    - m_075
+    safety_gates:
+    - fixture_coverage_report_required
+    - oracle_manifest_required
+    status: implemented_python
+  M-076:
+    name: Current-environment completion report
+    milestone: current_environment_handoff_hardening
+    moscow: Should
+    track: workflow
+    crates:
+    - tools
+    required_tests:
+    - m_076
+    safety_gates:
+    - current_environment_stop_condition
+    - current_environment_remaining_classified
+    status: implemented_python
+  M-077:
+    name: APFS offset and synthetic fixture byte-layout audit
+    milestone: current_environment_handoff_hardening
+    moscow: Should
+    track: quality
+    crates:
+    - tools
+    required_tests:
+    - m_077
+    safety_gates:
+    - apfs_offset_audit_required
+    - read_only_default
+    status: implemented_python
+  M-078:
+    name: Cargoless golden-output expectation generator
+    milestone: current_environment_handoff_hardening
+    moscow: Should
+    track: fixture
+    crates:
+    - tools
+    required_tests:
+    - m_078
+    safety_gates:
+    - golden_output_expectations_required
+    - read_only_default
+    status: implemented_python
+  M-079:
+    name: Cargoless dependency license/policy audit
+    milestone: current_environment_handoff_hardening
+    moscow: Should
+    track: quality
+    crates:
+    - tools
+    required_tests:
+    - m_079
+    safety_gates:
+    - dependency_policy_audit_required
+    - local_handoff_readiness
+    status: implemented_python
+  M-080:
+    name: Backlog issue export for local/platform blockers
+    milestone: current_environment_handoff_hardening
+    moscow: Should
+    track: handoff
+    crates:
+    - tools
+    required_tests:
+    - m_080
+    safety_gates:
+    - backlog_issue_export_required
+    - batched_loop_stop_criteria
+    status: implemented_python
+  M-081:
+    name: Current-environment self-test orchestrator
+    milestone: current_environment_handoff_hardening
+    moscow: Should
+    track: quality
+    crates:
+    - tools
+    required_tests:
+    - m_081
+    safety_gates:
+    - current_environment_selftest_required
+    - local_handoff_readiness
+    status: implemented_python
+  M-082:
+    name: Tool capability matrix and fallback command planner
+    milestone: current_environment_handoff_closure
+    moscow: Should
+    track: quality
+    crates: []
+    required_tests:
+    - tool_capability_matrix_required
+    safety_gates:
+    - tool_capability_matrix_required
+    status: implemented_python
+  M-083:
+    name: Cargoless Rust static linter
+    milestone: current_environment_handoff_closure
+    moscow: Should
+    track: quality
+    crates: []
+    required_tests:
+    - rust_static_lint_required
+    safety_gates:
+    - rust_static_lint_required
+    status: implemented_python
+  M-084:
+    name: Package integrity audit
+    milestone: current_environment_handoff_closure
+    moscow: Should
+    track: handoff
+    crates: []
+    required_tests:
+    - package_integrity_audit_required
+    safety_gates:
+    - package_integrity_audit_required
+    status: implemented_python
+  M-085:
+    name: MVP blocker tasklist generator
+    milestone: current_environment_handoff_closure
+    moscow: Should
+    track: planning
+    crates: []
+    required_tests:
+    - mvp_blocker_tasklist_required
+    safety_gates:
+    - mvp_blocker_tasklist_required
+    status: implemented_python
+  M-086:
+    name: Agent handoff brief generator
+    milestone: current_environment_handoff_closure
+    moscow: Should
+    track: handoff
+    crates: []
+    required_tests:
+    - agent_handoff_brief_required
+    safety_gates:
+    - agent_handoff_brief_required
+    status: implemented_python
+  M-087:
+    name: Local command plan generator
+    milestone: current_environment_handoff_closure
+    moscow: Should
+    track: handoff
+    crates: []
+    required_tests:
+    - local_command_plan_required
+    safety_gates:
+    - local_command_plan_required
+    status: implemented_python
+  M-088:
+    name: Source debt report
+    milestone: current_environment_handoff_closure
+    moscow: Should
+    track: quality
+    crates: []
+    required_tests:
+    - source_debt_report_required
+    safety_gates:
+    - source_debt_report_required
+    status: implemented_python
+  M-089:
+    name: Production claim guard
+    milestone: current_environment_handoff_closure
+    moscow: Should
+    track: safety
+    crates: []
+    required_tests:
+    - production_claim_guard_required
+    safety_gates:
+    - production_claim_guard_required
+    status: implemented_python
+  M-090:
+    name: Handoff manifest verifier
+    milestone: current_environment_handoff_closure
+    moscow: Should
+    track: handoff
+    crates: []
+    required_tests:
+    - handoff_manifest_verify_required
+    safety_gates:
+    - handoff_manifest_verify_required
+    status: implemented_python
+  M-091:
+    name: MVP blocker dependency DAG
+    milestone: current_environment_handoff_closure
+    moscow: Should
+    track: planning
+    crates: []
+    required_tests:
+    - mvp_blocker_dag_required
+    safety_gates:
+    - mvp_blocker_dag_required
+    status: implemented_python
+  M-092:
+    name: Local migration command generator
+    milestone: current_environment_handoff_closure
+    moscow: Should
+    track: handoff
+    crates: []
+    required_tests:
+    - local_migration_commands_required
+    safety_gates:
+    - local_migration_commands_required
+    status: implemented_python
+  M-093:
+    name: Current-environment final report
+    milestone: current_environment_handoff_closure
+    moscow: Should
+    track: handoff
+    crates: []
+    required_tests:
+    - current_environment_final_report_required
+    safety_gates:
+    - current_environment_final_report_required
+    status: implemented_python
+  M-094:
+    name: Strict CI/CD quality gates with >=90% coverage target
+    milestone: local_handoff_quality
+    moscow: Must
+    track: quality
+    crates:
+    - workspace
+    required_tests:
+    - quality_gate_check
+    - coverage_90_configured
+    - nextest_configured
+    safety_gates:
+    - strict_quality_gate
+    - coverage_90_required
+    status: configured_not_executed
+  M-095:
+    name: Unit integration e2e property mutation fuzz test scaffolds
+    milestone: local_handoff_quality
+    moscow: Must
+    track: quality
+    crates:
+    - apfs-types
+    - apfs-core
+    - apfs-cli
+    - fuzz
+    required_tests:
+    - unit_tests
+    - integration_tests
+    - e2e_tests
+    - property_tests
+    - mutation_config
+    - fuzz_smoke
+    safety_gates:
+    - strict_quality_gate
+    - property_mutation_fuzz_gate
+    status: configured_not_executed
+  M-096:
+    name: Profiling and benchmark scaffold
+    milestone: local_handoff_quality
+    moscow: Should
+    track: quality
+    crates:
+    - apfs-core
+    required_tests:
+    - criterion_benchmark_configured
+    - profiling_workflow_configured
+    safety_gates:
+    - profiling_no_media_mutation
+    status: configured_not_executed
+  M-097:
+    name: Astro 7 and Starlight documentation site scaffold
+    milestone: docs
+    moscow: Should
+    track: documentation
+    crates: []
+    required_tests:
+    - docs_site_check
+    - astro_starlight_workflow
+    safety_gates:
+    - docs_site_astro7
+    status: configured_not_executed
+  M-098:
+    name: Docs-site cargoless validation and CI workflow
+    milestone: docs
+    moscow: Should
+    track: documentation
+    crates: []
+    required_tests:
+    - docs_site_check
+    - docs_site_workflow
+    safety_gates:
+    - docs_site_astro7
+    status: implemented_python
+  M-099:
+    name: Testing infrastructure report generator
+    milestone: local_handoff_quality
+    moscow: Should
+    track: quality
+    crates: []
+    required_tests:
+    - testing_infrastructure_report
+    safety_gates:
+    - strict_quality_gate
+    status: implemented_python
+  M-100:
+    name: Quality gate static checker
+    milestone: local_handoff_quality
+    moscow: Must
+    track: quality
+    crates: []
+    required_tests:
+    - quality_gate_check
+    safety_gates:
+    - strict_quality_gate
+    status: implemented_python
+  M-101:
+    name: Documentation build policy and Astro 7 adoption decision
+    milestone: docs
+    moscow: Should
+    track: documentation
+    crates: []
+    required_tests:
+    - docs_site_check
+    safety_gates:
+    - docs_site_astro7
+    status: documented
+  M-102:
+    name: Extended current-environment tool inventory
+    milestone: current_environment_quality_docs_hardening
+    moscow: Should
+    track: handoff
+    crates: []
+    required_tests:
+    - extended_tool_inventory_required
+    safety_gates:
+    - extended_tool_inventory_required
+    status: implemented_python_scaffold
+  M-103:
+    name: Quality and docs handoff integration
+    milestone: current_environment_quality_docs_hardening
+    moscow: Should
+    track: handoff
+    crates: []
+    required_tests:
+    - quality_docs_handoff_required
+    safety_gates:
+    - quality_docs_handoff_required
+    status: implemented_python_scaffold
+  M-104:
+    name: Docs package and Astro 7 package audit
+    milestone: docs
+    moscow: Should
+    track: documentation
+    crates: []
+    required_tests:
+    - docs_package_audit
+    - docs_site_audit
+    safety_gates:
+    - docs_package_audit_required
+    - docs_site_astro7
+    status: implemented_python
+  M-105:
+    name: GitHub workflow policy audit for strict quality gates
+    milestone: quality
+    moscow: Must
+    track: quality
+    crates: []
+    required_tests:
+    - github_workflow_policy_audit
+    safety_gates:
+    - github_workflow_policy_required
+    - strict_quality_gate
+    status: implemented_python
+  M-106:
+    name: Test inventory report across unit integration e2e property fuzz mutation
+      profiling
+    milestone: quality
+    moscow: Must
+    track: quality
+    crates: []
+    required_tests:
+    - test_inventory_report
+    safety_gates:
+    - test_inventory_required
+    - test_strategy_required
+    status: implemented_python
+  M-107:
+    name: Hypothesis strategy audit for Python property tests
+    milestone: quality
+    moscow: Should
+    track: quality
+    crates: []
+    required_tests:
+    - hypothesis_strategy_audit
+    - python_hypothesis_tests
+    safety_gates:
+    - hypothesis_strategy_required
+    - property_testing_required
+    status: implemented_python
+  M-108:
+    name: Profiling budget and benchmark audit
+    milestone: quality
+    moscow: Should
+    track: quality
+    crates: []
+    required_tests:
+    - profiling_budget_check
+    safety_gates:
+    - profiling_budget_required
+    - profiling_required
+    status: implemented_python
+  M-109:
+    name: Quality gate evidence ledger distinguishing configured versus executed checks
+    milestone: handoff_quality
+    moscow: Must
+    track: quality
+    crates: []
+    required_tests:
+    - quality_gate_evidence
+    safety_gates:
+    - quality_gate_evidence_required
+    - strict_quality_gate
+    status: implemented_python
+  M-110:
+    name: GitHub Actions hardening with zizmor/actionlint policy
+    milestone: repo_hardening
+    moscow: Should
+    track: quality
+    crates: []
+    required_tests:
+    - github_actions_hardening_zizmor_actionlint_audit
+    safety_gates:
+    - security_automation
+    status: implemented_python
+  M-111:
+    name: GitHub Actions pinning and permissions audit
+    milestone: repo_hardening
+    moscow: Should
+    track: quality
+    crates: []
+    required_tests:
+    - action_pinning_permissions_audit_audit
+    safety_gates:
+    - security_automation
+    status: implemented_python
+  M-112:
+    name: cargo-vet supply-chain review policy
+    milestone: repo_hardening
+    moscow: Should
+    track: supply-chain
+    crates: []
+    required_tests:
+    - cargo_vet_supply_chain_policy_audit
+    safety_gates:
+    - supply_chain_review
+    status: implemented_python
+  M-113:
+    name: SLSA and artifact attestation verification plan
+    milestone: repo_hardening
+    moscow: Should
+    track: release
+    crates: []
+    required_tests:
+    - slsa_attestation_verification_audit
+    safety_gates:
+    - provenance_required
+    status: implemented_python
+  M-114:
+    name: cargo-dist and release-plz automation scaffold
+    milestone: repo_hardening
+    moscow: Should
+    track: release
+    crates: []
+    required_tests:
+    - cargo_dist_release_plz_scaffold_audit
+    safety_gates:
+    - release_automation
+    status: implemented_python
+  M-115:
+    name: OpenSSF Scorecard and dependency-review workflow scaffold
+    milestone: repo_hardening
+    moscow: Should
+    track: supply-chain
+    crates: []
+    required_tests:
+    - scorecard_dependency_review_workflow_audit
+    safety_gates:
+    - scorecard_dependency_review
+    status: implemented_python
+  M-116:
+    name: Astro 7 documentation quality hardening
+    milestone: repo_hardening
+    moscow: Should
+    track: documentation
+    crates: []
+    required_tests:
+    - astro7_docs_quality_hardened_audit
+    safety_gates:
+    - docs_quality_required
+    status: implemented_python
+  M-117:
+    name: Benchmark regression and optional CodSpeed readiness
+    milestone: repo_hardening
+    moscow: Should
+    track: quality
+    crates: []
+    required_tests:
+    - benchmark_regression_and_codspeed_readiness_audit
+    safety_gates:
+    - profiling_required
+    status: implemented_python
+  M-118:
+    name: Bleeding-edge repo hardening audit aggregator
+    milestone: repo_hardening
+    moscow: Should
+    track: quality
+    crates: []
+    required_tests:
+    - bleeding_edge_repo_audit
+    safety_gates:
+    - repo_hardening_audit
+    status: implemented_python

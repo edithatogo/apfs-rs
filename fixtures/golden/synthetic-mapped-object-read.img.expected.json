@@ -1,0 +1,6 @@
+{
+  "fixture": "fixtures/synthetic-mapped-object-read.img",
+  "sha256": "c68f2930e2dd9b67fb42491f6081851e37e32e9cccf1eabc23f2fa98d9f3638d",
+  "expected_status": "apfs_container_detected",
+  "reason": "NXSB magic at block zero"
+}

@@ -1,0 +1,7 @@
+{
+  "track_id": "0038-snapshot-role-readiness",
+  "capability_id": "M-038",
+  "package": "v0.19.0",
+  "status": "implemented_scaffold",
+  "title": "Snapshot and volume-role readiness"
+}

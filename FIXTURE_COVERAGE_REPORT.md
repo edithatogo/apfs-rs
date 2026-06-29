@@ -1,0 +1,133 @@
+# Fixture Coverage Report
+
+Fixture manifests: 18
+
+## Source types
+
+- `macos_generated_apfs_sparseimage`: 1
+- `synthetic_apfs_parser_development_image`: 14
+- `synthetic_negative_apfs_image`: 3
+
+## Capability coverage
+
+- `M-001`: `macos-minimal-apfs-001`, `negative-corrupt-nxsb-magic`, `negative-invalid-block-size`, `negative-truncated-nxsb`, `synthetic-nxsb-block0.bin`
+- `M-002`: `macos-minimal-apfs-001`, `synthetic-gpt-apfs.img`
+- `M-003`: `macos-minimal-apfs-001`, `negative-corrupt-nxsb-magic`, `negative-invalid-block-size`, `negative-truncated-nxsb`, `synthetic-nxsb-block0.bin`
+- `M-004`: `macos-minimal-apfs-001`, `synthetic-checkpoint-map-omap.img`, `synthetic-checkpoint-ring.img`
+- `M-005`: `synthetic-omap-btree-root.img`
+- `M-006`: `synthetic-omap-lookup.img`
+- `M-007`: `synthetic-omap-multinode-lookup.img`
+- `M-008`: `synthetic-btree-traversal.img`
+- `M-009`: `synthetic-resolver-facade.img`
+- `M-010`: `synthetic-btree-cursor.img`
+- `M-011`: `macos-minimal-apfs-001`
+- `M-012`: `macos-minimal-apfs-001`
+- `M-014`: `synthetic-volume-superblock.img`
+- `M-015`: `synthetic-mapped-object-read.img`
+- `M-016`: `synthetic-directory-listing.img`
+- `M-017`: `synthetic-directory-listing.img`
+- `M-018`: `synthetic-file-preview.img`
+- `M-019`: `synthetic-directory-listing.img`
+- `M-020`: `synthetic-file-preview.img`
+- `M-065`: `negative-corrupt-nxsb-magic`, `negative-invalid-block-size`, `negative-truncated-nxsb`
+
+## Capabilities without fixture manifests
+
+- `M-013`
+- `M-021`
+- `M-022`
+- `M-023`
+- `M-024`
+- `M-025`
+- `M-026`
+- `M-027`
+- `M-028`
+- `M-029`
+- `M-030`
+- `M-031`
+- `M-032`
+- `M-033`
+- `M-034`
+- `M-035`
+- `M-036`
+- `M-037`
+- `M-038`
+- `M-039`
+- `M-040`
+- `M-041`
+- `M-042`
+- `M-043`
+- `M-044`
+- `M-045`
+- `M-046`
+- `M-047`
+- `M-048`
+- `M-049`
+- `M-050`
+- `M-051`
+- `M-052`
+- `M-053`
+- `M-054`
+- `M-055`
+- `M-056`
+- `M-057`
+- `M-058`
+- `M-059`
+- `M-060`
+- `M-061`
+- `M-062`
+- `M-063`
+- `M-064`
+- `M-066`
+- `M-067`
+- `M-068`
+- `M-069`
+- `M-070`
+- `M-071`
+- `M-072`
+- `M-073`
+- `M-074`
+- `M-075`
+- `M-076`
+- `M-077`
+- `M-078`
+- `M-079`
+- `M-080`
+- `M-081`
+- `M-082`
+- `M-083`
+- `M-084`
+- `M-085`
+- `M-086`
+- `M-087`
+- `M-088`
+- `M-089`
+- `M-090`
+- `M-091`
+- `M-092`
+- `M-093`
+- `M-094`
+- `M-095`
+- `M-096`
+- `M-097`
+- `M-098`
+- `M-099`
+- `M-100`
+- `M-101`
+- `M-102`
+- `M-103`
+- `M-104`
+- `M-105`
+- `M-106`
+- `M-107`
+- `M-108`
+- `M-109`
+- `M-110`
+- `M-111`
+- `M-112`
+- `M-113`
+- `M-114`
+- `M-115`
+- `M-116`
+- `M-117`
+- `M-118`

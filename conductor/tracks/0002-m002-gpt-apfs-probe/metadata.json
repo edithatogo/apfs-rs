@@ -1,0 +1,7 @@
+{
+  "track_id": "0002-m002-gpt-apfs-probe",
+  "capability": "M-002",
+  "status": "implemented_in_package_uncompiled",
+  "package": "v0.2.0",
+  "purpose": "GPT-wrapped APFS partition image probe."
+}

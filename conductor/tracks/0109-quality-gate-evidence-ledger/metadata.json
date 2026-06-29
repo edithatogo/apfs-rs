@@ -1,0 +1,7 @@
+{
+  "track_id": "0109-quality-gate-evidence-ledger",
+  "capability_id": "M-109",
+  "title": "Quality gate evidence ledger",
+  "status": "implemented_python",
+  "version": "0.28.0"
+}

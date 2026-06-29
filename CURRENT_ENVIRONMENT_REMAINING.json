@@ -1,0 +1,132 @@
+{
+  "schema_version": "0.27.0",
+  "summary": {
+    "mvp_remaining": 9,
+    "post_mvp_remaining": 8,
+    "production_remaining_total": 17,
+    "production_items_completable_in_current_environment": 0,
+    "optional_current_environment_improvements_remaining": 0
+  },
+  "remaining_windows_readonly_mvp": [
+    {
+      "id": "MVP-R001",
+      "title": "Compile, lint, test, and fix the current workspace on Rust-enabled machines",
+      "dependency": "Rust-enabled machine",
+      "current_environment_completable": false,
+      "classification": "local_or_platform_required"
+    },
+    {
+      "id": "MVP-R002",
+      "title": "Generate first real macOS APFS image and manifest",
+      "dependency": "macOS",
+      "current_environment_completable": false,
+      "classification": "local_or_platform_required"
+    },
+    {
+      "id": "MVP-R003",
+      "title": "Run real-fixture feedback loop and convert mismatches into tasks",
+      "dependency": "M-012/M-013 and real fixture",
+      "current_environment_completable": false,
+      "classification": "local_or_platform_required"
+    },
+    {
+      "id": "MVP-R004",
+      "title": "Correct APFS parser offsets/semantics against real APFS data",
+      "dependency": "real fixture feedback",
+      "current_environment_completable": false,
+      "classification": "local_or_platform_required"
+    },
+    {
+      "id": "MVP-R005",
+      "title": "Full checkpoint ring reconstruction",
+      "dependency": "corrected parser and real fixture",
+      "current_environment_completable": false,
+      "classification": "local_or_platform_required"
+    },
+    {
+      "id": "MVP-R006",
+      "title": "Production APFS object-map B-tree traversal",
+      "dependency": "corrected checkpoint and B-tree parsing",
+      "current_environment_completable": false,
+      "classification": "local_or_platform_required"
+    },
+    {
+      "id": "MVP-R007",
+      "title": "Production APFS filesystem tree record decoding and metadata/stat mapping",
+      "dependency": "production OMAP traversal",
+      "current_environment_completable": false,
+      "classification": "local_or_platform_required"
+    },
+    {
+      "id": "MVP-R008",
+      "title": "Production file extent resolution and extraction",
+      "dependency": "production filesystem records",
+      "current_environment_completable": false,
+      "classification": "local_or_platform_required"
+    },
+    {
+      "id": "MVP-R009",
+      "title": "Windows WinFsp read-only mount adapter, smoke tests, and packaging baseline",
+      "dependency": "stable read API",
+      "current_environment_completable": false,
+      "classification": "local_or_platform_required"
+    }
+  ],
+  "remaining_beyond_mvp": [
+    {
+      "id": "POST-R007-PROD",
+      "title": "Production software-encryption read support",
+      "current_environment_completable": false,
+      "classification": "local_or_platform_required"
+    },
+    {
+      "id": "POST-R010-PROD",
+      "title": "Execute signed release, SBOM, provenance, installer, and winget publication",
+      "current_environment_completable": false,
+      "classification": "local_or_platform_required"
+    },
+    {
+      "id": "POST-R011-PROD",
+      "title": "Production Linux/macOS/ChromeOS/Android adapters and platform tests",
+      "current_environment_completable": false,
+      "classification": "local_or_platform_required"
+    },
+    {
+      "id": "POST-R015-PROD",
+      "title": "Execute image-only write lab with crash-injection evidence",
+      "current_environment_completable": false,
+      "classification": "local_or_platform_required"
+    },
+    {
+      "id": "POST-R016",
+      "title": "Windows write beta",
+      "current_environment_completable": false,
+      "classification": "local_or_platform_required"
+    },
+    {
+      "id": "POST-R017",
+      "title": "Repair",
+      "current_environment_completable": false,
+      "classification": "local_or_platform_required"
+    },
+    {
+      "id": "POST-R018",
+      "title": "Format",
+      "current_environment_completable": false,
+      "classification": "local_or_platform_required"
+    },
+    {
+      "id": "POST-R019",
+      "title": "Long-running fuzz/property/mutation/coverage hardening on CI",
+      "current_environment_completable": false,
+      "classification": "local_or_platform_required"
+    }
+  ],
+  "optional_current_environment_improvements": [],
+  "open_ended_polish_examples": [
+    "Add still more synthetic negative fixtures.",
+    "Add more narrative examples to handoff docs.",
+    "Add more static heuristics for possible Cargo failures."
+  ],
+  "conclusion": "No production APFS or Windows MVP blockers can be honestly completed in this environment without Rust/macOS/Windows execution. The remaining work is local/platform-dependent; further sandbox work would be optional polish rather than required implementation."
+}

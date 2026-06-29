@@ -1,0 +1,7 @@
+{
+  "track_id": "0008-m007-checkpoint-mapped-omap-lookup",
+  "capability": "M-007",
+  "status": "implemented_in_package_uncompiled",
+  "package": "v0.7.0",
+  "purpose": "Checkpoint-map-backed multi-node synthetic lookup."
+}

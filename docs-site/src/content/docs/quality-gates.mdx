@@ -1,0 +1,12 @@
+---
+title: Quality Gates
+---
+
+APFS-RS requires strict quality gates before production claims:
+
+- Unit, integration, and end-to-end tests.
+- Property tests with Rust `proptest` and optional Python Hypothesis.
+- Parser fuzz targets.
+- Mutation testing with `cargo mutants`.
+- Line coverage target: **>= 90%** with `cargo llvm-cov`.
+- Profiling with Criterion and optional flamegraph tools.

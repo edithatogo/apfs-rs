@@ -1,0 +1,30 @@
+{
+  "schema_version": "0.25.0",
+  "key_docs": [
+    "README.md",
+    "REQUIREMENTS.md",
+    "DESIGN.md",
+    "REMAINING_ELEMENTS.md",
+    "LOCAL_HANDOFF.md",
+    "LOCAL_FIRST_RUN.md",
+    "READY_FOR_LOCAL.md",
+    "RUNBOOK.md",
+    "HANDOFF_STATUS.md",
+    "CURRENT_ENVIRONMENT.md",
+    "CURRENT_ENVIRONMENT_REMAINING.md",
+    "PRODUCTION_GAP_REPORT.md",
+    "TEST_CONTROL_MATRIX.md",
+    "SAFETY_CASE.md",
+    "CONTEXT.md"
+  ],
+  "missing": [],
+  "empty": [],
+  "not_indexed": [
+    "CURRENT_ENVIRONMENT.md",
+    "CURRENT_ENVIRONMENT_REMAINING.md",
+    "PRODUCTION_GAP_REPORT.md",
+    "TEST_CONTROL_MATRIX.md",
+    "CONTEXT.md"
+  ],
+  "status": "ok"
+}

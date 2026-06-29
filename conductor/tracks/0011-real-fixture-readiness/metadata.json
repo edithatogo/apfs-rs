@@ -1,0 +1,7 @@
+{
+  "track_id": "0011-real-fixture-readiness",
+  "capability": "M-011",
+  "status": "implemented_in_package_uncompiled",
+  "package": "v0.11.0",
+  "purpose": "macOS real APFS fixture readiness harness."
+}

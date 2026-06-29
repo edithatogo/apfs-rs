@@ -1,0 +1,7 @@
+{
+  "track_id": "0010-btree-cursor",
+  "capability": "M-010",
+  "status": "implemented_in_package_uncompiled",
+  "package": "v0.10.0",
+  "purpose": "Production-shaped B-tree cursor facade."
+}

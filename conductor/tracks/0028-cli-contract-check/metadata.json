@@ -1,0 +1,7 @@
+{
+  "track_id": "0028-cli-contract-check",
+  "capability_id": "M-028",
+  "title": "CLI contract static check",
+  "status": "implemented_or_scaffolded",
+  "version": "0.18.0"
+}

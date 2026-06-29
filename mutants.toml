@@ -1,0 +1,5 @@
+# cargo-mutants configuration for APFS-RS.
+# Run with: cargo mutants --workspace
+minimum-test-timeout = 60
+test-tool = "cargo"
+exclude-globs = ["target/**", "docs-site/**", "fixtures/**"]

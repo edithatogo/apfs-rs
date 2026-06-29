@@ -1,0 +1,85 @@
+{
+  "schema_version": "0.27.0",
+  "status": "pass",
+  "check_count": 11,
+  "failure_count": 0,
+  "results": [
+    {
+      "command": "py_compile selected tools",
+      "returncode": 0,
+      "duration_seconds": 0.012,
+      "status": "pass",
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/apfs_offset_audit.py",
+      "returncode": 0,
+      "duration_seconds": 0.004,
+      "status": "pass",
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/golden_output_generator.py",
+      "returncode": 0,
+      "duration_seconds": 0.014,
+      "status": "pass",
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/dependency_license_policy_check.py",
+      "returncode": 0,
+      "duration_seconds": 0.005,
+      "status": "pass",
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/backlog_issue_export.py",
+      "returncode": 0,
+      "duration_seconds": 0.043,
+      "status": "pass",
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/synthetic_fixture_oracle.py",
+      "returncode": 0,
+      "duration_seconds": 0.017,
+      "status": "pass",
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/tool_capability_matrix.py",
+      "returncode": 0,
+      "duration_seconds": 0.912,
+      "status": "pass",
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/rust_static_lint.py",
+      "returncode": 0,
+      "duration_seconds": 0.033,
+      "status": "pass",
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/local_command_plan.py",
+      "returncode": 0,
+      "duration_seconds": 0.007,
+      "status": "pass",
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/mvp_blocker_tasklist.py",
+      "returncode": 0,
+      "duration_seconds": 0.051,
+      "status": "pass",
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/agent_handoff_brief.py",
+      "returncode": 0,
+      "duration_seconds": 0.116,
+      "status": "pass",
+      "error_tail": ""
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "track_id": "0029-context-integrity-check",
+  "capability_id": "M-029",
+  "title": "Context integrity static check",
+  "status": "implemented_or_scaffolded",
+  "version": "0.18.0"
+}

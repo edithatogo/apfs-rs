@@ -1,0 +1,28 @@
+---
+const { title = 'APFS-RS Documentation' } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <style>
+      :root { font-family: system-ui, sans-serif; color-scheme: light dark; }
+      body { max-width: 70rem; margin: 0 auto; padding: 2rem; line-height: 1.55; }
+      nav a { margin-right: 1rem; }
+      code, pre { background: rgba(127,127,127,.15); padding: .1rem .25rem; border-radius: .25rem; }
+      pre { padding: 1rem; overflow-x: auto; }
+      .warning { border-left: 4px solid orange; padding-left: 1rem; }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/quality/">Quality Gates</a>
+      <a href="/conductor/">Conductor</a>
+      <a href="/handoff/">Local Handoff</a>
+    </nav>
+    <main><slot /></main>
+  </body>
+</html>

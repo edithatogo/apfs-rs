@@ -1,0 +1,26 @@
+{
+  "apfs_features": {
+    "not_a_complete_filesystem": true,
+    "synthetic": true
+  },
+  "capability_ids": [
+    "M-010"
+  ],
+  "created_with": {
+    "note": "synthetic parser-development fixture",
+    "tool": "tools/make_synthetic_fixtures.py"
+  },
+  "description": "Direct APFS-like image exercising the production-shaped B-tree cursor API over bounded synthetic traversal",
+  "expected_artifacts": [],
+  "fixture_id": "synthetic-btree-cursor.img",
+  "not_a_complete_filesystem": true,
+  "redaction": {
+    "contains_personal_data": false,
+    "contains_secret_material": false
+  },
+  "schema_version": "0.16.0",
+  "sha256": "5a4afef3304f928b4ff59af19f384da7f4b5e42c2b86fc7f17e50fc572b1e2e2",
+  "size_bytes": 262144,
+  "source_type": "synthetic_apfs_parser_development_image",
+  "synthetic": true
+}

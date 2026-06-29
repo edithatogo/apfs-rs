@@ -1,0 +1,78 @@
+{
+  "schema_version": "0.29.0",
+  "status": "passed",
+  "checks": [
+    {
+      "file": "VERSION",
+      "observed_version": "0.29.0",
+      "expected_version": "0.29.0",
+      "ok": true
+    },
+    {
+      "file": "REMAINING_ELEMENTS.yaml",
+      "observed_version": "0.29.0",
+      "expected_version": "0.29.0",
+      "ok": true
+    },
+    {
+      "file": "codev/resources/capabilities.yaml",
+      "observed_version": "0.29.0",
+      "expected_version": "0.29.0",
+      "ok": true
+    },
+    {
+      "file": "codev/resources/safety-gates.yaml",
+      "observed_version": "0.29.0",
+      "expected_version": "0.29.0",
+      "ok": true
+    },
+    {
+      "file": "FEATURE_READINESS.json",
+      "observed_version": "0.29.0",
+      "expected_version": "0.29.0",
+      "ok": true
+    },
+    {
+      "file": "CLI_CONTRACT.json",
+      "observed_version": "0.29.0",
+      "expected_version": "0.29.0",
+      "ok": true
+    },
+    {
+      "file": "API_SURFACE.json",
+      "observed_version": "0.29.0",
+      "expected_version": "0.29.0",
+      "ok": true
+    },
+    {
+      "file": "README.md",
+      "mentions_version": "0.29.0",
+      "ok": true
+    },
+    {
+      "file": "REQUIREMENTS.md",
+      "mentions_version": "0.29.0",
+      "ok": true
+    },
+    {
+      "file": "DESIGN.md",
+      "mentions_version": "0.29.0",
+      "ok": true
+    },
+    {
+      "file": "REMAINING_ELEMENTS.md",
+      "mentions_version": "0.29.0",
+      "ok": true
+    },
+    {
+      "file": "conductor/tracks.md",
+      "mentions_version": "0.29.0",
+      "ok": true
+    },
+    {
+      "file": "conductor/history.md",
+      "mentions_version": "0.29.0",
+      "ok": true
+    }
+  ]
+}

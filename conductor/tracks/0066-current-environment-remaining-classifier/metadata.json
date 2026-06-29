@@ -1,0 +1,8 @@
+{
+  "track_id": "0066-current-environment-remaining-classifier",
+  "capability_id": "M-066",
+  "title": "Current-environment remaining-work classifier",
+  "status": "implemented_scaffold",
+  "version": "0.23.0",
+  "phase": "handoff-hardening"
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": "0.29.0",
+  "status": "configured_not_executed",
+  "gates": [
+    {
+      "gate": "format",
+      "configured": true,
+      "requires_local_execution": true,
+      "command": "cargo fmt --all -- --check"
+    },
+    {
+      "gate": "clippy",
+      "configured": true,
+      "requires_local_execution": true,
+      "command": "cargo clippy --workspace --all-targets --all-features -- -D warnings"
+    },
+    {
+      "gate": "unit/integration/e2e",
+      "configured": true,
+      "requires_local_execution": true,
+      "command": "cargo nextest run --workspace --all-features"
+    },
+    {
+      "gate": ">=90% coverage",
+      "configured": true,
+      "requires_local_execution": true,
+      "command": "cargo llvm-cov nextest --workspace --all-features --fail-under-lines 90"
+    },
+    {
+      "gate": "mutation",
+      "configured": true,
+      "requires_local_execution": true,
+      "command": "cargo mutants --workspace"
+    },
+    {
+      "gate": "fuzz smoke",
+      "configured": true,
+      "requires_local_execution": true,
+      "command": "cargo fuzz run object_header -- -max_total_time=60"
+    },
+    {
+      "gate": "Hypothesis-style Python tests",
+      "configured": true,
+      "requires_local_execution": false,
+      "command": "pytest python_tests"
+    },
+    {
+      "gate": "profiling",
+      "configured": true,
+      "requires_local_execution": true,
+      "command": "cargo bench"
+    },
+    {
+      "gate": "Astro 7 docs",
+      "configured": true,
+      "requires_local_execution": true,
+      "command": "cd docs-site && npm install && npm run build"
+    }
+  ]
+}

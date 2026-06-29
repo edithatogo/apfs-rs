@@ -1,0 +1,21 @@
+{
+  "schema_version": "0.23.0",
+  "fixture_id": "negative-corrupt-nxsb-magic",
+  "source_type": "synthetic_negative_apfs_image",
+  "filename": "negative-corrupt-nxsb-magic.bin",
+  "sha256": "11218c293d56d3ced1042d0a1936c39b4f87b70c51df59e58aa3d90c2abebcca",
+  "apfs_features": {
+    "synthetic": true,
+    "negative_fixture": true
+  },
+  "capability_ids": [
+    "M-001",
+    "M-003",
+    "M-065"
+  ],
+  "expected_result": "not_apfs",
+  "redaction": {
+    "contains_personal_data": false,
+    "contains_secret_material": false
+  }
+}

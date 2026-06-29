@@ -1,0 +1,5961 @@
+{
+  "schema_version": "0.21.0",
+  "file_count": 1189,
+  "categories": {
+    "codev_context": 411,
+    "conductor_context": 388,
+    "developer_tooling": 11,
+    "fixtures": 60,
+    "github_automation": 16,
+    "python_tools": 79,
+    "root_docs_or_config": 192,
+    "rust_crates": 32
+  },
+  "files": [
+    {
+      "path": ".agents/skills/conductor-context-management/SKILL.md",
+      "bytes": 858,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": ".cargo/config.toml",
+      "bytes": 281,
+      "category": "developer_tooling"
+    },
+    {
+      "path": ".claude/skills/conductor-context-management/SKILL.md",
+      "bytes": 858,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": ".config/cargo-llvm-cov.toml",
+      "bytes": 540,
+      "category": "developer_tooling"
+    },
+    {
+      "path": ".config/cargo-mutants.toml",
+      "bytes": 525,
+      "category": "developer_tooling"
+    },
+    {
+      "path": ".config/nextest.toml",
+      "bytes": 246,
+      "category": "developer_tooling"
+    },
+    {
+      "path": ".config/proptest.toml",
+      "bytes": 234,
+      "category": "developer_tooling"
+    },
+    {
+      "path": ".devcontainer/Dockerfile",
+      "bytes": 327,
+      "category": "developer_tooling"
+    },
+    {
+      "path": ".devcontainer/devcontainer.json",
+      "bytes": 420,
+      "category": "developer_tooling"
+    },
+    {
+      "path": ".editorconfig",
+      "bytes": 244,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": ".gemini/skills/conductor-context-management/SKILL.md",
+      "bytes": 858,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": ".github/copilot-instructions.md",
+      "bytes": 843,
+      "category": "github_automation"
+    },
+    {
+      "path": ".github/dependabot.yml",
+      "bytes": 325,
+      "category": "github_automation"
+    },
+    {
+      "path": ".github/instructions/apfs-core.instructions.md",
+      "bytes": 164,
+      "category": "github_automation"
+    },
+    {
+      "path": ".github/instructions/apfs-write-safety.instructions.md",
+      "bytes": 162,
+      "category": "github_automation"
+    },
+    {
+      "path": ".github/instructions/conductor-context.instructions.md",
+      "bytes": 842,
+      "category": "github_automation"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "bytes": 677,
+      "category": "github_automation"
+    },
+    {
+      "path": ".github/workflows/coverage.yml",
+      "bytes": 612,
+      "category": "github_automation"
+    },
+    {
+      "path": ".github/workflows/docs-site.yml",
+      "bytes": 483,
+      "category": "github_automation"
+    },
+    {
+      "path": ".github/workflows/fuzz.yml",
+      "bytes": 417,
+      "category": "github_automation"
+    },
+    {
+      "path": ".github/workflows/local-handoff.yml",
+      "bytes": 685,
+      "category": "github_automation"
+    },
+    {
+      "path": ".github/workflows/mutation.yml",
+      "bytes": 587,
+      "category": "github_automation"
+    },
+    {
+      "path": ".github/workflows/profiling.yml",
+      "bytes": 430,
+      "category": "github_automation"
+    },
+    {
+      "path": ".github/workflows/quality-gates.yml",
+      "bytes": 1720,
+      "category": "github_automation"
+    },
+    {
+      "path": ".github/workflows/release.yml",
+      "bytes": 764,
+      "category": "github_automation"
+    },
+    {
+      "path": ".github/workflows/security.yml",
+      "bytes": 346,
+      "category": "github_automation"
+    },
+    {
+      "path": ".github/workflows/strict-quality.yml",
+      "bytes": 1608,
+      "category": "github_automation"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 32,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": ".markdownlint.yaml",
+      "bytes": 53,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": ".pre-commit-config.yaml",
+      "bytes": 718,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": ".tool-versions",
+      "bytes": 26,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 2069,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "AGENT_HANDOFF_BRIEF.json",
+      "bytes": 710,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "AGENT_HANDOFF_BRIEF.md",
+      "bytes": 935,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "APFS_OFFSET_AUDIT.json",
+      "bytes": 3355,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "APFS_OFFSET_AUDIT.md",
+      "bytes": 1462,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "API_SURFACE.json",
+      "bytes": 28526,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "API_SURFACE.md",
+      "bytes": 16465,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "ASTRO_DOCS_PLAN.md",
+      "bytes": 609,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "BACKLOG_ISSUE_EXPORT.json",
+      "bytes": 69,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "BACKLOG_ISSUE_EXPORT.md",
+      "bytes": 143,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "BATCHED_LOOP_POLICY.md",
+      "bytes": 1378,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "CARGOLESS_SMOKE_REPORT.json",
+      "bytes": 4278,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "CARGOLESS_SMOKE_REPORT.md",
+      "bytes": 1736,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "CARGO_DEPENDENCY_GRAPH.json",
+      "bytes": 1799,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "CARGO_DEPENDENCY_GRAPH.md",
+      "bytes": 1334,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "CARGO_TRIAGE.md",
+      "bytes": 651,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "CARGO_WORKSPACE_AUDIT.json",
+      "bytes": 1108,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "CARGO_WORKSPACE_AUDIT.md",
+      "bytes": 84,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "CI_QUALITY_GATES.json",
+      "bytes": 283,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "CI_QUALITY_GATES.md",
+      "bytes": 154,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "CI_TESTING_PROFILING_PLAN.md",
+      "bytes": 1053,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "CLAUDE.md",
+      "bytes": 2069,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "CLI_CONTRACT.json",
+      "bytes": 4238,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "CLI_CONTRACT.md",
+      "bytes": 2132,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "CONTEXT.md",
+      "bytes": 888,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "CURRENT_ENVIRONMENT.json",
+      "bytes": 6020,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "CURRENT_ENVIRONMENT.md",
+      "bytes": 2323,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "CURRENT_ENVIRONMENT_REMAINING.json",
+      "bytes": 4856,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "CURRENT_ENVIRONMENT_REMAINING.md",
+      "bytes": 1919,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "CURRENT_ENV_COMPLETION_REPORT.json",
+      "bytes": 774,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "CURRENT_ENV_COMPLETION_REPORT.md",
+      "bytes": 654,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "CURRENT_ENV_FINAL_REPORT.json",
+      "bytes": 914,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "CURRENT_ENV_FINAL_REPORT.md",
+      "bytes": 772,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "CURRENT_ENV_SELFTEST.json",
+      "bytes": 2007,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "CURRENT_ENV_SELFTEST.md",
+      "bytes": 824,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "CURRENT_ENV_TOOL_INVENTORY_EXTENDED.json",
+      "bytes": 2840,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "CURRENT_ENV_TOOL_INVENTORY_EXTENDED.md",
+      "bytes": 846,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "Cargo.toml",
+      "bytes": 875,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "DEPENDENCY_POLICY_AUDIT.json",
+      "bytes": 2622,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "DEPENDENCY_POLICY_AUDIT.md",
+      "bytes": 454,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "DESIGN.md",
+      "bytes": 17334,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "DEVELOPMENT_LOOP.md",
+      "bytes": 765,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "DOCS_SITE_AUDIT.json",
+      "bytes": 378,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "DOCS_SITE_AUDIT.md",
+      "bytes": 109,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "DOCS_SITE_CHECK.json",
+      "bytes": 102,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "DOCS_SITE_CHECK.md",
+      "bytes": 80,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "DOCS_SITE_REPORT.json",
+      "bytes": 256,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "DOCS_SITE_REPORT.md",
+      "bytes": 225,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "DOCS_SITE_STATIC_CHECK.json",
+      "bytes": 102,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "DOCS_SITE_STATIC_CHECK.md",
+      "bytes": 43,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "DOCUMENTATION_INDEX_AUDIT.json",
+      "bytes": 653,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "DOCUMENTATION_INDEX_AUDIT.md",
+      "bytes": 254,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "FEATURE_READINESS.json",
+      "bytes": 2033,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "FEATURE_READINESS.md",
+      "bytes": 1269,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "FINAL_LOCALIZATION_PLAN.md",
+      "bytes": 772,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "FIXTURE_COVERAGE_REPORT.json",
+      "bytes": 3028,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "FIXTURE_COVERAGE_REPORT.md",
+      "bytes": 2301,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "GEMINI.md",
+      "bytes": 991,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "GOLDEN_OUTPUTS.json",
+      "bytes": 4685,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "GOLDEN_OUTPUTS.md",
+      "bytes": 1916,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "HANDOFF_ARCHIVE_AUDIT.json",
+      "bytes": 185296,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "HANDOFF_ARCHIVE_AUDIT.md",
+      "bytes": 29311,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "HANDOFF_MANIFEST_VERIFY.json",
+      "bytes": 97,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "HANDOFF_MANIFEST_VERIFY.md",
+      "bytes": 91,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "HANDOFF_STATUS.json",
+      "bytes": 840,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "HANDOFF_STATUS.md",
+      "bytes": 1033,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "IMPLEMENTATION_STATUS.md",
+      "bytes": 6285,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "Justfile",
+      "bytes": 8339,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "KNOWN_UNCOMPILED_RISKS.md",
+      "bytes": 1898,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "LICENSE-MIT",
+      "bytes": 1072,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "LOCAL_COMMAND_PLAN.json",
+      "bytes": 2218,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "LOCAL_COMMAND_PLAN.md",
+      "bytes": 1309,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "LOCAL_COMPILE_LOOP.md",
+      "bytes": 614,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "LOCAL_FIRST_RUN.md",
+      "bytes": 2245,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "LOCAL_HANDOFF.md",
+      "bytes": 2764,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "LOCAL_MIGRATION_COMMANDS.json",
+      "bytes": 1591,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "LOCAL_MIGRATION_COMMANDS.md",
+      "bytes": 1430,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "LOOP_DASHBOARD.md",
+      "bytes": 7162,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "MACOS_FIXTURE_DRY_RUN.json",
+      "bytes": 251,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "MACOS_FIXTURE_DRY_RUN.md",
+      "bytes": 157,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "MARKDOWN_LINK_AUDIT.json",
+      "bytes": 157,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "MARKDOWN_LINK_AUDIT.md",
+      "bytes": 158,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "MVP_BLOCKER_DAG.json",
+      "bytes": 1704,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "MVP_BLOCKER_DAG.md",
+      "bytes": 2030,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "MVP_BLOCKER_TASKLIST.json",
+      "bytes": 3451,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "MVP_BLOCKER_TASKLIST.md",
+      "bytes": 1976,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "NEXT_LOOP_PLAN.md",
+      "bytes": 456,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "PACKAGE_INTEGRITY_AUDIT.json",
+      "bytes": 156,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "PACKAGE_INTEGRITY_AUDIT.md",
+      "bytes": 165,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "PLATFORM_SETUP.md",
+      "bytes": 1205,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "PRODUCTION_CLAIM_GUARD.json",
+      "bytes": 95,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "PRODUCTION_CLAIM_GUARD.md",
+      "bytes": 139,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "PRODUCTION_GAP_REPORT.json",
+      "bytes": 3589,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "PRODUCTION_GAP_REPORT.md",
+      "bytes": 1735,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "PROFILING.md",
+      "bytes": 673,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "PROFILING_PLAN.md",
+      "bytes": 839,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "PROFILING_PLAN_AUDIT.json",
+      "bytes": 585,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "PROFILING_PLAN_AUDIT.md",
+      "bytes": 92,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "QUALITY_GATES.md",
+      "bytes": 1160,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "QUALITY_GATE_CHECK.json",
+      "bytes": 71,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "QUALITY_GATE_CHECK.md",
+      "bytes": 57,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "QUALITY_GATE_POLICY.md",
+      "bytes": 1840,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "QUALITY_GATE_REPORT.json",
+      "bytes": 508,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "QUALITY_GATE_REPORT.md",
+      "bytes": 422,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "README.md",
+      "bytes": 13277,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "READY_FOR_LOCAL.md",
+      "bytes": 1300,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "RELEASE_SCAFFOLD.md",
+      "bytes": 1119,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "REMAINING_ELEMENTS.md",
+      "bytes": 1505,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "REMAINING_ELEMENTS.yaml",
+      "bytes": 13774,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "REPO_MANIFEST.json",
+      "bytes": 109603,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "REPO_MANIFEST.md",
+      "bytes": 361,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "REQUIREMENTS.md",
+      "bytes": 15647,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "RUNBOOK.md",
+      "bytes": 13695,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "RUST_API_MAP.md",
+      "bytes": 5547,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "RUST_STATIC_LINT.json",
+      "bytes": 726,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "RUST_STATIC_LINT.md",
+      "bytes": 446,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "SAFETY_CASE.md",
+      "bytes": 3889,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 285,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "SHA256SUMS.txt",
+      "bytes": 100739,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "SHELL_SCRIPT_AUDIT.json",
+      "bytes": 93,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "SHELL_SCRIPT_AUDIT.md",
+      "bytes": 83,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "SOURCE_DEBT_REPORT.json",
+      "bytes": 189450,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "SOURCE_DEBT_REPORT.md",
+      "bytes": 25050,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "SOURCE_METRICS.json",
+      "bytes": 1182,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "SOURCE_METRICS.md",
+      "bytes": 857,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "TESTING_INFRASTRUCTURE_REPORT.json",
+      "bytes": 1348,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "TESTING_INFRASTRUCTURE_REPORT.md",
+      "bytes": 826,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "TEST_CONTROL_MATRIX.json",
+      "bytes": 1925,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "TEST_CONTROL_MATRIX.md",
+      "bytes": 1243,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "TEST_SCAFFOLD_AUDIT.json",
+      "bytes": 463,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "TEST_SCAFFOLD_AUDIT.md",
+      "bytes": 432,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "TEST_STRATEGY.md",
+      "bytes": 1165,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "TEST_STRATEGY_AUDIT.json",
+      "bytes": 460,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "TEST_STRATEGY_AUDIT.md",
+      "bytes": 136,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "TOOL_CAPABILITY_MATRIX.json",
+      "bytes": 7228,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "TOOL_CAPABILITY_MATRIX.md",
+      "bytes": 2916,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "TRACEABILITY.md",
+      "bytes": 34366,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 7,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "VERSION_CONSISTENCY.json",
+      "bytes": 1661,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "VERSION_CONSISTENCY.md",
+      "bytes": 745,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "WINFSP_CALLBACK_MATRIX.json",
+      "bytes": 2216,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "WINFSP_CALLBACK_MATRIX.md",
+      "bytes": 1190,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "_typos.toml",
+      "bytes": 164,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "benches/README.md",
+      "bytes": 332,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "codev/CHANGELOG.md",
+      "bytes": 7018,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/README.md",
+      "bytes": 2335,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0001-m001-inspect.md",
+      "bytes": 546,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0002-gpt-image-probe.md",
+      "bytes": 652,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0003-checksum-and-checkpoint-scan.md",
+      "bytes": 652,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0004-checkpoint-map-and-omap-probe.md",
+      "bytes": 720,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0005-btree-node-probe.md",
+      "bytes": 749,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0006-single-node-omap-lookup.md",
+      "bytes": 631,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0007-checkpoint-mapped-omap-lookup.md",
+      "bytes": 896,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0008-bounded-btree-traversal.md",
+      "bytes": 961,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0009-object-map-resolver-facade.md",
+      "bytes": 641,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0010-btree-cursor-facade.md",
+      "bytes": 790,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0011-real-fixture-readiness.md",
+      "bytes": 827,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0012-real-fixture-feedback-loop.md",
+      "bytes": 894,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0013-feedback-to-track-promotion.md",
+      "bytes": 624,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0014-volume-superblock-probe.md",
+      "bytes": 1014,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0015-m015-synthetic-directory-root-tree.md",
+      "bytes": 444,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0015-mapped-object-read-report.md",
+      "bytes": 1003,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0016-m016-directory-listing-cli.md",
+      "bytes": 437,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0016-synthetic-directory-record-parser.md",
+      "bytes": 422,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0017-m017-synthetic-file-preview.md",
+      "bytes": 428,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0017-synthetic-directory-listing.md",
+      "bytes": 281,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0018-synthetic-file-preview.md",
+      "bytes": 311,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0020-m019-synthetic-stat-cli.md",
+      "bytes": 602,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0021-m020-synthetic-safe-extract-cli.md",
+      "bytes": 618,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0022-m021-precompile-static-validation.md",
+      "bytes": 622,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0023-m-022-synthetic-fixture-oracle.md",
+      "bytes": 370,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0024-m-023-traceability-matrix.md",
+      "bytes": 377,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0025-m-024-loop-dashboard.md",
+      "bytes": 357,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0026-m-025-release-preflight.md",
+      "bytes": 360,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0026-m-026-read-only-vfs-facade-crate.md",
+      "bytes": 247,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0027-m-027-windows-read-only-adapter-readiness-scaffold.md",
+      "bytes": 265,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0027-m026-windows-mount-plan.md",
+      "bytes": 345,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0028-m-028-redacted-diagnostics-bundle-generator.md",
+      "bytes": 258,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0028-m027-diagnostics-bundle.md",
+      "bytes": 341,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0029-m-029-fuzz-target-scaffold-for-parser-entry-points.md",
+      "bytes": 265,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0029-m028-cli-contract-check.md",
+      "bytes": 335,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0030-m-030-cargoless-api-map-and-next-loop-planning-tools.md",
+      "bytes": 267,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0030-m029-context-integrity-check.md",
+      "bytes": 340,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0031-m-031-doctor-readiness-cli.md",
+      "bytes": 337,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0032-m-032-api-surface-source-metrics.md",
+      "bytes": 343,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0033-m-033-safety-case-preflight.md",
+      "bytes": 338,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0034-unicode-case-policy.md",
+      "bytes": 335,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0035-xattr-resource-fork-readiness.md",
+      "bytes": 329,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0036-sparse-clone-readiness.md",
+      "bytes": 327,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0037-compression-readiness.md",
+      "bytes": 317,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0038-snapshot-role-readiness.md",
+      "bytes": 330,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0039-feature-readiness-snapshot.md",
+      "bytes": 201,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0040-version-consistency-check.md",
+      "bytes": 204,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0041-cargo-error-triage.md",
+      "bytes": 414,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0042-local-handoff-runbook.md",
+      "bytes": 420,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0043-platform-setup-docs.md",
+      "bytes": 374,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0044-release-provenance-scaffold.md",
+      "bytes": 418,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0045-fuse-cross-platform-readiness.md",
+      "bytes": 416,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0046-android-access-readiness.md",
+      "bytes": 390,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0047-encryption-read-readiness.md",
+      "bytes": 398,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0048-image-write-lab-readiness.md",
+      "bytes": 390,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0049-handoff-release-preflight-integration.md",
+      "bytes": 392,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0050-reproducible-toolchain-config.md",
+      "bytes": 418,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0051-devcontainer-tool-bootstrap.md",
+      "bytes": 403,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0052-precommit-static-quality-configs.md",
+      "bytes": 401,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0053-local-first-run-triage.md",
+      "bytes": 396,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0054-known-uncompiled-risks.md",
+      "bytes": 395,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0055-local-environment-doctor.md",
+      "bytes": 388,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0056-repository-manifest-generator.md",
+      "bytes": 393,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0057-handoff-status-reporter.md",
+      "bytes": 387,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0058-local-handoff-preflight-integration.md",
+      "bytes": 399,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0059-local-compile-loop-orchestrator.md",
+      "bytes": 277,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0060-cargo-workspace-audit.md",
+      "bytes": 277,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0061-macos-fixture-dry-run-validator.md",
+      "bytes": 282,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0062-winfsp-callback-contract-matrix.md",
+      "bytes": 287,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0063-production-gap-report.md",
+      "bytes": 277,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0064-batched-loop-policy.md",
+      "bytes": 289,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0065-current-environment-inventory.md",
+      "bytes": 351,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0066-current-environment-remaining-classifier.md",
+      "bytes": 356,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0067-cargo-dependency-graph.md",
+      "bytes": 353,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0068-synthetic-negative-fixtures.md",
+      "bytes": 347,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0069-test-control-matrix.md",
+      "bytes": 340,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0070-handoff-archive-audit.md",
+      "bytes": 342,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0082-source-debt-report.md",
+      "bytes": 486,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0082-tool-capability-matrix-and-fallback-command-planner.md",
+      "bytes": 348,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0083-cargoless-rust-static-linter.md",
+      "bytes": 302,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0083-production-claim-guard.md",
+      "bytes": 490,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0084-handoff-manifest-verifier.md",
+      "bytes": 493,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0084-package-integrity-audit.md",
+      "bytes": 292,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0085-mvp-blocker-dependency-dag.md",
+      "bytes": 494,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0085-mvp-blocker-tasklist-generator.md",
+      "bytes": 306,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0086-agent-handoff-brief-generator.md",
+      "bytes": 304,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0086-local-migration-command-generator.md",
+      "bytes": 501,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0087-current-environment-final-report.md",
+      "bytes": 500,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0087-local-command-plan-generator.md",
+      "bytes": 302,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0088-source-debt-report.md",
+      "bytes": 282,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0089-production-claim-guard.md",
+      "bytes": 290,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0090-handoff-manifest-verifier.md",
+      "bytes": 296,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0091-mvp-blocker-dependency-dag.md",
+      "bytes": 298,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0092-local-migration-command-generator.md",
+      "bytes": 312,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0093-current-environment-final-report.md",
+      "bytes": 310,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0094-strict-ci-cd-quality-gates-with-90-coverage-target.md",
+      "bytes": 254,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0095-unit-integration-e2e-property-mutation-fuzz-test-s.md",
+      "bytes": 259,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0096-profiling-and-benchmark-scaffold.md",
+      "bytes": 233,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0097-astro-7-and-starlight-documentation-site-scaffold.md",
+      "bytes": 250,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0098-docs-site-cargoless-validation-and-ci-workflow.md",
+      "bytes": 247,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0099-testing-infrastructure-report-generator.md",
+      "bytes": 240,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0100-quality-gate-static-checker.md",
+      "bytes": 228,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/0101-documentation-build-policy-and-astro-7-adoption-de.md",
+      "bytes": 257,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/071-0071-apfs-offset-audit.md",
+      "bytes": 339,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/071-0071-markdown-link-audit.md",
+      "bytes": 302,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/072-0072-golden-output-expectations.md",
+      "bytes": 324,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/072-0072-shell-script-safety-audit.md",
+      "bytes": 317,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/073-0073-cargoless-smoke-suite.md",
+      "bytes": 306,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/073-0073-dependency-policy-audit.md",
+      "bytes": 321,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/074-0074-backlog-issue-export.md",
+      "bytes": 318,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/074-0074-documentation-index-audit.md",
+      "bytes": 311,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/075-0075-current-environment-selftest.md",
+      "bytes": 327,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/075-0075-fixture-coverage-report.md",
+      "bytes": 301,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/076-0076-current-env-completion-report.md",
+      "bytes": 311,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/077-apfs-offset-audit.md",
+      "bytes": 458,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/078-golden-output-expectations.md",
+      "bytes": 446,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/079-dependency-policy-audit.md",
+      "bytes": 438,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/080-backlog-issue-export.md",
+      "bytes": 452,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/081-current-environment-selftest.md",
+      "bytes": 440,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/082-m-082-tool-capability-matrix-and-fallback-command-planner.md",
+      "bytes": 442,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/083-m-083-cargoless-rust-static-linter.md",
+      "bytes": 419,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/084-m-084-package-integrity-audit.md",
+      "bytes": 414,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/085-m-085-mvp-blocker-tasklist-generator.md",
+      "bytes": 421,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/086-m-086-agent-handoff-brief-generator.md",
+      "bytes": 420,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/087-m-087-local-command-plan-generator.md",
+      "bytes": 419,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/094-strict-ci-quality-gates-and-90-coverage-policy.md",
+      "bytes": 309,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/095-unit-integration-e2e-property-fuzz-mutation-and-.md",
+      "bytes": 339,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/096-property-and-hypothesis-style-testing-scaffold.md",
+      "bytes": 308,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/097-mutation-testing-scaffold.md",
+      "bytes": 287,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/098-profiling-and-benchmark-scaffold.md",
+      "bytes": 294,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/099-astro-7-documentation-site-scaffold.md",
+      "bytes": 297,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/100-documentation-site-audit-and-quality-gate.md",
+      "bytes": 303,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/101-ci-quality-gate-audit.md",
+      "bytes": 283,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/102-extended-current-environment-tool-inventory.md",
+      "bytes": 305,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/plans/103-quality-and-docs-handoff-integration.md",
+      "bytes": 298,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/resources/capabilities.yaml",
+      "bytes": 44381,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/resources/safety-gates.yaml",
+      "bytes": 19585,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/resources/schemas/capabilities.schema.json",
+      "bytes": 360,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/resources/schemas/safety-gates.schema.json",
+      "bytes": 346,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0001-bootstrap-review.md",
+      "bytes": 640,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0002-gpt-probe-review.md",
+      "bytes": 922,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0003-checksum-and-checkpoint-scan-review.md",
+      "bytes": 823,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0004-checkpoint-map-and-omap-probe-review.md",
+      "bytes": 987,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0005-btree-node-probe-review.md",
+      "bytes": 1072,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0006-single-node-omap-lookup-review.md",
+      "bytes": 1030,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0007-checkpoint-mapped-omap-lookup-review.md",
+      "bytes": 1108,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0008-bounded-btree-traversal-review.md",
+      "bytes": 944,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0009-object-map-resolver-facade-review.md",
+      "bytes": 1024,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0010-btree-cursor-facade-review.md",
+      "bytes": 751,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0011-real-fixture-readiness-review.md",
+      "bytes": 1025,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0012-real-fixture-feedback-loop-review.md",
+      "bytes": 942,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0013-feedback-to-track-promotion-review.md",
+      "bytes": 908,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0014-volume-superblock-probe-review.md",
+      "bytes": 831,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0015-m015-synthetic-directory-root-tree-review.md",
+      "bytes": 514,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0015-mapped-object-read-report-review.md",
+      "bytes": 993,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0016-m016-directory-listing-cli-review.md",
+      "bytes": 479,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0016-synthetic-directory-record-parser-review.md",
+      "bytes": 279,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0017-m017-synthetic-file-preview-review.md",
+      "bytes": 519,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0017-synthetic-directory-listing-review.md",
+      "bytes": 244,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0018-synthetic-file-preview-review.md",
+      "bytes": 227,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0020-m019-synthetic-stat-cli-review.md",
+      "bytes": 506,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0021-m020-synthetic-safe-extract-cli-review.md",
+      "bytes": 554,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0022-m021-precompile-static-validation-review.md",
+      "bytes": 537,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0023-m-022-synthetic-fixture-oracle-review.md",
+      "bytes": 363,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0024-m-023-traceability-matrix-review.md",
+      "bytes": 370,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0025-m-024-loop-dashboard-review.md",
+      "bytes": 350,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0026-m-025-release-preflight-review.md",
+      "bytes": 353,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0026-m-026-read-only-vfs-facade-crate-review.md",
+      "bytes": 182,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0027-m-027-windows-read-only-adapter-readiness-scaffold-review.md",
+      "bytes": 200,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0027-m026-windows-mount-plan-review.md",
+      "bytes": 312,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0028-m-028-redacted-diagnostics-bundle-generator-review.md",
+      "bytes": 193,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0028-m027-diagnostics-bundle-review.md",
+      "bytes": 308,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0029-m-029-fuzz-target-scaffold-for-parser-entry-points-review.md",
+      "bytes": 200,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0029-m028-cli-contract-check-review.md",
+      "bytes": 302,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0030-m-030-cargoless-api-map-and-next-loop-planning-tools-review.md",
+      "bytes": 202,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0030-m029-context-integrity-check-review.md",
+      "bytes": 307,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0031-m-031-doctor-readiness-cli-review.md",
+      "bytes": 512,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0032-m-032-api-surface-source-metrics-review.md",
+      "bytes": 477,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0033-m-033-safety-case-preflight-review.md",
+      "bytes": 489,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0034-unicode-case-policy-review.md",
+      "bytes": 537,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0035-xattr-resource-fork-readiness-review.md",
+      "bytes": 531,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0036-sparse-clone-readiness-review.md",
+      "bytes": 514,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0037-compression-readiness-review.md",
+      "bytes": 517,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0038-snapshot-role-readiness-review.md",
+      "bytes": 527,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0039-feature-readiness-snapshot-review.md",
+      "bytes": 288,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0040-version-consistency-check-review.md",
+      "bytes": 230,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0041-cargo-error-triage-review.md",
+      "bytes": 382,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0042-local-handoff-runbook-review.md",
+      "bytes": 388,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0043-platform-setup-docs-review.md",
+      "bytes": 342,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0044-release-provenance-scaffold-review.md",
+      "bytes": 386,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0045-fuse-cross-platform-readiness-review.md",
+      "bytes": 384,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0046-android-access-readiness-review.md",
+      "bytes": 358,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0047-encryption-read-readiness-review.md",
+      "bytes": 366,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0048-image-write-lab-readiness-review.md",
+      "bytes": 358,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0049-handoff-release-preflight-integration-review.md",
+      "bytes": 360,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0050-reproducible-toolchain-config-review.md",
+      "bytes": 541,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0051-devcontainer-tool-bootstrap-review.md",
+      "bytes": 526,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0052-precommit-static-quality-configs-review.md",
+      "bytes": 524,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0053-local-first-run-triage-review.md",
+      "bytes": 519,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0054-known-uncompiled-risks-review.md",
+      "bytes": 518,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0055-local-environment-doctor-review.md",
+      "bytes": 511,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0056-repository-manifest-generator-review.md",
+      "bytes": 516,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0057-handoff-status-reporter-review.md",
+      "bytes": 510,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0058-local-handoff-preflight-integration-review.md",
+      "bytes": 522,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0059-local-compile-loop-orchestrator-review.md",
+      "bytes": 314,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0060-cargo-workspace-audit-review.md",
+      "bytes": 314,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0061-macos-fixture-dry-run-validator-review.md",
+      "bytes": 319,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0062-winfsp-callback-contract-matrix-review.md",
+      "bytes": 324,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0063-production-gap-report-review.md",
+      "bytes": 314,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0064-batched-loop-policy-review.md",
+      "bytes": 326,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0065-current-environment-inventory-review.md",
+      "bytes": 490,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0066-current-environment-remaining-classifier-review.md",
+      "bytes": 481,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0067-cargo-dependency-graph-review.md",
+      "bytes": 463,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0068-synthetic-negative-fixtures-review.md",
+      "bytes": 464,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0069-test-control-matrix-review.md",
+      "bytes": 462,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0070-handoff-archive-audit-review.md",
+      "bytes": 455,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0082-source-debt-report-review.md",
+      "bytes": 482,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0082-tool-capability-matrix-and-fallback-command-planner-review.md",
+      "bytes": 350,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0083-cargoless-rust-static-linter-review.md",
+      "bytes": 304,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0083-production-claim-guard-review.md",
+      "bytes": 490,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0084-handoff-manifest-verifier-review.md",
+      "bytes": 496,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0084-package-integrity-audit-review.md",
+      "bytes": 294,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0085-mvp-blocker-dependency-dag-review.md",
+      "bytes": 498,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0085-mvp-blocker-tasklist-generator-review.md",
+      "bytes": 308,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0086-agent-handoff-brief-generator-review.md",
+      "bytes": 306,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0086-local-migration-command-generator-review.md",
+      "bytes": 512,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0087-current-environment-final-report-review.md",
+      "bytes": 510,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0087-local-command-plan-generator-review.md",
+      "bytes": 304,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0088-source-debt-report-review.md",
+      "bytes": 284,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0089-production-claim-guard-review.md",
+      "bytes": 292,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0090-handoff-manifest-verifier-review.md",
+      "bytes": 298,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0091-mvp-blocker-dependency-dag-review.md",
+      "bytes": 300,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0092-local-migration-command-generator-review.md",
+      "bytes": 314,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0093-current-environment-final-report-review.md",
+      "bytes": 312,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0094-strict-ci-cd-quality-gates-with-90-coverage-target-review.md",
+      "bytes": 151,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0095-unit-integration-e2e-property-mutation-fuzz-test-s-review.md",
+      "bytes": 156,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0096-profiling-and-benchmark-scaffold-review.md",
+      "bytes": 130,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0097-astro-7-and-starlight-documentation-site-scaffold-review.md",
+      "bytes": 147,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0098-docs-site-cargoless-validation-and-ci-workflow-review.md",
+      "bytes": 144,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0099-testing-infrastructure-report-generator-review.md",
+      "bytes": 137,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0100-quality-gate-static-checker-review.md",
+      "bytes": 125,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/0101-documentation-build-policy-and-astro-7-adoption-de-review.md",
+      "bytes": 154,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/071-0071-apfs-offset-audit-review.md",
+      "bytes": 519,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/071-0071-markdown-link-audit-review.md",
+      "bytes": 195,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/072-0072-golden-output-expectations-review.md",
+      "bytes": 489,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/072-0072-shell-script-safety-audit-review.md",
+      "bytes": 210,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/073-0073-cargoless-smoke-suite-review.md",
+      "bytes": 199,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/073-0073-dependency-policy-audit-review.md",
+      "bytes": 483,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/074-0074-backlog-issue-export-review.md",
+      "bytes": 477,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/074-0074-documentation-index-audit-review.md",
+      "bytes": 204,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/075-0075-current-environment-selftest-review.md",
+      "bytes": 495,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/075-0075-fixture-coverage-report-review.md",
+      "bytes": 194,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/076-0076-current-env-completion-report-review.md",
+      "bytes": 204,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/077-apfs-offset-audit-review.md",
+      "bytes": 462,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/078-golden-output-expectations-review.md",
+      "bytes": 450,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/079-dependency-policy-audit-review.md",
+      "bytes": 442,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/080-backlog-issue-export-review.md",
+      "bytes": 456,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/081-current-environment-selftest-review.md",
+      "bytes": 444,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/082-m-082-tool-capability-matrix-and-fallback-command-planner-review.md",
+      "bytes": 532,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/083-m-083-cargoless-rust-static-linter-review.md",
+      "bytes": 486,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/084-m-084-package-integrity-audit-review.md",
+      "bytes": 476,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/085-m-085-mvp-blocker-tasklist-generator-review.md",
+      "bytes": 490,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/086-m-086-agent-handoff-brief-generator-review.md",
+      "bytes": 488,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/087-m-087-local-command-plan-generator-review.md",
+      "bytes": 486,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/094-strict-ci-quality-gates-and-90-coverage-policy-review.md",
+      "bytes": 273,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/095-unit-integration-e2e-property-fuzz-mutation-and--review.md",
+      "bytes": 303,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/096-property-and-hypothesis-style-testing-scaffold-review.md",
+      "bytes": 272,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/097-mutation-testing-scaffold-review.md",
+      "bytes": 251,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/098-profiling-and-benchmark-scaffold-review.md",
+      "bytes": 258,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/099-astro-7-documentation-site-scaffold-review.md",
+      "bytes": 261,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/100-documentation-site-audit-and-quality-gate-review.md",
+      "bytes": 267,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/101-ci-quality-gate-audit-review.md",
+      "bytes": 247,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/102-extended-current-environment-tool-inventory-review.md",
+      "bytes": 269,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/reviews/103-quality-and-docs-handoff-integration-review.md",
+      "bytes": 262,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0001-m001-inspect.md",
+      "bytes": 689,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0002-m001-gpt-image-probe.md",
+      "bytes": 736,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0003-m003-checksum-validation.md",
+      "bytes": 837,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0004-m004-checkpoint-candidate-scan.md",
+      "bytes": 683,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0005-m004-checkpoint-map-and-omap-probe.md",
+      "bytes": 1113,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0006-m005-btree-node-probe.md",
+      "bytes": 930,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0007-m005-single-node-omap-lookup.md",
+      "bytes": 1164,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0008-m007-checkpoint-mapped-omap-lookup.md",
+      "bytes": 1157,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0009-m008-bounded-btree-traversal.md",
+      "bytes": 1162,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0010-m009-object-map-resolver-facade.md",
+      "bytes": 927,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0011-m010-btree-cursor-facade.md",
+      "bytes": 1058,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0012-m011-real-fixture-readiness.md",
+      "bytes": 1269,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0013-m012-real-fixture-feedback-loop.md",
+      "bytes": 1337,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0014-m013-feedback-to-track-promotion.md",
+      "bytes": 1247,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0015-m014-volume-superblock-probe.md",
+      "bytes": 1042,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0016-m015-mapped-object-read-report.md",
+      "bytes": 995,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0016-m015-synthetic-directory-root-tree.md",
+      "bytes": 606,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0017-m016-directory-listing-cli.md",
+      "bytes": 571,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0017-m016-synthetic-directory-record-parser.md",
+      "bytes": 455,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0018-m017-synthetic-directory-listing.md",
+      "bytes": 368,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0019-m018-synthetic-file-preview.md",
+      "bytes": 376,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0020-m019-synthetic-stat-cli.md",
+      "bytes": 490,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0021-m020-synthetic-safe-extract-cli.md",
+      "bytes": 538,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0022-m021-precompile-static-validation.md",
+      "bytes": 521,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0023-m-022-synthetic-fixture-oracle.md",
+      "bytes": 462,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0024-m-023-traceability-matrix.md",
+      "bytes": 469,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0025-m-024-loop-dashboard.md",
+      "bytes": 449,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0026-m-025-release-preflight.md",
+      "bytes": 452,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0026-m-026-read-only-vfs-facade-crate.md",
+      "bytes": 304,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0027-m-027-windows-read-only-adapter-readiness-scaffold.md",
+      "bytes": 340,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0027-m026-windows-mount-plan.md",
+      "bytes": 291,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0028-m-028-redacted-diagnostics-bundle-generator.md",
+      "bytes": 326,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0028-m027-diagnostics-bundle.md",
+      "bytes": 283,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0029-m-029-fuzz-target-scaffold-for-parser-entry-points.md",
+      "bytes": 340,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0029-m028-cli-contract-check.md",
+      "bytes": 271,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0030-m-030-cargoless-api-map-and-next-loop-planning-tools.md",
+      "bytes": 344,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0030-m029-context-integrity-check.md",
+      "bytes": 281,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0031-m-031-doctor-readiness-cli.md",
+      "bytes": 385,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0032-m-032-api-surface-source-metrics.md",
+      "bytes": 350,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0033-m-033-safety-case-preflight.md",
+      "bytes": 362,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0034-m-034-unicode-case-policy.md",
+      "bytes": 527,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0035-m-035-xattr-resource-fork-readiness.md",
+      "bytes": 521,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0036-m-036-sparse-clone-readiness.md",
+      "bytes": 504,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0037-m-037-compression-readiness.md",
+      "bytes": 507,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0038-m-038-snapshot-role-readiness.md",
+      "bytes": 517,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0039-m039-feature-readiness-snapshot.md",
+      "bytes": 585,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0040-m040-version-consistency-check.md",
+      "bytes": 386,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0041-cargo-error-triage.md",
+      "bytes": 308,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0042-local-handoff-runbook.md",
+      "bytes": 314,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0043-platform-setup-docs.md",
+      "bytes": 268,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0044-release-provenance-scaffold.md",
+      "bytes": 312,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0045-fuse-cross-platform-readiness.md",
+      "bytes": 310,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0046-android-access-readiness.md",
+      "bytes": 284,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0047-encryption-read-readiness.md",
+      "bytes": 292,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0048-image-write-lab-readiness.md",
+      "bytes": 284,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0049-handoff-release-preflight-integration.md",
+      "bytes": 286,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0050-reproducible-toolchain-config.md",
+      "bytes": 567,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0051-devcontainer-tool-bootstrap.md",
+      "bytes": 552,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0052-precommit-static-quality-configs.md",
+      "bytes": 550,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0053-local-first-run-triage.md",
+      "bytes": 545,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0054-known-uncompiled-risks.md",
+      "bytes": 544,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0055-local-environment-doctor.md",
+      "bytes": 537,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0056-repository-manifest-generator.md",
+      "bytes": 542,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0057-handoff-status-reporter.md",
+      "bytes": 536,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0058-local-handoff-preflight-integration.md",
+      "bytes": 548,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0059-local-compile-loop-orchestrator.md",
+      "bytes": 460,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0060-cargo-workspace-audit.md",
+      "bytes": 460,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0061-macos-fixture-dry-run-validator.md",
+      "bytes": 470,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0062-winfsp-callback-contract-matrix.md",
+      "bytes": 480,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0063-production-gap-report.md",
+      "bytes": 460,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0064-batched-loop-policy.md",
+      "bytes": 484,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0065-m-065-current-environment-inventory.md",
+      "bytes": 518,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0066-m-066-current-environment-remaining-classifier.md",
+      "bytes": 509,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0067-m-067-cargo-dependency-graph.md",
+      "bytes": 491,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0068-m-068-synthetic-negative-fixtures.md",
+      "bytes": 492,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0069-m-069-test-control-matrix.md",
+      "bytes": 490,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0070-m-070-handoff-archive-audit.md",
+      "bytes": 483,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0082-source-debt-report.md",
+      "bytes": 536,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0082-tool-capability-matrix-and-fallback-command-planner.md",
+      "bytes": 348,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0083-cargoless-rust-static-linter.md",
+      "bytes": 302,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0083-production-claim-guard.md",
+      "bytes": 544,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0084-handoff-manifest-verifier.md",
+      "bytes": 550,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0084-package-integrity-audit.md",
+      "bytes": 292,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0085-mvp-blocker-dependency-dag.md",
+      "bytes": 552,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0085-mvp-blocker-tasklist-generator.md",
+      "bytes": 306,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0086-agent-handoff-brief-generator.md",
+      "bytes": 304,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0086-local-migration-command-generator.md",
+      "bytes": 566,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0087-current-environment-final-report.md",
+      "bytes": 564,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0087-local-command-plan-generator.md",
+      "bytes": 302,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0088-source-debt-report.md",
+      "bytes": 282,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0089-production-claim-guard.md",
+      "bytes": 290,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0090-handoff-manifest-verifier.md",
+      "bytes": 296,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0091-mvp-blocker-dependency-dag.md",
+      "bytes": 298,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0092-local-migration-command-generator.md",
+      "bytes": 312,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0093-current-environment-final-report.md",
+      "bytes": 310,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0094-strict-ci-cd-quality-gates-with-90-coverage-target.md",
+      "bytes": 272,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0095-unit-integration-e2e-property-mutation-fuzz-test-s.md",
+      "bytes": 277,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0096-profiling-and-benchmark-scaffold.md",
+      "bytes": 251,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0097-astro-7-and-starlight-documentation-site-scaffold.md",
+      "bytes": 268,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0098-docs-site-cargoless-validation-and-ci-workflow.md",
+      "bytes": 265,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0099-testing-infrastructure-report-generator.md",
+      "bytes": 258,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0100-quality-gate-static-checker.md",
+      "bytes": 246,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/0101-documentation-build-policy-and-astro-7-adoption-de.md",
+      "bytes": 275,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/071-0071-apfs-offset-audit.md",
+      "bytes": 555,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/071-0071-markdown-link-audit.md",
+      "bytes": 341,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/072-0072-golden-output-expectations.md",
+      "bytes": 533,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/072-0072-shell-script-safety-audit.md",
+      "bytes": 371,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/073-0073-cargoless-smoke-suite.md",
+      "bytes": 349,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/073-0073-dependency-policy-audit.md",
+      "bytes": 550,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/074-0074-backlog-issue-export.md",
+      "bytes": 519,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/074-0074-documentation-index-audit.md",
+      "bytes": 359,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/075-0075-current-environment-selftest.md",
+      "bytes": 540,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/075-0075-fixture-coverage-report.md",
+      "bytes": 339,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/076-0076-current-env-completion-report.md",
+      "bytes": 359,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/077-apfs-offset-audit.md",
+      "bytes": 458,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/078-golden-output-expectations.md",
+      "bytes": 446,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/079-dependency-policy-audit.md",
+      "bytes": 438,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/080-backlog-issue-export.md",
+      "bytes": 452,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/081-current-environment-selftest.md",
+      "bytes": 440,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/082-m-082-tool-capability-matrix-and-fallback-command-planner.md",
+      "bytes": 598,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/083-m-083-cargoless-rust-static-linter.md",
+      "bytes": 552,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/084-m-084-package-integrity-audit.md",
+      "bytes": 542,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/085-m-085-mvp-blocker-tasklist-generator.md",
+      "bytes": 556,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/086-m-086-agent-handoff-brief-generator.md",
+      "bytes": 554,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/087-m-087-local-command-plan-generator.md",
+      "bytes": 552,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/094-strict-ci-quality-gates-and-90-coverage-policy.md",
+      "bytes": 434,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/095-unit-integration-e2e-property-fuzz-mutation-and-.md",
+      "bytes": 494,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/096-property-and-hypothesis-style-testing-scaffold.md",
+      "bytes": 432,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/097-mutation-testing-scaffold.md",
+      "bytes": 390,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/098-profiling-and-benchmark-scaffold.md",
+      "bytes": 404,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/099-astro-7-documentation-site-scaffold.md",
+      "bytes": 410,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/100-documentation-site-audit-and-quality-gate.md",
+      "bytes": 422,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/101-ci-quality-gate-audit.md",
+      "bytes": 382,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/102-extended-current-environment-tool-inventory.md",
+      "bytes": 426,
+      "category": "codev_context"
+    },
+    {
+      "path": "codev/specs/103-quality-and-docs-handoff-integration.md",
+      "bytes": 412,
+      "category": "codev_context"
+    },
+    {
+      "path": "conductor/history.md",
+      "bytes": 11442,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/product-guidelines.md",
+      "bytes": 1085,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/product.md",
+      "bytes": 1808,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/skills/conductor-context-management/SKILL.md",
+      "bytes": 858,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tech-stack.md",
+      "bytes": 1035,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0000-project-context/metadata.json",
+      "bytes": 184,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0000-project-context/plan.md",
+      "bytes": 326,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0000-project-context/spec.md",
+      "bytes": 269,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0001-m001-container-inspect/metadata.json",
+      "bytes": 215,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0001-m001-container-inspect/plan.md",
+      "bytes": 332,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0001-m001-container-inspect/spec.md",
+      "bytes": 300,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0002-m002-gpt-apfs-probe/metadata.json",
+      "bytes": 198,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0002-m002-gpt-apfs-probe/plan.md",
+      "bytes": 315,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0002-m002-gpt-apfs-probe/spec.md",
+      "bytes": 283,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0003-m003-checksum-validation/metadata.json",
+      "bytes": 201,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0003-m003-checksum-validation/plan.md",
+      "bytes": 318,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0003-m003-checksum-validation/spec.md",
+      "bytes": 286,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0004-m004-checkpoint-scan/metadata.json",
+      "bytes": 198,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0004-m004-checkpoint-scan/plan.md",
+      "bytes": 315,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0004-m004-checkpoint-scan/spec.md",
+      "bytes": 283,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0005-m004-checkpoint-map-omap-probe/metadata.json",
+      "bytes": 214,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0005-m004-checkpoint-map-omap-probe/plan.md",
+      "bytes": 331,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0005-m004-checkpoint-map-omap-probe/spec.md",
+      "bytes": 299,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0006-m005-btree-node-probe/metadata.json",
+      "bytes": 217,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0006-m005-btree-node-probe/plan.md",
+      "bytes": 334,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0006-m005-btree-node-probe/spec.md",
+      "bytes": 302,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0007-m006-single-node-omap-lookup/metadata.json",
+      "bytes": 214,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0007-m006-single-node-omap-lookup/plan.md",
+      "bytes": 331,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0007-m006-single-node-omap-lookup/spec.md",
+      "bytes": 299,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0008-m007-checkpoint-mapped-omap-lookup/metadata.json",
+      "bytes": 224,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0008-m007-checkpoint-mapped-omap-lookup/plan.md",
+      "bytes": 341,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0008-m007-checkpoint-mapped-omap-lookup/spec.md",
+      "bytes": 309,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0009-m008-bounded-btree-traversal/metadata.json",
+      "bytes": 213,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0009-m008-bounded-btree-traversal/plan.md",
+      "bytes": 330,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0009-m008-bounded-btree-traversal/spec.md",
+      "bytes": 298,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0009b-m009-object-map-resolver/metadata.json",
+      "bytes": 216,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0009b-m009-object-map-resolver/plan.md",
+      "bytes": 333,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0009b-m009-object-map-resolver/spec.md",
+      "bytes": 301,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0010-btree-cursor/metadata.json",
+      "bytes": 192,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0010-btree-cursor/plan.md",
+      "bytes": 308,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0010-btree-cursor/spec.md",
+      "bytes": 277,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0011-real-fixture-readiness/metadata.json",
+      "bytes": 205,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0011-real-fixture-readiness/plan.md",
+      "bytes": 321,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0011-real-fixture-readiness/spec.md",
+      "bytes": 290,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0012-real-fixture-feedback-loop/metadata.json",
+      "bytes": 253,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0012-real-fixture-feedback-loop/plan.md",
+      "bytes": 369,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0012-real-fixture-feedback-loop/spec.md",
+      "bytes": 338,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0013-feedback-to-conductor-tracks/metadata.json",
+      "bytes": 236,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0013-feedback-to-conductor-tracks/plan.md",
+      "bytes": 352,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0013-feedback-to-conductor-tracks/spec.md",
+      "bytes": 321,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0014-volume-superblock-probe/metadata.json",
+      "bytes": 225,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0014-volume-superblock-probe/plan.md",
+      "bytes": 341,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0014-volume-superblock-probe/spec.md",
+      "bytes": 310,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0015-mapped-object-read-report/metadata.json",
+      "bytes": 228,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0015-mapped-object-read-report/plan.md",
+      "bytes": 344,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0015-mapped-object-read-report/spec.md",
+      "bytes": 313,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0016-synthetic-directory-record-parser/metadata.json",
+      "bytes": 149,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0016-synthetic-directory-record-parser/plan.md",
+      "bytes": 170,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0016-synthetic-directory-record-parser/spec.md",
+      "bytes": 210,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0016-synthetic-directory-root-tree/metadata.json",
+      "bytes": 225,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0016-synthetic-directory-root-tree/plan.md",
+      "bytes": 341,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0016-synthetic-directory-root-tree/spec.md",
+      "bytes": 310,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0017-directory-listing-cli/metadata.json",
+      "bytes": 208,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0017-directory-listing-cli/plan.md",
+      "bytes": 324,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0017-directory-listing-cli/spec.md",
+      "bytes": 293,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0017-synthetic-directory-listing/metadata.json",
+      "bytes": 141,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0017-synthetic-directory-listing/plan.md",
+      "bytes": 144,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0017-synthetic-directory-listing/spec.md",
+      "bytes": 196,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0018-synthetic-file-preview/0017-synthetic-file-preview/metadata.json",
+      "bytes": 156,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0018-synthetic-file-preview/0017-synthetic-file-preview/plan.md",
+      "bytes": 193,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0018-synthetic-file-preview/0017-synthetic-file-preview/spec.md",
+      "bytes": 221,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0018-synthetic-file-preview/metadata.json",
+      "bytes": 127,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0018-synthetic-file-preview/plan.md",
+      "bytes": 159,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0018-synthetic-file-preview/spec.md",
+      "bytes": 198,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0019-synthetic-stat-cli/metadata.json",
+      "bytes": 119,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0019-synthetic-stat-cli/plan.md",
+      "bytes": 425,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0019-synthetic-stat-cli/spec.md",
+      "bytes": 244,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0020-synthetic-safe-extract-cli/metadata.json",
+      "bytes": 135,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0020-synthetic-safe-extract-cli/plan.md",
+      "bytes": 433,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0020-synthetic-safe-extract-cli/spec.md",
+      "bytes": 266,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0021-precompile-static-validation/metadata.json",
+      "bytes": 139,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0021-precompile-static-validation/plan.md",
+      "bytes": 453,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0021-precompile-static-validation/spec.md",
+      "bytes": 264,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0022-synthetic-fixture-oracle/metadata.json",
+      "bytes": 146,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0022-synthetic-fixture-oracle/plan.md",
+      "bytes": 181,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0022-synthetic-fixture-oracle/spec.md",
+      "bytes": 150,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0023-traceability-matrix/metadata.json",
+      "bytes": 141,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0023-traceability-matrix/plan.md",
+      "bytes": 188,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0023-traceability-matrix/spec.md",
+      "bytes": 157,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0024-loop-dashboard/metadata.json",
+      "bytes": 136,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0024-loop-dashboard/plan.md",
+      "bytes": 168,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0024-loop-dashboard/spec.md",
+      "bytes": 137,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0025-release-preflight/metadata.json",
+      "bytes": 139,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0025-release-preflight/plan.md",
+      "bytes": 171,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0025-release-preflight/spec.md",
+      "bytes": 140,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0026-read-only-vfs-facade/metadata.json",
+      "bytes": 142,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0026-read-only-vfs-facade/plan.md",
+      "bytes": 133,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0026-read-only-vfs-facade/spec.md",
+      "bytes": 123,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0026-windows-mount-plan/metadata.json",
+      "bytes": 186,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0026-windows-mount-plan/plan.md",
+      "bytes": 184,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0026-windows-mount-plan/spec.md",
+      "bytes": 182,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0027-redacted-diagnostics-bundle/metadata.json",
+      "bytes": 191,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0027-redacted-diagnostics-bundle/plan.md",
+      "bytes": 180,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0027-redacted-diagnostics-bundle/spec.md",
+      "bytes": 174,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0027-windows-readiness-scaffold/metadata.json",
+      "bytes": 148,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0027-windows-readiness-scaffold/plan.md",
+      "bytes": 151,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0027-windows-readiness-scaffold/spec.md",
+      "bytes": 141,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0028-cli-contract-check/metadata.json",
+      "bytes": 176,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0028-cli-contract-check/plan.md",
+      "bytes": 174,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0028-cli-contract-check/spec.md",
+      "bytes": 162,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0028-redacted-diagnostics-bundle/metadata.json",
+      "bytes": 149,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0028-redacted-diagnostics-bundle/plan.md",
+      "bytes": 144,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0028-redacted-diagnostics-bundle/spec.md",
+      "bytes": 134,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0029-context-integrity-check/metadata.json",
+      "bytes": 186,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0029-context-integrity-check/plan.md",
+      "bytes": 179,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0029-context-integrity-check/spec.md",
+      "bytes": 172,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0029-fuzz-target-scaffold/metadata.json",
+      "bytes": 142,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0029-fuzz-target-scaffold/plan.md",
+      "bytes": 151,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0029-fuzz-target-scaffold/spec.md",
+      "bytes": 141,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0030-api-map-next-loop-planner/metadata.json",
+      "bytes": 147,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0030-api-map-next-loop-planner/plan.md",
+      "bytes": 153,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0030-api-map-next-loop-planner/spec.md",
+      "bytes": 143,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0031-doctor-readiness-cli/metadata.json",
+      "bytes": 134,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0031-doctor-readiness-cli/plan.md",
+      "bytes": 177,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0031-doctor-readiness-cli/spec.md",
+      "bytes": 312,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0032-api-surface-source-metrics/metadata.json",
+      "bytes": 140,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0032-api-surface-source-metrics/plan.md",
+      "bytes": 197,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0032-api-surface-source-metrics/spec.md",
+      "bytes": 315,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0033-safety-case-preflight/metadata.json",
+      "bytes": 135,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0033-safety-case-preflight/plan.md",
+      "bytes": 178,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0033-safety-case-preflight/spec.md",
+      "bytes": 285,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0034-unicode-case-policy/metadata.json",
+      "bytes": 187,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0034-unicode-case-policy/plan.md",
+      "bytes": 220,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0034-unicode-case-policy/spec.md",
+      "bytes": 310,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0035-xattr-resource-fork-readiness/metadata.json",
+      "bytes": 191,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0035-xattr-resource-fork-readiness/plan.md",
+      "bytes": 214,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0035-xattr-resource-fork-readiness/spec.md",
+      "bytes": 304,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0036-sparse-clone-readiness/metadata.json",
+      "bytes": 182,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0036-sparse-clone-readiness/plan.md",
+      "bytes": 212,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0036-sparse-clone-readiness/spec.md",
+      "bytes": 287,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0037-compression-readiness/metadata.json",
+      "bytes": 171,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0037-compression-readiness/plan.md",
+      "bytes": 202,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0037-compression-readiness/spec.md",
+      "bytes": 290,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0038-snapshot-role-readiness/metadata.json",
+      "bytes": 186,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0038-snapshot-role-readiness/plan.md",
+      "bytes": 215,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0038-snapshot-role-readiness/spec.md",
+      "bytes": 300,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0039-feature-readiness-snapshot/metadata.json",
+      "bytes": 188,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0039-feature-readiness-snapshot/plan.md",
+      "bytes": 162,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0039-feature-readiness-snapshot/spec.md",
+      "bytes": 293,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0040-version-consistency-check/metadata.json",
+      "bytes": 179,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0040-version-consistency-check/plan.md",
+      "bytes": 176,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0040-version-consistency-check/spec.md",
+      "bytes": 221,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0041-cargo-error-triage/metadata.json",
+      "bytes": 131,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0041-cargo-error-triage/plan.md",
+      "bytes": 128,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0041-cargo-error-triage/spec.md",
+      "bytes": 308,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0042-local-handoff-runbook/metadata.json",
+      "bytes": 134,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0042-local-handoff-runbook/plan.md",
+      "bytes": 128,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0042-local-handoff-runbook/spec.md",
+      "bytes": 314,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0043-platform-setup-docs/metadata.json",
+      "bytes": 132,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0043-platform-setup-docs/plan.md",
+      "bytes": 128,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0043-platform-setup-docs/spec.md",
+      "bytes": 268,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0044-release-provenance-scaffold/metadata.json",
+      "bytes": 140,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0044-release-provenance-scaffold/plan.md",
+      "bytes": 128,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0044-release-provenance-scaffold/spec.md",
+      "bytes": 312,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0045-fuse-cross-platform-readiness/metadata.json",
+      "bytes": 142,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0045-fuse-cross-platform-readiness/plan.md",
+      "bytes": 128,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0045-fuse-cross-platform-readiness/spec.md",
+      "bytes": 310,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0046-android-access-readiness/metadata.json",
+      "bytes": 137,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0046-android-access-readiness/plan.md",
+      "bytes": 128,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0046-android-access-readiness/spec.md",
+      "bytes": 284,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0047-encryption-read-readiness/metadata.json",
+      "bytes": 138,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0047-encryption-read-readiness/plan.md",
+      "bytes": 128,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0047-encryption-read-readiness/spec.md",
+      "bytes": 292,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0048-image-write-lab-readiness/metadata.json",
+      "bytes": 138,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0048-image-write-lab-readiness/plan.md",
+      "bytes": 128,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0048-image-write-lab-readiness/spec.md",
+      "bytes": 284,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0049-handoff-release-preflight-integration/metadata.json",
+      "bytes": 150,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0049-handoff-release-preflight-integration/plan.md",
+      "bytes": 128,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0049-handoff-release-preflight-integration/spec.md",
+      "bytes": 286,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0050-reproducible-toolchain-config/metadata.json",
+      "bytes": 282,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0050-reproducible-toolchain-config/plan.md",
+      "bytes": 335,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0050-reproducible-toolchain-config/spec.md",
+      "bytes": 518,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0051-devcontainer-tool-bootstrap/metadata.json",
+      "bytes": 265,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0051-devcontainer-tool-bootstrap/plan.md",
+      "bytes": 320,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0051-devcontainer-tool-bootstrap/spec.md",
+      "bytes": 503,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0052-precommit-static-quality-configs/metadata.json",
+      "bytes": 268,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0052-precommit-static-quality-configs/plan.md",
+      "bytes": 318,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0052-precommit-static-quality-configs/spec.md",
+      "bytes": 501,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0053-local-first-run-triage/metadata.json",
+      "bytes": 253,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0053-local-first-run-triage/plan.md",
+      "bytes": 313,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0053-local-first-run-triage/spec.md",
+      "bytes": 496,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0054-known-uncompiled-risks/metadata.json",
+      "bytes": 252,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0054-known-uncompiled-risks/plan.md",
+      "bytes": 312,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0054-known-uncompiled-risks/spec.md",
+      "bytes": 495,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0055-local-environment-doctor/metadata.json",
+      "bytes": 247,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0055-local-environment-doctor/plan.md",
+      "bytes": 305,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0055-local-environment-doctor/spec.md",
+      "bytes": 488,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0056-repository-manifest-generator/metadata.json",
+      "bytes": 257,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0056-repository-manifest-generator/plan.md",
+      "bytes": 310,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0056-repository-manifest-generator/spec.md",
+      "bytes": 493,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0057-handoff-status-reporter/metadata.json",
+      "bytes": 245,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0057-handoff-status-reporter/plan.md",
+      "bytes": 304,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0057-handoff-status-reporter/spec.md",
+      "bytes": 487,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0058-local-handoff-preflight-integration/metadata.json",
+      "bytes": 269,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0058-local-handoff-preflight-integration/plan.md",
+      "bytes": 316,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0058-local-handoff-preflight-integration/spec.md",
+      "bytes": 499,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0059-local-compile-loop-orchestrator/metadata.json",
+      "bytes": 188,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0059-local-compile-loop-orchestrator/plan.md",
+      "bytes": 206,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0059-local-compile-loop-orchestrator/spec.md",
+      "bytes": 254,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0060-cargo-workspace-audit/metadata.json",
+      "bytes": 178,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0060-cargo-workspace-audit/plan.md",
+      "bytes": 206,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0060-cargo-workspace-audit/spec.md",
+      "bytes": 254,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0061-macos-fixture-dry-run-validator/metadata.json",
+      "bytes": 193,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0061-macos-fixture-dry-run-validator/plan.md",
+      "bytes": 211,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0061-macos-fixture-dry-run-validator/spec.md",
+      "bytes": 264,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0062-winfsp-callback-contract-matrix/metadata.json",
+      "bytes": 198,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0062-winfsp-callback-contract-matrix/plan.md",
+      "bytes": 216,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0062-winfsp-callback-contract-matrix/spec.md",
+      "bytes": 274,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0063-production-gap-report/metadata.json",
+      "bytes": 178,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0063-production-gap-report/plan.md",
+      "bytes": 206,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0063-production-gap-report/spec.md",
+      "bytes": 254,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0064-batched-loop-policy/metadata.json",
+      "bytes": 188,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0064-batched-loop-policy/plan.md",
+      "bytes": 218,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0064-batched-loop-policy/spec.md",
+      "bytes": 278,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0065-current-environment-inventory/metadata.json",
+      "bytes": 229,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0065-current-environment-inventory/plan.md",
+      "bytes": 199,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0065-current-environment-inventory/spec.md",
+      "bytes": 283,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0066-current-environment-remaining-classifier/metadata.json",
+      "bytes": 245,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0066-current-environment-remaining-classifier/plan.md",
+      "bytes": 204,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0066-current-environment-remaining-classifier/spec.md",
+      "bytes": 274,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0067-cargo-dependency-graph/metadata.json",
+      "bytes": 224,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0067-cargo-dependency-graph/plan.md",
+      "bytes": 201,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0067-cargo-dependency-graph/spec.md",
+      "bytes": 256,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0068-synthetic-negative-fixtures/metadata.json",
+      "bytes": 223,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0068-synthetic-negative-fixtures/plan.md",
+      "bytes": 195,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0068-synthetic-negative-fixtures/spec.md",
+      "bytes": 257,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0069-test-control-matrix/metadata.json",
+      "bytes": 208,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0069-test-control-matrix/plan.md",
+      "bytes": 188,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0069-test-control-matrix/spec.md",
+      "bytes": 255,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0070-handoff-archive-audit/metadata.json",
+      "bytes": 212,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0070-handoff-archive-audit/plan.md",
+      "bytes": 190,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0070-handoff-archive-audit/spec.md",
+      "bytes": 248,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0071-markdown-link-audit/metadata.json",
+      "bytes": 193,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0071-markdown-link-audit/plan.md",
+      "bytes": 173,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0071-markdown-link-audit/spec.md",
+      "bytes": 191,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0072-shell-script-safety-audit/metadata.json",
+      "bytes": 214,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0072-shell-script-safety-audit/plan.md",
+      "bytes": 188,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0072-shell-script-safety-audit/spec.md",
+      "bytes": 212,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0073-cargoless-smoke-suite/metadata.json",
+      "bytes": 199,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0073-cargoless-smoke-suite/plan.md",
+      "bytes": 177,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0073-cargoless-smoke-suite/spec.md",
+      "bytes": 197,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0074-documentation-index-audit/metadata.json",
+      "bytes": 208,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0074-documentation-index-audit/plan.md",
+      "bytes": 182,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0074-documentation-index-audit/spec.md",
+      "bytes": 206,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0075-fixture-coverage-report/metadata.json",
+      "bytes": 196,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0075-fixture-coverage-report/plan.md",
+      "bytes": 172,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0075-fixture-coverage-report/spec.md",
+      "bytes": 194,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0076-current-env-completion-report/metadata.json",
+      "bytes": 212,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0076-current-env-completion-report/plan.md",
+      "bytes": 182,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0076-current-env-completion-report/spec.md",
+      "bytes": 210,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0077-apfs-offset-audit/metadata.json",
+      "bytes": 194,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0077-apfs-offset-audit/plan.md",
+      "bytes": 229,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0077-apfs-offset-audit/spec.md",
+      "bytes": 241,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0078-golden-output-expectations/metadata.json",
+      "bytes": 197,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0078-golden-output-expectations/plan.md",
+      "bytes": 223,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0078-golden-output-expectations/spec.md",
+      "bytes": 235,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0079-dependency-policy-audit/metadata.json",
+      "bytes": 190,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0079-dependency-policy-audit/plan.md",
+      "bytes": 219,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0079-dependency-policy-audit/spec.md",
+      "bytes": 231,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0080-backlog-issue-export/metadata.json",
+      "bytes": 194,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0080-backlog-issue-export/plan.md",
+      "bytes": 226,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0080-backlog-issue-export/spec.md",
+      "bytes": 238,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0081-current-environment-selftest/metadata.json",
+      "bytes": 196,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0081-current-environment-selftest/plan.md",
+      "bytes": 220,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0081-current-environment-selftest/spec.md",
+      "bytes": 232,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0082-tool-capability-matrix-and-fallback-command-planne/metadata.json",
+      "bytes": 254,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0082-tool-capability-matrix-and-fallback-command-planne/plan.md",
+      "bytes": 192,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0082-tool-capability-matrix-and-fallback-command-planne/spec.md",
+      "bytes": 284,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0083-cargoless-rust-static-linter/metadata.json",
+      "bytes": 209,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0083-cargoless-rust-static-linter/plan.md",
+      "bytes": 169,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0083-cargoless-rust-static-linter/spec.md",
+      "bytes": 238,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0084-package-integrity-audit/metadata.json",
+      "bytes": 199,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0084-package-integrity-audit/plan.md",
+      "bytes": 164,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0084-package-integrity-audit/spec.md",
+      "bytes": 228,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0085-mvp-blocker-tasklist-generator/metadata.json",
+      "bytes": 213,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0085-mvp-blocker-tasklist-generator/plan.md",
+      "bytes": 171,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0085-mvp-blocker-tasklist-generator/spec.md",
+      "bytes": 242,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0086-agent-handoff-brief-generator/metadata.json",
+      "bytes": 211,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0086-agent-handoff-brief-generator/plan.md",
+      "bytes": 170,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0086-agent-handoff-brief-generator/spec.md",
+      "bytes": 240,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0087-local-command-plan-generator/metadata.json",
+      "bytes": 209,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0087-local-command-plan-generator/plan.md",
+      "bytes": 169,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0087-local-command-plan-generator/spec.md",
+      "bytes": 238,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0088-source-debt-report/metadata.json",
+      "bytes": 162,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0088-source-debt-report/plan.md",
+      "bytes": 216,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0088-source-debt-report/spec.md",
+      "bytes": 246,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0089-production-claim-guard/metadata.json",
+      "bytes": 170,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0089-production-claim-guard/plan.md",
+      "bytes": 220,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0089-production-claim-guard/spec.md",
+      "bytes": 254,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0090-handoff-manifest-verifier/metadata.json",
+      "bytes": 176,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0090-handoff-manifest-verifier/plan.md",
+      "bytes": 223,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0090-handoff-manifest-verifier/spec.md",
+      "bytes": 260,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0091-mvp-blocker-dependency-dag/metadata.json",
+      "bytes": 178,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0091-mvp-blocker-dependency-dag/plan.md",
+      "bytes": 224,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0091-mvp-blocker-dependency-dag/spec.md",
+      "bytes": 262,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0092-local-migration-command-generator/metadata.json",
+      "bytes": 192,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0092-local-migration-command-generator/plan.md",
+      "bytes": 231,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0092-local-migration-command-generator/spec.md",
+      "bytes": 276,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0093-current-environment-final-report/metadata.json",
+      "bytes": 190,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0093-current-environment-final-report/plan.md",
+      "bytes": 230,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0093-current-environment-final-report/spec.md",
+      "bytes": 274,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0094-strict-ci-cd-quality-gates-with-90-coverage-target/metadata.json",
+      "bytes": 221,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0094-strict-ci-cd-quality-gates-with-90-coverage-target/plan.md",
+      "bytes": 253,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0094-strict-ci-cd-quality-gates-with-90-coverage-target/spec.md",
+      "bytes": 215,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0094-strict-ci-quality-gates/metadata.json",
+      "bytes": 174,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0094-strict-ci-quality-gates/plan.md",
+      "bytes": 188,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0094-strict-ci-quality-gates/spec.md",
+      "bytes": 233,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0095-coverage-90-policy/metadata.json",
+      "bytes": 181,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0095-coverage-90-policy/plan.md",
+      "bytes": 200,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0095-coverage-90-policy/spec.md",
+      "bytes": 257,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0095-unit-integration-e2e-property-mutation-fuzz-test-s/metadata.json",
+      "bytes": 226,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0095-unit-integration-e2e-property-mutation-fuzz-test-s/plan.md",
+      "bytes": 258,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0095-unit-integration-e2e-property-mutation-fuzz-test-s/spec.md",
+      "bytes": 220,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0096-profiling-and-benchmark-scaffold/metadata.json",
+      "bytes": 182,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0096-profiling-and-benchmark-scaffold/plan.md",
+      "bytes": 232,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0096-profiling-and-benchmark-scaffold/spec.md",
+      "bytes": 194,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0096-property-hypothesis-tests/metadata.json",
+      "bytes": 191,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0096-property-hypothesis-tests/plan.md",
+      "bytes": 203,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0096-property-hypothesis-tests/spec.md",
+      "bytes": 263,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0097-astro-7-and-starlight-documentation-site-scaffold/metadata.json",
+      "bytes": 216,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0097-astro-7-and-starlight-documentation-site-scaffold/plan.md",
+      "bytes": 249,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0097-astro-7-and-starlight-documentation-site-scaffold/spec.md",
+      "bytes": 211,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0097-mutation-testing-scaffold/metadata.json",
+      "bytes": 178,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0097-mutation-testing-scaffold/plan.md",
+      "bytes": 190,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0097-mutation-testing-scaffold/spec.md",
+      "bytes": 237,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0098-docs-site-cargoless-validation-and-ci-workflow/metadata.json",
+      "bytes": 210,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0098-docs-site-cargoless-validation-and-ci-workflow/plan.md",
+      "bytes": 246,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0098-docs-site-cargoless-validation-and-ci-workflow/spec.md",
+      "bytes": 208,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0098-profiling-benchmark-scaffold/metadata.json",
+      "bytes": 188,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0098-profiling-benchmark-scaffold/plan.md",
+      "bytes": 197,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0098-profiling-benchmark-scaffold/spec.md",
+      "bytes": 251,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0099-astro7-docs-site/metadata.json",
+      "bytes": 179,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0099-astro7-docs-site/plan.md",
+      "bytes": 200,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0099-astro7-docs-site/spec.md",
+      "bytes": 257,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0099-testing-infrastructure-report-generator/metadata.json",
+      "bytes": 196,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0099-testing-infrastructure-report-generator/plan.md",
+      "bytes": 239,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0099-testing-infrastructure-report-generator/spec.md",
+      "bytes": 201,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0100-qa-readiness-report/metadata.json",
+      "bytes": 185,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0100-qa-readiness-report/plan.md",
+      "bytes": 203,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0100-qa-readiness-report/spec.md",
+      "bytes": 263,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0100-quality-gate-static-checker/metadata.json",
+      "bytes": 172,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0100-quality-gate-static-checker/plan.md",
+      "bytes": 227,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0100-quality-gate-static-checker/spec.md",
+      "bytes": 189,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0101-documentation-build-policy-and-astro-7-adoption-de/metadata.json",
+      "bytes": 224,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0101-documentation-build-policy-and-astro-7-adoption-de/plan.md",
+      "bytes": 256,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/0101-documentation-build-policy-and-astro-7-adoption-de/spec.md",
+      "bytes": 218,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/094-strict-ci-quality-gates-90-coverage-policy/metadata.json",
+      "bytes": 216,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/094-strict-ci-quality-gates-90-coverage-policy/plan.md",
+      "bytes": 148,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/094-strict-ci-quality-gates-90-coverage-policy/spec.md",
+      "bytes": 201,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/095-unit-integration-e2e-property-fuzz-mutation-prof/metadata.json",
+      "bytes": 252,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/095-unit-integration-e2e-property-fuzz-mutation-prof/plan.md",
+      "bytes": 148,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/095-unit-integration-e2e-property-fuzz-mutation-prof/spec.md",
+      "bytes": 231,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/096-property-hypothesis-style-testing-scaffold/metadata.json",
+      "bytes": 215,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/096-property-hypothesis-style-testing-scaffold/plan.md",
+      "bytes": 148,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/096-property-hypothesis-style-testing-scaffold/spec.md",
+      "bytes": 200,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/097-mutation-testing-scaffold/metadata.json",
+      "bytes": 177,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/097-mutation-testing-scaffold/plan.md",
+      "bytes": 148,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/097-mutation-testing-scaffold/spec.md",
+      "bytes": 179,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/098-profiling-benchmark-scaffold/metadata.json",
+      "bytes": 187,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/098-profiling-benchmark-scaffold/plan.md",
+      "bytes": 148,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/098-profiling-benchmark-scaffold/spec.md",
+      "bytes": 186,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/099-astro-7-documentation-site-scaffold/metadata.json",
+      "bytes": 197,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/099-astro-7-documentation-site-scaffold/plan.md",
+      "bytes": 148,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/099-astro-7-documentation-site-scaffold/spec.md",
+      "bytes": 189,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/100-documentation-site-audit-quality-gate/metadata.json",
+      "bytes": 205,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/100-documentation-site-audit-quality-gate/plan.md",
+      "bytes": 148,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/100-documentation-site-audit-quality-gate/spec.md",
+      "bytes": 195,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/101-ci-quality-gate-audit/metadata.json",
+      "bytes": 169,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/101-ci-quality-gate-audit/plan.md",
+      "bytes": 148,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/101-ci-quality-gate-audit/spec.md",
+      "bytes": 175,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/102-extended-current-environment-tool-inventory/metadata.json",
+      "bytes": 213,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/102-extended-current-environment-tool-inventory/plan.md",
+      "bytes": 148,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/102-extended-current-environment-tool-inventory/spec.md",
+      "bytes": 197,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/103-quality-docs-handoff-integration/metadata.json",
+      "bytes": 195,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/103-quality-docs-handoff-integration/plan.md",
+      "bytes": 148,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks/103-quality-docs-handoff-integration/spec.md",
+      "bytes": 190,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/tracks.md",
+      "bytes": 9468,
+      "category": "conductor_context"
+    },
+    {
+      "path": "conductor/workflow.md",
+      "bytes": 1697,
+      "category": "conductor_context"
+    },
+    {
+      "path": "crates/apfs-android/Cargo.toml",
+      "bytes": 146,
+      "category": "rust_crates"
+    },
+    {
+      "path": "crates/apfs-android/src/lib.rs",
+      "bytes": 661,
+      "category": "rust_crates"
+    },
+    {
+      "path": "crates/apfs-blockdev/Cargo.toml",
+      "bytes": 175,
+      "category": "rust_crates"
+    },
+    {
+      "path": "crates/apfs-blockdev/src/lib.rs",
+      "bytes": 3693,
+      "category": "rust_crates"
+    },
+    {
+      "path": "crates/apfs-cli/Cargo.toml",
+      "bytes": 475,
+      "category": "rust_crates"
+    },
+    {
+      "path": "crates/apfs-cli/src/main.rs",
+      "bytes": 40067,
+      "category": "rust_crates"
+    },
+    {
+      "path": "crates/apfs-cli/tests/e2e_cli.rs",
+      "bytes": 496,
+      "category": "rust_crates"
+    },
+    {
+      "path": "crates/apfs-cli/tests/e2e_synthetic_cli.rs",
+      "bytes": 487,
+      "category": "rust_crates"
+    },
+    {
+      "path": "crates/apfs-core/Cargo.toml",
+      "bytes": 406,
+      "category": "rust_crates"
+    },
+    {
+      "path": "crates/apfs-core/benches/inspect_synthetic.rs",
+      "bytes": 673,
+      "category": "rust_crates"
+    },
+    {
+      "path": "crates/apfs-core/src/lib.rs",
+      "bytes": 86913,
+      "category": "rust_crates"
+    },
+    {
+      "path": "crates/apfs-core/tests/integration_inspect.rs",
+      "bytes": 804,
+      "category": "rust_crates"
+    },
+    {
+      "path": "crates/apfs-core/tests/synthetic_inspect.rs",
+      "bytes": 575,
+      "category": "rust_crates"
+    },
+    {
+      "path": "crates/apfs-crypto/Cargo.toml",
+      "bytes": 145,
+      "category": "rust_crates"
+    },
+    {
+      "path": "crates/apfs-crypto/src/lib.rs",
+      "bytes": 763,
+      "category": "rust_crates"
+    },
+    {
+      "path": "crates/apfs-features/Cargo.toml",
+      "bytes": 224,
+      "category": "rust_crates"
+    },
+    {
+      "path": "crates/apfs-features/src/lib.rs",
+      "bytes": 10572,
+      "category": "rust_crates"
+    },
+    {
+      "path": "crates/apfs-fuse/Cargo.toml",
+      "bytes": 143,
+      "category": "rust_crates"
+    },
+    {
+      "path": "crates/apfs-fuse/src/lib.rs",
+      "bytes": 914,
+      "category": "rust_crates"
+    },
+    {
+      "path": "crates/apfs-test/Cargo.toml",
+      "bytes": 221,
+      "category": "rust_crates"
+    },
+    {
+      "path": "crates/apfs-test/src/lib.rs",
+      "bytes": 2814,
+      "category": "rust_crates"
+    },
+    {
+      "path": "crates/apfs-types/Cargo.toml",
+      "bytes": 324,
+      "category": "rust_crates"
+    },
+    {
+      "path": "crates/apfs-types/benches/nx_superblock_bench.rs",
+      "bytes": 674,
+      "category": "rust_crates"
+    },
+    {
+      "path": "crates/apfs-types/src/lib.rs",
+      "bytes": 53396,
+      "category": "rust_crates"
+    },
+    {
+      "path": "crates/apfs-types/tests/parser_property.rs",
+      "bytes": 451,
+      "category": "rust_crates"
+    },
+    {
+      "path": "crates/apfs-types/tests/property_nx_superblock.rs",
+      "bytes": 1098,
+      "category": "rust_crates"
+    },
+    {
+      "path": "crates/apfs-vfs/Cargo.toml",
+      "bytes": 193,
+      "category": "rust_crates"
+    },
+    {
+      "path": "crates/apfs-vfs/src/lib.rs",
+      "bytes": 3093,
+      "category": "rust_crates"
+    },
+    {
+      "path": "crates/apfs-win/Cargo.toml",
+      "bytes": 219,
+      "category": "rust_crates"
+    },
+    {
+      "path": "crates/apfs-win/src/lib.rs",
+      "bytes": 6426,
+      "category": "rust_crates"
+    },
+    {
+      "path": "crates/apfs-write-lab/Cargo.toml",
+      "bytes": 148,
+      "category": "rust_crates"
+    },
+    {
+      "path": "crates/apfs-write-lab/src/lib.rs",
+      "bytes": 1239,
+      "category": "rust_crates"
+    },
+    {
+      "path": "criterion.toml",
+      "bytes": 199,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "deny.toml",
+      "bytes": 403,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "docs-site/README.md",
+      "bytes": 243,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "docs-site/astro.config.mjs",
+      "bytes": 143,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "docs-site/package.json",
+      "bytes": 362,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "docs-site/src/content/docs/architecture.mdx",
+      "bytes": 337,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "docs-site/src/content/docs/index.mdx",
+      "bytes": 296,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "docs-site/src/content/docs/local-handoff.mdx",
+      "bytes": 346,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "docs-site/src/content/docs/quality-gates.mdx",
+      "bytes": 388,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "docs-site/src/content.config.ts",
+      "bytes": 107,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "docs-site/src/layouts/Base.astro",
+      "bytes": 919,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "docs-site/src/pages/conductor.astro",
+      "bytes": 392,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "docs-site/src/pages/design/index.astro",
+      "bytes": 366,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "docs-site/src/pages/handoff/index.astro",
+      "bytes": 387,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "docs-site/src/pages/handoff.astro",
+      "bytes": 392,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "docs-site/src/pages/index.astro",
+      "bytes": 579,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "docs-site/src/pages/quality.astro",
+      "bytes": 438,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "docs-site/src/pages/requirements/index.astro",
+      "bytes": 384,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "docs-site/src/pages/safety/index.astro",
+      "bytes": 381,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "docs-site/tsconfig.json",
+      "bytes": 42,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "fixtures/README.md",
+      "bytes": 530,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/diagnostics/sample-inspect.json",
+      "bytes": 376,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/example-non-apfs.bin",
+      "bytes": 59,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/feedback/README.md",
+      "bytes": 240,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/feedback/sample-cargo-error.log",
+      "bytes": 266,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/feedback/sample-real-fixture-feedback.json",
+      "bytes": 930,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/golden/example-non-apfs.bin.expected.json",
+      "bytes": 212,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/golden/negative-corrupt-nxsb-magic.bin.expected.json",
+      "bytes": 222,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/golden/negative-invalid-block-size.bin.expected.json",
+      "bytes": 215,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/golden/negative-truncated-nxsb.bin.expected.json",
+      "bytes": 228,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/golden/synthetic-btree-cursor.img.expected.json",
+      "bytes": 223,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/golden/synthetic-btree-traversal.img.expected.json",
+      "bytes": 226,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/golden/synthetic-checkpoint-map-omap.img.expected.json",
+      "bytes": 230,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/golden/synthetic-checkpoint-ring.img.expected.json",
+      "bytes": 226,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/golden/synthetic-directory-listing.img.expected.json",
+      "bytes": 228,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/golden/synthetic-file-preview.img.expected.json",
+      "bytes": 223,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/golden/synthetic-gpt-apfs.img.expected.json",
+      "bytes": 233,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/golden/synthetic-mapped-object-read.img.expected.json",
+      "bytes": 229,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/golden/synthetic-nxsb-block0.bin.expected.json",
+      "bytes": 222,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/golden/synthetic-omap-btree-root.img.expected.json",
+      "bytes": 226,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/golden/synthetic-omap-lookup.img.expected.json",
+      "bytes": 222,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/golden/synthetic-omap-multinode-lookup.img.expected.json",
+      "bytes": 232,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/golden/synthetic-resolver-facade.img.expected.json",
+      "bytes": 226,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/golden/synthetic-volume-superblock.img.expected.json",
+      "bytes": 228,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/manifests/macos-minimal-apfs-001.template.json",
+      "bytes": 1078,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/manifests/negative-corrupt-nxsb-magic.json",
+      "bytes": 532,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/manifests/negative-invalid-block-size.json",
+      "bytes": 550,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/manifests/negative-truncated-nxsb.json",
+      "bytes": 542,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/manifests/synthetic-btree-cursor.img.json",
+      "bytes": 803,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/manifests/synthetic-btree-traversal.img.json",
+      "bytes": 787,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/manifests/synthetic-checkpoint-map-omap.img.json",
+      "bytes": 782,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/manifests/synthetic-checkpoint-ring.img.json",
+      "bytes": 764,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/manifests/synthetic-directory-listing.img.json",
+      "bytes": 815,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/manifests/synthetic-file-preview.img.json",
+      "bytes": 813,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/manifests/synthetic-gpt-apfs.img.json",
+      "bytes": 750,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/manifests/synthetic-mapped-object-read.img.json",
+      "bytes": 816,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/manifests/synthetic-nxsb-block0.bin.json",
+      "bytes": 767,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/manifests/synthetic-omap-btree-root.img.json",
+      "bytes": 795,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/manifests/synthetic-omap-lookup.img.json",
+      "bytes": 782,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/manifests/synthetic-omap-multinode-lookup.img.json",
+      "bytes": 819,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/manifests/synthetic-resolver-facade.img.json",
+      "bytes": 804,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/manifests/synthetic-volume-superblock.img.json",
+      "bytes": 799,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/negative/negative-corrupt-nxsb-magic.bin",
+      "bytes": 4096,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/negative/negative-invalid-block-size.bin",
+      "bytes": 4096,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/negative/negative-truncated-nxsb.bin",
+      "bytes": 64,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/real/README.md",
+      "bytes": 303,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/synthetic-btree-cursor.img",
+      "bytes": 262144,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/synthetic-btree-traversal.img",
+      "bytes": 262144,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/synthetic-checkpoint-map-omap.img",
+      "bytes": 98304,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/synthetic-checkpoint-ring.img",
+      "bytes": 65536,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/synthetic-directory-listing.img",
+      "bytes": 393216,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/synthetic-file-preview.img",
+      "bytes": 393216,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/synthetic-gpt-apfs.img",
+      "bytes": 81920,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/synthetic-mapped-object-read.img",
+      "bytes": 262144,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/synthetic-nxsb-block0.bin",
+      "bytes": 4096,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/synthetic-omap-btree-root.img",
+      "bytes": 131072,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/synthetic-omap-lookup.img",
+      "bytes": 147456,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/synthetic-omap-multinode-lookup.img",
+      "bytes": 196608,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/synthetic-resolver-facade.img",
+      "bytes": 262144,
+      "category": "fixtures"
+    },
+    {
+      "path": "fixtures/synthetic-volume-superblock.img",
+      "bytes": 294912,
+      "category": "fixtures"
+    },
+    {
+      "path": "fuzz/Cargo.toml",
+      "bytes": 427,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "fuzz/fuzz_targets/nx_superblock.rs",
+      "bytes": 169,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "fuzz/fuzz_targets/object_header.rs",
+      "bytes": 155,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "mise.toml",
+      "bytes": 262,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "mutants.toml",
+      "bytes": 188,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "packaging/README.md",
+      "bytes": 175,
+      "category": "developer_tooling"
+    },
+    {
+      "path": "packaging/sbom/README.md",
+      "bytes": 103,
+      "category": "developer_tooling"
+    },
+    {
+      "path": "packaging/windows/README.md",
+      "bytes": 148,
+      "category": "developer_tooling"
+    },
+    {
+      "path": "packaging/windows/winget/apfs-rs.yaml",
+      "bytes": 341,
+      "category": "developer_tooling"
+    },
+    {
+      "path": "profiling/README.md",
+      "bytes": 369,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "profiling/profile_plan.json",
+      "bytes": 562,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "pytest.ini",
+      "bytes": 166,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "python_tests/requirements-dev.txt",
+      "bytes": 24,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "python_tests/test_fixture_properties.py",
+      "bytes": 758,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "requirements-dev.txt",
+      "bytes": 59,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "rust-toolchain.toml",
+      "bytes": 98,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "taplo.toml",
+      "bytes": 55,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "tests/README.md",
+      "bytes": 154,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "tests/e2e/README.md",
+      "bytes": 172,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "tests/e2e/cli_smoke_commands.md",
+      "bytes": 474,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "tests/integration/README.md",
+      "bytes": 182,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "tests/property/README.md",
+      "bytes": 150,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "tools/agent_handoff_brief.py",
+      "bytes": 3038,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/apfs_offset_audit.py",
+      "bytes": 5653,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/api_surface_snapshot.py",
+      "bytes": 1906,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/backlog_issue_export.py",
+      "bytes": 2635,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/cargo_dependency_graph.py",
+      "bytes": 3036,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/cargo_error_to_tracks.py",
+      "bytes": 4001,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/cargo_workspace_audit.py",
+      "bytes": 2298,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/cargoless_smoke_suite.py",
+      "bytes": 4184,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/ci_quality_gate_audit.py",
+      "bytes": 1789,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/cli_contract_check.py",
+      "bytes": 1640,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/cli_contract_snapshot.py",
+      "bytes": 4822,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/compare_inspect_to_manifest.py",
+      "bytes": 1823,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/config_sanity_check.py",
+      "bytes": 2073,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/context_integrity_check.py",
+      "bytes": 2371,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/current_env_completion_report.py",
+      "bytes": 2161,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/current_env_final_report.py",
+      "bytes": 1697,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/current_env_remaining.py",
+      "bytes": 4285,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/current_env_selftest.py",
+      "bytes": 3506,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/current_env_tool_inventory_extended.py",
+      "bytes": 1988,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/current_environment_inventory.py",
+      "bytes": 4460,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/dependency_license_policy_check.py",
+      "bytes": 3128,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/diagnostics_bundle.py",
+      "bytes": 3367,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/docs_site_audit.py",
+      "bytes": 1754,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/docs_site_check.py",
+      "bytes": 1995,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/docs_site_static_check.py",
+      "bytes": 1645,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/documentation_index_audit.py",
+      "bytes": 1974,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/feature_readiness_snapshot.py",
+      "bytes": 3907,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/fixture_coverage_report.py",
+      "bytes": 1982,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/golden_output_generator.py",
+      "bytes": 2956,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/handoff_archive_audit.py",
+      "bytes": 2158,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/handoff_manifest_verify.py",
+      "bytes": 1998,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/handoff_readiness_check.py",
+      "bytes": 1740,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/handoff_status.py",
+      "bytes": 4317,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/known_risk_check.py",
+      "bytes": 955,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/local_command_plan.py",
+      "bytes": 2698,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/local_compile_loop.py",
+      "bytes": 3526,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/local_env_doctor.py",
+      "bytes": 2983,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/local_migration_commands.py",
+      "bytes": 2141,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/loop_dashboard.py",
+      "bytes": 2705,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/macos/README.md",
+      "bytes": 616,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/macos/create_real_apfs_fixture.sh",
+      "bytes": 3409,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/macos_fixture_dry_run.py",
+      "bytes": 1823,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/make_synthetic_fixtures.py",
+      "bytes": 27436,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/markdown_link_audit.py",
+      "bytes": 3456,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/mvp_blocker_dag.py",
+      "bytes": 1900,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/mvp_blocker_tasklist.py",
+      "bytes": 2806,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/next_loop_plan.py",
+      "bytes": 2113,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/package_integrity_audit.py",
+      "bytes": 3034,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/precompile_static_check.py",
+      "bytes": 9523,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/production_claim_guard.py",
+      "bytes": 2863,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/production_gap_report.py",
+      "bytes": 1784,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/profiling_plan_audit.py",
+      "bytes": 1252,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/promote_feedback_to_tracks.py",
+      "bytes": 10072,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/quality_gate_check.py",
+      "bytes": 1996,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/real_fixture_feedback.py",
+      "bytes": 8079,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/release_preflight.py",
+      "bytes": 4207,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/release_scaffold_check.py",
+      "bytes": 1024,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/repo_manifest.py",
+      "bytes": 2409,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/rust_api_map.py",
+      "bytes": 1762,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/rust_static_lint.py",
+      "bytes": 3896,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/safety_case_check.py",
+      "bytes": 1251,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/shell_script_static_check.py",
+      "bytes": 2460,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/source_debt_report.py",
+      "bytes": 2379,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/source_metrics.py",
+      "bytes": 2974,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/synthetic_fixture_oracle.py",
+      "bytes": 9214,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/synthetic_negative_fixture_generator.py",
+      "bytes": 2575,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/test_matrix_generator.py",
+      "bytes": 2781,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/test_scaffold_audit.py",
+      "bytes": 1972,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/test_strategy_audit.py",
+      "bytes": 1785,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/testing_infrastructure_report.py",
+      "bytes": 1599,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/tests/test_manifest_properties.py",
+      "bytes": 661,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/tool_capability_matrix.py",
+      "bytes": 5168,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/traceability_matrix.py",
+      "bytes": 2890,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/version_consistency_check.py",
+      "bytes": 3236,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/windows/README.md",
+      "bytes": 767,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/windows/adapter_readiness_check.ps1",
+      "bytes": 615,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/windows/smoke_readonly_mount.ps1",
+      "bytes": 577,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/windows_readiness_check.py",
+      "bytes": 1177,
+      "category": "python_tools"
+    },
+    {
+      "path": "tools/winfsp_callback_matrix.py",
+      "bytes": 2301,
+      "category": "python_tools"
+    },
+    {
+      "path": "xtask/Cargo.toml",
+      "bytes": 337,
+      "category": "root_docs_or_config"
+    },
+    {
+      "path": "xtask/src/main.rs",
+      "bytes": 27895,
+      "category": "root_docs_or_config"
+    }
+  ]
+}

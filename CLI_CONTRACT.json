@@ -1,0 +1,140 @@
+{
+  "schema_version": "0.29.0",
+  "command_count": 19,
+  "commands": [
+    {
+      "rust_variant": "Inspect",
+      "command": "inspect",
+      "description": "Read-only APFS source inspection report.",
+      "read_only": true,
+      "writes_to_apfs_media": false
+    },
+    {
+      "rust_variant": "CompatibilityReport",
+      "command": "compatibility-report",
+      "description": "Safety-oriented alias for inspect workflows.",
+      "read_only": true,
+      "writes_to_apfs_media": false
+    },
+    {
+      "rust_variant": "Doctor",
+      "command": "doctor",
+      "description": "Aggregated read-only readiness and blocker report.",
+      "read_only": true,
+      "writes_to_apfs_media": false
+    },
+    {
+      "rust_variant": "DiagnosticsExport",
+      "command": "diagnostics-export",
+      "description": "Redacted host-side diagnostic bundle export.",
+      "read_only": true,
+      "writes_to_apfs_media": false
+    },
+    {
+      "rust_variant": "LookupObject",
+      "command": "lookup-object",
+      "description": "Synthetic/read-only object-map lookup facade.",
+      "read_only": true,
+      "writes_to_apfs_media": false
+    },
+    {
+      "rust_variant": "Volumes",
+      "command": "volumes",
+      "description": "Synthetic/read-only APFS volume report.",
+      "read_only": true,
+      "writes_to_apfs_media": false
+    },
+    {
+      "rust_variant": "ResolverReport",
+      "command": "resolver-report",
+      "description": "Object-map resolver availability report.",
+      "read_only": true,
+      "writes_to_apfs_media": false
+    },
+    {
+      "rust_variant": "BtreeCursorReport",
+      "command": "btree-cursor-report",
+      "description": "Production-shaped B-tree cursor report.",
+      "read_only": true,
+      "writes_to_apfs_media": false
+    },
+    {
+      "rust_variant": "ReadObject",
+      "command": "read-object",
+      "description": "Mapped object block read report.",
+      "read_only": true,
+      "writes_to_apfs_media": false
+    },
+    {
+      "rust_variant": "Ls",
+      "command": "ls",
+      "description": "Synthetic directory listing.",
+      "read_only": true,
+      "writes_to_apfs_media": false
+    },
+    {
+      "rust_variant": "Cat",
+      "command": "cat",
+      "description": "Synthetic file preview.",
+      "read_only": true,
+      "writes_to_apfs_media": false
+    },
+    {
+      "rust_variant": "Stat",
+      "command": "stat",
+      "description": "Synthetic directory-entry metadata report.",
+      "read_only": true,
+      "writes_to_apfs_media": false
+    },
+    {
+      "rust_variant": "WinfspCallbackMatrix",
+      "command": "winfsp-callback-matrix",
+      "description": "No description recorded.",
+      "read_only": true,
+      "writes_to_apfs_media": false
+    },
+    {
+      "rust_variant": "MountPlan",
+      "command": "mount-plan",
+      "description": "Windows read-only mount preflight plan; does not mount.",
+      "read_only": true,
+      "writes_to_apfs_media": false
+    },
+    {
+      "rust_variant": "DiagnosticsBundle",
+      "command": "diagnostics-bundle",
+      "description": "Redacted in-memory diagnostics bundle report.",
+      "read_only": true,
+      "writes_to_apfs_media": false
+    },
+    {
+      "rust_variant": "PathPolicy",
+      "command": "path-policy",
+      "description": "Unicode/case-sensitivity and host-path safety policy report.",
+      "read_only": true,
+      "writes_to_apfs_media": false
+    },
+    {
+      "rust_variant": "FeatureReadiness",
+      "command": "feature-readiness",
+      "description": "Advanced APFS feature readiness report.",
+      "read_only": true,
+      "writes_to_apfs_media": false
+    },
+    {
+      "rust_variant": "MetadataFeatureReport",
+      "command": "metadata-feature-report",
+      "description": "Synthetic metadata feature model report.",
+      "read_only": true,
+      "writes_to_apfs_media": false
+    },
+    {
+      "rust_variant": "Extract",
+      "command": "extract",
+      "description": "Synthetic safe host-side extract preview.",
+      "read_only": true,
+      "writes_to_apfs_media": false
+    }
+  ],
+  "safety_note": "All current commands are read-only with respect to APFS media. extract writes only to a host destination directory for synthetic fixture previews."
+}

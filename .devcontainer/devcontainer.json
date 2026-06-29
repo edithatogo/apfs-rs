@@ -1,0 +1,18 @@
+{
+  "name": "APFS-RS Local Handoff",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "rust-lang.rust-analyzer",
+        "tamasfe.even-better-toml",
+        "redhat.vscode-yaml",
+        "DavidAnson.vscode-markdownlint"
+      ]
+    }
+  },
+  "postCreateCommand": "python3 tools/precompile_static_check.py && cargo --version",
+  "remoteUser": "vscode"
+}

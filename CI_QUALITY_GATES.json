@@ -1,0 +1,16 @@
+{
+  "schema_version": "0.27.0",
+  "status": "passed",
+  "required_terms": [
+    "cargo fmt",
+    "cargo clippy",
+    "cargo nextest",
+    "cargo llvm-cov",
+    "--fail-under-lines 90",
+    "cargo deny",
+    "cargo audit",
+    "cargo mutants",
+    "cargo fuzz",
+    "miri test"
+  ]
+}

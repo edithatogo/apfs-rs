@@ -1,0 +1,9 @@
+[cargo-vet]
+version = "0.10"
+
+[policy.apfs-cli]
+audit-as-crates-io = true
+
+[criteria]
+safe-to-run = { description = "Code is safe to execute in developer and CI environments." }
+safe-for-untrusted-input = { description = "Code is suitable for parsing untrusted filesystem images." }

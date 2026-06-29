@@ -1,0 +1,7 @@
+{
+  "track_id": "0078-golden-output-expectations",
+  "capability_id": "M-078",
+  "title": "Cargoless golden-output expectation generator",
+  "status": "implemented_python",
+  "version": "0.25.0"
+}

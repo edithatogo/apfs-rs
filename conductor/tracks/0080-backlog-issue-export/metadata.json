@@ -1,0 +1,7 @@
+{
+  "track_id": "0080-backlog-issue-export",
+  "capability_id": "M-080",
+  "title": "Backlog issue export for local/platform blockers",
+  "status": "implemented_python",
+  "version": "0.25.0"
+}

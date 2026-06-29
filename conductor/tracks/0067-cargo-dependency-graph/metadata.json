@@ -1,0 +1,8 @@
+{
+  "track_id": "0067-cargo-dependency-graph",
+  "capability_id": "M-067",
+  "title": "Cargoless Cargo dependency graph generator",
+  "status": "implemented_scaffold",
+  "version": "0.23.0",
+  "phase": "handoff-hardening"
+}

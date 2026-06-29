@@ -1,0 +1,7 @@
+{
+  "track_id": "0003-m003-checksum-validation",
+  "capability": "M-003",
+  "status": "implemented_in_package_uncompiled",
+  "package": "v0.3.0",
+  "purpose": "APFS Fletcher-64 checksum validation."
+}

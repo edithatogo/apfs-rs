@@ -1,0 +1,9 @@
+{
+  "track_id": "0058-local-handoff-preflight-integration",
+  "capability_id": "M-058",
+  "title": "Local Handoff Preflight Integration",
+  "status": "implemented_scaffold",
+  "version": "0.21.0",
+  "context_system": "conductor",
+  "safety": "read_only_or_docs_only"
+}

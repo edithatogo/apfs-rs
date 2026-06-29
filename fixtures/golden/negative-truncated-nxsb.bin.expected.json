@@ -1,0 +1,6 @@
+{
+  "fixture": "fixtures/negative/negative-truncated-nxsb.bin",
+  "sha256": "5a294df31f603faa76642a1eb6926e8e20119ec0be67a906bd5339c8bd8f40d4",
+  "expected_status": "refused",
+  "reason": "shorter than nx_superblock_min_size"
+}

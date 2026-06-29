@@ -1,0 +1,6 @@
+{
+  "fixture": "fixtures/synthetic-checkpoint-map-omap.img",
+  "sha256": "0d1b78fba9a6e233fb3f2b2c397d2e695feb6e713dd7db8f414b60cdcb7b472b",
+  "expected_status": "apfs_container_detected",
+  "reason": "NXSB magic at block zero"
+}

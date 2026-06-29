@@ -1,0 +1,7 @@
+{
+  "track_id": "0092-local-migration-command-generator",
+  "capability_id": "M-092",
+  "title": "Local migration command generator",
+  "status": "implemented_python",
+  "version": "0.26.0"
+}

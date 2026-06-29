@@ -1,0 +1,7 @@
+{
+  "track_id": "0089-production-claim-guard",
+  "capability_id": "M-089",
+  "title": "Production claim guard",
+  "status": "implemented_python",
+  "version": "0.26.0"
+}

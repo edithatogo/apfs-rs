@@ -1,0 +1,7 @@
+{
+  "track_id": "0006-m005-btree-node-probe",
+  "capability": "M-005",
+  "status": "implemented_in_package_uncompiled",
+  "package": "v0.5.0",
+  "purpose": "B-tree node header/TOC probe and synthetic OMAP records."
+}

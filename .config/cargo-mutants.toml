@@ -1,0 +1,17 @@
+# APFS-RS mutation-testing policy.
+# Run locally after the first compile baseline:
+# cargo mutants --workspace --timeout 300 --in-place --output target/mutants
+[mutants]
+minimum-test-timeout = 60
+output = "target/mutants"
+exclude_globs = [
+  "target/**",
+  "docs-site/**",
+  "fixtures/**",
+  "packaging/**",
+]
+
+[policy]
+required_before_windows_readonly_mvp = true
+initial_threshold = "review-all-survivors"
+notes = "Until Rust compilation is verified, mutation testing is configured but not executable in this environment."

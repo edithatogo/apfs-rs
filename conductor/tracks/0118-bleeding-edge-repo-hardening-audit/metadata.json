@@ -1,0 +1,7 @@
+{
+  "track_id": "0118-bleeding-edge-repo-hardening-audit",
+  "capability_id": "M-118",
+  "title": "Bleeding-edge repo hardening audit aggregator",
+  "status": "implemented_python",
+  "version": "0.29.0"
+}

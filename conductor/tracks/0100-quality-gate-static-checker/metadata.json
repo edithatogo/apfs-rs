@@ -1,0 +1,7 @@
+{
+  "track_id": "0100-quality-gate-static-checker",
+  "capability_id": "M-100",
+  "title": "Quality gate static checker",
+  "status": "scaffolded",
+  "version": "0.27.0"
+}

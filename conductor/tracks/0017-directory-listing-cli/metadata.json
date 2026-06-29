@@ -1,0 +1,7 @@
+{
+  "track_id": "0017-directory-listing-cli",
+  "capability": "M-017",
+  "status": "implemented_in_package_uncompiled",
+  "package": "v0.15.0",
+  "purpose": "Synthetic directory listing report and ls CLI."
+}

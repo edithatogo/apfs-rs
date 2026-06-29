@@ -1,0 +1,7 @@
+{
+  "track_id": "0007-m006-single-node-omap-lookup",
+  "capability": "M-006",
+  "status": "implemented_in_package_uncompiled",
+  "package": "v0.6.0",
+  "purpose": "Single-node synthetic OMAP lookup API and CLI."
+}

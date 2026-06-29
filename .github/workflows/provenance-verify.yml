@@ -1,0 +1,21 @@
+name: provenance-verify
+
+on:
+  workflow_dispatch:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+  id-token: write
+  attestations: write
+
+jobs:
+  provenance-dry-run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: mkdir -p target/provenance && echo apfs-rs-provenance-dry-run > target/provenance/subject.txt
+      - uses: actions/attest-build-provenance@v3
+        with:
+          subject-path: target/provenance/subject.txt

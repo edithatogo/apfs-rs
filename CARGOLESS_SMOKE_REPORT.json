@@ -1,0 +1,211 @@
+{
+  "schema_version": "0.29.0",
+  "status": "passed",
+  "duration_seconds": 12.365,
+  "results": [
+    {
+      "command": "py_compile selected tools",
+      "returncode": 0,
+      "duration_seconds": 0.08,
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/precompile_static_check.py",
+      "returncode": 0,
+      "duration_seconds": 1.531,
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/context_integrity_check.py",
+      "returncode": 0,
+      "duration_seconds": 0.62,
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/version_consistency_check.py",
+      "returncode": 0,
+      "duration_seconds": 0.392,
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/synthetic_fixture_oracle.py",
+      "returncode": 0,
+      "duration_seconds": 0.061,
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/cargo_workspace_audit.py",
+      "returncode": 0,
+      "duration_seconds": 0.019,
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/config_sanity_check.py",
+      "returncode": 0,
+      "duration_seconds": 0.022,
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/markdown_link_audit.py",
+      "returncode": 0,
+      "duration_seconds": 0.701,
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/shell_script_static_check.py",
+      "returncode": 0,
+      "duration_seconds": 0.261,
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/documentation_index_audit.py",
+      "returncode": 0,
+      "duration_seconds": 0.033,
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/fixture_coverage_report.py",
+      "returncode": 0,
+      "duration_seconds": 0.517,
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/current_env_completion_report.py",
+      "returncode": 0,
+      "duration_seconds": 0.06,
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/source_debt_report.py",
+      "returncode": 0,
+      "duration_seconds": 2.265,
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/production_claim_guard.py",
+      "returncode": 0,
+      "duration_seconds": 1.404,
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/mvp_blocker_dag.py",
+      "returncode": 0,
+      "duration_seconds": 0.004,
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/local_migration_commands.py",
+      "returncode": 0,
+      "duration_seconds": 0.004,
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/current_env_final_report.py",
+      "returncode": 0,
+      "duration_seconds": 0.073,
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/tool_capability_matrix.py",
+      "returncode": 0,
+      "duration_seconds": 1.59,
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/rust_static_lint.py",
+      "returncode": 0,
+      "duration_seconds": 0.052,
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/local_command_plan.py",
+      "returncode": 0,
+      "duration_seconds": 0.012,
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/mvp_blocker_tasklist.py",
+      "returncode": 0,
+      "duration_seconds": 0.424,
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/agent_handoff_brief.py",
+      "returncode": 0,
+      "duration_seconds": 0.267,
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/quality_gate_check.py",
+      "returncode": 0,
+      "duration_seconds": 0.03,
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/ci_quality_gate_audit.py",
+      "returncode": 0,
+      "duration_seconds": 0.006,
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/test_strategy_audit.py",
+      "returncode": 0,
+      "duration_seconds": 0.015,
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/docs_site_audit.py",
+      "returncode": 0,
+      "duration_seconds": 0.015,
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/profiling_plan_audit.py",
+      "returncode": 0,
+      "duration_seconds": 0.005,
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/current_env_tool_inventory_extended.py",
+      "returncode": 0,
+      "duration_seconds": 1.677,
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/docs_package_audit.py",
+      "returncode": 0,
+      "duration_seconds": 0.029,
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/github_workflow_policy_audit.py",
+      "returncode": 0,
+      "duration_seconds": 0.114,
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/test_inventory_report.py",
+      "returncode": 0,
+      "duration_seconds": 0.059,
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/hypothesis_strategy_audit.py",
+      "returncode": 0,
+      "duration_seconds": 0.008,
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/profiling_budget_check.py",
+      "returncode": 0,
+      "duration_seconds": 0.01,
+      "error_tail": ""
+    },
+    {
+      "command": "runpy tools/quality_gate_evidence.py",
+      "returncode": 0,
+      "duration_seconds": 0.006,
+      "error_tail": ""
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "track_id": "0100-qa-readiness-report",
+  "capability_id": "M-100",
+  "title": "QA readiness report and scaffold audit",
+  "status": "implemented_scaffold",
+  "version": "0.27.0"
+}

@@ -1,0 +1,26 @@
+name: local-handoff
+
+on:
+  pull_request:
+  merge_group:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  cargoless:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - run: python3 -m py_compile tools/*.py
+      - run: python3 tools/precompile_static_check.py
+      - run: python3 tools/config_sanity_check.py
+      - run: python3 tools/handoff_status.py --write
+      - run: python3 tools/repo_manifest.py --write
+      - run: python3 tools/known_risk_check.py
+      - run: python3 tools/local_env_doctor.py --json target/local-env-doctor.json || true

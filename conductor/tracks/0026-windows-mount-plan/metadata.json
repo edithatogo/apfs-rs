@@ -1,0 +1,7 @@
+{
+  "track_id": "0026-windows-mount-plan",
+  "capability_id": "M-026",
+  "title": "Windows read-only mount-plan facade",
+  "status": "implemented_or_scaffolded",
+  "version": "0.18.0"
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": "0.29.0",
+  "status": "passed",
+  "checks": [
+    {
+      "file": "python_tests/test_fixture_properties.py",
+      "uses_hypothesis": true
+    },
+    {
+      "file": "python_tests/test_negative_fixtures.py",
+      "uses_hypothesis": true
+    }
+  ]
+}

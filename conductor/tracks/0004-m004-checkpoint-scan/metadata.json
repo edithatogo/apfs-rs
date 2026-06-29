@@ -1,0 +1,7 @@
+{
+  "track_id": "0004-m004-checkpoint-scan",
+  "capability": "M-004",
+  "status": "implemented_in_package_uncompiled",
+  "package": "v0.3.0",
+  "purpose": "Bounded checkpoint candidate scanning."
+}

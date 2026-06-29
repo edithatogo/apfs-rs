@@ -1,0 +1,7 @@
+{
+  "track_id": "0105-github-workflow-policy-audit",
+  "capability_id": "M-105",
+  "title": "GitHub workflow policy audit for strict quality gates",
+  "status": "implemented_python",
+  "version": "0.28.0"
+}

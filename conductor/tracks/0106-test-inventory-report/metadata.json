@@ -1,0 +1,7 @@
+{
+  "track_id": "0106-test-inventory-report",
+  "capability_id": "M-106",
+  "title": "Test inventory report across all test layers",
+  "status": "implemented_python",
+  "version": "0.28.0"
+}

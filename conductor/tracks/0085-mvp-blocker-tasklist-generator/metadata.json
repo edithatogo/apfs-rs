@@ -1,0 +1,8 @@
+{
+  "track_id": "0085-mvp-blocker-tasklist-generator",
+  "capability_id": "M-085",
+  "title": "MVP blocker tasklist generator",
+  "status": "implemented_python",
+  "version": "0.26.0",
+  "updated": "2026-06-25"
+}

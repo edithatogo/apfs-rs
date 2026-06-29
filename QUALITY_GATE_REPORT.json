@@ -1,0 +1,15 @@
+{
+  "schema_version": "0.27.0",
+  "missing_required_files": [],
+  "checks": {
+    "coverage_fail_under_90_configured": true,
+    "cargo_nextest_configured": true,
+    "cargo_mutants_configured": true,
+    "cargo_fuzz_configured": true,
+    "criterion_or_profiling_configured": true,
+    "hypothesis_configured": true,
+    "astro7_docs_configured": false
+  },
+  "status": "failed",
+  "note": "This is a configuration check only; Rust coverage/mutation/fuzz/profiling execution requires local Rust tooling."
+}

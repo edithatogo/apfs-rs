@@ -1,0 +1,28 @@
+{
+  "schema_version": "0.21.0",
+  "implemented_or_scaffolded": 103,
+  "remaining_windows_readonly_mvp": 9,
+  "remaining_beyond_mvp": 8,
+  "remaining_total": 17,
+  "conductor_track_count": 126,
+  "required_files": {
+    "rust-toolchain.toml": true,
+    ".cargo/config.toml": true,
+    "deny.toml": true,
+    ".config/nextest.toml": true,
+    ".devcontainer/devcontainer.json": true,
+    "LOCAL_FIRST_RUN.md": true,
+    "KNOWN_UNCOMPILED_RISKS.md": true,
+    "READY_FOR_LOCAL.md": true,
+    "HANDOFF_STATUS.md": true,
+    "REPO_MANIFEST.md": true
+  },
+  "ready_for_local": true,
+  "next_local_commands": [
+    "python3 tools/precompile_static_check.py",
+    "python3 tools/config_sanity_check.py",
+    "python3 tools/local_env_doctor.py --json target/local-env-doctor.json",
+    "cargo fmt --all -- --check",
+    "cargo test --workspace"
+  ]
+}

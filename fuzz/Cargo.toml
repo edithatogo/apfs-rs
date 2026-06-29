@@ -1,0 +1,26 @@
+[package]
+name = "apfs-rs-fuzz"
+version = "0.18.0"
+edition = "2021"
+publish = false
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+apfs-types = { path = "../crates/apfs-types" }
+libfuzzer-sys = "0.4"
+
+[[bin]]
+name = "object_header"
+path = "fuzz_targets/object_header.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "nx_superblock"
+path = "fuzz_targets/nx_superblock.rs"
+test = false
+doc = false
+bench = false

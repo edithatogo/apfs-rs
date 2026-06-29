@@ -1,0 +1,8 @@
+{
+  "track_id": "0070-handoff-archive-audit",
+  "capability_id": "M-070",
+  "title": "Handoff archive audit generator",
+  "status": "implemented_scaffold",
+  "version": "0.23.0",
+  "phase": "handoff-hardening"
+}

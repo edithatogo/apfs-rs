@@ -1,0 +1,146 @@
+{
+  "schema_version": "0.25.0",
+  "status": "pass",
+  "constant_results": [
+    {
+      "name": "APFS_OBJECT_HEADER_SIZE",
+      "expected": 32,
+      "observed": 32,
+      "status": "pass"
+    },
+    {
+      "name": "NX_SUPERBLOCK_MIN_SIZE",
+      "expected": 184,
+      "observed": 184,
+      "status": "pass"
+    },
+    {
+      "name": "GPT_SECTOR_SIZE",
+      "expected": 512,
+      "observed": 512,
+      "status": "pass"
+    },
+    {
+      "name": "GPT_HEADER_MIN_SIZE",
+      "expected": 92,
+      "observed": 92,
+      "status": "pass"
+    },
+    {
+      "name": "GPT_PARTITION_ENTRY_MIN_SIZE",
+      "expected": 128,
+      "observed": 128,
+      "status": "pass"
+    },
+    {
+      "name": "CHECKPOINT_MAP_HEADER_SIZE",
+      "expected": 40,
+      "observed": 40,
+      "status": "pass"
+    },
+    {
+      "name": "CHECKPOINT_MAPPING_SIZE",
+      "expected": 40,
+      "observed": 40,
+      "status": "pass"
+    },
+    {
+      "name": "OMAP_PHYS_MIN_SIZE",
+      "expected": 88,
+      "observed": 88,
+      "status": "pass"
+    },
+    {
+      "name": "APFS_VOLUME_SUPERBLOCK_MIN_SIZE",
+      "expected": 770,
+      "observed": 770,
+      "status": "pass"
+    },
+    {
+      "name": "APFS_VOLUME_NAME_OFFSET",
+      "expected": 512,
+      "observed": 512,
+      "status": "pass"
+    },
+    {
+      "name": "APFS_VOLUME_NAME_LEN",
+      "expected": 256,
+      "observed": 256,
+      "status": "pass"
+    },
+    {
+      "name": "APFS_VOLUME_ROLE_OFFSET",
+      "expected": 768,
+      "observed": 768,
+      "status": "pass"
+    },
+    {
+      "name": "BTREE_NODE_MIN_SIZE",
+      "expected": 56,
+      "observed": 56,
+      "status": "pass"
+    },
+    {
+      "name": "BTREE_TOC_ENTRY_SIZE",
+      "expected": 4,
+      "observed": 4,
+      "status": "pass"
+    },
+    {
+      "name": "OMAP_KEY_SIZE",
+      "expected": 16,
+      "observed": 16,
+      "status": "pass"
+    },
+    {
+      "name": "OMAP_VALUE_SIZE",
+      "expected": 16,
+      "observed": 16,
+      "status": "pass"
+    }
+  ],
+  "fixture_results": [
+    {
+      "path": "fixtures/synthetic-nxsb-block0.bin",
+      "label": "block-zero NXSB magic",
+      "offset": 32,
+      "expected_hex": "4e585342",
+      "observed_hex": "4e585342",
+      "status": "pass"
+    },
+    {
+      "path": "fixtures/synthetic-checkpoint-ring.img",
+      "label": "checkpoint-ring block-zero NXSB magic",
+      "offset": 32,
+      "expected_hex": "4e585342",
+      "observed_hex": "4e585342",
+      "status": "pass"
+    },
+    {
+      "path": "fixtures/synthetic-gpt-apfs.img",
+      "label": "GPT header signature",
+      "offset": 512,
+      "expected_hex": "4546492050415254",
+      "observed_hex": "4546492050415254",
+      "status": "pass"
+    },
+    {
+      "path": "fixtures/synthetic-volume-superblock.img",
+      "label": "volume fixture container NXSB",
+      "offset": 32,
+      "expected_hex": "4e585342",
+      "observed_hex": "4e585342",
+      "status": "pass"
+    },
+    {
+      "path": "fixtures/synthetic-gpt-apfs.img",
+      "label": "APFS GPT type GUID bytes at first partition entry",
+      "offset": 1024,
+      "expected_hex": "ef57347c0000aa11aa1100306543ecac",
+      "observed_hex": "ef57347c0000aa11aa1100306543ecac",
+      "status": "pass"
+    }
+  ],
+  "failure_count": 0,
+  "note": "Cargoless parser-development audit; not a substitute for real APFS fixtures or cargo tests."
+}

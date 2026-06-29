@@ -1,0 +1,7 @@
+{
+  "track_id": "0081-current-environment-selftest",
+  "capability_id": "M-081",
+  "title": "Current-environment self-test orchestrator",
+  "status": "implemented_python",
+  "version": "0.25.0"
+}

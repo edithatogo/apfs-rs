@@ -1,0 +1,8 @@
+{
+  "track_id": "0001-m001-container-inspect",
+  "capability": "M-001",
+  "status": "completed_in_package_uncompiled",
+  "package": "v0.1.0",
+  "purpose": "APFS block-zero container detection and inspect JSON."
+}
+

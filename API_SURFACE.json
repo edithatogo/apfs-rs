@@ -1,0 +1,1164 @@
+{
+  "schema_version": "0.29.0",
+  "item_count": 193,
+  "items": [
+    {
+      "crate": "apfs-android",
+      "path": "crates/apfs-android/src/lib.rs",
+      "kind": "enum",
+      "name": "AndroidAccessMode"
+    },
+    {
+      "crate": "apfs-android",
+      "path": "crates/apfs-android/src/lib.rs",
+      "kind": "struct",
+      "name": "AndroidReadiness"
+    },
+    {
+      "crate": "apfs-android",
+      "path": "crates/apfs-android/src/lib.rs",
+      "kind": "fn",
+      "name": "android_readiness"
+    },
+    {
+      "crate": "apfs-blockdev",
+      "path": "crates/apfs-blockdev/src/lib.rs",
+      "kind": "enum",
+      "name": "BlockDeviceError"
+    },
+    {
+      "crate": "apfs-blockdev",
+      "path": "crates/apfs-blockdev/src/lib.rs",
+      "kind": "trait",
+      "name": "ReadOnlyBlockDevice"
+    },
+    {
+      "crate": "apfs-blockdev",
+      "path": "crates/apfs-blockdev/src/lib.rs",
+      "kind": "struct",
+      "name": "ImageBlockDevice"
+    },
+    {
+      "crate": "apfs-blockdev",
+      "path": "crates/apfs-blockdev/src/lib.rs",
+      "kind": "fn",
+      "name": "open"
+    },
+    {
+      "crate": "apfs-blockdev",
+      "path": "crates/apfs-blockdev/src/lib.rs",
+      "kind": "fn",
+      "name": "path"
+    },
+    {
+      "crate": "apfs-blockdev",
+      "path": "crates/apfs-blockdev/src/lib.rs",
+      "kind": "struct",
+      "name": "MemoryBlockDevice"
+    },
+    {
+      "crate": "apfs-blockdev",
+      "path": "crates/apfs-blockdev/src/lib.rs",
+      "kind": "fn",
+      "name": "new"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "enum",
+      "name": "InspectError"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "enum",
+      "name": "InspectStatus"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "enum",
+      "name": "SourceLayout"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "enum",
+      "name": "ObjectLookupStatus"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "enum",
+      "name": "ObjectMapResolverStatus"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "enum",
+      "name": "ObjectMapResolverMode"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "enum",
+      "name": "VolumeReportStatus"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "enum",
+      "name": "DirectoryReportStatus"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "enum",
+      "name": "FileReadReportStatus"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "struct",
+      "name": "InspectReport"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "struct",
+      "name": "ObjectLookupReport"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "struct",
+      "name": "ObjectMapResolverEnvelope"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "struct",
+      "name": "VolumeReportEnvelope"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "struct",
+      "name": "VolumeProbeReport"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "struct",
+      "name": "DirectoryReportEnvelope"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "struct",
+      "name": "FileReadReportEnvelope"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "struct",
+      "name": "ObjectMapResolverReport"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "struct",
+      "name": "ResolvedObjectLookup"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "struct",
+      "name": "GptReport"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "struct",
+      "name": "CheckpointScanReport"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "struct",
+      "name": "CheckpointCandidate"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "struct",
+      "name": "CheckpointMapReport"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "struct",
+      "name": "MappedObjectMapReport"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "struct",
+      "name": "MappedBTreeReport"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "struct",
+      "name": "MappedBTreeLeafReport"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "struct",
+      "name": "SyntheticBTreeTraversalReport"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "struct",
+      "name": "BTreeTraversalPathReport"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "enum",
+      "name": "BTreeCursorStatus"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "enum",
+      "name": "BTreeCursorMode"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "enum",
+      "name": "BTreeCursorStepKind"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "struct",
+      "name": "BTreeCursorEnvelope"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "struct",
+      "name": "BTreeCursorReport"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "struct",
+      "name": "BTreeCursorStepReport"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "enum",
+      "name": "MappedObjectReadStatus"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "struct",
+      "name": "MappedObjectReadEnvelope"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "struct",
+      "name": "MappedObjectReadReport"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "struct",
+      "name": "Diagnostic"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "struct",
+      "name": "SafetySummary"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "fn",
+      "name": "inspect_device"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "fn",
+      "name": "inspect_bytes"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "fn",
+      "name": "lookup_object_in_device"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "fn",
+      "name": "lookup_object_in_bytes"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "fn",
+      "name": "resolver_report_in_device"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "fn",
+      "name": "resolver_report_in_bytes"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "fn",
+      "name": "volume_report_in_device"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "fn",
+      "name": "volume_report_in_bytes"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "fn",
+      "name": "directory_report_in_device"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "fn",
+      "name": "directory_report_in_bytes"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "fn",
+      "name": "file_read_report_in_device"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "fn",
+      "name": "file_read_report_in_bytes"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "fn",
+      "name": "btree_cursor_report_in_device"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "fn",
+      "name": "btree_cursor_report_in_bytes"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "fn",
+      "name": "read_mapped_object_in_device"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "fn",
+      "name": "read_mapped_object_in_bytes"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "fn",
+      "name": "btree_cursor_report_in_report"
+    },
+    {
+      "crate": "apfs-core",
+      "path": "crates/apfs-core/src/lib.rs",
+      "kind": "fn",
+      "name": "resolver_report_in_report"
+    },
+    {
+      "crate": "apfs-crypto",
+      "path": "crates/apfs-crypto/src/lib.rs",
+      "kind": "enum",
+      "name": "CryptoReadinessStatus"
+    },
+    {
+      "crate": "apfs-crypto",
+      "path": "crates/apfs-crypto/src/lib.rs",
+      "kind": "struct",
+      "name": "CryptoReadiness"
+    },
+    {
+      "crate": "apfs-crypto",
+      "path": "crates/apfs-crypto/src/lib.rs",
+      "kind": "fn",
+      "name": "crypto_readiness"
+    },
+    {
+      "crate": "apfs-features",
+      "path": "crates/apfs-features/src/lib.rs",
+      "kind": "enum",
+      "name": "FeatureReadinessStatus"
+    },
+    {
+      "crate": "apfs-features",
+      "path": "crates/apfs-features/src/lib.rs",
+      "kind": "struct",
+      "name": "FeatureReadinessReport"
+    },
+    {
+      "crate": "apfs-features",
+      "path": "crates/apfs-features/src/lib.rs",
+      "kind": "struct",
+      "name": "UnicodeCasePolicyReport"
+    },
+    {
+      "crate": "apfs-features",
+      "path": "crates/apfs-features/src/lib.rs",
+      "kind": "struct",
+      "name": "MetadataFeatureReport"
+    },
+    {
+      "crate": "apfs-features",
+      "path": "crates/apfs-features/src/lib.rs",
+      "kind": "fn",
+      "name": "analyze_unicode_case_policy"
+    },
+    {
+      "crate": "apfs-features",
+      "path": "crates/apfs-features/src/lib.rs",
+      "kind": "fn",
+      "name": "feature_readiness"
+    },
+    {
+      "crate": "apfs-features",
+      "path": "crates/apfs-features/src/lib.rs",
+      "kind": "fn",
+      "name": "metadata_feature_report"
+    },
+    {
+      "crate": "apfs-fuse",
+      "path": "crates/apfs-fuse/src/lib.rs",
+      "kind": "struct",
+      "name": "FuseAdapterReadiness"
+    },
+    {
+      "crate": "apfs-fuse",
+      "path": "crates/apfs-fuse/src/lib.rs",
+      "kind": "fn",
+      "name": "fuse_adapter_readiness"
+    },
+    {
+      "crate": "apfs-test",
+      "path": "crates/apfs-test/src/lib.rs",
+      "kind": "struct",
+      "name": "FixtureManifest"
+    },
+    {
+      "crate": "apfs-test",
+      "path": "crates/apfs-test/src/lib.rs",
+      "kind": "struct",
+      "name": "CreatedWith"
+    },
+    {
+      "crate": "apfs-test",
+      "path": "crates/apfs-test/src/lib.rs",
+      "kind": "struct",
+      "name": "ApfsFeatureManifest"
+    },
+    {
+      "crate": "apfs-test",
+      "path": "crates/apfs-test/src/lib.rs",
+      "kind": "struct",
+      "name": "ExpectedArtifacts"
+    },
+    {
+      "crate": "apfs-test",
+      "path": "crates/apfs-test/src/lib.rs",
+      "kind": "struct",
+      "name": "RedactionManifest"
+    },
+    {
+      "crate": "apfs-test",
+      "path": "crates/apfs-test/src/lib.rs",
+      "kind": "struct",
+      "name": "ManifestValidation"
+    },
+    {
+      "crate": "apfs-test",
+      "path": "crates/apfs-test/src/lib.rs",
+      "kind": "fn",
+      "name": "helper_crate_ready"
+    },
+    {
+      "crate": "apfs-test",
+      "path": "crates/apfs-test/src/lib.rs",
+      "kind": "fn",
+      "name": "load_fixture_manifest"
+    },
+    {
+      "crate": "apfs-test",
+      "path": "crates/apfs-test/src/lib.rs",
+      "kind": "fn",
+      "name": "load_fixture_manifest_from_reader"
+    },
+    {
+      "crate": "apfs-test",
+      "path": "crates/apfs-test/src/lib.rs",
+      "kind": "fn",
+      "name": "validate_fixture_manifest"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "APFS_OBJECT_HEADER_SIZE"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "NX_SUPERBLOCK_MIN_SIZE"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "NX_MAGIC_BYTES"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "GPT_SECTOR_SIZE"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "GPT_HEADER_MIN_SIZE"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "GPT_PARTITION_ENTRY_MIN_SIZE"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "GPT_HEADER_SIGNATURE"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "OBJECT_TYPE_NX_SUPERBLOCK"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "OBJECT_TYPE_BTREE"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "OBJECT_TYPE_BTREE_NODE"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "OBJECT_TYPE_OMAP"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "OBJECT_TYPE_CHECKPOINT_MAP"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "OBJECT_TYPE_FS"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "OBJ_EPHEMERAL"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "OBJ_PHYSICAL"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "CHECKPOINT_MAP_LAST"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "CHECKPOINT_MAP_HEADER_SIZE"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "CHECKPOINT_MAPPING_SIZE"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "OMAP_PHYS_MIN_SIZE"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "APFS_VOLUME_MAGIC_BYTES"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "APFS_VOLUME_SUPERBLOCK_MIN_SIZE"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "APFS_VOLUME_NAME_OFFSET"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "APFS_VOLUME_NAME_LEN"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "APFS_VOLUME_ROLE_OFFSET"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "BTREE_NODE_MIN_SIZE"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "BTREE_TOC_ENTRY_SIZE"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "BTREE_NODE_ROOT"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "BTREE_NODE_LEAF"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "BTREE_NODE_FIXED_KV_SIZE"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "OMAP_KEY_SIZE"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "OMAP_VALUE_SIZE"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "SYNTHETIC_DIR_KEY_SIZE"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "SYNTHETIC_DIR_VALUE_HEADER_SIZE"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "SYNTHETIC_EXTENT_KEY_SIZE"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "SYNTHETIC_EXTENT_VALUE_SIZE"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "SYNTHETIC_FILE_KIND_FILE"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "SYNTHETIC_FILE_KIND_DIRECTORY"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "SYNTHETIC_FILE_KIND_SYMLINK"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "SYNTHETIC_FS_DIR_KEY_SIZE"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "SYNTHETIC_FS_DIR_VALUE_HEADER_SIZE"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "FLETCHER64_MODULUS"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "const",
+      "name": "APFS_GPT_TYPE_GUID_BYTES"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "enum",
+      "name": "ParseError"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "struct",
+      "name": "ObjectChecksum"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "struct",
+      "name": "ObjectHeader"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "struct",
+      "name": "ContainerSuperblock"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "struct",
+      "name": "CheckpointMapping"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "struct",
+      "name": "CheckpointMapBlock"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "struct",
+      "name": "ObjectMap"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "struct",
+      "name": "VolumeSuperblock"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "struct",
+      "name": "BTreeTableSpace"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "struct",
+      "name": "BTreeTocEntry"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "struct",
+      "name": "BTreeNode"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "struct",
+      "name": "OmapRecord"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "struct",
+      "name": "BTreeIndexRecord"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "struct",
+      "name": "BTreeChildSelection"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "struct",
+      "name": "FileSystemDirectoryRecord"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "struct",
+      "name": "OmapLookup"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "struct",
+      "name": "SyntheticDirectoryRecord"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "struct",
+      "name": "SyntheticFileExtentRecord"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "struct",
+      "name": "GptHeader"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "struct",
+      "name": "GptPartitionEntry"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "struct",
+      "name": "GptEntriesChecksum"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "fn",
+      "name": "parse_object_header"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "fn",
+      "name": "parse_nx_superblock"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "fn",
+      "name": "parse_nx_superblock_with_checksum"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "fn",
+      "name": "parse_checkpoint_map_block_with_checksum"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "fn",
+      "name": "parse_checkpoint_mapping"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "fn",
+      "name": "parse_omap_phys_with_checksum"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "fn",
+      "name": "parse_apfs_volume_superblock_with_checksum"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "fn",
+      "name": "parse_btree_node_with_checksum"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "fn",
+      "name": "parse_omap_records_from_btree_node"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "fn",
+      "name": "parse_omap_index_records_from_btree_node"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "fn",
+      "name": "select_synthetic_btree_child"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "fn",
+      "name": "parse_synthetic_directory_records_from_btree_node"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "fn",
+      "name": "lookup_omap_record"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "fn",
+      "name": "parse_synthetic_directory_records_v2_from_btree_node"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "fn",
+      "name": "parse_synthetic_file_extent_records_from_btree_node"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "fn",
+      "name": "validate_object_checksum"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "fn",
+      "name": "apfs_fletcher64"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "fn",
+      "name": "parse_gpt_header"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "fn",
+      "name": "gpt_header_crc32"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "fn",
+      "name": "validate_gpt_entries_checksum"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "fn",
+      "name": "parse_gpt_partition_entry"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "fn",
+      "name": "gpt_entries_byte_len"
+    },
+    {
+      "crate": "apfs-types",
+      "path": "crates/apfs-types/src/lib.rs",
+      "kind": "fn",
+      "name": "crc32_ieee"
+    },
+    {
+      "crate": "apfs-vfs",
+      "path": "crates/apfs-vfs/src/lib.rs",
+      "kind": "enum",
+      "name": "VfsNodeKind"
+    },
+    {
+      "crate": "apfs-vfs",
+      "path": "crates/apfs-vfs/src/lib.rs",
+      "kind": "struct",
+      "name": "VfsMetadata"
+    },
+    {
+      "crate": "apfs-vfs",
+      "path": "crates/apfs-vfs/src/lib.rs",
+      "kind": "struct",
+      "name": "VfsEntry"
+    },
+    {
+      "crate": "apfs-vfs",
+      "path": "crates/apfs-vfs/src/lib.rs",
+      "kind": "struct",
+      "name": "VfsReadResult"
+    },
+    {
+      "crate": "apfs-vfs",
+      "path": "crates/apfs-vfs/src/lib.rs",
+      "kind": "enum",
+      "name": "VfsError"
+    },
+    {
+      "crate": "apfs-vfs",
+      "path": "crates/apfs-vfs/src/lib.rs",
+      "kind": "trait",
+      "name": "ReadOnlyVfs"
+    },
+    {
+      "crate": "apfs-vfs",
+      "path": "crates/apfs-vfs/src/lib.rs",
+      "kind": "fn",
+      "name": "reject_path_traversal"
+    },
+    {
+      "crate": "apfs-win",
+      "path": "crates/apfs-win/src/lib.rs",
+      "kind": "enum",
+      "name": "WindowsMountPlanError"
+    },
+    {
+      "crate": "apfs-win",
+      "path": "crates/apfs-win/src/lib.rs",
+      "kind": "enum",
+      "name": "WindowsMountPlanStatus"
+    },
+    {
+      "crate": "apfs-win",
+      "path": "crates/apfs-win/src/lib.rs",
+      "kind": "struct",
+      "name": "WindowsMountPlan"
+    },
+    {
+      "crate": "apfs-win",
+      "path": "crates/apfs-win/src/lib.rs",
+      "kind": "fn",
+      "name": "plan_read_only_mount"
+    },
+    {
+      "crate": "apfs-win",
+      "path": "crates/apfs-win/src/lib.rs",
+      "kind": "fn",
+      "name": "is_simple_drive_mount_point"
+    },
+    {
+      "crate": "apfs-win",
+      "path": "crates/apfs-win/src/lib.rs",
+      "kind": "struct",
+      "name": "ReadOnlyWinFspCallbackPolicy"
+    },
+    {
+      "crate": "apfs-win",
+      "path": "crates/apfs-win/src/lib.rs",
+      "kind": "struct",
+      "name": "WinFspCallbackContract"
+    },
+    {
+      "crate": "apfs-win",
+      "path": "crates/apfs-win/src/lib.rs",
+      "kind": "fn",
+      "name": "winfsp_readonly_callback_matrix"
+    },
+    {
+      "crate": "apfs-write-lab",
+      "path": "crates/apfs-write-lab/src/lib.rs",
+      "kind": "enum",
+      "name": "WriteLabScope"
+    },
+    {
+      "crate": "apfs-write-lab",
+      "path": "crates/apfs-write-lab/src/lib.rs",
+      "kind": "enum",
+      "name": "PlannedLabOperation"
+    },
+    {
+      "crate": "apfs-write-lab",
+      "path": "crates/apfs-write-lab/src/lib.rs",
+      "kind": "struct",
+      "name": "WriteLabReadiness"
+    },
+    {
+      "crate": "apfs-write-lab",
+      "path": "crates/apfs-write-lab/src/lib.rs",
+      "kind": "fn",
+      "name": "write_lab_readiness"
+    }
+  ]
+}

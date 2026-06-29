@@ -1,0 +1,7 @@
+{
+  "track_id": "0108-profiling-budget-check",
+  "capability_id": "M-108",
+  "title": "Profiling budget and benchmark audit",
+  "status": "implemented_python",
+  "version": "0.28.0"
+}

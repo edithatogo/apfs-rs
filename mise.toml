@@ -1,0 +1,9 @@
+[tools]
+rust = "1.80.0"
+python = "3.11.9"
+
+[tasks.precompile]
+run = "python3 tools/precompile_static_check.py && python3 tools/context_integrity_check.py"
+
+[tasks.handoff]
+run = "python3 tools/handoff_status.py --write && python3 tools/repo_manifest.py --write"

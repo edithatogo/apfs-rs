@@ -1,0 +1,9 @@
+{
+  "track_id": "0057-handoff-status-reporter",
+  "capability_id": "M-057",
+  "title": "Handoff Status Reporter",
+  "status": "implemented_scaffold",
+  "version": "0.21.0",
+  "context_system": "conductor",
+  "safety": "read_only_or_docs_only"
+}

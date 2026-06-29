@@ -1,0 +1,9 @@
+{
+  "track_id": "0052-precommit-static-quality-configs",
+  "capability_id": "M-052",
+  "title": "Pre-commit and Static Quality Configs",
+  "status": "implemented_scaffold",
+  "version": "0.21.0",
+  "context_system": "conductor",
+  "safety": "read_only_or_docs_only"
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.27.0",
+  "generated_utc": "2026-06-25T11:28:57.803311+00:00",
+  "version": "0.29.0",
+  "capabilities": 118,
+  "conductor_tracks": 141,
+  "remaining_summary": {
+    "implemented_or_scaffolded": 118,
+    "remaining_overall": 8,
+    "remaining_windows_readonly_mvp": 9,
+    "remaining_total_including_mvp_blockers": 17,
+    "current_environment_completable_required": 0,
+    "required_current_environment_items_remaining": 0,
+    "note": "v0.29.0 adds GitHub Actions hardening, cargo-vet/supply-chain policy, provenance, release automation, Astro 7 docs hardening, and bleeding-edge repo audit scaffolds; production blockers still require Rust/macOS/Windows execution."
+  },
+  "read_first": [
+    "AGENTS.md",
+    "LOCAL_HANDOFF.md",
+    "REQUIREMENTS.md",
+    "DESIGN.md",
+    "REMAINING_ELEMENTS.md",
+    "conductor/tracks.md",
+    "codev/CHANGELOG.md"
+  ],
+  "first_commands_here": [
+    "python3 tools/cargoless_smoke_suite.py",
+    "python3 tools/tool_capability_matrix.py",
+    "python3 tools/rust_static_lint.py"
+  ],
+  "first_commands_local": [
+    "cargo fmt --all -- --check",
+    "cargo test --workspace",
+    "cargo clippy --workspace --all-targets --all-features -- -D warnings"
+  ]
+}

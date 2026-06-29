@@ -1,0 +1,16 @@
+{
+  "schema_version": "0.18.0",
+  "status": "apfs_container_detected",
+  "source_path": "/Users/example/private/synthetic.img",
+  "password": "do-not-keep",
+  "container": {
+    "uuid": "00000000-0000-0000-0000-000000000000",
+    "block_size": 4096,
+    "block_count": 64
+  },
+  "safety": {
+    "read_only": true,
+    "physical_write_supported": false
+  },
+  "warnings": []
+}

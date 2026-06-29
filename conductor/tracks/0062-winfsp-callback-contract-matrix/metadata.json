@@ -1,0 +1,7 @@
+{
+  "track_id": "0062-winfsp-callback-contract-matrix",
+  "capability_id": "M-062",
+  "title": "WinFsp read-only callback contract matrix",
+  "status": "completed_scaffold",
+  "version": "0.22.0"
+}

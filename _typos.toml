@@ -1,0 +1,8 @@
+[files]
+extend-exclude = ["fixtures/**", "target/**", "SHA256SUMS.txt"]
+
+[default.extend-words]
+APFS = "APFS"
+Fletcher = "Fletcher"
+OMAP = "OMAP"
+WinFsp = "WinFsp"

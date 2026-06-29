@@ -1,0 +1,6 @@
+{
+  "fixture": "fixtures/example-non-apfs.bin",
+  "sha256": "2d24a33a3112d305b1ad407e60dcf94bd3dff6bd2b40fd415d06c7ff095842fa",
+  "expected_status": "refused",
+  "reason": "shorter than nx_superblock_min_size"
+}

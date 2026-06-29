@@ -1,0 +1,7 @@
+{
+  "track_id": "0116-astro7-docs-quality-hardened",
+  "capability_id": "M-116",
+  "title": "Astro 7 documentation quality hardening",
+  "status": "implemented_python",
+  "version": "0.29.0"
+}

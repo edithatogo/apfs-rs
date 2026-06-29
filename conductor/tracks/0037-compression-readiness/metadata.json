@@ -1,0 +1,7 @@
+{
+  "track_id": "0037-compression-readiness",
+  "capability_id": "M-037",
+  "package": "v0.19.0",
+  "status": "implemented_scaffold",
+  "title": "Compression readiness"
+}

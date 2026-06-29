@@ -1,0 +1,60 @@
+{
+  "schema_version": "0.22.0",
+  "workspace_members": 13,
+  "crates": [
+    {
+      "member": "crates/apfs-types",
+      "name": "apfs-types"
+    },
+    {
+      "member": "crates/apfs-blockdev",
+      "name": "apfs-blockdev"
+    },
+    {
+      "member": "crates/apfs-core",
+      "name": "apfs-core"
+    },
+    {
+      "member": "crates/apfs-vfs",
+      "name": "apfs-vfs"
+    },
+    {
+      "member": "crates/apfs-win",
+      "name": "apfs-win"
+    },
+    {
+      "member": "crates/apfs-features",
+      "name": "apfs-features"
+    },
+    {
+      "member": "crates/apfs-fuse",
+      "name": "apfs-fuse"
+    },
+    {
+      "member": "crates/apfs-android",
+      "name": "apfs-android"
+    },
+    {
+      "member": "crates/apfs-crypto",
+      "name": "apfs-crypto"
+    },
+    {
+      "member": "crates/apfs-write-lab",
+      "name": "apfs-write-lab"
+    },
+    {
+      "member": "crates/apfs-cli",
+      "name": "apfs-cli"
+    },
+    {
+      "member": "crates/apfs-test",
+      "name": "apfs-test"
+    },
+    {
+      "member": "xtask",
+      "name": "xtask"
+    }
+  ],
+  "issues": [],
+  "status": "passed"
+}

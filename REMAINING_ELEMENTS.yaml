@@ -1,0 +1,532 @@
+schema_version: 0.29.0
+implemented_or_scaffolded: &id001
+- id: M-001
+  title: APFS image container detection
+  category: core-read
+  status: partial_implemented
+- id: M-002
+  title: GPT-wrapped APFS partition probe for image files
+  category: core-read
+  status: partial_implemented
+- id: M-003
+  title: Object header and Fletcher-64 checksum validation
+  category: core-read
+  status: partial_implemented
+- id: M-004
+  title: Checkpoint scan, checkpoint map parsing, and early OMAP probe
+  category: core-read
+  status: partial_implemented
+- id: M-005
+  title: B-tree node header and table-of-contents probe
+  category: core-read
+  status: partial_implemented
+- id: M-006
+  title: Single-node OMAP lookup API
+  category: core-read
+  status: partial_implemented
+- id: M-007
+  title: Checkpoint-map-backed multi-node synthetic OMAP lookup
+  category: core-read
+  status: partial_implemented
+- id: M-008
+  title: Bounded synthetic B-tree traversal lookup
+  category: core-read
+  status: partial_implemented
+- id: M-009
+  title: Object-map resolver facade and resolver report CLI
+  category: core-read
+  status: partial_implemented
+- id: M-010
+  title: Production-shaped B-tree cursor facade
+  category: core-read
+  status: scaffolded
+- id: M-011
+  title: Real APFS fixture readiness harness
+  category: fixture-readiness
+  status: implemented_scaffold
+- id: M-012
+  title: Real-fixture feedback loop
+  category: fixture-readiness
+  status: implemented_scaffold
+- id: M-013
+  title: Real-fixture feedback promotion into Codev and Conductor tracks
+  category: fixture-readiness
+  status: implemented_scaffold
+- id: M-014
+  title: Synthetic APFS volume superblock probe and volume report CLI
+  category: core-read
+  status: partial_implemented
+- id: M-015
+  title: Resolver-backed mapped object read report
+  category: core-read
+  status: partial_implemented
+- id: M-016
+  title: Synthetic filesystem root-tree directory-record parser
+  category: core-read
+  status: partial_implemented
+- id: M-017
+  title: Synthetic directory listing CLI
+  category: core-read
+  status: partial_implemented
+- id: M-018
+  title: Synthetic file preview CLI
+  category: core-read
+  status: partial_implemented
+- id: M-019
+  title: Synthetic metadata/stat report CLI
+  category: core-read
+  status: partial_implemented
+- id: M-020
+  title: Synthetic safe extract-preview CLI
+  category: core-read
+  status: partial_implemented
+- id: M-021
+  title: Precompile static validation harness
+  category: quality-automation
+  status: implemented_scaffold
+- id: M-022
+  title: Synthetic fixture oracle and smoke-test harness
+  category: quality-automation
+  status: implemented_python
+- id: M-023
+  title: Requirements-to-Codev-to-Conductor traceability matrix generator
+  category: traceability
+  status: implemented_python
+- id: M-024
+  title: Loop dashboard and backlog counter
+  category: workflow-automation
+  status: implemented_python
+- id: M-025
+  title: Cargoless release-readiness/preflight bundle
+  category: release-automation
+  status: implemented_python
+- id: M-026
+  title: Read-only VFS facade and Windows mount-plan/readiness scaffold
+  category: windows-mvp
+  status: implemented_scaffold
+- id: M-027
+  title: Redacted diagnostics bundle CLI
+  category: diagnostics
+  status: implemented_cli
+- id: M-028
+  title: CLI contract static check
+  category: quality
+  status: implemented_python
+- id: M-029
+  title: Fuzz scaffold and context integrity static check
+  category: context
+  status: implemented_scaffold
+- id: M-030
+  title: Cargoless API map and next-loop planning tools
+  category: workflow
+  status: implemented_python
+- id: M-031
+  title: Read-only doctor/readiness CLI
+  category: diagnostics
+  status: implemented_scaffold
+- id: M-032
+  title: CLI/API surface and source metrics snapshots
+  category: quality
+  status: implemented_python
+- id: M-033
+  title: Safety case and safety-case preflight
+  category: safety
+  status: implemented_python
+- id: M-034
+  title: Unicode and case-sensitivity policy CLI
+  category: unicode
+  status: implemented_scaffold
+- id: M-035
+  title: Xattr and resource fork readiness report
+  category: metadata
+  status: implemented_scaffold
+- id: M-036
+  title: Sparse file and clone readiness report
+  category: metadata
+  status: implemented_scaffold
+- id: M-037
+  title: Compression readiness report
+  category: compression
+  status: implemented_scaffold
+- id: M-038
+  title: Snapshot and volume-role readiness report
+  category: snapshots
+  status: implemented_scaffold
+- id: M-039
+  title: Advanced feature readiness snapshot
+  category: quality
+  status: implemented_python
+- id: M-040
+  title: Version consistency checker
+  category: quality
+  status: implemented_python
+- id: M-041
+  title: Cargo error triage to Codev/Conductor task stubs
+  category: quality
+  status: implemented_python
+- id: M-042
+  title: Local handoff runbook and ready-for-local checklist
+  category: handoff
+  status: implemented_docs
+- id: M-043
+  title: Platform setup documentation
+  category: handoff
+  status: implemented_docs
+- id: M-044
+  title: Release signing SBOM provenance installer scaffold
+  category: release
+  status: implemented_scaffold
+- id: M-045
+  title: FUSE Linux macOS ChromeOS adapter readiness crate
+  category: cross-platform
+  status: implemented_scaffold
+- id: M-046
+  title: Android access layer readiness crate
+  category: android
+  status: implemented_scaffold
+- id: M-047
+  title: Software-encryption read readiness crate
+  category: encryption
+  status: implemented_scaffold
+- id: M-048
+  title: Image-only write-lab readiness crate
+  category: write-lab
+  status: implemented_scaffold
+- id: M-049
+  title: Handoff release preflight integration
+  category: quality
+  status: implemented_python
+- id: M-050
+  title: Reproducible Rust toolchain and Cargo QA configuration
+  category: handoff
+  status: implemented_config
+- id: M-051
+  title: Devcontainer and tool-version bootstrap
+  category: handoff
+  status: implemented_config
+- id: M-052
+  title: Pre-commit, typos, markdownlint, and TOML quality configs
+  category: quality
+  status: implemented_config
+- id: M-053
+  title: Local first-run triage checklist
+  category: handoff
+  status: implemented_docs
+- id: M-054
+  title: Known uncompiled risks registry
+  category: handoff
+  status: implemented_docs
+- id: M-055
+  title: Local environment doctor
+  category: handoff
+  status: implemented_python
+- id: M-056
+  title: Repository manifest generator
+  category: quality
+  status: implemented_python
+- id: M-057
+  title: Handoff status reporter
+  category: handoff
+  status: implemented_python
+- id: M-058
+  title: Local handoff preflight integration
+  category: quality
+  status: implemented_python
+- id: M-059
+  title: Local compile loop orchestrator
+  category: quality
+  status: implemented_python
+- id: M-060
+  title: Cargoless Cargo workspace audit
+  category: quality
+  status: implemented_python
+- id: M-061
+  title: macOS APFS fixture dry-run validator
+  category: fixture
+  status: implemented_python
+- id: M-062
+  title: WinFsp read-only callback contract matrix
+  category: windows
+  status: implemented_scaffold
+- id: M-063
+  title: Production gap report generator
+  category: workflow
+  status: implemented_python
+- id: M-064
+  title: Batched loop policy and local stop criteria
+  category: workflow
+  status: implemented_docs
+- id: M-065
+  title: Current environment capability inventory
+  category: environment
+  status: implemented_python
+- id: M-066
+  title: Current-environment remaining-work classifier
+  category: workflow
+  status: implemented_python
+- id: M-067
+  title: Cargoless Cargo dependency graph generator
+  category: quality
+  status: implemented_python
+- id: M-068
+  title: Synthetic negative fixture generator
+  category: fixture
+  status: implemented_python
+- id: M-069
+  title: Test/control matrix generator
+  category: quality
+  status: implemented_python
+- id: M-070
+  title: Handoff archive audit generator
+  category: handoff
+  status: implemented_python
+- id: M-071
+  title: Markdown internal link audit
+  category: quality
+  status: implemented_python
+- id: M-072
+  title: Shell and macOS fixture script safety audit
+  category: quality
+  status: implemented_python
+- id: M-073
+  title: Cargoless smoke suite aggregator
+  category: quality
+  status: implemented_python
+- id: M-074
+  title: Documentation index consistency audit
+  category: handoff
+  status: implemented_python
+- id: M-075
+  title: Fixture coverage gap report
+  category: fixture
+  status: implemented_python
+- id: M-076
+  title: Current-environment completion report
+  category: workflow
+  status: implemented_python
+- id: M-077
+  title: APFS offset and synthetic fixture byte-layout audit
+  category: quality
+  status: implemented_python
+- id: M-078
+  title: Cargoless golden-output expectation generator
+  category: fixture
+  status: implemented_python
+- id: M-079
+  title: Cargoless dependency license/policy audit
+  category: quality
+  status: implemented_python
+- id: M-080
+  title: Backlog issue export for local/platform blockers
+  category: handoff
+  status: implemented_python
+- id: M-081
+  title: Current-environment self-test orchestrator
+  category: quality
+  status: implemented_python
+- id: M-082
+  title: Tool capability matrix and fallback command planner
+  category: quality
+  status: implemented_python
+- id: M-083
+  title: Cargoless Rust static linter
+  category: quality
+  status: implemented_python
+- id: M-084
+  title: Package integrity audit
+  category: handoff
+  status: implemented_python
+- id: M-085
+  title: MVP blocker tasklist generator
+  category: planning
+  status: implemented_python
+- id: M-086
+  title: Agent handoff brief generator
+  category: handoff
+  status: implemented_python
+- id: M-087
+  title: Local command plan generator
+  category: handoff
+  status: implemented_python
+- id: M-088
+  title: Source debt report
+  category: quality
+  status: implemented_python
+- id: M-089
+  title: Production claim guard
+  category: safety
+  status: implemented_python
+- id: M-090
+  title: Handoff manifest verifier
+  category: handoff
+  status: implemented_python
+- id: M-091
+  title: MVP blocker dependency DAG
+  category: planning
+  status: implemented_python
+- id: M-092
+  title: Local migration command generator
+  category: handoff
+  status: implemented_python
+- id: M-093
+  title: Current-environment final report
+  category: handoff
+  status: implemented_python
+- id: M-094
+  title: Strict CI/CD quality gates with >=90% coverage target
+  category: quality
+  status: configured_not_executed
+- id: M-095
+  title: Unit integration e2e property mutation fuzz test scaffolds
+  category: quality
+  status: configured_not_executed
+- id: M-096
+  title: Profiling and benchmark scaffold
+  category: quality
+  status: configured_not_executed
+- id: M-097
+  title: Astro 7 and Starlight documentation site scaffold
+  category: documentation
+  status: configured_not_executed
+- id: M-098
+  title: Docs-site cargoless validation and CI workflow
+  category: documentation
+  status: implemented_python
+- id: M-099
+  title: Testing infrastructure report generator
+  category: quality
+  status: implemented_python
+- id: M-100
+  title: Quality gate static checker
+  category: quality
+  status: implemented_python
+- id: M-101
+  title: Documentation build policy and Astro 7 adoption decision
+  category: documentation
+  status: documented
+- id: M-102
+  title: Extended current-environment tool inventory
+  category: handoff
+  status: implemented_python_scaffold
+- id: M-103
+  title: Quality and docs handoff integration
+  category: handoff
+  status: implemented_python_scaffold
+- id: M-104
+  title: Docs package and Astro 7 package audit
+  category: documentation
+  status: implemented_python
+- id: M-105
+  title: GitHub workflow policy audit for strict quality gates
+  category: quality
+  status: implemented_python
+- id: M-106
+  title: Test inventory report across unit/integration/e2e/property/fuzz/mutation/profiling
+  category: quality
+  status: implemented_python
+- id: M-107
+  title: Hypothesis strategy audit for Python property tests
+  category: quality
+  status: implemented_python
+- id: M-108
+  title: Profiling budget and benchmark audit
+  category: quality
+  status: implemented_python
+- id: M-109
+  title: Quality gate evidence ledger
+  category: handoff-quality
+  status: implemented_python
+- id: M-110
+  title: GitHub Actions hardening with zizmor/actionlint policy
+  category: quality
+  status: implemented_python
+- id: M-111
+  title: GitHub Actions pinning and permissions audit
+  category: quality
+  status: implemented_python
+- id: M-112
+  title: cargo-vet supply-chain review policy
+  category: supply-chain
+  status: implemented_python
+- id: M-113
+  title: SLSA and artifact attestation verification plan
+  category: release
+  status: implemented_python
+- id: M-114
+  title: cargo-dist and release-plz automation scaffold
+  category: release
+  status: implemented_python
+- id: M-115
+  title: OpenSSF Scorecard and dependency-review workflow scaffold
+  category: supply-chain
+  status: implemented_python
+- id: M-116
+  title: Astro 7 documentation quality hardening
+  category: documentation
+  status: implemented_python
+- id: M-117
+  title: Benchmark regression and optional CodSpeed readiness
+  category: quality
+  status: implemented_python
+- id: M-118
+  title: Bleeding-edge repo hardening audit aggregator
+  category: quality
+  status: implemented_python
+remaining_windows_readonly_mvp:
+- id: MVP-R001
+  title: Compile, lint, test, and fix the current workspace on Rust-enabled machines
+  dependency: Rust-enabled machine
+- id: MVP-R002
+  title: Generate first real macOS APFS image and manifest
+  dependency: macOS
+- id: MVP-R003
+  title: Run real-fixture feedback loop and convert mismatches into tasks
+  dependency: M-012/M-013 and real fixture
+- id: MVP-R004
+  title: Correct APFS parser offsets/semantics against real APFS data
+  dependency: real fixture feedback
+- id: MVP-R005
+  title: Full checkpoint ring reconstruction
+  dependency: corrected parser and real fixture
+- id: MVP-R006
+  title: Production APFS object-map B-tree traversal
+  dependency: corrected checkpoint and B-tree parsing
+- id: MVP-R007
+  title: Production APFS filesystem tree record decoding and metadata/stat mapping
+  dependency: production OMAP traversal
+- id: MVP-R008
+  title: Production file extent resolution and extraction
+  dependency: production filesystem records
+- id: MVP-R009
+  title: Windows WinFsp read-only mount adapter, smoke tests, and packaging baseline
+  dependency: stable read API
+remaining_beyond_mvp:
+- id: POST-R007-PROD
+  title: Production software-encryption read support
+- id: POST-R010-PROD
+  title: Execute signed release, SBOM, provenance, installer, and winget publication
+- id: POST-R011-PROD
+  title: Production Linux/macOS/ChromeOS/Android adapters and platform tests
+- id: POST-R015-PROD
+  title: Execute image-only write lab with crash-injection evidence
+- id: POST-R016
+  title: Windows write beta
+- id: POST-R017
+  title: Repair
+- id: POST-R018
+  title: Format
+- id: POST-R019
+  title: Long-running fuzz/property/mutation/coverage hardening on CI
+current_environment_completable_required: 0
+implemented: *id001
+summary:
+  implemented_or_scaffolded: 118
+  remaining_overall: 8
+  remaining_windows_readonly_mvp: 9
+  remaining_total_including_mvp_blockers: 17
+  current_environment_completable_required: 0
+  required_current_environment_items_remaining: 0
+  note: v0.29.0 adds GitHub Actions hardening, cargo-vet/supply-chain policy, provenance,
+    release automation, Astro 7 docs hardening, and bleeding-edge repo audit scaffolds;
+    production blockers still require Rust/macOS/Windows execution.
+updated: '2026-06-25'

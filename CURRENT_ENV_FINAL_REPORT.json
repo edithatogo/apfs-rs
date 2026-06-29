@@ -1,0 +1,36 @@
+{
+  "schema_version": "0.27.0",
+  "available_tools": {
+    "python3": true,
+    "jq": true,
+    "rg": true,
+    "grep": true,
+    "sed": true,
+    "awk": true,
+    "find": true,
+    "zip": true,
+    "unzip": true,
+    "sha256sum": true,
+    "git": true,
+    "make": true,
+    "gcc": true,
+    "clang": true,
+    "node": true,
+    "npm": true,
+    "cargo": true,
+    "rustc": true,
+    "hdiutil": true,
+    "diskutil": true,
+    "fsck_apfs": true,
+    "powershell": false
+  },
+  "current_environment_completable_required": 0,
+  "current_environment_completable_optional": 0,
+  "production_blocked_items": [
+    "Compile/lint/test/fix Rust workspace",
+    "Generate real APFS image using macOS tooling",
+    "Validate parser semantics against real APFS metadata",
+    "Implement production checkpoint/object-map/filesystem traversal with cargo tests",
+    "Run Windows WinFsp read-only mount smoke tests"
+  ]
+}

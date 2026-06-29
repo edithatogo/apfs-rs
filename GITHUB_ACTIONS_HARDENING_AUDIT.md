@@ -1,0 +1,64 @@
+# GitHub Actions Hardening Audit
+
+Workflows scanned: 17
+Findings: 59
+
+- info `unpinned_action` in `.github/workflows/ci.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/ci.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/coverage.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/coverage.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/coverage.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/coverage.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/docs-quality.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/docs-quality.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/docs-quality.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/docs-quality.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/docs-site.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/docs-site.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/fuzz.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/fuzz.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/local-handoff.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/local-handoff.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/mutation.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/mutation.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/mutation.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/mutation.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/profiling.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/profiling.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/profiling.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/provenance-verify.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/provenance-verify.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/python-property.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/python-property.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/quality-gates.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/quality-gates.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/quality-gates.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/quality-gates.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/quality-gates.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/quality-gates.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/quality-gates.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/quality-gates.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/quality-gates.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/release-automation.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/release.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/release.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/release.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/security.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/security.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/security.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/strict-quality.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/strict-quality.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/strict-quality.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/strict-quality.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/strict-quality.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/strict-quality.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/strict-quality.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/supply-chain.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/supply-chain.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/supply-chain.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/supply-chain.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/supply-chain.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/supply-chain.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/workflow-security.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/workflow-security.yml`: pin action to commit SHA before public release
+- info `unpinned_action` in `.github/workflows/workflow-security.yml`: pin action to commit SHA before public release

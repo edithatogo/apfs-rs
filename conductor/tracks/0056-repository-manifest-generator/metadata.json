@@ -1,0 +1,9 @@
+{
+  "track_id": "0056-repository-manifest-generator",
+  "capability_id": "M-056",
+  "title": "Repository Manifest Generator",
+  "status": "implemented_scaffold",
+  "version": "0.21.0",
+  "context_system": "conductor",
+  "safety": "read_only_or_docs_only"
+}

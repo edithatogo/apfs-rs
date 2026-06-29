@@ -1,0 +1,33 @@
+name: workflow-security
+
+on:
+  pull_request:
+  merge_group:
+  schedule:
+    - cron: '30 4 * * 1'
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  actionlint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run actionlint
+        uses: docker://rhysd/actionlint:latest
+        with:
+          args: -color
+
+  zizmor:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run zizmor
+        uses: zizmorcore/zizmor-action@v0.2.1
+        with:
+          persona: pedantic

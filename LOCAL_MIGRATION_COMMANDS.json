@@ -1,0 +1,36 @@
+{
+  "schema_version": "0.27.0",
+  "sequences": {
+    "cargoless_preflight": [
+      "python3 tools/cargoless_smoke_suite.py",
+      "python3 tools/current_environment_inventory.py",
+      "python3 tools/handoff_manifest_verify.py",
+      "python3 tools/mvp_blocker_dag.py"
+    ],
+    "first_rust_loop": [
+      "cargo fmt --all -- --check",
+      "cargo test --workspace",
+      "cargo clippy --workspace --all-targets --all-features -- -D warnings",
+      "cargo xtask registry-check",
+      "cargo xtask conductor-check",
+      "cargo xtask safety-check"
+    ],
+    "cargo_failure_triage": [
+      "mkdir -p target",
+      "cargo test --workspace 2>&1 | tee target/cargo-test.log",
+      "python3 tools/cargo_error_to_tracks.py target/cargo-test.log target/cargo-triage"
+    ],
+    "macos_fixture_loop": [
+      "./tools/macos/create_real_apfs_fixture.sh",
+      "cargo xtask fixture-manifest-check fixtures/real/macos-minimal-apfs-001/manifest.json",
+      "cargo run -p apfs-cli -- inspect --json fixtures/real/macos-minimal-apfs-001/macos-minimal-apfs-001.sparseimage > target/inspect-real.json",
+      "cargo xtask real-fixture-feedback target/inspect-real.json fixtures/real/macos-minimal-apfs-001/manifest.json target/real-fixture-feedback",
+      "cargo xtask promote-feedback target/real-fixture-feedback/real-fixture-feedback.json target/promoted-feedback-tasks"
+    ],
+    "windows_readonly_readiness": [
+      "cargo run -p apfs-cli -- winfsp-callback-matrix --json",
+      "python3 tools/winfsp_callback_matrix.py",
+      "python3 tools/windows_readiness_check.py"
+    ]
+  }
+}

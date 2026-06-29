@@ -1,0 +1,7 @@
+{
+  "track_id": "0039-feature-readiness-snapshot",
+  "capability_id": "M-039",
+  "package": "v0.19.0",
+  "status": "implemented_python",
+  "title": "Advanced feature readiness snapshot"
+}

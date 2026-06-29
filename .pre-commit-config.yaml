@@ -1,0 +1,24 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-json
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+  - repo: https://github.com/crate-ci/typos
+    rev: v1.27.3
+    hooks:
+      - id: typos
+  - repo: local
+    hooks:
+      - id: apfs-rs-precompile-static-check
+        name: APFS-RS precompile static check
+        entry: python3 tools/precompile_static_check.py
+        language: system
+        pass_filenames: false
+      - id: apfs-rs-context-integrity-check
+        name: APFS-RS context integrity check
+        entry: python3 tools/context_integrity_check.py
+        language: system
+        pass_filenames: false

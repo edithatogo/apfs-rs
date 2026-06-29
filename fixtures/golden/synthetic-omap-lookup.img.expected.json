@@ -1,0 +1,6 @@
+{
+  "fixture": "fixtures/synthetic-omap-lookup.img",
+  "sha256": "981191a25d3bebc010dd5baf765797444d9db359e8dd7ea72bbfde9f15f12044",
+  "expected_status": "apfs_container_detected",
+  "reason": "NXSB magic at block zero"
+}

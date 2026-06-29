@@ -1,0 +1,7 @@
+{
+  "track_id": "0009b-m009-object-map-resolver",
+  "capability": "M-009",
+  "status": "implemented_in_package_uncompiled",
+  "package": "v0.9.0",
+  "purpose": "Object-map resolver facade and resolver-report CLI."
+}

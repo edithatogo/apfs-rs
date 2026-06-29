@@ -1,0 +1,26 @@
+{
+  "apfs_features": {
+    "not_a_complete_filesystem": true,
+    "synthetic": true
+  },
+  "capability_ids": [
+    "M-014"
+  ],
+  "created_with": {
+    "note": "synthetic parser-development fixture",
+    "tool": "tools/make_synthetic_fixtures.py"
+  },
+  "description": "Direct APFS-like image resolving a container filesystem OID to a synthetic APSB volume superblock",
+  "expected_artifacts": [],
+  "fixture_id": "synthetic-volume-superblock.img",
+  "not_a_complete_filesystem": true,
+  "redaction": {
+    "contains_personal_data": false,
+    "contains_secret_material": false
+  },
+  "schema_version": "0.16.0",
+  "sha256": "03382d646d5dad79aa88fc0219ad400cf25058fd9feddde868d89967f7dbde3b",
+  "size_bytes": 294912,
+  "source_type": "synthetic_apfs_parser_development_image",
+  "synthetic": true
+}

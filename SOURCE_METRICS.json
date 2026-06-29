@@ -1,0 +1,48 @@
+{
+  "schema_version": "0.18.0",
+  "rust_files": 21,
+  "rust_lines": 6069,
+  "python_tool_files": 73,
+  "python_tool_lines": 5509,
+  "markdown_files": 772,
+  "markdown_lines": 14352,
+  "json_files": 218,
+  "conductor_tracks": 126,
+  "unsafe_hits": [
+    {
+      "path": "crates/apfs-cli/src/main.rs",
+      "line": 910,
+      "text": "anyhow::bail!(\"unsafe synthetic extraction name `{name}`; provide a single file name without path separators\");"
+    },
+    {
+      "path": "xtask/src/main.rs",
+      "line": 367,
+      "text": "scan_for_unsafe_blocks()?;"
+    },
+    {
+      "path": "xtask/src/main.rs",
+      "line": 373,
+      "text": "fn scan_for_unsafe_blocks() -> Result<()> {"
+    },
+    {
+      "path": "xtask/src/main.rs",
+      "line": 385,
+      "text": "let suspicious = trimmed.starts_with(\"unsafe \")"
+    },
+    {
+      "path": "xtask/src/main.rs",
+      "line": 386,
+      "text": "|| trimmed.contains(\" unsafe \")"
+    },
+    {
+      "path": "xtask/src/main.rs",
+      "line": 387,
+      "text": "|| trimmed.contains(\"unsafe{\")"
+    },
+    {
+      "path": "xtask/src/main.rs",
+      "line": 388,
+      "text": "|| trimmed.contains(\"unsafe {\");"
+    }
+  ]
+}

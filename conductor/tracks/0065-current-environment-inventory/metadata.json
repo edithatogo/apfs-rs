@@ -1,0 +1,8 @@
+{
+  "track_id": "0065-current-environment-inventory",
+  "capability_id": "M-065",
+  "title": "Current environment capability inventory",
+  "status": "implemented_scaffold",
+  "version": "0.23.0",
+  "phase": "handoff-hardening"
+}

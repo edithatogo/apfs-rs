@@ -1,0 +1,7 @@
+{
+  "track_id": "0000-project-context",
+  "capability": "context",
+  "status": "active",
+  "package": "v0.1.0",
+  "purpose": "Keep Conductor, Codev, and agent context synchronized."
+}

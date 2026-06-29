@@ -1,0 +1,8 @@
+{
+  "track_id": "0087-local-command-plan-generator",
+  "capability_id": "M-087",
+  "title": "Local command plan generator",
+  "status": "implemented_python",
+  "version": "0.26.0",
+  "updated": "2026-06-25"
+}

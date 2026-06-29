@@ -1,0 +1,82 @@
+{
+  "schema_version": "0.27.0",
+  "generated_utc": "2026-06-25T11:28:57.636313+00:00",
+  "phases": {
+    "current_environment": [
+      {
+        "command": "python3 tools/cargoless_smoke_suite.py",
+        "available_now": true
+      },
+      {
+        "command": "python3 tools/tool_capability_matrix.py",
+        "available_now": true
+      },
+      {
+        "command": "python3 tools/rust_static_lint.py",
+        "available_now": true
+      },
+      {
+        "command": "python3 tools/package_integrity_audit.py",
+        "available_now": true
+      },
+      {
+        "command": "python3 tools/mvp_blocker_tasklist.py",
+        "available_now": true
+      },
+      {
+        "command": "python3 tools/agent_handoff_brief.py",
+        "available_now": true
+      }
+    ],
+    "local_rust": [
+      {
+        "command": "cargo fmt --all -- --check",
+        "available_now": true
+      },
+      {
+        "command": "cargo test --workspace",
+        "available_now": true
+      },
+      {
+        "command": "cargo clippy --workspace --all-targets --all-features -- -D warnings",
+        "available_now": true
+      },
+      {
+        "command": "cargo xtask registry-check",
+        "available_now": true
+      },
+      {
+        "command": "cargo xtask conductor-check",
+        "available_now": true
+      },
+      {
+        "command": "cargo xtask safety-check",
+        "available_now": true
+      }
+    ],
+    "macos_fixture": [
+      {
+        "command": "./tools/macos/create_real_apfs_fixture.sh",
+        "available_now": true
+      },
+      {
+        "command": "cargo xtask fixture-manifest-check fixtures/real/macos-minimal-apfs-001/manifest.json",
+        "available_now": true
+      },
+      {
+        "command": "cargo run -p apfs-cli -- inspect --json fixtures/real/macos-minimal-apfs-001/macos-minimal-apfs-001.sparseimage > inspect.json",
+        "available_now": true
+      }
+    ],
+    "windows_winfsp": [
+      {
+        "command": "cargo run -p apfs-cli -- winfsp-callback-matrix --json",
+        "available_now": true
+      },
+      {
+        "command": "# install WinFsp on a dedicated Windows test VM before live mount work",
+        "available_now": false
+      }
+    ]
+  }
+}

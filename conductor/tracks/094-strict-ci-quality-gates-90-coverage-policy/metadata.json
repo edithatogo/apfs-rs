@@ -1,0 +1,7 @@
+{
+  "track_id": "094-strict-ci-quality-gates-90-coverage-policy",
+  "capability_id": "M-094",
+  "title": "Strict CI quality gates and 90% coverage policy",
+  "status": "implemented_scaffold",
+  "version": "0.27.0"
+}

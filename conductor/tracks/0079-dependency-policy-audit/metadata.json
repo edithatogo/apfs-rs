@@ -1,0 +1,7 @@
+{
+  "track_id": "0079-dependency-policy-audit",
+  "capability_id": "M-079",
+  "title": "Cargoless dependency license/policy audit",
+  "status": "implemented_python",
+  "version": "0.25.0"
+}

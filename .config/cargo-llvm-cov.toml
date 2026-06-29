@@ -1,0 +1,9 @@
+# cargo-llvm-cov quality gate configuration for local/CI execution.
+# This package cannot run Rust in the current environment, but the local handoff
+# must enforce >=90% line coverage once the workspace compiles.
+[coverage]
+minimum-lines = 90
+minimum-functions = 85
+minimum-regions = 85
+command = "cargo llvm-cov nextest --workspace --all-features --fail-under-lines 90 --html --output-dir target/llvm-cov/html"
+note = "Coverage is enforced locally/CI after Rust is available. Current environment can only validate this config is present."

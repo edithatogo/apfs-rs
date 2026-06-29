@@ -1,0 +1,8 @@
+{
+  "track_id": "0074-documentation-index-audit",
+  "capability_id": "M-074",
+  "title": "Documentation index consistency audit",
+  "status": "implemented",
+  "version": "0.25.0",
+  "updated": "2026-06-25"
+}

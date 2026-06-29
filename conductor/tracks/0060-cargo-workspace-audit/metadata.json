@@ -1,0 +1,7 @@
+{
+  "track_id": "0060-cargo-workspace-audit",
+  "capability_id": "M-060",
+  "title": "Cargoless Cargo workspace audit",
+  "status": "completed_scaffold",
+  "version": "0.22.0"
+}

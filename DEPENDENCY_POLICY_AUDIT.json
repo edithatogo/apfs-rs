@@ -1,0 +1,136 @@
+{
+  "schema_version": "0.25.0",
+  "workspace_dependency_count": 10,
+  "workspace_dependencies": [
+    "anyhow",
+    "clap",
+    "criterion",
+    "jsonschema",
+    "proptest",
+    "serde",
+    "serde_json",
+    "serde_yaml",
+    "thiserror",
+    "walkdir"
+  ],
+  "member_count": 13,
+  "members": [
+    {
+      "member": "crates/apfs-types",
+      "dependencies": [
+        "serde",
+        "thiserror"
+      ],
+      "dev_dependencies": [
+        "criterion",
+        "proptest"
+      ]
+    },
+    {
+      "member": "crates/apfs-blockdev",
+      "dependencies": [
+        "thiserror"
+      ],
+      "dev_dependencies": []
+    },
+    {
+      "member": "crates/apfs-core",
+      "dependencies": [
+        "apfs-blockdev",
+        "apfs-types",
+        "serde",
+        "thiserror"
+      ],
+      "dev_dependencies": [
+        "criterion",
+        "proptest"
+      ]
+    },
+    {
+      "member": "crates/apfs-vfs",
+      "dependencies": [
+        "serde",
+        "thiserror"
+      ],
+      "dev_dependencies": []
+    },
+    {
+      "member": "crates/apfs-win",
+      "dependencies": [
+        "serde",
+        "thiserror"
+      ],
+      "dev_dependencies": []
+    },
+    {
+      "member": "crates/apfs-features",
+      "dependencies": [
+        "serde",
+        "thiserror"
+      ],
+      "dev_dependencies": []
+    },
+    {
+      "member": "crates/apfs-fuse",
+      "dependencies": [],
+      "dev_dependencies": []
+    },
+    {
+      "member": "crates/apfs-android",
+      "dependencies": [],
+      "dev_dependencies": []
+    },
+    {
+      "member": "crates/apfs-crypto",
+      "dependencies": [],
+      "dev_dependencies": []
+    },
+    {
+      "member": "crates/apfs-write-lab",
+      "dependencies": [],
+      "dev_dependencies": []
+    },
+    {
+      "member": "crates/apfs-cli",
+      "dependencies": [
+        "anyhow",
+        "apfs-blockdev",
+        "apfs-core",
+        "apfs-features",
+        "apfs-win",
+        "clap",
+        "serde_json"
+      ],
+      "dev_dependencies": [
+        "assert_cmd",
+        "predicates",
+        "serde_json",
+        "tempfile"
+      ]
+    },
+    {
+      "member": "crates/apfs-test",
+      "dependencies": [
+        "serde",
+        "serde_json"
+      ],
+      "dev_dependencies": []
+    },
+    {
+      "member": "xtask",
+      "dependencies": [
+        "anyhow",
+        "clap",
+        "jsonschema",
+        "serde_json",
+        "serde_yaml",
+        "walkdir"
+      ],
+      "dev_dependencies": []
+    }
+  ],
+  "declared_dependency_count": 18,
+  "high_risk_dependency_names_requiring_local_review": [],
+  "status": "inventory_only",
+  "note": "No network/cargo metadata used; local cargo-deny/cargo-audit/cargo-vet still required."
+}

@@ -1,0 +1,7 @@
+{
+  "track_id": "0088-source-debt-report",
+  "capability_id": "M-088",
+  "title": "Source debt report",
+  "status": "implemented_python",
+  "version": "0.26.0"
+}

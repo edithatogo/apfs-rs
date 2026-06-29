@@ -1,0 +1,7 @@
+{
+  "track_id": "0099-testing-infrastructure-report-generator",
+  "capability_id": "M-099",
+  "title": "Testing infrastructure report generator",
+  "status": "scaffolded",
+  "version": "0.27.0"
+}

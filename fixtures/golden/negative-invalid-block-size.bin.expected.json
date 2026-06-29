@@ -1,0 +1,6 @@
+{
+  "fixture": "fixtures/negative/negative-invalid-block-size.bin",
+  "sha256": "99d8c72a508252e4d2600765c95ee747654e57617ea4e338577e03ea6cd1562d",
+  "expected_status": "refused",
+  "reason": "invalid block size"
+}

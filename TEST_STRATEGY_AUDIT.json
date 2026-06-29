@@ -1,0 +1,19 @@
+{
+  "schema_version": "0.27.0",
+  "status": "passed",
+  "required_files": [
+    "TEST_STRATEGY.md",
+    "QUALITY_GATES.md",
+    "tests/README.md",
+    "tests/integration/README.md",
+    "tests/e2e/README.md",
+    "tests/property/README.md",
+    "fuzz/Cargo.toml",
+    "fuzz/fuzz_targets/object_header.rs",
+    "fuzz/fuzz_targets/nx_superblock.rs",
+    "mutants.toml",
+    "benches/README.md",
+    "profiling/README.md",
+    "profiling/profile_plan.json"
+  ]
+}

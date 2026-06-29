@@ -1,0 +1,6 @@
+{
+  "fixture": "fixtures/synthetic-volume-superblock.img",
+  "sha256": "03382d646d5dad79aa88fc0219ad400cf25058fd9feddde868d89967f7dbde3b",
+  "expected_status": "apfs_container_detected",
+  "reason": "NXSB magic at block zero"
+}

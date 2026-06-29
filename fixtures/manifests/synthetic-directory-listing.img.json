@@ -1,0 +1,28 @@
+{
+  "apfs_features": {
+    "not_a_complete_filesystem": true,
+    "synthetic": true
+  },
+  "capability_ids": [
+    "M-016",
+    "M-017",
+    "M-019"
+  ],
+  "created_with": {
+    "note": "synthetic parser-development fixture",
+    "tool": "tools/make_synthetic_fixtures.py"
+  },
+  "description": "Direct APFS-like image resolving a synthetic APFS volume root tree to directory entries",
+  "expected_artifacts": [],
+  "fixture_id": "synthetic-directory-listing.img",
+  "not_a_complete_filesystem": true,
+  "redaction": {
+    "contains_personal_data": false,
+    "contains_secret_material": false
+  },
+  "schema_version": "0.16.0",
+  "sha256": "afb6c4d676d03fbd5313b6c29518a3470543c5e7aa77dd01c0f397691cbec36d",
+  "size_bytes": 393216,
+  "source_type": "synthetic_apfs_parser_development_image",
+  "synthetic": true
+}

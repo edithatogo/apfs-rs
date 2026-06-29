@@ -1,0 +1,6 @@
+{
+  "fixture": "fixtures/synthetic-omap-multinode-lookup.img",
+  "sha256": "0e283ad4dc3e01f178a0bde5e37cbce8226395c870a5a3b2d634308d7f57ad10",
+  "expected_status": "apfs_container_detected",
+  "reason": "NXSB magic at block zero"
+}

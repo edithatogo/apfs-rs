@@ -1,0 +1,26 @@
+{
+  "apfs_features": {
+    "not_a_complete_filesystem": true,
+    "synthetic": true
+  },
+  "capability_ids": [
+    "M-002"
+  ],
+  "created_with": {
+    "note": "synthetic parser-development fixture",
+    "tool": "tools/make_synthetic_fixtures.py"
+  },
+  "description": "GPT image with APFS partition type and valid APFS checksum",
+  "expected_artifacts": [],
+  "fixture_id": "synthetic-gpt-apfs.img",
+  "not_a_complete_filesystem": true,
+  "redaction": {
+    "contains_personal_data": false,
+    "contains_secret_material": false
+  },
+  "schema_version": "0.16.0",
+  "sha256": "ef526acfda66f03403abae908eb2bc11e0b73707cb00419506605a4555e069aa",
+  "size_bytes": 81920,
+  "source_type": "synthetic_apfs_parser_development_image",
+  "synthetic": true
+}

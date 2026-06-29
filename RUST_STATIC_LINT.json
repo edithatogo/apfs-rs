@@ -1,0 +1,27 @@
+{
+  "schema_version": "0.27.0",
+  "generated_utc": "2026-06-25T11:28:57.628011+00:00",
+  "rust_files": 21,
+  "findings": [
+    {
+      "path": "crates/apfs-blockdev/src/lib.rs",
+      "severity": "warning",
+      "message": "duplicate function name in file: size"
+    },
+    {
+      "path": "crates/apfs-blockdev/src/lib.rs",
+      "severity": "warning",
+      "message": "duplicate function name in file: read_at"
+    },
+    {
+      "path": "crates/apfs-blockdev/src/lib.rs",
+      "severity": "warning",
+      "message": "duplicate function name in file: size"
+    },
+    {
+      "path": "crates/apfs-blockdev/src/lib.rs",
+      "severity": "warning",
+      "message": "duplicate function name in file: read_at"
+    }
+  ]
+}

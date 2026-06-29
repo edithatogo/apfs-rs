@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "checks": {
+    "package_json_exists": true,
+    "astro_7_dependency": true,
+    "build_script_exists": true,
+    "check_script_exists": true,
+    "required_pages_exist": true
+  },
+  "missing": [],
+  "astro_dependency": "7.0.2"
+}

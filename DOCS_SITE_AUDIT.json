@@ -1,0 +1,16 @@
+{
+  "schema_version": "0.29.0",
+  "status": "passed",
+  "astro_version": "7.0.2",
+  "required_files": [
+    "docs-site/astro.config.mjs",
+    "docs-site/tsconfig.json",
+    "docs-site/src/layouts/Base.astro",
+    "docs-site/src/pages/index.astro",
+    "docs-site/src/pages/quality.astro",
+    "docs-site/src/pages/conductor.astro",
+    "docs-site/src/pages/handoff.astro",
+    "docs-site/src/pages/test-strategy.astro",
+    "docs-site/src/pages/quality-evidence.astro"
+  ]
+}

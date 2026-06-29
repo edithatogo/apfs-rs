@@ -1,0 +1,11 @@
+{
+  "schema_version": "0.22.0",
+  "script": "tools/macos/create_real_apfs_fixture.sh",
+  "status": "passed",
+  "issues": [],
+  "safety": {
+    "expected_image_only": true,
+    "physical_disk_patterns_forbidden": true,
+    "requires_macos": true
+  }
+}

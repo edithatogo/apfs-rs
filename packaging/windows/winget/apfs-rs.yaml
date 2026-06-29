@@ -1,0 +1,8 @@
+# Winget manifest placeholder for APFS-RS.
+# Fill after stable Windows read-only release artifacts exist.
+PackageIdentifier: APFS-RS.APFS-RS
+PackageVersion: 0.0.0-placeholder
+PackageName: APFS-RS
+Publisher: APFS-RS Project
+License: MIT OR Apache-2.0
+ShortDescription: Read-only APFS inspection and mount tooling for Windows-first workflows.

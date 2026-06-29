@@ -1,0 +1,7 @@
+{
+  "track_id": "0009-m008-bounded-btree-traversal",
+  "capability": "M-008",
+  "status": "implemented_in_package_uncompiled",
+  "package": "v0.8.0",
+  "purpose": "Bounded synthetic two-level B-tree traversal."
+}

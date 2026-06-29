@@ -1,0 +1,7 @@
+{
+  "track_id": "0094-strict-ci-quality-gates",
+  "capability_id": "M-094",
+  "title": "Strict CI quality gates",
+  "status": "implemented_scaffold",
+  "version": "0.27.0"
+}

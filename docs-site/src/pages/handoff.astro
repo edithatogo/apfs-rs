@@ -1,0 +1,11 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="APFS-RS Local Handoff">
+  <h1>Local Handoff</h1>
+  <p>First run the cargoless checks, then run Rust/Cargo checks on a local machine.</p>
+  <pre><code>python3 tools/cargoless_smoke_suite.py
+cargo fmt --all -- --check
+cargo test --workspace
+cargo clippy --workspace --all-targets --all-features -- -D warnings</code></pre>
+</Base>

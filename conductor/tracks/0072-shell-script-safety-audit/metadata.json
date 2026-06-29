@@ -1,0 +1,8 @@
+{
+  "track_id": "0072-shell-script-safety-audit",
+  "capability_id": "M-072",
+  "title": "Shell and macOS fixture script safety audit",
+  "status": "implemented",
+  "version": "0.25.0",
+  "updated": "2026-06-25"
+}

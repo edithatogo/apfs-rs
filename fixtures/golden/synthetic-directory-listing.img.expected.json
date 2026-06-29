@@ -1,0 +1,6 @@
+{
+  "fixture": "fixtures/synthetic-directory-listing.img",
+  "sha256": "afb6c4d676d03fbd5313b6c29518a3470543c5e7aa77dd01c0f397691cbec36d",
+  "expected_status": "apfs_container_detected",
+  "reason": "NXSB magic at block zero"
+}

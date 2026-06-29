@@ -1,0 +1,7 @@
+{
+  "track_id": "0113-slsa-attestation-verification",
+  "capability_id": "M-113",
+  "title": "SLSA and artifact attestation verification plan",
+  "status": "implemented_python",
+  "version": "0.29.0"
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "0.25.0",
+  "status": "current_environment_required_work_exhausted",
+  "production_items_remaining": 17,
+  "windows_mvp_blockers_remaining": 9,
+  "broader_production_items_remaining": 8,
+  "required_current_environment_items_remaining": 0,
+  "required_current_environment_items": [],
+  "optional_polish_items": [
+    "More synthetic negative fixtures for malformed B-tree and OMAP edge cases",
+    "More narrative examples for Windows/macOS handoff users",
+    "More static heuristics for future cargo diagnostics once real compiler output exists"
+  ],
+  "note": "No remaining production APFS/Windows MVP item can be honestly completed without Rust/Cargo, macOS APFS tooling, or Windows+WinFsp. Optional polish remains possible but is not blocking."
+}

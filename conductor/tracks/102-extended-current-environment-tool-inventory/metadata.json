@@ -1,0 +1,7 @@
+{
+  "track_id": "102-extended-current-environment-tool-inventory",
+  "capability_id": "M-102",
+  "title": "Extended current-environment tool inventory",
+  "status": "implemented_scaffold",
+  "version": "0.27.0"
+}

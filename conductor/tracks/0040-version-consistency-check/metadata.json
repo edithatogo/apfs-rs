@@ -1,0 +1,7 @@
+{
+  "track_id": "0040-version-consistency-check",
+  "capability_id": "M-040",
+  "package": "v0.19.0",
+  "status": "implemented_python",
+  "title": "Version consistency checker"
+}

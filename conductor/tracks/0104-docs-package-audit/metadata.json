@@ -1,0 +1,7 @@
+{
+  "track_id": "0104-docs-package-audit",
+  "capability_id": "M-104",
+  "title": "Docs package and Astro 7 package audit",
+  "status": "implemented_python",
+  "version": "0.28.0"
+}

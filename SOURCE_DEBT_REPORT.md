@@ -1,0 +1,211 @@
+# Source Debt Report
+
+Findings: `5518`
+
+## Counts by kind
+- `panic_risk`: 23
+- `scaffold`: 5451
+- `todo`: 3
+- `write_risk_term`: 41
+
+## First findings
+- `scaffold` `AGENT_HANDOFF_BRIEF.json:8` — "implemented_or_scaffolded": 109,
+- `scaffold` `AGENT_HANDOFF_BRIEF.md:8` — - Capabilities/scaffolds: 109
+- `scaffold` `APFS_OFFSET_AUDIT.json:104` — "path": "fixtures/synthetic-nxsb-block0.bin",
+- `scaffold` `APFS_OFFSET_AUDIT.json:112` — "path": "fixtures/synthetic-checkpoint-ring.img",
+- `scaffold` `APFS_OFFSET_AUDIT.json:120` — "path": "fixtures/synthetic-gpt-apfs.img",
+- `scaffold` `APFS_OFFSET_AUDIT.json:128` — "path": "fixtures/synthetic-volume-superblock.img",
+- `scaffold` `APFS_OFFSET_AUDIT.json:136` — "path": "fixtures/synthetic-gpt-apfs.img",
+- `scaffold` `APFS_OFFSET_AUDIT.md:32` — | `fixtures/synthetic-nxsb-block0.bin` | block-zero NXSB magic | 32 | `pass` |
+- `scaffold` `APFS_OFFSET_AUDIT.md:33` — | `fixtures/synthetic-checkpoint-ring.img` | checkpoint-ring block-zero NXSB magic | 32 | `pass` |
+- `scaffold` `APFS_OFFSET_AUDIT.md:34` — | `fixtures/synthetic-gpt-apfs.img` | GPT header signature | 512 | `pass` |
+- `scaffold` `APFS_OFFSET_AUDIT.md:35` — | `fixtures/synthetic-volume-superblock.img` | volume fixture container NXSB | 32 | `pass` |
+- `scaffold` `APFS_OFFSET_AUDIT.md:36` — | `fixtures/synthetic-gpt-apfs.img` | APFS GPT type GUID bytes at first partition entry | 1024 | `pass` |
+- `scaffold` `API_SURFACE.json:15` — "name": "AndroidReadiness"
+- `scaffold` `API_SURFACE.json:21` — "name": "android_readiness"
+- `scaffold` `API_SURFACE.json:219` — "name": "SyntheticBTreeTraversalReport"
+- `scaffold` `API_SURFACE.json:405` — "name": "CryptoReadinessStatus"
+- `scaffold` `API_SURFACE.json:411` — "name": "CryptoReadiness"
+- `scaffold` `API_SURFACE.json:417` — "name": "crypto_readiness"
+- `scaffold` `API_SURFACE.json:423` — "name": "FeatureReadinessStatus"
+- `scaffold` `API_SURFACE.json:429` — "name": "FeatureReadinessReport"
+- `scaffold` `API_SURFACE.json:453` — "name": "feature_readiness"
+- `scaffold` `API_SURFACE.json:465` — "name": "FuseAdapterReadiness"
+- `scaffold` `API_SURFACE.json:471` — "name": "fuse_adapter_readiness"
+- `scaffold` `API_SURFACE.json:723` — "name": "SYNTHETIC_DIR_KEY_SIZE"
+- `scaffold` `API_SURFACE.json:729` — "name": "SYNTHETIC_DIR_VALUE_HEADER_SIZE"
+- `scaffold` `API_SURFACE.json:735` — "name": "SYNTHETIC_EXTENT_KEY_SIZE"
+- `scaffold` `API_SURFACE.json:741` — "name": "SYNTHETIC_EXTENT_VALUE_SIZE"
+- `scaffold` `API_SURFACE.json:747` — "name": "SYNTHETIC_FILE_KIND_FILE"
+- `scaffold` `API_SURFACE.json:753` — "name": "SYNTHETIC_FILE_KIND_DIRECTORY"
+- `scaffold` `API_SURFACE.json:759` — "name": "SYNTHETIC_FILE_KIND_SYMLINK"
+- `scaffold` `API_SURFACE.json:765` — "name": "SYNTHETIC_FS_DIR_KEY_SIZE"
+- `scaffold` `API_SURFACE.json:771` — "name": "SYNTHETIC_FS_DIR_VALUE_HEADER_SIZE"
+- `scaffold` `API_SURFACE.json:885` — "name": "SyntheticDirectoryRecord"
+- `scaffold` `API_SURFACE.json:891` — "name": "SyntheticFileExtentRecord"
+- `scaffold` `API_SURFACE.json:975` — "name": "select_synthetic_btree_child"
+- `scaffold` `API_SURFACE.json:981` — "name": "parse_synthetic_directory_records_from_btree_node"
+- `scaffold` `API_SURFACE.json:993` — "name": "parse_synthetic_directory_records_v2_from_btree_node"
+- `scaffold` `API_SURFACE.json:999` — "name": "parse_synthetic_file_extent_records_from_btree_node"
+- `scaffold` `API_SURFACE.json:1155` — "name": "WriteLabReadiness"
+- `scaffold` `API_SURFACE.json:1161` — "name": "write_lab_readiness"
+- `scaffold` `API_SURFACE.md:10` — | `apfs-android` | `struct` | `AndroidReadiness` | `crates/apfs-android/src/lib.rs` |
+- `scaffold` `API_SURFACE.md:11` — | `apfs-android` | `fn` | `android_readiness` | `crates/apfs-android/src/lib.rs` |
+- `scaffold` `API_SURFACE.md:44` — | `apfs-core` | `struct` | `SyntheticBTreeTraversalReport` | `crates/apfs-core/src/lib.rs` |
+- `scaffold` `API_SURFACE.md:75` — | `apfs-crypto` | `enum` | `CryptoReadinessStatus` | `crates/apfs-crypto/src/lib.rs` |
+- `scaffold` `API_SURFACE.md:76` — | `apfs-crypto` | `struct` | `CryptoReadiness` | `crates/apfs-crypto/src/lib.rs` |
+- `scaffold` `API_SURFACE.md:77` — | `apfs-crypto` | `fn` | `crypto_readiness` | `crates/apfs-crypto/src/lib.rs` |
+- `scaffold` `API_SURFACE.md:78` — | `apfs-features` | `enum` | `FeatureReadinessStatus` | `crates/apfs-features/src/lib.rs` |
+- `scaffold` `API_SURFACE.md:79` — | `apfs-features` | `struct` | `FeatureReadinessReport` | `crates/apfs-features/src/lib.rs` |
+- `scaffold` `API_SURFACE.md:83` — | `apfs-features` | `fn` | `feature_readiness` | `crates/apfs-features/src/lib.rs` |
+- `scaffold` `API_SURFACE.md:85` — | `apfs-fuse` | `struct` | `FuseAdapterReadiness` | `crates/apfs-fuse/src/lib.rs` |
+- `scaffold` `API_SURFACE.md:86` — | `apfs-fuse` | `fn` | `fuse_adapter_readiness` | `crates/apfs-fuse/src/lib.rs` |
+- `scaffold` `API_SURFACE.md:128` — | `apfs-types` | `const` | `SYNTHETIC_DIR_KEY_SIZE` | `crates/apfs-types/src/lib.rs` |
+- `scaffold` `API_SURFACE.md:129` — | `apfs-types` | `const` | `SYNTHETIC_DIR_VALUE_HEADER_SIZE` | `crates/apfs-types/src/lib.rs` |
+- `scaffold` `API_SURFACE.md:130` — | `apfs-types` | `const` | `SYNTHETIC_EXTENT_KEY_SIZE` | `crates/apfs-types/src/lib.rs` |
+- `scaffold` `API_SURFACE.md:131` — | `apfs-types` | `const` | `SYNTHETIC_EXTENT_VALUE_SIZE` | `crates/apfs-types/src/lib.rs` |
+- `scaffold` `API_SURFACE.md:132` — | `apfs-types` | `const` | `SYNTHETIC_FILE_KIND_FILE` | `crates/apfs-types/src/lib.rs` |
+- `scaffold` `API_SURFACE.md:133` — | `apfs-types` | `const` | `SYNTHETIC_FILE_KIND_DIRECTORY` | `crates/apfs-types/src/lib.rs` |
+- `scaffold` `API_SURFACE.md:134` — | `apfs-types` | `const` | `SYNTHETIC_FILE_KIND_SYMLINK` | `crates/apfs-types/src/lib.rs` |
+- `scaffold` `API_SURFACE.md:135` — | `apfs-types` | `const` | `SYNTHETIC_FS_DIR_KEY_SIZE` | `crates/apfs-types/src/lib.rs` |
+- `scaffold` `API_SURFACE.md:136` — | `apfs-types` | `const` | `SYNTHETIC_FS_DIR_VALUE_HEADER_SIZE` | `crates/apfs-types/src/lib.rs` |
+- `scaffold` `API_SURFACE.md:155` — | `apfs-types` | `struct` | `SyntheticDirectoryRecord` | `crates/apfs-types/src/lib.rs` |
+- `scaffold` `API_SURFACE.md:156` — | `apfs-types` | `struct` | `SyntheticFileExtentRecord` | `crates/apfs-types/src/lib.rs` |
+- `scaffold` `API_SURFACE.md:170` — | `apfs-types` | `fn` | `select_synthetic_btree_child` | `crates/apfs-types/src/lib.rs` |
+- `scaffold` `API_SURFACE.md:171` — | `apfs-types` | `fn` | `parse_synthetic_directory_records_from_btree_node` | `crates/apfs-types/src/lib.rs` |
+- `scaffold` `API_SURFACE.md:173` — | `apfs-types` | `fn` | `parse_synthetic_directory_records_v2_from_btree_node` | `crates/apfs-types/src/lib.rs` |
+- `scaffold` `API_SURFACE.md:174` — | `apfs-types` | `fn` | `parse_synthetic_file_extent_records_from_btree_node` | `crates/apfs-types/src/lib.rs` |
+- `scaffold` `API_SURFACE.md:200` — | `apfs-write-lab` | `struct` | `WriteLabReadiness` | `crates/apfs-write-lab/src/lib.rs` |
+- `scaffold` `API_SURFACE.md:201` — | `apfs-write-lab` | `fn` | `write_lab_readiness` | `crates/apfs-write-lab/src/lib.rs` |
+- `scaffold` `ASTRO_DOCS_PLAN.md:7` — Use a static Astro 7 docs site scaffold under `docs-site/`, pinned to `astro@7.0.2` for this handoff.
+- `scaffold` `BATCHED_LOOP_POLICY.md:20` — Stop adding scaffolding when the only remaining high-value work requires:
+- `scaffold` `BATCHED_LOOP_POLICY.md:32` — Added current environment inventory, remaining-work classifier, dependency graph, synthetic negative fixtures, test/control matrix, and archive audit.
+- `scaffold` `CARGOLESS_SMOKE_REPORT.json:31` — "command": "runpy tools/synthetic_fixture_oracle.py",
+- `scaffold` `CARGOLESS_SMOKE_REPORT.md:12` — - `runpy tools/synthetic_fixture_oracle.py` → `0` in 0.063s
+- `scaffold` `CI_QUALITY_GATES.md:3` — Status: passed. Strict CI scaffolding includes format, lint, tests, 90% coverage, fuzz, mutation, Miri, and supply-chain gates.
+- `scaffold` `CI_TESTING_PROFILING_PLAN.md:25` — - Integration tests: synthetic fixture library APIs.
+- `scaffold` `CI_TESTING_PROFILING_PLAN.md:26` — - End-to-end tests: CLI commands against synthetic and later real APFS fixtures.
+- `scaffold` `CLI_CONTRACT.json:22` — "description": "Aggregated read-only readiness and blocker report.",
+- `scaffold` `CLI_CONTRACT.json:36` — "description": "Synthetic/read-only object-map lookup facade.",
+- `scaffold` `CLI_CONTRACT.json:43` — "description": "Synthetic/read-only APFS volume report.",
+- `scaffold` `CLI_CONTRACT.json:71` — "description": "Synthetic directory listing.",
+- `scaffold` `CLI_CONTRACT.json:78` — "description": "Synthetic file preview.",
+- `scaffold` `CLI_CONTRACT.json:85` — "description": "Synthetic directory-entry metadata report.",
+- `scaffold` `CLI_CONTRACT.json:118` — "rust_variant": "FeatureReadiness",
+- `scaffold` `CLI_CONTRACT.json:119` — "command": "feature-readiness",
+- `scaffold` `CLI_CONTRACT.json:120` — "description": "Advanced APFS feature readiness report.",
+- `scaffold` `CLI_CONTRACT.json:127` — "description": "Synthetic metadata feature model report.",
+- `scaffold` `CLI_CONTRACT.json:134` — "description": "Synthetic safe host-side extract preview.",
+- `scaffold` `CLI_CONTRACT.json:139` — "safety_note": "All current commands are read-only with respect to APFS media. extract writes only to a host destination directory for synthetic fixture previews."
+- `scaffold` `CLI_CONTRACT.md:11` — | `apfs doctor` | `Doctor` | Aggregated read-only readiness and blocker report. | `false` |
+- `scaffold` `CLI_CONTRACT.md:13` — | `apfs lookup-object` | `LookupObject` | Synthetic/read-only object-map lookup facade. | `false` |
+- `scaffold` `CLI_CONTRACT.md:14` — | `apfs volumes` | `Volumes` | Synthetic/read-only APFS volume report. | `false` |
+- `scaffold` `CLI_CONTRACT.md:18` — | `apfs ls` | `Ls` | Synthetic directory listing. | `false` |
+- `scaffold` `CLI_CONTRACT.md:19` — | `apfs cat` | `Cat` | Synthetic file preview. | `false` |
+- `scaffold` `CLI_CONTRACT.md:20` — | `apfs stat` | `Stat` | Synthetic directory-entry metadata report. | `false` |
+- `scaffold` `CLI_CONTRACT.md:25` — | `apfs feature-readiness` | `FeatureReadiness` | Advanced APFS feature readiness report. | `false` |
+- `scaffold` `CLI_CONTRACT.md:26` — | `apfs metadata-feature-report` | `MetadataFeatureReport` | Synthetic metadata feature model report. | `false` |
+- `scaffold` `CLI_CONTRACT.md:27` — | `apfs extract` | `Extract` | Synthetic safe host-side extract preview. | `false` |
+- `scaffold` `CLI_CONTRACT.md:31` — All current commands are read-only with respect to APFS media. extract writes only to a host destination directory for synthetic fixture previews.
+- `scaffold` `CURRENT_ENVIRONMENT_REMAINING.json:127` — "Add still more synthetic negative fixtures.",
+- `scaffold` `CURRENT_ENVIRONMENT_REMAINING.md:27` — - Add still more synthetic negative fixtures.
+- `scaffold` `CURRENT_ENV_COMPLETION_REPORT.json:10` — "More synthetic negative fixtures for malformed B-tree and OMAP edge cases",
+- `scaffold` `CURRENT_ENV_COMPLETION_REPORT.md:11` — - More synthetic negative fixtures for malformed B-tree and OMAP edge cases
+- `scaffold` `CURRENT_ENV_SELFTEST.json:43` — "command": "runpy tools/synthetic_fixture_oracle.py",
+- `scaffold` `CURRENT_ENV_SELFTEST.md:16` — | `pass` | `runpy tools/synthetic_fixture_oracle.py` | 0.063 |
+- `scaffold` `DESIGN.md:17` — Fixtures[Synthetic fixtures]
+- `scaffold` `DESIGN.md:45` — CORE->>OMAP: build synthetic resolver report
+- `scaffold` `DESIGN.md:50` — ## Current directory/file-preview scaffold
+- `scaffold` `DESIGN.md:56` — APSB --> RootTree[Synthetic filesystem root B-tree]
+- `scaffold` `DESIGN.md:57` — RootTree --> DirRecords[Synthetic directory records]
+- `write_risk_term` `DESIGN.md:82` — Write[Physical writes] -. blocked .-> Safety[Safety gates]
+- `scaffold` `DESIGN.md:105` — ## v0.16 Additions: synthetic stat/extract and precompile validation
+- `write_risk_term` `DESIGN.md:135` — Safety[Unsafe/raw-write term scan]
+- `scaffold` `DESIGN.md:160` — Oracle[synthetic_fixture_oracle.py]
+- `scaffold` `DESIGN.md:192` — ## v0.18.0 read-only adapter readiness
+- `scaffold` `DESIGN.md:196` — Core[apfs-core synthetic/read reports]
+- `scaffold` `DESIGN.md:198` — Win[apfs-win readiness scaffold]
+- `scaffold` `DESIGN.md:199` — Scripts[tools/windows smoke scaffolds]
+- `scaffold` `DESIGN.md:216` — Oracle[tools/synthetic_fixture_oracle.py]
+- `scaffold` `DESIGN.md:228` — ## Windows mount-plan scaffold
+- `scaffold` `DESIGN.md:237` — Future -. not implemented yet .-> Explorer[Windows Explorer]
+- `scaffold` `DESIGN.md:270` — Image[Synthetic or real fixture image] --> Doctor[apfs doctor --json]
+- `scaffold` `DESIGN.md:297` — The diagnostics path is deliberately host-output-only and read-only with respect to APFS media. The cargoless review loop improves confidence before Rust compilation by checking context, CLI surface, API surface, source 
+- `scaffold` `DESIGN.md:300` — ## v0.20.0 Advanced feature readiness layer
+- `scaffold` `DESIGN.md:306` — Features --> MetadataReadiness[Xattr/resource fork readiness]
+- `scaffold` `DESIGN.md:307` — Features --> ExtentReadiness[Sparse/clone readiness]
+- `scaffold` `DESIGN.md:308` — Features --> CompressionReadiness[Compression readiness]
+- `scaffold` `DESIGN.md:309` — Features --> SnapshotReadiness[Snapshot/role readiness]
+- `scaffold` `DESIGN.md:315` — ## v0.20.0 Feature readiness snapshot
+- `scaffold` `DESIGN.md:319` — Capabilities[capabilities.yaml] --> FeatureSnapshot[tools/feature_readiness_snapshot.py]
+- `scaffold` `DESIGN.md:320` — FeatureSnapshot --> FeatureJson[FEATURE_READINESS.json]
+- `scaffold` `DESIGN.md:321` — FeatureSnapshot --> FeatureMd[FEATURE_READINESS.md]
+- `scaffold` `DESIGN.md:326` — The snapshot keeps advanced feature readiness visible without claiming production support.
+- `scaffold` `DESIGN.md:340` — The version check reduces handoff drift when multiple scaffold loops run without Cargo.
+- `scaffold` `DESIGN.md:343` — ## v0.20.0 handoff and adapter-readiness loop
+- `scaffold` `DESIGN.md:366` — Win[apfs-win readiness]
+- `scaffold` `DESIGN.md:367` — Fuse[apfs-fuse readiness]
+- `scaffold` `DESIGN.md:368` — Android[apfs-android readiness]
+- `scaffold` `DESIGN.md:369` — Crypto[apfs-crypto readiness]
+- `scaffold` `DESIGN.md:370` — WriteLab[apfs-write-lab readiness]
+- `scaffold` `DESIGN.md:420` — Matrix --> Neg[Negative synthetic fixtures]
+- `scaffold` `DESIGN.md:434` — Source[Source tree and synthetic fixtures]
+- `scaffold` `DESIGN.md:459` — Source[Source tree and synthetic fixtures]
+- `scaffold` `DESIGN.md:494` — The v0.26.0 layer makes the handoff boundary explicit: the current environment can validate context, packaging, synthetic fixtures, static source shape, and task planning, but production APFS behaviour still requires loc
+- `scaffold` `DESIGN.md:543` — Added strict CI quality gate scaffolding, >=90% coverage policy, unit/integration/E2E/property/fuzz/mutation/profiling test strategy, Astro 7 documentation-site scaffold, and cargoless audits for those additions.
+- `scaffold` `DESIGN.md:615` — - `M-114` — cargo-dist and release-plz automation scaffold.
+- `scaffold` `DESIGN.md:616` — - `M-115` — OpenSSF Scorecard and dependency-review workflow scaffold.
+- `scaffold` `DESIGN.md:618` — - `M-117` — Benchmark regression and optional CodSpeed readiness.
+- `scaffold` `DOCS_SITE_AUDIT.md:3` — Status: passed. Astro 7 documentation-site scaffold is present and pinned to astro@7.0.2.
+- `scaffold` `FEATURE_READINESS.json:3` — "status": "readiness_snapshot",
+- `scaffold` `FEATURE_READINESS.json:10` — "status": "policy_scaffold",
+- `scaffold` `FEATURE_READINESS.json:21` — "status": "readiness_scaffold",
+- `scaffold` `FEATURE_READINESS.json:22` — "cli": "apfs feature-readiness --json --feature xattrs",
+- `scaffold` `FEATURE_READINESS.json:33` — "status": "readiness_scaffold",
+- `scaffold` `FEATURE_READINESS.json:34` — "cli": "apfs feature-readiness --json --feature sparse-clone",
+- `scaffold` `FEATURE_READINESS.json:45` — "status": "readiness_scaffold",
+- `scaffold` `FEATURE_READINESS.json:46` — "cli": "apfs feature-readiness --json --feature compression",
+- `scaffold` `FEATURE_READINESS.json:57` — "status": "readiness_scaffold",
+- `scaffold` `FEATURE_READINESS.json:58` — "cli": "apfs feature-readiness --json --feature snapshots",
+- `scaffold` `FEATURE_READINESS.md:1` — # APFS-RS Advanced Feature Readiness
+- `scaffold` `FEATURE_READINESS.md:3` — Generated by `tools/feature_readiness_snapshot.py`.
+- `scaffold` `FEATURE_READINESS.md:5` — - Feature readiness entries: **5**
+- `scaffold` `FEATURE_READINESS.md:11` — | unicode-case-policy | M-034 | policy_scaffold | `apfs path-policy --json --name <component>` | macOS APFS normalization fixture<br>case-insensitive collision handling |
+- `scaffold` `FEATURE_READINESS.md:12` — | xattrs-resource-forks | M-035 | readiness_scaffold | `apfs feature-readiness --json --feature xattrs` | APFS extended-field parser<br>resource fork payload extents<br>hash oracle fixtures |
+- `scaffold` `FEATURE_READINESS.md:13` — | sparse-clones | M-036 | readiness_scaffold | `apfs feature-readiness --json --feature sparse-clone` | extent hole detection<br>shared physical extent accounting<br>streaming extraction policy |
+- `scaffold` `FEATURE_READINESS.md:14` — | compression | M-037 | readiness_scaffold | `apfs feature-readiness --json --feature compression` | decmpfs metadata parser<br>zlib/lzvn/lzfse dependency review<br>decompression bomb guards |
+- `scaffold` `FEATURE_READINESS.md:15` — | snapshots-volume-roles | M-038 | readiness_scaffold | `apfs feature-readiness --json --feature snapshots` | volume role validation<br>snapshot metadata discovery<br>read-only snapshot view selection |
+- `scaffold` `FIXTURE_COVERAGE_REPORT.json:6` — "synthetic_apfs_parser_development_image": 14,
+- `scaffold` `FIXTURE_COVERAGE_REPORT.json:7` — "synthetic_negative_apfs_image": 3
+- `scaffold` `FIXTURE_COVERAGE_REPORT.json:15` — "synthetic-nxsb-block0.bin"
+- `scaffold` `FIXTURE_COVERAGE_REPORT.json:19` — "synthetic-gpt-apfs.img"
+- `scaffold` `FIXTURE_COVERAGE_REPORT.json:26` — "synthetic-nxsb-block0.bin"
+- `scaffold` `FIXTURE_COVERAGE_REPORT.json:30` — "synthetic-checkpoint-map-omap.img",
+- `scaffold` `FIXTURE_COVERAGE_REPORT.json:31` — "synthetic-checkpoint-ring.img"
+- `scaffold` `FIXTURE_COVERAGE_REPORT.json:34` — "synthetic-omap-btree-root.img"
+- `scaffold` `FIXTURE_COVERAGE_REPORT.json:37` — "synthetic-omap-lookup.img"
+- `scaffold` `FIXTURE_COVERAGE_REPORT.json:40` — "synthetic-omap-multinode-lookup.img"
+- `scaffold` `FIXTURE_COVERAGE_REPORT.json:43` — "synthetic-btree-traversal.img"
+- `scaffold` `FIXTURE_COVERAGE_REPORT.json:46` — "synthetic-resolver-facade.img"
+- `scaffold` `FIXTURE_COVERAGE_REPORT.json:49` — "synthetic-btree-cursor.img"
+- `scaffold` `FIXTURE_COVERAGE_REPORT.json:58` — "synthetic-volume-superblock.img"
+- `scaffold` `FIXTURE_COVERAGE_REPORT.json:61` — "synthetic-mapped-object-read.img"
+- `scaffold` `FIXTURE_COVERAGE_REPORT.json:64` — "synthetic-directory-listing.img"
+- `scaffold` `FIXTURE_COVERAGE_REPORT.json:67` — "synthetic-directory-listing.img"
+- `scaffold` `FIXTURE_COVERAGE_REPORT.json:70` — "synthetic-file-preview.img"
+- `scaffold` `FIXTURE_COVERAGE_REPORT.json:73` — "synthetic-directory-listing.img"
+- `scaffold` `FIXTURE_COVERAGE_REPORT.json:76` — "synthetic-file-preview.img"
+- `scaffold` `FIXTURE_COVERAGE_REPORT.md:8` — - `synthetic_apfs_parser_development_image`: 14
+- `scaffold` `FIXTURE_COVERAGE_REPORT.md:9` — - `synthetic_negative_apfs_image`: 3
+- `scaffold` `FIXTURE_COVERAGE_REPORT.md:13` — - `M-001`: `macos-minimal-apfs-001`, `negative-corrupt-nxsb-magic`, `negative-invalid-block-size`, `negative-truncated-nxsb`, `synthetic-nxsb-block0.bin`
+- `scaffold` `FIXTURE_COVERAGE_REPORT.md:14` — - `M-002`: `macos-minimal-apfs-001`, `synthetic-gpt-apfs.img`
+- `scaffold` `FIXTURE_COVERAGE_REPORT.md:15` — - `M-003`: `macos-minimal-apfs-001`, `negative-corrupt-nxsb-magic`, `negative-invalid-block-size`, `negative-truncated-nxsb`, `synthetic-nxsb-block0.bin`
+- `scaffold` `FIXTURE_COVERAGE_REPORT.md:16` — - `M-004`: `macos-minimal-apfs-001`, `synthetic-checkpoint-map-omap.img`, `synthetic-checkpoint-ring.img`
+- `scaffold` `FIXTURE_COVERAGE_REPORT.md:17` — - `M-005`: `synthetic-omap-btree-root.img`
+- `scaffold` `FIXTURE_COVERAGE_REPORT.md:18` — - `M-006`: `synthetic-omap-lookup.img`
+- `scaffold` `FIXTURE_COVERAGE_REPORT.md:19` — - `M-007`: `synthetic-omap-multinode-lookup.img`
+- `scaffold` `FIXTURE_COVERAGE_REPORT.md:20` — - `M-008`: `synthetic-btree-traversal.img`
+- `scaffold` `FIXTURE_COVERAGE_REPORT.md:21` — - `M-009`: `synthetic-resolver-facade.img`
+- `scaffold` `FIXTURE_COVERAGE_REPORT.md:22` — - `M-010`: `synthetic-btree-cursor.img`
+- `scaffold` `FIXTURE_COVERAGE_REPORT.md:25` — - `M-014`: `synthetic-volume-superblock.img`
+- `scaffold` `FIXTURE_COVERAGE_REPORT.md:26` — - `M-015`: `synthetic-mapped-object-read.img`

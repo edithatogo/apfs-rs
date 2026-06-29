@@ -1,0 +1,7 @@
+{
+  "track_id": "0077-apfs-offset-audit",
+  "capability_id": "M-077",
+  "title": "APFS offset and synthetic fixture byte-layout audit",
+  "status": "implemented_python",
+  "version": "0.25.0"
+}
