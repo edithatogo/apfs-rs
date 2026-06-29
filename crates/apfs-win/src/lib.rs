@@ -37,6 +37,7 @@ pub struct WindowsMountPlan {
     pub safety_note: String,
 }
 
+#[must_use]
 pub fn plan_read_only_mount(source: &str, mount_point: &str) -> WindowsMountPlan {
     let mut errors = Vec::new();
     if source.trim().is_empty() {
@@ -45,7 +46,9 @@ pub fn plan_read_only_mount(source: &str, mount_point: &str) -> WindowsMountPlan
     if mount_point.trim().is_empty() {
         errors.push(WindowsMountPlanError::EmptyMountPoint.to_string());
     } else if !is_simple_drive_mount_point(mount_point) {
-        errors.push(WindowsMountPlanError::InvalidDriveMountPoint(mount_point.to_owned()).to_string());
+        errors.push(
+            WindowsMountPlanError::InvalidDriveMountPoint(mount_point.to_owned()).to_string(),
+        );
     }
 
     let status = if errors.is_empty() {
@@ -87,14 +90,17 @@ pub fn plan_read_only_mount(source: &str, mount_point: &str) -> WindowsMountPlan
             "all write callbacks are hard-refused".to_owned(),
         ],
         warnings: vec![
-            "This is a planning/report scaffold, not a live WinFsp mount implementation yet.".to_owned(),
+            "This is a planning/report scaffold, not a live WinFsp mount implementation yet."
+                .to_owned(),
             "The first live adapter must remain read-only and user-mode.".to_owned(),
         ],
         errors,
-        safety_note: "This plan never requests a write handle and never mutates APFS media.".to_owned(),
+        safety_note: "This plan never requests a write handle and never mutates APFS media."
+            .to_owned(),
     }
 }
 
+#[must_use]
 pub fn is_simple_drive_mount_point(mount_point: &str) -> bool {
     let bytes = mount_point.as_bytes();
     bytes.len() == 2 && bytes[1] == b':' && bytes[0].is_ascii_alphabetic()
@@ -122,7 +128,6 @@ mod tests {
     }
 }
 
-
 #[derive(Debug, Clone, Serialize, PartialEq, Eq)]
 pub struct ReadOnlyWinFspCallbackPolicy {
     pub schema_version: String,
@@ -138,11 +143,16 @@ pub struct WinFspCallbackContract {
     pub note: String,
 }
 
+#[must_use]
 pub fn winfsp_readonly_callback_matrix() -> ReadOnlyWinFspCallbackPolicy {
     let callbacks = [
         ("Init", "allow", "initialise read-only filesystem instance"),
         ("GetVolumeInfo", "allow", "report read-only volume metadata"),
-        ("GetSecurityByName", "allow", "conservative read-only security metadata"),
+        (
+            "GetSecurityByName",
+            "allow",
+            "conservative read-only security metadata",
+        ),
         ("Create", "refuse", "no file creation in read-only MVP"),
         ("Open", "allow_readonly", "open existing objects read-only"),
         ("Read", "allow", "read file data through apfs-vfs"),
@@ -153,8 +163,16 @@ pub fn winfsp_readonly_callback_matrix() -> ReadOnlyWinFspCallbackPolicy {
         ("SetFileSize", "refuse", "truncate/extend refused"),
         ("CanDelete", "refuse", "deletion refused"),
         ("Rename", "refuse", "rename refused"),
-        ("ReadDirectory", "allow", "directory listing through apfs-vfs"),
-        ("GetReparsePoint", "allow_if_symlink", "symlink metadata where supported"),
+        (
+            "ReadDirectory",
+            "allow",
+            "directory listing through apfs-vfs",
+        ),
+        (
+            "GetReparsePoint",
+            "allow_if_symlink",
+            "symlink metadata where supported",
+        ),
         ("SetReparsePoint", "refuse", "metadata mutation refused"),
         ("DeleteReparsePoint", "refuse", "metadata mutation refused"),
     ];

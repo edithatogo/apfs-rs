@@ -13,10 +13,11 @@ jobs:
   docs-package-audit:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
         with:
-          python-version: '3.x'
+          python-version: '3.11'
+      - run: python3 -m pip install -r requirements-dev.txt
       - run: python3 tools/docs_package_audit.py
       - run: python3 tools/docs_site_audit.py
       - run: python3 tools/documentation_index_audit.py
@@ -27,11 +28,11 @@ jobs:
       run:
         working-directory: docs-site
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e
         with:
           node-version: 24
           cache: npm
           cache-dependency-path: docs-site/package-lock.json
-      - run: npm install
+      - run: npm ci
       - run: npm run build

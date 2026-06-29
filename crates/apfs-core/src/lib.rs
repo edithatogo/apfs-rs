@@ -2,12 +2,17 @@
 
 use apfs_blockdev::{BlockDeviceError, ReadOnlyBlockDevice};
 use apfs_types::{
-    gpt_entries_byte_len, lookup_omap_record, parse_btree_node_with_checksum, parse_checkpoint_map_block_with_checksum, parse_gpt_header,
-    parse_gpt_partition_entry, parse_nx_superblock, parse_nx_superblock_with_checksum, parse_object_header, parse_omap_index_records_from_btree_node,
-    parse_apfs_volume_superblock_with_checksum, parse_omap_phys_with_checksum, parse_omap_records_from_btree_node, parse_synthetic_directory_records_from_btree_node, select_synthetic_btree_child, validate_gpt_entries_checksum, validate_object_checksum,
-    BTreeChildSelection, BTreeIndexRecord, BTreeNode, CheckpointMapping, ContainerSuperblock, FileSystemDirectoryRecord, GptEntriesChecksum, GptHeader,
-    GptPartitionEntry, ObjectChecksum, ObjectHeader, ObjectMap, OmapLookup, OmapRecord, ParseError, VolumeSuperblock, GPT_SECTOR_SIZE, NX_SUPERBLOCK_MIN_SIZE,
-    OBJECT_TYPE_BTREE, OBJECT_TYPE_BTREE_NODE, OBJECT_TYPE_CHECKPOINT_MAP, OBJECT_TYPE_NX_SUPERBLOCK, OBJECT_TYPE_OMAP,
+    gpt_entries_byte_len, lookup_omap_record, parse_apfs_volume_superblock_with_checksum,
+    parse_btree_node_with_checksum, parse_checkpoint_map_block_with_checksum, parse_gpt_header,
+    parse_gpt_partition_entry, parse_nx_superblock, parse_nx_superblock_with_checksum,
+    parse_object_header, parse_omap_index_records_from_btree_node, parse_omap_phys_with_checksum,
+    parse_omap_records_from_btree_node, parse_synthetic_directory_records_from_btree_node,
+    select_synthetic_btree_child, validate_gpt_entries_checksum, validate_object_checksum,
+    BTreeChildSelection, BTreeIndexRecord, BTreeNode, CheckpointMapping, ContainerSuperblock,
+    FileSystemDirectoryRecord, GptEntriesChecksum, GptHeader, GptPartitionEntry, ObjectChecksum,
+    ObjectHeader, ObjectMap, OmapLookup, OmapRecord, ParseError, VolumeSuperblock, GPT_SECTOR_SIZE,
+    NX_SUPERBLOCK_MIN_SIZE, OBJECT_TYPE_BTREE, OBJECT_TYPE_BTREE_NODE, OBJECT_TYPE_CHECKPOINT_MAP,
+    OBJECT_TYPE_NX_SUPERBLOCK, OBJECT_TYPE_OMAP,
 };
 use serde::Serialize;
 use thiserror::Error;
@@ -384,7 +389,6 @@ pub struct BTreeCursorStepReport {
     pub selected_child_block_index: Option<u64>,
 }
 
-
 #[derive(Debug, Clone, Copy, Serialize, PartialEq, Eq)]
 #[serde(rename_all = "snake_case")]
 pub enum MappedObjectReadStatus {
@@ -461,7 +465,8 @@ pub fn inspect_device(device: &dyn ReadOnlyBlockDevice) -> Result<InspectReport,
         ));
     }
 
-    let direct_probe_len = DEFAULT_APFS_PROBE_BYTES.min(usize::try_from(source_size_bytes).unwrap_or(DEFAULT_APFS_PROBE_BYTES));
+    let direct_probe_len = DEFAULT_APFS_PROBE_BYTES
+        .min(usize::try_from(source_size_bytes).unwrap_or(DEFAULT_APFS_PROBE_BYTES));
     let direct_probe = device.read_at(0, direct_probe_len)?;
     match parse_nx_superblock(&direct_probe) {
         Ok(container_probe) => {
@@ -478,7 +483,11 @@ pub fn inspect_device(device: &dyn ReadOnlyBlockDevice) -> Result<InspectReport,
             // Continue with GPT probing below.
         }
         Err(err) => {
-            return Ok(refused_report(source_size_bytes, "APFS-E-PARSE-REFUSED", err.to_string()));
+            return Ok(refused_report(
+                source_size_bytes,
+                "APFS-E-PARSE-REFUSED",
+                err.to_string(),
+            ));
         }
     }
 
@@ -505,10 +514,18 @@ pub fn lookup_object_in_device(
     requested_xid: u64,
 ) -> Result<ObjectLookupReport, InspectError> {
     let report = inspect_device(device)?;
-    Ok(lookup_object_in_report(&report, requested_oid, requested_xid))
+    Ok(lookup_object_in_report(
+        &report,
+        requested_oid,
+        requested_xid,
+    ))
 }
 
-pub fn lookup_object_in_bytes(input: &[u8], requested_oid: u64, requested_xid: u64) -> ObjectLookupReport {
+pub fn lookup_object_in_bytes(
+    input: &[u8],
+    requested_oid: u64,
+    requested_xid: u64,
+) -> ObjectLookupReport {
     let device = apfs_blockdev::MemoryBlockDevice::new(input.to_vec());
     match lookup_object_in_device(&device, requested_oid, requested_xid) {
         Ok(report) => report,
@@ -522,14 +539,19 @@ pub fn lookup_object_in_bytes(input: &[u8], requested_oid: u64, requested_xid: u
             lookup: None,
             traversal: None,
             resolver: None,
-            errors: vec![Diagnostic { code: "APFS-E-LOOKUP-ERROR".to_owned(), message: err.to_string() }],
+            errors: vec![Diagnostic {
+                code: "APFS-E-LOOKUP-ERROR".to_owned(),
+                message: err.to_string(),
+            }],
             warnings: Vec::new(),
             safety: SafetySummary::default(),
         },
     }
 }
 
-pub fn resolver_report_in_device(device: &dyn ReadOnlyBlockDevice) -> Result<ObjectMapResolverEnvelope, InspectError> {
+pub fn resolver_report_in_device(
+    device: &dyn ReadOnlyBlockDevice,
+) -> Result<ObjectMapResolverEnvelope, InspectError> {
     let report = inspect_device(device)?;
     Ok(resolver_report_in_report(&report))
 }
@@ -544,15 +566,19 @@ pub fn resolver_report_in_bytes(input: &[u8]) -> ObjectMapResolverEnvelope {
             source_size_bytes: input.len() as u64,
             status: ObjectMapResolverStatus::Refused,
             resolver: None,
-            errors: vec![Diagnostic { code: "APFS-E-RESOLVER-ERROR".to_owned(), message: err.to_string() }],
+            errors: vec![Diagnostic {
+                code: "APFS-E-RESOLVER-ERROR".to_owned(),
+                message: err.to_string(),
+            }],
             warnings: Vec::new(),
             safety: SafetySummary::default(),
         },
     }
 }
 
-
-pub fn volume_report_in_device(device: &dyn ReadOnlyBlockDevice) -> Result<VolumeReportEnvelope, InspectError> {
+pub fn volume_report_in_device(
+    device: &dyn ReadOnlyBlockDevice,
+) -> Result<VolumeReportEnvelope, InspectError> {
     let report = inspect_device(device)?;
     volume_report_in_report(device, &report)
 }
@@ -568,14 +594,19 @@ pub fn volume_report_in_bytes(input: &[u8]) -> VolumeReportEnvelope {
             status: VolumeReportStatus::Refused,
             volume_count: 0,
             probes: Vec::new(),
-            errors: vec![Diagnostic { code: "APFS-E-VOLUME-REPORT-ERROR".to_owned(), message: err.to_string() }],
+            errors: vec![Diagnostic {
+                code: "APFS-E-VOLUME-REPORT-ERROR".to_owned(),
+                message: err.to_string(),
+            }],
             warnings: Vec::new(),
             safety: SafetySummary::default(),
         },
     }
 }
 
-pub fn directory_report_in_device(device: &dyn ReadOnlyBlockDevice) -> Result<DirectoryReportEnvelope, InspectError> {
+pub fn directory_report_in_device(
+    device: &dyn ReadOnlyBlockDevice,
+) -> Result<DirectoryReportEnvelope, InspectError> {
     let report = inspect_device(device)?;
     directory_report_in_report(device, &report)
 }
@@ -595,14 +626,20 @@ pub fn directory_report_in_bytes(input: &[u8]) -> DirectoryReportEnvelope {
             root_physical_block: None,
             entry_count: 0,
             entries: Vec::new(),
-            errors: vec![Diagnostic { code: "APFS-E-DIRECTORY-REPORT-ERROR".to_owned(), message: err.to_string() }],
+            errors: vec![Diagnostic {
+                code: "APFS-E-DIRECTORY-REPORT-ERROR".to_owned(),
+                message: err.to_string(),
+            }],
             warnings: Vec::new(),
             safety: SafetySummary::default(),
         },
     }
 }
 
-pub fn file_read_report_in_device(device: &dyn ReadOnlyBlockDevice, requested_name: &str) -> Result<FileReadReportEnvelope, InspectError> {
+pub fn file_read_report_in_device(
+    device: &dyn ReadOnlyBlockDevice,
+    requested_name: &str,
+) -> Result<FileReadReportEnvelope, InspectError> {
     let report = inspect_device(device)?;
     file_read_report_in_report(device, &report, requested_name)
 }
@@ -621,14 +658,20 @@ pub fn file_read_report_in_bytes(input: &[u8], requested_name: &str) -> FileRead
             content_preview_utf8: None,
             content_preview_hex: None,
             full_content_length: None,
-            errors: vec![Diagnostic { code: "APFS-E-FILE-READ-REPORT-ERROR".to_owned(), message: err.to_string() }],
+            errors: vec![Diagnostic {
+                code: "APFS-E-FILE-READ-REPORT-ERROR".to_owned(),
+                message: err.to_string(),
+            }],
             warnings: Vec::new(),
             safety: SafetySummary::default(),
         },
     }
 }
 
-fn volume_report_in_report(device: &dyn ReadOnlyBlockDevice, report: &InspectReport) -> Result<VolumeReportEnvelope, InspectError> {
+fn volume_report_in_report(
+    device: &dyn ReadOnlyBlockDevice,
+    report: &InspectReport,
+) -> Result<VolumeReportEnvelope, InspectError> {
     let mut errors = Vec::new();
     let mut warnings = report.warnings.clone();
     if report.status != InspectStatus::ApfsContainerDetected {
@@ -675,7 +718,9 @@ fn volume_report_in_report(device: &dyn ReadOnlyBlockDevice, report: &InspectRep
     else {
         errors.push(Diagnostic {
             code: "APFS-E-VOLUMES-OMAP-RESOLVER-NOT-AVAILABLE".to_owned(),
-            message: "container OMAP resolver is required before APFS volume superblocks can be mapped".to_owned(),
+            message:
+                "container OMAP resolver is required before APFS volume superblocks can be mapped"
+                    .to_owned(),
         });
         return Ok(VolumeReportEnvelope {
             schema_version: "0.15.0".to_owned(),
@@ -691,8 +736,13 @@ fn volume_report_in_report(device: &dyn ReadOnlyBlockDevice, report: &InspectRep
     };
 
     let apfs_offset = report.apfs_offset_bytes.unwrap_or(0);
-    let block_size = usize::try_from(container.block_size).map_err(|_| InspectError::BlockSizeTooLarge(container.block_size))?;
-    let lookup_xid = report.checkpoint_scan.as_ref().and_then(|scan| scan.latest_valid_xid).unwrap_or(container.object.xid);
+    let block_size = usize::try_from(container.block_size)
+        .map_err(|_| InspectError::BlockSizeTooLarge(container.block_size))?;
+    let lookup_xid = report
+        .checkpoint_scan
+        .as_ref()
+        .and_then(|scan| scan.latest_valid_xid)
+        .unwrap_or(container.object.xid);
     let mut probes = Vec::new();
 
     for filesystem_oid in &container.filesystem_oids {
@@ -715,7 +765,13 @@ fn volume_report_in_report(device: &dyn ReadOnlyBlockDevice, report: &InspectRep
             continue;
         };
 
-        let block = match read_container_block(device, apfs_offset, block_index, container.block_size, block_size) {
+        let block = match read_container_block(
+            device,
+            apfs_offset,
+            block_index,
+            container.block_size,
+            block_size,
+        ) {
             Ok(block) => block,
             Err(err) => {
                 probe.errors.push(Diagnostic {
@@ -753,12 +809,26 @@ fn volume_report_in_report(device: &dyn ReadOnlyBlockDevice, report: &InspectRep
     if container.filesystem_oids.is_empty() {
         warnings.push(Diagnostic {
             code: "APFS-W-VOLUMES-NO-FILESYSTEM-OIDS".to_owned(),
-            message: "container superblock did not expose filesystem OIDs in the parsed prefix".to_owned(),
+            message: "container superblock did not expose filesystem OIDs in the parsed prefix"
+                .to_owned(),
         });
     }
 
-    let volume_count = probes.iter().filter(|probe| probe.volume.as_ref().map(|volume| volume.checksum.valid).unwrap_or(false)).count();
-    let status = if volume_count > 0 { VolumeReportStatus::Available } else { VolumeReportStatus::Unavailable };
+    let volume_count = probes
+        .iter()
+        .filter(|probe| {
+            probe
+                .volume
+                .as_ref()
+                .map(|volume| volume.checksum.valid)
+                .unwrap_or(false)
+        })
+        .count();
+    let status = if volume_count > 0 {
+        VolumeReportStatus::Available
+    } else {
+        VolumeReportStatus::Unavailable
+    };
 
     Ok(VolumeReportEnvelope {
         schema_version: "0.15.0".to_owned(),
@@ -773,20 +843,47 @@ fn volume_report_in_report(device: &dyn ReadOnlyBlockDevice, report: &InspectRep
     })
 }
 
-fn directory_report_in_report(device: &dyn ReadOnlyBlockDevice, report: &InspectReport) -> Result<DirectoryReportEnvelope, InspectError> {
+fn directory_report_in_report(
+    device: &dyn ReadOnlyBlockDevice,
+    report: &InspectReport,
+) -> Result<DirectoryReportEnvelope, InspectError> {
     let mut errors = Vec::new();
     let mut warnings = report.warnings.clone();
     if report.status != InspectStatus::ApfsContainerDetected {
         errors.push(Diagnostic {
             code: "APFS-E-DIRECTORY-INSPECT-NOT-DETECTED".to_owned(),
-            message: "directory probing requires a successfully inspected APFS container".to_owned(),
+            message: "directory probing requires a successfully inspected APFS container"
+                .to_owned(),
         });
-        return Ok(directory_envelope(report, DirectoryReportStatus::Refused, None, None, None, None, Vec::new(), errors, warnings));
+        return Ok(directory_envelope(
+            report,
+            DirectoryReportStatus::Refused,
+            None,
+            None,
+            None,
+            None,
+            Vec::new(),
+            errors,
+            warnings,
+        ));
     }
 
     let Some(container) = &report.container else {
-        errors.push(Diagnostic { code: "APFS-E-DIRECTORY-CONTAINER-MISSING".to_owned(), message: "inspect report did not include a container superblock".to_owned() });
-        return Ok(directory_envelope(report, DirectoryReportStatus::Refused, None, None, None, None, Vec::new(), errors, warnings));
+        errors.push(Diagnostic {
+            code: "APFS-E-DIRECTORY-CONTAINER-MISSING".to_owned(),
+            message: "inspect report did not include a container superblock".to_owned(),
+        });
+        return Ok(directory_envelope(
+            report,
+            DirectoryReportStatus::Refused,
+            None,
+            None,
+            None,
+            None,
+            Vec::new(),
+            errors,
+            warnings,
+        ));
     };
 
     let Some(tree_root) = report
@@ -796,52 +893,172 @@ fn directory_report_in_report(device: &dyn ReadOnlyBlockDevice, report: &Inspect
         .and_then(|omap| omap.tree_root.as_ref())
     else {
         errors.push(Diagnostic { code: "APFS-E-DIRECTORY-OMAP-RESOLVER-NOT-AVAILABLE".to_owned(), message: "container OMAP resolver is required before APFS filesystem root trees can be mapped".to_owned() });
-        return Ok(directory_envelope(report, DirectoryReportStatus::Unavailable, None, None, None, None, Vec::new(), errors, warnings));
+        return Ok(directory_envelope(
+            report,
+            DirectoryReportStatus::Unavailable,
+            None,
+            None,
+            None,
+            None,
+            Vec::new(),
+            errors,
+            warnings,
+        ));
     };
 
     let volumes = volume_report_in_report(device, report)?;
-    let Some(probe) = volumes.probes.iter().find(|probe| probe.volume.as_ref().map(|volume| volume.checksum.valid).unwrap_or(false)) else {
-        errors.push(Diagnostic { code: "APFS-E-DIRECTORY-VOLUME-NOT-AVAILABLE".to_owned(), message: "no valid APFS volume superblock was available for directory probing".to_owned() });
-        return Ok(directory_envelope(report, DirectoryReportStatus::Unavailable, None, None, None, None, Vec::new(), errors, warnings));
+    let Some(probe) = volumes.probes.iter().find(|probe| {
+        probe
+            .volume
+            .as_ref()
+            .map(|volume| volume.checksum.valid)
+            .unwrap_or(false)
+    }) else {
+        errors.push(Diagnostic {
+            code: "APFS-E-DIRECTORY-VOLUME-NOT-AVAILABLE".to_owned(),
+            message: "no valid APFS volume superblock was available for directory probing"
+                .to_owned(),
+        });
+        return Ok(directory_envelope(
+            report,
+            DirectoryReportStatus::Unavailable,
+            None,
+            None,
+            None,
+            None,
+            Vec::new(),
+            errors,
+            warnings,
+        ));
     };
     let Some(volume) = probe.volume.as_ref() else {
-        errors.push(Diagnostic { code: "APFS-E-DIRECTORY-VOLUME-MISSING".to_owned(), message: "volume probe did not include a parsed volume".to_owned() });
-        return Ok(directory_envelope(report, DirectoryReportStatus::Unavailable, None, None, None, None, Vec::new(), errors, warnings));
+        errors.push(Diagnostic {
+            code: "APFS-E-DIRECTORY-VOLUME-MISSING".to_owned(),
+            message: "volume probe did not include a parsed volume".to_owned(),
+        });
+        return Ok(directory_envelope(
+            report,
+            DirectoryReportStatus::Unavailable,
+            None,
+            None,
+            None,
+            None,
+            Vec::new(),
+            errors,
+            warnings,
+        ));
     };
 
-    let lookup_xid = report.checkpoint_scan.as_ref().and_then(|scan| scan.latest_valid_xid).unwrap_or(container.object.xid);
+    let lookup_xid = report
+        .checkpoint_scan
+        .as_ref()
+        .and_then(|scan| scan.latest_valid_xid)
+        .unwrap_or(container.object.xid);
     let resolved = resolve_object_with_resolver(tree_root, volume.root_tree_oid, lookup_xid);
     let Some(root_block_index) = resolved.lookup.physical_address else {
-        errors.push(Diagnostic { code: "APFS-E-DIRECTORY-ROOT-TREE-NOT-MAPPED".to_owned(), message: format!("volume root tree OID {} was not resolved by the current object-map resolver", volume.root_tree_oid) });
-        return Ok(directory_envelope(report, DirectoryReportStatus::Unavailable, Some(volume.volume_name.clone()), Some(probe.filesystem_oid), Some(volume.root_tree_oid), None, Vec::new(), errors, warnings));
+        errors.push(Diagnostic {
+            code: "APFS-E-DIRECTORY-ROOT-TREE-NOT-MAPPED".to_owned(),
+            message: format!(
+                "volume root tree OID {} was not resolved by the current object-map resolver",
+                volume.root_tree_oid
+            ),
+        });
+        return Ok(directory_envelope(
+            report,
+            DirectoryReportStatus::Unavailable,
+            Some(volume.volume_name.clone()),
+            Some(probe.filesystem_oid),
+            Some(volume.root_tree_oid),
+            None,
+            Vec::new(),
+            errors,
+            warnings,
+        ));
     };
 
     let apfs_offset = report.apfs_offset_bytes.unwrap_or(0);
-    let block_size = usize::try_from(container.block_size).map_err(|_| InspectError::BlockSizeTooLarge(container.block_size))?;
-    let block = read_container_block(device, apfs_offset, root_block_index, container.block_size, block_size)?;
+    let block_size = usize::try_from(container.block_size)
+        .map_err(|_| InspectError::BlockSizeTooLarge(container.block_size))?;
+    let block = read_container_block(
+        device,
+        apfs_offset,
+        root_block_index,
+        container.block_size,
+        block_size,
+    )?;
     let node = match parse_btree_node_with_checksum(&block) {
         Ok(node) => node,
         Err(err) => {
-            errors.push(Diagnostic { code: "APFS-E-DIRECTORY-ROOT-TREE-PARSE-FAILED".to_owned(), message: err.to_string() });
-            return Ok(directory_envelope(report, DirectoryReportStatus::Refused, Some(volume.volume_name.clone()), Some(probe.filesystem_oid), Some(volume.root_tree_oid), Some(root_block_index), Vec::new(), errors, warnings));
+            errors.push(Diagnostic {
+                code: "APFS-E-DIRECTORY-ROOT-TREE-PARSE-FAILED".to_owned(),
+                message: err.to_string(),
+            });
+            return Ok(directory_envelope(
+                report,
+                DirectoryReportStatus::Refused,
+                Some(volume.volume_name.clone()),
+                Some(probe.filesystem_oid),
+                Some(volume.root_tree_oid),
+                Some(root_block_index),
+                Vec::new(),
+                errors,
+                warnings,
+            ));
         }
     };
     if !node.checksum.valid {
-        errors.push(Diagnostic { code: "APFS-E-DIRECTORY-ROOT-TREE-CHECKSUM-MISMATCH".to_owned(), message: "synthetic filesystem root tree checksum mismatch".to_owned() });
-        return Ok(directory_envelope(report, DirectoryReportStatus::Refused, Some(volume.volume_name.clone()), Some(probe.filesystem_oid), Some(volume.root_tree_oid), Some(root_block_index), Vec::new(), errors, warnings));
+        errors.push(Diagnostic {
+            code: "APFS-E-DIRECTORY-ROOT-TREE-CHECKSUM-MISMATCH".to_owned(),
+            message: "synthetic filesystem root tree checksum mismatch".to_owned(),
+        });
+        return Ok(directory_envelope(
+            report,
+            DirectoryReportStatus::Refused,
+            Some(volume.volume_name.clone()),
+            Some(probe.filesystem_oid),
+            Some(volume.root_tree_oid),
+            Some(root_block_index),
+            Vec::new(),
+            errors,
+            warnings,
+        ));
     }
 
     let entries = match parse_synthetic_directory_records_from_btree_node(&block, &node) {
         Ok(entries) => entries,
         Err(err) => {
-            errors.push(Diagnostic { code: "APFS-E-DIRECTORY-RECORD-PARSE-FAILED".to_owned(), message: err.to_string() });
-            return Ok(directory_envelope(report, DirectoryReportStatus::Refused, Some(volume.volume_name.clone()), Some(probe.filesystem_oid), Some(volume.root_tree_oid), Some(root_block_index), Vec::new(), errors, warnings));
+            errors.push(Diagnostic {
+                code: "APFS-E-DIRECTORY-RECORD-PARSE-FAILED".to_owned(),
+                message: err.to_string(),
+            });
+            return Ok(directory_envelope(
+                report,
+                DirectoryReportStatus::Refused,
+                Some(volume.volume_name.clone()),
+                Some(probe.filesystem_oid),
+                Some(volume.root_tree_oid),
+                Some(root_block_index),
+                Vec::new(),
+                errors,
+                warnings,
+            ));
         }
     };
     warnings.push(Diagnostic { code: "APFS-W-DIRECTORY-SYNTHETIC".to_owned(), message: "directory listing currently parses synthetic filesystem tree records; production APFS filesystem record decoding is not implemented yet".to_owned() });
-    Ok(directory_envelope(report, DirectoryReportStatus::Available, Some(volume.volume_name.clone()), Some(probe.filesystem_oid), Some(volume.root_tree_oid), Some(root_block_index), entries, errors, warnings))
+    Ok(directory_envelope(
+        report,
+        DirectoryReportStatus::Available,
+        Some(volume.volume_name.clone()),
+        Some(probe.filesystem_oid),
+        Some(volume.root_tree_oid),
+        Some(root_block_index),
+        entries,
+        errors,
+        warnings,
+    ))
 }
 
+#[allow(clippy::too_many_arguments)]
 fn directory_envelope(
     report: &InspectReport,
     status: DirectoryReportStatus,
@@ -870,38 +1087,117 @@ fn directory_envelope(
     }
 }
 
-fn file_read_report_in_report(device: &dyn ReadOnlyBlockDevice, report: &InspectReport, requested_name: &str) -> Result<FileReadReportEnvelope, InspectError> {
+fn file_read_report_in_report(
+    device: &dyn ReadOnlyBlockDevice,
+    report: &InspectReport,
+    requested_name: &str,
+) -> Result<FileReadReportEnvelope, InspectError> {
     let mut warnings = report.warnings.clone();
     let mut errors = Vec::new();
     let directory = directory_report_in_report(device, report)?;
     if directory.status != DirectoryReportStatus::Available {
         errors.extend(directory.errors.clone());
-        errors.push(Diagnostic { code: "APFS-E-FILE-DIRECTORY-NOT-AVAILABLE".to_owned(), message: "file preview requires an available synthetic directory report".to_owned() });
-        return Ok(file_envelope(report, FileReadReportStatus::Refused, requested_name, None, None, None, None, errors, warnings));
+        errors.push(Diagnostic {
+            code: "APFS-E-FILE-DIRECTORY-NOT-AVAILABLE".to_owned(),
+            message: "file preview requires an available synthetic directory report".to_owned(),
+        });
+        return Ok(file_envelope(
+            report,
+            FileReadReportStatus::Refused,
+            requested_name,
+            None,
+            None,
+            None,
+            None,
+            errors,
+            warnings,
+        ));
     }
 
-    let Some(entry) = directory.entries.iter().find(|entry| entry.name == requested_name).cloned() else {
-        return Ok(file_envelope(report, FileReadReportStatus::NotFound, requested_name, None, None, None, None, errors, warnings));
+    let Some(entry) = directory
+        .entries
+        .iter()
+        .find(|entry| entry.name == requested_name)
+        .cloned()
+    else {
+        return Ok(file_envelope(
+            report,
+            FileReadReportStatus::NotFound,
+            requested_name,
+            None,
+            None,
+            None,
+            None,
+            errors,
+            warnings,
+        ));
     };
     let Some(block_index) = entry.physical_block else {
         errors.push(Diagnostic { code: "APFS-E-FILE-NO-PHYSICAL-BLOCK".to_owned(), message: format!("directory entry {requested_name} did not include a physical block in the synthetic fixture") });
-        return Ok(file_envelope(report, FileReadReportStatus::Refused, requested_name, Some(entry), None, None, None, errors, warnings));
+        return Ok(file_envelope(
+            report,
+            FileReadReportStatus::Refused,
+            requested_name,
+            Some(entry),
+            None,
+            None,
+            None,
+            errors,
+            warnings,
+        ));
     };
     let Some(container) = &report.container else {
-        errors.push(Diagnostic { code: "APFS-E-FILE-CONTAINER-MISSING".to_owned(), message: "inspect report did not include a container superblock".to_owned() });
-        return Ok(file_envelope(report, FileReadReportStatus::Refused, requested_name, Some(entry), None, None, None, errors, warnings));
+        errors.push(Diagnostic {
+            code: "APFS-E-FILE-CONTAINER-MISSING".to_owned(),
+            message: "inspect report did not include a container superblock".to_owned(),
+        });
+        return Ok(file_envelope(
+            report,
+            FileReadReportStatus::Refused,
+            requested_name,
+            Some(entry),
+            None,
+            None,
+            None,
+            errors,
+            warnings,
+        ));
     };
-    let block_size = usize::try_from(container.block_size).map_err(|_| InspectError::BlockSizeTooLarge(container.block_size))?;
+    let block_size = usize::try_from(container.block_size)
+        .map_err(|_| InspectError::BlockSizeTooLarge(container.block_size))?;
     let apfs_offset = report.apfs_offset_bytes.unwrap_or(0);
-    let block = read_container_block(device, apfs_offset, block_index, container.block_size, block_size)?;
-    let preview_len = usize::try_from(entry.logical_size).unwrap_or(block.len()).min(block.len()).min(512);
+    let block = read_container_block(
+        device,
+        apfs_offset,
+        block_index,
+        container.block_size,
+        block_size,
+    )?;
+    let preview_len = usize::try_from(entry.logical_size)
+        .unwrap_or(block.len())
+        .min(block.len())
+        .min(512);
     let preview = &block[..preview_len];
     let utf8 = String::from_utf8_lossy(preview).into_owned();
-    let hex = preview.iter().map(|byte| format!("{byte:02x}")).collect::<String>();
+    let hex = preview
+        .iter()
+        .map(|byte| format!("{byte:02x}"))
+        .collect::<String>();
     warnings.push(Diagnostic { code: "APFS-W-FILE-PREVIEW-SYNTHETIC".to_owned(), message: "file read currently returns a bounded preview from a synthetic direct block pointer, not production APFS extent resolution".to_owned() });
-    Ok(file_envelope(report, FileReadReportStatus::Available, requested_name, Some(entry), Some(utf8), Some(hex), Some(preview_len), errors, warnings))
+    Ok(file_envelope(
+        report,
+        FileReadReportStatus::Available,
+        requested_name,
+        Some(entry),
+        Some(utf8),
+        Some(hex),
+        Some(preview_len),
+        errors,
+        warnings,
+    ))
 }
 
+#[allow(clippy::too_many_arguments)]
 fn file_envelope(
     report: &InspectReport,
     status: FileReadReportStatus,
@@ -935,10 +1231,18 @@ pub fn btree_cursor_report_in_device(
     requested_xid: u64,
 ) -> Result<BTreeCursorEnvelope, InspectError> {
     let report = inspect_device(device)?;
-    Ok(btree_cursor_report_in_report(&report, requested_oid, requested_xid))
+    Ok(btree_cursor_report_in_report(
+        &report,
+        requested_oid,
+        requested_xid,
+    ))
 }
 
-pub fn btree_cursor_report_in_bytes(input: &[u8], requested_oid: u64, requested_xid: u64) -> BTreeCursorEnvelope {
+pub fn btree_cursor_report_in_bytes(
+    input: &[u8],
+    requested_oid: u64,
+    requested_xid: u64,
+) -> BTreeCursorEnvelope {
     let device = apfs_blockdev::MemoryBlockDevice::new(input.to_vec());
     match btree_cursor_report_in_device(&device, requested_oid, requested_xid) {
         Ok(report) => report,
@@ -948,13 +1252,15 @@ pub fn btree_cursor_report_in_bytes(input: &[u8], requested_oid: u64, requested_
             source_size_bytes: input.len() as u64,
             status: BTreeCursorStatus::Refused,
             cursor: None,
-            errors: vec![Diagnostic { code: "APFS-E-BTREE-CURSOR-ERROR".to_owned(), message: err.to_string() }],
+            errors: vec![Diagnostic {
+                code: "APFS-E-BTREE-CURSOR-ERROR".to_owned(),
+                message: err.to_string(),
+            }],
             warnings: Vec::new(),
             safety: SafetySummary::default(),
         },
     }
 }
-
 
 pub fn read_mapped_object_in_device(
     device: &dyn ReadOnlyBlockDevice,
@@ -965,7 +1271,11 @@ pub fn read_mapped_object_in_device(
     read_mapped_object_from_report_and_device(device, &report, requested_oid, requested_xid)
 }
 
-pub fn read_mapped_object_in_bytes(input: &[u8], requested_oid: u64, requested_xid: u64) -> MappedObjectReadEnvelope {
+pub fn read_mapped_object_in_bytes(
+    input: &[u8],
+    requested_oid: u64,
+    requested_xid: u64,
+) -> MappedObjectReadEnvelope {
     let device = apfs_blockdev::MemoryBlockDevice::new(input.to_vec());
     match read_mapped_object_in_device(&device, requested_oid, requested_xid) {
         Ok(report) => report,
@@ -980,14 +1290,21 @@ pub fn read_mapped_object_in_bytes(input: &[u8], requested_oid: u64, requested_x
             resolver: None,
             traversal: None,
             object: None,
-            errors: vec![Diagnostic { code: "APFS-E-READ-MAPPED-OBJECT-ERROR".to_owned(), message: err.to_string() }],
+            errors: vec![Diagnostic {
+                code: "APFS-E-READ-MAPPED-OBJECT-ERROR".to_owned(),
+                message: err.to_string(),
+            }],
             warnings: Vec::new(),
             safety: SafetySummary::default(),
         },
     }
 }
 
-pub fn btree_cursor_report_in_report(report: &InspectReport, requested_oid: u64, requested_xid: u64) -> BTreeCursorEnvelope {
+pub fn btree_cursor_report_in_report(
+    report: &InspectReport,
+    requested_oid: u64,
+    requested_xid: u64,
+) -> BTreeCursorEnvelope {
     let mut errors = Vec::new();
     let mut warnings = report.warnings.clone();
 
@@ -1016,7 +1333,8 @@ pub fn btree_cursor_report_in_report(report: &InspectReport, requested_oid: u64,
     else {
         errors.push(Diagnostic {
             code: "APFS-E-BTREE-CURSOR-ROOT-NOT-AVAILABLE".to_owned(),
-            message: "container OMAP B-tree root is not available in this inspection slice".to_owned(),
+            message: "container OMAP B-tree root is not available in this inspection slice"
+                .to_owned(),
         });
         return BTreeCursorEnvelope {
             schema_version: "0.15.0".to_owned(),
@@ -1054,7 +1372,8 @@ pub fn resolver_report_in_report(report: &InspectReport) -> ObjectMapResolverEnv
     if report.status != InspectStatus::ApfsContainerDetected {
         errors.push(Diagnostic {
             code: "APFS-E-RESOLVER-INSPECT-NOT-DETECTED".to_owned(),
-            message: "object-map resolver requires a successfully inspected APFS container".to_owned(),
+            message: "object-map resolver requires a successfully inspected APFS container"
+                .to_owned(),
         });
         return ObjectMapResolverEnvelope {
             schema_version: "0.15.0".to_owned(),
@@ -1075,11 +1394,16 @@ pub fn resolver_report_in_report(report: &InspectReport) -> ObjectMapResolverEnv
         .and_then(|omap| omap.tree_root.as_ref())
         .map(object_map_resolver_report);
 
-    let status = if resolver.is_some() { ObjectMapResolverStatus::Available } else { ObjectMapResolverStatus::Unavailable };
+    let status = if resolver.is_some() {
+        ObjectMapResolverStatus::Available
+    } else {
+        ObjectMapResolverStatus::Unavailable
+    };
     if resolver.is_none() {
         errors.push(Diagnostic {
             code: "APFS-E-RESOLVER-OMAP-TREE-NOT-AVAILABLE".to_owned(),
-            message: "container OMAP B-tree root is not available in this inspection slice".to_owned(),
+            message: "container OMAP B-tree root is not available in this inspection slice"
+                .to_owned(),
         });
     }
 
@@ -1095,7 +1419,11 @@ pub fn resolver_report_in_report(report: &InspectReport) -> ObjectMapResolverEnv
     }
 }
 
-fn lookup_object_in_report(report: &InspectReport, requested_oid: u64, requested_xid: u64) -> ObjectLookupReport {
+fn lookup_object_in_report(
+    report: &InspectReport,
+    requested_oid: u64,
+    requested_xid: u64,
+) -> ObjectLookupReport {
     let mut errors = Vec::new();
     let mut warnings = report.warnings.clone();
 
@@ -1128,7 +1456,9 @@ fn lookup_object_in_report(report: &InspectReport, requested_oid: u64, requested
     else {
         errors.push(Diagnostic {
             code: "APFS-E-OMAP-TREE-NOT-AVAILABLE".to_owned(),
-            message: "the container object map B-tree root is not available in this inspection slice".to_owned(),
+            message:
+                "the container object map B-tree root is not available in this inspection slice"
+                    .to_owned(),
         });
         return ObjectLookupReport {
             schema_version: "0.15.0".to_owned(),
@@ -1152,7 +1482,11 @@ fn lookup_object_in_report(report: &InspectReport, requested_oid: u64, requested
     });
 
     let resolved = resolve_object_with_resolver(tree_root, requested_oid, requested_xid);
-    let status = if resolved.lookup.matched { ObjectLookupStatus::Found } else { ObjectLookupStatus::NotFound };
+    let status = if resolved.lookup.matched {
+        ObjectLookupStatus::Found
+    } else {
+        ObjectLookupStatus::NotFound
+    };
     if !resolved.lookup.matched {
         errors.push(Diagnostic {
             code: "APFS-E-OMAP-LOOKUP-NOT-FOUND".to_owned(),
@@ -1188,7 +1522,13 @@ fn inspect_gpt_wrapped_apfs(
     let header = match parse_gpt_header(&header_sector) {
         Ok(header) => header,
         Err(ParseError::GptSignatureMismatch) => return Ok(None),
-        Err(err) => return Ok(Some(refused_report(source_size_bytes, "APFS-E-GPT-PARSE-REFUSED", err.to_string()))),
+        Err(err) => {
+            return Ok(Some(refused_report(
+                source_size_bytes,
+                "APFS-E-GPT-PARSE-REFUSED",
+                err.to_string(),
+            )))
+        }
     };
 
     let entries_len = gpt_entries_byte_len(&header)?;
@@ -1201,10 +1541,17 @@ fn inspect_gpt_wrapped_apfs(
 
     let mut partitions = Vec::new();
     let mut apfs_partition_index = None;
-    let entry_size = usize::try_from(header.size_of_partition_entry).map_err(|_| InspectError::ArithmeticOverflow)?;
-    for index in 0..usize::try_from(header.number_of_partition_entries).map_err(|_| InspectError::ArithmeticOverflow)? {
-        let start = index.checked_mul(entry_size).ok_or(InspectError::ArithmeticOverflow)?;
-        let end = start.checked_add(entry_size).ok_or(InspectError::ArithmeticOverflow)?;
+    let entry_size = usize::try_from(header.size_of_partition_entry)
+        .map_err(|_| InspectError::ArithmeticOverflow)?;
+    for index in 0..usize::try_from(header.number_of_partition_entries)
+        .map_err(|_| InspectError::ArithmeticOverflow)?
+    {
+        let start = index
+            .checked_mul(entry_size)
+            .ok_or(InspectError::ArithmeticOverflow)?;
+        let end = start
+            .checked_add(entry_size)
+            .ok_or(InspectError::ArithmeticOverflow)?;
         if end > entries_bytes.len() {
             break;
         }
@@ -1229,7 +1576,8 @@ fn inspect_gpt_wrapped_apfs(
     };
     let apfs_entry = &gpt_report.partitions[apfs_index];
     let apfs_offset = lba_to_offset(apfs_entry.first_lba)?;
-    let probe_len = DEFAULT_APFS_PROBE_BYTES.min(usize::try_from(source_size_bytes.saturating_sub(apfs_offset)).unwrap_or(0));
+    let probe_len = DEFAULT_APFS_PROBE_BYTES
+        .min(usize::try_from(source_size_bytes.saturating_sub(apfs_offset)).unwrap_or(0));
     if probe_len < NX_SUPERBLOCK_MIN_SIZE {
         return Ok(Some(refused_report(
             source_size_bytes,
@@ -1263,12 +1611,17 @@ fn inspect_container_at_offset(
     gpt: Option<GptReport>,
     block_size: u32,
 ) -> Result<InspectReport, InspectError> {
-    let block_size_usize = usize::try_from(block_size).map_err(|_| InspectError::BlockSizeTooLarge(block_size))?;
+    let block_size_usize =
+        usize::try_from(block_size).map_err(|_| InspectError::BlockSizeTooLarge(block_size))?;
     let block = device.read_at(apfs_offset, block_size_usize)?;
     let container = parse_nx_superblock_with_checksum(&block)?;
     let checksum = container.checksum.clone();
     let Some(checksum) = checksum else {
-        return Ok(refused_report(source_size_bytes, "APFS-E-CHECKSUM-NOT-COMPUTED", "checksum was not computed".to_owned()));
+        return Ok(refused_report(
+            source_size_bytes,
+            "APFS-E-CHECKSUM-NOT-COMPUTED",
+            "checksum was not computed".to_owned(),
+        ));
     };
     if !checksum.valid {
         return Ok(refused_report(
@@ -1304,7 +1657,15 @@ fn inspect_container_at_offset(
     }
 
     let checkpoint_scan = scan_checkpoint_area(device, apfs_offset, &container)?;
-    Ok(detected_report(source_size_bytes, layout, Some(apfs_offset), gpt, container, checkpoint_scan, warnings))
+    Ok(detected_report(
+        source_size_bytes,
+        layout,
+        Some(apfs_offset),
+        gpt,
+        container,
+        checkpoint_scan,
+        warnings,
+    ))
 }
 
 fn scan_checkpoint_area(
@@ -1331,7 +1692,8 @@ fn scan_checkpoint_area(
         }));
     }
 
-    let block_size = usize::try_from(container.block_size).map_err(|_| InspectError::BlockSizeTooLarge(container.block_size))?;
+    let block_size = usize::try_from(container.block_size)
+        .map_err(|_| InspectError::BlockSizeTooLarge(container.block_size))?;
     let blocks_to_scan = descriptor_len.min(MAX_CHECKPOINT_SCAN_BLOCKS);
     let mut candidates = Vec::new();
     let mut checkpoint_maps = Vec::new();
@@ -1340,13 +1702,23 @@ fn scan_checkpoint_area(
     if descriptor_len > MAX_CHECKPOINT_SCAN_BLOCKS {
         notes.push(Diagnostic {
             code: "APFS-W-CHECKPOINT-SCAN-LIMITED".to_owned(),
-            message: format!("checkpoint descriptor scan limited to {MAX_CHECKPOINT_SCAN_BLOCKS} blocks"),
+            message: format!(
+                "checkpoint descriptor scan limited to {MAX_CHECKPOINT_SCAN_BLOCKS} blocks"
+            ),
         });
     }
 
     for relative in 0..blocks_to_scan {
-        let block_index = descriptor_base.checked_add(u64::from(relative)).ok_or(InspectError::ArithmeticOverflow)?;
-        let block = match read_container_block(device, apfs_offset, block_index, container.block_size, block_size) {
+        let block_index = descriptor_base
+            .checked_add(u64::from(relative))
+            .ok_or(InspectError::ArithmeticOverflow)?;
+        let block = match read_container_block(
+            device,
+            apfs_offset,
+            block_index,
+            container.block_size,
+            block_size,
+        ) {
             Ok(block) => block,
             Err(InspectError::BlockDevice(BlockDeviceError::OutOfBounds { .. })) => break,
             Err(err) => return Err(err),
@@ -1390,7 +1762,14 @@ fn scan_checkpoint_area(
         .map(|(xid, block)| (Some(xid), Some(block)))
         .unwrap_or((None, None));
 
-    let container_object_map = resolve_container_omap_from_checkpoint_maps(device, apfs_offset, container, block_size, &checkpoint_maps, &mut notes)?;
+    let container_object_map = resolve_container_omap_from_checkpoint_maps(
+        device,
+        apfs_offset,
+        container,
+        block_size,
+        &checkpoint_maps,
+        &mut notes,
+    )?;
 
     Ok(Some(CheckpointScanReport {
         descriptor_base_block: descriptor_base,
@@ -1434,13 +1813,22 @@ fn resolve_container_omap_from_checkpoint_maps(
     let Some((map, mapping)) = selected else {
         notes.push(Diagnostic {
             code: "APFS-I-CONTAINER-OMAP-NOT-MAPPED".to_owned(),
-            message: format!("no valid checkpoint-map entry currently maps nx_omap_oid {}", container.omap_oid),
+            message: format!(
+                "no valid checkpoint-map entry currently maps nx_omap_oid {}",
+                container.omap_oid
+            ),
         });
         return Ok(None);
     };
 
     let object_block_index = mapping.physical_address;
-    let object_block = read_container_block(device, apfs_offset, object_block_index, container.block_size, block_size)?;
+    let object_block = read_container_block(
+        device,
+        apfs_offset,
+        object_block_index,
+        container.block_size,
+        block_size,
+    )?;
     let object_map = match parse_omap_phys_with_checksum(&object_block) {
         Ok(object_map) => object_map,
         Err(err) => {
@@ -1492,7 +1880,8 @@ fn resolve_omap_tree_root(
     for map in checkpoint_maps.iter().filter(|map| map.valid) {
         for mapping in &map.mappings {
             let exact_oid = mapping.oid == object_map.tree_oid;
-            let btree_type = mapping.object_type == OBJECT_TYPE_BTREE || mapping.object_type == OBJECT_TYPE_BTREE_NODE;
+            let btree_type = mapping.object_type == OBJECT_TYPE_BTREE
+                || mapping.object_type == OBJECT_TYPE_BTREE_NODE;
             if exact_oid || (selected.is_none() && btree_type) {
                 selected = Some((map, mapping));
                 if exact_oid {
@@ -1505,16 +1894,28 @@ fn resolve_omap_tree_root(
     let Some((map, mapping)) = selected else {
         notes.push(Diagnostic {
             code: "APFS-I-OMAP-BTREE-ROOT-NOT-MAPPED".to_owned(),
-            message: format!("no valid checkpoint-map entry currently maps om_tree_oid {}", object_map.tree_oid),
+            message: format!(
+                "no valid checkpoint-map entry currently maps om_tree_oid {}",
+                object_map.tree_oid
+            ),
         });
         return Ok(None);
     };
 
     let object_block_index = mapping.physical_address;
-    let object_block = read_container_block(device, apfs_offset, object_block_index, container.block_size, block_size)?;
+    let object_block = read_container_block(
+        device,
+        apfs_offset,
+        object_block_index,
+        container.block_size,
+        block_size,
+    )?;
     match parse_btree_node_with_checksum(&object_block) {
         Ok(node) => {
-            let preliminary_omap_records = match parse_omap_records_from_btree_node(&object_block, &node) {
+            let preliminary_omap_records = match parse_omap_records_from_btree_node(
+                &object_block,
+                &node,
+            ) {
                 Ok(records) => records,
                 Err(err) => {
                     notes.push(Diagnostic {
@@ -1524,12 +1925,15 @@ fn resolve_omap_tree_root(
                     Vec::new()
                 }
             };
-            let index_records = match parse_omap_index_records_from_btree_node(&object_block, &node) {
+            let index_records = match parse_omap_index_records_from_btree_node(&object_block, &node)
+            {
                 Ok(records) => records,
                 Err(err) => {
                     notes.push(Diagnostic {
                         code: "APFS-W-OMAP-BTREE-INDEX-PARSE-FAILED".to_owned(),
-                        message: format!("B-tree root was parsed, but synthetic index decoding failed: {err}"),
+                        message: format!(
+                            "B-tree root was parsed, but synthetic index decoding failed: {err}"
+                        ),
                     });
                     Vec::new()
                 }
@@ -1596,12 +2000,19 @@ fn decode_additional_omap_leaf_nodes(
     let mut leaves = Vec::new();
     for map in checkpoint_maps.iter().filter(|map| map.valid) {
         for mapping in &map.mappings {
-            let btree_type = mapping.object_type == OBJECT_TYPE_BTREE || mapping.object_type == OBJECT_TYPE_BTREE_NODE;
+            let btree_type = mapping.object_type == OBJECT_TYPE_BTREE
+                || mapping.object_type == OBJECT_TYPE_BTREE_NODE;
             if !btree_type || mapping.oid == root_tree_oid {
                 continue;
             }
             let object_block_index = mapping.physical_address;
-            let object_block = match read_container_block(device, apfs_offset, object_block_index, container.block_size, block_size) {
+            let object_block = match read_container_block(
+                device,
+                apfs_offset,
+                object_block_index,
+                container.block_size,
+                block_size,
+            ) {
                 Ok(block) => block,
                 Err(err) => {
                     notes.push(Diagnostic {
@@ -1628,7 +2039,10 @@ fn decode_additional_omap_leaf_nodes(
                 });
                 continue;
             }
-            let preliminary_omap_records = match parse_omap_records_from_btree_node(&object_block, &node) {
+            let preliminary_omap_records = match parse_omap_records_from_btree_node(
+                &object_block,
+                &node,
+            ) {
                 Ok(records) => records,
                 Err(err) => {
                     notes.push(Diagnostic {
@@ -1650,7 +2064,6 @@ fn decode_additional_omap_leaf_nodes(
     Ok(leaves)
 }
 
-
 fn read_mapped_object_from_report_and_device(
     device: &dyn ReadOnlyBlockDevice,
     report: &InspectReport,
@@ -1663,9 +2076,21 @@ fn read_mapped_object_from_report_and_device(
     if report.status != InspectStatus::ApfsContainerDetected {
         errors.push(Diagnostic {
             code: "APFS-E-READ-MAPPED-OBJECT-INSPECT-NOT-DETECTED".to_owned(),
-            message: "mapped object read requires a successfully inspected APFS container".to_owned(),
+            message: "mapped object read requires a successfully inspected APFS container"
+                .to_owned(),
         });
-        return Ok(mapped_object_envelope(report, MappedObjectReadStatus::Refused, requested_oid, requested_xid, None, None, None, None, errors, warnings));
+        return Ok(mapped_object_envelope(
+            report,
+            MappedObjectReadStatus::Refused,
+            requested_oid,
+            requested_xid,
+            None,
+            None,
+            None,
+            None,
+            errors,
+            warnings,
+        ));
     }
 
     let Some(container) = report.container.as_ref() else {
@@ -1673,7 +2098,18 @@ fn read_mapped_object_from_report_and_device(
             code: "APFS-E-READ-MAPPED-OBJECT-CONTAINER-MISSING".to_owned(),
             message: "inspect report did not include a container superblock".to_owned(),
         });
-        return Ok(mapped_object_envelope(report, MappedObjectReadStatus::Refused, requested_oid, requested_xid, None, None, None, None, errors, warnings));
+        return Ok(mapped_object_envelope(
+            report,
+            MappedObjectReadStatus::Refused,
+            requested_oid,
+            requested_xid,
+            None,
+            None,
+            None,
+            None,
+            errors,
+            warnings,
+        ));
     };
 
     let Some(tree_root) = report
@@ -1684,9 +2120,21 @@ fn read_mapped_object_from_report_and_device(
     else {
         errors.push(Diagnostic {
             code: "APFS-E-READ-MAPPED-OBJECT-RESOLVER-UNAVAILABLE".to_owned(),
-            message: "container object-map resolver is not available in this inspection slice".to_owned(),
+            message: "container object-map resolver is not available in this inspection slice"
+                .to_owned(),
         });
-        return Ok(mapped_object_envelope(report, MappedObjectReadStatus::Refused, requested_oid, requested_xid, None, None, None, None, errors, warnings));
+        return Ok(mapped_object_envelope(
+            report,
+            MappedObjectReadStatus::Refused,
+            requested_oid,
+            requested_xid,
+            None,
+            None,
+            None,
+            None,
+            errors,
+            warnings,
+        ));
     };
 
     warnings.push(Diagnostic {
@@ -1713,21 +2161,51 @@ fn read_mapped_object_from_report_and_device(
     let Some(physical_block_index) = resolved.lookup.physical_address else {
         errors.push(Diagnostic {
             code: "APFS-E-READ-MAPPED-OBJECT-PADDR-MISSING".to_owned(),
-            message: "object-map lookup matched but did not provide a physical block address".to_owned(),
+            message: "object-map lookup matched but did not provide a physical block address"
+                .to_owned(),
         });
-        return Ok(mapped_object_envelope(report, MappedObjectReadStatus::Refused, requested_oid, requested_xid, Some(resolved.lookup), Some(resolved.resolver), resolved.traversal, None, errors, warnings));
+        return Ok(mapped_object_envelope(
+            report,
+            MappedObjectReadStatus::Refused,
+            requested_oid,
+            requested_xid,
+            Some(resolved.lookup),
+            Some(resolved.resolver),
+            resolved.traversal,
+            None,
+            errors,
+            warnings,
+        ));
     };
 
-    let block_size = usize::try_from(container.block_size).map_err(|_| InspectError::BlockSizeTooLarge(container.block_size))?;
+    let block_size = usize::try_from(container.block_size)
+        .map_err(|_| InspectError::BlockSizeTooLarge(container.block_size))?;
     let apfs_offset = report.apfs_offset_bytes.unwrap_or(0);
-    let block = match read_container_block(device, apfs_offset, physical_block_index, container.block_size, block_size) {
+    let block = match read_container_block(
+        device,
+        apfs_offset,
+        physical_block_index,
+        container.block_size,
+        block_size,
+    ) {
         Ok(block) => block,
         Err(err) => {
             errors.push(Diagnostic {
                 code: "APFS-E-READ-MAPPED-OBJECT-BLOCK-READ-FAILED".to_owned(),
                 message: err.to_string(),
             });
-            return Ok(mapped_object_envelope(report, MappedObjectReadStatus::Refused, requested_oid, requested_xid, Some(resolved.lookup), Some(resolved.resolver), resolved.traversal, None, errors, warnings));
+            return Ok(mapped_object_envelope(
+                report,
+                MappedObjectReadStatus::Refused,
+                requested_oid,
+                requested_xid,
+                Some(resolved.lookup),
+                Some(resolved.resolver),
+                resolved.traversal,
+                None,
+                errors,
+                warnings,
+            ));
         }
     };
 
@@ -1738,7 +2216,18 @@ fn read_mapped_object_from_report_and_device(
                 code: "APFS-E-READ-MAPPED-OBJECT-HEADER-PARSE-FAILED".to_owned(),
                 message: err.to_string(),
             });
-            return Ok(mapped_object_envelope(report, MappedObjectReadStatus::Refused, requested_oid, requested_xid, Some(resolved.lookup), Some(resolved.resolver), resolved.traversal, None, errors, warnings));
+            return Ok(mapped_object_envelope(
+                report,
+                MappedObjectReadStatus::Refused,
+                requested_oid,
+                requested_xid,
+                Some(resolved.lookup),
+                Some(resolved.resolver),
+                resolved.traversal,
+                None,
+                errors,
+                warnings,
+            ));
         }
     };
     let checksum = match validate_object_checksum(&block) {
@@ -1748,7 +2237,18 @@ fn read_mapped_object_from_report_and_device(
                 code: "APFS-E-READ-MAPPED-OBJECT-CHECKSUM-PARSE-FAILED".to_owned(),
                 message: err.to_string(),
             });
-            return Ok(mapped_object_envelope(report, MappedObjectReadStatus::Refused, requested_oid, requested_xid, Some(resolved.lookup), Some(resolved.resolver), resolved.traversal, None, errors, warnings));
+            return Ok(mapped_object_envelope(
+                report,
+                MappedObjectReadStatus::Refused,
+                requested_oid,
+                requested_xid,
+                Some(resolved.lookup),
+                Some(resolved.resolver),
+                resolved.traversal,
+                None,
+                errors,
+                warnings,
+            ));
         }
     };
     if !checksum.valid {
@@ -1759,7 +2259,18 @@ fn read_mapped_object_from_report_and_device(
                 checksum.stored_checksum_hex, checksum.computed_checksum_hex
             ),
         });
-        return Ok(mapped_object_envelope(report, MappedObjectReadStatus::Refused, requested_oid, requested_xid, Some(resolved.lookup), Some(resolved.resolver), resolved.traversal, None, errors, warnings));
+        return Ok(mapped_object_envelope(
+            report,
+            MappedObjectReadStatus::Refused,
+            requested_oid,
+            requested_xid,
+            Some(resolved.lookup),
+            Some(resolved.resolver),
+            resolved.traversal,
+            None,
+            errors,
+            warnings,
+        ));
     }
 
     let object = MappedObjectReadReport {
@@ -1844,7 +2355,8 @@ fn hex_prefix(bytes: &[u8], max_len: usize) -> String {
 
 fn object_map_resolver_report(tree_root: &MappedBTreeReport) -> ObjectMapResolverReport {
     let aggregate_record_count = aggregate_omap_records(tree_root).len();
-    let supports_synthetic_two_level_traversal = !tree_root.index_records.is_empty() && !tree_root.additional_mapped_leaf_nodes.is_empty();
+    let supports_synthetic_two_level_traversal =
+        !tree_root.index_records.is_empty() && !tree_root.additional_mapped_leaf_nodes.is_empty();
     let mode = if supports_synthetic_two_level_traversal {
         ObjectMapResolverMode::BoundedSyntheticTwoLevelTraversal
     } else if aggregate_record_count > 0 {
@@ -1853,7 +2365,9 @@ fn object_map_resolver_report(tree_root: &MappedBTreeReport) -> ObjectMapResolve
         ObjectMapResolverMode::Unavailable
     };
     let lookup_strategy = match mode {
-        ObjectMapResolverMode::BoundedSyntheticTwoLevelTraversal => "bounded_synthetic_two_level_traversal_then_leaf_lookup",
+        ObjectMapResolverMode::BoundedSyntheticTwoLevelTraversal => {
+            "bounded_synthetic_two_level_traversal_then_leaf_lookup"
+        }
         ObjectMapResolverMode::AggregateDecodedRecords => "aggregate_decoded_record_lookup",
         ObjectMapResolverMode::Unavailable => "unavailable",
     }
@@ -1894,8 +2408,13 @@ fn object_map_resolver_report(tree_root: &MappedBTreeReport) -> ObjectMapResolve
     }
 }
 
-fn build_btree_cursor_report(tree_root: &MappedBTreeReport, requested_oid: u64, requested_xid: u64) -> BTreeCursorReport {
-    let supports_two_level = !tree_root.index_records.is_empty() && !tree_root.additional_mapped_leaf_nodes.is_empty();
+fn build_btree_cursor_report(
+    tree_root: &MappedBTreeReport,
+    requested_oid: u64,
+    requested_xid: u64,
+) -> BTreeCursorReport {
+    let supports_two_level =
+        !tree_root.index_records.is_empty() && !tree_root.additional_mapped_leaf_nodes.is_empty();
     let traversal = if supports_two_level {
         traverse_synthetic_omap_btree(tree_root, requested_oid, requested_xid)
     } else {
@@ -1921,7 +2440,9 @@ fn build_btree_cursor_report(tree_root: &MappedBTreeReport, requested_oid: u64, 
         key_count: Some(tree_root.node.key_count),
         decoded_index_record_count: tree_root.index_records.len(),
         decoded_omap_record_count: tree_root.preliminary_omap_records.len(),
-        selected_child_oid: traversal.as_ref().and_then(|t| t.child_selection.selected_child_oid),
+        selected_child_oid: traversal
+            .as_ref()
+            .and_then(|t| t.child_selection.selected_child_oid),
         selected_child_block_index: traversal.as_ref().and_then(|t| t.selected_leaf_block_index),
     });
 
@@ -1946,7 +2467,9 @@ fn build_btree_cursor_report(tree_root: &MappedBTreeReport, requested_oid: u64, 
             node_oid: traversal.selected_leaf_oid,
             level: Some(0),
             is_leaf: Some(true),
-            key_count: Some(u32::try_from(traversal.selected_leaf_records.len()).unwrap_or(u32::MAX)),
+            key_count: Some(
+                u32::try_from(traversal.selected_leaf_records.len()).unwrap_or(u32::MAX),
+            ),
             decoded_index_record_count: 0,
             decoded_omap_record_count: traversal.selected_leaf_records.len(),
             selected_child_oid: None,
@@ -1971,7 +2494,13 @@ fn build_btree_cursor_report(tree_root: &MappedBTreeReport, requested_oid: u64, 
     let lookup = traversal
         .as_ref()
         .map(|traversal| traversal.lookup.clone())
-        .unwrap_or_else(|| lookup_omap_record(&aggregate_omap_records(tree_root), requested_oid, requested_xid));
+        .unwrap_or_else(|| {
+            lookup_omap_record(
+                &aggregate_omap_records(tree_root),
+                requested_oid,
+                requested_xid,
+            )
+        });
 
     let mut notes = vec![Diagnostic {
         code: "APFS-I-BTREE-CURSOR-BOUNDARY".to_owned(),
@@ -2000,7 +2529,11 @@ fn build_btree_cursor_report(tree_root: &MappedBTreeReport, requested_oid: u64, 
     }
 }
 
-fn resolve_object_with_resolver(tree_root: &MappedBTreeReport, requested_oid: u64, requested_xid: u64) -> ResolvedObjectLookup {
+fn resolve_object_with_resolver(
+    tree_root: &MappedBTreeReport,
+    requested_oid: u64,
+    requested_xid: u64,
+) -> ResolvedObjectLookup {
     let resolver = object_map_resolver_report(tree_root);
     let traversal = if resolver.supports_synthetic_two_level_traversal {
         traverse_synthetic_omap_btree(tree_root, requested_oid, requested_xid)
@@ -2015,7 +2548,11 @@ fn resolve_object_with_resolver(tree_root: &MappedBTreeReport, requested_oid: u6
             lookup_omap_record(&records, requested_oid, requested_xid)
         });
 
-    ResolvedObjectLookup { resolver, traversal, lookup }
+    ResolvedObjectLookup {
+        resolver,
+        traversal,
+        lookup,
+    }
 }
 
 fn traverse_synthetic_omap_btree(
@@ -2027,12 +2564,12 @@ fn traverse_synthetic_omap_btree(
         return None;
     }
 
-    let child_selection = select_synthetic_btree_child(&tree_root.index_records, requested_oid, requested_xid);
+    let child_selection =
+        select_synthetic_btree_child(&tree_root.index_records, requested_oid, requested_xid);
     let selected_child_oid = child_selection.selected_child_oid?;
-    let selected_leaf = tree_root
-        .additional_mapped_leaf_nodes
-        .iter()
-        .find(|leaf| leaf.mapping.oid == selected_child_oid || leaf.node.object.oid == selected_child_oid);
+    let selected_leaf = tree_root.additional_mapped_leaf_nodes.iter().find(|leaf| {
+        leaf.mapping.oid == selected_child_oid || leaf.node.object.oid == selected_child_oid
+    });
 
     let mut notes = Vec::new();
     let selected_leaf_records = if let Some(leaf) = selected_leaf {
@@ -2076,13 +2613,20 @@ fn read_container_block(
     block_size_u32: u32,
     block_size: usize,
 ) -> Result<Vec<u8>, InspectError> {
-    let byte_offset = block_index.checked_mul(u64::from(block_size_u32)).ok_or(InspectError::ArithmeticOverflow)?;
-    let absolute_offset = apfs_offset.checked_add(byte_offset).ok_or(InspectError::ArithmeticOverflow)?;
-    device.read_at(absolute_offset, block_size).map_err(InspectError::from)
+    let byte_offset = block_index
+        .checked_mul(u64::from(block_size_u32))
+        .ok_or(InspectError::ArithmeticOverflow)?;
+    let absolute_offset = apfs_offset
+        .checked_add(byte_offset)
+        .ok_or(InspectError::ArithmeticOverflow)?;
+    device
+        .read_at(absolute_offset, block_size)
+        .map_err(InspectError::from)
 }
 
 fn lba_to_offset(lba: u64) -> Result<u64, InspectError> {
-    lba.checked_mul(GPT_SECTOR_SIZE as u64).ok_or(InspectError::ArithmeticOverflow)
+    lba.checked_mul(GPT_SECTOR_SIZE as u64)
+        .ok_or(InspectError::ArithmeticOverflow)
 }
 
 fn detected_report(
@@ -2121,7 +2665,10 @@ fn not_apfs_report(source_size_bytes: u64, message: String) -> InspectReport {
         gpt: None,
         container: None,
         checkpoint_scan: None,
-        errors: vec![Diagnostic { code: "APFS-E-NOT-APFS".to_owned(), message }],
+        errors: vec![Diagnostic {
+            code: "APFS-E-NOT-APFS".to_owned(),
+            message,
+        }],
         warnings: Vec::new(),
         safety: SafetySummary::default(),
     }
@@ -2138,7 +2685,10 @@ fn refused_report(source_size_bytes: u64, code: &str, message: String) -> Inspec
         gpt: None,
         container: None,
         checkpoint_scan: None,
-        errors: vec![Diagnostic { code: code.to_owned(), message }],
+        errors: vec![Diagnostic {
+            code: code.to_owned(),
+            message,
+        }],
         warnings: Vec::new(),
         safety: SafetySummary::default(),
     }
@@ -2146,7 +2696,7 @@ fn refused_report(source_size_bytes: u64, code: &str, message: String) -> Inspec
 
 #[cfg(test)]
 mod tests {
-    use apfs_types::{apfs_fletcher64, OBJ_EPHEMERAL, OBJECT_TYPE_NX_SUPERBLOCK};
+    use apfs_types::{apfs_fletcher64, OBJECT_TYPE_NX_SUPERBLOCK, OBJ_EPHEMERAL};
 
     use super::{inspect_bytes, InspectStatus, SourceLayout};
 
@@ -2160,7 +2710,8 @@ mod tests {
         let mut block = vec![0_u8; 4096];
         block[8..16].copy_from_slice(&1_u64.to_le_bytes());
         block[16..24].copy_from_slice(&xid.to_le_bytes());
-        block[24..28].copy_from_slice(&(OBJ_EPHEMERAL | u32::from(OBJECT_TYPE_NX_SUPERBLOCK)).to_le_bytes());
+        block[24..28]
+            .copy_from_slice(&(OBJ_EPHEMERAL | u32::from(OBJECT_TYPE_NX_SUPERBLOCK)).to_le_bytes());
         block[32..36].copy_from_slice(b"NXSB");
         block[36..40].copy_from_slice(&4096_u32.to_le_bytes());
         block[40..48].copy_from_slice(&16_u64.to_le_bytes());

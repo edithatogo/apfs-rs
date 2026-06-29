@@ -14,7 +14,9 @@ fn synthetic_nxsb() -> Vec<u8> {
 
 fn bench_inspect_synthetic(c: &mut Criterion) {
     let fixture = synthetic_nxsb();
-    c.bench_function("inspect_synthetic_nxsb", |b| b.iter(|| inspect_bytes(&fixture)));
+    c.bench_function("inspect_synthetic_nxsb", |b| {
+        b.iter(|| inspect_bytes(&fixture))
+    });
 }
 
 criterion_group!(benches, bench_inspect_synthetic);

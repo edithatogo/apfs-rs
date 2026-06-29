@@ -1,6 +1,6 @@
 # Tool Capability Matrix
 
-Generated: 2026-06-25T11:28:57.595070+00:00
+Generated: 2026-06-29T16:49:32.331836+00:00
 
 ## Summary
 
@@ -11,7 +11,7 @@ Generated: 2026-06-25T11:28:57.595070+00:00
 
 | Tool | Available | Category | Use | Version |
 |---|---:|---|---|---|
-| `python3` | yes | available_here_core | all cargoless validators; fixture generation; JSON/YAML/TOML parsing | Python 3.14.5 |
+| `python3` | yes | available_here_core | all cargoless validators; fixture generation; JSON/YAML/TOML parsing | Python 3.14.6 |
 | `jq` | yes | available_here_optional | JSON inspection; release evidence spot checks | jq-1.7.1-apple |
 | `rg` | yes | available_here_optional | source and docs grep; unsafe/write token scanning | ripgrep 15.1.0 (rev af60c2de9d) |
 | `grep` | yes | available_here_core | portable text search | grep (BSD grep, GNU compatible) 2.6.0-FreeBSD |
@@ -21,7 +21,7 @@ Generated: 2026-06-25T11:28:57.595070+00:00
 | `zip` | yes | available_here_core | artifact packaging | Copyright (c) 1990-2008 Info-ZIP - Type 'zip "-L"' for software license. |
 | `unzip` | yes | available_here_core | archive validation | caution:  both -n and -o specified; ignoring -o |
 | `sha256sum` | yes | available_here_core | checksum manifests | sha256sum (Darwin) 1.0 |
-| `git` | yes | available_here_optional | future local version-control checks | git version 2.50.1 (Apple Git-155) |
+| `git` | yes | available_here_optional | future local version-control checks | git version 2.53.0 |
 | `make` | yes | available_here_optional | developer command wrappers | GNU Make 3.81 |
 | `gcc` | yes | available_here_optional | future C shim experiments, not required now | Apple clang version 21.0.0 (clang-2100.1.1.101) |
 | `clang` | yes | available_here_optional | future FFI/header checks, not required now | Apple clang version 21.0.0 (clang-2100.1.1.101) |

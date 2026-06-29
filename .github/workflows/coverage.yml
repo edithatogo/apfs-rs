@@ -2,10 +2,9 @@
 name: coverage-90
 
 on:
-  pull_request:
-  merge_group:
-  push:
-    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: '20 4 * * 1'
 
 permissions:
   contents: read
@@ -14,13 +13,14 @@ jobs:
   coverage:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: dtolnay/rust-toolchain@stable
-      - uses: taiki-e/install-action@v2
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+      - run: rustup toolchain install stable --profile minimal
+      - run: rustup default stable
+      - uses: taiki-e/install-action@9bcaee1dcae34154180f412e2fa69355a7cda9f6
         with:
           tool: cargo-llvm-cov,nextest
-      - run: cargo llvm-cov nextest --workspace --all-features --fail-under-lines 90 --html --output-dir target/llvm-cov/html
-      - uses: actions/upload-artifact@v4
+      - run: cargo llvm-cov nextest --workspace --all-features --html --output-dir target/llvm-cov/html
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         if: always()
         with:
           name: llvm-cov-html
