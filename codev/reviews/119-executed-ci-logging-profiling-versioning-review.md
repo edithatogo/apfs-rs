@@ -11,6 +11,8 @@
 - Expanded profiling to run both `apfs-core` and `apfs-types` Criterion benches.
 - Replaced release automation placeholder text with cargo-dist and release-plz
   dry-run commands.
+- Added workspace repository metadata inheritance to package manifests so the
+  cargo-dist release-plan workflow can resolve the GitHub repository URL.
 - Updated Astro and root documentation.
 
 ## Safety
