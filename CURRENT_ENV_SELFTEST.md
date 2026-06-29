@@ -8,14 +8,14 @@ Failures: **0**
 
 | Status | Command | Seconds |
 |---|---|---:|
-| `pass` | `py_compile selected tools` | 0.012 |
-| `pass` | `runpy tools/apfs_offset_audit.py` | 0.004 |
-| `pass` | `runpy tools/golden_output_generator.py` | 0.016 |
-| `pass` | `runpy tools/dependency_license_policy_check.py` | 0.005 |
-| `pass` | `runpy tools/backlog_issue_export.py` | 0.046 |
-| `pass` | `runpy tools/synthetic_fixture_oracle.py` | 0.038 |
-| `pass` | `runpy tools/tool_capability_matrix.py` | 0.805 |
-| `pass` | `runpy tools/rust_static_lint.py` | 0.02 |
+| `pass` | `py_compile selected tools` | 0.021 |
+| `pass` | `runpy tools/apfs_offset_audit.py` | 0.006 |
+| `pass` | `runpy tools/golden_output_generator.py` | 0.024 |
+| `pass` | `runpy tools/dependency_license_policy_check.py` | 0.014 |
+| `pass` | `runpy tools/backlog_issue_export.py` | 0.095 |
+| `pass` | `runpy tools/synthetic_fixture_oracle.py` | 0.035 |
+| `pass` | `runpy tools/tool_capability_matrix.py` | 1.394 |
+| `pass` | `runpy tools/rust_static_lint.py` | 0.018 |
 | `pass` | `runpy tools/local_command_plan.py` | 0.002 |
-| `pass` | `runpy tools/mvp_blocker_tasklist.py` | 0.024 |
-| `pass` | `runpy tools/agent_handoff_brief.py` | 0.087 |
+| `pass` | `runpy tools/mvp_blocker_tasklist.py` | 0.023 |
+| `pass` | `runpy tools/agent_handoff_brief.py` | 0.083 |

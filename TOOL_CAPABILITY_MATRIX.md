@@ -1,6 +1,6 @@
 # Tool Capability Matrix
 
-Generated: 2026-06-29T16:40:44.891309+00:00
+Generated: 2026-06-29T16:44:21.695936+00:00
 
 ## Summary
 

@@ -319,19 +319,22 @@ fn doctor_command(source: PathBuf, json: bool) -> anyhow::Result<()> {
         ),
         InspectStatus::Refused => blockers.push("initial APFS inspection was refused".to_owned()),
     }
-    if volume_report.as_ref().map_or(true, |report| {
-        !matches!(report.status, VolumeReportStatus::Available)
-    }) {
+    if volume_report
+        .as_ref()
+        .is_none_or(|report| !matches!(report.status, VolumeReportStatus::Available))
+    {
         warnings.push("volume report is unavailable or synthetic-only".to_owned());
     }
-    if resolver_report.as_ref().map_or(true, |report| {
-        !matches!(report.status, ObjectMapResolverStatus::Available)
-    }) {
+    if resolver_report
+        .as_ref()
+        .is_none_or(|report| !matches!(report.status, ObjectMapResolverStatus::Available))
+    {
         warnings.push("object-map resolver is unavailable or synthetic-only".to_owned());
     }
-    if directory_report.as_ref().map_or(true, |report| {
-        !matches!(report.status, DirectoryReportStatus::Available)
-    }) {
+    if directory_report
+        .as_ref()
+        .is_none_or(|report| !matches!(report.status, DirectoryReportStatus::Available))
+    {
         warnings.push("directory listing is unavailable or synthetic-only".to_owned());
     }
 
