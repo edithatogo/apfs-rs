@@ -20,7 +20,7 @@ jobs:
         with:
           tool: cargo-llvm-cov,nextest
       - run: cargo llvm-cov nextest --workspace --all-features --fail-under-lines 90 --html --output-dir target/llvm-cov/html
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: llvm-cov-html
