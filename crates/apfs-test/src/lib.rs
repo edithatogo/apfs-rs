@@ -25,6 +25,7 @@ pub struct CreatedWith {
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[allow(clippy::struct_excessive_bools)]
 pub struct ApfsFeatureManifest {
     pub encrypted: bool,
     pub compressed: bool,
@@ -53,21 +54,38 @@ pub struct ManifestValidation {
     pub issues: Vec<String>,
 }
 
+#[must_use]
 pub fn helper_crate_ready() -> bool {
     true
 }
 
+/// Load and parse a fixture manifest from disk.
+///
+/// # Errors
+///
+/// Returns an I/O error when the file cannot be opened/read, or
+/// `InvalidData` when the manifest JSON does not match the expected schema.
 pub fn load_fixture_manifest(path: impl AsRef<Path>) -> Result<FixtureManifest, std::io::Error> {
     let mut file = std::fs::File::open(path)?;
     load_fixture_manifest_from_reader(&mut file)
 }
 
-pub fn load_fixture_manifest_from_reader(reader: &mut dyn Read) -> Result<FixtureManifest, std::io::Error> {
+/// Load and parse a fixture manifest from an arbitrary reader.
+///
+/// # Errors
+///
+/// Returns an I/O error when the reader fails, or `InvalidData` when the
+/// manifest JSON does not match the expected schema.
+pub fn load_fixture_manifest_from_reader(
+    reader: &mut dyn Read,
+) -> Result<FixtureManifest, std::io::Error> {
     let mut text = String::new();
     reader.read_to_string(&mut text)?;
-    serde_json::from_str(&text).map_err(|err| std::io::Error::new(std::io::ErrorKind::InvalidData, err))
+    serde_json::from_str(&text)
+        .map_err(|err| std::io::Error::new(std::io::ErrorKind::InvalidData, err))
 }
 
+#[must_use]
 pub fn validate_fixture_manifest(manifest: &FixtureManifest) -> ManifestValidation {
     let mut issues = Vec::new();
     if manifest.fixture_id.trim().is_empty() {
@@ -79,8 +97,15 @@ pub fn validate_fixture_manifest(manifest: &FixtureManifest) -> ManifestValidati
     if manifest.redaction.contains_secret_material {
         issues.push("fixture is marked as containing secret material".to_owned());
     }
-    if !manifest.apfs_features.encrypted && manifest.capability_ids.iter().any(|id| id.contains("R2")) {
-        issues.push("unencrypted fixture should not claim encryption-read capability coverage".to_owned());
+    if !manifest.apfs_features.encrypted
+        && manifest.capability_ids.iter().any(|id| id.contains("R2"))
+    {
+        issues.push(
+            "unencrypted fixture should not claim encryption-read capability coverage".to_owned(),
+        );
     }
-    ManifestValidation { valid: issues.is_empty(), issues }
+    ManifestValidation {
+        valid: issues.is_empty(),
+        issues,
+    }
 }

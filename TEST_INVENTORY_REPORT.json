@@ -81,11 +81,12 @@
     },
     {
       "category": "mutation_config",
-      "count": 1,
+      "count": 2,
       "minimum": 1,
       "ok": true,
       "files": [
-        "mutants.toml"
+        "mutants.toml",
+        ".config/cargo-mutants.toml"
       ]
     },
     {
@@ -103,10 +104,11 @@
     },
     {
       "category": "coverage_config",
-      "count": 1,
+      "count": 2,
       "minimum": 1,
       "ok": true,
       "files": [
+        ".config/cargo-llvm-cov.toml",
         ".github/workflows/coverage.yml"
       ]
     }

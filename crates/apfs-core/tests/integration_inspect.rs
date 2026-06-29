@@ -14,7 +14,10 @@ fn synthetic_nxsb() -> Vec<u8> {
 #[test]
 fn inspect_reports_apfs_or_checksum_refusal_for_synthetic_nxsb() {
     let report = inspect_bytes(&synthetic_nxsb());
-    assert!(matches!(report.status, InspectStatus::ApfsContainerDetected | InspectStatus::Refused));
+    assert!(matches!(
+        report.status,
+        InspectStatus::ApfsContainerDetected | InspectStatus::Refused
+    ));
     assert!(report.safety.read_only);
 }
 

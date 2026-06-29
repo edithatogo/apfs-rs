@@ -19,8 +19,8 @@ resolver = "2"
 [workspace.package]
 edition = "2021"
 license = "MIT OR Apache-2.0"
-rust-version = "1.80"
-repository = "https://github.com/edithatogo/codev"
+rust-version = "1.85"
+repository = "https://github.com/edithatogo/apfs-rs"
 
 [workspace.dependencies]
 anyhow = "1"

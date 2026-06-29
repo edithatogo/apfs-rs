@@ -121,7 +121,7 @@ def check_registries() -> None:
 def check_json_files() -> None:
     count = 0
     for path in sorted(ROOT.rglob("*.json")):
-        if "target" in path.parts:
+        if any(part in {"target", "node_modules", "dist"} for part in path.parts):
             continue
         try:
             json.loads(path.read_text(encoding="utf-8"))

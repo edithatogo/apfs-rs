@@ -2,17 +2,17 @@
 
 Schema version: 0.21.0
 
-Files: 1189
+Files: 1352
 
 ## Categories
 
-- `codev_context`: 411
-- `conductor_context`: 388
+- `codev_context`: 458
+- `conductor_context`: 434
 - `developer_tooling`: 11
-- `fixtures`: 60
-- `github_automation`: 16
-- `python_tools`: 79
-- `root_docs_or_config`: 192
+- `fixtures`: 61
+- `github_automation`: 21
+- `python_tools`: 95
+- `root_docs_or_config`: 240
 - `rust_crates`: 32
 
 ## Notes

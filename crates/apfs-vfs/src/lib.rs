@@ -86,7 +86,9 @@ pub fn reject_path_traversal(path: &str) -> Result<(), VfsError> {
     }
     let normalized = path.replace('\\', "/");
     if normalized.starts_with('/') || normalized.split('/').any(|part| part == "..") {
-        return Err(VfsError::InvalidPath(format!("path escapes read-only APFS namespace: {path}")));
+        return Err(VfsError::InvalidPath(format!(
+            "path escapes read-only APFS namespace: {path}"
+        )));
     }
     Ok(())
 }

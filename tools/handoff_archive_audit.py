@@ -4,7 +4,15 @@ from __future__ import annotations
 import argparse, hashlib, json, os
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
-SKIP_DIRS = {".git", "target"}
+SKIP_DIRS = {
+    ".astro",
+    ".git",
+    "__pycache__",
+    "apfs-rs-impl-v0.29",
+    "dist",
+    "node_modules",
+    "target",
+}
 
 
 def sha256(path: Path) -> str:
