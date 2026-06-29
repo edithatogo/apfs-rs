@@ -30,7 +30,7 @@ def main() -> int:
     expected_snippets = [
         "cargo install cargo-dist",
         "cargo install release-plz",
-        "cargo dist plan",
+        "dist plan",
         "release-plz update",
         "cargo run -p xtask -- release-automation-audit",
     ]

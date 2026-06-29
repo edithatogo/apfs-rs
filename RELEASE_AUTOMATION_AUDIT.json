@@ -26,7 +26,7 @@
       "ok": true
     },
     {
-      "name": "workflow invokes cargo dist plan",
+      "name": "workflow invokes dist plan",
       "ok": true
     },
     {
