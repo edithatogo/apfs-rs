@@ -1,7 +1,7 @@
 # Agent Handoff Brief
 
 Version: 0.29.0
-Generated: 2026-06-25T11:28:57.803311+00:00
+Generated: 2026-06-29T16:37:51.319352+00:00
 
 ## Current state
 

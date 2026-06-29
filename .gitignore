@@ -1,5 +1,8 @@
 /target/
 /apfs-rs-impl-v0.29/
+/docs-site/node_modules/
+/docs-site/dist/
+/docs-site/.astro/
 
 .DS_Store
 **/.DS_Store

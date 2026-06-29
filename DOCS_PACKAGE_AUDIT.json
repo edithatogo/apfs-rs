@@ -69,7 +69,7 @@
       "detail": "required docs-site file missing or empty"
     },
     {
-      "name": "docs-site/src/pages/handoff.astro",
+      "name": "docs-site/src/pages/handoff/index.astro",
       "ok": true,
       "detail": "required docs-site file missing or empty"
     }

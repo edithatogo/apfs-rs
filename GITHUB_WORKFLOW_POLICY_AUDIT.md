@@ -9,7 +9,6 @@ Status: `passed`; workflows audited: **17**.
 | `ci.yml` | `has checkout` | `true` |
 | `coverage.yml` | `has permissions` | `true` |
 | `coverage.yml` | `least privilege contents` | `true` |
-| `coverage.yml` | `has checkout` | `true` |
 | `docs-quality.yml` | `has permissions` | `true` |
 | `docs-quality.yml` | `least privilege contents` | `true` |
 | `docs-quality.yml` | `has checkout` | `true` |
@@ -44,7 +43,6 @@ Status: `passed`; workflows audited: **17**.
 | `security.yml` | `has checkout` | `true` |
 | `strict-quality.yml` | `has permissions` | `true` |
 | `strict-quality.yml` | `least privilege contents` | `true` |
-| `strict-quality.yml` | `has checkout` | `true` |
 | `supply-chain.yml` | `has permissions` | `true` |
 | `supply-chain.yml` | `least privilege contents` | `true` |
 | `supply-chain.yml` | `has checkout` | `true` |

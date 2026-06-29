@@ -14,17 +14,12 @@ permissions:
 jobs:
   release-preflight:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: apfs-rs
     steps:
-      - uses: actions/checkout@v4
-      - uses: dtolnay/rust-toolchain@stable
-        with:
-          components: rustfmt, clippy
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+      - run: rustup component add rustfmt clippy
       - run: python3 tools/release_preflight.py --write-manifest
       - run: cargo test --workspace
       - run: mkdir -p target/release-evidence && cp SHA256SUMS.txt target/release-evidence/SHA256SUMS.txt
-      - uses: actions/attest-build-provenance@v3
+      - uses: actions/attest-build-provenance@977bb373ede98d70efdf65b84cb5f73e068dcc2a
         with:
-          subject-path: apfs-rs/target/release-evidence/SHA256SUMS.txt
+          subject-path: target/release-evidence/SHA256SUMS.txt

@@ -5,7 +5,15 @@ import hashlib, json, sys
 from pathlib import Path
 from datetime import datetime, timezone
 ROOT = Path(__file__).resolve().parents[1]
-EXCLUDE_PARTS = {"target", ".git", "__pycache__"}
+EXCLUDE_PARTS = {
+    ".astro",
+    ".git",
+    "__pycache__",
+    "apfs-rs-impl-v0.29",
+    "dist",
+    "node_modules",
+    "target",
+}
 EXCLUDE_FILES = {"SHA256SUMS.txt", "PACKAGE_INTEGRITY_AUDIT.md", "PACKAGE_INTEGRITY_AUDIT.json"}
 EXCLUDE_FILES = {"SHA256SUMS.txt", "PACKAGE_INTEGRITY_AUDIT.json", "PACKAGE_INTEGRITY_AUDIT.md", "HANDOFF_MANIFEST_VERIFY.json", "HANDOFF_MANIFEST_VERIFY.md"}
 

@@ -29,11 +29,6 @@
       "ok": true
     },
     {
-      "workflow": "coverage.yml",
-      "check": "has checkout",
-      "ok": true
-    },
-    {
       "workflow": "docs-quality.yml",
       "check": "has permissions",
       "ok": true
@@ -201,11 +196,6 @@
     {
       "workflow": "strict-quality.yml",
       "check": "least privilege contents",
-      "ok": true
-    },
-    {
-      "workflow": "strict-quality.yml",
-      "check": "has checkout",
       "ok": true
     },
     {

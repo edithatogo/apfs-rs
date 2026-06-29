@@ -14,8 +14,8 @@ jobs:
   provenance-dry-run:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
       - run: mkdir -p target/provenance && echo apfs-rs-provenance-dry-run > target/provenance/subject.txt
-      - uses: actions/attest-build-provenance@v3
+      - uses: actions/attest-build-provenance@977bb373ede98d70efdf65b84cb5f73e068dcc2a
         with:
           subject-path: target/provenance/subject.txt

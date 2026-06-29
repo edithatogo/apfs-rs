@@ -22,7 +22,7 @@ REQUIRED_FILES = [
     "_typos.toml",
     "taplo.toml",
     ".editorconfig",
-    ".github/dependabot.yml",
+    "renovate.json",
     ".github/workflows/local-handoff.yml",
 ]
 

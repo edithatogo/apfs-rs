@@ -13,8 +13,9 @@ jobs:
   fuzz-smoke:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: dtolnay/rust-toolchain@stable
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+      - run: rustup toolchain install nightly --profile minimal
+      - run: rustup default nightly
       - run: cargo install cargo-fuzz --locked
       - run: cargo fuzz run object_header -- -max_total_time=60
       - run: cargo fuzz run nx_superblock -- -max_total_time=60
