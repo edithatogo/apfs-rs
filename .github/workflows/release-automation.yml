@@ -14,6 +14,8 @@ permissions:
 jobs:
   release-plan:
     runs-on: ubuntu-latest
+    env:
+      GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
       - run: rustup toolchain install stable --profile minimal
@@ -22,4 +24,4 @@ jobs:
       - run: cargo install cargo-dist --version 0.29.0 --locked
       - run: cargo install release-plz --locked
       - run: dist plan --allow-dirty
-      - run: release-plz update --backend local --allow-dirty --config release-plz.toml
+      - run: release-plz release --dry-run --allow-dirty --config release-plz.toml

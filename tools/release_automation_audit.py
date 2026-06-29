@@ -30,8 +30,9 @@ def main() -> int:
     expected_snippets = [
         "cargo install cargo-dist",
         "cargo install release-plz",
-        "dist plan",
-        "release-plz update",
+        "dist plan --allow-dirty",
+        "GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}",
+        "release-plz release --dry-run --allow-dirty --config release-plz.toml",
         "cargo run -p xtask -- release-automation-audit",
     ]
     for snippet in expected_snippets:

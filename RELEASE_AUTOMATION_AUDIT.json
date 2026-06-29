@@ -26,11 +26,15 @@
       "ok": true
     },
     {
-      "name": "workflow invokes dist plan",
+      "name": "workflow invokes dist plan --allow-dirty",
       "ok": true
     },
     {
-      "name": "workflow invokes release-plz update",
+      "name": "workflow invokes GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}",
+      "ok": true
+    },
+    {
+      "name": "workflow invokes release-plz release --dry-run --allow-dirty --config release-plz.toml",
       "ok": true
     },
     {

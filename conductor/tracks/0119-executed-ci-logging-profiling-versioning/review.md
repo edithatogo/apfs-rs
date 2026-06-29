@@ -13,6 +13,9 @@
   pin GitHub Actions by commit SHA. cargo-dist commands use `--allow-dirty`
   because the pinned workflow intentionally differs from cargo-dist's mutable
   tag-based template.
+- The release-plz validation path uses `release-plz release --dry-run` with
+  `GIT_TOKEN`; the older `--backend local` invocation is no longer accepted by
+  the current release-plz CLI.
 
 ## Safety notes
 

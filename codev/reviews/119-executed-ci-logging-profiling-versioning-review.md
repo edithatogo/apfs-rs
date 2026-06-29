@@ -16,6 +16,8 @@
 - Replaced the release scaffold workflow with the cargo-dist generated release
   workflow, pinned its generated GitHub Actions, and kept cargo-dist checks
   explicit with `--allow-dirty` for the policy-pinned workflow.
+- Updated release-plz validation to use the current `release-plz release
+  --dry-run` command with `GIT_TOKEN` instead of the removed local backend.
 - Updated Astro and root documentation.
 
 ## Safety

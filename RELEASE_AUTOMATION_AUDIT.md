@@ -10,8 +10,9 @@ Status: `passed`.
 | .github/workflows/release-automation.yml | true |
 | workflow invokes cargo install cargo-dist | true |
 | workflow invokes cargo install release-plz | true |
-| workflow invokes dist plan | true |
-| workflow invokes release-plz update | true |
+| workflow invokes dist plan --allow-dirty | true |
+| workflow invokes GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }} | true |
+| workflow invokes release-plz release --dry-run --allow-dirty --config release-plz.toml | true |
 | workflow invokes cargo run -p xtask -- release-automation-audit | true |
 | no placeholder echo | true |
 | cargo-dist workspace table | true |
