@@ -1,0 +1,1 @@
+M-122 review: promotion now accepts string and structured issue payloads, generated bundles include normalized metadata, and validation passed with fmt, clippy, workspace tests, registry/check/safety gates, and promotion smoke tests.
