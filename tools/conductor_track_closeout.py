@@ -22,6 +22,7 @@ IMPLEMENTED_STATUSES = {
     "completed_scaffold",
     "implemented",
     "scaffolded",
+    "planned_roadmap",
 }
 
 CODEV_REVIEW_OVERRIDES = {
@@ -87,6 +88,8 @@ def find_codev_review(track_id: str, metadata: dict[str, object], title: str) ->
 
 def review_body(track_id: str, metadata: dict[str, object], title: str, codev_review: str | None) -> str:
     status = metadata.get("status", "unknown")
+    is_planned = status == "planned_roadmap"
+    archive_status = "open" if is_planned else "archived"
     capability = metadata.get("capability") or metadata.get("capability_id") or "context"
     codev_line = (
         f"- Codev review: `{codev_review}`."
@@ -122,7 +125,7 @@ def review_body(track_id: str, metadata: dict[str, object], title: str, codev_re
         "## Archive closeout",
         "",
         "- Review status: `reviewed`.",
-        "- Archive status: `archived`.",
+        f"- Archive status: `{archive_status}`.",
         "- Safety: this closeout does not add APFS media writes, raw physical-device writes, mount-write lifecycle, encryption bypass, unsafe code, or production APFS compatibility claims.",
         "- Evidence boundary: scaffolded and synthetic-only tracks remain scaffolded/synthetic-only unless their own specs and external evidence gates say otherwise.",
     ]
@@ -131,9 +134,10 @@ def review_body(track_id: str, metadata: dict[str, object], title: str, codev_re
 
 def update_metadata(metadata: dict[str, object], codev_review: str | None, version: str) -> dict[str, object]:
     updated = dict(metadata)
+    is_planned = updated.get("status") == "planned_roadmap"
     updated["review_status"] = "reviewed"
-    updated["archive_status"] = "archived"
-    updated["archived"] = True
+    updated["archive_status"] = "open" if is_planned else "archived"
+    updated["archived"] = False if is_planned else True
     updated["archive_version"] = version
     updated["archive_evidence"] = "CONDUCTOR_TRACK_CLOSEOUT_AUDIT.md"
     if codev_review:
@@ -177,13 +181,19 @@ def main() -> int:
             metadata = new_metadata
         review_ok = review_path.exists() and "## Archive closeout" in review_path.read_text(encoding="utf-8")
         metadata_reviewed = metadata.get("review_status") == "reviewed"
-        metadata_archived = metadata.get("archive_status") == "archived" and metadata.get("archived") is True
+        is_planned = metadata.get("status") == "planned_roadmap"
+        metadata_archived = (
+            metadata.get("archive_status") == "open" and metadata.get("archived") is False
+            if is_planned
+            else metadata.get("archive_status") == "archived" and metadata.get("archived") is True
+        )
         if not review_ok:
             failures.append(f"{track_id}: missing review.md archive closeout")
         if not metadata_reviewed:
             failures.append(f"{track_id}: metadata review_status is not reviewed")
         if not metadata_archived:
-            failures.append(f"{track_id}: metadata archive_status is not archived")
+            expected = "open" if is_planned else "archived"
+            failures.append(f"{track_id}: metadata archive_status is not {expected}")
         rows.append(
             {
                 "track_id": track_id,

@@ -1,0 +1,14 @@
+{
+  "track_id": "0140-mature-release-readiness-dashboard",
+  "capability": "M-140",
+  "status": "planned_roadmap",
+  "category": "release-governance",
+  "package": "roadmap",
+  "purpose": "Build an evidence-backed mature-release dashboard and recurring release-train process.",
+  "review_status": "reviewed",
+  "archive_status": "open",
+  "archived": false,
+  "archive_version": "0.29.0",
+  "archive_evidence": "CONDUCTOR_TRACK_CLOSEOUT_AUDIT.md",
+  "codev_review": "codev/reviews/140-mature-release-readiness-dashboard-review.md"
+}

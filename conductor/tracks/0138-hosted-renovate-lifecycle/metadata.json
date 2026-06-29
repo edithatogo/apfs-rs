@@ -1,0 +1,14 @@
+{
+  "track_id": "0138-hosted-renovate-lifecycle",
+  "capability": "M-138",
+  "status": "planned_roadmap",
+  "category": "dependency-automation",
+  "package": "roadmap",
+  "purpose": "Enable and validate the hosted Renovate app lifecycle for dependency and action updates.",
+  "review_status": "reviewed",
+  "archive_status": "open",
+  "archived": false,
+  "archive_version": "0.29.0",
+  "archive_evidence": "CONDUCTOR_TRACK_CLOSEOUT_AUDIT.md",
+  "codev_review": "codev/reviews/138-hosted-renovate-lifecycle-review.md"
+}

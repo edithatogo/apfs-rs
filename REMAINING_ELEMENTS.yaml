@@ -476,62 +476,88 @@ implemented_or_scaffolded: &id001
   title: Executed CI logging profiling and dynamic versioning hardening
   category: quality
   status: implemented
+- id: M-120
+  title: Executed Rust workspace validation closeout
+  category: quality
+  status: implemented
 remaining_windows_readonly_mvp:
-- id: MVP-R001
-  title: Compile, lint, test, and fix the current workspace on Rust-enabled machines
-  dependency: Rust-enabled machine
 - id: MVP-R002
+  track: M-121
   title: Generate first real macOS APFS image and manifest
   dependency: macOS
 - id: MVP-R003
+  track: M-122
   title: Run real-fixture feedback loop and convert mismatches into tasks
   dependency: M-012/M-013 and real fixture
 - id: MVP-R004
+  track: M-123
   title: Correct APFS parser offsets/semantics against real APFS data
   dependency: real fixture feedback
 - id: MVP-R005
+  track: M-124
   title: Full checkpoint ring reconstruction
   dependency: corrected parser and real fixture
 - id: MVP-R006
+  track: M-125
   title: Production APFS object-map B-tree traversal
   dependency: corrected checkpoint and B-tree parsing
 - id: MVP-R007
+  track: M-126
   title: Production APFS filesystem tree record decoding and metadata/stat mapping
   dependency: production OMAP traversal
 - id: MVP-R008
+  track: M-127
   title: Production file extent resolution and extraction
   dependency: production filesystem records
 - id: MVP-R009
+  track: M-128
   title: Windows WinFsp read-only mount adapter, smoke tests, and packaging baseline
   dependency: stable read API
 remaining_beyond_mvp:
 - id: POST-R007-PROD
+  track: M-129
   title: Production software-encryption read support
 - id: POST-R010-PROD
+  track: M-130
   title: Execute signed release, SBOM, provenance, installer, and winget publication
 - id: POST-R011-PROD
+  track: M-131
   title: Production Linux/macOS/ChromeOS/Android adapters and platform tests
 - id: POST-R015-PROD
+  track: M-132
   title: Execute image-only write lab with crash-injection evidence
 - id: POST-R016
+  track: M-133
   title: Windows write beta
 - id: POST-R017
+  track: M-134
   title: Repair
 - id: POST-R018
+  track: M-135
   title: Format
 - id: POST-R019
+  track: M-136
   title: Long-running fuzz/property/mutation/coverage hardening on CI
+- id: ADMIN-R001
+  track: M-137
+  title: Branch protection and required-check governance
+- id: ADMIN-R002
+  track: M-138
+  title: Hosted Renovate lifecycle and dependency update governance
+- id: ADMIN-R003
+  track: M-139
+  title: cargo-vet and dependency policy enforcement maturation
+- id: ADMIN-R004
+  track: M-140
+  title: Mature release readiness dashboard and release train
 current_environment_completable_required: 0
 implemented: *id001
 summary:
-  implemented_or_scaffolded: 119
-  remaining_overall: 8
-  remaining_windows_readonly_mvp: 9
-  remaining_total_including_mvp_blockers: 17
+  implemented_or_scaffolded: 120
+  remaining_overall: 12
+  remaining_windows_readonly_mvp: 8
+  remaining_total_including_mvp_blockers: 20
   current_environment_completable_required: 0
   required_current_environment_items_remaining: 0
-  note: v0.29.0 adds GitHub Actions hardening, cargo-vet/supply-chain policy, provenance,
-    release automation, Astro 7 docs hardening, and bleeding-edge repo audit scaffolds;
-    M-119 promotes CI, logging, profiling, and dynamic versioning checks into executed
-    local/CI surfaces. Production blockers still require Rust/macOS/Windows execution.
-updated: '2026-06-25'
+  note: M-120 records executed Rust workspace validation. M-121 through M-140 create reviewed open roadmap tracks for the remaining MVP, post-MVP, and mature-release hardening work. Production blockers still require macOS, Windows, platform, release, admin, and long-running CI execution.
+updated: '2026-06-30'

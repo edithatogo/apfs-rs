@@ -2,7 +2,7 @@
 
 Current version: `0.29.0`
 
-Track count: `142`
+Track count: `163`
 
 - `0000-project-context` —  — 
 - `0001-m001-container-inspect` —  — 
@@ -154,3 +154,28 @@ Track count: `142`
 - `0117-benchmark-regression-and-codspeed-readiness` — M-117 — Benchmark regression and optional CodSpeed readiness
 - `0118-bleeding-edge-repo-hardening-audit` — M-118 — Bleeding-edge repo hardening audit aggregator
 - `0119-executed-ci-logging-profiling-versioning` — M-119 — Executed CI, logging, profiling, and dynamic versioning hardening
+
+
+## Mature Release Roadmap Tracks
+
+- `0120-executed-rust-workspace-validation` — M-120 — Executed Rust workspace validation closeout
+- `0121-real-macos-apfs-fixture-execution` — M-121 — Real macOS APFS fixture execution
+- `0122-real-fixture-feedback-promotion` — M-122 — Real fixture feedback promotion
+- `0123-real-apfs-parser-semantics-correction` — M-123 — Real APFS parser semantics correction
+- `0124-production-checkpoint-ring-reconstruction` — M-124 — Production checkpoint ring reconstruction
+- `0125-production-omap-btree-traversal` — M-125 — Production object-map B-tree traversal
+- `0126-production-filesystem-tree-decoding` — M-126 — Production filesystem tree decoding and metadata mapping
+- `0127-production-file-extent-extraction` — M-127 — Production file extent resolution and extraction
+- `0128-winfsp-readonly-mount-adapter` — M-128 — Windows WinFsp read-only mount adapter and packaging
+- `0129-production-software-encryption-read` — M-129 — Production software-encryption read support
+- `0130-signed-release-publication` — M-130 — Signed release SBOM provenance installer and winget publication
+- `0131-cross-platform-readonly-adapters` — M-131 — Linux macOS ChromeOS Android read-only adapters
+- `0132-image-only-write-lab-crash-evidence` — M-132 — Image-only write lab crash-injection evidence
+- `0133-windows-write-beta-governance` — M-133 — Windows write beta governance
+- `0134-apfs-repair-governance` — M-134 — APFS repair governance and refusal model
+- `0135-apfs-format-governance` — M-135 — APFS format governance and refusal model
+- `0136-long-running-hardening-ci` — M-136 — Long-running fuzz property mutation coverage hardening
+- `0137-branch-protection-admin-readiness` — M-137 — Branch protection and required-check governance
+- `0138-hosted-renovate-lifecycle` — M-138 — Hosted Renovate lifecycle and dependency update governance
+- `0139-cargo-vet-dependency-policy-enforcement` — M-139 — cargo-vet and dependency policy enforcement maturation
+- `0140-mature-release-readiness-dashboard` — M-140 — Mature release readiness dashboard and release train

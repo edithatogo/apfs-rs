@@ -190,3 +190,30 @@ Added M-094 through M-101 for strict CI/CD, >=90% coverage configuration, unit/i
 - `0117-benchmark-regression-and-codspeed-readiness` — M-117 — Benchmark regression and optional CodSpeed readiness: added in v0.29.0.
 - `0118-bleeding-edge-repo-hardening-audit` — M-118 — Bleeding-edge repo hardening audit aggregator: added in v0.29.0.
 - `0119-executed-ci-logging-profiling-versioning` — M-119 — Executed CI, logging, profiling, and dynamic versioning hardening: added after v0.29.0 to promote hardening scaffolds into actively used CI/runtime surfaces.
+
+
+## Mature release roadmap through M-140
+
+Added M-120 through M-140 to make the remaining roadmap explicit through a mature, hardened release. M-120 records the now-executed Rust workspace validation closeout. M-121 through M-140 remain planned roadmap tracks covering real macOS fixtures, production APFS traversal/extraction, Windows and cross-platform adapters, release publication, write-lab governance, repair/format governance, long-running hardening, branch protection, hosted Renovate, dependency-policy enforcement, and release readiness dashboarding.
+
+- `M-120` `0120-executed-rust-workspace-validation` — Executed Rust workspace validation closeout: roadmap track added after M-119.
+- `M-121` `0121-real-macos-apfs-fixture-execution` — Real macOS APFS fixture execution: roadmap track added after M-119.
+- `M-122` `0122-real-fixture-feedback-promotion` — Real fixture feedback promotion: roadmap track added after M-119.
+- `M-123` `0123-real-apfs-parser-semantics-correction` — Real APFS parser semantics correction: roadmap track added after M-119.
+- `M-124` `0124-production-checkpoint-ring-reconstruction` — Production checkpoint ring reconstruction: roadmap track added after M-119.
+- `M-125` `0125-production-omap-btree-traversal` — Production object-map B-tree traversal: roadmap track added after M-119.
+- `M-126` `0126-production-filesystem-tree-decoding` — Production filesystem tree decoding and metadata mapping: roadmap track added after M-119.
+- `M-127` `0127-production-file-extent-extraction` — Production file extent resolution and extraction: roadmap track added after M-119.
+- `M-128` `0128-winfsp-readonly-mount-adapter` — Windows WinFsp read-only mount adapter and packaging: roadmap track added after M-119.
+- `M-129` `0129-production-software-encryption-read` — Production software-encryption read support: roadmap track added after M-119.
+- `M-130` `0130-signed-release-publication` — Signed release SBOM provenance installer and winget publication: roadmap track added after M-119.
+- `M-131` `0131-cross-platform-readonly-adapters` — Linux macOS ChromeOS Android read-only adapters: roadmap track added after M-119.
+- `M-132` `0132-image-only-write-lab-crash-evidence` — Image-only write lab crash-injection evidence: roadmap track added after M-119.
+- `M-133` `0133-windows-write-beta-governance` — Windows write beta governance: roadmap track added after M-119.
+- `M-134` `0134-apfs-repair-governance` — APFS repair governance and refusal model: roadmap track added after M-119.
+- `M-135` `0135-apfs-format-governance` — APFS format governance and refusal model: roadmap track added after M-119.
+- `M-136` `0136-long-running-hardening-ci` — Long-running fuzz property mutation coverage hardening: roadmap track added after M-119.
+- `M-137` `0137-branch-protection-admin-readiness` — Branch protection and required-check governance: roadmap track added after M-119.
+- `M-138` `0138-hosted-renovate-lifecycle` — Hosted Renovate lifecycle and dependency update governance: roadmap track added after M-119.
+- `M-139` `0139-cargo-vet-dependency-policy-enforcement` — cargo-vet and dependency policy enforcement maturation: roadmap track added after M-119.
+- `M-140` `0140-mature-release-readiness-dashboard` — Mature release readiness dashboard and release train: roadmap track added after M-119.

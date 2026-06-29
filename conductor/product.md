@@ -40,4 +40,4 @@ The project succeeds when every supported APFS claim is backed by fixture eviden
 
 ## Current ledger note
 
-The Conductor history now spans M-001 through M-119, including repository hardening, quality evidence, dynamic versioning, redacted logging, and read-only APFS scaffolds. Production APFS compatibility claims still require the relevant local, CI, macOS, or Windows evidence gates.
+The Conductor history now spans M-001 through M-140, including repository hardening, quality evidence, dynamic versioning, redacted logging, read-only APFS scaffolds, and planned mature-release roadmap tracks. Production APFS compatibility claims still require the relevant local, CI, macOS, or Windows evidence gates.

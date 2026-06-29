@@ -1,0 +1,14 @@
+{
+  "track_id": "0124-production-checkpoint-ring-reconstruction",
+  "capability": "M-124",
+  "status": "planned_roadmap",
+  "category": "core-read",
+  "package": "roadmap",
+  "purpose": "Implement full APFS checkpoint ring reconstruction from validated checkpoint descriptors and maps.",
+  "review_status": "reviewed",
+  "archive_status": "open",
+  "archived": false,
+  "archive_version": "0.29.0",
+  "archive_evidence": "CONDUCTOR_TRACK_CLOSEOUT_AUDIT.md",
+  "codev_review": "codev/reviews/124-production-checkpoint-ring-reconstruction-review.md"
+}

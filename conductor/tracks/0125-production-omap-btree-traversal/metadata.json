@@ -1,0 +1,14 @@
+{
+  "track_id": "0125-production-omap-btree-traversal",
+  "capability": "M-125",
+  "status": "planned_roadmap",
+  "category": "core-read",
+  "package": "roadmap",
+  "purpose": "Implement production APFS OMAP B-tree traversal through the resolver facade.",
+  "review_status": "reviewed",
+  "archive_status": "open",
+  "archived": false,
+  "archive_version": "0.29.0",
+  "archive_evidence": "CONDUCTOR_TRACK_CLOSEOUT_AUDIT.md",
+  "codev_review": "codev/reviews/125-production-omap-btree-traversal-review.md"
+}

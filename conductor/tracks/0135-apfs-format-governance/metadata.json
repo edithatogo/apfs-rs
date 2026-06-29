@@ -1,0 +1,14 @@
+{
+  "track_id": "0135-apfs-format-governance",
+  "capability": "M-135",
+  "status": "planned_roadmap",
+  "category": "format",
+  "package": "roadmap",
+  "purpose": "Define APFS formatting scope, refusal model, evidence gates, and future implementation prerequisites.",
+  "review_status": "reviewed",
+  "archive_status": "open",
+  "archived": false,
+  "archive_version": "0.29.0",
+  "archive_evidence": "CONDUCTOR_TRACK_CLOSEOUT_AUDIT.md",
+  "codev_review": "codev/reviews/135-apfs-format-governance-review.md"
+}

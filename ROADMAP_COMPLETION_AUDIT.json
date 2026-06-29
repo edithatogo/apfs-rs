@@ -1,0 +1,11 @@
+{
+  "schema_version": "0.29.0",
+  "status": "roadmap_not_fully_implemented_tracks_created",
+  "implemented_or_scaffolded": 120,
+  "remaining_windows_readonly_mvp": 8,
+  "remaining_post_mvp_and_mature_release": 12,
+  "remaining_total": 20,
+  "closed_track_range": "M-001 through M-120",
+  "open_roadmap_track_range": "M-121 through M-140",
+  "note": "The mature release roadmap is not fully implemented. Reviewed Conductor and Codev tracks now exist for every remaining item through mature hardened release."
+}

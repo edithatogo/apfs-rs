@@ -1,0 +1,14 @@
+{
+  "track_id": "0139-cargo-vet-dependency-policy-enforcement",
+  "capability": "M-139",
+  "status": "planned_roadmap",
+  "category": "supply-chain",
+  "package": "roadmap",
+  "purpose": "Promote cargo-vet/cargo-deny dependency policy from audit scaffolds to enforced review gates.",
+  "review_status": "reviewed",
+  "archive_status": "open",
+  "archived": false,
+  "archive_version": "0.29.0",
+  "archive_evidence": "CONDUCTOR_TRACK_CLOSEOUT_AUDIT.md",
+  "codev_review": "codev/reviews/139-cargo-vet-dependency-policy-enforcement-review.md"
+}

@@ -1,7 +1,7 @@
 {
   "schema_version": "0.29.0",
   "status": "passed",
-  "track_count": 142,
+  "track_count": 163,
   "failures": [],
   "tracks": [
     {
@@ -1059,6 +1059,174 @@
       "review": "conductor/tracks/0119-executed-ci-logging-profiling-versioning/review.md",
       "archive_status": "archived",
       "codev_review": "codev/reviews/119-executed-ci-logging-profiling-versioning-review.md"
+    },
+    {
+      "track_id": "0120-executed-rust-workspace-validation",
+      "capability": "M-120",
+      "status": "implemented",
+      "review": "conductor/tracks/0120-executed-rust-workspace-validation/review.md",
+      "archive_status": "archived",
+      "codev_review": "codev/reviews/120-executed-rust-workspace-validation-review.md"
+    },
+    {
+      "track_id": "0121-real-macos-apfs-fixture-execution",
+      "capability": "M-121",
+      "status": "planned_roadmap",
+      "review": "conductor/tracks/0121-real-macos-apfs-fixture-execution/review.md",
+      "archive_status": "open",
+      "codev_review": "codev/reviews/121-real-macos-apfs-fixture-execution-review.md"
+    },
+    {
+      "track_id": "0122-real-fixture-feedback-promotion",
+      "capability": "M-122",
+      "status": "planned_roadmap",
+      "review": "conductor/tracks/0122-real-fixture-feedback-promotion/review.md",
+      "archive_status": "open",
+      "codev_review": "codev/reviews/122-real-fixture-feedback-promotion-review.md"
+    },
+    {
+      "track_id": "0123-real-apfs-parser-semantics-correction",
+      "capability": "M-123",
+      "status": "planned_roadmap",
+      "review": "conductor/tracks/0123-real-apfs-parser-semantics-correction/review.md",
+      "archive_status": "open",
+      "codev_review": "codev/reviews/123-real-apfs-parser-semantics-correction-review.md"
+    },
+    {
+      "track_id": "0124-production-checkpoint-ring-reconstruction",
+      "capability": "M-124",
+      "status": "planned_roadmap",
+      "review": "conductor/tracks/0124-production-checkpoint-ring-reconstruction/review.md",
+      "archive_status": "open",
+      "codev_review": "codev/reviews/124-production-checkpoint-ring-reconstruction-review.md"
+    },
+    {
+      "track_id": "0125-production-omap-btree-traversal",
+      "capability": "M-125",
+      "status": "planned_roadmap",
+      "review": "conductor/tracks/0125-production-omap-btree-traversal/review.md",
+      "archive_status": "open",
+      "codev_review": "codev/reviews/125-production-omap-btree-traversal-review.md"
+    },
+    {
+      "track_id": "0126-production-filesystem-tree-decoding",
+      "capability": "M-126",
+      "status": "planned_roadmap",
+      "review": "conductor/tracks/0126-production-filesystem-tree-decoding/review.md",
+      "archive_status": "open",
+      "codev_review": "codev/reviews/126-production-filesystem-tree-decoding-review.md"
+    },
+    {
+      "track_id": "0127-production-file-extent-extraction",
+      "capability": "M-127",
+      "status": "planned_roadmap",
+      "review": "conductor/tracks/0127-production-file-extent-extraction/review.md",
+      "archive_status": "open",
+      "codev_review": "codev/reviews/127-production-file-extent-extraction-review.md"
+    },
+    {
+      "track_id": "0128-winfsp-readonly-mount-adapter",
+      "capability": "M-128",
+      "status": "planned_roadmap",
+      "review": "conductor/tracks/0128-winfsp-readonly-mount-adapter/review.md",
+      "archive_status": "open",
+      "codev_review": "codev/reviews/128-winfsp-readonly-mount-adapter-review.md"
+    },
+    {
+      "track_id": "0129-production-software-encryption-read",
+      "capability": "M-129",
+      "status": "planned_roadmap",
+      "review": "conductor/tracks/0129-production-software-encryption-read/review.md",
+      "archive_status": "open",
+      "codev_review": "codev/reviews/129-production-software-encryption-read-review.md"
+    },
+    {
+      "track_id": "0130-signed-release-publication",
+      "capability": "M-130",
+      "status": "planned_roadmap",
+      "review": "conductor/tracks/0130-signed-release-publication/review.md",
+      "archive_status": "open",
+      "codev_review": "codev/reviews/130-signed-release-publication-review.md"
+    },
+    {
+      "track_id": "0131-cross-platform-readonly-adapters",
+      "capability": "M-131",
+      "status": "planned_roadmap",
+      "review": "conductor/tracks/0131-cross-platform-readonly-adapters/review.md",
+      "archive_status": "open",
+      "codev_review": "codev/reviews/131-cross-platform-readonly-adapters-review.md"
+    },
+    {
+      "track_id": "0132-image-only-write-lab-crash-evidence",
+      "capability": "M-132",
+      "status": "planned_roadmap",
+      "review": "conductor/tracks/0132-image-only-write-lab-crash-evidence/review.md",
+      "archive_status": "open",
+      "codev_review": "codev/reviews/132-image-only-write-lab-crash-evidence-review.md"
+    },
+    {
+      "track_id": "0133-windows-write-beta-governance",
+      "capability": "M-133",
+      "status": "planned_roadmap",
+      "review": "conductor/tracks/0133-windows-write-beta-governance/review.md",
+      "archive_status": "open",
+      "codev_review": "codev/reviews/133-windows-write-beta-governance-review.md"
+    },
+    {
+      "track_id": "0134-apfs-repair-governance",
+      "capability": "M-134",
+      "status": "planned_roadmap",
+      "review": "conductor/tracks/0134-apfs-repair-governance/review.md",
+      "archive_status": "open",
+      "codev_review": "codev/reviews/134-apfs-repair-governance-review.md"
+    },
+    {
+      "track_id": "0135-apfs-format-governance",
+      "capability": "M-135",
+      "status": "planned_roadmap",
+      "review": "conductor/tracks/0135-apfs-format-governance/review.md",
+      "archive_status": "open",
+      "codev_review": "codev/reviews/135-apfs-format-governance-review.md"
+    },
+    {
+      "track_id": "0136-long-running-hardening-ci",
+      "capability": "M-136",
+      "status": "planned_roadmap",
+      "review": "conductor/tracks/0136-long-running-hardening-ci/review.md",
+      "archive_status": "open",
+      "codev_review": "codev/reviews/136-long-running-hardening-ci-review.md"
+    },
+    {
+      "track_id": "0137-branch-protection-admin-readiness",
+      "capability": "M-137",
+      "status": "planned_roadmap",
+      "review": "conductor/tracks/0137-branch-protection-admin-readiness/review.md",
+      "archive_status": "open",
+      "codev_review": "codev/reviews/137-branch-protection-admin-readiness-review.md"
+    },
+    {
+      "track_id": "0138-hosted-renovate-lifecycle",
+      "capability": "M-138",
+      "status": "planned_roadmap",
+      "review": "conductor/tracks/0138-hosted-renovate-lifecycle/review.md",
+      "archive_status": "open",
+      "codev_review": "codev/reviews/138-hosted-renovate-lifecycle-review.md"
+    },
+    {
+      "track_id": "0139-cargo-vet-dependency-policy-enforcement",
+      "capability": "M-139",
+      "status": "planned_roadmap",
+      "review": "conductor/tracks/0139-cargo-vet-dependency-policy-enforcement/review.md",
+      "archive_status": "open",
+      "codev_review": "codev/reviews/139-cargo-vet-dependency-policy-enforcement-review.md"
+    },
+    {
+      "track_id": "0140-mature-release-readiness-dashboard",
+      "capability": "M-140",
+      "status": "planned_roadmap",
+      "review": "conductor/tracks/0140-mature-release-readiness-dashboard/review.md",
+      "archive_status": "open",
+      "codev_review": "codev/reviews/140-mature-release-readiness-dashboard-review.md"
     },
     {
       "track_id": "094-strict-ci-quality-gates-90-coverage-policy",

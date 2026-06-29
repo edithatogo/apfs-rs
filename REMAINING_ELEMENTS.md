@@ -4,38 +4,41 @@ Document version: 0.28.0
 
 ## Counts
 
-- Implemented/scaffolded elements: **119**
-- Remaining overall production elements: **8**
-- Remaining Windows read-only MVP production blockers: **9**
-- Total remaining including MVP blockers: **17**
+- Implemented/scaffolded elements: **120**
+- Remaining overall production/admin elements: **12**
+- Remaining Windows read-only MVP production blockers: **8**
+- Total remaining including MVP blockers: **20**
 - Current-environment required items remaining: **0**
 
 ## Remaining Windows read-only MVP production blockers
 
-| ID | Title | Dependency |
+| ID | Track | Title | Dependency |
+|---|---|---|---|
+| MVP-R002 | M-121 | Generate first real macOS APFS image and manifest | macOS |
+| MVP-R003 | M-122 | Run real-fixture feedback loop and convert mismatches into tasks | M-012/M-013 and real fixture |
+| MVP-R004 | M-123 | Correct APFS parser offsets/semantics against real APFS data | real fixture feedback |
+| MVP-R005 | M-124 | Full checkpoint ring reconstruction | corrected parser and real fixture |
+| MVP-R006 | M-125 | Production APFS object-map B-tree traversal | corrected checkpoint and B-tree parsing |
+| MVP-R007 | M-126 | Production APFS filesystem tree record decoding and metadata/stat mapping | production OMAP traversal |
+| MVP-R008 | M-127 | Production file extent resolution and extraction | production filesystem records |
+| MVP-R009 | M-128 | Windows WinFsp read-only mount adapter, smoke tests, and packaging baseline | stable read API |
+
+## Remaining broader/post-MVP production and mature-release elements
+
+| ID | Track | Title |
 |---|---|---|
-| MVP-R001 | Compile, lint, test, and fix the current workspace on Rust-enabled machines | Rust-enabled machine |
-| MVP-R002 | Generate first real macOS APFS image and manifest | macOS |
-| MVP-R003 | Run real-fixture feedback loop and convert mismatches into tasks | M-012/M-013 and real fixture |
-| MVP-R004 | Correct APFS parser offsets/semantics against real APFS data | real fixture feedback |
-| MVP-R005 | Full checkpoint ring reconstruction | corrected parser and real fixture |
-| MVP-R006 | Production APFS object-map B-tree traversal | corrected checkpoint and B-tree parsing |
-| MVP-R007 | Production APFS filesystem tree record decoding and metadata/stat mapping | production OMAP traversal |
-| MVP-R008 | Production file extent resolution and extraction | production filesystem records |
-| MVP-R009 | Windows WinFsp read-only mount adapter, smoke tests, and packaging baseline | stable read API |
-
-## Remaining broader/post-MVP production elements
-
-| ID | Title |
-|---|---|
-| POST-R007-PROD | Production software-encryption read support |
-| POST-R010-PROD | Execute signed release, SBOM, provenance, installer, and winget publication |
-| POST-R011-PROD | Production Linux/macOS/ChromeOS/Android adapters and platform tests |
-| POST-R015-PROD | Execute image-only write lab with crash-injection evidence |
-| POST-R016 | Windows write beta |
-| POST-R017 | Repair |
-| POST-R018 | Format |
-| POST-R019 | Long-running fuzz/property/mutation/coverage hardening on CI |
+| POST-R007-PROD | M-129 | Production software-encryption read support |
+| POST-R010-PROD | M-130 | Execute signed release, SBOM, provenance, installer, and winget publication |
+| POST-R011-PROD | M-131 | Production Linux/macOS/ChromeOS/Android adapters and platform tests |
+| POST-R015-PROD | M-132 | Execute image-only write lab with crash-injection evidence |
+| POST-R016 | M-133 | Windows write beta |
+| POST-R017 | M-134 | Repair |
+| POST-R018 | M-135 | Format |
+| POST-R019 | M-136 | Long-running fuzz/property/mutation/coverage hardening on CI |
+| ADMIN-R001 | M-137 | Branch protection and required-check governance |
+| ADMIN-R002 | M-138 | Hosted Renovate lifecycle and dependency update governance |
+| ADMIN-R003 | M-139 | cargo-vet and dependency policy enforcement maturation |
+| ADMIN-R004 | M-140 | Mature release readiness dashboard and release train |
 
 ## Recent implemented or scaffolded elements
 
@@ -71,6 +74,7 @@ Document version: 0.28.0
 | M-117 | Benchmark regression and optional CodSpeed readiness | quality | implemented_python |
 | M-118 | Bleeding-edge repo hardening audit aggregator | quality | implemented_python |
 | M-119 | Executed CI logging profiling and dynamic versioning hardening | quality | implemented |
+| M-120 | Executed Rust workspace validation closeout | quality | implemented |
 
 ## Current-environment conclusion
 
@@ -85,3 +89,8 @@ Added bleeding-edge repo hardening and automation scaffolds M-110 through M-118.
 
 Added M-119 to execute dynamic versioning, redacted CLI logging, profiling audits,
 release automation dry-runs, and Astro documentation updates in local and CI gates.
+
+
+## Mature release roadmap update
+
+Added Conductor/Codev tracks M-121 through M-140 for every remaining MVP, post-MVP, and mature-release governance item. These tracks are reviewed and open, not implemented. M-120 closes the Rust workspace validation blocker with executed local and GitHub Actions evidence.

@@ -1,0 +1,14 @@
+{
+  "track_id": "0137-branch-protection-admin-readiness",
+  "capability": "M-137",
+  "status": "planned_roadmap",
+  "category": "governance",
+  "package": "roadmap",
+  "purpose": "Configure branch protection and required checks for the hardened workflows.",
+  "review_status": "reviewed",
+  "archive_status": "open",
+  "archived": false,
+  "archive_version": "0.29.0",
+  "archive_evidence": "CONDUCTOR_TRACK_CLOSEOUT_AUDIT.md",
+  "codev_review": "codev/reviews/137-branch-protection-admin-readiness-review.md"
+}

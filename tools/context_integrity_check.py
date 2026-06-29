@@ -44,7 +44,10 @@ def main() -> int:
             fail(f"track_id mismatch for {track}")
         if metadata.get("review_status") != "reviewed":
             fail(f"{track} metadata review_status is not reviewed")
-        if metadata.get("archive_status") != "archived" or metadata.get("archived") is not True:
+        if metadata.get("status") == "planned_roadmap":
+            if metadata.get("archive_status") != "open" or metadata.get("archived") is not False:
+                fail(f"{track} planned roadmap metadata archive_status is not open")
+        elif metadata.get("archive_status") != "archived" or metadata.get("archived") is not True:
             fail(f"{track} metadata archive_status is not archived")
         if "## Archive closeout" not in (base / "review.md").read_text(encoding="utf-8"):
             fail(f"{track} review.md missing Archive closeout section")

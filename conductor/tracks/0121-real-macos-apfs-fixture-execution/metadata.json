@@ -1,0 +1,14 @@
+{
+  "track_id": "0121-real-macos-apfs-fixture-execution",
+  "capability": "M-121",
+  "status": "planned_roadmap",
+  "category": "fixture-readiness",
+  "package": "roadmap",
+  "purpose": "Generate the first real Apple-created APFS image fixture, redacted manifest, and oracle output on macOS.",
+  "review_status": "reviewed",
+  "archive_status": "open",
+  "archived": false,
+  "archive_version": "0.29.0",
+  "archive_evidence": "CONDUCTOR_TRACK_CLOSEOUT_AUDIT.md",
+  "codev_review": "codev/reviews/121-real-macos-apfs-fixture-execution-review.md"
+}

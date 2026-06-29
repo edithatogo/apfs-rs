@@ -1,0 +1,14 @@
+{
+  "track_id": "0126-production-filesystem-tree-decoding",
+  "capability": "M-126",
+  "status": "planned_roadmap",
+  "category": "core-read",
+  "package": "roadmap",
+  "purpose": "Decode production APFS filesystem tree records and map file, directory, stat, and metadata fields.",
+  "review_status": "reviewed",
+  "archive_status": "open",
+  "archived": false,
+  "archive_version": "0.29.0",
+  "archive_evidence": "CONDUCTOR_TRACK_CLOSEOUT_AUDIT.md",
+  "codev_review": "codev/reviews/126-production-filesystem-tree-decoding-review.md"
+}

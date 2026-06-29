@@ -1,0 +1,14 @@
+{
+  "track_id": "0136-long-running-hardening-ci",
+  "capability": "M-136",
+  "status": "planned_roadmap",
+  "category": "quality",
+  "package": "roadmap",
+  "purpose": "Run and enforce long-running fuzz, property, mutation, coverage, and profiling hardening in CI.",
+  "review_status": "reviewed",
+  "archive_status": "open",
+  "archived": false,
+  "archive_version": "0.29.0",
+  "archive_evidence": "CONDUCTOR_TRACK_CLOSEOUT_AUDIT.md",
+  "codev_review": "codev/reviews/136-long-running-hardening-ci-review.md"
+}

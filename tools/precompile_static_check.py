@@ -157,7 +157,10 @@ def check_conductor_tracks() -> None:
             fail(f"Conductor track_id mismatch in {base.relative_to(ROOT)}")
         if metadata.get("review_status") != "reviewed":
             fail(f"Conductor track {track_id} is not reviewed")
-        if metadata.get("archive_status") != "archived" or metadata.get("archived") is not True:
+        if metadata.get("status") == "planned_roadmap":
+            if metadata.get("archive_status") != "open" or metadata.get("archived") is not False:
+                fail(f"Conductor planned roadmap track {track_id} is not open")
+        elif metadata.get("archive_status") != "archived" or metadata.get("archived") is not True:
             fail(f"Conductor track {track_id} is not archived")
         if "## Archive closeout" not in (base / "review.md").read_text(encoding="utf-8"):
             fail(f"Conductor track {track_id} review.md missing Archive closeout")
