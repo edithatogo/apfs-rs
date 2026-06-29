@@ -1079,9 +1079,9 @@
     {
       "track_id": "0122-real-fixture-feedback-promotion",
       "capability": "M-122",
-      "status": "planned_roadmap",
+      "status": "implemented",
       "review": "conductor/tracks/0122-real-fixture-feedback-promotion/review.md",
-      "archive_status": "open",
+      "archive_status": "archived",
       "codev_review": "codev/reviews/122-real-fixture-feedback-promotion-review.md"
     },
     {

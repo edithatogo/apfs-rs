@@ -484,11 +484,11 @@ implemented_or_scaffolded: &id001
   title: Real macOS APFS fixture execution closeout
   category: fixture-readiness
   status: implemented
+- id: M-122
+  title: Real fixture feedback promotion
+  category: fixture-readiness
+  status: implemented
 remaining_windows_readonly_mvp:
-- id: MVP-R003
-  track: M-122
-  title: Run real-fixture feedback loop and convert mismatches into tasks
-  dependency: M-012/M-013 and real fixture
 - id: MVP-R004
   track: M-123
   title: Correct APFS parser offsets/semantics against real APFS data
@@ -553,11 +553,11 @@ remaining_beyond_mvp:
 current_environment_completable_required: 0
 implemented: *id001
 summary:
-  implemented_or_scaffolded: 121
-  remaining_overall: 11
-  remaining_windows_readonly_mvp: 7
-  remaining_total_including_mvp_blockers: 19
+  implemented_or_scaffolded: 122
+  remaining_overall: 10
+  remaining_windows_readonly_mvp: 6
+  remaining_total_including_mvp_blockers: 18
   current_environment_completable_required: 0
   required_current_environment_items_remaining: 0
-  note: M-120 records executed Rust workspace validation. M-121 records executed real macOS fixture evidence. M-122 through M-140 create reviewed open roadmap tracks for the remaining MVP, post-MVP, and mature-release hardening work. Production blockers still require macOS, Windows, platform, release, admin, and long-running CI execution.
+  note: M-120 records executed Rust workspace validation. M-121 records executed real macOS fixture evidence. M-122 records executed real-fixture feedback promotion. M-123 through M-140 create reviewed open roadmap tracks for the remaining MVP, post-MVP, and mature-release hardening work. Production blockers still require macOS, Windows, platform, release, admin, and long-running CI execution.
 updated: '2026-06-30'

@@ -1,6 +1,6 @@
 # Spec M-122: Real fixture feedback promotion
 
-Status: `planned_roadmap`.
+Status: `implemented`.
 
 ## Objective
 

@@ -194,11 +194,11 @@ Added M-094 through M-101 for strict CI/CD, >=90% coverage configuration, unit/i
 
 ## Mature release roadmap through M-140
 
-Added M-120 through M-140 to make the remaining roadmap explicit through a mature, hardened release. M-120 records the now-executed Rust workspace validation closeout. M-121 records the now-executed real macOS fixture evidence closeout. M-122 through M-140 remain planned roadmap tracks covering real-fixture feedback promotion, production APFS traversal/extraction, Windows and cross-platform adapters, release publication, write-lab governance, repair/format governance, long-running hardening, branch protection, hosted Renovate, dependency-policy enforcement, and release readiness dashboarding.
+Added M-120 through M-140 to make the remaining roadmap explicit through a mature, hardened release. M-120 records the now-executed Rust workspace validation closeout. M-121 records the now-executed real macOS fixture evidence closeout. M-122 records the now-executed real-fixture feedback promotion closeout. M-123 through M-140 remain planned roadmap tracks covering production APFS traversal/extraction, Windows and cross-platform adapters, release publication, write-lab governance, repair/format governance, long-running hardening, branch protection, hosted Renovate, dependency-policy enforcement, and release readiness dashboarding.
 
 - `M-120` `0120-executed-rust-workspace-validation` — Executed Rust workspace validation closeout: roadmap track added after M-119.
 - `M-121` `0121-real-macos-apfs-fixture-execution` — Real macOS APFS fixture execution: roadmap track added after M-119 and later executed with a generated macOS APFS sparse image, manifest, hashes, oracle output, and feedback report.
-- `M-122` `0122-real-fixture-feedback-promotion` — Real fixture feedback promotion: roadmap track added after M-119.
+- `M-122` `0122-real-fixture-feedback-promotion` — Real fixture feedback promotion: roadmap track added after M-119 and later executed to normalize real-fixture feedback into generated Codev/Conductor task bundles.
 - `M-123` `0123-real-apfs-parser-semantics-correction` — Real APFS parser semantics correction: roadmap track added after M-119.
 - `M-124` `0124-production-checkpoint-ring-reconstruction` — Production checkpoint ring reconstruction: roadmap track added after M-119.
 - `M-125` `0125-production-omap-btree-traversal` — Production object-map B-tree traversal: roadmap track added after M-119.

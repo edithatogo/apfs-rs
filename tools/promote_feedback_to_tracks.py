@@ -50,9 +50,26 @@ def issue_list(report: dict[str, Any]) -> list[dict[str, Any]]:
     if not isinstance(issues, list):
         return []
     out: list[dict[str, Any]] = []
-    for issue in issues:
+    for index, issue in enumerate(issues, start=1):
         if isinstance(issue, dict):
-            out.append(issue)
+            normalized = {
+                "severity": str(issue.get("severity") or "error"),
+                "field": str(issue.get("field") or issue.get("path") or f"issue-{index:04}"),
+                "message": str(issue.get("message") or issue.get("title") or "No message supplied"),
+                "suggested_track": str(issue.get("suggested_track") or "0012-real-fixture-feedback-loop"),
+                "title": str(issue.get("title") or issue.get("field") or issue.get("message") or "real fixture mismatch"),
+                "raw": issue,
+            }
+            out.append(normalized)
+        elif isinstance(issue, str):
+            out.append({
+                "severity": "error",
+                "field": f"issue-{index:04}",
+                "message": issue,
+                "suggested_track": "0012-real-fixture-feedback-loop",
+                "title": issue,
+                "raw": issue,
+            })
     return out
 
 

@@ -4,7 +4,7 @@ Version: 0.29.0
 
 Before changing this repository, read `conductor/product.md`, `conductor/tech-stack.md`, `conductor/workflow.md`, `conductor/tracks.md`, `conductor/history.md`, the active track, and matching Codev spec/plan/review.
 
-Current historical ledger: 163 Conductor track directories through M-140, with M-121 now executed and M-122 through M-140 remaining open roadmap tracks.
+Current historical ledger: 163 Conductor track directories through M-140, with M-121 and M-122 now executed and M-123 through M-140 remaining open roadmap tracks.
 
 Rules:
 
@@ -22,4 +22,4 @@ Before changing test, CI, profiling, or docs-site configuration, read conductor 
 
 ## v0.29.0 note
 
-Before modifying CI/CD, release, docs, or supply-chain automation, read the v0.29.0 tracks `0110` through `0118` and mature-release roadmap tracks `0120` through `0140` and preserve the configured-versus-executed evidence distinction. Track `0121-real-macos-apfs-fixture-execution` now records executed macOS fixture evidence; keep its follow-up boundary distinct from `0122` through `0140`.
+Before modifying CI/CD, release, docs, or supply-chain automation, read the v0.29.0 tracks `0110` through `0118` and mature-release roadmap tracks `0120` through `0140` and preserve the configured-versus-executed evidence distinction. Tracks `0121-real-macos-apfs-fixture-execution` and `0122-real-fixture-feedback-promotion` now record executed evidence; keep their follow-up boundary distinct from `0123` through `0140`.

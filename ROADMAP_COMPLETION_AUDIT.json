@@ -1,11 +1,11 @@
 {
   "schema_version": "0.29.0",
   "status": "roadmap_not_fully_implemented_tracks_created",
-  "implemented_or_scaffolded": 121,
-  "remaining_windows_readonly_mvp": 7,
-  "remaining_post_mvp_and_mature_release": 11,
-  "remaining_total": 19,
-  "closed_track_range": "M-001 through M-121",
-  "open_roadmap_track_range": "M-122 through M-140",
-  "note": "The mature release roadmap is not fully implemented. Reviewed Conductor and Codev tracks now exist for every remaining item through mature hardened release, and M-121 now has executed macOS fixture evidence."
+  "implemented_or_scaffolded": 122,
+  "remaining_windows_readonly_mvp": 6,
+  "remaining_post_mvp_and_mature_release": 10,
+  "remaining_total": 18,
+  "closed_track_range": "M-001 through M-122",
+  "open_roadmap_track_range": "M-123 through M-140",
+  "note": "The mature release roadmap is not fully implemented. Reviewed Conductor and Codev tracks now exist for every remaining item through mature hardened release, and M-121/M-122 now have executed evidence."
 }

@@ -2,8 +2,8 @@
 
 ## Status
 
-`planned_roadmap`.
+`implemented`.
 
 ## Notes
 
-This roadmap track exists because the mature, hardened APFS-RS release is not fully implemented. It is reviewed as a planning/evidence track only; no production APFS behavior is claimed until its plan is executed and validated.
+This roadmap track now has executed feedback-promotion evidence. The recorded real-fixture mismatch was normalized into generated track stubs so the parser follow-up work can proceed through reviewed, scoped tasks. No production APFS behavior is claimed by this promotion step alone.

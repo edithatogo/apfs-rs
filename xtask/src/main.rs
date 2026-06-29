@@ -732,6 +732,80 @@ fn format_feedback_markdown(report: &JsonValue) -> String {
     out
 }
 
+fn normalize_promoted_issue(issue: &JsonValue, index: usize) -> JsonValue {
+    let fallback_field = format!("issue-{:04}", index + 1);
+    match issue {
+        JsonValue::String(text) => serde_json::json!({
+            "field": fallback_field,
+            "message": text,
+            "severity": "error",
+            "suggested_track": "0012-real-fixture-feedback-loop",
+            "title": text,
+            "raw": text,
+        }),
+        JsonValue::Object(map) => {
+            let title = map
+                .get("title")
+                .and_then(JsonValue::as_str)
+                .or_else(|| map.get("field").and_then(JsonValue::as_str))
+                .or_else(|| map.get("message").and_then(JsonValue::as_str))
+                .unwrap_or("real fixture mismatch");
+            let field = map
+                .get("field")
+                .and_then(JsonValue::as_str)
+                .or_else(|| map.get("path").and_then(JsonValue::as_str))
+                .unwrap_or(&fallback_field);
+            let severity = map
+                .get("severity")
+                .and_then(JsonValue::as_str)
+                .unwrap_or("error");
+            let message = map
+                .get("message")
+                .and_then(JsonValue::as_str)
+                .or_else(|| map.get("title").and_then(JsonValue::as_str))
+                .unwrap_or("No message supplied");
+            let suggested_track = map
+                .get("suggested_track")
+                .and_then(JsonValue::as_str)
+                .unwrap_or("0012-real-fixture-feedback-loop");
+            serde_json::json!({
+                "field": field,
+                "message": message,
+                "raw": issue,
+                "severity": severity,
+                "suggested_track": suggested_track,
+                "title": title,
+            })
+        }
+        _ => serde_json::json!({
+            "field": fallback_field,
+            "message": "Unsupported feedback issue shape",
+            "raw": issue,
+            "severity": "error",
+            "suggested_track": "0012-real-fixture-feedback-loop",
+            "title": "real fixture mismatch",
+        }),
+    }
+}
+
+fn promoted_issue_slug(title: &str) -> String {
+    let slug = title
+        .to_ascii_lowercase()
+        .chars()
+        .map(|ch| if ch.is_ascii_alphanumeric() { ch } else { '-' })
+        .collect::<String>();
+    let slug = slug
+        .split('-')
+        .filter(|part| !part.is_empty())
+        .collect::<Vec<_>>()
+        .join("-");
+    if slug.is_empty() {
+        "real-fixture-mismatch".to_owned()
+    } else {
+        slug
+    }
+}
+
 fn promote_feedback(feedback_json: &Path, out_dir: &Path) -> Result<()> {
     fs::create_dir_all(out_dir).with_context(|| format!("create {}", out_dir.display()))?;
     let text = fs::read_to_string(feedback_json)
@@ -743,36 +817,60 @@ fn promote_feedback(feedback_json: &Path, out_dir: &Path) -> Result<()> {
         .and_then(JsonValue::as_array)
         .cloned()
         .unwrap_or_default();
+    let normalized_issues: Vec<JsonValue> = issues
+        .iter()
+        .enumerate()
+        .map(|(idx, issue)| normalize_promoted_issue(issue, idx))
+        .collect();
     let mut index = Vec::new();
-    for (idx, issue) in issues.iter().enumerate() {
+    for (idx, issue) in normalized_issues.iter().enumerate() {
         let title = issue
             .get("title")
             .and_then(JsonValue::as_str)
             .unwrap_or("real fixture mismatch");
-        let slug = title
-            .to_ascii_lowercase()
-            .chars()
-            .map(|ch| if ch.is_ascii_alphanumeric() { ch } else { '-' })
-            .collect::<String>();
-        let slug = slug
-            .split('-')
-            .filter(|part| !part.is_empty())
-            .collect::<Vec<_>>()
-            .join("-");
-        let track_id = format!(
-            "generated-{:04}-{}",
-            idx + 1,
-            if slug.is_empty() {
-                "real-fixture-mismatch".to_owned()
-            } else {
-                slug
-            }
-        );
+        let slug = promoted_issue_slug(title);
+        let track_id = format!("generated-{:04}-{}", idx + 1, slug);
         let track_dir = out_dir.join("conductor/tracks").join(&track_id);
         fs::create_dir_all(&track_dir)?;
-        fs::write(track_dir.join("metadata.json"), format!("{{\n  \"track_id\": \"{track_id}\",\n  \"source\": \"real-fixture-feedback\",\n  \"status\": \"generated\"\n}}\n"))?;
-        fs::write(track_dir.join("spec.md"), format!("# Generated Spec: {}\n\nSource feedback issue generated from `{}`.\n\n```json\n{}\n```\n", title, feedback_json.display(), serde_json::to_string_pretty(issue)?))?;
-        fs::write(track_dir.join("plan.md"), "# Generated Plan\n\n1. Reproduce the mismatch with the referenced real fixture.\n2. Add or adjust a synthetic fixture only if it preserves clean-room safety.\n3. Implement the smallest parser correction.\n4. Update Codev and Conductor reviews.\n")?;
+        let field = issue
+            .get("field")
+            .and_then(JsonValue::as_str)
+            .unwrap_or(&format!("issue-{:04}", idx + 1))
+            .to_owned();
+        let severity = issue
+            .get("severity")
+            .and_then(JsonValue::as_str)
+            .unwrap_or("error");
+        let message = issue
+            .get("message")
+            .and_then(JsonValue::as_str)
+            .unwrap_or("No message supplied");
+        let suggested_track = issue
+            .get("suggested_track")
+            .and_then(JsonValue::as_str)
+            .unwrap_or("0012-real-fixture-feedback-loop");
+        let issue_json = serde_json::to_string_pretty(issue)?;
+        fs::write(
+            track_dir.join("metadata.json"),
+            format!(
+                "{{\n  \"track_id\": \"{track_id}\",\n  \"source\": \"real-fixture-feedback\",\n  \"status\": \"generated\",\n  \"field\": \"{field}\",\n  \"severity\": \"{severity}\",\n  \"suggested_track\": \"{suggested_track}\"\n}}\n"
+            ),
+        )?;
+        fs::write(
+            track_dir.join("spec.md"),
+            format!(
+                "# Generated Spec: {}\n\nSource feedback issue generated from `{}`.\n\n```json\n{}\n```\n",
+                title,
+                feedback_json.display(),
+                issue_json
+            ),
+        )?;
+        fs::write(
+            track_dir.join("plan.md"),
+            format!(
+                "# Generated Plan\n\n1. Reproduce the mismatch with the referenced real fixture.\n2. Add or adjust a synthetic fixture only if it preserves clean-room safety.\n3. Implement the smallest parser correction.\n4. Update Codev and Conductor reviews.\n\n## Issue details\n\n- Field: `{field}`\n- Severity: `{severity}`\n- Suggested track: `{suggested_track}`\n- Message: `{message}`\n"
+            ),
+        )?;
         index.push(JsonValue::String(track_id));
     }
     fs::write(
@@ -781,7 +879,7 @@ fn promote_feedback(feedback_json: &Path, out_dir: &Path) -> Result<()> {
     )?;
     println!(
         "promote-feedback: generated {} track stubs in {}",
-        issues.len(),
+        normalized_issues.len(),
         out_dir.display()
     );
     Ok(())

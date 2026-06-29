@@ -1,7 +1,7 @@
 # Real fixture feedback promotion
 
 Capability: `M-122`  
-Status: `planned_roadmap`  
+Status: `implemented`
 Category: `fixture-readiness`
 
 ## Goal
