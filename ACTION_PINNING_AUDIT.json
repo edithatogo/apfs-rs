@@ -1,6 +1,6 @@
 {
   "schema_version": "0.29.0",
-  "uses_count": 46,
+  "uses_count": 60,
   "unpinned_count": 0,
   "items": [
     {
@@ -145,12 +145,82 @@
     },
     {
       "workflow": ".github/workflows/release.yml",
-      "uses": "actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0",
+      "uses": "actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5",
       "pinned_to_sha": true
     },
     {
       "workflow": ".github/workflows/release.yml",
-      "uses": "actions/attest-build-provenance@0f67c3f4856b2e3261c31976d6725780e5e4c373",
+      "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+      "pinned_to_sha": true
+    },
+    {
+      "workflow": ".github/workflows/release.yml",
+      "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+      "pinned_to_sha": true
+    },
+    {
+      "workflow": ".github/workflows/release.yml",
+      "uses": "actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5",
+      "pinned_to_sha": true
+    },
+    {
+      "workflow": ".github/workflows/release.yml",
+      "uses": "actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093",
+      "pinned_to_sha": true
+    },
+    {
+      "workflow": ".github/workflows/release.yml",
+      "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+      "pinned_to_sha": true
+    },
+    {
+      "workflow": ".github/workflows/release.yml",
+      "uses": "actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5",
+      "pinned_to_sha": true
+    },
+    {
+      "workflow": ".github/workflows/release.yml",
+      "uses": "actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093",
+      "pinned_to_sha": true
+    },
+    {
+      "workflow": ".github/workflows/release.yml",
+      "uses": "actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093",
+      "pinned_to_sha": true
+    },
+    {
+      "workflow": ".github/workflows/release.yml",
+      "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+      "pinned_to_sha": true
+    },
+    {
+      "workflow": ".github/workflows/release.yml",
+      "uses": "actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5",
+      "pinned_to_sha": true
+    },
+    {
+      "workflow": ".github/workflows/release.yml",
+      "uses": "actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093",
+      "pinned_to_sha": true
+    },
+    {
+      "workflow": ".github/workflows/release.yml",
+      "uses": "actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093",
+      "pinned_to_sha": true
+    },
+    {
+      "workflow": ".github/workflows/release.yml",
+      "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+      "pinned_to_sha": true
+    },
+    {
+      "workflow": ".github/workflows/release.yml",
+      "uses": "actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093",
+      "pinned_to_sha": true
+    },
+    {
+      "workflow": ".github/workflows/release.yml",
+      "uses": "actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5",
       "pinned_to_sha": true
     },
     {

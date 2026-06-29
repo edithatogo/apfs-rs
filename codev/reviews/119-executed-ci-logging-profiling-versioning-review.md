@@ -13,6 +13,9 @@
   dry-run commands.
 - Added workspace repository metadata inheritance to package manifests so the
   cargo-dist release-plan workflow can resolve the GitHub repository URL.
+- Replaced the release scaffold workflow with the cargo-dist generated release
+  workflow, pinned its generated GitHub Actions, and kept cargo-dist checks
+  explicit with `--allow-dirty` for the policy-pinned workflow.
 - Updated Astro and root documentation.
 
 ## Safety
