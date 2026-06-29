@@ -77,7 +77,15 @@ def run(command: list[str]) -> None:
 
 def regenerate_sha256sums() -> None:
     lines: list[str] = []
-    skip_dirs = {".git", "target", "__pycache__"}
+    skip_dirs = {
+        ".astro",
+        ".git",
+        "__pycache__",
+        "apfs-rs-impl-v0.29",
+        "dist",
+        "node_modules",
+        "target",
+    }
     for path in sorted(ROOT.rglob("*")):
         if not path.is_file():
             continue

@@ -19,7 +19,7 @@ for path in sorted(WF.glob('*.yml'))+sorted(WF.glob('*.yaml')):
             findings.append({'workflow':rel,'severity':'info','kind':'unpinned_action','uses':uses,'message':'pin action to commit SHA before public release'})
 report={'schema_version':'0.29.0','workflow_count':len(list(WF.glob('*.yml'))+list(WF.glob('*.yaml'))),'findings':findings,'blocking_findings':[f for f in findings if f['severity']=='high']}
 (ROOT/'GITHUB_ACTIONS_HARDENING.json').write_text(json.dumps(report,indent=2)+"\n")
-md=['# GitHub Actions Hardening Audit','',f"Workflows scanned: {report['workflow_count']}",f"Findings: {len(findings)}",'']
+md=['# GitHub Actions Hardening Audit','',f"Workflows scanned: {report['workflow_count']}",f"Findings: {len(findings)}"]
 for f in findings[:200]: md.append(f"- {f['severity']} `{f['kind']}` in `{f['workflow']}`: {f.get('message','')}")
 (ROOT/'GITHUB_ACTIONS_HARDENING_AUDIT.md').write_text('\n'.join(md)+"\n")
 print(f"github-actions-hardening-audit: passed ({len(findings)} findings, {len(report['blocking_findings'])} high)")

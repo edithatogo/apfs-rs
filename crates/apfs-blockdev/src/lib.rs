@@ -44,7 +44,11 @@ impl ImageBlockDevice {
         let path = path.as_ref().to_path_buf();
         let file = File::open(&path)?;
         let size = file.metadata()?.len();
-        Ok(Self { path, size, file: Mutex::new(file) })
+        Ok(Self {
+            path,
+            size,
+            file: Mutex::new(file),
+        })
     }
 
     pub fn path(&self) -> &Path {
@@ -58,13 +62,23 @@ impl ReadOnlyBlockDevice for ImageBlockDevice {
     }
 
     fn read_at(&self, offset: u64, len: usize) -> Result<Vec<u8>, BlockDeviceError> {
-        let len_u64 = u64::try_from(len).map_err(|_| BlockDeviceError::RangeOverflow { offset, len })?;
-        let end = offset.checked_add(len_u64).ok_or(BlockDeviceError::RangeOverflow { offset, len })?;
+        let len_u64 =
+            u64::try_from(len).map_err(|_| BlockDeviceError::RangeOverflow { offset, len })?;
+        let end = offset
+            .checked_add(len_u64)
+            .ok_or(BlockDeviceError::RangeOverflow { offset, len })?;
         if end > self.size {
-            return Err(BlockDeviceError::OutOfBounds { offset, len, size: self.size });
+            return Err(BlockDeviceError::OutOfBounds {
+                offset,
+                len,
+                size: self.size,
+            });
         }
 
-        let mut file = self.file.lock().map_err(|_| BlockDeviceError::LockPoisoned)?;
+        let mut file = self
+            .file
+            .lock()
+            .map_err(|_| BlockDeviceError::LockPoisoned)?;
         file.seek(SeekFrom::Start(offset))?;
         let mut buf = vec![0_u8; len];
         file.read_exact(&mut buf)?;
@@ -85,18 +99,27 @@ impl MemoryBlockDevice {
 
 impl ReadOnlyBlockDevice for MemoryBlockDevice {
     fn size(&self) -> Result<u64, BlockDeviceError> {
-        u64::try_from(self.bytes.len()).map_err(|_| BlockDeviceError::RangeOverflow { offset: 0, len: self.bytes.len() })
+        u64::try_from(self.bytes.len()).map_err(|_| BlockDeviceError::RangeOverflow {
+            offset: 0,
+            len: self.bytes.len(),
+        })
     }
 
     fn read_at(&self, offset: u64, len: usize) -> Result<Vec<u8>, BlockDeviceError> {
-        let len_u64 = u64::try_from(len).map_err(|_| BlockDeviceError::RangeOverflow { offset, len })?;
-        let end = offset.checked_add(len_u64).ok_or(BlockDeviceError::RangeOverflow { offset, len })?;
+        let len_u64 =
+            u64::try_from(len).map_err(|_| BlockDeviceError::RangeOverflow { offset, len })?;
+        let end = offset
+            .checked_add(len_u64)
+            .ok_or(BlockDeviceError::RangeOverflow { offset, len })?;
         let size = self.size()?;
         if end > size {
             return Err(BlockDeviceError::OutOfBounds { offset, len, size });
         }
-        let start = usize::try_from(offset).map_err(|_| BlockDeviceError::RangeOverflow { offset, len })?;
-        let end = start.checked_add(len).ok_or(BlockDeviceError::RangeOverflow { offset, len })?;
+        let start =
+            usize::try_from(offset).map_err(|_| BlockDeviceError::RangeOverflow { offset, len })?;
+        let end = start
+            .checked_add(len)
+            .ok_or(BlockDeviceError::RangeOverflow { offset, len })?;
         Ok(self.bytes[start..end].to_vec())
     }
 }

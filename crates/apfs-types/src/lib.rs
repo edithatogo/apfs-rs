@@ -48,14 +48,17 @@ pub const FLETCHER64_MODULUS: u64 = 0xffff_ffff;
 /// APFS GPT partition type GUID, encoded exactly as it appears in GPT entries on disk.
 /// Canonical GUID: 7c3457ef-0000-11aa-aa11-00306543ecac.
 pub const APFS_GPT_TYPE_GUID_BYTES: [u8; 16] = [
-    0xef, 0x57, 0x34, 0x7c, 0x00, 0x00, 0xaa, 0x11, 0xaa, 0x11, 0x00, 0x30, 0x65, 0x43, 0xec,
-    0xac,
+    0xef, 0x57, 0x34, 0x7c, 0x00, 0x00, 0xaa, 0x11, 0xaa, 0x11, 0x00, 0x30, 0x65, 0x43, 0xec, 0xac,
 ];
 
 #[derive(Debug, Error, PartialEq, Eq)]
 pub enum ParseError {
     #[error("input is too short for {structure}: need at least {needed} bytes, got {actual}")]
-    TooShort { structure: &'static str, needed: usize, actual: usize },
+    TooShort {
+        structure: &'static str,
+        needed: usize,
+        actual: usize,
+    },
     #[error("APFS NX superblock magic mismatch at offset 32: expected NXSB, got {found:?}")]
     MagicMismatch { found: [u8; 4] },
     #[error("APFS volume superblock magic mismatch at offset 32: expected APSB, got {found:?}")]
@@ -75,7 +78,11 @@ pub enum ParseError {
     #[error("invalid GPT partition entry size {0}")]
     InvalidGptPartitionEntrySize(u32),
     #[error("B-tree node table of contents is out of bounds: offset={offset}, length={length}, block_len={block_len}")]
-    BTreeTableOutOfBounds { offset: usize, length: usize, block_len: usize },
+    BTreeTableOutOfBounds {
+        offset: usize,
+        length: usize,
+        block_len: usize,
+    },
     #[error("GPT arithmetic overflow")]
     GptArithmeticOverflow,
 }
@@ -283,7 +290,6 @@ pub struct OmapLookup {
     pub candidate_count: usize,
 }
 
-
 #[derive(Debug, Clone, Serialize, PartialEq, Eq)]
 pub struct SyntheticDirectoryRecord {
     pub parent_id: u64,
@@ -365,7 +371,10 @@ pub fn parse_nx_superblock_with_checksum(input: &[u8]) -> Result<ContainerSuperb
     parse_nx_superblock_inner(input, true)
 }
 
-fn parse_nx_superblock_inner(input: &[u8], include_checksum: bool) -> Result<ContainerSuperblock, ParseError> {
+fn parse_nx_superblock_inner(
+    input: &[u8],
+    include_checksum: bool,
+) -> Result<ContainerSuperblock, ParseError> {
     require_len(input, NX_SUPERBLOCK_MIN_SIZE, "nx_superblock_t")?;
     let object = parse_object_header(&input[..APFS_OBJECT_HEADER_SIZE])?;
     let magic_bytes = read_array_4(input, 32)?;
@@ -379,7 +388,11 @@ fn parse_nx_superblock_inner(input: &[u8], include_checksum: bool) -> Result<Con
     let container_size_bytes = u128::from(block_size).checked_mul(u128::from(block_count));
     let max_file_systems = read_u32_le(input, 180)?;
     let filesystem_oids = parse_filesystem_oid_prefix(input, max_file_systems)?;
-    let checksum = if include_checksum { Some(validate_object_checksum(input)?) } else { None };
+    let checksum = if include_checksum {
+        Some(validate_object_checksum(input)?)
+    } else {
+        None
+    };
 
     Ok(ContainerSuperblock {
         object,
@@ -413,25 +426,36 @@ fn parse_nx_superblock_inner(input: &[u8], include_checksum: bool) -> Result<Con
     })
 }
 
-pub fn parse_checkpoint_map_block_with_checksum(input: &[u8]) -> Result<CheckpointMapBlock, ParseError> {
+pub fn parse_checkpoint_map_block_with_checksum(
+    input: &[u8],
+) -> Result<CheckpointMapBlock, ParseError> {
     require_len(input, CHECKPOINT_MAP_HEADER_SIZE, "checkpoint_map_phys_t")?;
     let object = parse_object_header(input)?;
     if object.object_type != OBJECT_TYPE_CHECKPOINT_MAP {
-        return Err(ParseError::ObjectTypeMismatch { expected: OBJECT_TYPE_CHECKPOINT_MAP, actual: object.object_type });
+        return Err(ParseError::ObjectTypeMismatch {
+            expected: OBJECT_TYPE_CHECKPOINT_MAP,
+            actual: object.object_type,
+        });
     }
     let checksum = validate_object_checksum(input)?;
     let flags = read_u32_le(input, 32)?;
     let count = read_u32_le(input, 36)?;
-    let max_count = input.len().saturating_sub(CHECKPOINT_MAP_HEADER_SIZE) / CHECKPOINT_MAPPING_SIZE;
+    let max_count =
+        input.len().saturating_sub(CHECKPOINT_MAP_HEADER_SIZE) / CHECKPOINT_MAPPING_SIZE;
     let requested = usize::try_from(count).unwrap_or(usize::MAX);
     if requested > max_count {
-        return Err(ParseError::InvalidCheckpointMapCount { count, max: max_count });
+        return Err(ParseError::InvalidCheckpointMapCount {
+            count,
+            max: max_count,
+        });
     }
 
     let mut mappings = Vec::with_capacity(requested);
     for index in 0..requested {
         let offset = CHECKPOINT_MAP_HEADER_SIZE + index * CHECKPOINT_MAPPING_SIZE;
-        mappings.push(parse_checkpoint_mapping(&input[offset..offset + CHECKPOINT_MAPPING_SIZE])?);
+        mappings.push(parse_checkpoint_mapping(
+            &input[offset..offset + CHECKPOINT_MAPPING_SIZE],
+        )?);
     }
 
     Ok(CheckpointMapBlock {
@@ -464,7 +488,10 @@ pub fn parse_omap_phys_with_checksum(input: &[u8]) -> Result<ObjectMap, ParseErr
     require_len(input, OMAP_PHYS_MIN_SIZE, "omap_phys_t")?;
     let object = parse_object_header(input)?;
     if object.object_type != OBJECT_TYPE_OMAP {
-        return Err(ParseError::ObjectTypeMismatch { expected: OBJECT_TYPE_OMAP, actual: object.object_type });
+        return Err(ParseError::ObjectTypeMismatch {
+            expected: OBJECT_TYPE_OMAP,
+            actual: object.object_type,
+        });
     }
     let checksum = validate_object_checksum(input)?;
     Ok(ObjectMap {
@@ -482,11 +509,16 @@ pub fn parse_omap_phys_with_checksum(input: &[u8]) -> Result<ObjectMap, ParseErr
     })
 }
 
-pub fn parse_apfs_volume_superblock_with_checksum(input: &[u8]) -> Result<VolumeSuperblock, ParseError> {
+pub fn parse_apfs_volume_superblock_with_checksum(
+    input: &[u8],
+) -> Result<VolumeSuperblock, ParseError> {
     require_len(input, APFS_VOLUME_SUPERBLOCK_MIN_SIZE, "apfs_superblock_t")?;
     let object = parse_object_header(input)?;
     if object.object_type != OBJECT_TYPE_FS {
-        return Err(ParseError::ObjectTypeMismatch { expected: OBJECT_TYPE_FS, actual: object.object_type });
+        return Err(ParseError::ObjectTypeMismatch {
+            expected: OBJECT_TYPE_FS,
+            actual: object.object_type,
+        });
     }
     let magic_bytes = read_array_4(input, 32)?;
     if magic_bytes != APFS_VOLUME_MAGIC_BYTES {
@@ -519,7 +551,9 @@ pub fn parse_apfs_volume_superblock_with_checksum(input: &[u8]) -> Result<Volume
         volume_uuid: format_guid(&input[216..232]),
         last_mod_time: read_u64_le(input, 232)?,
         fs_flags: read_u64_le(input, 240)?,
-        volume_name: decode_c_string(&input[APFS_VOLUME_NAME_OFFSET..APFS_VOLUME_NAME_OFFSET + APFS_VOLUME_NAME_LEN]),
+        volume_name: decode_c_string(
+            &input[APFS_VOLUME_NAME_OFFSET..APFS_VOLUME_NAME_OFFSET + APFS_VOLUME_NAME_LEN],
+        ),
         role: read_u16_le(input, APFS_VOLUME_ROLE_OFFSET)?,
     })
 }
@@ -528,7 +562,10 @@ pub fn parse_btree_node_with_checksum(input: &[u8]) -> Result<BTreeNode, ParseEr
     require_len(input, BTREE_NODE_MIN_SIZE, "btree_node_phys_t")?;
     let object = parse_object_header(input)?;
     if object.object_type != OBJECT_TYPE_BTREE && object.object_type != OBJECT_TYPE_BTREE_NODE {
-        return Err(ParseError::ObjectTypeMismatch { expected: OBJECT_TYPE_BTREE_NODE, actual: object.object_type });
+        return Err(ParseError::ObjectTypeMismatch {
+            expected: OBJECT_TYPE_BTREE_NODE,
+            actual: object.object_type,
+        });
     }
     let checksum = validate_object_checksum(input)?;
     let flags_raw = read_u16_le(input, 32)?;
@@ -571,16 +608,25 @@ fn parse_btree_toc_entries(
 ) -> Result<Vec<BTreeTocEntry>, ParseError> {
     let toc_offset = BTREE_NODE_MIN_SIZE + usize::from(table_space.offset);
     let toc_len = usize::from(table_space.length);
-    let toc_end = toc_offset.checked_add(toc_len).ok_or(ParseError::BTreeTableOutOfBounds {
-        offset: toc_offset,
-        length: toc_len,
-        block_len: input.len(),
-    })?;
+    let toc_end = toc_offset
+        .checked_add(toc_len)
+        .ok_or(ParseError::BTreeTableOutOfBounds {
+            offset: toc_offset,
+            length: toc_len,
+            block_len: input.len(),
+        })?;
     if toc_end > input.len() {
-        return Err(ParseError::BTreeTableOutOfBounds { offset: toc_offset, length: toc_len, block_len: input.len() });
+        return Err(ParseError::BTreeTableOutOfBounds {
+            offset: toc_offset,
+            length: toc_len,
+            block_len: input.len(),
+        });
     }
     let max_entries_by_table = toc_len / BTREE_TOC_ENTRY_SIZE;
-    let requested = usize::try_from(key_count).unwrap_or(usize::MAX).min(max_entries_by_table).min(16_384);
+    let requested = usize::try_from(key_count)
+        .unwrap_or(usize::MAX)
+        .min(max_entries_by_table)
+        .min(16_384);
     let mut entries = Vec::with_capacity(requested);
     for index in 0..requested {
         let offset = toc_offset + index * BTREE_TOC_ENTRY_SIZE;
@@ -597,7 +643,10 @@ fn parse_btree_toc_entries(
 /// This is intentionally conservative and only decodes records whose key and value offsets
 /// fit inside the supplied node block. Offsets are interpreted relative to the APFS B-tree
 /// node payload start (`BTREE_NODE_MIN_SIZE`), matching the synthetic fixtures in this package.
-pub fn parse_omap_records_from_btree_node(input: &[u8], node: &BTreeNode) -> Result<Vec<OmapRecord>, ParseError> {
+pub fn parse_omap_records_from_btree_node(
+    input: &[u8],
+    node: &BTreeNode,
+) -> Result<Vec<OmapRecord>, ParseError> {
     if !node.is_leaf {
         return Ok(Vec::new());
     }
@@ -606,21 +655,35 @@ pub fn parse_omap_records_from_btree_node(input: &[u8], node: &BTreeNode) -> Res
     for toc in node.toc_entries.iter().take(requested) {
         let key_offset = BTREE_NODE_MIN_SIZE + usize::from(toc.key_offset);
         let value_offset = BTREE_NODE_MIN_SIZE + usize::from(toc.value_offset);
-        let key_end = key_offset.checked_add(OMAP_KEY_SIZE).ok_or(ParseError::BTreeTableOutOfBounds {
-            offset: key_offset,
-            length: OMAP_KEY_SIZE,
-            block_len: input.len(),
-        })?;
-        let value_end = value_offset.checked_add(OMAP_VALUE_SIZE).ok_or(ParseError::BTreeTableOutOfBounds {
-            offset: value_offset,
-            length: OMAP_VALUE_SIZE,
-            block_len: input.len(),
-        })?;
+        let key_end =
+            key_offset
+                .checked_add(OMAP_KEY_SIZE)
+                .ok_or(ParseError::BTreeTableOutOfBounds {
+                    offset: key_offset,
+                    length: OMAP_KEY_SIZE,
+                    block_len: input.len(),
+                })?;
+        let value_end =
+            value_offset
+                .checked_add(OMAP_VALUE_SIZE)
+                .ok_or(ParseError::BTreeTableOutOfBounds {
+                    offset: value_offset,
+                    length: OMAP_VALUE_SIZE,
+                    block_len: input.len(),
+                })?;
         if key_end > input.len() {
-            return Err(ParseError::BTreeTableOutOfBounds { offset: key_offset, length: OMAP_KEY_SIZE, block_len: input.len() });
+            return Err(ParseError::BTreeTableOutOfBounds {
+                offset: key_offset,
+                length: OMAP_KEY_SIZE,
+                block_len: input.len(),
+            });
         }
         if value_end > input.len() {
-            return Err(ParseError::BTreeTableOutOfBounds { offset: value_offset, length: OMAP_VALUE_SIZE, block_len: input.len() });
+            return Err(ParseError::BTreeTableOutOfBounds {
+                offset: value_offset,
+                length: OMAP_VALUE_SIZE,
+                block_len: input.len(),
+            });
         }
         records.push(OmapRecord {
             oid: read_u64_le(input, key_offset)?,
@@ -638,7 +701,10 @@ pub fn parse_omap_records_from_btree_node(input: &[u8], node: &BTreeNode) -> Res
 /// The key is decoded as `(max_oid, max_xid)` and the value is decoded as `child_oid`.
 /// This is a deliberately bounded parser for the synthetic two-level fixture; it is not
 /// full production APFS B-tree traversal yet.
-pub fn parse_omap_index_records_from_btree_node(input: &[u8], node: &BTreeNode) -> Result<Vec<BTreeIndexRecord>, ParseError> {
+pub fn parse_omap_index_records_from_btree_node(
+    input: &[u8],
+    node: &BTreeNode,
+) -> Result<Vec<BTreeIndexRecord>, ParseError> {
     if node.is_leaf {
         return Ok(Vec::new());
     }
@@ -647,21 +713,34 @@ pub fn parse_omap_index_records_from_btree_node(input: &[u8], node: &BTreeNode) 
     for toc in node.toc_entries.iter().take(requested) {
         let key_offset = BTREE_NODE_MIN_SIZE + usize::from(toc.key_offset);
         let value_offset = BTREE_NODE_MIN_SIZE + usize::from(toc.value_offset);
-        let key_end = key_offset.checked_add(OMAP_KEY_SIZE).ok_or(ParseError::BTreeTableOutOfBounds {
-            offset: key_offset,
-            length: OMAP_KEY_SIZE,
-            block_len: input.len(),
-        })?;
-        let value_end = value_offset.checked_add(8).ok_or(ParseError::BTreeTableOutOfBounds {
-            offset: value_offset,
-            length: 8,
-            block_len: input.len(),
-        })?;
+        let key_end =
+            key_offset
+                .checked_add(OMAP_KEY_SIZE)
+                .ok_or(ParseError::BTreeTableOutOfBounds {
+                    offset: key_offset,
+                    length: OMAP_KEY_SIZE,
+                    block_len: input.len(),
+                })?;
+        let value_end = value_offset
+            .checked_add(8)
+            .ok_or(ParseError::BTreeTableOutOfBounds {
+                offset: value_offset,
+                length: 8,
+                block_len: input.len(),
+            })?;
         if key_end > input.len() {
-            return Err(ParseError::BTreeTableOutOfBounds { offset: key_offset, length: OMAP_KEY_SIZE, block_len: input.len() });
+            return Err(ParseError::BTreeTableOutOfBounds {
+                offset: key_offset,
+                length: OMAP_KEY_SIZE,
+                block_len: input.len(),
+            });
         }
         if value_end > input.len() {
-            return Err(ParseError::BTreeTableOutOfBounds { offset: value_offset, length: 8, block_len: input.len() });
+            return Err(ParseError::BTreeTableOutOfBounds {
+                offset: value_offset,
+                length: 8,
+                block_len: input.len(),
+            });
         }
         records.push(BTreeIndexRecord {
             max_oid: read_u64_le(input, key_offset)?,
@@ -677,7 +756,11 @@ pub fn parse_omap_index_records_from_btree_node(input: &[u8], node: &BTreeNode) 
 ///
 /// If no key is greater than or equal to the request, the last child is selected. This
 /// matches the synthetic range-fixture convention and keeps the traversal bounded.
-pub fn select_synthetic_btree_child(records: &[BTreeIndexRecord], requested_oid: u64, requested_xid: u64) -> BTreeChildSelection {
+pub fn select_synthetic_btree_child(
+    records: &[BTreeIndexRecord],
+    requested_oid: u64,
+    requested_xid: u64,
+) -> BTreeChildSelection {
     if records.is_empty() {
         return BTreeChildSelection {
             requested_oid,
@@ -719,8 +802,16 @@ pub fn parse_synthetic_directory_records_from_btree_node(
     for entry in &node.toc_entries {
         let key_base = BTREE_NODE_MIN_SIZE + usize::from(entry.key_offset);
         let value_base = BTREE_NODE_MIN_SIZE + usize::from(entry.value_offset);
-        require_len(input, key_base + SYNTHETIC_FS_DIR_KEY_SIZE, "synthetic fs directory key")?;
-        require_len(input, value_base + SYNTHETIC_FS_DIR_VALUE_HEADER_SIZE, "synthetic fs directory value")?;
+        require_len(
+            input,
+            key_base + SYNTHETIC_FS_DIR_KEY_SIZE,
+            "synthetic fs directory key",
+        )?;
+        require_len(
+            input,
+            value_base + SYNTHETIC_FS_DIR_VALUE_HEADER_SIZE,
+            "synthetic fs directory value",
+        )?;
 
         let parent_id = read_u64_le(input, key_base)?;
         let name_hash = read_u64_le(input, key_base + 8)?;
@@ -740,13 +831,21 @@ pub fn parse_synthetic_directory_records_from_btree_node(
             item_kind_raw,
             name,
             logical_size,
-            physical_block: if physical_block_raw == 0 { None } else { Some(physical_block_raw) },
+            physical_block: if physical_block_raw == 0 {
+                None
+            } else {
+                Some(physical_block_raw)
+            },
         });
     }
     Ok(records)
 }
 
-pub fn lookup_omap_record(records: &[OmapRecord], requested_oid: u64, requested_xid: u64) -> OmapLookup {
+pub fn lookup_omap_record(
+    records: &[OmapRecord],
+    requested_oid: u64,
+    requested_xid: u64,
+) -> OmapLookup {
     let mut best: Option<&OmapRecord> = None;
     let mut candidate_count = 0_usize;
     for record in records {
@@ -804,32 +903,51 @@ pub fn parse_synthetic_directory_records_v2_from_btree_node(
     for toc in node.toc_entries.iter().take(requested) {
         let key_offset = BTREE_NODE_MIN_SIZE + usize::from(toc.key_offset);
         let value_offset = BTREE_NODE_MIN_SIZE + usize::from(toc.value_offset);
-        let key_end = key_offset.checked_add(SYNTHETIC_DIR_KEY_SIZE).ok_or(ParseError::BTreeTableOutOfBounds {
-            offset: key_offset,
-            length: SYNTHETIC_DIR_KEY_SIZE,
-            block_len: input.len(),
-        })?;
-        let value_header_end = value_offset.checked_add(SYNTHETIC_DIR_VALUE_HEADER_SIZE).ok_or(ParseError::BTreeTableOutOfBounds {
-            offset: value_offset,
-            length: SYNTHETIC_DIR_VALUE_HEADER_SIZE,
-            block_len: input.len(),
-        })?;
+        let key_end = key_offset.checked_add(SYNTHETIC_DIR_KEY_SIZE).ok_or(
+            ParseError::BTreeTableOutOfBounds {
+                offset: key_offset,
+                length: SYNTHETIC_DIR_KEY_SIZE,
+                block_len: input.len(),
+            },
+        )?;
+        let value_header_end = value_offset
+            .checked_add(SYNTHETIC_DIR_VALUE_HEADER_SIZE)
+            .ok_or(ParseError::BTreeTableOutOfBounds {
+                offset: value_offset,
+                length: SYNTHETIC_DIR_VALUE_HEADER_SIZE,
+                block_len: input.len(),
+            })?;
         if key_end > input.len() {
-            return Err(ParseError::BTreeTableOutOfBounds { offset: key_offset, length: SYNTHETIC_DIR_KEY_SIZE, block_len: input.len() });
+            return Err(ParseError::BTreeTableOutOfBounds {
+                offset: key_offset,
+                length: SYNTHETIC_DIR_KEY_SIZE,
+                block_len: input.len(),
+            });
         }
         if value_header_end > input.len() {
-            return Err(ParseError::BTreeTableOutOfBounds { offset: value_offset, length: SYNTHETIC_DIR_VALUE_HEADER_SIZE, block_len: input.len() });
+            return Err(ParseError::BTreeTableOutOfBounds {
+                offset: value_offset,
+                length: SYNTHETIC_DIR_VALUE_HEADER_SIZE,
+                block_len: input.len(),
+            });
         }
         let kind_raw = read_u16_le(input, value_offset)?;
         let name_len = usize::from(read_u16_le(input, value_offset + 2)?);
         let name_offset = value_offset + SYNTHETIC_DIR_VALUE_HEADER_SIZE;
-        let name_end = name_offset.checked_add(name_len).ok_or(ParseError::BTreeTableOutOfBounds {
-            offset: name_offset,
-            length: name_len,
-            block_len: input.len(),
-        })?;
+        let name_end =
+            name_offset
+                .checked_add(name_len)
+                .ok_or(ParseError::BTreeTableOutOfBounds {
+                    offset: name_offset,
+                    length: name_len,
+                    block_len: input.len(),
+                })?;
         if name_end > input.len() {
-            return Err(ParseError::BTreeTableOutOfBounds { offset: name_offset, length: name_len, block_len: input.len() });
+            return Err(ParseError::BTreeTableOutOfBounds {
+                offset: name_offset,
+                length: name_len,
+                block_len: input.len(),
+            });
         }
         records.push(SyntheticDirectoryRecord {
             parent_id: read_u64_le(input, key_offset)?,
@@ -862,21 +980,33 @@ pub fn parse_synthetic_file_extent_records_from_btree_node(
     for toc in node.toc_entries.iter().take(requested) {
         let key_offset = BTREE_NODE_MIN_SIZE + usize::from(toc.key_offset);
         let value_offset = BTREE_NODE_MIN_SIZE + usize::from(toc.value_offset);
-        let key_end = key_offset.checked_add(SYNTHETIC_EXTENT_KEY_SIZE).ok_or(ParseError::BTreeTableOutOfBounds {
-            offset: key_offset,
-            length: SYNTHETIC_EXTENT_KEY_SIZE,
-            block_len: input.len(),
-        })?;
-        let value_end = value_offset.checked_add(SYNTHETIC_EXTENT_VALUE_SIZE).ok_or(ParseError::BTreeTableOutOfBounds {
-            offset: value_offset,
-            length: SYNTHETIC_EXTENT_VALUE_SIZE,
-            block_len: input.len(),
-        })?;
+        let key_end = key_offset.checked_add(SYNTHETIC_EXTENT_KEY_SIZE).ok_or(
+            ParseError::BTreeTableOutOfBounds {
+                offset: key_offset,
+                length: SYNTHETIC_EXTENT_KEY_SIZE,
+                block_len: input.len(),
+            },
+        )?;
+        let value_end = value_offset
+            .checked_add(SYNTHETIC_EXTENT_VALUE_SIZE)
+            .ok_or(ParseError::BTreeTableOutOfBounds {
+                offset: value_offset,
+                length: SYNTHETIC_EXTENT_VALUE_SIZE,
+                block_len: input.len(),
+            })?;
         if key_end > input.len() {
-            return Err(ParseError::BTreeTableOutOfBounds { offset: key_offset, length: SYNTHETIC_EXTENT_KEY_SIZE, block_len: input.len() });
+            return Err(ParseError::BTreeTableOutOfBounds {
+                offset: key_offset,
+                length: SYNTHETIC_EXTENT_KEY_SIZE,
+                block_len: input.len(),
+            });
         }
         if value_end > input.len() {
-            return Err(ParseError::BTreeTableOutOfBounds { offset: value_offset, length: SYNTHETIC_EXTENT_VALUE_SIZE, block_len: input.len() });
+            return Err(ParseError::BTreeTableOutOfBounds {
+                offset: value_offset,
+                length: SYNTHETIC_EXTENT_VALUE_SIZE,
+                block_len: input.len(),
+            });
         }
         records.push(SyntheticFileExtentRecord {
             file_object_id: read_u64_le(input, key_offset)?,
@@ -885,7 +1015,13 @@ pub fn parse_synthetic_file_extent_records_from_btree_node(
             length_bytes: read_u64_le(input, value_offset + 8)?,
         });
     }
-    records.sort_by_key(|record| (record.file_object_id, record.logical_offset, record.physical_block));
+    records.sort_by_key(|record| {
+        (
+            record.file_object_id,
+            record.logical_offset,
+            record.physical_block,
+        )
+    });
     Ok(records)
 }
 
@@ -942,7 +1078,9 @@ pub fn parse_gpt_header(sector: &[u8]) -> Result<GptHeader, ParseError> {
     }
     let size_of_partition_entry = read_u32_le(sector, 84)?;
     if size_of_partition_entry < GPT_PARTITION_ENTRY_MIN_SIZE as u32 {
-        return Err(ParseError::InvalidGptPartitionEntrySize(size_of_partition_entry));
+        return Err(ParseError::InvalidGptPartitionEntrySize(
+            size_of_partition_entry,
+        ));
     }
 
     let stored_header_crc32 = read_u32_le(sector, 16)?;
@@ -968,7 +1106,7 @@ pub fn parse_gpt_header(sector: &[u8]) -> Result<GptHeader, ParseError> {
 
 pub fn gpt_header_crc32(sector: &[u8], header_size: usize) -> Result<u32, ParseError> {
     require_len(sector, header_size, "gpt_header_crc_input")?;
-    if header_size < GPT_HEADER_MIN_SIZE || header_size > GPT_SECTOR_SIZE {
+    if !(GPT_HEADER_MIN_SIZE..=GPT_SECTOR_SIZE).contains(&header_size) {
         return Err(ParseError::InvalidGptHeaderSize(header_size as u32));
     }
     let mut bytes = sector[..header_size].to_vec();
@@ -996,11 +1134,12 @@ pub fn parse_gpt_partition_entry(entry: &[u8]) -> Result<Option<GptPartitionEntr
     if type_guid_bytes == [0_u8; 16] {
         return Ok(None);
     }
-    let unique_guid_bytes: [u8; 16] = entry[16..32].try_into().map_err(|_| ParseError::TooShort {
-        structure: "gpt_partition_unique_guid",
-        needed: 32,
-        actual: entry.len(),
-    })?;
+    let unique_guid_bytes: [u8; 16] =
+        entry[16..32].try_into().map_err(|_| ParseError::TooShort {
+            structure: "gpt_partition_unique_guid",
+            needed: 32,
+            actual: entry.len(),
+        })?;
     let name_bytes = &entry[56..GPT_PARTITION_ENTRY_MIN_SIZE];
     Ok(Some(GptPartitionEntry {
         type_guid: format_guid(&type_guid_bytes),
@@ -1016,7 +1155,9 @@ pub fn parse_gpt_partition_entry(entry: &[u8]) -> Result<Option<GptPartitionEntr
 pub fn gpt_entries_byte_len(header: &GptHeader) -> Result<usize, ParseError> {
     let entries = u64::from(header.number_of_partition_entries);
     let entry_size = u64::from(header.size_of_partition_entry);
-    let total = entries.checked_mul(entry_size).ok_or(ParseError::GptArithmeticOverflow)?;
+    let total = entries
+        .checked_mul(entry_size)
+        .ok_or(ParseError::GptArithmeticOverflow)?;
     usize::try_from(total).map_err(|_| ParseError::GptArithmeticOverflow)
 }
 
@@ -1035,10 +1176,16 @@ pub fn crc32_ieee(bytes: &[u8]) -> u32 {
     !crc
 }
 
-fn parse_filesystem_oid_prefix(input: &[u8], max_file_systems: u32) -> Result<Vec<u64>, ParseError> {
+fn parse_filesystem_oid_prefix(
+    input: &[u8],
+    max_file_systems: u32,
+) -> Result<Vec<u64>, ParseError> {
     let available_bytes = input.len().saturating_sub(184);
     let available_oids = available_bytes / 8;
-    let requested = usize::try_from(max_file_systems).unwrap_or(usize::MAX).min(available_oids).min(100);
+    let requested = usize::try_from(max_file_systems)
+        .unwrap_or(usize::MAX)
+        .min(available_oids)
+        .min(100);
     let mut oids = Vec::with_capacity(requested);
     for index in 0..requested {
         let offset = 184 + index * 8;
@@ -1059,7 +1206,11 @@ fn validate_block_size(block_size: u32) -> Result<(), ParseError> {
 
 fn require_len(input: &[u8], needed: usize, structure: &'static str) -> Result<(), ParseError> {
     if input.len() < needed {
-        return Err(ParseError::TooShort { structure, needed, actual: input.len() });
+        return Err(ParseError::TooShort {
+            structure,
+            needed,
+            actual: input.len(),
+        });
     }
     Ok(())
 }
@@ -1097,7 +1248,10 @@ fn format_guid(bytes: &[u8]) -> String {
 }
 
 fn decode_c_string(bytes: &[u8]) -> String {
-    let end = bytes.iter().position(|byte| *byte == 0).unwrap_or(bytes.len());
+    let end = bytes
+        .iter()
+        .position(|byte| *byte == 0)
+        .unwrap_or(bytes.len());
     String::from_utf8_lossy(&bytes[..end]).into_owned()
 }
 
@@ -1131,7 +1285,8 @@ mod tests {
         let mut block = [0_u8; 4096];
         block[8..16].copy_from_slice(&1_u64.to_le_bytes());
         block[16..24].copy_from_slice(&10_u64.to_le_bytes());
-        block[24..28].copy_from_slice(&(OBJ_EPHEMERAL | u32::from(OBJECT_TYPE_NX_SUPERBLOCK)).to_le_bytes());
+        block[24..28]
+            .copy_from_slice(&(OBJ_EPHEMERAL | u32::from(OBJECT_TYPE_NX_SUPERBLOCK)).to_le_bytes());
         block[32..36].copy_from_slice(b"NXSB");
         block[36..40].copy_from_slice(&4096_u32.to_le_bytes());
         block[40..48].copy_from_slice(&1024_u64.to_le_bytes());
@@ -1181,7 +1336,9 @@ mod tests {
         let mut block = [0_u8; 4096];
         block[8..16].copy_from_slice(&100_u64.to_le_bytes());
         block[16..24].copy_from_slice(&10_u64.to_le_bytes());
-        block[24..28].copy_from_slice(&(OBJ_EPHEMERAL | u32::from(OBJECT_TYPE_CHECKPOINT_MAP)).to_le_bytes());
+        block[24..28].copy_from_slice(
+            &(OBJ_EPHEMERAL | u32::from(OBJECT_TYPE_CHECKPOINT_MAP)).to_le_bytes(),
+        );
         block[32..36].copy_from_slice(&CHECKPOINT_MAP_LAST.to_le_bytes());
         block[36..40].copy_from_slice(&1_u32.to_le_bytes());
         block[40..44].copy_from_slice(&(OBJ_EPHEMERAL | u32::from(OBJECT_TYPE_OMAP)).to_le_bytes());
@@ -1217,7 +1374,8 @@ mod tests {
         let mut block = [0_u8; 4096];
         block[8..16].copy_from_slice(&99_u64.to_le_bytes());
         block[16..24].copy_from_slice(&10_u64.to_le_bytes());
-        block[24..28].copy_from_slice(&(OBJ_PHYSICAL | u32::from(OBJECT_TYPE_BTREE_NODE)).to_le_bytes());
+        block[24..28]
+            .copy_from_slice(&(OBJ_PHYSICAL | u32::from(OBJECT_TYPE_BTREE_NODE)).to_le_bytes());
         block[32..34].copy_from_slice(&(BTREE_NODE_ROOT | BTREE_NODE_LEAF).to_le_bytes());
         block[34..36].copy_from_slice(&0_u16.to_le_bytes());
         block[36..40].copy_from_slice(&2_u32.to_le_bytes());
@@ -1299,7 +1457,8 @@ mod tests {
         let mut block = vec![0_u8; 4096];
         block[8..16].copy_from_slice(&99_u64.to_le_bytes());
         block[16..24].copy_from_slice(&70_u64.to_le_bytes());
-        block[24..28].copy_from_slice(&(OBJ_PHYSICAL | u32::from(OBJECT_TYPE_BTREE_NODE)).to_le_bytes());
+        block[24..28]
+            .copy_from_slice(&(OBJ_PHYSICAL | u32::from(OBJECT_TYPE_BTREE_NODE)).to_le_bytes());
         block[32..34].copy_from_slice(&BTREE_NODE_ROOT.to_le_bytes());
         block[34..36].copy_from_slice(&1_u16.to_le_bytes());
         block[36..40].copy_from_slice(&2_u32.to_le_bytes());
@@ -1324,5 +1483,4 @@ mod tests {
         let selected = select_synthetic_btree_child(&records, 800, 70);
         assert_eq!(selected.selected_child_oid, Some(101));
     }
-
 }

@@ -1,6 +1,6 @@
 {
   "schema_version": "0.26.0",
-  "generated_utc": "2026-06-25T11:28:57.595070+00:00",
+  "generated_utc": "2026-06-29T16:49:32.331836+00:00",
   "summary": {
     "available_here_tools": 16,
     "missing_platform_tools": 5,
@@ -11,7 +11,7 @@
       "tool": "python3",
       "available": true,
       "path": "/opt/homebrew/bin/python3",
-      "version": "Python 3.14.5",
+      "version": "Python 3.14.6",
       "category": "available_here_core",
       "uses": [
         "all cargoless validators",
@@ -114,8 +114,8 @@
     {
       "tool": "git",
       "available": true,
-      "path": "/usr/bin/git",
-      "version": "git version 2.50.1 (Apple Git-155)",
+      "path": "/Users/doughnut/.cache/codex-runtimes/codex-primary-runtime/dependencies/bin/git",
+      "version": "git version 2.53.0",
       "category": "available_here_optional",
       "uses": [
         "future local version-control checks"
