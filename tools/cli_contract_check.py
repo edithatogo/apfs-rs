@@ -5,10 +5,11 @@ import re, sys
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 EXPECTED = [
-    "Inspect", "CompatibilityReport", "Doctor", "DiagnosticsExport",
+    "Version", "Inspect", "CompatibilityReport", "Doctor", "DiagnosticsExport",
     "LookupObject", "Volumes", "ResolverReport", "BtreeCursorReport",
-    "ReadObject", "Ls", "Cat", "Stat", "MountPlan",
-    "DiagnosticsBundle", "Extract",
+    "ReadObject", "Ls", "Cat", "Stat", "WinfspCallbackMatrix", "MountPlan",
+    "DiagnosticsBundle", "PathPolicy", "FeatureReadiness", "MetadataFeatureReport",
+    "Extract",
 ]
 
 def fail(msg: str) -> None:
@@ -29,8 +30,12 @@ def main() -> int:
         "diagnostics-bundle": "RUNBOOK.md",
         "diagnostics-export": "RUNBOOK.md",
         "doctor": "RUNBOOK.md",
+        "version": "README.md",
         "stat": "RUNBOOK.md",
         "extract": "RUNBOOK.md",
+        "path-policy": "RUNBOOK.md",
+        "feature-readiness": "FEATURE_READINESS.md",
+        "metadata-feature-report": "RUNBOOK.md",
     }
     for token, doc in required_docs.items():
         path = ROOT / doc

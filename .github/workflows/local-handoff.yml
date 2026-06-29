@@ -21,6 +21,12 @@ jobs:
       - run: python3 -m py_compile tools/*.py
       - run: python3 tools/precompile_static_check.py
       - run: python3 tools/config_sanity_check.py
+      - run: python3 tools/version_consistency_check.py
+      - run: python3 tools/profiling_budget_check.py
+      - run: python3 tools/profiling_plan_audit.py
+      - run: python3 tools/benchmark_regression_audit.py
+      - run: python3 tools/release_automation_audit.py
+      - run: python3 tools/bleeding_edge_repo_audit.py
       - run: python3 tools/handoff_status.py --write
       - run: python3 tools/repo_manifest.py --write
       - run: python3 tools/known_risk_check.py

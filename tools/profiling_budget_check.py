@@ -18,9 +18,22 @@ def main() -> int:
     bench_files = sorted(str(p.relative_to(ROOT)) for p in ROOT.glob("crates/*/benches/*.rs"))
     if not bench_files:
         fail("no Rust benchmark files found")
+    required_benches = {
+        "crates/apfs-core/benches/inspect_synthetic.rs",
+        "crates/apfs-types/benches/nx_superblock_bench.rs",
+    }
+    missing_benches = sorted(required_benches.difference(bench_files))
+    if missing_benches:
+        fail("missing required benchmark files: " + ", ".join(missing_benches))
     workflows = (ROOT / ".github/workflows/profiling.yml").read_text(encoding="utf-8")
-    if "cargo bench" not in workflows:
-        fail("profiling workflow must run cargo bench")
+    for snippet in (
+        "cargo run -p xtask -- profiling-budget-check",
+        "cargo run -p xtask -- profiling-plan-audit",
+        "cargo bench -p apfs-core --bench inspect_synthetic",
+        "cargo bench -p apfs-types --bench nx_superblock_bench",
+    ):
+        if snippet not in workflows:
+            fail(f"profiling workflow must run {snippet}")
     envelope = {"schema_version": version, "status": "passed", "profile_plan": plan, "bench_files": bench_files}
     (ROOT / "PROFILING_BUDGET_CHECK.json").write_text(json.dumps(envelope, indent=2) + "\n", encoding="utf-8")
     lines = ["# Profiling Budget Check", "", "Status: `passed`.", "", "## Benchmark files", ""]

@@ -9,4 +9,7 @@ APFS-RS requires strict quality gates before production claims:
 - Parser fuzz targets.
 - Mutation testing with `cargo mutants`.
 - Line coverage target: **>= 90%** with `cargo llvm-cov`.
-- Profiling with Criterion and optional flamegraph tools.
+- Dynamic version metadata with `apfs version --json`.
+- Redacted CLI operational logging with `--log-level` or `APFS_RS_LOG`.
+- Profiling with Criterion for `apfs-core` inspection and `apfs-types` parser microbenchmarks, plus optional flamegraph tools.
+- Release automation dry-runs with cargo-dist and release-plz, with publishing disabled until the MVP release gates are accepted.

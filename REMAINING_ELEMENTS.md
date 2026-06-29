@@ -4,7 +4,7 @@ Document version: 0.28.0
 
 ## Counts
 
-- Implemented/scaffolded elements: **109**
+- Implemented/scaffolded elements: **119**
 - Remaining overall production elements: **8**
 - Remaining Windows read-only MVP production blockers: **9**
 - Total remaining including MVP blockers: **17**
@@ -61,6 +61,16 @@ Document version: 0.28.0
 | M-107 | Hypothesis strategy audit for Python property tests | quality | implemented_python |
 | M-108 | Profiling budget and benchmark audit | quality | implemented_python |
 | M-109 | Quality gate evidence ledger | handoff-quality | implemented_python |
+| M-110 | GitHub Actions hardening with zizmor/actionlint policy | quality | implemented_python |
+| M-111 | GitHub Actions pinning and permissions audit | quality | implemented_python |
+| M-112 | cargo-vet supply-chain review policy | supply-chain | implemented_python |
+| M-113 | SLSA and artifact attestation verification plan | release | implemented_python |
+| M-114 | cargo-dist and release-plz automation scaffold | release | implemented_python |
+| M-115 | OpenSSF Scorecard and dependency-review workflow scaffold | supply-chain | implemented_python |
+| M-116 | Astro 7 documentation quality hardening | documentation | implemented_python |
+| M-117 | Benchmark regression and optional CodSpeed readiness | quality | implemented_python |
+| M-118 | Bleeding-edge repo hardening audit aggregator | quality | implemented_python |
+| M-119 | Executed CI logging profiling and dynamic versioning hardening | quality | implemented |
 
 ## Current-environment conclusion
 
@@ -70,3 +80,8 @@ All required current-environment-completable controls are scaffolded. Remaining 
 ## v0.29.0 Update
 
 Added bleeding-edge repo hardening and automation scaffolds M-110 through M-118.
+
+## Post-v0.29.0 hardening update
+
+Added M-119 to execute dynamic versioning, redacted CLI logging, profiling audits,
+release automation dry-runs, and Astro documentation updates in local and CI gates.

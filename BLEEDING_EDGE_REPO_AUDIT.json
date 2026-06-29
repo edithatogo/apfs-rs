@@ -19,7 +19,8 @@
     },
     {
       "tool": "release_automation_audit.py",
-      "passed": true
+      "passed": true,
+      "code": 0
     },
     {
       "tool": "scorecard_dependency_review_audit.py",

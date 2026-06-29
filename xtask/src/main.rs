@@ -93,6 +93,18 @@ enum Command {
     HandoffReadinessCheck,
     /// Validate release/provenance scaffolding.
     ReleaseScaffoldCheck,
+    /// Validate dynamic version metadata and version ledgers.
+    VersionConsistencyCheck,
+    /// Validate profiling budget configuration.
+    ProfilingBudgetCheck,
+    /// Validate profiling plan targets.
+    ProfilingPlanAudit,
+    /// Validate benchmark regression scaffolding.
+    BenchmarkRegressionAudit,
+    /// Validate release automation configuration.
+    ReleaseAutomationAudit,
+    /// Run the aggregate bleeding-edge repo hardening audit.
+    BleedingEdgeRepoAudit,
     /// Validate local handoff config files.
     ConfigSanityCheck,
     /// Run local environment doctor.
@@ -205,6 +217,18 @@ fn main() -> Result<()> {
         Command::CargoTriage { cargo_log, out_dir } => cargo_triage(&cargo_log, &out_dir),
         Command::HandoffReadinessCheck => run_python_tool("tools/handoff_readiness_check.py", &[]),
         Command::ReleaseScaffoldCheck => run_python_tool("tools/release_scaffold_check.py", &[]),
+        Command::VersionConsistencyCheck => {
+            run_python_tool("tools/version_consistency_check.py", &[])
+        }
+        Command::ProfilingBudgetCheck => run_python_tool("tools/profiling_budget_check.py", &[]),
+        Command::ProfilingPlanAudit => run_python_tool("tools/profiling_plan_audit.py", &[]),
+        Command::BenchmarkRegressionAudit => {
+            run_python_tool("tools/benchmark_regression_audit.py", &[])
+        }
+        Command::ReleaseAutomationAudit => {
+            run_python_tool("tools/release_automation_audit.py", &[])
+        }
+        Command::BleedingEdgeRepoAudit => run_python_tool("tools/bleeding_edge_repo_audit.py", &[]),
         Command::ConfigSanityCheck => run_python_tool("tools/config_sanity_check.py", &[]),
         Command::LocalEnvDoctor { json } => {
             if let Some(path) = json {
@@ -417,7 +441,13 @@ fn precompile_check() -> Result<()> {
     run_python_tool("tools/config_sanity_check.py", &[])?;
     run_python_tool("tools/known_risk_check.py", &[])?;
     run_python_tool("tools/cli_contract_check.py", &[])?;
-    run_python_tool("tools/context_integrity_check.py", &[])
+    run_python_tool("tools/context_integrity_check.py", &[])?;
+    run_python_tool("tools/version_consistency_check.py", &[])?;
+    run_python_tool("tools/profiling_budget_check.py", &[])?;
+    run_python_tool("tools/profiling_plan_audit.py", &[])?;
+    run_python_tool("tools/benchmark_regression_audit.py", &[])?;
+    run_python_tool("tools/release_automation_audit.py", &[])?;
+    run_python_tool("tools/bleeding_edge_repo_audit.py", &[])
 }
 
 fn run_python_tool(script: &str, args: &[&str]) -> Result<()> {

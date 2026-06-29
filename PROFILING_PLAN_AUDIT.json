@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.27.0",
+  "schema_version": "0.29.0",
   "status": "passed",
   "profiles": [
     {
@@ -13,6 +13,18 @@
     {
       "name": "directory_listing_synthetic",
       "command": "cargo run -p apfs-cli --release -- ls --json fixtures/synthetic-directory-listing.img"
+    },
+    {
+      "name": "file_preview_synthetic",
+      "command": "cargo run -p apfs-cli --release -- cat --json fixtures/synthetic-file-preview.img --name hello.txt"
+    },
+    {
+      "name": "parser_microbench_nxsb",
+      "command": "cargo bench -p apfs-types --bench nx_superblock_bench"
+    },
+    {
+      "name": "inspect_microbench_core",
+      "command": "cargo bench -p apfs-core --bench inspect_synthetic"
     }
   ]
 }

@@ -353,3 +353,17 @@ These requirements are configured and audited without Rust/Cargo. Enforcing the 
 - `M-116` — Astro 7 documentation quality hardening.
 - `M-117` — Benchmark regression and optional CodSpeed readiness.
 - `M-118` — Bleeding-edge repo hardening audit aggregator.
+- `M-119` — Executed CI, logging, profiling, and dynamic versioning hardening.
+
+## Post-v0.29.0 CI, logging, profiling, and dynamic versioning requirements
+
+- **M-119 Should:** Required CI must execute dynamic version metadata, profiling
+  audit, release automation audit, and aggregate bleeding-edge hardening checks.
+- **M-119 Should:** `apfs version --json` must expose workspace version, package
+  version, git SHA, target, profile, and read-only/no-media-write metadata.
+- **M-119 Should:** CLI logging must be opt-in, redacted, emitted to stderr, and
+  covered by tests without polluting JSON stdout.
+- **M-119 Should:** Profiling workflows must run Criterion benchmarks for both
+  `apfs-core` and `apfs-types`.
+- **M-119 Must:** Release automation dry-runs must keep publishing disabled until
+  the accepted MVP release gates pass.

@@ -16,3 +16,9 @@ APFS-RS should prevent read-path performance regressions before Windows mounting
 - Criterion benchmark baselines.
 - Optional CodSpeed/GitHub PR regression reporting.
 - Profiling artifacts for release candidates.
+
+## Executed gates
+
+- Scheduled CI runs `cargo bench -p apfs-core --bench inspect_synthetic`.
+- Scheduled CI runs `cargo bench -p apfs-types --bench nx_superblock_bench`.
+- Required CI runs profiling plan and budget audits so benchmark coverage cannot silently disappear.

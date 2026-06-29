@@ -244,7 +244,7 @@ This handoff includes final current-environment control reports: tool capability
 
 ## v0.27.0 QA layer
 
-The repo now includes strict CI workflow scaffolds, a 90% coverage gate policy, unit/integration/E2E/property/Hypothesis/mutation/fuzz/profiling scaffolds, and an Astro 7 docs-site scaffold. These are configured but still need local/GitHub execution because Rust/Cargo and Node dependencies are unavailable in the current packaging environment.
+The repo now includes strict CI workflows, a 90% coverage gate policy, unit/integration/E2E/property/Hypothesis/mutation/fuzz/profiling gates, dynamic CLI version metadata, redacted opt-in CLI logging, release automation dry-runs, and an Astro 7 docs site. Required GitHub Actions execute the Rust, docs, safety, versioning, profiling-audit, and release-audit checks on pull requests and `main`; heavier coverage, fuzz, mutation, and Criterion profiling run on scheduled or manual workflows.
 
 
 ## v0.27.0 quality/docs hardening
@@ -282,3 +282,14 @@ This handoff adds docs-package, GitHub workflow, test inventory, Hypothesis, pro
 - `M-116` — Astro 7 documentation quality hardening.
 - `M-117` — Benchmark regression and optional CodSpeed readiness.
 - `M-118` — Bleeding-edge repo hardening audit aggregator.
+
+## Post-v0.29.0 CI, logging, profiling, and dynamic versioning hardening
+
+This pass promotes the v0.29.0 scaffolds into actively used automation:
+
+- `apfs version --json` reports dynamic workspace version, package version, git SHA, target, and profile metadata.
+- `--log-level` and `APFS_RS_LOG` enable redacted JSON operational logs on stderr without exposing full source paths or APFS media contents.
+- Required CI invokes version, profiling, release automation, and aggregate bleeding-edge audits.
+- Scheduled profiling runs Criterion benchmarks for `apfs-core` and `apfs-types`.
+- Release automation runs cargo-dist planning and release-plz local update checks with publishing disabled.
+- Astro documentation describes the executed gates and local commands.

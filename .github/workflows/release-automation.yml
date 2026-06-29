@@ -16,7 +16,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
-      - name: Release automation placeholder
-        run: |
-          echo "cargo-dist and release-plz are configured as scaffolds."
-          echo "Enable publishing only after MVP gates pass."
+      - run: rustup toolchain install stable --profile minimal
+      - run: rustup default stable
+      - run: cargo run -p xtask -- release-automation-audit
+      - run: cargo install cargo-dist --version 0.29.0 --locked
+      - run: cargo install release-plz --locked
+      - run: cargo dist plan
+      - run: release-plz update --backend local --allow-dirty --config release-plz.toml

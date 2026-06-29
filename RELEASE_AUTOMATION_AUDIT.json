@@ -1,5 +1,54 @@
 {
   "schema_version": "0.29.0",
-  "missing": [],
+  "checks": [
+    {
+      "name": "release-plz.toml",
+      "ok": true
+    },
+    {
+      "name": "dist-workspace.toml",
+      "ok": true
+    },
+    {
+      "name": "RELEASE_AUTOMATION.md",
+      "ok": true
+    },
+    {
+      "name": ".github/workflows/release-automation.yml",
+      "ok": true
+    },
+    {
+      "name": "workflow invokes cargo install cargo-dist",
+      "ok": true
+    },
+    {
+      "name": "workflow invokes cargo install release-plz",
+      "ok": true
+    },
+    {
+      "name": "workflow invokes cargo dist plan",
+      "ok": true
+    },
+    {
+      "name": "workflow invokes release-plz update",
+      "ok": true
+    },
+    {
+      "name": "workflow invokes cargo run -p xtask -- release-automation-audit",
+      "ok": true
+    },
+    {
+      "name": "no placeholder echo",
+      "ok": true
+    },
+    {
+      "name": "cargo-dist version pinned",
+      "ok": true
+    },
+    {
+      "name": "release-plz publish disabled",
+      "ok": true
+    }
+  ],
   "passed": true
 }

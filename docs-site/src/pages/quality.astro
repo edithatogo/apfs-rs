@@ -3,8 +3,17 @@ import Base from '../layouts/Base.astro';
 ---
 <Base title="APFS-RS Quality Gates">
   <h1>Quality Gates</h1>
-  <p>Local/CI Rust gates require format, clippy, nextest, 90% coverage, fuzz smoke, mutation testing, property testing, and supply-chain checks.</p>
+  <p>Local/CI Rust gates require format, clippy, nextest, dynamic version metadata, release automation audits, profiling audits, property testing, and supply-chain checks.</p>
   <pre><code>cargo nextest run --workspace --all-features
 cargo llvm-cov nextest --workspace --all-features --fail-under-lines 90
-cargo mutants --workspace</code></pre>
+cargo mutants --workspace
+cargo run -p apfs-cli -- version --json
+cargo run -p xtask -- bleeding-edge-repo-audit</code></pre>
+  <h2>Logging and diagnostics</h2>
+  <p>The CLI supports opt-in redacted operational logs with <code>--log-level</code> or <code>APFS_RS_LOG</code>. Logs are emitted to stderr as JSON and do not include full source paths or APFS media contents.</p>
+  <pre><code>apfs --log-level info inspect --json fixtures/example-non-apfs.bin</code></pre>
+  <h2>Profiling</h2>
+  <p>The profiling workflow runs Criterion benchmarks for core inspection and APFS type parsing, then uploads Criterion and profiling-audit artifacts.</p>
+  <pre><code>cargo bench -p apfs-core --bench inspect_synthetic
+cargo bench -p apfs-types --bench nx_superblock_bench</code></pre>
 </Base>

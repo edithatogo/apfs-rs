@@ -15,8 +15,20 @@ jobs:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
       - run: rustup toolchain install stable --profile minimal
       - run: rustup default stable
+      - run: cargo run -p xtask -- profiling-budget-check
+      - run: cargo run -p xtask -- profiling-plan-audit
       - run: cargo bench -p apfs-core --bench inspect_synthetic
+      - run: cargo bench -p apfs-types --bench nx_superblock_bench
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        if: always()
         with:
           name: criterion-report
           path: target/criterion
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        if: always()
+        with:
+          name: profiling-audit
+          path: |
+            PROFILING_BUDGET_CHECK.*
+            PROFILING_PLAN_AUDIT.*
+            profiling/profile_plan.json

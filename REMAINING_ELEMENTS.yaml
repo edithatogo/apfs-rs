@@ -472,6 +472,10 @@ implemented_or_scaffolded: &id001
   title: Bleeding-edge repo hardening audit aggregator
   category: quality
   status: implemented_python
+- id: M-119
+  title: Executed CI logging profiling and dynamic versioning hardening
+  category: quality
+  status: implemented
 remaining_windows_readonly_mvp:
 - id: MVP-R001
   title: Compile, lint, test, and fix the current workspace on Rust-enabled machines
@@ -520,7 +524,7 @@ remaining_beyond_mvp:
 current_environment_completable_required: 0
 implemented: *id001
 summary:
-  implemented_or_scaffolded: 118
+  implemented_or_scaffolded: 119
   remaining_overall: 8
   remaining_windows_readonly_mvp: 9
   remaining_total_including_mvp_blockers: 17
@@ -528,5 +532,6 @@ summary:
   required_current_environment_items_remaining: 0
   note: v0.29.0 adds GitHub Actions hardening, cargo-vet/supply-chain policy, provenance,
     release automation, Astro 7 docs hardening, and bleeding-edge repo audit scaffolds;
-    production blockers still require Rust/macOS/Windows execution.
+    M-119 promotes CI, logging, profiling, and dynamic versioning checks into executed
+    local/CI surfaces. Production blockers still require Rust/macOS/Windows execution.
 updated: '2026-06-25'

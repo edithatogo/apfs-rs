@@ -6,6 +6,7 @@ Schema version: `0.29.0`
 
 | Command | Rust variant | Description | Writes APFS media |
 |---|---|---|---|
+| `apfs version` | `Version` | No description recorded. | `false` |
 | `apfs inspect` | `Inspect` | Read-only APFS source inspection report. | `false` |
 | `apfs compatibility-report` | `CompatibilityReport` | Safety-oriented alias for inspect workflows. | `false` |
 | `apfs doctor` | `Doctor` | Aggregated read-only readiness and blocker report. | `false` |

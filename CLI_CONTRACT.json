@@ -1,7 +1,14 @@
 {
   "schema_version": "0.29.0",
-  "command_count": 19,
+  "command_count": 20,
   "commands": [
+    {
+      "rust_variant": "Version",
+      "command": "version",
+      "description": "No description recorded.",
+      "read_only": true,
+      "writes_to_apfs_media": false
+    },
     {
       "rust_variant": "Inspect",
       "command": "inspect",

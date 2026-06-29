@@ -4,4 +4,10 @@ import Base from '../layouts/Base.astro';
 <Base title="APFS-RS Quality Evidence">
   <h1>Quality evidence</h1>
   <p>The quality evidence ledger separates configured checks from executed checks so handoff status remains honest.</p>
+  <ul>
+    <li>Required CI runs format, clippy, tests, dynamic version output, context checks, safety checks, version consistency, profiling audits, release automation audit, and the aggregate bleeding-edge audit.</li>
+    <li>Scheduled profiling runs Criterion benchmarks for <code>apfs-core</code> and <code>apfs-types</code>.</li>
+    <li>Release automation invokes cargo-dist planning and release-plz local update checks with publishing disabled until MVP gates are accepted.</li>
+    <li>Renovate maintains Cargo, GitHub Actions, npm, Dockerfile, and Python requirement dependencies, with policy review required for risky crypto/TLS transitive dependency updates.</li>
+  </ul>
 </Base>

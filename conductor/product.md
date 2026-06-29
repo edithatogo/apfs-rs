@@ -16,7 +16,7 @@ Implementation is early and read-only. The package currently implements syntheti
 
 ## Development history
 
-The complete implementation history is captured in Conductor tracks `0001` through `0012` and summarised in `conductor/history.md`.
+The complete implementation history is captured in Conductor tracks and summarised in `conductor/history.md`.
 
 ## Non-goals until later accepted tracks
 
@@ -40,4 +40,4 @@ The project succeeds when every supported APFS claim is backed by fixture eviden
 
 ## Current ledger note
 
-The Conductor history now spans M-001 through M-118, including repository hardening, quality evidence, and read-only APFS scaffolds. Production APFS compatibility claims still require the relevant local, CI, macOS, or Windows evidence gates.
+The Conductor history now spans M-001 through M-119, including repository hardening, quality evidence, dynamic versioning, redacted logging, and read-only APFS scaffolds. Production APFS compatibility claims still require the relevant local, CI, macOS, or Windows evidence gates.

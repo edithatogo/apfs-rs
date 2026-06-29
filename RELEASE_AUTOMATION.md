@@ -1,14 +1,14 @@
-# Release Automation Scaffold
+# Release Automation
 
 Version: 0.29.0
 
-The repository is prepared for a Rust release pipeline using cargo-dist and release-plz after local compilation succeeds.
+The repository runs a dry-run Rust release pipeline using cargo-dist and release-plz after local compilation succeeds. Publishing remains disabled until the accepted APFS read-only MVP release gates pass.
 
 ## Intended workflow
 
-1. Release-plz opens version/changelog PRs from conventional commits.
-2. cargo-dist plans and builds release artifacts.
-3. GitHub Actions generate checksums, SBOM, and attestations.
+1. Release-plz checks local version/changelog updates with `publish = false`.
+2. cargo-dist runs `cargo dist plan` against `dist-workspace.toml`.
+3. GitHub Actions generate checksums and attestations in the release preflight workflow.
 4. Windows signing and winget publication run only after read-only MVP validation.
 
 No production release is claimed until Rust tests, real APFS fixtures, and platform smoke tests pass.

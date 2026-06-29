@@ -3,6 +3,7 @@
 use std::{
     fs,
     path::{Path, PathBuf},
+    sync::OnceLock,
 };
 
 use anyhow::Context;
@@ -18,17 +19,65 @@ use apfs_features::{analyze_unicode_case_policy, feature_readiness, metadata_fea
 use apfs_win::{plan_read_only_mount, winfsp_readonly_callback_matrix};
 use clap::{Parser, Subcommand};
 
+static LOG_LEVEL: OnceLock<LogLevel> = OnceLock::new();
+
+#[derive(Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord)]
+enum LogLevel {
+    Off = 0,
+    Error = 1,
+    Warn = 2,
+    Info = 3,
+    Debug = 4,
+    Trace = 5,
+}
+
+impl LogLevel {
+    fn parse(value: &str) -> anyhow::Result<Self> {
+        match value.to_ascii_lowercase().as_str() {
+            "off" | "none" => Ok(Self::Off),
+            "error" => Ok(Self::Error),
+            "warn" | "warning" => Ok(Self::Warn),
+            "info" => Ok(Self::Info),
+            "debug" => Ok(Self::Debug),
+            "trace" => Ok(Self::Trace),
+            other => anyhow::bail!(
+                "unsupported log level {other:?}; expected off, error, warn, info, debug, or trace"
+            ),
+        }
+    }
+
+    fn label(self) -> &'static str {
+        match self {
+            Self::Off => "off",
+            Self::Error => "error",
+            Self::Warn => "warn",
+            Self::Info => "info",
+            Self::Debug => "debug",
+            Self::Trace => "trace",
+        }
+    }
+}
+
 #[derive(Debug, Parser)]
 #[command(name = "apfs")]
 #[command(about = "Clean-room APFS inspection tooling")]
-#[command(version)]
+#[command(version = env!("APFS_RS_VERSION"))]
 struct Cli {
+    /// Emit redacted operational logs to stderr. Also supports APFS_RS_LOG.
+    #[arg(long, global = true, value_name = "LEVEL")]
+    log_level: Option<String>,
     #[command(subcommand)]
     command: Command,
 }
 
 #[derive(Debug, Subcommand)]
 enum Command {
+    /// Print dynamic build/version metadata.
+    Version {
+        /// Emit JSON output.
+        #[arg(long)]
+        json: bool,
+    },
     /// Inspect an APFS source image read-only.
     Inspect {
         /// Source image path. Raw physical devices are intentionally not supported in this slice.
@@ -227,7 +276,18 @@ enum Command {
 
 fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
+    init_logging(cli.log_level.as_deref())?;
+    audit_log(
+        LogLevel::Info,
+        "cli.start",
+        &[
+            ("command", command_name(&cli.command).to_owned()),
+            ("version", env!("APFS_RS_VERSION").to_owned()),
+            ("git_sha", env!("APFS_RS_GIT_SHA").to_owned()),
+        ],
+    );
     match cli.command {
+        Command::Version { json } => version_command(json),
         Command::Inspect { source, json } | Command::CompatibilityReport { source, json } => {
             inspect_command(source, json)
         }
@@ -283,9 +343,115 @@ fn main() -> anyhow::Result<()> {
     }
 }
 
+fn init_logging(cli_level: Option<&str>) -> anyhow::Result<()> {
+    let level = if let Some(level) = cli_level {
+        LogLevel::parse(level)?
+    } else if let Ok(level) = std::env::var("APFS_RS_LOG") {
+        LogLevel::parse(&level)?
+    } else {
+        LogLevel::Off
+    };
+    let _ = LOG_LEVEL.set(level);
+    Ok(())
+}
+
+fn audit_log(level: LogLevel, event: &str, fields: &[(&str, String)]) {
+    let configured = LOG_LEVEL.get().copied().unwrap_or(LogLevel::Off);
+    if configured < level || level == LogLevel::Off {
+        return;
+    }
+    let mut envelope = serde_json::Map::new();
+    envelope.insert(
+        "schema_version".to_owned(),
+        serde_json::Value::String(env!("APFS_RS_VERSION").to_owned()),
+    );
+    envelope.insert(
+        "level".to_owned(),
+        serde_json::Value::String(level.label().to_owned()),
+    );
+    envelope.insert(
+        "event".to_owned(),
+        serde_json::Value::String(event.to_owned()),
+    );
+    envelope.insert("read_only".to_owned(), serde_json::Value::Bool(true));
+    envelope.insert(
+        "writes_to_apfs_media".to_owned(),
+        serde_json::Value::Bool(false),
+    );
+    for (key, value) in fields {
+        envelope.insert((*key).to_owned(), serde_json::Value::String(value.clone()));
+    }
+    eprintln!("{}", serde_json::Value::Object(envelope));
+}
+
+fn command_name(command: &Command) -> &'static str {
+    match command {
+        Command::Version { .. } => "version",
+        Command::Inspect { .. } => "inspect",
+        Command::CompatibilityReport { .. } => "compatibility-report",
+        Command::Doctor { .. } => "doctor",
+        Command::DiagnosticsExport { .. } => "diagnostics-export",
+        Command::LookupObject { .. } => "lookup-object",
+        Command::Volumes { .. } => "volumes",
+        Command::ResolverReport { .. } => "resolver-report",
+        Command::BtreeCursorReport { .. } => "btree-cursor-report",
+        Command::ReadObject { .. } => "read-object",
+        Command::Ls { .. } => "ls",
+        Command::Cat { .. } => "cat",
+        Command::Stat { .. } => "stat",
+        Command::WinfspCallbackMatrix { .. } => "winfsp-callback-matrix",
+        Command::MountPlan { .. } => "mount-plan",
+        Command::DiagnosticsBundle { .. } => "diagnostics-bundle",
+        Command::PathPolicy { .. } => "path-policy",
+        Command::FeatureReadiness { .. } => "feature-readiness",
+        Command::MetadataFeatureReport { .. } => "metadata-feature-report",
+        Command::Extract { .. } => "extract",
+    }
+}
+
+fn source_label(source: &Path) -> String {
+    source
+        .file_name()
+        .and_then(|name| name.to_str())
+        .unwrap_or("<source>")
+        .to_owned()
+}
+
+fn open_image_device(source: &Path, operation: &str) -> anyhow::Result<ImageBlockDevice> {
+    audit_log(
+        LogLevel::Info,
+        "image.open_read_only",
+        &[
+            ("operation", operation.to_owned()),
+            ("source_name_redacted", source_label(source)),
+        ],
+    );
+    ImageBlockDevice::open(source).with_context(|| format!("open {} read-only", source.display()))
+}
+
+fn version_command(json: bool) -> anyhow::Result<()> {
+    let envelope = serde_json::json!({
+        "schema_version": env!("APFS_RS_VERSION"),
+        "package_version": env!("CARGO_PKG_VERSION"),
+        "workspace_version": env!("APFS_RS_VERSION"),
+        "git_sha": env!("APFS_RS_GIT_SHA"),
+        "target": env!("APFS_RS_TARGET"),
+        "profile": env!("APFS_RS_PROFILE"),
+        "rust_read_only_default": true,
+        "writes_to_apfs_media": false
+    });
+    if json {
+        println!("{}", serde_json::to_string_pretty(&envelope)?);
+    } else {
+        println!("APFS-RS {}", env!("APFS_RS_VERSION"));
+        println!("crate package: {}", env!("CARGO_PKG_VERSION"));
+        println!("git sha: {}", env!("APFS_RS_GIT_SHA"));
+    }
+    Ok(())
+}
+
 fn inspect_command(source: PathBuf, json: bool) -> anyhow::Result<()> {
-    let device = ImageBlockDevice::open(&source)
-        .with_context(|| format!("open {} read-only", source.display()))?;
+    let device = open_image_device(&source, "inspect")?;
     let report = inspect_device(&device).context("inspect source")?;
 
     if json {
@@ -303,8 +469,7 @@ fn inspect_command(source: PathBuf, json: bool) -> anyhow::Result<()> {
 }
 
 fn doctor_command(source: PathBuf, json: bool) -> anyhow::Result<()> {
-    let device = ImageBlockDevice::open(&source)
-        .with_context(|| format!("open {} read-only", source.display()))?;
+    let device = open_image_device(&source, "doctor")?;
     let inspect = inspect_device(&device).context("doctor inspect source")?;
     let volume_report = volume_report_in_device(&device).ok();
     let resolver_report = resolver_report_in_device(&device).ok();
@@ -410,8 +575,7 @@ fn doctor_command(source: PathBuf, json: bool) -> anyhow::Result<()> {
 }
 
 fn diagnostics_export_command(source: PathBuf, out: PathBuf, json: bool) -> anyhow::Result<()> {
-    let device = ImageBlockDevice::open(&source)
-        .with_context(|| format!("open {} read-only", source.display()))?;
+    let device = open_image_device(&source, "diagnostics-export")?;
     let inspect = inspect_device(&device).context("diagnostic inspect source")?;
     let volume_report = volume_report_in_device(&device).ok();
     let resolver_report = resolver_report_in_device(&device).ok();
@@ -463,8 +627,7 @@ fn diagnostics_export_command(source: PathBuf, out: PathBuf, json: bool) -> anyh
 }
 
 fn lookup_object_command(source: PathBuf, oid: u64, xid: u64, json: bool) -> anyhow::Result<()> {
-    let device = ImageBlockDevice::open(&source)
-        .with_context(|| format!("open {} read-only", source.display()))?;
+    let device = open_image_device(&source, "lookup-object")?;
     let report = lookup_object_in_device(&device, oid, xid).context("lookup object")?;
 
     if json {
@@ -508,8 +671,7 @@ fn lookup_object_command(source: PathBuf, oid: u64, xid: u64, json: bool) -> any
 }
 
 fn volumes_command(source: PathBuf, json: bool) -> anyhow::Result<()> {
-    let device = ImageBlockDevice::open(&source)
-        .with_context(|| format!("open {} read-only", source.display()))?;
+    let device = open_image_device(&source, "volumes")?;
     let report = volume_report_in_device(&device).context("build APFS volume report")?;
 
     if json {
@@ -551,8 +713,7 @@ fn volumes_command(source: PathBuf, json: bool) -> anyhow::Result<()> {
 }
 
 fn resolver_report_command(source: PathBuf, json: bool) -> anyhow::Result<()> {
-    let device = ImageBlockDevice::open(&source)
-        .with_context(|| format!("open {} read-only", source.display()))?;
+    let device = open_image_device(&source, "resolver-report")?;
     let report = resolver_report_in_device(&device).context("build object-map resolver report")?;
 
     if json {
@@ -597,8 +758,7 @@ fn btree_cursor_report_command(
     xid: u64,
     json: bool,
 ) -> anyhow::Result<()> {
-    let device = ImageBlockDevice::open(&source)
-        .with_context(|| format!("open {} read-only", source.display()))?;
+    let device = open_image_device(&source, "btree-cursor-report")?;
     let report =
         btree_cursor_report_in_device(&device, oid, xid).context("build B-tree cursor report")?;
 
@@ -645,8 +805,7 @@ fn btree_cursor_report_command(
 }
 
 fn read_object_command(source: PathBuf, oid: u64, xid: u64, json: bool) -> anyhow::Result<()> {
-    let device = ImageBlockDevice::open(&source)
-        .with_context(|| format!("open {} read-only", source.display()))?;
+    let device = open_image_device(&source, "read-object")?;
     let report = read_mapped_object_in_device(&device, oid, xid).context("read mapped object")?;
 
     if json {
@@ -681,8 +840,7 @@ fn read_object_command(source: PathBuf, oid: u64, xid: u64, json: bool) -> anyho
 }
 
 fn ls_command(source: PathBuf, json: bool) -> anyhow::Result<()> {
-    let device = ImageBlockDevice::open(&source)
-        .with_context(|| format!("open {} read-only", source.display()))?;
+    let device = open_image_device(&source, "ls")?;
     let report = directory_report_in_device(&device).context("directory report")?;
 
     if json {
@@ -717,8 +875,7 @@ fn ls_command(source: PathBuf, json: bool) -> anyhow::Result<()> {
 }
 
 fn cat_command(source: PathBuf, name: String, json: bool) -> anyhow::Result<()> {
-    let device = ImageBlockDevice::open(&source)
-        .with_context(|| format!("open {} read-only", source.display()))?;
+    let device = open_image_device(&source, "cat")?;
     let report = file_read_report_in_device(&device, &name).context("synthetic file preview")?;
 
     if json {
@@ -789,8 +946,7 @@ fn mount_plan_command(source: PathBuf, mountpoint: String, json: bool) -> anyhow
 }
 
 fn diagnostics_bundle_command(source: PathBuf, json: bool) -> anyhow::Result<()> {
-    let device = ImageBlockDevice::open(&source)
-        .with_context(|| format!("open {} read-only", source.display()))?;
+    let device = open_image_device(&source, "diagnostics-bundle")?;
     let inspect = inspect_device(&device).context("inspect for diagnostics bundle")?;
     let resolver = resolver_report_in_device(&device).ok();
     let volumes = volume_report_in_device(&device).ok();
@@ -867,8 +1023,7 @@ fn diagnostics_bundle_command(source: PathBuf, json: bool) -> anyhow::Result<()>
 }
 
 fn stat_command(source: PathBuf, name: String, json: bool) -> anyhow::Result<()> {
-    let device = ImageBlockDevice::open(&source)
-        .with_context(|| format!("open {} read-only", source.display()))?;
+    let device = open_image_device(&source, "stat")?;
     let report = directory_report_in_device(&device).context("directory report for stat")?;
     let entry = report
         .entries
@@ -982,8 +1137,7 @@ fn metadata_feature_report_command(feature: String, json: bool) -> anyhow::Resul
 
 fn extract_command(source: PathBuf, name: String, dest: PathBuf, json: bool) -> anyhow::Result<()> {
     validate_safe_output_name(&name)?;
-    let device = ImageBlockDevice::open(&source)
-        .with_context(|| format!("open {} read-only", source.display()))?;
+    let device = open_image_device(&source, "extract")?;
     let report = file_read_report_in_device(&device, &name).context("synthetic extract preview")?;
     let mut wrote_path: Option<String> = None;
     let mut wrote_bytes: Option<usize> = None;

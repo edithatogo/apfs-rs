@@ -408,3 +408,7 @@ gates:
   repo_hardening_audit:
     description: Bleeding-edge repo hardening audit aggregator must remain configured
       and auditable before local/CI handoff.
+  ci_logging_versioning_hardening:
+    description: CI, logging, profiling, and dynamic versioning hardening must be
+      executed by tests or workflows, must keep logs redacted, and must not add APFS
+      media writes, mount lifecycle, encryption bypass, or unreviewed unsafe code.

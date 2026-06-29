@@ -1778,3 +1778,23 @@ capabilities:
     safety_gates:
     - repo_hardening_audit
     status: implemented_python
+  M-119:
+    name: Executed CI logging profiling and dynamic versioning hardening
+    milestone: repo_hardening
+    moscow: Should
+    track: quality
+    crates:
+    - apfs-cli
+    - xtask
+    required_tests:
+    - cli_dynamic_version_json
+    - cli_redacted_logging
+    - profiling_budget_check
+    - profiling_plan_audit
+    - release_automation_audit
+    - bleeding_edge_repo_audit
+    safety_gates:
+    - ci_logging_versioning_hardening
+    - profiling_no_media_mutation
+    - secret_redaction
+    status: implemented

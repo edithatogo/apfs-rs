@@ -2,6 +2,14 @@
 
 This is an Astro 7 + Starlight documentation scaffold for APFS-RS.
 
+The site documents the active CI, profiling, release automation, dynamic version,
+and logging surfaces. Build it with:
+
+```bash
+npm ci
+npm run build
+```
+
 ```bash
 cd docs-site
 npm install

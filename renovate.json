@@ -5,9 +5,20 @@
     ":dependencyDashboard",
     ":semanticCommits",
     ":separateMajorReleases",
+    ":enableVulnerabilityAlertsWithLabel(security)",
+    ":maintainLockFilesWeekly",
     ":prHourlyLimitNone",
     ":prConcurrentLimit10"
   ],
+  "enabledManagers": [
+    "cargo",
+    "github-actions",
+    "npm",
+    "dockerfile",
+    "pip_requirements"
+  ],
+  "rangeStrategy": "bump",
+  "rebaseWhen": "behind-base-branch",
   "labels": [
     "dependencies"
   ],
@@ -35,6 +46,15 @@
         "digest"
       ],
       "automerge": false
+    },
+    {
+      "matchPackageNames": [
+        "jsonschema"
+      ],
+      "dependencyDashboardApproval": true,
+      "prBodyNotes": [
+        "APFS-RS policy gate: jsonschema major updates can introduce crypto/TLS transitive dependencies. Confirm issue #11 before merge."
+      ]
     }
   ],
   "vulnerabilityAlerts": {
