@@ -13,7 +13,7 @@ jobs:
   fuzz-smoke:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: dtolnay/rust-toolchain@stable
       - run: cargo install cargo-fuzz --locked
       - run: cargo fuzz run object_header -- -max_total_time=60

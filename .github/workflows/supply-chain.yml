@@ -17,13 +17,13 @@ jobs:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/dependency-review-action@v4
 
   scorecard:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: ossf/scorecard-action@v2.4.0
         with:
           results_file: scorecard-results.sarif
@@ -36,6 +36,6 @@ jobs:
   cargo-vet-policy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: cargo-vet placeholder
         run: echo "Run cargo vet after Rust toolchain and Cargo.lock are established"
