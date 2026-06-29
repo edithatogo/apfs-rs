@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true
     steps:
-      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
       - run: rustup toolchain install stable --profile minimal --component rustfmt --component clippy --component llvm-tools-preview
       - run: rustup default stable
       - uses: taiki-e/install-action@9bcaee1dcae34154180f412e2fa69355a7cda9f6
@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true
     steps:
-      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
       - run: rustup toolchain install nightly --profile minimal
       - run: rustup default nightly
       - run: cargo install cargo-fuzz --locked
@@ -43,7 +43,7 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true
     steps:
-      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
       - run: rustup toolchain install nightly --profile minimal --component miri
       - run: cargo +nightly miri test -p apfs-types -p apfs-core
       - run: echo "Kani/profiling are local/release gates; install cargo-kani and benchmark tools before enforcing."

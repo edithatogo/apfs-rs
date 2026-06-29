@@ -13,7 +13,7 @@ jobs:
   tests-and-coverage:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
       - run: rustup toolchain install stable --profile minimal --component rustfmt --component clippy
       - run: rustup default stable
       - uses: taiki-e/install-action@9bcaee1dcae34154180f412e2fa69355a7cda9f6
@@ -26,7 +26,7 @@ jobs:
   property-and-e2e:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
       - run: rustup toolchain install stable --profile minimal
       - run: rustup default stable
       - run: cargo test -p apfs-types --test property_nx_superblock
@@ -36,7 +36,7 @@ jobs:
   context-and-safety:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
       - run: rustup toolchain install stable --profile minimal
       - run: rustup default stable
       - run: cargo run -p xtask -- registry-check

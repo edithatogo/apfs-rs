@@ -5,12 +5,12 @@
   "items": [
     {
       "workflow": ".github/workflows/ci.yml",
-      "uses": "actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5",
+      "uses": "actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0",
       "pinned_to_sha": true
     },
     {
       "workflow": ".github/workflows/coverage.yml",
-      "uses": "actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5",
+      "uses": "actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0",
       "pinned_to_sha": true
     },
     {
@@ -20,57 +20,57 @@
     },
     {
       "workflow": ".github/workflows/coverage.yml",
-      "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+      "uses": "actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a",
       "pinned_to_sha": true
     },
     {
       "workflow": ".github/workflows/docs-quality.yml",
-      "uses": "actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5",
+      "uses": "actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0",
       "pinned_to_sha": true
     },
     {
       "workflow": ".github/workflows/docs-quality.yml",
-      "uses": "actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+      "uses": "actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1",
       "pinned_to_sha": true
     },
     {
       "workflow": ".github/workflows/docs-quality.yml",
-      "uses": "actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5",
+      "uses": "actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0",
       "pinned_to_sha": true
     },
     {
       "workflow": ".github/workflows/docs-quality.yml",
-      "uses": "actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020",
+      "uses": "actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e",
       "pinned_to_sha": true
     },
     {
       "workflow": ".github/workflows/docs-site.yml",
-      "uses": "actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5",
+      "uses": "actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0",
       "pinned_to_sha": true
     },
     {
       "workflow": ".github/workflows/docs-site.yml",
-      "uses": "actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020",
+      "uses": "actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e",
       "pinned_to_sha": true
     },
     {
       "workflow": ".github/workflows/fuzz.yml",
-      "uses": "actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5",
+      "uses": "actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0",
       "pinned_to_sha": true
     },
     {
       "workflow": ".github/workflows/local-handoff.yml",
-      "uses": "actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5",
+      "uses": "actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0",
       "pinned_to_sha": true
     },
     {
       "workflow": ".github/workflows/local-handoff.yml",
-      "uses": "actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+      "uses": "actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1",
       "pinned_to_sha": true
     },
     {
       "workflow": ".github/workflows/mutation.yml",
-      "uses": "actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5",
+      "uses": "actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0",
       "pinned_to_sha": true
     },
     {
@@ -80,42 +80,42 @@
     },
     {
       "workflow": ".github/workflows/mutation.yml",
-      "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+      "uses": "actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a",
       "pinned_to_sha": true
     },
     {
       "workflow": ".github/workflows/profiling.yml",
-      "uses": "actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5",
+      "uses": "actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0",
       "pinned_to_sha": true
     },
     {
       "workflow": ".github/workflows/profiling.yml",
-      "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+      "uses": "actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a",
       "pinned_to_sha": true
     },
     {
       "workflow": ".github/workflows/provenance-verify.yml",
-      "uses": "actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5",
+      "uses": "actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0",
       "pinned_to_sha": true
     },
     {
       "workflow": ".github/workflows/provenance-verify.yml",
-      "uses": "actions/attest-build-provenance@977bb373ede98d70efdf65b84cb5f73e068dcc2a",
+      "uses": "actions/attest-build-provenance@0f67c3f4856b2e3261c31976d6725780e5e4c373",
       "pinned_to_sha": true
     },
     {
       "workflow": ".github/workflows/python-property.yml",
-      "uses": "actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5",
+      "uses": "actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0",
       "pinned_to_sha": true
     },
     {
       "workflow": ".github/workflows/python-property.yml",
-      "uses": "actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+      "uses": "actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1",
       "pinned_to_sha": true
     },
     {
       "workflow": ".github/workflows/quality-gates.yml",
-      "uses": "actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5",
+      "uses": "actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0",
       "pinned_to_sha": true
     },
     {
@@ -125,32 +125,32 @@
     },
     {
       "workflow": ".github/workflows/quality-gates.yml",
-      "uses": "actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5",
+      "uses": "actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0",
       "pinned_to_sha": true
     },
     {
       "workflow": ".github/workflows/quality-gates.yml",
-      "uses": "actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5",
+      "uses": "actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0",
       "pinned_to_sha": true
     },
     {
       "workflow": ".github/workflows/release-automation.yml",
-      "uses": "actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5",
+      "uses": "actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0",
       "pinned_to_sha": true
     },
     {
       "workflow": ".github/workflows/release.yml",
-      "uses": "actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5",
+      "uses": "actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0",
       "pinned_to_sha": true
     },
     {
       "workflow": ".github/workflows/release.yml",
-      "uses": "actions/attest-build-provenance@977bb373ede98d70efdf65b84cb5f73e068dcc2a",
+      "uses": "actions/attest-build-provenance@0f67c3f4856b2e3261c31976d6725780e5e4c373",
       "pinned_to_sha": true
     },
     {
       "workflow": ".github/workflows/security.yml",
-      "uses": "actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5",
+      "uses": "actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0",
       "pinned_to_sha": true
     },
     {
@@ -165,7 +165,7 @@
     },
     {
       "workflow": ".github/workflows/strict-quality.yml",
-      "uses": "actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5",
+      "uses": "actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0",
       "pinned_to_sha": true
     },
     {
@@ -175,27 +175,27 @@
     },
     {
       "workflow": ".github/workflows/strict-quality.yml",
-      "uses": "actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5",
+      "uses": "actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0",
       "pinned_to_sha": true
     },
     {
       "workflow": ".github/workflows/strict-quality.yml",
-      "uses": "actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5",
+      "uses": "actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0",
       "pinned_to_sha": true
     },
     {
       "workflow": ".github/workflows/supply-chain.yml",
-      "uses": "actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5",
+      "uses": "actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0",
       "pinned_to_sha": true
     },
     {
       "workflow": ".github/workflows/supply-chain.yml",
-      "uses": "actions/dependency-review-action@2031cfc080254a8a887f58cffee85186f0e49e48",
+      "uses": "actions/dependency-review-action@a1d282b36b6f3519aa1f3fc636f609c47dddb294",
       "pinned_to_sha": true
     },
     {
       "workflow": ".github/workflows/supply-chain.yml",
-      "uses": "actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5",
+      "uses": "actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0",
       "pinned_to_sha": true
     },
     {
@@ -210,17 +210,17 @@
     },
     {
       "workflow": ".github/workflows/supply-chain.yml",
-      "uses": "actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5",
+      "uses": "actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0",
       "pinned_to_sha": true
     },
     {
       "workflow": ".github/workflows/workflow-security.yml",
-      "uses": "actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5",
+      "uses": "actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0",
       "pinned_to_sha": true
     },
     {
       "workflow": ".github/workflows/workflow-security.yml",
-      "uses": "actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5",
+      "uses": "actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0",
       "pinned_to_sha": true
     },
     {
