@@ -53,14 +53,16 @@ def block(data: bytes, idx: int) -> bytes:
 def apfs_fletcher64(obj: bytes) -> int:
     if len(obj) < 12 or (len(obj) - 8) % 4:
         fail("object length is not APFS Fletcher-compatible")
-    lower = 0
-    upper = 0
+    checksum_input = bytearray(obj)
+    checksum_input[0:8] = b"\x00" * 8
+    c0 = 0
+    c1 = 0
     mod = 0xFFFFFFFF
-    for off in range(8, len(obj), 4):
-        lower = (lower + u32(obj, off)) % mod
-        upper = (upper + lower) % mod
-    checksum_lower = (lower + upper) % mod
-    checksum_upper = (lower + checksum_lower) % mod
+    for off in range(0, len(checksum_input), 4):
+        c0 = (c0 + u32(checksum_input, off)) % mod
+        c1 = (c1 + c0) % mod
+    checksum_lower = (mod - ((c0 + c1) % mod)) % mod
+    checksum_upper = (mod - ((c0 + checksum_lower) % mod)) % mod
     return (checksum_upper << 32) | checksum_lower
 
 

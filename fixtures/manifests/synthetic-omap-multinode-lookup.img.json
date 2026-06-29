@@ -1,26 +1,26 @@
 {
+  "fixture_id": "synthetic-omap-multinode-lookup.img",
+  "schema_version": "0.15.0",
+  "source_type": "synthetic_apfs_parser_development_image",
+  "description": "Direct APFS-like image with checkpoint-map-backed OMAP lookup records across multiple synthetic B-tree leaf nodes",
+  "created_with": {
+    "tool": "tools/make_synthetic_fixtures.py",
+    "note": "synthetic parser-development fixture"
+  },
+  "expected_artifacts": [],
+  "synthetic": true,
+  "not_a_complete_filesystem": true,
   "apfs_features": {
-    "not_a_complete_filesystem": true,
-    "synthetic": true
+    "synthetic": true,
+    "not_a_complete_filesystem": true
   },
   "capability_ids": [
     "M-007"
   ],
-  "created_with": {
-    "note": "synthetic parser-development fixture",
-    "tool": "tools/make_synthetic_fixtures.py"
-  },
-  "description": "Direct APFS-like image with checkpoint-map-backed OMAP lookup records across multiple synthetic B-tree leaf nodes",
-  "expected_artifacts": [],
-  "fixture_id": "synthetic-omap-multinode-lookup.img",
-  "not_a_complete_filesystem": true,
   "redaction": {
     "contains_personal_data": false,
     "contains_secret_material": false
   },
-  "schema_version": "0.16.0",
-  "sha256": "0e283ad4dc3e01f178a0bde5e37cbce8226395c870a5a3b2d634308d7f57ad10",
   "size_bytes": 196608,
-  "source_type": "synthetic_apfs_parser_development_image",
-  "synthetic": true
+  "sha256": "03cd1d3f25640085ef31a661afa02844ec8e446e1660768d752434b409b2e053"
 }

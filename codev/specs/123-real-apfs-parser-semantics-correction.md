@@ -1,6 +1,6 @@
 # Spec M-123: Real APFS parser semantics correction
 
-Status: `planned_roadmap`.
+Status: `implemented`.
 
 ## Objective
 

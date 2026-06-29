@@ -1,7 +1,7 @@
 {
   "schema_version": "0.29.0",
   "status": "passed",
-  "track_count": 163,
+  "track_count": 162,
   "failures": [],
   "tracks": [
     {
@@ -1083,14 +1083,6 @@
       "review": "conductor/tracks/0122-real-fixture-feedback-promotion/review.md",
       "archive_status": "archived",
       "codev_review": "codev/reviews/122-real-fixture-feedback-promotion-review.md"
-    },
-    {
-      "track_id": "0123-real-apfs-parser-semantics-correction",
-      "capability": "M-123",
-      "status": "planned_roadmap",
-      "review": "conductor/tracks/0123-real-apfs-parser-semantics-correction/review.md",
-      "archive_status": "open",
-      "codev_review": "codev/reviews/123-real-apfs-parser-semantics-correction-review.md"
     },
     {
       "track_id": "0124-production-checkpoint-ring-reconstruction",

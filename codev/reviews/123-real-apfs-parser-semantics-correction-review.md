@@ -2,8 +2,8 @@
 
 ## Status
 
-`planned_roadmap`.
+`implemented`.
 
 ## Notes
 
-This roadmap track exists because the mature, hardened APFS-RS release is not fully implemented. It is reviewed as a planning/evidence track only; no production APFS behavior is claimed until its plan is executed and validated.
+This track now has executed evidence: the APFS Fletcher-64 checksum semantics were corrected so the real macOS-generated NXSB validates, and the converted raw image advances into checkpoint scanning. The remaining checkpoint/OMAP/B-tree/filesystem calibration work stays in the later roadmap tracks.

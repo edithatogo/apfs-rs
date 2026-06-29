@@ -1,13 +1,13 @@
 {
   "track_id": "0123-real-apfs-parser-semantics-correction",
   "capability": "M-123",
-  "status": "planned_roadmap",
+  "status": "implemented",
   "category": "core-read",
   "package": "roadmap",
   "purpose": "Correct APFS parser offsets and semantics against real macOS fixture evidence.",
   "review_status": "reviewed",
-  "archive_status": "open",
-  "archived": false,
+  "archive_status": "archived",
+  "archived": true,
   "archive_version": "0.29.0",
   "archive_evidence": "CONDUCTOR_TRACK_CLOSEOUT_AUDIT.md",
   "codev_review": "codev/reviews/123-real-apfs-parser-semantics-correction-review.md"

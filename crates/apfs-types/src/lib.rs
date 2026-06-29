@@ -1049,21 +1049,26 @@ pub fn validate_object_checksum(object_bytes: &[u8]) -> Result<ObjectChecksum, P
 
 /// Calculate the APFS object Fletcher-64 checksum for an object block.
 ///
-/// The first eight bytes are the stored checksum field and are excluded from the Fletcher input.
+/// The stored checksum field is treated as zero while the checksum is calculated.
 pub fn apfs_fletcher64(object_bytes: &[u8]) -> Result<u64, ParseError> {
     if object_bytes.len() < 12 || (object_bytes.len() - 8) % 4 != 0 {
         return Err(ParseError::InvalidChecksumInputLength(object_bytes.len()));
     }
 
-    let mut lower = 0_u64;
-    let mut upper = 0_u64;
-    for chunk in object_bytes[8..].chunks_exact(4) {
+    let mut checksum_input = object_bytes.to_vec();
+    checksum_input[..8].fill(0);
+
+    let mut c0 = 0_u64;
+    let mut c1 = 0_u64;
+    for chunk in checksum_input.chunks_exact(4) {
         let value = u64::from(u32::from_le_bytes([chunk[0], chunk[1], chunk[2], chunk[3]]));
-        lower = (lower + value) % FLETCHER64_MODULUS;
-        upper = (upper + lower) % FLETCHER64_MODULUS;
+        c0 = (c0 + value) % FLETCHER64_MODULUS;
+        c1 = (c1 + c0) % FLETCHER64_MODULUS;
     }
-    let checksum_lower = (lower + upper) % FLETCHER64_MODULUS;
-    let checksum_upper = (lower + checksum_lower) % FLETCHER64_MODULUS;
+    let checksum_lower =
+        (FLETCHER64_MODULUS - ((c0 + c1) % FLETCHER64_MODULUS)) % FLETCHER64_MODULUS;
+    let checksum_upper =
+        (FLETCHER64_MODULUS - ((c0 + checksum_lower) % FLETCHER64_MODULUS)) % FLETCHER64_MODULUS;
     Ok((checksum_upper << 32) | checksum_lower)
 }
 
@@ -1329,6 +1334,16 @@ mod tests {
         block[88] ^= 0xff;
         let checksum = validate_object_checksum(&block).unwrap();
         assert!(!checksum.valid);
+    }
+
+    #[test]
+    fn apfs_fletcher64_matches_real_superblock_style_checksum() {
+        let mut block = [0_u8; 4096];
+        for (idx, byte) in block.iter_mut().enumerate().skip(8) {
+            *byte = ((idx as u8).wrapping_mul(37)).wrapping_add(11);
+        }
+        let checksum = apfs_fletcher64(&block).unwrap();
+        assert_eq!(checksum, 0xea0a_ad82_a13a_4125);
     }
 
     #[test]

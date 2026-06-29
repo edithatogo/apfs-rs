@@ -4,17 +4,16 @@ Document version: 0.28.0
 
 ## Counts
 
-- Implemented/scaffolded elements: **122**
-- Remaining overall production/admin elements: **10**
-- Remaining Windows read-only MVP production blockers: **6**
-- Total remaining including MVP blockers: **18**
+- Implemented/scaffolded elements: **123**
+- Remaining overall production/admin elements: **9**
+- Remaining Windows read-only MVP production blockers: **5**
+- Total remaining including MVP blockers: **17**
 - Current-environment required items remaining: **0**
 
 ## Remaining Windows read-only MVP production blockers
 
 | ID | Track | Title | Dependency |
 |---|---|---|---|
-| MVP-R004 | M-123 | Correct APFS parser offsets/semantics against real APFS data | real fixture feedback |
 | MVP-R005 | M-124 | Full checkpoint ring reconstruction | corrected parser and real fixture |
 | MVP-R006 | M-125 | Production APFS object-map B-tree traversal | corrected checkpoint and B-tree parsing |
 | MVP-R007 | M-126 | Production APFS filesystem tree record decoding and metadata/stat mapping | production OMAP traversal |
@@ -75,6 +74,7 @@ Document version: 0.28.0
 | M-120 | Executed Rust workspace validation closeout | quality | implemented |
 | M-121 | Real macOS APFS fixture execution closeout | fixture-readiness | implemented |
 | M-122 | Real fixture feedback promotion | fixture-readiness | implemented |
+| M-123 | Real APFS parser semantics correction | core-read | implemented |
 
 ## Current-environment conclusion
 
@@ -93,4 +93,4 @@ release automation dry-runs, and Astro documentation updates in local and CI gat
 
 ## Mature release roadmap update
 
-Added Conductor/Codev tracks M-121 through M-140 for every remaining MVP, post-MVP, and mature-release governance item. M-120 closes the Rust workspace validation blocker with executed local and GitHub Actions evidence. M-121 closes the real macOS fixture execution step with generated sparse-image, manifest, hash, oracle, and feedback evidence. M-122 closes the real-fixture feedback promotion step by normalizing string and structured issue reports into generated task bundles. M-123 through M-140 remain reviewed and open.
+Added Conductor/Codev tracks M-121 through M-140 for every remaining MVP, post-MVP, and mature-release governance item. M-120 closes the Rust workspace validation blocker with executed local and GitHub Actions evidence. M-121 closes the real macOS fixture execution step with generated sparse-image, manifest, hash, oracle, and feedback evidence. M-122 closes the real-fixture feedback promotion step by normalizing string and structured issue reports into generated task bundles. M-123 closes the real APFS parser checksum-semantics correction against the real fixture. M-124 through M-140 remain reviewed and open.

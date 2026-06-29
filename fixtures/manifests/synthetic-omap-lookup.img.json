@@ -1,26 +1,26 @@
 {
+  "fixture_id": "synthetic-omap-lookup.img",
+  "schema_version": "0.15.0",
+  "source_type": "synthetic_apfs_parser_development_image",
+  "description": "Direct APFS-like image with a single-node OMAP lookup fixture containing multiple XIDs",
+  "created_with": {
+    "tool": "tools/make_synthetic_fixtures.py",
+    "note": "synthetic parser-development fixture"
+  },
+  "expected_artifacts": [],
+  "synthetic": true,
+  "not_a_complete_filesystem": true,
   "apfs_features": {
-    "not_a_complete_filesystem": true,
-    "synthetic": true
+    "synthetic": true,
+    "not_a_complete_filesystem": true
   },
   "capability_ids": [
     "M-006"
   ],
-  "created_with": {
-    "note": "synthetic parser-development fixture",
-    "tool": "tools/make_synthetic_fixtures.py"
-  },
-  "description": "Direct APFS-like image with a single-node OMAP lookup fixture containing multiple XIDs",
-  "expected_artifacts": [],
-  "fixture_id": "synthetic-omap-lookup.img",
-  "not_a_complete_filesystem": true,
   "redaction": {
     "contains_personal_data": false,
     "contains_secret_material": false
   },
-  "schema_version": "0.16.0",
-  "sha256": "981191a25d3bebc010dd5baf765797444d9db359e8dd7ea72bbfde9f15f12044",
   "size_bytes": 147456,
-  "source_type": "synthetic_apfs_parser_development_image",
-  "synthetic": true
+  "sha256": "1d2c13bb75e78e3ec0d976181a664d58023ea34241095e2ae3a13c451125efbf"
 }

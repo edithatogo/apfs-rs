@@ -1,7 +1,7 @@
 # Real APFS parser semantics correction
 
 Capability: `M-123`  
-Status: `planned_roadmap`  
+Status: `implemented`
 Category: `core-read`
 
 ## Goal

@@ -1,7 +1,7 @@
 # Conductor Track Closeout Audit
 
 Status: `passed`.
-Track count: `163`.
+Track count: `162`.
 
 | Track | Capability | Status | Review | Archive | Codev review |
 |---|---|---|---|---|---|
@@ -140,7 +140,6 @@ Track count: `163`.
 | `0120-executed-rust-workspace-validation` | `M-120` | `implemented` | `conductor/tracks/0120-executed-rust-workspace-validation/review.md` | `archived` | `codev/reviews/120-executed-rust-workspace-validation-review.md` |
 | `0121-real-macos-apfs-fixture-execution` | `M-121` | `implemented` | `conductor/tracks/0121-real-macos-apfs-fixture-execution/review.md` | `archived` | `codev/reviews/121-real-macos-apfs-fixture-execution-review.md` |
 | `0122-real-fixture-feedback-promotion` | `M-122` | `implemented` | `conductor/tracks/0122-real-fixture-feedback-promotion/review.md` | `archived` | `codev/reviews/122-real-fixture-feedback-promotion-review.md` |
-| `0123-real-apfs-parser-semantics-correction` | `M-123` | `planned_roadmap` | `conductor/tracks/0123-real-apfs-parser-semantics-correction/review.md` | `open` | `codev/reviews/123-real-apfs-parser-semantics-correction-review.md` |
 | `0124-production-checkpoint-ring-reconstruction` | `M-124` | `planned_roadmap` | `conductor/tracks/0124-production-checkpoint-ring-reconstruction/review.md` | `open` | `codev/reviews/124-production-checkpoint-ring-reconstruction-review.md` |
 | `0125-production-omap-btree-traversal` | `M-125` | `planned_roadmap` | `conductor/tracks/0125-production-omap-btree-traversal/review.md` | `open` | `codev/reviews/125-production-omap-btree-traversal-review.md` |
 | `0126-production-filesystem-tree-decoding` | `M-126` | `planned_roadmap` | `conductor/tracks/0126-production-filesystem-tree-decoding/review.md` | `open` | `codev/reviews/126-production-filesystem-tree-decoding-review.md` |

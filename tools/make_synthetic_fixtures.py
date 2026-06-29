@@ -15,6 +15,8 @@ import struct
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURES = ROOT / "fixtures"
 MANIFESTS = FIXTURES / "manifests"
+SCHEMA_VERSION = "0.15.0"
+SOURCE_TYPE = "synthetic_apfs_parser_development_image"
 BLOCK_SIZE = 4096
 GPT_SECTOR_SIZE = 512
 APFS_TYPE_GUID = bytes.fromhex("ef57347c0000aa11aa1100306543ecac")
@@ -32,15 +34,17 @@ BTREE_NODE_LEAF = 0x0002
 def apfs_fletcher64(block: bytes) -> int:
     if len(block) < 12 or (len(block) - 8) % 4 != 0:
         raise ValueError("APFS checksum input must be 4-byte aligned after checksum field")
-    lower = 0
-    upper = 0
+    checksum_input = bytearray(block)
+    checksum_input[0:8] = b"\x00" * 8
+    c0 = 0
+    c1 = 0
     modulus = 0xFFFFFFFF
-    for offset in range(8, len(block), 4):
-        value = struct.unpack_from("<I", block, offset)[0]
-        lower = (lower + value) % modulus
-        upper = (upper + lower) % modulus
-    checksum_lower = (lower + upper) % modulus
-    checksum_upper = (lower + checksum_lower) % modulus
+    for offset in range(0, len(checksum_input), 4):
+        value = struct.unpack_from("<I", checksum_input, offset)[0]
+        c0 = (c0 + value) % modulus
+        c1 = (c1 + c0) % modulus
+    checksum_lower = (modulus - ((c0 + c1) % modulus)) % modulus
+    checksum_upper = (modulus - ((c0 + checksum_lower) % modulus)) % modulus
     return (checksum_upper << 32) | checksum_lower
 
 
@@ -162,6 +166,24 @@ def make_btree_root_node(*, xid: int, oid: int = 99, key_count: int = 2) -> byte
 
 def make_direct_nxsb() -> bytes:
     return make_nxsb(xid=10, desc_base=0, desc_len=0)
+
+
+FIXTURE_CAPABILITIES: dict[str, list[str]] = {
+    "synthetic-nxsb-block0.bin": ["M-001", "M-003"],
+    "synthetic-gpt-apfs.img": ["M-002"],
+    "synthetic-checkpoint-ring.img": ["M-004"],
+    "synthetic-checkpoint-map-omap.img": ["M-004"],
+    "synthetic-omap-btree-root.img": ["M-005"],
+    "synthetic-omap-lookup.img": ["M-006"],
+    "synthetic-omap-multinode-lookup.img": ["M-007"],
+    "synthetic-btree-traversal.img": ["M-008"],
+    "synthetic-resolver-facade.img": ["M-009"],
+    "synthetic-btree-cursor.img": ["M-010"],
+    "synthetic-volume-superblock.img": ["M-014"],
+    "synthetic-mapped-object-read.img": ["M-015"],
+    "synthetic-directory-listing.img": ["M-016", "M-017", "M-019"],
+    "synthetic-file-preview.img": ["M-018", "M-020"],
+}
 
 
 def make_gpt_apfs_image() -> bytes:
@@ -645,10 +667,25 @@ def write_fixture(name: str, data: bytes, description: str) -> None:
     path.write_bytes(data)
     manifest = {
         "fixture_id": name,
-        "schema_version": "0.15.0",
+        "schema_version": SCHEMA_VERSION,
+        "source_type": SOURCE_TYPE,
         "description": description,
+        "created_with": {
+            "tool": "tools/make_synthetic_fixtures.py",
+            "note": "synthetic parser-development fixture",
+        },
+        "expected_artifacts": [],
         "synthetic": True,
         "not_a_complete_filesystem": True,
+        "apfs_features": {
+            "synthetic": True,
+            "not_a_complete_filesystem": True,
+        },
+        "capability_ids": FIXTURE_CAPABILITIES[name],
+        "redaction": {
+            "contains_personal_data": False,
+            "contains_secret_material": False,
+        },
         "size_bytes": len(data),
         "sha256": hashlib.sha256(data).hexdigest(),
     }

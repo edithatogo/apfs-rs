@@ -1,27 +1,27 @@
 {
+  "fixture_id": "synthetic-nxsb-block0.bin",
+  "schema_version": "0.15.0",
+  "source_type": "synthetic_apfs_parser_development_image",
+  "description": "Direct APFS-like NXSB at block zero with valid APFS checksum",
+  "created_with": {
+    "tool": "tools/make_synthetic_fixtures.py",
+    "note": "synthetic parser-development fixture"
+  },
+  "expected_artifacts": [],
+  "synthetic": true,
+  "not_a_complete_filesystem": true,
   "apfs_features": {
-    "not_a_complete_filesystem": true,
-    "synthetic": true
+    "synthetic": true,
+    "not_a_complete_filesystem": true
   },
   "capability_ids": [
     "M-001",
     "M-003"
   ],
-  "created_with": {
-    "note": "synthetic parser-development fixture",
-    "tool": "tools/make_synthetic_fixtures.py"
-  },
-  "description": "Direct APFS-like NXSB at block zero with valid APFS checksum",
-  "expected_artifacts": [],
-  "fixture_id": "synthetic-nxsb-block0.bin",
-  "not_a_complete_filesystem": true,
   "redaction": {
     "contains_personal_data": false,
     "contains_secret_material": false
   },
-  "schema_version": "0.16.0",
-  "sha256": "cbc30eb55d92b9f6a18cad888bb25fc47897fcea3915b0e917cc6b242a506c46",
   "size_bytes": 4096,
-  "source_type": "synthetic_apfs_parser_development_image",
-  "synthetic": true
+  "sha256": "41bba803d252d0970638a982c0be0ac7b5adb2921e9be857de484164bb04116b"
 }

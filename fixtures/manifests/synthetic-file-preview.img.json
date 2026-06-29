@@ -1,27 +1,27 @@
 {
+  "fixture_id": "synthetic-file-preview.img",
+  "schema_version": "0.15.0",
+  "source_type": "synthetic_apfs_parser_development_image",
+  "description": "Direct APFS-like image resolving synthetic directory entries and previewing a direct-block file payload",
+  "created_with": {
+    "tool": "tools/make_synthetic_fixtures.py",
+    "note": "synthetic parser-development fixture"
+  },
+  "expected_artifacts": [],
+  "synthetic": true,
+  "not_a_complete_filesystem": true,
   "apfs_features": {
-    "not_a_complete_filesystem": true,
-    "synthetic": true
+    "synthetic": true,
+    "not_a_complete_filesystem": true
   },
   "capability_ids": [
     "M-018",
     "M-020"
   ],
-  "created_with": {
-    "note": "synthetic parser-development fixture",
-    "tool": "tools/make_synthetic_fixtures.py"
-  },
-  "description": "Direct APFS-like image resolving synthetic directory entries and previewing a direct-block file payload",
-  "expected_artifacts": [],
-  "fixture_id": "synthetic-file-preview.img",
-  "not_a_complete_filesystem": true,
   "redaction": {
     "contains_personal_data": false,
     "contains_secret_material": false
   },
-  "schema_version": "0.16.0",
-  "sha256": "afb6c4d676d03fbd5313b6c29518a3470543c5e7aa77dd01c0f397691cbec36d",
   "size_bytes": 393216,
-  "source_type": "synthetic_apfs_parser_development_image",
-  "synthetic": true
+  "sha256": "36890d3d4e3befe3a0d49107f9b4ceead1f0ecd3b3fe383428cd3650ca3be081"
 }

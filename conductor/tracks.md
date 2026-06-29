@@ -2,7 +2,7 @@
 
 Current version: `0.29.0`
 
-Track count: `163`
+Track count: `162`
 
 - `0000-project-context` —  — 
 - `0001-m001-container-inspect` —  — 
@@ -161,7 +161,6 @@ Track count: `163`
 - `0120-executed-rust-workspace-validation` — M-120 — Executed Rust workspace validation closeout
 - `0121-real-macos-apfs-fixture-execution` — M-121 — Real macOS APFS fixture execution
 - `0122-real-fixture-feedback-promotion` — M-122 — Real fixture feedback promotion
-- `0123-real-apfs-parser-semantics-correction` — M-123 — Real APFS parser semantics correction
 - `0124-production-checkpoint-ring-reconstruction` — M-124 — Production checkpoint ring reconstruction
 - `0125-production-omap-btree-traversal` — M-125 — Production object-map B-tree traversal
 - `0126-production-filesystem-tree-decoding` — M-126 — Production filesystem tree decoding and metadata mapping

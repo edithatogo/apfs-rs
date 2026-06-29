@@ -4,7 +4,7 @@ Version: 0.29.0
 
 Before changing this repository, read `conductor/product.md`, `conductor/tech-stack.md`, `conductor/workflow.md`, `conductor/tracks.md`, `conductor/history.md`, the active track, and matching Codev spec/plan/review.
 
-Current historical ledger: 163 Conductor track directories through M-140, with M-121 and M-122 now executed and M-123 through M-140 remaining open roadmap tracks.
+Current historical ledger: 163 Conductor track directories through M-140, with M-121, M-122, and M-123 now executed and M-124 through M-140 remaining open roadmap tracks.
 
 Rules:
 

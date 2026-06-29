@@ -1,26 +1,26 @@
 {
+  "fixture_id": "synthetic-checkpoint-map-omap.img",
+  "schema_version": "0.15.0",
+  "source_type": "synthetic_apfs_parser_development_image",
+  "description": "Direct APFS-like image with a checkpoint map entry that maps the container OMAP",
+  "created_with": {
+    "tool": "tools/make_synthetic_fixtures.py",
+    "note": "synthetic parser-development fixture"
+  },
+  "expected_artifacts": [],
+  "synthetic": true,
+  "not_a_complete_filesystem": true,
   "apfs_features": {
-    "not_a_complete_filesystem": true,
-    "synthetic": true
+    "synthetic": true,
+    "not_a_complete_filesystem": true
   },
   "capability_ids": [
     "M-004"
   ],
-  "created_with": {
-    "note": "synthetic parser-development fixture",
-    "tool": "tools/make_synthetic_fixtures.py"
-  },
-  "description": "Direct APFS-like image with a checkpoint map entry that maps the container OMAP",
-  "expected_artifacts": [],
-  "fixture_id": "synthetic-checkpoint-map-omap.img",
-  "not_a_complete_filesystem": true,
   "redaction": {
     "contains_personal_data": false,
     "contains_secret_material": false
   },
-  "schema_version": "0.16.0",
-  "sha256": "0d1b78fba9a6e233fb3f2b2c397d2e695feb6e713dd7db8f414b60cdcb7b472b",
   "size_bytes": 98304,
-  "source_type": "synthetic_apfs_parser_development_image",
-  "synthetic": true
+  "sha256": "660c7625f34aa78e9017231ae92476629ae3a49179f9650c5274b1c7563c2129"
 }
