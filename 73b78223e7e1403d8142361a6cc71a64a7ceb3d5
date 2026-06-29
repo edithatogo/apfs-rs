@@ -1,0 +1,1 @@
+M-122 archive: mirrored the completed track into conductor/archive while retaining the historical registry entry required by conductor validation. conductor-check passed after the archive mirror was created.
