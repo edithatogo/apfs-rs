@@ -22,6 +22,8 @@ const DEFAULT_APFS_PROBE_BYTES: usize = 4096;
 const MAX_GPT_ENTRIES_BYTES: usize = 16 * 1024 * 1024;
 const MAX_CHECKPOINT_SCAN_BLOCKS: u32 = 256;
 
+type SyntheticFilePayload = (Vec<u8>, Vec<Diagnostic>);
+
 #[derive(Debug, Error)]
 pub enum InspectError {
     #[error(transparent)]
@@ -1281,7 +1283,7 @@ fn synthetic_file_payload_from_extent_tree(
     report: &InspectReport,
     entry: &FileSystemDirectoryRecord,
     extent_tree_block_index: u64,
-) -> Result<Option<(Vec<u8>, Vec<Diagnostic>)>, InspectError> {
+) -> Result<Option<SyntheticFilePayload>, InspectError> {
     let container = report.container.as_ref().ok_or_else(|| {
         InspectError::UnsupportedFileExtentLayout(
             "extent resolution requires an available container superblock".to_owned(),
@@ -2137,16 +2139,17 @@ fn resolve_omap_tree_root(
                     synthetic_two_level_supported: true,
                 })
             };
-            let additional_mapped_leaf_nodes = decode_additional_omap_leaf_nodes(
-                device,
-                apfs_offset,
-                container,
-                block_size,
-                checkpoint_maps,
-                object_map.tree_oid,
-                Some(map.xid),
-                notes,
-            )?;
+            let additional_mapped_leaf_nodes =
+                decode_additional_omap_leaf_nodes(AdditionalOmapLeafDecodeContext {
+                    device,
+                    apfs_offset,
+                    container,
+                    block_size,
+                    checkpoint_maps,
+                    root_tree_oid: object_map.tree_oid,
+                    latest_valid_xid: Some(map.xid),
+                    notes,
+                })?;
             let mut aggregate_records = preliminary_omap_records.clone();
             for leaf in &additional_mapped_leaf_nodes {
                 aggregate_records.extend(leaf.preliminary_omap_records.iter().cloned());
@@ -2179,10 +2182,10 @@ fn resolve_omap_tree_root(
     }
 }
 
-fn ordered_valid_checkpoint_maps<'a>(
-    checkpoint_maps: &'a [CheckpointMapReport],
+fn ordered_valid_checkpoint_maps(
+    checkpoint_maps: &[CheckpointMapReport],
     latest_valid_xid: Option<u64>,
-) -> Vec<&'a CheckpointMapReport> {
+) -> Vec<&CheckpointMapReport> {
     let mut maps: Vec<&CheckpointMapReport> =
         checkpoint_maps.iter().filter(|map| map.valid).collect();
     if let Some(latest_valid_xid) = latest_valid_xid {
@@ -2200,35 +2203,39 @@ fn ordered_valid_checkpoint_maps<'a>(
     maps
 }
 
-fn decode_additional_omap_leaf_nodes(
-    device: &dyn ReadOnlyBlockDevice,
+struct AdditionalOmapLeafDecodeContext<'a> {
+    device: &'a dyn ReadOnlyBlockDevice,
     apfs_offset: u64,
-    container: &ContainerSuperblock,
+    container: &'a ContainerSuperblock,
     block_size: usize,
-    checkpoint_maps: &[CheckpointMapReport],
+    checkpoint_maps: &'a [CheckpointMapReport],
     root_tree_oid: u64,
     latest_valid_xid: Option<u64>,
-    notes: &mut Vec<Diagnostic>,
+    notes: &'a mut Vec<Diagnostic>,
+}
+
+fn decode_additional_omap_leaf_nodes(
+    context: AdditionalOmapLeafDecodeContext<'_>,
 ) -> Result<Vec<MappedBTreeLeafReport>, InspectError> {
     let mut leaves = Vec::new();
-    for map in ordered_valid_checkpoint_maps(checkpoint_maps, latest_valid_xid) {
+    for map in ordered_valid_checkpoint_maps(context.checkpoint_maps, context.latest_valid_xid) {
         for mapping in &map.mappings {
             let btree_type = mapping.object_type == OBJECT_TYPE_BTREE
                 || mapping.object_type == OBJECT_TYPE_BTREE_NODE;
-            if !btree_type || mapping.oid == root_tree_oid {
+            if !btree_type || mapping.oid == context.root_tree_oid {
                 continue;
             }
             let object_block_index = mapping.physical_address;
             let object_block = match read_container_block(
-                device,
-                apfs_offset,
+                context.device,
+                context.apfs_offset,
                 object_block_index,
-                container.block_size,
-                block_size,
+                context.container.block_size,
+                context.block_size,
             ) {
                 Ok(block) => block,
                 Err(err) => {
-                    notes.push(Diagnostic {
+                    context.notes.push(Diagnostic {
                         code: "APFS-W-OMAP-BTREE-LEAF-READ-FAILED".to_owned(),
                         message: format!("checkpoint map pointed to possible OMAP leaf block {object_block_index}, but reading failed: {err}"),
                     });
@@ -2238,7 +2245,7 @@ fn decode_additional_omap_leaf_nodes(
             let node = match parse_btree_node_with_checksum(&object_block) {
                 Ok(node) => node,
                 Err(err) => {
-                    notes.push(Diagnostic {
+                    context.notes.push(Diagnostic {
                         code: "APFS-W-OMAP-BTREE-LEAF-PARSE-FAILED".to_owned(),
                         message: format!("checkpoint map pointed to possible OMAP leaf block {object_block_index}, but B-tree parsing failed: {err}"),
                     });
@@ -2246,7 +2253,7 @@ fn decode_additional_omap_leaf_nodes(
                 }
             };
             if !node.is_leaf {
-                notes.push(Diagnostic {
+                context.notes.push(Diagnostic {
                     code: "APFS-I-OMAP-BTREE-NONLEAF-SKIPPED".to_owned(),
                     message: format!("mapped B-tree block {object_block_index} is not a leaf; general traversal is not implemented yet"),
                 });
@@ -2258,7 +2265,7 @@ fn decode_additional_omap_leaf_nodes(
             ) {
                 Ok(records) => records,
                 Err(err) => {
-                    notes.push(Diagnostic {
+                    context.notes.push(Diagnostic {
                         code: "APFS-W-OMAP-BTREE-LEAF-RECORD-PARSE-FAILED".to_owned(),
                         message: format!("mapped OMAP leaf block {object_block_index} parsed as a B-tree node, but OMAP record decoding failed: {err}"),
                     });

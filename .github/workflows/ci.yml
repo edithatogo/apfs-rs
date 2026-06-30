@@ -15,6 +15,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+        # Intentional: track GitHub's macOS latest image instead of pinning a fixed
+        # runner version, and keep this job as the migration canary for image drift.
         os: [ubuntu-latest, windows-latest, macos-latest]
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
