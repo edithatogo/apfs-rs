@@ -1,7 +1,7 @@
 # cargo-vet and dependency policy enforcement maturation
 
 Capability: `M-139`  
-Status: `planned_roadmap`  
+Status: `implemented_scaffold`  
 Category: `supply-chain`
 
 ## Goal

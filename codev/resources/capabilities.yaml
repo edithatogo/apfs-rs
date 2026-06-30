@@ -2182,8 +2182,8 @@ capabilities:
     - supply_chain_review
     - dependency_policy_audit_required
     - production_claim_guard_required
-    status: planned_roadmap
-    note: roadmap track for cargo-vet and dependency-policy enforcement maturation
+    status: implemented_scaffold
+    note: governance scaffold for cargo-vet and dependency-policy enforcement maturation; archived after local policy audit and workflow update
   M-140:
     name: Mature release readiness dashboard and release train
     milestone: release_readiness

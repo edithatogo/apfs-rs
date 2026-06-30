@@ -2,8 +2,9 @@
 
 ## Status
 
-`planned_roadmap`.
+`implemented_scaffold`.
 
 ## Notes
 
-This roadmap track exists because the mature, hardened APFS-RS release is not fully implemented. It is reviewed as a planning/evidence track only; no production APFS behavior is claimed until its plan is executed and validated.
+This governance track now has a validated local cargo-vet policy audit, an updated supply-chain workflow, and a Dependabot-free policy surface. Full cargo-vet enforcement against the entire third-party graph still has residual audit debt, so this remains a governance scaffold rather than a claim that every dependency is fully vetted.
+Archive status: `archived`.

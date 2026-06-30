@@ -2,7 +2,7 @@
 
 Current version: `0.29.0`
 
-Track count: `156`
+Track count: `155`
 
 - `0000-project-context` —  — 
 - `0001-m001-container-inspect` —  — 
@@ -170,5 +170,4 @@ Track count: `156`
 - `0130-signed-release-publication` — M-130 — Signed release SBOM provenance installer and winget publication (implemented as release-publication readiness scaffold)
 - `0131-cross-platform-readonly-adapters` — M-131 — Linux macOS ChromeOS Android read-only adapters (implemented as read-only adapter readiness scaffold)
 - `0132-image-only-write-lab-crash-evidence` — M-132 — Image-only write lab crash-injection evidence (implemented as disposable-image crash-evidence scaffold)
-- `0139-cargo-vet-dependency-policy-enforcement` — M-139 — cargo-vet and dependency policy enforcement maturation
 - `0140-mature-release-readiness-dashboard` — M-140 — Mature release readiness dashboard and release train

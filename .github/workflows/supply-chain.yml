@@ -37,5 +37,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
-      - name: cargo-vet placeholder
-        run: echo "Run cargo vet after Rust toolchain and Cargo.lock are established"
+      - run: rustup toolchain install stable --profile minimal
+      - run: rustup default stable
+      - name: cargo-vet policy audit
+        run: python3 tools/cargo_vet_policy_audit.py
+      - name: dependency policy audit
+        run: python3 tools/dependency_license_policy_check.py

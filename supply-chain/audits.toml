@@ -1,2 +1,4 @@
-# cargo-vet audits placeholder.
-# Fill this file after `cargo vet init` on a Rust-enabled machine.
+
+# cargo-vet audits file
+
+[audits]

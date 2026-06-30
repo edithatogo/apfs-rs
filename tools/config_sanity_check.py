@@ -23,6 +23,7 @@ REQUIRED_FILES = [
     "taplo.toml",
     ".editorconfig",
     "renovate.json",
+    "supply-chain/imports.lock",
     ".github/workflows/local-handoff.yml",
 ]
 

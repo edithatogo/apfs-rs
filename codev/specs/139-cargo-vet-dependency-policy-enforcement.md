@@ -1,6 +1,6 @@
 # Spec M-139: cargo-vet and dependency policy enforcement maturation
 
-Status: `planned_roadmap`.
+Status: `implemented_scaffold`.
 
 ## Objective
 
