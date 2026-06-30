@@ -11,5 +11,10 @@ Current fixtures:
 - `example-non-apfs.bin` — exercises the `not_apfs` path.
 - `synthetic-nxsb-block0.bin` — synthetic APFS-like NX superblock at block zero.
 - `synthetic-gpt-apfs.img` — synthetic GPT image containing one APFS partition entry and an NX superblock at the partition start.
+- `real/macos-minimal-apfs-001/` — macOS-generated APFS sparse-image fixture with manifest, hashes, and oracle evidence.
 
-These are parser-development fixtures only. They are not macOS-generated APFS filesystems and cannot be mounted.
+The synthetic fixtures above are parser-development fixtures only. They are not
+macOS-generated APFS filesystems and cannot be mounted.
+
+The real macOS fixture is documented separately under
+`fixtures/real/macos-minimal-apfs-001/`.

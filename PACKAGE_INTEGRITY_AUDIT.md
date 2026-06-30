@@ -1,6 +1,6 @@
 # Package Integrity Audit
 
-Files tracked: 1347
+Files tracked: 1657
 
 Missing SHA entries: 0
 Stale SHA entries: 0
