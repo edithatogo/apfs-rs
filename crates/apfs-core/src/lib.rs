@@ -199,6 +199,18 @@ pub struct FileReadReportEnvelope {
     pub safety: SafetySummary,
 }
 
+#[derive(Debug, Clone, Serialize, PartialEq, Eq)]
+pub struct FileSystemMetadataReport {
+    pub name: String,
+    pub parent_id: u64,
+    pub name_hash: u64,
+    pub object_id: u64,
+    pub item_kind_raw: u16,
+    pub logical_size: u64,
+    pub physical_block: Option<u64>,
+    pub has_physical_block: bool,
+}
+
 #[derive(Debug, Clone, Serialize)]
 pub struct ObjectMapResolverReport {
     pub mode: ObjectMapResolverMode,
@@ -665,6 +677,21 @@ pub fn file_read_report_in_bytes(input: &[u8], requested_name: &str) -> FileRead
             warnings: Vec::new(),
             safety: SafetySummary::default(),
         },
+    }
+}
+
+pub fn metadata_report_from_directory_entry(
+    entry: &FileSystemDirectoryRecord,
+) -> FileSystemMetadataReport {
+    FileSystemMetadataReport {
+        name: entry.name.clone(),
+        parent_id: entry.parent_id,
+        name_hash: entry.name_hash,
+        object_id: entry.object_id,
+        item_kind_raw: entry.item_kind_raw,
+        logical_size: entry.logical_size,
+        physical_block: entry.physical_block,
+        has_physical_block: entry.physical_block.is_some(),
     }
 }
 
@@ -2946,5 +2973,27 @@ mod tests {
             .expect("bounded traversal should be available");
         assert_eq!(traversal.selected_leaf_block_index, Some(12));
         assert_eq!(traversal.lookup.physical_address, Some(31));
+    }
+
+    #[test]
+    fn metadata_mapping_preserves_directory_entry_fields() {
+        let entry = apfs_types::FileSystemDirectoryRecord {
+            parent_id: 2,
+            name_hash: 0x1234_5678,
+            object_id: 4000,
+            item_kind_raw: 8,
+            name: "hello.txt".to_owned(),
+            logical_size: 42,
+            physical_block: Some(40),
+        };
+        let metadata = super::metadata_report_from_directory_entry(&entry);
+        assert_eq!(metadata.name, "hello.txt");
+        assert_eq!(metadata.parent_id, 2);
+        assert_eq!(metadata.name_hash, 0x1234_5678);
+        assert_eq!(metadata.object_id, 4000);
+        assert_eq!(metadata.item_kind_raw, 8);
+        assert_eq!(metadata.logical_size, 42);
+        assert_eq!(metadata.physical_block, Some(40));
+        assert!(metadata.has_physical_block);
     }
 }

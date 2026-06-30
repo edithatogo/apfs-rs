@@ -10,10 +10,10 @@ use anyhow::Context;
 use apfs_blockdev::ImageBlockDevice;
 use apfs_core::{
     btree_cursor_report_in_device, directory_report_in_device, file_read_report_in_device,
-    inspect_device, lookup_object_in_device, read_mapped_object_in_device,
-    resolver_report_in_device, volume_report_in_device, BTreeCursorStatus, DirectoryReportStatus,
-    FileReadReportStatus, InspectReport, InspectStatus, MappedObjectReadStatus, ObjectLookupStatus,
-    ObjectMapResolverStatus, VolumeReportStatus,
+    inspect_device, lookup_object_in_device, metadata_report_from_directory_entry,
+    read_mapped_object_in_device, resolver_report_in_device, volume_report_in_device,
+    BTreeCursorStatus, DirectoryReportStatus, FileReadReportStatus, InspectReport, InspectStatus,
+    MappedObjectReadStatus, ObjectLookupStatus, ObjectMapResolverStatus, VolumeReportStatus,
 };
 use apfs_features::{analyze_unicode_case_policy, feature_readiness, metadata_feature_report};
 use apfs_win::{plan_read_only_mount, winfsp_readonly_callback_matrix};
@@ -1030,6 +1030,7 @@ fn stat_command(source: PathBuf, name: String, json: bool) -> anyhow::Result<()>
         .iter()
         .find(|entry| entry.name == name)
         .cloned();
+    let metadata = entry.as_ref().map(metadata_report_from_directory_entry);
     let status = if entry.is_some() {
         "found"
     } else if matches!(report.status, DirectoryReportStatus::Available) {
@@ -1044,10 +1045,11 @@ fn stat_command(source: PathBuf, name: String, json: bool) -> anyhow::Result<()>
         "requested_name": name,
         "volume_name": report.volume_name,
         "entry": entry,
+        "metadata": metadata,
         "errors": report.errors,
         "warnings": report.warnings,
         "safety": report.safety,
-        "note": "Synthetic metadata report; production APFS inode/stat decoding is not implemented yet."
+        "note": "Filesystem tree metadata is mapped from the decoded directory entry; production APFS inode/stat decoding is not implemented yet."
     });
 
     if json {

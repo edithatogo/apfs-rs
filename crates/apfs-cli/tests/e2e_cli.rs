@@ -48,3 +48,22 @@ fn inspect_logging_is_redacted_and_keeps_json_stdout() {
     assert!(stderr.contains("\"source_name_redacted\""));
     assert!(!stderr.contains(file.path().to_string_lossy().as_ref()));
 }
+
+#[test]
+fn stat_json_reports_mapped_filesystem_metadata() {
+    let manifest_dir = std::path::PathBuf::from(env!("CARGO_MANIFEST_DIR"));
+    let fixture_path = manifest_dir.join("../../fixtures/synthetic-directory-listing.img");
+    let mut cmd = Command::cargo_bin("apfs").expect("apfs binary");
+    cmd.arg("stat")
+        .arg(fixture_path)
+        .arg("--name")
+        .arg("hello.txt")
+        .arg("--json");
+    let output = cmd.assert().success().get_output().stdout.clone();
+    let json: serde_json::Value = serde_json::from_slice(&output).expect("stat json");
+    assert_eq!(json["status"], "found");
+    assert_eq!(json["metadata"]["name"], "hello.txt");
+    assert_eq!(json["metadata"]["object_id"], 4000);
+    assert_eq!(json["metadata"]["logical_size"], 43);
+    assert_eq!(json["metadata"]["physical_block"], 40);
+}

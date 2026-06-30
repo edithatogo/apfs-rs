@@ -1,6 +1,6 @@
 # Spec M-126: Production filesystem tree decoding and metadata mapping
 
-Status: `planned_roadmap`.
+Status: `implemented`.
 
 ## Objective
 

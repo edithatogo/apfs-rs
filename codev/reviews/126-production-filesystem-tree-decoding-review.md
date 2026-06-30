@@ -2,8 +2,8 @@
 
 ## Status
 
-`planned_roadmap`.
+`implemented`.
 
 ## Notes
 
-This roadmap track exists because the mature, hardened APFS-RS release is not fully implemented. It is reviewed as a planning/evidence track only; no production APFS behavior is claimed until its plan is executed and validated.
+Filesystem metadata mapping is now implemented for decoded directory entries: the `stat` command emits a structured metadata object derived from the directory record, and the regression coverage proves the mapping helper and CLI JSON contract. This remains bounded read-side reporting rather than full production APFS inode/stat decoding.
