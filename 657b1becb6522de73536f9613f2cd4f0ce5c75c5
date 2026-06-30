@@ -1,0 +1,1 @@
+M-128 closeout: package-shaped WinFsp readiness report added, CLI mount-plan JSON now includes packaging summary, regression coverage added, and track archived. Validation passed: cargo test --workspace; cargo xtask registry-check; cargo xtask conductor-check; cargo xtask safety-check; python3 tools/context_integrity_check.py; cargo fmt --all -- --check; git diff --check.
