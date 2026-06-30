@@ -206,7 +206,7 @@ Added M-120 through M-140 to make the remaining roadmap explicit through a matur
 - `M-127` `0127-production-file-extent-extraction` — Production file extent resolution and extraction: roadmap track added after M-119.
 - `M-128` `0128-winfsp-readonly-mount-adapter` — Windows WinFsp read-only mount adapter and packaging: roadmap track added after M-119.
 - `M-129` `0129-production-software-encryption-read` — Production software-encryption read support: roadmap track added after M-119 and later executed as a policy-only readiness scaffold that wires the crypto readiness crate into the shared feature-readiness path without claiming production encrypted-image support.
-- `M-130` `0130-signed-release-publication` — Signed release SBOM provenance installer and winget publication: roadmap track added after M-119.
+- `M-130` `0130-signed-release-publication` — Signed release SBOM provenance installer and winget publication: roadmap track added after M-119 and later executed as a release-publication readiness scaffold that writes deterministic evidence artifacts in `xtask` without claiming a signed public release.
 - `M-131` `0131-cross-platform-readonly-adapters` — Linux macOS ChromeOS Android read-only adapters: roadmap track added after M-119.
 - `M-132` `0132-image-only-write-lab-crash-evidence` — Image-only write lab crash-injection evidence: roadmap track added after M-119.
 - `M-133` `0133-windows-write-beta-governance` — Windows write beta governance: roadmap track added after M-119.

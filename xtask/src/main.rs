@@ -170,7 +170,7 @@ enum Command {
     TaskContext {
         capability_id: String,
     },
-    /// Write a release-evidence scaffold.
+    /// Write a release-publication evidence scaffold.
     ReleaseEvidence,
     QualityGateCheck,
     DocsSiteCheck,
@@ -905,13 +905,184 @@ fn task_context(capability_id: &str) -> Result<()> {
     Ok(())
 }
 
+fn release_publication_readiness() -> JsonValue {
+    let root = workspace_root();
+    let schema_version =
+        std::env::var("APFS_RS_VERSION").unwrap_or_else(|_| env!("CARGO_PKG_VERSION").to_owned());
+    let release_scaffold = fs::read_to_string(root.join("RELEASE_SCAFFOLD.md")).unwrap_or_default();
+    let release_automation =
+        fs::read_to_string(root.join("RELEASE_AUTOMATION.md")).unwrap_or_default();
+    let provenance_verification =
+        fs::read_to_string(root.join("PROVENANCE_VERIFICATION.md")).unwrap_or_default();
+    let winget_manifest =
+        fs::read_to_string(root.join("packaging/windows/winget/apfs-rs.yaml")).unwrap_or_default();
+    let release_workflow =
+        fs::read_to_string(root.join(".github/workflows/release.yml")).unwrap_or_default();
+    let release_automation_workflow =
+        fs::read_to_string(root.join(".github/workflows/release-automation.yml"))
+            .unwrap_or_default();
+    let provenance_workflow =
+        fs::read_to_string(root.join(".github/workflows/provenance-verify.yml"))
+            .unwrap_or_default();
+
+    let artifacts = [
+        (
+            "release scaffold",
+            !release_scaffold.trim().is_empty(),
+            "RELEASE_SCAFFOLD.md describes the planned SBOM, attestations, checksums, and winget gates.",
+        ),
+        (
+            "release automation",
+            !release_automation.trim().is_empty(),
+            "RELEASE_AUTOMATION.md and the release-automation workflow keep cargo-dist and release-plz configured.",
+        ),
+        (
+            "provenance verification",
+            !provenance_verification.trim().is_empty(),
+            "PROVENANCE_VERIFICATION.md and provenance-verify workflow document attestation checks.",
+        ),
+        (
+            "winget manifest placeholder",
+            !winget_manifest.contains("0.0.0-placeholder"),
+            "Winget manifest still carries a placeholder version until a signed release exists.",
+        ),
+        (
+            "release workflow",
+            release_workflow.contains("attest-build-provenance")
+                && release_workflow.contains("cargo test --workspace"),
+            "Release workflow is configured for checksums, attestations, and workspace tests.",
+        ),
+        (
+            "release automation workflow",
+            release_automation_workflow.contains("release-plz release --dry-run --allow-dirty --config release-plz.toml")
+                && release_automation_workflow.contains("dist plan --allow-dirty"),
+            "Release automation workflow runs cargo-dist and release-plz in dry-run mode.",
+        ),
+        (
+            "provenance workflow",
+            provenance_workflow.contains("attest-build-provenance"),
+            "Provenance workflow performs an attest-build-provenance dry run.",
+        ),
+    ];
+    let configured_artifacts: Vec<JsonValue> = artifacts
+        .iter()
+        .map(|(name, configured, note)| {
+            serde_json::json!({
+                "name": name,
+                "configured": configured,
+                "note": note,
+            })
+        })
+        .collect();
+    let missing_steps: Vec<String> = artifacts
+        .iter()
+        .filter_map(|(name, configured, _)| {
+            if *configured {
+                None
+            } else {
+                Some((*name).to_owned())
+            }
+        })
+        .collect();
+
+    serde_json::json!({
+        "schema_version": schema_version,
+        "track": "M-130",
+        "status": "scaffolded_read_only",
+        "public_release_ready": false,
+        "configured_artifacts": configured_artifacts,
+        "missing_steps": missing_steps,
+        "safety_constraints": [
+            "no public release is claimed from scaffold alone",
+            "no physical-device writes",
+            "no encryption bypass",
+            "no unreviewed release publication",
+        ],
+        "release_notes": [
+            "SBOM, provenance, and winget paths are configured but not published.",
+            "Signed release publication remains gated on passing CI and maintainer approval."
+        ],
+    })
+}
+
 fn release_evidence() -> Result<()> {
-    let dir = PathBuf::from("target/release-evidence");
+    let dir = workspace_root().join("target/release-evidence");
     fs::create_dir_all(&dir)?;
+    let report = release_publication_readiness();
     fs::write(
         dir.join("README.md"),
         "# APFS-RS Release Evidence\n\nGenerated scaffold. This is not production release evidence yet.\n",
     )?;
+    fs::write(
+        dir.join("release-publication-report.json"),
+        serde_json::to_string_pretty(&report)? + "\n",
+    )?;
+    let mut markdown = String::from("# APFS-RS Release Publication Readiness\n\n");
+    markdown.push_str("Status: `scaffolded_read_only`.\n\n");
+    markdown.push_str("## Configured artifacts\n\n");
+    if let Some(artifacts) = report
+        .get("configured_artifacts")
+        .and_then(JsonValue::as_array)
+    {
+        for artifact in artifacts {
+            let name = artifact
+                .get("name")
+                .and_then(JsonValue::as_str)
+                .unwrap_or("<artifact>");
+            let configured = artifact
+                .get("configured")
+                .and_then(JsonValue::as_bool)
+                .unwrap_or(false);
+            let note = artifact
+                .get("note")
+                .and_then(JsonValue::as_str)
+                .unwrap_or("");
+            let _ = writeln!(markdown, "- `{name}`: {configured} - {note}");
+        }
+    }
+    markdown.push_str("\n## Missing steps\n\n");
+    if let Some(missing) = report.get("missing_steps").and_then(JsonValue::as_array) {
+        if missing.is_empty() {
+            markdown.push_str("- None\n");
+        } else {
+            for item in missing {
+                let _ = writeln!(markdown, "- {}", item.as_str().unwrap_or("<missing>"));
+            }
+        }
+    }
+    fs::write(dir.join("release-publication-report.md"), markdown)?;
     println!("release-evidence: wrote {}", dir.display());
     Ok(())
+}
+
+fn workspace_root() -> PathBuf {
+    PathBuf::from(env!("CARGO_MANIFEST_DIR"))
+        .parent()
+        .expect("xtask manifest has workspace parent")
+        .to_path_buf()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::release_publication_readiness;
+
+    #[test]
+    fn release_publication_readiness_remains_scaffolded_and_not_published() {
+        let report = release_publication_readiness();
+
+        assert_eq!(report["track"], "M-130");
+        assert_eq!(report["status"], "scaffolded_read_only");
+        assert_eq!(report["public_release_ready"], false);
+        assert!(report["configured_artifacts"]
+            .as_array()
+            .expect("configured artifacts")
+            .iter()
+            .any(|artifact| artifact["name"] == "winget manifest placeholder"
+                && artifact["configured"] == false));
+        assert!(report["missing_steps"]
+            .as_array()
+            .expect("missing steps")
+            .iter()
+            .any(|step| step == "winget manifest placeholder"));
+    }
 }

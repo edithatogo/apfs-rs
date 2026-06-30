@@ -2017,8 +2017,9 @@ capabilities:
     - release_provenance_required
     - no_media_mutation
     - release_automation
-    status: planned_roadmap
-    note: roadmap track for signed release publication and winget delivery
+    status: implemented_scaffold
+    note: release-publication readiness scaffold for signed release publication and
+      winget delivery without claiming a public release
   M-131:
     name: Linux macOS ChromeOS Android read-only adapters
     milestone: cross_platform_readiness

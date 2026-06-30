@@ -1,12 +1,12 @@
 # Signed release SBOM provenance installer and winget publication
 
-Capability: `M-130`  
-Status: `planned_roadmap`  
+Capability: `M-130`
+Status: `implemented_scaffold`
 Category: `release`
 
 ## Goal
 
-Turn release automation into a publishable, auditable distribution process.
+Provide the smallest safe release-publication readiness scaffold for a publishable, auditable distribution process.
 
 ## Scope
 

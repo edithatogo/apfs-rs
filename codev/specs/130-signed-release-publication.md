@@ -1,10 +1,10 @@
 # Spec M-130: Signed release SBOM provenance installer and winget publication
 
-Status: `planned_roadmap`.
+Status: `implemented_scaffold`.
 
 ## Objective
 
-Turn release automation into a publishable, auditable distribution process.
+Provide the smallest safe release-publication readiness scaffold for a publishable, auditable distribution process.
 
 ## Required safety gates
 
