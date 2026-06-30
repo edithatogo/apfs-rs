@@ -13,6 +13,7 @@
 - Corrected APFS Fletcher-64 checksum semantics so the real macOS-generated NXSB validates with the stored checksum.
 - The converted raw disk image now reaches APFS container detection, checkpoint scan, and the real fixture no longer dies at the NXSB checksum boundary.
 - Updated the shared synthetic-oracle checksum formula so generator and parser stay aligned.
+- Regression coverage now explicitly exercises the positive checksum path, the checksum-mismatch refusal path, and the core inspect boundary in `crates/apfs-types/src/lib.rs` and `crates/apfs-core/src/lib.rs`.
 
 ## Archive closeout
 
