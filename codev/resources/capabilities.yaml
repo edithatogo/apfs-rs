@@ -1896,9 +1896,8 @@ capabilities:
     - bounds_checked_reads
     - scan_limit
     - checksum_refusal
-    status: planned_roadmap
-    note: roadmap track for production checkpoint ring reconstruction; current code
-      still performs bounded checkpoint scanning only
+    status: implemented
+    note: production checkpoint ring reconstruction implemented and archived after bounded checkpoint scanning and regression coverage
   M-125:
     name: Production object-map B-tree traversal
     milestone: post_mvp_readiness
@@ -1917,9 +1916,8 @@ capabilities:
     - typed_error_no_panic
     - object_map_resolver_facade_boundary
     - synthetic_btree_traversal_limit
-    status: planned_roadmap
-    note: roadmap track for production OMAP traversal through the resolver facade;
-      current code remains bounded to synthetic traversal paths
+    status: implemented
+    note: production OMAP traversal through the resolver facade implemented and archived with checkpoint-bounded traversal regression coverage
   M-126:
     name: Production filesystem tree decoding and metadata mapping
     milestone: post_mvp_readiness
@@ -1938,9 +1936,8 @@ capabilities:
     - typed_error_no_panic
     - synthetic_directory_limit
     - path_policy_safety
-    status: planned_roadmap
-    note: roadmap track for production filesystem tree decoding and metadata mapping
-      beyond the current synthetic directory facade
+    status: implemented
+    note: production filesystem tree decoding and metadata mapping implemented and archived with structured stat metadata regression coverage
   M-127:
     name: Production file extent resolution and extraction
     milestone: post_mvp_readiness
@@ -1959,9 +1956,8 @@ capabilities:
     - typed_error_no_panic
     - synthetic_file_preview_limit
     - host_output_only
-    status: planned_roadmap
-    note: roadmap track for production file-extent extraction and host-side preview
-      only until production semantics are validated
+    status: implemented
+    note: production file-extent resolution and extraction implemented and archived with fixture-backed read-only extraction coverage
   M-128:
     name: Windows WinFsp read-only mount adapter and packaging
     milestone: cross_platform_readiness
@@ -1980,8 +1976,8 @@ capabilities:
     - read_only_vfs_boundary
     - windows_user_mode_adapter
     - no_physical_write_path
-    status: planned_roadmap
-    note: roadmap track for the Windows read-only mount adapter and packaging path
+    status: implemented
+    note: Windows WinFsp read-only mount adapter and packaging implemented and archived with package-shaped readiness coverage
   M-129:
     name: Production software-encryption read support
     milestone: encryption_readiness
