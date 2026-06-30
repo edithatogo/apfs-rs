@@ -1,0 +1,1 @@
+M-140 closeout: implemented the mature release readiness dashboard, added the recurring release-readiness workflow, wired the dashboard into release-preflight and the bleeding-edge audit, archived the track, and validated the repo with fmt, xtask tests, registry/safety/precompile checks, release-preflight, and workspace tests.
