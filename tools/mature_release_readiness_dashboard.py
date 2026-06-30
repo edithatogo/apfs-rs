@@ -97,7 +97,7 @@ def production_gap_state() -> tuple[str, str, list[dict[str, object]]]:
     except json.JSONDecodeError:
         return "failed", "PRODUCTION_GAP_REPORT.json is not valid JSON", []
 
-    summary = report.get("summary", {})
+    summary = report.get("summary") or {}
     remaining_total = int(summary.get("remaining_total_including_mvp_blockers") or 0)
     windows_mvp = report.get("windows_readonly_mvp_remaining", []) or []
 

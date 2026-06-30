@@ -9,12 +9,12 @@ Failures: **0**
 | Status | Command | Seconds |
 |---|---|---:|
 | `pass` | `py_compile selected tools` | 0.015 |
-| `pass` | `runpy tools/apfs_offset_audit.py` | 0.004 |
-| `pass` | `runpy tools/golden_output_generator.py` | 0.008 |
+| `pass` | `runpy tools/apfs_offset_audit.py` | 0.005 |
+| `pass` | `runpy tools/golden_output_generator.py` | 0.018 |
 | `pass` | `runpy tools/backlog_issue_export.py` | 0.042 |
-| `pass` | `runpy tools/synthetic_fixture_oracle.py` | 0.016 |
-| `pass` | `runpy tools/tool_capability_matrix.py` | 1.244 |
-| `pass` | `runpy tools/rust_static_lint.py` | 0.033 |
-| `pass` | `runpy tools/local_command_plan.py` | 0.003 |
+| `pass` | `runpy tools/synthetic_fixture_oracle.py` | 0.02 |
+| `pass` | `runpy tools/tool_capability_matrix.py` | 0.967 |
+| `pass` | `runpy tools/rust_static_lint.py` | 0.03 |
+| `pass` | `runpy tools/local_command_plan.py` | 0.002 |
 | `pass` | `runpy tools/mvp_blocker_tasklist.py` | 0.026 |
-| `pass` | `runpy tools/agent_handoff_brief.py` | 0.123 |
+| `pass` | `runpy tools/agent_handoff_brief.py` | 0.096 |

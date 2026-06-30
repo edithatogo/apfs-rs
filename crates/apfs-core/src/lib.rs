@@ -2203,7 +2203,7 @@ fn ordered_valid_checkpoint_maps(
     maps
 }
 
-struct AdditionalOmapLeafDecodeContext<'a> {
+struct AdditionalOmapLeafDecodeContext<'a, 'b> {
     device: &'a dyn ReadOnlyBlockDevice,
     apfs_offset: u64,
     container: &'a ContainerSuperblock,
@@ -2211,11 +2211,11 @@ struct AdditionalOmapLeafDecodeContext<'a> {
     checkpoint_maps: &'a [CheckpointMapReport],
     root_tree_oid: u64,
     latest_valid_xid: Option<u64>,
-    notes: &'a mut Vec<Diagnostic>,
+    notes: &'b mut Vec<Diagnostic>,
 }
 
 fn decode_additional_omap_leaf_nodes(
-    context: AdditionalOmapLeafDecodeContext<'_>,
+    context: AdditionalOmapLeafDecodeContext<'_, '_>,
 ) -> Result<Vec<MappedBTreeLeafReport>, InspectError> {
     let mut leaves = Vec::new();
     for map in ordered_valid_checkpoint_maps(context.checkpoint_maps, context.latest_valid_xid) {

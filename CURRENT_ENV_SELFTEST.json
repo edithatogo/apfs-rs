@@ -14,14 +14,14 @@
     {
       "command": "runpy tools/apfs_offset_audit.py",
       "returncode": 0,
-      "duration_seconds": 0.004,
+      "duration_seconds": 0.005,
       "status": "pass",
       "error_tail": ""
     },
     {
       "command": "runpy tools/golden_output_generator.py",
       "returncode": 0,
-      "duration_seconds": 0.008,
+      "duration_seconds": 0.018,
       "status": "pass",
       "error_tail": ""
     },
@@ -35,28 +35,28 @@
     {
       "command": "runpy tools/synthetic_fixture_oracle.py",
       "returncode": 0,
-      "duration_seconds": 0.016,
+      "duration_seconds": 0.02,
       "status": "pass",
       "error_tail": ""
     },
     {
       "command": "runpy tools/tool_capability_matrix.py",
       "returncode": 0,
-      "duration_seconds": 1.244,
+      "duration_seconds": 0.967,
       "status": "pass",
       "error_tail": ""
     },
     {
       "command": "runpy tools/rust_static_lint.py",
       "returncode": 0,
-      "duration_seconds": 0.033,
+      "duration_seconds": 0.03,
       "status": "pass",
       "error_tail": ""
     },
     {
       "command": "runpy tools/local_command_plan.py",
       "returncode": 0,
-      "duration_seconds": 0.003,
+      "duration_seconds": 0.002,
       "status": "pass",
       "error_tail": ""
     },
@@ -70,7 +70,7 @@
     {
       "command": "runpy tools/agent_handoff_brief.py",
       "returncode": 0,
-      "duration_seconds": 0.123,
+      "duration_seconds": 0.096,
       "status": "pass",
       "error_tail": ""
     }

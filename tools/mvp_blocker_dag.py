@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def main() -> int:
-    ledger = yaml.safe_load((ROOT / "REMAINING_ELEMENTS.yaml").read_text(encoding="utf-8"))
+    ledger = yaml.safe_load((ROOT / "REMAINING_ELEMENTS.yaml").read_text(encoding="utf-8")) or {}
     blockers = ledger.get("remaining_windows_readonly_mvp", []) or []
     ordered = [
         {
