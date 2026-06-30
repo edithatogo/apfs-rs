@@ -7,11 +7,12 @@ use apfs_types::{
     parse_gpt_partition_entry, parse_nx_superblock, parse_nx_superblock_with_checksum,
     parse_object_header, parse_omap_index_records_from_btree_node, parse_omap_phys_with_checksum,
     parse_omap_records_from_btree_node, parse_synthetic_directory_records_from_btree_node,
-    select_synthetic_btree_child, validate_gpt_entries_checksum, validate_object_checksum,
-    BTreeChildSelection, BTreeIndexRecord, BTreeNode, CheckpointMapping, ContainerSuperblock,
-    FileSystemDirectoryRecord, GptEntriesChecksum, GptHeader, GptPartitionEntry, ObjectChecksum,
-    ObjectHeader, ObjectMap, OmapLookup, OmapRecord, ParseError, VolumeSuperblock, GPT_SECTOR_SIZE,
-    NX_SUPERBLOCK_MIN_SIZE, OBJECT_TYPE_BTREE, OBJECT_TYPE_BTREE_NODE, OBJECT_TYPE_CHECKPOINT_MAP,
+    parse_synthetic_file_extent_records_from_btree_node, select_synthetic_btree_child,
+    validate_gpt_entries_checksum, validate_object_checksum, BTreeChildSelection, BTreeIndexRecord,
+    BTreeNode, CheckpointMapping, ContainerSuperblock, FileSystemDirectoryRecord,
+    GptEntriesChecksum, GptHeader, GptPartitionEntry, ObjectChecksum, ObjectHeader, ObjectMap,
+    OmapLookup, OmapRecord, ParseError, VolumeSuperblock, GPT_SECTOR_SIZE, NX_SUPERBLOCK_MIN_SIZE,
+    OBJECT_TYPE_BTREE, OBJECT_TYPE_BTREE_NODE, OBJECT_TYPE_CHECKPOINT_MAP,
     OBJECT_TYPE_NX_SUPERBLOCK, OBJECT_TYPE_OMAP,
 };
 use serde::Serialize;
@@ -33,6 +34,8 @@ pub enum InspectError {
     ArithmeticOverflow,
     #[error("APFS block size {0} is too large for this inspection build")]
     BlockSizeTooLarge(u32),
+    #[error("unsupported file extent layout: {0}")]
+    UnsupportedFileExtentLayout(String),
 }
 
 #[derive(Debug, Clone, Serialize, PartialEq, Eq)]
@@ -1173,6 +1176,27 @@ fn file_read_report_in_report(
             warnings,
         ));
     };
+    if let Some((payload, extent_warnings)) =
+        synthetic_file_payload_from_extent_tree(device, report, &entry, block_index)?
+    {
+        warnings.extend(extent_warnings);
+        let utf8 = String::from_utf8_lossy(&payload).into_owned();
+        let hex = payload
+            .iter()
+            .map(|byte| format!("{byte:02x}"))
+            .collect::<String>();
+        return Ok(file_envelope(
+            report,
+            FileReadReportStatus::Available,
+            requested_name,
+            Some(entry),
+            Some(utf8),
+            Some(hex),
+            Some(payload.len()),
+            errors,
+            warnings,
+        ));
+    }
     let Some(container) = &report.container else {
         errors.push(Diagnostic {
             code: "APFS-E-FILE-CONTAINER-MISSING".to_owned(),
@@ -1250,6 +1274,140 @@ fn file_envelope(
         warnings,
         safety: SafetySummary::default(),
     }
+}
+
+fn synthetic_file_payload_from_extent_tree(
+    device: &dyn ReadOnlyBlockDevice,
+    report: &InspectReport,
+    entry: &FileSystemDirectoryRecord,
+    extent_tree_block_index: u64,
+) -> Result<Option<(Vec<u8>, Vec<Diagnostic>)>, InspectError> {
+    let container = report.container.as_ref().ok_or_else(|| {
+        InspectError::UnsupportedFileExtentLayout(
+            "extent resolution requires an available container superblock".to_owned(),
+        )
+    })?;
+    let block_size = usize::try_from(container.block_size)
+        .map_err(|_| InspectError::BlockSizeTooLarge(container.block_size))?;
+    let apfs_offset = report.apfs_offset_bytes.unwrap_or(0);
+    let block = read_container_block(
+        device,
+        apfs_offset,
+        extent_tree_block_index,
+        container.block_size,
+        block_size,
+    )?;
+    let node = match parse_btree_node_with_checksum(&block) {
+        Ok(node) => node,
+        Err(ParseError::ObjectTypeMismatch { .. }) => return Ok(None),
+        Err(err) => return Err(InspectError::Parse(err)),
+    };
+    if !node.is_leaf {
+        return Err(InspectError::UnsupportedFileExtentLayout(format!(
+            "synthetic extent tree for {} at block {extent_tree_block_index} is not a leaf node",
+            entry.name
+        )));
+    }
+
+    let records = parse_synthetic_file_extent_records_from_btree_node(&block, &node)?;
+    let mut matching_records: Vec<_> = records
+        .into_iter()
+        .filter(|record| record.file_object_id == entry.object_id)
+        .collect();
+    if matching_records.is_empty() {
+        return Err(InspectError::UnsupportedFileExtentLayout(format!(
+            "synthetic extent tree for {} did not contain any extent records",
+            entry.name
+        )));
+    }
+
+    matching_records.sort_by_key(|record| (record.logical_offset, record.physical_block));
+    let logical_size = usize::try_from(entry.logical_size).map_err(|_| {
+        InspectError::UnsupportedFileExtentLayout(format!(
+            "logical size {} for {} is too large to extract safely",
+            entry.logical_size, entry.name
+        ))
+    })?;
+    let mut payload = vec![0_u8; logical_size];
+    let mut expected_logical_offset = 0_u64;
+
+    for record in matching_records {
+        if record.logical_offset != expected_logical_offset {
+            return Err(InspectError::UnsupportedFileExtentLayout(format!(
+                "sparse, cloned, or overlapping extents are unsupported for {}: expected logical offset {}, found {}",
+                entry.name, expected_logical_offset, record.logical_offset
+            )));
+        }
+        if record.physical_block == 0 && record.length_bytes > 0 {
+            return Err(InspectError::UnsupportedFileExtentLayout(format!(
+                "sparse extents are unsupported for {} in this read-only extraction slice",
+                entry.name
+            )));
+        }
+
+        let extent_len = usize::try_from(record.length_bytes).map_err(|_| {
+            InspectError::UnsupportedFileExtentLayout(format!(
+                "extent length {} for {} is too large to extract safely",
+                record.length_bytes, entry.name
+            ))
+        })?;
+        let extent_end = record
+            .logical_offset
+            .checked_add(record.length_bytes)
+            .ok_or(InspectError::ArithmeticOverflow)?;
+        if extent_end > entry.logical_size {
+            return Err(InspectError::UnsupportedFileExtentLayout(format!(
+                "extent for {} exceeds declared logical size {}",
+                entry.name, entry.logical_size
+            )));
+        }
+
+        let mut remaining = extent_len;
+        let mut logical_cursor = usize::try_from(record.logical_offset).map_err(|_| {
+            InspectError::UnsupportedFileExtentLayout(format!(
+                "logical offset {} for {} is too large to extract safely",
+                record.logical_offset, entry.name
+            ))
+        })?;
+        let mut physical_block = record.physical_block;
+
+        while remaining > 0 {
+            let chunk = remaining.min(block_size);
+            let source_block = read_container_block(
+                device,
+                apfs_offset,
+                physical_block,
+                container.block_size,
+                block_size,
+            )?;
+            let logical_end = logical_cursor
+                .checked_add(chunk)
+                .ok_or(InspectError::ArithmeticOverflow)?;
+            payload[logical_cursor..logical_end].copy_from_slice(&source_block[..chunk]);
+            logical_cursor = logical_end;
+            physical_block = physical_block
+                .checked_add(1)
+                .ok_or(InspectError::ArithmeticOverflow)?;
+            remaining -= chunk;
+        }
+
+        expected_logical_offset = extent_end;
+    }
+
+    if expected_logical_offset != entry.logical_size {
+        return Err(InspectError::UnsupportedFileExtentLayout(format!(
+            "synthetic extent tree for {} ended at logical offset {}, expected {}",
+            entry.name, expected_logical_offset, entry.logical_size
+        )));
+    }
+
+    Ok(Some((
+        payload,
+        vec![Diagnostic {
+            code: "APFS-W-FILE-EXTENT-RESOLUTION-SYNTHETIC".to_owned(),
+            message: "file read resolved fixture-backed extent records; production APFS extent traversal remains fixture-backed".to_owned(),
+        }],
+    )))
 }
 
 pub fn btree_cursor_report_in_device(

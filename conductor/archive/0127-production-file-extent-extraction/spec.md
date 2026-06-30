@@ -1,7 +1,7 @@
 # Production file extent resolution and extraction
 
 Capability: `M-127`  
-Status: `planned_roadmap`  
+Status: `implemented`
 Category: `core-read`
 
 ## Goal

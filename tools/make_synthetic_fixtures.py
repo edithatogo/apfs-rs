@@ -183,6 +183,7 @@ FIXTURE_CAPABILITIES: dict[str, list[str]] = {
     "synthetic-mapped-object-read.img": ["M-015"],
     "synthetic-directory-listing.img": ["M-016", "M-017", "M-019"],
     "synthetic-file-preview.img": ["M-018", "M-020"],
+    "synthetic-file-extract.img": ["M-127"],
 }
 
 
@@ -622,6 +623,34 @@ def make_synthetic_directory_node(*, xid: int, oid: int = 2000, entries: list[tu
     return bytes(block)
 
 
+def make_synthetic_file_extent_node(*, xid: int, oid: int = 3000, records: list[tuple[int, int, int, int]]) -> bytes:
+    """Create a synthetic filesystem file-extent B-tree leaf node."""
+    block = bytearray(BLOCK_SIZE)
+    key_count = len(records)
+    put_u64(block, 8, oid)
+    put_u64(block, 16, xid)
+    put_u32(block, 24, 0x40000000 | OBJECT_TYPE_BTREE_NODE)
+    struct.pack_into("<H", block, 32, BTREE_NODE_ROOT | BTREE_NODE_LEAF)
+    struct.pack_into("<H", block, 34, 0)
+    put_u32(block, 36, key_count)
+    struct.pack_into("<H", block, 40, 0)
+    struct.pack_into("<H", block, 42, key_count * 4)
+    for index, (file_object_id, logical_offset, physical_block, length_bytes) in enumerate(records):
+        key_offset = 128 + index * 32
+        value_offset = 256 + index * 32
+        toc_base = 56 + index * 4
+        struct.pack_into("<H", block, toc_base + 0, key_offset)
+        struct.pack_into("<H", block, toc_base + 2, value_offset)
+        key_base = 56 + key_offset
+        value_base = 56 + value_offset
+        put_u64(block, key_base + 0, file_object_id)
+        put_u64(block, key_base + 8, logical_offset)
+        put_u64(block, value_base + 0, physical_block)
+        put_u64(block, value_base + 8, length_bytes)
+    sign_apfs_object(block)
+    return bytes(block)
+
+
 def make_directory_listing_image() -> bytes:
     blocks = [bytearray(BLOCK_SIZE) for _ in range(96)]
     blocks[0][:] = make_nxsb(xid=90, desc_base=2, desc_len=4, data_base=10, data_len=48, block_count=96, fs_oid=1000, omap_oid=12)
@@ -657,6 +686,54 @@ def make_directory_listing_image() -> bytes:
         entries=[
             (2, "hello.txt", 4000, 8, len(content), 40),
             (2, "Documents", 4001, 4, 0, 0),
+        ],
+    )
+    blocks[40][0:len(content)] = content
+    return b"".join(blocks)
+
+
+def make_file_extent_extraction_image() -> bytes:
+    blocks = [bytearray(BLOCK_SIZE) for _ in range(96)]
+    blocks[0][:] = make_nxsb(xid=92, desc_base=2, desc_len=4, data_base=10, data_len=48, block_count=96, fs_oid=1000, omap_oid=12)
+    blocks[2][:] = make_checkpoint_map(
+        xid=92,
+        oid=207,
+        mappings=[
+            (OBJECT_TYPE_OMAP, 0, BLOCK_SIZE, 12, 10),
+            (OBJECT_TYPE_BTREE_NODE, 0, BLOCK_SIZE, 99, 11),
+            (OBJECT_TYPE_BTREE_NODE, 0, BLOCK_SIZE, 110, 12),
+        ],
+    )
+    blocks[3][:] = make_nxsb(xid=93, desc_base=2, desc_len=4, data_base=10, data_len=48, block_count=96, fs_oid=1000, omap_oid=12)
+    blocks[10][:] = make_omap(xid=92, oid=12, tree_oid=99)
+    blocks[11][:] = make_btree_index_root_node(xid=92, oid=99, child_ranges=[(3000, 92, 110)])
+    blocks[12][:] = make_btree_root_node_records(
+        xid=92,
+        oid=110,
+        records=[
+            (1000, 92, 30),
+            (2000, 92, 31),
+        ],
+    )
+    leaf = bytearray(blocks[12])
+    struct.pack_into("<H", leaf, 32, BTREE_NODE_LEAF)
+    sign_apfs_object(leaf)
+    blocks[12][:] = leaf
+    blocks[30][:] = make_volume_superblock(xid=92, oid=1000, name="SyntheticHD", role=0x0040, root_tree_oid=2000)
+    content = b"Hello from APFS-RS synthetic file preview!\n"
+    blocks[31][:] = make_synthetic_directory_node(
+        xid=92,
+        oid=2000,
+        entries=[
+            (2, "hello.txt", 4000, 8, len(content), 32),
+            (2, "Documents", 4001, 4, 0, 0),
+        ],
+    )
+    blocks[32][:] = make_synthetic_file_extent_node(
+        xid=92,
+        oid=3000,
+        records=[
+            (4000, 0, 40, len(content)),
         ],
     )
     blocks[40][0:len(content)] = content
@@ -711,6 +788,7 @@ def main() -> None:
     directory_image = make_directory_listing_image()
     write_fixture("synthetic-directory-listing.img", directory_image, "Direct APFS-like image resolving a synthetic APFS volume root tree to directory entries")
     write_fixture("synthetic-file-preview.img", directory_image, "Direct APFS-like image resolving synthetic directory entries and previewing a direct-block file payload")
+    write_fixture("synthetic-file-extract.img", make_file_extent_extraction_image(), "Direct APFS-like image resolving synthetic directory entries through a synthetic extent tree for safe host extraction")
 
 
 if __name__ == "__main__":

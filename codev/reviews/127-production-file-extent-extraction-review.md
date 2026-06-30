@@ -2,8 +2,8 @@
 
 ## Status
 
-`planned_roadmap`.
+`implemented`.
 
 ## Notes
 
-This roadmap track exists because the mature, hardened APFS-RS release is not fully implemented. It is reviewed as a planning/evidence track only; no production APFS behavior is claimed until its plan is executed and validated.
+This roadmap track now has fixture-backed read-only extraction evidence. The CLI writes only to the requested host destination directory, resolves synthetic extent records for the extraction fixture, and refuses unsafe traversal names. No APFS media writes are introduced, and production APFS compatibility claims remain bounded to the specific fixture and tests executed here.

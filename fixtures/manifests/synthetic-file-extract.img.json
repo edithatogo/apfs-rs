@@ -1,0 +1,26 @@
+{
+  "fixture_id": "synthetic-file-extract.img",
+  "schema_version": "0.15.0",
+  "source_type": "synthetic_apfs_parser_development_image",
+  "description": "Direct APFS-like image resolving synthetic directory entries through a synthetic extent tree for safe host extraction",
+  "created_with": {
+    "tool": "tools/make_synthetic_fixtures.py",
+    "note": "synthetic parser-development fixture"
+  },
+  "expected_artifacts": [],
+  "synthetic": true,
+  "not_a_complete_filesystem": true,
+  "apfs_features": {
+    "synthetic": true,
+    "not_a_complete_filesystem": true
+  },
+  "capability_ids": [
+    "M-127"
+  ],
+  "redaction": {
+    "contains_personal_data": false,
+    "contains_secret_material": false
+  },
+  "size_bytes": 393216,
+  "sha256": "d1fa94e961899313c016f839005960134452c80e137b63c9db307b0470f47fe0"
+}

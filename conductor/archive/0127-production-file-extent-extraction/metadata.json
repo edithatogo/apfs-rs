@@ -1,13 +1,13 @@
 {
   "track_id": "0127-production-file-extent-extraction",
   "capability": "M-127",
-  "status": "planned_roadmap",
+  "status": "implemented",
   "category": "core-read",
   "package": "roadmap",
   "purpose": "Resolve production file extents and implement safe host extraction from APFS images.",
   "review_status": "reviewed",
-  "archive_status": "open",
-  "archived": false,
+  "archive_status": "archived",
+  "archived": true,
   "archive_version": "0.29.0",
   "archive_evidence": "CONDUCTOR_TRACK_CLOSEOUT_AUDIT.md",
   "codev_review": "codev/reviews/127-production-file-extent-extraction-review.md"

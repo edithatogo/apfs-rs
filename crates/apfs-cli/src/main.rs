@@ -258,7 +258,7 @@ enum Command {
         #[arg(long)]
         json: bool,
     },
-    /// Extract one small synthetic direct-block file preview to a destination directory.
+    /// Extract one synthetic file payload to a destination directory.
     Extract {
         /// Source image path.
         source: PathBuf,
@@ -1140,14 +1140,14 @@ fn metadata_feature_report_command(feature: String, json: bool) -> anyhow::Resul
 fn extract_command(source: PathBuf, name: String, dest: PathBuf, json: bool) -> anyhow::Result<()> {
     validate_safe_output_name(&name)?;
     let device = open_image_device(&source, "extract")?;
-    let report = file_read_report_in_device(&device, &name).context("synthetic extract preview")?;
+    let report = file_read_report_in_device(&device, &name).context("synthetic extract payload")?;
     let mut wrote_path: Option<String> = None;
     let mut wrote_bytes: Option<usize> = None;
     let mut status = "refused";
 
     if matches!(report.status, FileReadReportStatus::Available) {
         let Some(hex) = &report.content_preview_hex else {
-            anyhow::bail!("synthetic file report did not include a hex payload preview");
+            anyhow::bail!("synthetic file report did not include a hex payload");
         };
         let bytes = decode_hex(hex)?;
         fs::create_dir_all(&dest)
@@ -1171,7 +1171,7 @@ fn extract_command(source: PathBuf, name: String, dest: PathBuf, json: bool) -> 
         "wrote_path": wrote_path,
         "wrote_bytes": wrote_bytes,
         "file_report": report,
-        "safety_note": "This writes only to the requested host destination directory; it never writes to APFS media. Current payload is a bounded synthetic direct-block preview, not production APFS extent extraction."
+        "safety_note": "This writes only to the requested host destination directory; it never writes to APFS media. When available, payload bytes are resolved from fixture-backed synthetic extents."
     });
 
     if json {

@@ -1,6 +1,6 @@
 # Spec M-127: Production file extent resolution and extraction
 
-Status: `planned_roadmap`.
+Status: `implemented`.
 
 ## Objective
 

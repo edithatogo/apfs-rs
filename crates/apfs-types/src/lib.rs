@@ -1427,6 +1427,54 @@ mod tests {
     }
 
     #[test]
+    fn parses_synthetic_file_extent_records_from_btree_leaf() {
+        let mut block = [0_u8; 4096];
+        block[8..16].copy_from_slice(&2000_u64.to_le_bytes());
+        block[16..24].copy_from_slice(&90_u64.to_le_bytes());
+        block[24..28]
+            .copy_from_slice(&(OBJ_PHYSICAL | u32::from(OBJECT_TYPE_BTREE_NODE)).to_le_bytes());
+        block[32..34].copy_from_slice(&(BTREE_NODE_ROOT | BTREE_NODE_LEAF).to_le_bytes());
+        block[34..36].copy_from_slice(&0_u16.to_le_bytes());
+        block[36..40].copy_from_slice(&1_u32.to_le_bytes());
+        block[40..42].copy_from_slice(&0_u16.to_le_bytes());
+        block[42..44].copy_from_slice(&4_u16.to_le_bytes());
+        block[56..58].copy_from_slice(&128_u16.to_le_bytes());
+        block[58..60].copy_from_slice(&256_u16.to_le_bytes());
+        block[56 + 128..56 + 136].copy_from_slice(&4000_u64.to_le_bytes());
+        block[56 + 136..56 + 144].copy_from_slice(&0_u64.to_le_bytes());
+        block[56 + 256..56 + 264].copy_from_slice(&40_u64.to_le_bytes());
+        block[56 + 264..56 + 272].copy_from_slice(&43_u64.to_le_bytes());
+        sign_block(&mut block);
+        let node = parse_btree_node_with_checksum(&block).unwrap();
+        let records = parse_synthetic_file_extent_records_from_btree_node(&block, &node).unwrap();
+        assert_eq!(records.len(), 1);
+        assert_eq!(records[0].file_object_id, 4000);
+        assert_eq!(records[0].logical_offset, 0);
+        assert_eq!(records[0].physical_block, 40);
+        assert_eq!(records[0].length_bytes, 43);
+    }
+
+    #[test]
+    fn rejects_truncated_synthetic_file_extent_records() {
+        let mut block = [0_u8; 4096];
+        block[8..16].copy_from_slice(&2000_u64.to_le_bytes());
+        block[16..24].copy_from_slice(&90_u64.to_le_bytes());
+        block[24..28]
+            .copy_from_slice(&(OBJ_PHYSICAL | u32::from(OBJECT_TYPE_BTREE_NODE)).to_le_bytes());
+        block[32..34].copy_from_slice(&(BTREE_NODE_ROOT | BTREE_NODE_LEAF).to_le_bytes());
+        block[34..36].copy_from_slice(&0_u16.to_le_bytes());
+        block[36..40].copy_from_slice(&1_u32.to_le_bytes());
+        block[40..42].copy_from_slice(&0_u16.to_le_bytes());
+        block[42..44].copy_from_slice(&4_u16.to_le_bytes());
+        block[56..58].copy_from_slice(&4090_u16.to_le_bytes());
+        block[58..60].copy_from_slice(&256_u16.to_le_bytes());
+        sign_block(&mut block);
+        let node = parse_btree_node_with_checksum(&block).unwrap();
+        let err = parse_synthetic_file_extent_records_from_btree_node(&block, &node).unwrap_err();
+        assert!(matches!(err, ParseError::BTreeTableOutOfBounds { .. }));
+    }
+
+    #[test]
     fn parses_apfs_gpt_partition_entry() {
         let mut entry = [0_u8; GPT_PARTITION_ENTRY_MIN_SIZE];
         entry[0..16].copy_from_slice(&APFS_GPT_TYPE_GUID_BYTES);
