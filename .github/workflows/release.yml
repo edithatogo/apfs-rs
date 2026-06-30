@@ -285,6 +285,7 @@ jobs:
           subject-path: dist-manifest.json
       - name: Create GitHub Release
         env:
+          RELEASE_TAG: "${{ needs.plan.outputs.tag }}"
           PRERELEASE_FLAG: "${{ fromJson(steps.host.outputs.manifest).announcement_is_prerelease && '--prerelease' || '' }}"
           ANNOUNCEMENT_TITLE: "${{ fromJson(steps.host.outputs.manifest).announcement_title }}"
           ANNOUNCEMENT_BODY: "${{ fromJson(steps.host.outputs.manifest).announcement_github_body }}"
@@ -300,7 +301,7 @@ jobs:
 
           artifacts=(artifacts/*)
 
-          gh release create "${{ needs.plan.outputs.tag }}" --target "$RELEASE_COMMIT" "${release_args[@]}" --title "$ANNOUNCEMENT_TITLE" --notes-file "$RUNNER_TEMP/notes.txt" "${artifacts[@]}"
+          gh release create "$RELEASE_TAG" --target "$RELEASE_COMMIT" "${release_args[@]}" --title "$ANNOUNCEMENT_TITLE" --notes-file "$RUNNER_TEMP/notes.txt" "${artifacts[@]}"
 
   announce:
     needs:
