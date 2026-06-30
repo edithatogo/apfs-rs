@@ -2048,6 +2048,7 @@ capabilities:
     moscow: Must
     track: write-lab
     crates:
+    - apfs-write-lab
     - xtask
     required_tests:
     - image_only_write_lab
@@ -2057,9 +2058,9 @@ capabilities:
     - image_only_write_lab
     - no_physical_write_path
     - no_media_mutation
-    status: planned_roadmap
-    note: roadmap track for disposable-image crash evidence only; no physical-device
-      writes are permitted
+    status: implemented_scaffold
+    note: disposable-image crash-evidence scaffold for future write governance; no
+      physical-device writes are permitted
   M-133:
     name: Windows write beta governance
     milestone: safety_governance

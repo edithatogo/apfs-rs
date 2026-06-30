@@ -12,7 +12,7 @@ The first product milestone is a Windows-first read-only APFS inspection and ext
 
 ## Current implementation state
 
-Implementation is early and read-only. The package currently implements synthetic-fixture-driven APFS container inspection, GPT APFS partition detection, APFS object checksum validation, checkpoint map parsing, early object-map probing, synthetic OMAP B-tree probing, lookup, resolver, a production-shaped B-tree cursor facade, macOS real APFS fixture generation, real-fixture feedback promotion evidence, real-fixture checksum-semantics correction, a policy-only software-encryption readiness scaffold, and cross-platform read-only adapter readiness scaffolds.
+Implementation is early and read-only. The package currently implements synthetic-fixture-driven APFS container inspection, GPT APFS partition detection, APFS object checksum validation, checkpoint map parsing, early object-map probing, synthetic OMAP B-tree probing, lookup, resolver, a production-shaped B-tree cursor facade, macOS real APFS fixture generation, real-fixture feedback promotion evidence, real-fixture checksum-semantics correction, a policy-only software-encryption readiness scaffold, cross-platform read-only adapter readiness scaffolds, and disposable-image write-lab crash-evidence scaffolds.
 
 ## Development history
 
@@ -40,4 +40,4 @@ The project succeeds when every supported APFS claim is backed by fixture eviden
 
 ## Current ledger note
 
-The Conductor history now spans M-001 through M-140, including repository hardening, quality evidence, dynamic versioning, redacted logging, read-only APFS scaffolds, cross-platform adapter readiness scaffolds, executed real macOS fixture evidence, executed real-fixture feedback promotion, executed real-fixture checksum-semantics correction, and planned mature-release roadmap tracks. Production APFS compatibility claims still require the relevant local, CI, macOS, or Windows evidence gates.
+The Conductor history now spans M-001 through M-140, including repository hardening, quality evidence, dynamic versioning, redacted logging, read-only APFS scaffolds, cross-platform adapter readiness scaffolds, disposable-image write-lab crash-evidence scaffolds, executed real macOS fixture evidence, executed real-fixture feedback promotion, executed real-fixture checksum-semantics correction, and planned mature-release roadmap tracks. Production APFS compatibility claims still require the relevant local, CI, macOS, or Windows evidence gates.

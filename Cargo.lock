@@ -191,6 +191,9 @@ dependencies = [
 [[package]]
 name = "apfs-write-lab"
 version = "0.1.0"
+dependencies = [
+ "serde",
+]
 
 [[package]]
 name = "assert_cmd"
@@ -1997,6 +2000,7 @@ name = "xtask"
 version = "0.13.0"
 dependencies = [
  "anyhow",
+ "apfs-write-lab",
  "clap",
  "jsonschema",
  "serde_json",

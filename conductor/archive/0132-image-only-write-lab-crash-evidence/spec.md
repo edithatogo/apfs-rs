@@ -1,7 +1,7 @@
 # Image-only write lab crash-injection evidence
 
 Capability: `M-132`  
-Status: `planned_roadmap`  
+Status: `implemented_scaffold`
 Category: `write-lab`
 
 ## Goal

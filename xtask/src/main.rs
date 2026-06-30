@@ -1,6 +1,7 @@
 #![forbid(unsafe_code)]
 
 use anyhow::{Context, Result};
+use apfs_write_lab::write_lab_evidence_report;
 use clap::{Parser, Subcommand};
 use serde_json::Value as JsonValue;
 use std::{
@@ -172,6 +173,8 @@ enum Command {
     },
     /// Write a release-publication evidence scaffold.
     ReleaseEvidence,
+    /// Write an image-only write-lab crash-evidence scaffold.
+    WriteLabEvidence,
     QualityGateCheck,
     DocsSiteCheck,
     TestScaffoldAudit,
@@ -292,6 +295,7 @@ fn main() -> Result<()> {
         Command::CurrentEnvSelftest => run_python_tool("tools/current_env_selftest.py", &[]),
         Command::TaskContext { capability_id } => task_context(&capability_id),
         Command::ReleaseEvidence => release_evidence(),
+        Command::WriteLabEvidence => write_lab_evidence(),
         Command::QualityGateCheck => run_python_tool("tools/quality_gate_check.py", &[]),
         Command::DocsSiteCheck => run_python_tool("tools/docs_site_static_check.py", &[]),
         Command::TestScaffoldAudit => run_python_tool("tools/test_scaffold_audit.py", &[]),
@@ -1055,6 +1059,37 @@ fn release_evidence() -> Result<()> {
     Ok(())
 }
 
+fn write_lab_evidence() -> Result<()> {
+    let dir = workspace_root().join("target/write-lab-evidence");
+    fs::create_dir_all(&dir)?;
+    let report = write_lab_evidence_report();
+    fs::write(
+        dir.join("README.md"),
+        "# APFS-RS Image-Only Write-Lab Evidence\n\nGenerated scaffold. This is not production write evidence yet.\n",
+    )?;
+    fs::write(
+        dir.join("write-lab-evidence-report.json"),
+        serde_json::to_string_pretty(&report)? + "\n",
+    )?;
+    let mut markdown = String::from("# APFS-RS Image-Only Write-Lab Evidence\n\n");
+    markdown.push_str("Status: `disposable_image_only`.\n\n");
+    markdown.push_str("## Planned operations\n\n");
+    for operation in &report.planned_operations {
+        let _ = writeln!(markdown, "- `{operation}`");
+    }
+    markdown.push_str("\n## Safety constraints\n\n");
+    for constraint in &report.safety_constraints {
+        let _ = writeln!(markdown, "- {constraint}");
+    }
+    markdown.push_str("\n## Evidence notes\n\n");
+    for note in &report.evidence_notes {
+        let _ = writeln!(markdown, "- {note}");
+    }
+    fs::write(dir.join("write-lab-evidence-report.md"), markdown)?;
+    println!("write-lab-evidence: wrote {}", dir.display());
+    Ok(())
+}
+
 fn workspace_root() -> PathBuf {
     PathBuf::from(env!("CARGO_MANIFEST_DIR"))
         .parent()
@@ -1064,7 +1099,8 @@ fn workspace_root() -> PathBuf {
 
 #[cfg(test)]
 mod tests {
-    use super::release_publication_readiness;
+    use super::{release_publication_readiness, write_lab_evidence_report};
+    use apfs_write_lab::WriteLabEvidenceStatus;
 
     #[test]
     fn release_publication_readiness_remains_scaffolded_and_not_published() {
@@ -1084,5 +1120,19 @@ mod tests {
             .expect("missing steps")
             .iter()
             .any(|step| step == "winget manifest placeholder"));
+    }
+
+    #[test]
+    fn write_lab_evidence_remains_disposable_image_only() {
+        let report = write_lab_evidence_report();
+
+        assert_eq!(report.track, "M-132");
+        assert_eq!(report.status, WriteLabEvidenceStatus::DisposableImageOnly);
+        assert!(!report.physical_media_enabled);
+        assert!(report.crash_injection_required);
+        assert!(report
+            .safety_constraints
+            .iter()
+            .any(|constraint| constraint == "no physical-device writes"));
     }
 }

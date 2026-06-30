@@ -169,7 +169,7 @@ Track count: `162`
 - `0129-production-software-encryption-read` — M-129 — Production software-encryption read support (implemented as policy-only readiness scaffold)
 - `0130-signed-release-publication` — M-130 — Signed release SBOM provenance installer and winget publication (implemented as release-publication readiness scaffold)
 - `0131-cross-platform-readonly-adapters` — M-131 — Linux macOS ChromeOS Android read-only adapters (implemented as read-only adapter readiness scaffold)
-- `0132-image-only-write-lab-crash-evidence` — M-132 — Image-only write lab crash-injection evidence
+- `0132-image-only-write-lab-crash-evidence` — M-132 — Image-only write lab crash-injection evidence (implemented as disposable-image crash-evidence scaffold)
 - `0133-windows-write-beta-governance` — M-133 — Windows write beta governance
 - `0134-apfs-repair-governance` — M-134 — APFS repair governance and refusal model
 - `0135-apfs-format-governance` — M-135 — APFS format governance and refusal model

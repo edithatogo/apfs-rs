@@ -1,13 +1,13 @@
 {
   "track_id": "0132-image-only-write-lab-crash-evidence",
   "capability": "M-132",
-  "status": "planned_roadmap",
+  "status": "implemented_scaffold",
   "category": "write-lab",
   "package": "roadmap",
   "purpose": "Execute image-only write lab experiments with crash-injection evidence under accepted spec.",
   "review_status": "reviewed",
-  "archive_status": "open",
-  "archived": false,
+  "archive_status": "archived",
+  "archived": true,
   "archive_version": "0.29.0",
   "archive_evidence": "CONDUCTOR_TRACK_CLOSEOUT_AUDIT.md",
   "codev_review": "codev/reviews/132-image-only-write-lab-crash-evidence-review.md"

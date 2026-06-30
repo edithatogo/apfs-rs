@@ -1,6 +1,6 @@
 # Spec M-132: Image-only write lab crash-injection evidence
 
-Status: `planned_roadmap`.
+Status: `implemented_scaffold`.
 
 ## Objective
 
