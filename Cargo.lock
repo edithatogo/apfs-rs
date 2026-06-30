@@ -2000,6 +2000,7 @@ name = "xtask"
 version = "0.13.0"
 dependencies = [
  "anyhow",
+ "apfs-win",
  "apfs-write-lab",
  "clap",
  "jsonschema",

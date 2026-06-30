@@ -1,7 +1,7 @@
 # Conductor Track Closeout Audit
 
 Status: `passed`.
-Track count: `162`.
+Track count: `148`.
 
 | Track | Capability | Status | Review | Archive | Codev review |
 |---|---|---|---|---|---|
@@ -140,23 +140,9 @@ Track count: `162`.
 | `0120-executed-rust-workspace-validation` | `M-120` | `implemented` | `conductor/tracks/0120-executed-rust-workspace-validation/review.md` | `archived` | `codev/reviews/120-executed-rust-workspace-validation-review.md` |
 | `0121-real-macos-apfs-fixture-execution` | `M-121` | `implemented` | `conductor/tracks/0121-real-macos-apfs-fixture-execution/review.md` | `archived` | `codev/reviews/121-real-macos-apfs-fixture-execution-review.md` |
 | `0122-real-fixture-feedback-promotion` | `M-122` | `implemented` | `conductor/tracks/0122-real-fixture-feedback-promotion/review.md` | `archived` | `codev/reviews/122-real-fixture-feedback-promotion-review.md` |
-| `0124-production-checkpoint-ring-reconstruction` | `M-124` | `planned_roadmap` | `conductor/tracks/0124-production-checkpoint-ring-reconstruction/review.md` | `open` | `codev/reviews/124-production-checkpoint-ring-reconstruction-review.md` |
-| `0125-production-omap-btree-traversal` | `M-125` | `planned_roadmap` | `conductor/tracks/0125-production-omap-btree-traversal/review.md` | `open` | `codev/reviews/125-production-omap-btree-traversal-review.md` |
-| `0126-production-filesystem-tree-decoding` | `M-126` | `planned_roadmap` | `conductor/tracks/0126-production-filesystem-tree-decoding/review.md` | `open` | `codev/reviews/126-production-filesystem-tree-decoding-review.md` |
-| `0127-production-file-extent-extraction` | `M-127` | `planned_roadmap` | `conductor/tracks/0127-production-file-extent-extraction/review.md` | `open` | `codev/reviews/127-production-file-extent-extraction-review.md` |
-| `0128-winfsp-readonly-mount-adapter` | `M-128` | `planned_roadmap` | `conductor/tracks/0128-winfsp-readonly-mount-adapter/review.md` | `open` | `codev/reviews/128-winfsp-readonly-mount-adapter-review.md` |
-| `0129-production-software-encryption-read` | `M-129` | `planned_roadmap` | `conductor/tracks/0129-production-software-encryption-read/review.md` | `open` | `codev/reviews/129-production-software-encryption-read-review.md` |
-| `0130-signed-release-publication` | `M-130` | `planned_roadmap` | `conductor/tracks/0130-signed-release-publication/review.md` | `open` | `codev/reviews/130-signed-release-publication-review.md` |
-| `0131-cross-platform-readonly-adapters` | `M-131` | `planned_roadmap` | `conductor/tracks/0131-cross-platform-readonly-adapters/review.md` | `open` | `codev/reviews/131-cross-platform-readonly-adapters-review.md` |
-| `0132-image-only-write-lab-crash-evidence` | `M-132` | `planned_roadmap` | `conductor/tracks/0132-image-only-write-lab-crash-evidence/review.md` | `open` | `codev/reviews/132-image-only-write-lab-crash-evidence-review.md` |
-| `0133-windows-write-beta-governance` | `M-133` | `planned_roadmap` | `conductor/tracks/0133-windows-write-beta-governance/review.md` | `open` | `codev/reviews/133-windows-write-beta-governance-review.md` |
-| `0134-apfs-repair-governance` | `M-134` | `planned_roadmap` | `conductor/tracks/0134-apfs-repair-governance/review.md` | `open` | `codev/reviews/134-apfs-repair-governance-review.md` |
-| `0135-apfs-format-governance` | `M-135` | `planned_roadmap` | `conductor/tracks/0135-apfs-format-governance/review.md` | `open` | `codev/reviews/135-apfs-format-governance-review.md` |
-| `0136-long-running-hardening-ci` | `M-136` | `planned_roadmap` | `conductor/tracks/0136-long-running-hardening-ci/review.md` | `open` | `codev/reviews/136-long-running-hardening-ci-review.md` |
-| `0137-branch-protection-admin-readiness` | `M-137` | `planned_roadmap` | `conductor/tracks/0137-branch-protection-admin-readiness/review.md` | `open` | `codev/reviews/137-branch-protection-admin-readiness-review.md` |
-| `0138-hosted-renovate-lifecycle` | `M-138` | `planned_roadmap` | `conductor/tracks/0138-hosted-renovate-lifecycle/review.md` | `open` | `codev/reviews/138-hosted-renovate-lifecycle-review.md` |
-| `0139-cargo-vet-dependency-policy-enforcement` | `M-139` | `planned_roadmap` | `conductor/tracks/0139-cargo-vet-dependency-policy-enforcement/review.md` | `open` | `codev/reviews/139-cargo-vet-dependency-policy-enforcement-review.md` |
-| `0140-mature-release-readiness-dashboard` | `M-140` | `planned_roadmap` | `conductor/tracks/0140-mature-release-readiness-dashboard/review.md` | `open` | `codev/reviews/140-mature-release-readiness-dashboard-review.md` |
+| `0124-production-checkpoint-ring-reconstruction` | `M-124` | `implemented` | `conductor/tracks/0124-production-checkpoint-ring-reconstruction/review.md` | `archived` | `codev/reviews/124-production-checkpoint-ring-reconstruction-review.md` |
+| `0125-production-omap-btree-traversal` | `M-125` | `implemented` | `conductor/tracks/0125-production-omap-btree-traversal/review.md` | `archived` | `codev/reviews/125-production-omap-btree-traversal-review.md` |
+| `0126-production-filesystem-tree-decoding` | `M-126` | `implemented` | `conductor/tracks/0126-production-filesystem-tree-decoding/review.md` | `archived` | `codev/reviews/126-production-filesystem-tree-decoding-review.md` |
 | `094-strict-ci-quality-gates-90-coverage-policy` | `M-094` | `implemented_scaffold` | `conductor/tracks/094-strict-ci-quality-gates-90-coverage-policy/review.md` | `archived` | `codev/reviews/094-strict-ci-quality-gates-and-90-coverage-policy-review.md` |
 | `095-unit-integration-e2e-property-fuzz-mutation-prof` | `M-095` | `implemented_scaffold` | `conductor/tracks/095-unit-integration-e2e-property-fuzz-mutation-prof/review.md` | `archived` | `codev/reviews/095-unit-integration-e2e-property-fuzz-mutation-and--review.md` |
 | `096-property-hypothesis-style-testing-scaffold` | `M-096` | `implemented_scaffold` | `conductor/tracks/096-property-hypothesis-style-testing-scaffold/review.md` | `archived` | `codev/reviews/096-property-and-hypothesis-style-testing-scaffold-review.md` |

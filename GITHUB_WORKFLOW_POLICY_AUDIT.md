@@ -1,6 +1,6 @@
 # GitHub Workflow Policy Audit
 
-Status: `passed`; workflows audited: **17**.
+Status: `passed`; workflows audited: **18**.
 
 | Workflow | Check | OK |
 |---|---|---:|
@@ -35,6 +35,8 @@ Status: `passed`; workflows audited: **17**.
 | `release-automation.yml` | `has permissions` | `true` |
 | `release-automation.yml` | `least privilege contents` | `true` |
 | `release-automation.yml` | `has checkout` | `true` |
+| `release-readiness.yml` | `has permissions` | `true` |
+| `release-readiness.yml` | `least privilege contents` | `true` |
 | `release.yml` | `has permissions` | `true` |
 | `release.yml` | `least privilege contents` | `true` |
 | `release.yml` | `has checkout` | `true` |

@@ -1,6 +1,6 @@
 {
   "fixture": "fixtures/synthetic-file-preview.img",
-  "sha256": "afb6c4d676d03fbd5313b6c29518a3470543c5e7aa77dd01c0f397691cbec36d",
+  "sha256": "36890d3d4e3befe3a0d49107f9b4ceead1f0ecd3b3fe383428cd3650ca3be081",
   "expected_status": "apfs_container_detected",
   "reason": "NXSB magic at block zero"
 }
