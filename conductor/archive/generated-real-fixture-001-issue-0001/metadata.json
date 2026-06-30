@@ -1,0 +1,16 @@
+{
+  "track_id": "generated-real-fixture-001-issue-0001",
+  "title": "RF-001: real-fixture feedback for issue-0001",
+  "status": "generated_pending_investigation",
+  "created_from": "real-fixture-feedback",
+  "source_fixture": "macos-minimal-apfs-001",
+  "severity": "error",
+  "field": "issue-0001",
+  "suggested_source_track": "0012-real-fixture-feedback-loop",
+  "codev_spec": "codev/specs/generated-real-fixture-001-issue-0001.md",
+  "codev_plan": "codev/plans/generated-real-fixture-001-issue-0001.md",
+  "codev_review": "codev/reviews/generated-real-fixture-001-issue-0001-review.md",
+  "review_status": "generated_pending_investigation",
+  "archive_status": "archived",
+  "archived": true
+}

@@ -11,7 +11,7 @@
 ## Fixes applied
 
 - Hardened feedback promotion so both string-form and structured real-fixture issues normalize into generated track stubs.
-- Promoted the recorded real-fixture feedback artifact into `target/promoted-feedback-rust/` and `target/promoted-feedback-py/` task bundles.
+- Promoted the recorded real-fixture feedback artifact into committed Codev stubs and an archived Conductor follow-up track under `codev/specs/generated-real-fixture-001-issue-0001.md`, `codev/plans/generated-real-fixture-001-issue-0001.md`, `codev/reviews/generated-real-fixture-001-issue-0001-review.md`, and `conductor/archive/generated-real-fixture-001-issue-0001/`.
 - The promoted bundle captures the parser mismatch as a generated task rather than leaving it as an unstructured string report.
 
 ## Archive closeout
