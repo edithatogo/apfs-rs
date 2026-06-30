@@ -1,0 +1,1 @@
+M-131 closeout: implemented a shared cross-platform read-only adapter readiness scaffold in apfs-features, validated via CLI e2e coverage and full workspace checks, then archived the Conductor track with synchronized Codev/Conductor records. No production mount lifecycle or write support was claimed.
