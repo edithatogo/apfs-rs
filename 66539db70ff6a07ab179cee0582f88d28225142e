@@ -1,0 +1,1 @@
+M-139 cargo-vet governance scaffold archived. Validated with cargo_vet_policy_audit.py, dependency_license_policy_check.py, registry-check, and precompile-check. Full cargo vet check remains blocked by residual third-party audit debt if run directly.
