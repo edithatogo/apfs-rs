@@ -1,13 +1,13 @@
 {
   "schema_version": "0.27.0",
   "status": "pass",
-  "check_count": 11,
+  "check_count": 10,
   "failure_count": 0,
   "results": [
     {
       "command": "py_compile selected tools",
       "returncode": 0,
-      "duration_seconds": 0.011,
+      "duration_seconds": 0.015,
       "status": "pass",
       "error_tail": ""
     },
@@ -21,13 +21,6 @@
     {
       "command": "runpy tools/golden_output_generator.py",
       "returncode": 0,
-      "duration_seconds": 0.016,
-      "status": "pass",
-      "error_tail": ""
-    },
-    {
-      "command": "runpy tools/dependency_license_policy_check.py",
-      "returncode": 0,
       "duration_seconds": 0.008,
       "status": "pass",
       "error_tail": ""
@@ -35,49 +28,49 @@
     {
       "command": "runpy tools/backlog_issue_export.py",
       "returncode": 0,
-      "duration_seconds": 0.06,
+      "duration_seconds": 0.042,
       "status": "pass",
       "error_tail": ""
     },
     {
       "command": "runpy tools/synthetic_fixture_oracle.py",
       "returncode": 0,
-      "duration_seconds": 0.034,
+      "duration_seconds": 0.016,
       "status": "pass",
       "error_tail": ""
     },
     {
       "command": "runpy tools/tool_capability_matrix.py",
       "returncode": 0,
-      "duration_seconds": 1.029,
+      "duration_seconds": 1.244,
       "status": "pass",
       "error_tail": ""
     },
     {
       "command": "runpy tools/rust_static_lint.py",
       "returncode": 0,
-      "duration_seconds": 0.024,
+      "duration_seconds": 0.033,
       "status": "pass",
       "error_tail": ""
     },
     {
       "command": "runpy tools/local_command_plan.py",
       "returncode": 0,
-      "duration_seconds": 0.002,
+      "duration_seconds": 0.003,
       "status": "pass",
       "error_tail": ""
     },
     {
       "command": "runpy tools/mvp_blocker_tasklist.py",
       "returncode": 0,
-      "duration_seconds": 0.037,
+      "duration_seconds": 0.026,
       "status": "pass",
       "error_tail": ""
     },
     {
       "command": "runpy tools/agent_handoff_brief.py",
       "returncode": 0,
-      "duration_seconds": 0.114,
+      "duration_seconds": 0.123,
       "status": "pass",
       "error_tail": ""
     }

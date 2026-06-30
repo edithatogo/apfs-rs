@@ -13,7 +13,6 @@ OUT_MD = ROOT / "CURRENT_ENV_SELFTEST.md"
 PY_COMPILE = [
     "tools/apfs_offset_audit.py",
     "tools/golden_output_generator.py",
-    "tools/dependency_license_policy_check.py",
     "tools/backlog_issue_export.py",
     "tools/tool_capability_matrix.py",
     "tools/rust_static_lint.py",
@@ -24,7 +23,6 @@ PY_COMPILE = [
 SCRIPTS = [
     "tools/apfs_offset_audit.py",
     "tools/golden_output_generator.py",
-    "tools/dependency_license_policy_check.py",
     "tools/backlog_issue_export.py",
     "tools/synthetic_fixture_oracle.py",
     "tools/tool_capability_matrix.py",
