@@ -1,6 +1,6 @@
 # Spec M-134: APFS repair governance and refusal model
 
-Status: `planned_roadmap`.
+Status: `implemented_scaffold`.
 
 ## Objective
 

@@ -2,7 +2,7 @@
 
 Current version: `0.29.0`
 
-Track count: `161`
+Track count: `160`
 
 - `0000-project-context` —  — 
 - `0001-m001-container-inspect` —  — 
@@ -170,7 +170,6 @@ Track count: `161`
 - `0130-signed-release-publication` — M-130 — Signed release SBOM provenance installer and winget publication (implemented as release-publication readiness scaffold)
 - `0131-cross-platform-readonly-adapters` — M-131 — Linux macOS ChromeOS Android read-only adapters (implemented as read-only adapter readiness scaffold)
 - `0132-image-only-write-lab-crash-evidence` — M-132 — Image-only write lab crash-injection evidence (implemented as disposable-image crash-evidence scaffold)
-- `0134-apfs-repair-governance` — M-134 — APFS repair governance and refusal model
 - `0135-apfs-format-governance` — M-135 — APFS format governance and refusal model
 - `0136-long-running-hardening-ci` — M-136 — Long-running fuzz property mutation coverage hardening
 - `0137-branch-protection-admin-readiness` — M-137 — Branch protection and required-check governance

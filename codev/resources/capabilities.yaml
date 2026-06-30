@@ -2095,8 +2095,8 @@ capabilities:
     - no_access_bypass
     - safety_case_required
     - production_claim_guard_required
-    status: planned_roadmap
-    note: roadmap track for APFS repair governance and refusal model
+    status: implemented_scaffold
+    note: governance-only scaffold for APFS repair refusal and destructive-test gating
   M-135:
     name: APFS format governance and refusal model
     milestone: safety_governance

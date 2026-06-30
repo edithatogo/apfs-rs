@@ -1,7 +1,7 @@
 # APFS repair governance and refusal model
 
 Capability: `M-134`  
-Status: `planned_roadmap`  
+Status: `implemented_scaffold`  
 Category: `repair`
 
 ## Goal

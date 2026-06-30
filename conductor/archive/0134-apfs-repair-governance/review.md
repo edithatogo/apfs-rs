@@ -4,19 +4,19 @@
 
 - Track: `0134-apfs-repair-governance`.
 - Capability: `M-134`.
-- Metadata status: `planned_roadmap`.
+- Metadata status: `implemented_scaffold`.
 - Spec and plan are present in this Conductor track.
 - Codev review: `codev/reviews/134-apfs-repair-governance-review.md`.
 
 ## Fixes applied
 
-- Archive audit confirmed required Conductor files are present.
-- No additional track-local implementation fix was required during this closeout pass.
-- Any runtime or CI fixes for this capability remain represented in source history, Codev review files, and generated audit reports.
+- Added an APFS repair governance report and refusal model in `xtask` that stays blocked until accepted destructive-test evidence exists.
+- Added an `xtask repair-governance-audit` command that writes JSON and Markdown evidence into `target/repair-governance`.
+- Added unit coverage proving the repair governance report remains blocked and still refuses repair, fsck, and physical-device write paths.
 
 ## Archive closeout
 
 - Review status: `reviewed`.
-- Archive status: `open`.
+- Archive status: `archived`.
 - Safety: this closeout does not add APFS media writes, raw physical-device writes, mount-write lifecycle, encryption bypass, unsafe code, or production APFS compatibility claims.
 - Evidence boundary: scaffolded and synthetic-only tracks remain scaffolded/synthetic-only unless their own specs and external evidence gates say otherwise.

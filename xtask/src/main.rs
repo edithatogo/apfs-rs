@@ -71,6 +71,8 @@ enum Command {
     NextLoopPlan,
     /// Validate Windows read-only adapter readiness scaffolding.
     WindowsReadinessCheck,
+    /// Validate APFS repair governance and refusal scaffolding.
+    RepairGovernanceAudit,
     /// Validate fuzz target scaffolding.
     FuzzScaffoldCheck,
     /// Validate a real or synthetic fixture manifest.
@@ -214,6 +216,7 @@ fn main() -> Result<()> {
         Command::SafetyCaseCheck => run_python_tool("tools/safety_case_check.py", &[]),
         Command::NextLoopPlan => run_python_tool("tools/next_loop_plan.py", &[]),
         Command::WindowsReadinessCheck => run_python_tool("tools/windows_readiness_check.py", &[]),
+        Command::RepairGovernanceAudit => repair_governance(),
         Command::FuzzScaffoldCheck => fuzz_scaffold_check(),
         Command::FixtureManifestCheck { manifest } => fixture_manifest_check(&manifest),
         Command::RealFixtureFeedback {
@@ -1129,6 +1132,108 @@ fn windows_write_governance() -> Result<()> {
     Ok(())
 }
 
+fn repair_governance_report() -> JsonValue {
+    serde_json::json!({
+        "schema_version": "0.18.0",
+        "track": "M-134",
+        "status": "blocked_until_accepted_destructive_test_evidence",
+        "prerequisites": [
+            "accepted destructive-test evidence on disposable images",
+            "maintainer approval for any repair beta",
+            "production claim guard passes before release claims",
+            "no physical-device repair path exists in the implementation"
+        ],
+        "required_gates": [
+            "repair_governance_audit",
+            "production_claim_guard",
+            "safety_case_check",
+        ],
+        "rollback_plan": [
+            "disable repair-governance feature flags",
+            "revert to read-only inspection and extraction paths",
+            "publish refusal notes before any public repair claim",
+        ],
+        "refused_operations": [
+            "repair",
+            "fsck",
+            "recover",
+            "rebuild-catalog",
+            "metadata-rewrite",
+            "physical-device-write",
+        ],
+        "safety_constraints": [
+            "read-only default until accepted destructive-test evidence exists",
+            "no physical-device writes",
+            "no encryption bypass",
+            "no password recovery or repair bypass",
+            "no live repair beta without maintainer approval",
+        ],
+        "evidence_notes": [
+            "governance-only scaffold; it does not enable APFS repair",
+            "the track remains blocked until destructive-test evidence is accepted",
+        ],
+    })
+}
+
+fn repair_governance() -> Result<()> {
+    let dir = workspace_root().join("target/repair-governance");
+    fs::create_dir_all(&dir)?;
+    let report = repair_governance_report();
+    fs::write(
+        dir.join("README.md"),
+        "# APFS-RS APFS Repair Governance\n\nGenerated scaffold. This is not APFS repair.\n",
+    )?;
+    fs::write(
+        dir.join("repair-governance-report.json"),
+        serde_json::to_string_pretty(&report)? + "\n",
+    )?;
+    let mut markdown = String::from("# APFS-RS APFS Repair Governance\n\n");
+    markdown.push_str("Status: `blocked_until_accepted_destructive_test_evidence`.\n\n");
+    markdown.push_str("## Prerequisites\n\n");
+    for item in report
+        .get("prerequisites")
+        .and_then(JsonValue::as_array)
+        .into_iter()
+        .flatten()
+    {
+        let _ = writeln!(markdown, "- {}", item.as_str().unwrap_or("<prerequisite>"));
+    }
+    markdown.push_str("\n## Required gates\n\n");
+    for gate in report
+        .get("required_gates")
+        .and_then(JsonValue::as_array)
+        .into_iter()
+        .flatten()
+    {
+        let _ = writeln!(markdown, "- {}", gate.as_str().unwrap_or("<gate>"));
+    }
+    markdown.push_str("\n## Rollback plan\n\n");
+    for step in report
+        .get("rollback_plan")
+        .and_then(JsonValue::as_array)
+        .into_iter()
+        .flatten()
+    {
+        let _ = writeln!(markdown, "- {}", step.as_str().unwrap_or("<rollback step>"));
+    }
+    markdown.push_str("\n## Refused operations\n\n");
+    for operation in report
+        .get("refused_operations")
+        .and_then(JsonValue::as_array)
+        .into_iter()
+        .flatten()
+    {
+        let _ = writeln!(
+            markdown,
+            "- `{}`",
+            operation.as_str().unwrap_or("<operation>")
+        );
+    }
+    fs::write(dir.join("repair-governance-report.md"), markdown)?;
+    println!("repair-governance: wrote {}", dir.display());
+    Ok(())
+}
+
 fn workspace_root() -> PathBuf {
     PathBuf::from(env!("CARGO_MANIFEST_DIR"))
         .parent()
@@ -1139,8 +1244,8 @@ fn workspace_root() -> PathBuf {
 #[cfg(test)]
 mod tests {
     use super::{
-        release_publication_readiness, windows_write_beta_governance_report,
-        windows_write_governance, write_lab_evidence_report,
+        release_publication_readiness, repair_governance, repair_governance_report,
+        windows_write_beta_governance_report, windows_write_governance, write_lab_evidence_report,
     };
     use apfs_win::WindowsWriteBetaGovernanceStatus;
     use apfs_write_lab::WriteLabEvidenceStatus;
@@ -1192,5 +1297,26 @@ mod tests {
             .iter()
             .any(|gate| gate == "production_claim_guard"));
         windows_write_governance().expect("windows write governance evidence");
+    }
+
+    #[test]
+    fn repair_governance_remains_blocked_until_destructive_test_evidence() {
+        let report = repair_governance_report();
+
+        assert_eq!(
+            report["status"],
+            "blocked_until_accepted_destructive_test_evidence"
+        );
+        assert!(report["required_gates"]
+            .as_array()
+            .expect("required gates")
+            .iter()
+            .any(|gate| gate == "safety_case_check"));
+        assert!(report["safety_constraints"]
+            .as_array()
+            .expect("safety constraints")
+            .iter()
+            .any(|constraint| constraint == "no physical-device writes"));
+        repair_governance().expect("repair governance evidence");
     }
 }

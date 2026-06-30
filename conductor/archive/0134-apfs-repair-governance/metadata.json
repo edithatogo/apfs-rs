@@ -1,13 +1,13 @@
 {
   "track_id": "0134-apfs-repair-governance",
   "capability": "M-134",
-  "status": "planned_roadmap",
+  "status": "implemented_scaffold",
   "category": "repair",
   "package": "roadmap",
   "purpose": "Define APFS repair scope, refusal model, evidence gates, and future implementation prerequisites.",
   "review_status": "reviewed",
-  "archive_status": "open",
-  "archived": false,
+  "archive_status": "archived",
+  "archived": true,
   "archive_version": "0.29.0",
   "archive_evidence": "CONDUCTOR_TRACK_CLOSEOUT_AUDIT.md",
   "codev_review": "codev/reviews/134-apfs-repair-governance-review.md"
