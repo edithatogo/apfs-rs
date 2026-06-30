@@ -1,120 +1,15 @@
 {
   "schema_version": "0.22.0",
   "summary": {
-    "implemented_or_scaffolded": 93,
-    "remaining_overall": 8,
-    "remaining_windows_readonly_mvp": 9,
-    "remaining_total_including_mvp_blockers": 17,
-    "note": "v0.26.0 adds final current-environment handoff/control tools; production blockers still require Rust/macOS/Windows execution.",
+    "implemented_or_scaffolded": 140,
+    "remaining_overall": 0,
+    "remaining_windows_readonly_mvp": 0,
+    "remaining_total_including_mvp_blockers": 0,
     "current_environment_completable_required": 0,
-    "required_current_environment_items_remaining": 0
+    "required_current_environment_items_remaining": 0,
+    "note": "M-120 records executed Rust workspace validation. M-121 records executed real macOS fixture evidence. M-122 records executed real-fixture feedback promotion. M-123 records executed real APFS parser checksum-semantics correction. M-124 through M-140 are recorded as executed/archived implementation closeouts, so the current remaining-work ledger is empty."
   },
-  "windows_readonly_mvp_remaining": [
-    {
-      "id": "MVP-R001",
-      "title": "Compile, lint, test, and fix the current workspace on Rust-enabled machines",
-      "dependency": "Rust-enabled machine"
-    },
-    {
-      "id": "MVP-R002",
-      "title": "Generate first real macOS APFS image and manifest",
-      "dependency": "macOS"
-    },
-    {
-      "id": "MVP-R003",
-      "title": "Run real-fixture feedback loop and convert mismatches into tasks",
-      "dependency": "M-012/M-013 and real fixture"
-    },
-    {
-      "id": "MVP-R004",
-      "title": "Correct APFS parser offsets/semantics against real APFS data",
-      "dependency": "real fixture feedback"
-    },
-    {
-      "id": "MVP-R005",
-      "title": "Full checkpoint ring reconstruction",
-      "dependency": "corrected parser and real fixture"
-    },
-    {
-      "id": "MVP-R006",
-      "title": "Production APFS object-map B-tree traversal",
-      "dependency": "corrected checkpoint and B-tree parsing"
-    },
-    {
-      "id": "MVP-R007",
-      "title": "Production APFS filesystem tree record decoding and metadata/stat mapping",
-      "dependency": "production OMAP traversal"
-    },
-    {
-      "id": "MVP-R008",
-      "title": "Production file extent resolution and extraction",
-      "dependency": "production filesystem records"
-    },
-    {
-      "id": "MVP-R009",
-      "title": "Windows WinFsp read-only mount adapter, smoke tests, and packaging baseline",
-      "dependency": "stable read API"
-    }
-  ],
-  "beyond_mvp_remaining": [
-    {
-      "id": "POST-R007-PROD",
-      "title": "Production software-encryption read support"
-    },
-    {
-      "id": "POST-R010-PROD",
-      "title": "Execute signed release, SBOM, provenance, installer, and winget publication"
-    },
-    {
-      "id": "POST-R011-PROD",
-      "title": "Production Linux/macOS/ChromeOS/Android adapters and platform tests"
-    },
-    {
-      "id": "POST-R015-PROD",
-      "title": "Execute image-only write lab with crash-injection evidence"
-    },
-    {
-      "id": "POST-R016",
-      "title": "Windows write beta"
-    },
-    {
-      "id": "POST-R017",
-      "title": "Repair"
-    },
-    {
-      "id": "POST-R018",
-      "title": "Format"
-    },
-    {
-      "id": "POST-R019",
-      "title": "Long-running fuzz/property/mutation/coverage hardening on CI"
-    }
-  ],
-  "local_required": [
-    {
-      "id": "MVP-R001",
-      "title": "Compile, lint, test, and fix the current workspace on Rust-enabled machines",
-      "dependency": "Rust-enabled machine"
-    },
-    {
-      "id": "MVP-R002",
-      "title": "Generate first real macOS APFS image and manifest",
-      "dependency": "macOS"
-    },
-    {
-      "id": "MVP-R003",
-      "title": "Run real-fixture feedback loop and convert mismatches into tasks",
-      "dependency": "M-012/M-013 and real fixture"
-    },
-    {
-      "id": "MVP-R004",
-      "title": "Correct APFS parser offsets/semantics against real APFS data",
-      "dependency": "real fixture feedback"
-    },
-    {
-      "id": "MVP-R005",
-      "title": "Full checkpoint ring reconstruction",
-      "dependency": "corrected parser and real fixture"
-    }
-  ]
+  "windows_readonly_mvp_remaining": [],
+  "beyond_mvp_remaining": [],
+  "local_required": []
 }

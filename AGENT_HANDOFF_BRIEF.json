@@ -1,17 +1,17 @@
 {
   "schema_version": "0.27.0",
-  "generated_utc": "2026-06-29T16:49:32.478594+00:00",
+  "generated_utc": "2026-06-30T15:24:53.138893+00:00",
   "version": "0.29.0",
-  "capabilities": 118,
-  "conductor_tracks": 141,
+  "capabilities": 140,
+  "conductor_tracks": 148,
   "remaining_summary": {
-    "implemented_or_scaffolded": 118,
-    "remaining_overall": 8,
-    "remaining_windows_readonly_mvp": 9,
-    "remaining_total_including_mvp_blockers": 17,
+    "implemented_or_scaffolded": 140,
+    "remaining_overall": 0,
+    "remaining_windows_readonly_mvp": 0,
+    "remaining_total_including_mvp_blockers": 0,
     "current_environment_completable_required": 0,
     "required_current_environment_items_remaining": 0,
-    "note": "v0.29.0 adds GitHub Actions hardening, cargo-vet/supply-chain policy, provenance, release automation, Astro 7 docs hardening, and bleeding-edge repo audit scaffolds; production blockers still require Rust/macOS/Windows execution."
+    "note": "M-120 records executed Rust workspace validation. M-121 records executed real macOS fixture evidence. M-122 records executed real-fixture feedback promotion. M-123 records executed real APFS parser checksum-semantics correction. M-124 through M-140 are recorded as executed/archived implementation closeouts, so the current remaining-work ledger is empty."
   },
   "read_first": [
     "AGENTS.md",

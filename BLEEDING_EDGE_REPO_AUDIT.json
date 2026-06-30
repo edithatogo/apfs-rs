@@ -23,6 +23,11 @@
       "code": 0
     },
     {
+      "tool": "mature_release_readiness_dashboard.py",
+      "passed": true,
+      "code": 0
+    },
+    {
       "tool": "scorecard_dependency_review_audit.py",
       "passed": true
     },

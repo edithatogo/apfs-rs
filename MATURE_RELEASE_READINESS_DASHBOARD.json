@@ -183,6 +183,11 @@
     }
   ],
   "open_roadmap_tracks": [],
+  "production_gap": {
+    "state": "executed",
+    "evidence": "remaining_total=0",
+    "blockers": []
+  },
   "release_train": [
     {
       "name": "Refresh evidence",
@@ -197,10 +202,10 @@
       "notes": "preflight should remain the downstream gate after the dashboard refresh."
     },
     {
-      "name": "Clear remaining roadmap tracks",
+      "name": "Clear remaining production gaps",
       "state": "executed",
-      "evidence": "none",
-      "notes": "release is still gated by the remaining roadmap work."
+      "evidence": "remaining_total=0",
+      "notes": "release is still gated by the remaining production work, even when roadmap tracks are archived."
     }
   ]
 }

@@ -3,6 +3,7 @@
   "required": [
     "supply-chain/config.toml",
     "supply-chain/audits.toml",
+    "supply-chain/imports.lock",
     "SUPPLY_CHAIN_POLICY.md",
     "deny.toml"
   ],

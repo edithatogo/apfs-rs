@@ -1,6 +1,6 @@
 {
   "fixture": "fixtures/synthetic-gpt-apfs.img",
-  "sha256": "ef526acfda66f03403abae908eb2bc11e0b73707cb00419506605a4555e069aa",
+  "sha256": "c96ea048fe245d3c07959efb8005195a40b7afca717b67e12c39181c322346e6",
   "expected_status": "gpt_probe",
   "reason": "GPT signature present; APFS partition probe expected"
 }

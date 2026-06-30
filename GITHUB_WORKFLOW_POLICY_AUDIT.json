@@ -1,7 +1,7 @@
 {
   "schema_version": "0.29.0",
   "status": "passed",
-  "workflow_count": 17,
+  "workflow_count": 18,
   "checks": [
     {
       "workflow": "ci.yml",
@@ -156,6 +156,16 @@
     {
       "workflow": "release-automation.yml",
       "check": "has checkout",
+      "ok": true
+    },
+    {
+      "workflow": "release-readiness.yml",
+      "check": "has permissions",
+      "ok": true
+    },
+    {
+      "workflow": "release-readiness.yml",
+      "check": "least privilege contents",
       "ok": true
     },
     {

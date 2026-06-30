@@ -1,6 +1,6 @@
 {
   "fixture": "fixtures/synthetic-checkpoint-ring.img",
-  "sha256": "4f99f2c83770a4555f50f40cc321b50f2e0084d1104bcaadb55ba60a6e29f2f8",
+  "sha256": "4a2460fe638f892c921524cd0b9e9ea57547021588d6fae9fcb8483707a8365a",
   "expected_status": "apfs_container_detected",
   "reason": "NXSB magic at block zero"
 }

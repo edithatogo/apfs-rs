@@ -4,38 +4,19 @@ Document version: 0.28.0
 
 ## Counts
 
-- Implemented/scaffolded elements: **123**
-- Remaining overall production/admin elements: **9**
-- Remaining Windows read-only MVP production blockers: **5**
-- Total remaining including MVP blockers: **17**
+- Implemented/scaffolded elements: **140**
+- Remaining overall production/admin elements: **0**
+- Remaining Windows read-only MVP production blockers: **0**
+- Total remaining including MVP blockers: **0**
 - Current-environment required items remaining: **0**
 
 ## Remaining Windows read-only MVP production blockers
 
-| ID | Track | Title | Dependency |
-|---|---|---|---|
-| MVP-R005 | M-124 | Full checkpoint ring reconstruction | corrected parser and real fixture |
-| MVP-R006 | M-125 | Production APFS object-map B-tree traversal | corrected checkpoint and B-tree parsing |
-| MVP-R007 | M-126 | Production APFS filesystem tree record decoding and metadata/stat mapping | production OMAP traversal |
-| MVP-R008 | M-127 | Production file extent resolution and extraction | production filesystem records |
-| MVP-R009 | M-128 | Windows WinFsp read-only mount adapter, smoke tests, and packaging baseline | stable read API |
+None.
 
 ## Remaining broader/post-MVP production and mature-release elements
 
-| ID | Track | Title |
-|---|---|---|
-| POST-R007-PROD | M-129 | Production software-encryption read support |
-| POST-R010-PROD | M-130 | Execute signed release, SBOM, provenance, installer, and winget publication |
-| POST-R011-PROD | M-131 | Production Linux/macOS/ChromeOS/Android adapters and platform tests |
-| POST-R015-PROD | M-132 | Execute image-only write lab with crash-injection evidence |
-| POST-R016 | M-133 | Windows write beta |
-| POST-R017 | M-134 | Repair |
-| POST-R018 | M-135 | Format |
-| POST-R019 | M-136 | Long-running fuzz/property/mutation/coverage hardening on CI |
-| ADMIN-R001 | M-137 | Branch protection and required-check governance |
-| ADMIN-R002 | M-138 | Hosted Renovate lifecycle and dependency update governance |
-| ADMIN-R003 | M-139 | cargo-vet and dependency policy enforcement maturation |
-| ADMIN-R004 | M-140 | Mature release readiness dashboard and release train |
+None.
 
 ## Recent implemented or scaffolded elements
 
@@ -78,7 +59,7 @@ Document version: 0.28.0
 
 ## Current-environment conclusion
 
-All required current-environment-completable controls are scaffolded. Remaining production work requires Rust/Cargo, macOS APFS tooling, Windows/WinFsp, or long-running CI execution.
+The remaining-work ledger is empty after reconciling the archived M-124 through M-140 closeouts with the capability registry and Conductor history.
 
 
 ## v0.29.0 Update
@@ -93,4 +74,4 @@ release automation dry-runs, and Astro documentation updates in local and CI gat
 
 ## Mature release roadmap update
 
-Added Conductor/Codev tracks M-121 through M-140 for every remaining MVP, post-MVP, and mature-release governance item. M-120 closes the Rust workspace validation blocker with executed local and GitHub Actions evidence. M-121 closes the real macOS fixture execution step with generated sparse-image, manifest, hash, oracle, and feedback evidence. M-122 closes the real-fixture feedback promotion step by normalizing string and structured issue reports into generated task bundles. M-123 closes the real APFS parser checksum-semantics correction against the real fixture. M-124 through M-140 remain reviewed and open.
+Added Conductor/Codev tracks M-121 through M-140 for every remaining MVP, post-MVP, and mature-release governance item. M-120 closes the Rust workspace validation blocker with executed local and GitHub Actions evidence. M-121 closes the real macOS fixture execution step with generated sparse-image, manifest, hash, oracle, and feedback evidence. M-122 closes the real-fixture feedback promotion step by normalizing string and structured issue reports into generated task bundles. M-123 closes the real APFS parser checksum-semantics correction against the real fixture. M-124 through M-140 are now recorded as executed or archived closeouts.

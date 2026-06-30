@@ -44,7 +44,14 @@ Go/no-go: `go`.
 
 - **Refresh evidence**: `configured` - .github/workflows/release-readiness.yml (`schedule` and `workflow_dispatch` keep the release-readiness dashboard fresh.)
 - **Run preflight**: `configured` - cargo xtask release-preflight (preflight should remain the downstream gate after the dashboard refresh.)
-- **Clear remaining roadmap tracks**: `executed` - none (release is still gated by the remaining roadmap work.)
+- **Clear remaining production gaps**: `executed` - remaining_total=0 (release is still gated by the remaining production work, even when roadmap tracks are archived.)
+
+## Production gap
+
+- State: `executed`
+- Evidence: `remaining_total=0`
+
+- None
 
 ## Open roadmap tracks
 

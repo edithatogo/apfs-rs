@@ -1,6 +1,6 @@
 {
   "fixture": "fixtures/synthetic-omap-btree-root.img",
-  "sha256": "8540e053a0c7b4041cd0c5b4943b9f544bb3c30461ec9053cd6e4d8fb4920e74",
+  "sha256": "f9aeeea3608f3a5b56dde7ebe2865aabc8990ed2c0c183523168d7b73451a8a2",
   "expected_status": "apfs_container_detected",
   "reason": "NXSB magic at block zero"
 }

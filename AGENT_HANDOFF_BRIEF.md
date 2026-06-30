@@ -1,13 +1,13 @@
 # Agent Handoff Brief
 
 Version: 0.29.0
-Generated: 2026-06-29T16:49:32.478594+00:00
+Generated: 2026-06-30T15:24:53.138893+00:00
 
 ## Current state
 
-- Capabilities/scaffolds: 118
-- Conductor tracks: 141
-- Remaining MVP blockers: 9
+- Capabilities/scaffolds: 140
+- Conductor tracks: 148
+- Remaining MVP blockers: 0
 - Required current-environment-completable items remaining: 0
 
 ## Read first

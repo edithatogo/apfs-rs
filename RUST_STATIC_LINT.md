@@ -1,6 +1,6 @@
 # Rust Static Lint
 
-Rust files scanned: 21
+Rust files scanned: 22
 
 | Severity | Path | Message |
 |---|---|---|

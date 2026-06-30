@@ -65,6 +65,9 @@
     {
       "member": "crates/apfs-features",
       "dependencies": [
+        "apfs-android",
+        "apfs-crypto",
+        "apfs-fuse",
         "serde",
         "thiserror"
       ],
@@ -87,7 +90,9 @@
     },
     {
       "member": "crates/apfs-write-lab",
-      "dependencies": [],
+      "dependencies": [
+        "serde"
+      ],
       "dev_dependencies": []
     },
     {
@@ -120,6 +125,8 @@
       "member": "xtask",
       "dependencies": [
         "anyhow",
+        "apfs-win",
+        "apfs-write-lab",
         "clap",
         "jsonschema",
         "serde_json",
@@ -129,7 +136,7 @@
       "dev_dependencies": []
     }
   ],
-  "declared_dependency_count": 18,
+  "declared_dependency_count": 22,
   "high_risk_dependency_names_requiring_local_review": [],
   "status": "inventory_only",
   "note": "No network/cargo metadata used; local cargo-deny/cargo-audit/cargo-vet still required."
