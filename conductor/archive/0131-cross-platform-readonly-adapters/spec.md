@@ -1,7 +1,7 @@
 # Linux macOS ChromeOS Android read-only adapters
 
 Capability: `M-131`  
-Status: `planned_roadmap`  
+Status: `implemented_scaffold`
 Category: `cross-platform`
 
 ## Goal
@@ -10,7 +10,7 @@ Expand validated read-only access beyond Windows after core parser maturity.
 
 ## Scope
 
-Implement production Linux, macOS, ChromeOS, and Android read-only adapters with platform tests.
+Implement the shared Linux, macOS, ChromeOS, and Android read-only adapter readiness scaffold with platform-oriented tests and explicit refusal boundaries.
 
 ## Safety
 

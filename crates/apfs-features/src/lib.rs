@@ -1,6 +1,8 @@
 #![forbid(unsafe_code)]
 
+use apfs_android::{android_readiness, AndroidAccessMode};
 use apfs_crypto::{crypto_readiness, CryptoReadinessStatus};
+use apfs_fuse::fuse_adapter_readiness;
 use serde::Serialize;
 
 #[derive(Debug, Clone, Copy, Serialize, PartialEq, Eq)]
@@ -233,6 +235,47 @@ pub fn feature_readiness(feature: &str) -> FeatureReadinessReport {
             ],
             next_track: "future-software-encryption-read".to_owned(),
         },
+        "readonly-adapters"
+        | "read-only-adapters"
+        | "cross-platform-adapters"
+        | "cross-platform-readonly-adapters" => {
+            let fuse = fuse_adapter_readiness();
+            let android = android_readiness();
+            let android_mode = match android.default_mode {
+                AndroidAccessMode::LibraryOnly => "library-only",
+                AndroidAccessMode::StorageAccessFramework => "storage-access-framework",
+                AndroidAccessMode::RootedFuseOptional => "rooted-fuse-optional",
+            };
+
+            FeatureReadinessReport {
+                schema_version: "0.19.0".to_owned(),
+                feature: "cross-platform-readonly-adapters".to_owned(),
+                status: FeatureReadinessStatus::ScaffoldedReadOnly,
+                implemented_scope: vec![
+                    "read-only VFS boundary shared by the adapter scaffolds".to_owned(),
+                    format!(
+                        "FUSE scaffold for Linux/macOS/ChromeOS: {}",
+                        fuse.adapter_name
+                    ),
+                    format!(
+                        "Android scaffold default mode: {android_mode}, raw device access refused"
+                    ),
+                ],
+                missing_production_steps: vec![
+                    "production Linux/macOS/ChromeOS mount lifecycle".to_owned(),
+                    "macOS/macFUSE parity and platform smoke tests".to_owned(),
+                    "Android integration and Storage Access Framework coverage".to_owned(),
+                    "real-device execution evidence on each supported host".to_owned(),
+                ],
+                safety_constraints: vec![
+                    "read-only".to_owned(),
+                    "no raw device assumptions".to_owned(),
+                    "no unreviewed mount lifecycle".to_owned(),
+                    "no APFS media writes".to_owned(),
+                ],
+                next_track: "future-cross-platform-readonly-adapter-production".to_owned(),
+            }
+        }
         _ => FeatureReadinessReport {
             schema_version: "0.19.0".to_owned(),
             feature: normalized,
@@ -331,5 +374,29 @@ mod tests {
             .safety_constraints
             .iter()
             .any(|line| line.contains("no secret material in logs")));
+    }
+
+    #[test]
+    fn cross_platform_readonly_adapters_are_reported_as_scaffolded_read_only() {
+        let report = feature_readiness("cross-platform-readonly-adapters");
+
+        assert_eq!(report.status, FeatureReadinessStatus::ScaffoldedReadOnly);
+        assert_eq!(report.feature, "cross-platform-readonly-adapters");
+        assert!(report
+            .implemented_scope
+            .iter()
+            .any(|line| line.contains("Linux/macOS/ChromeOS")));
+        assert!(report
+            .implemented_scope
+            .iter()
+            .any(|line| line.contains("Android scaffold default mode")));
+        assert!(report
+            .safety_constraints
+            .iter()
+            .any(|line| line.contains("no APFS media writes")));
+        assert_eq!(
+            report.next_track,
+            "future-cross-platform-readonly-adapter-production"
+        );
     }
 }

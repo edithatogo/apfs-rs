@@ -1,13 +1,13 @@
 {
   "track_id": "0131-cross-platform-readonly-adapters",
   "capability": "M-131",
-  "status": "planned_roadmap",
+  "status": "implemented_scaffold",
   "category": "cross-platform",
   "package": "roadmap",
   "purpose": "Implement production Linux, macOS, ChromeOS, and Android read-only adapters with platform tests.",
   "review_status": "reviewed",
-  "archive_status": "open",
-  "archived": false,
+  "archive_status": "archived",
+  "archived": true,
   "archive_version": "0.29.0",
   "archive_evidence": "CONDUCTOR_TRACK_CLOSEOUT_AUDIT.md",
   "codev_review": "codev/reviews/131-cross-platform-readonly-adapters-review.md"

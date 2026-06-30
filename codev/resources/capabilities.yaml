@@ -2027,20 +2027,21 @@ capabilities:
     track: cross-platform
     crates:
     - apfs-vfs
-    - apfs-win
+    - apfs-fuse
+    - apfs-android
+    - apfs-features
     - apfs-cli
     required_tests:
     - read_only_adapter_scaffold
-    - android_readiness_check
-    - windows_readiness_check
+    - feature_readiness_cross_platform_readonly_adapters
+    - apfs_cli_feature_readiness
     safety_gates:
     - read_only_adapter_scaffold
     - android_no_raw_device_assumption
-    - windows_user_mode_adapter
     - no_physical_write_path
-    status: planned_roadmap
-    note: roadmap track for cross-platform read-only adapters beyond the Windows
-      scaffold
+    status: implemented_scaffold
+    note: shared read-only adapter readiness scaffold for Linux, macOS, ChromeOS,
+      and Android without production mount lifecycle claims
   M-132:
     name: Image-only write lab crash-injection evidence
     milestone: write_lab_readiness

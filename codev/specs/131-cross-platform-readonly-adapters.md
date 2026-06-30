@@ -1,6 +1,6 @@
 # Spec M-131: Linux macOS ChromeOS Android read-only adapters
 
-Status: `planned_roadmap`.
+Status: `implemented_scaffold`.
 
 ## Objective
 

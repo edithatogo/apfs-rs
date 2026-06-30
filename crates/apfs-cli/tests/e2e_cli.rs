@@ -50,6 +50,33 @@ fn inspect_logging_is_redacted_and_keeps_json_stdout() {
 }
 
 #[test]
+fn feature_readiness_json_reports_cross_platform_readonly_adapters() {
+    let mut cmd = Command::cargo_bin("apfs").expect("apfs binary");
+    cmd.arg("feature-readiness")
+        .arg("--feature")
+        .arg("cross-platform-readonly-adapters")
+        .arg("--json");
+    let output = cmd.assert().success().get_output().stdout.clone();
+    let json: serde_json::Value = serde_json::from_slice(&output).expect("feature readiness json");
+    assert_eq!(json["feature"], "cross-platform-readonly-adapters");
+    assert_eq!(json["status"], "scaffolded_read_only");
+    assert!(json["implemented_scope"]
+        .as_array()
+        .expect("implemented scope")
+        .iter()
+        .any(|value| value
+            .as_str()
+            .is_some_and(|s| s.contains("Linux/macOS/ChromeOS"))));
+    assert!(json["safety_constraints"]
+        .as_array()
+        .expect("safety constraints")
+        .iter()
+        .any(|value| value
+            .as_str()
+            .is_some_and(|s| s.contains("no APFS media writes"))));
+}
+
+#[test]
 fn stat_json_reports_mapped_filesystem_metadata() {
     let manifest_dir = std::path::PathBuf::from(env!("CARGO_MANIFEST_DIR"));
     let fixture_path = manifest_dir.join("../../fixtures/synthetic-directory-listing.img");

@@ -12,6 +12,11 @@ Rust, safe by default. Core crates use `#![forbid(unsafe_code)]`.
 - `apfs-blockdev`: read-only source abstraction.
 - `apfs-core`: APFS inspection, checkpoint, OMAP, resolver, and cursor logic.
 - `apfs-cli`: CLI commands and JSON output.
+- `apfs-vfs`: read-only VFS boundary and traversal guards.
+- `apfs-fuse`: FUSE read-only adapter readiness scaffold.
+- `apfs-android`: Android read-only adapter readiness scaffold.
+- `apfs-crypto`: encryption readiness and policy helpers.
+- `apfs-write-lab`: write-lab readiness scaffold.
 - `apfs-test`: test helper placeholder.
 - `xtask`: repository automation and policy checks.
 
@@ -32,8 +37,8 @@ Rust, safe by default. Core crates use `#![forbid(unsafe_code)]`.
 
 ## Not yet present
 
-- WinFsp adapter.
-- FUSE adapter.
+- WinFsp production adapter.
+- FUSE production adapter.
+- Android production adapter.
 - Compression crates.
-- Crypto crates.
 - Write transaction crates.

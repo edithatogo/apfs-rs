@@ -8,6 +8,8 @@ repository.workspace = true
 
 [dependencies]
 apfs-crypto = { path = "../apfs-crypto" }
+apfs-android = { path = "../apfs-android" }
+apfs-fuse = { path = "../apfs-fuse" }
 serde.workspace = true
 thiserror.workspace = true
 
