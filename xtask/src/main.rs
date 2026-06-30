@@ -113,6 +113,8 @@ enum Command {
     ReleaseAutomationAudit,
     /// Run the aggregate bleeding-edge repo hardening audit.
     BleedingEdgeRepoAudit,
+    /// Validate branch protection and required-check governance readiness.
+    BranchProtectionGovernanceAudit,
     /// Validate local handoff config files.
     ConfigSanityCheck,
     /// Run local environment doctor.
@@ -248,6 +250,7 @@ fn main() -> Result<()> {
             run_python_tool("tools/release_automation_audit.py", &[])
         }
         Command::BleedingEdgeRepoAudit => run_python_tool("tools/bleeding_edge_repo_audit.py", &[]),
+        Command::BranchProtectionGovernanceAudit => branch_protection_governance(),
         Command::ConfigSanityCheck => run_python_tool("tools/config_sanity_check.py", &[]),
         Command::LocalEnvDoctor { json } => {
             if let Some(path) = json {
@@ -1452,6 +1455,93 @@ fn long_running_hardening() -> Result<()> {
     Ok(())
 }
 
+fn branch_protection_governance_report() -> JsonValue {
+    serde_json::json!({
+        "schema_version": "0.18.0",
+        "track": "M-137",
+        "status": "admin_readiness_only",
+        "required_workflows": [
+            "ci.yml",
+            "quality-gates.yml",
+            "strict-quality.yml",
+            "workflow-security.yml",
+        ],
+        "required_checks": [
+            "cargo fmt --all -- --check",
+            "cargo test --workspace",
+            "cargo xtask registry-check",
+            "cargo xtask conductor-check",
+            "cargo xtask safety-check",
+            "cargo xtask precompile-check",
+        ],
+        "external_permissions": [
+            "repository administration permission",
+            "branch protection configuration permission",
+            "required-check management permission",
+        ],
+        "safety_constraints": [
+            "governance-only readiness; no repository admin mutation is performed",
+            "no physical-device writes",
+            "no encryption bypass",
+            "no production claim from readiness alone",
+        ],
+        "evidence_notes": [
+            "the workflows already exist and are gated in CI",
+            "this track documents the admin boundary and required-check set",
+        ],
+    })
+}
+
+fn branch_protection_governance() -> Result<()> {
+    let dir = workspace_root().join("target/branch-protection-governance");
+    fs::create_dir_all(&dir)?;
+    let report = branch_protection_governance_report();
+    fs::write(
+        dir.join("README.md"),
+        "# APFS-RS Branch Protection Governance\n\nGenerated scaffold. This is not a repository admin action.\n",
+    )?;
+    fs::write(
+        dir.join("branch-protection-governance-report.json"),
+        serde_json::to_string_pretty(&report)? + "\n",
+    )?;
+    let mut markdown = String::from("# APFS-RS Branch Protection Governance\n\n");
+    markdown.push_str("Status: `admin_readiness_only`.\n\n");
+    markdown.push_str("## Required workflows\n\n");
+    for workflow in report
+        .get("required_workflows")
+        .and_then(JsonValue::as_array)
+        .into_iter()
+        .flatten()
+    {
+        let _ = writeln!(markdown, "- {}", workflow.as_str().unwrap_or("<workflow>"));
+    }
+    markdown.push_str("\n## Required checks\n\n");
+    for check in report
+        .get("required_checks")
+        .and_then(JsonValue::as_array)
+        .into_iter()
+        .flatten()
+    {
+        let _ = writeln!(markdown, "- `{}`", check.as_str().unwrap_or("<check>"));
+    }
+    markdown.push_str("\n## External permissions\n\n");
+    for permission in report
+        .get("external_permissions")
+        .and_then(JsonValue::as_array)
+        .into_iter()
+        .flatten()
+    {
+        let _ = writeln!(
+            markdown,
+            "- {}",
+            permission.as_str().unwrap_or("<permission>")
+        );
+    }
+    fs::write(dir.join("branch-protection-governance-report.md"), markdown)?;
+    println!("branch-protection-governance: wrote {}", dir.display());
+    Ok(())
+}
+
 fn workspace_root() -> PathBuf {
     PathBuf::from(env!("CARGO_MANIFEST_DIR"))
         .parent()
@@ -1462,10 +1552,10 @@ fn workspace_root() -> PathBuf {
 #[cfg(test)]
 mod tests {
     use super::{
-        format_governance, format_governance_report, long_running_hardening,
-        long_running_hardening_report, release_publication_readiness, repair_governance,
-        repair_governance_report, windows_write_beta_governance_report, windows_write_governance,
-        write_lab_evidence_report,
+        branch_protection_governance, branch_protection_governance_report, format_governance,
+        format_governance_report, long_running_hardening, long_running_hardening_report,
+        release_publication_readiness, repair_governance, repair_governance_report,
+        windows_write_beta_governance_report, windows_write_governance, write_lab_evidence_report,
     };
     use apfs_win::WindowsWriteBetaGovernanceStatus;
     use apfs_write_lab::WriteLabEvidenceStatus;
@@ -1578,5 +1668,24 @@ mod tests {
             .iter()
             .any(|constraint| constraint == "no production claim without sustained gate evidence"));
         long_running_hardening().expect("long-running hardening evidence");
+    }
+
+    #[test]
+    fn branch_protection_governance_remains_admin_readiness_only() {
+        let report = branch_protection_governance_report();
+
+        assert_eq!(report["track"], "M-137");
+        assert_eq!(report["status"], "admin_readiness_only");
+        assert!(report["required_checks"]
+            .as_array()
+            .expect("required checks")
+            .iter()
+            .any(|check| check == "cargo xtask registry-check"));
+        assert!(report["external_permissions"]
+            .as_array()
+            .expect("external permissions")
+            .iter()
+            .any(|permission| permission == "repository administration permission"));
+        branch_protection_governance().expect("branch protection governance evidence");
     }
 }

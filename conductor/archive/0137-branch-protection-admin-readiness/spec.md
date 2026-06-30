@@ -1,7 +1,7 @@
 # Branch protection and required-check governance
 
 Capability: `M-137`  
-Status: `planned_roadmap`  
+Status: `implemented_scaffold`  
 Category: `governance`
 
 ## Goal

@@ -2147,8 +2147,8 @@ capabilities:
     - github_workflow_policy_required
     - strict_ci_quality_gates_required
     - quality_gate_check_required
-    status: planned_roadmap
-    note: roadmap track for branch protection and required-check governance
+    status: implemented_scaffold
+    note: governance-only scaffold for branch protection and required-check readiness; archived after validation
   M-138:
     name: Hosted Renovate lifecycle and dependency update governance
     milestone: repo_hardening

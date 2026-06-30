@@ -1,6 +1,6 @@
 # Spec M-137: Branch protection and required-check governance
 
-Status: `planned_roadmap`.
+Status: `implemented_scaffold`.
 
 ## Objective
 
