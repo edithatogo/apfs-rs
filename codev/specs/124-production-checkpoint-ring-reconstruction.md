@@ -1,6 +1,6 @@
 # Spec M-124: Production checkpoint ring reconstruction
 
-Status: `planned_roadmap`.
+Status: `implemented`.
 
 ## Objective
 

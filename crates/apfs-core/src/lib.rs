@@ -1768,6 +1768,7 @@ fn scan_checkpoint_area(
         container,
         block_size,
         &checkpoint_maps,
+        latest_valid_xid,
         &mut notes,
     )?;
 
@@ -1790,22 +1791,25 @@ fn resolve_container_omap_from_checkpoint_maps(
     container: &ContainerSuperblock,
     block_size: usize,
     checkpoint_maps: &[CheckpointMapReport],
+    latest_valid_xid: Option<u64>,
     notes: &mut Vec<Diagnostic>,
 ) -> Result<Option<MappedObjectMapReport>, InspectError> {
     if container.omap_oid == 0 {
         return Ok(None);
     }
 
+    let ordered_maps = ordered_valid_checkpoint_maps(checkpoint_maps, latest_valid_xid);
     let mut selected: Option<(&CheckpointMapReport, &CheckpointMapping)> = None;
-    for map in checkpoint_maps.iter().filter(|map| map.valid) {
+    'map_loop: for map in ordered_maps {
         for mapping in &map.mappings {
             let exact_oid = mapping.oid == container.omap_oid;
             let omap_type = mapping.object_type == OBJECT_TYPE_OMAP;
-            if exact_oid || (selected.is_none() && omap_type) {
+            if exact_oid {
                 selected = Some((map, mapping));
-                if exact_oid {
-                    break;
-                }
+                break 'map_loop;
+            }
+            if selected.is_none() && omap_type {
+                selected = Some((map, mapping));
             }
         }
     }
@@ -1877,16 +1881,17 @@ fn resolve_omap_tree_root(
     }
 
     let mut selected: Option<(&CheckpointMapReport, &CheckpointMapping)> = None;
-    for map in checkpoint_maps.iter().filter(|map| map.valid) {
+    'map_loop: for map in ordered_valid_checkpoint_maps(checkpoint_maps, None) {
         for mapping in &map.mappings {
             let exact_oid = mapping.oid == object_map.tree_oid;
             let btree_type = mapping.object_type == OBJECT_TYPE_BTREE
                 || mapping.object_type == OBJECT_TYPE_BTREE_NODE;
-            if exact_oid || (selected.is_none() && btree_type) {
+            if exact_oid {
                 selected = Some((map, mapping));
-                if exact_oid {
-                    break;
-                }
+                break 'map_loop;
+            }
+            if selected.is_none() && btree_type {
+                selected = Some((map, mapping));
             }
         }
     }
@@ -1986,6 +1991,27 @@ fn resolve_omap_tree_root(
             Ok(None)
         }
     }
+}
+
+fn ordered_valid_checkpoint_maps<'a>(
+    checkpoint_maps: &'a [CheckpointMapReport],
+    latest_valid_xid: Option<u64>,
+) -> Vec<&'a CheckpointMapReport> {
+    let mut maps: Vec<&CheckpointMapReport> =
+        checkpoint_maps.iter().filter(|map| map.valid).collect();
+    if let Some(latest_valid_xid) = latest_valid_xid {
+        let constrained: Vec<&CheckpointMapReport> = maps
+            .iter()
+            .copied()
+            .filter(|map| map.xid <= latest_valid_xid)
+            .collect();
+        if !constrained.is_empty() {
+            maps = constrained;
+        }
+    }
+    maps.sort_by_key(|map| (map.xid, map.block_index));
+    maps.reverse();
+    maps
 }
 
 fn decode_additional_omap_leaf_nodes(
@@ -2696,7 +2722,10 @@ fn refused_report(source_size_bytes: u64, code: &str, message: String) -> Inspec
 
 #[cfg(test)]
 mod tests {
-    use apfs_types::{apfs_fletcher64, OBJECT_TYPE_NX_SUPERBLOCK, OBJ_EPHEMERAL};
+    use apfs_types::{
+        apfs_fletcher64, OBJECT_TYPE_BTREE_NODE, OBJECT_TYPE_NX_SUPERBLOCK, OBJECT_TYPE_OMAP,
+        OBJ_EPHEMERAL,
+    };
 
     use super::{inspect_bytes, InspectStatus, SourceLayout};
 
@@ -2722,6 +2751,40 @@ mod tests {
         block[160..168].copy_from_slice(&12_u64.to_le_bytes());
         block[180..184].copy_from_slice(&1_u32.to_le_bytes());
         block[184..192].copy_from_slice(&42_u64.to_le_bytes());
+        sign_block(&mut block);
+        block
+    }
+
+    fn checkpoint_map(xid: u64, oid: u64, mappings: &[(u16, u32, u64, u64)]) -> Vec<u8> {
+        let mut block = vec![0_u8; 4096];
+        block[8..16].copy_from_slice(&oid.to_le_bytes());
+        block[16..24].copy_from_slice(&xid.to_le_bytes());
+        block[24..28].copy_from_slice(&(OBJ_EPHEMERAL | 0x000c_u32).to_le_bytes());
+        block[32..36].copy_from_slice(&1_u32.to_le_bytes());
+        block[36..40].copy_from_slice(&(mappings.len() as u32).to_le_bytes());
+        let mut offset = 40;
+        for &(object_type, subtype, object_oid, physical_address) in mappings {
+            let object_type_raw = OBJ_EPHEMERAL | u32::from(object_type);
+            block[offset..offset + 4].copy_from_slice(&object_type_raw.to_le_bytes());
+            block[offset + 4..offset + 8].copy_from_slice(&subtype.to_le_bytes());
+            block[offset + 8..offset + 12].copy_from_slice(&4096_u32.to_le_bytes());
+            block[offset + 12..offset + 16].copy_from_slice(&0_u32.to_le_bytes());
+            block[offset + 16..offset + 24].copy_from_slice(&0_u64.to_le_bytes());
+            block[offset + 24..offset + 32].copy_from_slice(&object_oid.to_le_bytes());
+            block[offset + 32..offset + 40].copy_from_slice(&physical_address.to_le_bytes());
+            offset += 40;
+        }
+        sign_block(&mut block);
+        block
+    }
+
+    fn omap_block(xid: u64, oid: u64, tree_oid: u64) -> Vec<u8> {
+        let mut block = vec![0_u8; 4096];
+        block[8..16].copy_from_slice(&oid.to_le_bytes());
+        block[16..24].copy_from_slice(&xid.to_le_bytes());
+        block[24..28].copy_from_slice(&(OBJ_EPHEMERAL | u32::from(OBJECT_TYPE_OMAP)).to_le_bytes());
+        block[32..36].copy_from_slice(&1_u32.to_le_bytes());
+        block[48..56].copy_from_slice(&tree_oid.to_le_bytes());
         sign_block(&mut block);
         block
     }
@@ -2756,5 +2819,44 @@ mod tests {
         let lookup = super::lookup_object_in_bytes(&block, 500, 10);
         assert_eq!(lookup.status, super::ObjectLookupStatus::Refused);
         assert_eq!(lookup.errors[0].code, "APFS-E-OMAP-TREE-NOT-AVAILABLE");
+    }
+
+    #[test]
+    fn checkpoint_scan_prefers_newest_valid_checkpoint_map() {
+        let mut image = vec![0_u8; 16 * 4096];
+        image[0..4096].copy_from_slice(&minimal_nxsb(10));
+        image[8192..12288].copy_from_slice(&minimal_nxsb(30));
+        image[12288..16384].copy_from_slice(&minimal_nxsb(31));
+        image[16384..20480].copy_from_slice(&checkpoint_map(
+            30,
+            200,
+            &[
+                (OBJECT_TYPE_OMAP, 0, 12, 10),
+                (OBJECT_TYPE_BTREE_NODE, 0, 99, 11),
+            ],
+        ));
+        image[20480..24576].copy_from_slice(&checkpoint_map(
+            31,
+            201,
+            &[
+                (OBJECT_TYPE_OMAP, 0, 12, 12),
+                (OBJECT_TYPE_BTREE_NODE, 0, 99, 13),
+            ],
+        ));
+        image[40960..45056].copy_from_slice(&omap_block(30, 12, 99));
+        image[49152..53248].copy_from_slice(&omap_block(31, 12, 0));
+        let report = inspect_bytes(&image);
+        assert_eq!(report.status, InspectStatus::ApfsContainerDetected);
+        let scan = report
+            .checkpoint_scan
+            .as_ref()
+            .expect("checkpoint scan should be present");
+        let omap = scan
+            .container_object_map
+            .as_ref()
+            .expect("container omap should be resolved");
+        assert_eq!(scan.latest_valid_xid, Some(31));
+        assert_eq!(omap.source_checkpoint_map_block, 5);
+        assert_eq!(omap.object_block_index, 12);
     }
 }

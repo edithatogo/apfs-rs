@@ -1,6 +1,6 @@
 # Production checkpoint ring reconstruction
 
-Capability: `M-124`
+Capability: `M-124`  
 Status: `implemented`
 Category: `core-read`
 
