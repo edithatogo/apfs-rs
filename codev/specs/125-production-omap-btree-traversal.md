@@ -1,6 +1,6 @@
 # Spec M-125: Production object-map B-tree traversal
 
-Status: `planned_roadmap`.
+Status: `implemented`.
 
 ## Objective
 

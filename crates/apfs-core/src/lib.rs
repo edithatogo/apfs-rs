@@ -1959,6 +1959,7 @@ fn resolve_omap_tree_root(
                 block_size,
                 checkpoint_maps,
                 object_map.tree_oid,
+                Some(map.xid),
                 notes,
             )?;
             let mut aggregate_records = preliminary_omap_records.clone();
@@ -2021,10 +2022,11 @@ fn decode_additional_omap_leaf_nodes(
     block_size: usize,
     checkpoint_maps: &[CheckpointMapReport],
     root_tree_oid: u64,
+    latest_valid_xid: Option<u64>,
     notes: &mut Vec<Diagnostic>,
 ) -> Result<Vec<MappedBTreeLeafReport>, InspectError> {
     let mut leaves = Vec::new();
-    for map in checkpoint_maps.iter().filter(|map| map.valid) {
+    for map in ordered_valid_checkpoint_maps(checkpoint_maps, latest_valid_xid) {
         for mapping in &map.mappings {
             let btree_type = mapping.object_type == OBJECT_TYPE_BTREE
                 || mapping.object_type == OBJECT_TYPE_BTREE_NODE;
@@ -2789,6 +2791,48 @@ mod tests {
         block
     }
 
+    fn btree_index_root_block(xid: u64, oid: u64, child_oid: u64) -> Vec<u8> {
+        let mut block = vec![0_u8; 4096];
+        block[8..16].copy_from_slice(&oid.to_le_bytes());
+        block[16..24].copy_from_slice(&xid.to_le_bytes());
+        block[24..28]
+            .copy_from_slice(&(0x40000000_u32 | u32::from(OBJECT_TYPE_BTREE_NODE)).to_le_bytes());
+        block[32..34].copy_from_slice(&1_u16.to_le_bytes());
+        block[34..36].copy_from_slice(&1_u16.to_le_bytes());
+        block[36..40].copy_from_slice(&1_u32.to_le_bytes());
+        block[40..42].copy_from_slice(&16_u16.to_le_bytes());
+        block[42..44].copy_from_slice(&4_u16.to_le_bytes());
+        block[56 + 16..56 + 18].copy_from_slice(&128_u16.to_le_bytes());
+        block[56 + 18..56 + 20].copy_from_slice(&256_u16.to_le_bytes());
+        block[56 + 128..56 + 136].copy_from_slice(&1000_u64.to_le_bytes());
+        block[56 + 136..56 + 144].copy_from_slice(&70_u64.to_le_bytes());
+        block[56 + 256..56 + 264].copy_from_slice(&child_oid.to_le_bytes());
+        sign_block(&mut block);
+        block
+    }
+
+    fn btree_leaf_block(xid: u64, oid: u64, paddr: u64) -> Vec<u8> {
+        let mut block = vec![0_u8; 4096];
+        block[8..16].copy_from_slice(&oid.to_le_bytes());
+        block[16..24].copy_from_slice(&xid.to_le_bytes());
+        block[24..28]
+            .copy_from_slice(&(0x40000000_u32 | u32::from(OBJECT_TYPE_BTREE_NODE)).to_le_bytes());
+        block[32..34].copy_from_slice(&2_u16.to_le_bytes());
+        block[34..36].copy_from_slice(&0_u16.to_le_bytes());
+        block[36..40].copy_from_slice(&1_u32.to_le_bytes());
+        block[40..42].copy_from_slice(&16_u16.to_le_bytes());
+        block[42..44].copy_from_slice(&4_u16.to_le_bytes());
+        block[56 + 16..56 + 18].copy_from_slice(&128_u16.to_le_bytes());
+        block[56 + 18..56 + 20].copy_from_slice(&256_u16.to_le_bytes());
+        block[56 + 128..56 + 136].copy_from_slice(&1000_u64.to_le_bytes());
+        block[56 + 136..56 + 144].copy_from_slice(&70_u64.to_le_bytes());
+        block[56 + 256..56 + 260].copy_from_slice(&0_u32.to_le_bytes());
+        block[56 + 260..56 + 264].copy_from_slice(&4096_u32.to_le_bytes());
+        block[56 + 264..56 + 272].copy_from_slice(&paddr.to_le_bytes());
+        sign_block(&mut block);
+        block
+    }
+
     #[test]
     fn detects_apfs_container() {
         let report = inspect_bytes(&minimal_nxsb(10));
@@ -2858,5 +2902,49 @@ mod tests {
         assert_eq!(scan.latest_valid_xid, Some(31));
         assert_eq!(omap.source_checkpoint_map_block, 5);
         assert_eq!(omap.object_block_index, 12);
+    }
+
+    #[test]
+    fn checkpoint_bounded_leaf_traversal_excludes_newer_maps() {
+        let mut image = vec![0_u8; 16 * 4096];
+        image[0..4096].copy_from_slice(&minimal_nxsb(40));
+        image[8192..12288].copy_from_slice(&minimal_nxsb(41));
+        image[12288..16384].copy_from_slice(&checkpoint_map(
+            41,
+            210,
+            &[(OBJECT_TYPE_BTREE_NODE, 0, 110, 12)],
+        ));
+        image[16384..20480].copy_from_slice(&checkpoint_map(
+            40,
+            211,
+            &[
+                (OBJECT_TYPE_OMAP, 0, 12, 10),
+                (OBJECT_TYPE_BTREE_NODE, 0, 99, 11),
+                (OBJECT_TYPE_BTREE_NODE, 0, 110, 12),
+            ],
+        ));
+        image[40960..45056].copy_from_slice(&omap_block(40, 12, 99));
+        image[45056..49152].copy_from_slice(&btree_index_root_block(40, 99, 110));
+        image[49152..53248].copy_from_slice(&btree_leaf_block(40, 110, 31));
+        image[53248..57344].copy_from_slice(&btree_leaf_block(41, 110, 99));
+
+        let report = inspect_bytes(&image);
+        assert_eq!(report.status, InspectStatus::ApfsContainerDetected);
+        let scan = report
+            .checkpoint_scan
+            .as_ref()
+            .expect("checkpoint scan should be present");
+        let tree_root = scan
+            .container_object_map
+            .as_ref()
+            .and_then(|omap| omap.tree_root.as_ref())
+            .expect("tree root should be resolved");
+        let resolved = super::resolve_object_with_resolver(tree_root, 1000, 70);
+        let traversal = resolved
+            .traversal
+            .as_ref()
+            .expect("bounded traversal should be available");
+        assert_eq!(traversal.selected_leaf_block_index, Some(12));
+        assert_eq!(traversal.lookup.physical_address, Some(31));
     }
 }
