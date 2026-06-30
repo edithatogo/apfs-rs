@@ -1,6 +1,6 @@
 # Spec M-138: Hosted Renovate lifecycle and dependency update governance
 
-Status: `planned_roadmap`.
+Status: `implemented_scaffold`.
 
 ## Objective
 

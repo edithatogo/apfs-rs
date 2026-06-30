@@ -1,7 +1,7 @@
 # Hosted Renovate lifecycle and dependency update governance
 
 Capability: `M-138`  
-Status: `planned_roadmap`  
+Status: `implemented_scaffold`  
 Category: `dependency-automation`
 
 ## Goal

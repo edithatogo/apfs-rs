@@ -2,8 +2,9 @@
 
 ## Status
 
-`planned_roadmap`.
+`implemented_scaffold`.
 
 ## Notes
 
-This roadmap track exists because the mature, hardened APFS-RS release is not fully implemented. It is reviewed as a planning/evidence track only; no production APFS behavior is claimed until its plan is executed and validated.
+This governance track now has a validated xtask audit command and a Dependabot-forbidden guardrail. It remains read-only; no repository-admin mutation, production APFS behavior, or write capability is claimed here.
+Archive status: `archived`.

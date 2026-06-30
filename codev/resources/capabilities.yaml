@@ -2157,6 +2157,7 @@ capabilities:
     crates:
     - xtask
     required_tests:
+    - renovate_lifecycle_audit
     - release_automation_audit
     - dependency_policy_audit
     - scorecard_dependency_review_audit
@@ -2164,8 +2165,8 @@ capabilities:
     - dependency_policy_config
     - dependency_policy_audit_required
     - security_automation
-    status: planned_roadmap
-    note: roadmap track for hosted Renovate lifecycle and dependency-update governance
+    status: implemented_scaffold
+    note: governance-only scaffold for hosted Renovate lifecycle and dependency-update governance; archived after validation
   M-139:
     name: cargo-vet and dependency policy enforcement maturation
     milestone: repo_hardening

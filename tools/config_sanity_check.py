@@ -26,6 +26,11 @@ REQUIRED_FILES = [
     ".github/workflows/local-handoff.yml",
 ]
 
+FORBIDDEN_FILES = [
+    ".github/dependabot.yml",
+    ".github/dependabot.yaml",
+]
+
 
 def fail(message: str) -> None:
     print(f"config-sanity-check: ERROR: {message}", file=sys.stderr)
@@ -40,6 +45,10 @@ def main() -> int:
     missing = [path for path in REQUIRED_FILES if not (ROOT / path).exists()]
     if missing:
         fail("missing required config files: " + ", ".join(missing))
+
+    present_forbidden = [path for path in FORBIDDEN_FILES if (ROOT / path).exists()]
+    if present_forbidden:
+        fail("forbidden Dependabot config files present: " + ", ".join(present_forbidden))
 
     toolchain = read_toml("rust-toolchain.toml")
     channel = toolchain.get("toolchain", {}).get("channel", "")

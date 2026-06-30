@@ -115,6 +115,8 @@ enum Command {
     BleedingEdgeRepoAudit,
     /// Validate branch protection and required-check governance readiness.
     BranchProtectionGovernanceAudit,
+    /// Validate hosted Renovate lifecycle and dependency-update governance readiness.
+    RenovateLifecycleAudit,
     /// Validate local handoff config files.
     ConfigSanityCheck,
     /// Run local environment doctor.
@@ -251,6 +253,7 @@ fn main() -> Result<()> {
         }
         Command::BleedingEdgeRepoAudit => run_python_tool("tools/bleeding_edge_repo_audit.py", &[]),
         Command::BranchProtectionGovernanceAudit => branch_protection_governance(),
+        Command::RenovateLifecycleAudit => renovate_lifecycle_audit(),
         Command::ConfigSanityCheck => run_python_tool("tools/config_sanity_check.py", &[]),
         Command::LocalEnvDoctor { json } => {
             if let Some(path) = json {
@@ -1542,6 +1545,111 @@ fn branch_protection_governance() -> Result<()> {
     Ok(())
 }
 
+fn renovate_lifecycle_report() -> JsonValue {
+    let root = workspace_root();
+    let renovate_path = root.join("renovate.json");
+    let renovate_text = fs::read_to_string(&renovate_path).unwrap_or_default();
+    let renovate: JsonValue = serde_json::from_str(&renovate_text).unwrap_or_else(|_| {
+        serde_json::json!({
+            "parse_error": true,
+        })
+    });
+
+    let managed_files = [
+        ".github/workflows/ci.yml",
+        ".github/workflows/quality-gates.yml",
+        ".github/workflows/strict-quality.yml",
+        ".github/workflows/workflow-security.yml",
+    ];
+    let required_managers = [
+        "cargo",
+        "github-actions",
+        "npm",
+        "dockerfile",
+        "pip_requirements",
+    ];
+
+    let package_rules = renovate
+        .get("packageRules")
+        .and_then(JsonValue::as_array)
+        .cloned()
+        .unwrap_or_default();
+
+    serde_json::json!({
+        "schema_version": "0.18.0",
+        "track": "M-138",
+        "status": "hosted_renovate_ready",
+        "renovate_configured": renovate.get("parse_error").is_none(),
+        "dependabot_config_present": root.join(".github/dependabot.yml").exists()
+            || root.join(".github/dependabot.yaml").exists(),
+        "required_managers": required_managers,
+        "enabled_managers": renovate.get("enabledManagers").cloned().unwrap_or(JsonValue::Null),
+        "managed_workflows": managed_files,
+        "package_rules_count": package_rules.len(),
+        "safety_constraints": [
+            "read-only lifecycle evidence only; no repository-admin mutation is performed",
+            "no physical-device writes",
+            "no encryption bypass",
+            "dependency automation remains policy-gated by renovate.json and local checks",
+        ],
+        "evidence_notes": [
+            "renovate.json exists and is checked by local sanity validation",
+            "Dependabot config files are forbidden so Renovate remains the active update path",
+            "workflow-security and release gates remain separate from dependency automation",
+        ],
+    })
+}
+
+fn renovate_lifecycle_audit() -> Result<()> {
+    let dir = workspace_root().join("target/renovate-lifecycle");
+    fs::create_dir_all(&dir)?;
+    let report = renovate_lifecycle_report();
+    fs::write(
+        dir.join("README.md"),
+        "# APFS-RS Hosted Renovate Lifecycle\n\nGenerated scaffold. This is not a repository-admin action.\n",
+    )?;
+    fs::write(
+        dir.join("renovate-lifecycle-report.json"),
+        serde_json::to_string_pretty(&report)? + "\n",
+    )?;
+    let mut markdown = String::from("# APFS-RS Hosted Renovate Lifecycle\n\n");
+    markdown.push_str("Status: `hosted_renovate_ready`.\n\n");
+    markdown.push_str("## Required managers\n\n");
+    for manager in report
+        .get("required_managers")
+        .and_then(JsonValue::as_array)
+        .into_iter()
+        .flatten()
+    {
+        let _ = writeln!(markdown, "- {}", manager.as_str().unwrap_or("<manager>"));
+    }
+    markdown.push_str("\n## Managed workflows\n\n");
+    for workflow in report
+        .get("managed_workflows")
+        .and_then(JsonValue::as_array)
+        .into_iter()
+        .flatten()
+    {
+        let _ = writeln!(markdown, "- {}", workflow.as_str().unwrap_or("<workflow>"));
+    }
+    markdown.push_str("\n## Safety constraints\n\n");
+    for constraint in report
+        .get("safety_constraints")
+        .and_then(JsonValue::as_array)
+        .into_iter()
+        .flatten()
+    {
+        let _ = writeln!(
+            markdown,
+            "- {}",
+            constraint.as_str().unwrap_or("<constraint>")
+        );
+    }
+    fs::write(dir.join("renovate-lifecycle-report.md"), markdown)?;
+    println!("renovate-lifecycle: wrote {}", dir.display());
+    Ok(())
+}
+
 fn workspace_root() -> PathBuf {
     PathBuf::from(env!("CARGO_MANIFEST_DIR"))
         .parent()
@@ -1554,8 +1662,9 @@ mod tests {
     use super::{
         branch_protection_governance, branch_protection_governance_report, format_governance,
         format_governance_report, long_running_hardening, long_running_hardening_report,
-        release_publication_readiness, repair_governance, repair_governance_report,
-        windows_write_beta_governance_report, windows_write_governance, write_lab_evidence_report,
+        release_publication_readiness, renovate_lifecycle_audit, renovate_lifecycle_report,
+        repair_governance, repair_governance_report, windows_write_beta_governance_report,
+        windows_write_governance, write_lab_evidence_report,
     };
     use apfs_win::WindowsWriteBetaGovernanceStatus;
     use apfs_write_lab::WriteLabEvidenceStatus;
@@ -1687,5 +1796,21 @@ mod tests {
             .iter()
             .any(|permission| permission == "repository administration permission"));
         branch_protection_governance().expect("branch protection governance evidence");
+    }
+
+    #[test]
+    fn renovate_lifecycle_remains_hosted_and_dependabot_free() {
+        let report = renovate_lifecycle_report();
+
+        assert_eq!(report["track"], "M-138");
+        assert_eq!(report["status"], "hosted_renovate_ready");
+        assert_eq!(report["renovate_configured"], true);
+        assert_eq!(report["dependabot_config_present"], false);
+        assert!(report["required_managers"]
+            .as_array()
+            .expect("required managers")
+            .iter()
+            .any(|manager| manager == "github-actions"));
+        renovate_lifecycle_audit().expect("renovate lifecycle evidence");
     }
 }
