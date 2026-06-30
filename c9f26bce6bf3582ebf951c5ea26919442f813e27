@@ -1,1 +1,3 @@
 M-129 closeout: implemented the policy-only software-encryption readiness scaffold, wired apfs-crypto into apfs-features, added unit coverage, and archived the track as implemented_scaffold after passing workspace validation and conductor checks.
+
+Review: no blockers found in the M-129 closeout diff; the archived scaffold, tests, and registry updates are consistent with the safety gates and required checks.
