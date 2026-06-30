@@ -1589,8 +1589,7 @@ fn renovate_lifecycle_report() -> JsonValue {
         "silent_mode_enabled": renovate
             .get("mode")
             .and_then(JsonValue::as_str)
-            .map(|mode| mode == "silent")
-            .unwrap_or(false),
+            .is_some_and(|mode| mode == "silent"),
         "dependabot_config_present": root.join(".github/dependabot.yml").exists()
             || root.join(".github/dependabot.yaml").exists(),
         "required_managers": required_managers,
