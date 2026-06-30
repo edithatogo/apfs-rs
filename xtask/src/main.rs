@@ -180,6 +180,8 @@ enum Command {
     WriteLabEvidence,
     /// Write a Windows write-beta governance scaffold.
     WindowsWriteGovernance,
+    /// Validate APFS format governance and refusal scaffolding.
+    FormatGovernanceAudit,
     QualityGateCheck,
     DocsSiteCheck,
     TestScaffoldAudit,
@@ -303,6 +305,7 @@ fn main() -> Result<()> {
         Command::ReleaseEvidence => release_evidence(),
         Command::WriteLabEvidence => write_lab_evidence(),
         Command::WindowsWriteGovernance => windows_write_governance(),
+        Command::FormatGovernanceAudit => format_governance(),
         Command::QualityGateCheck => run_python_tool("tools/quality_gate_check.py", &[]),
         Command::DocsSiteCheck => run_python_tool("tools/docs_site_static_check.py", &[]),
         Command::TestScaffoldAudit => run_python_tool("tools/test_scaffold_audit.py", &[]),
@@ -1234,6 +1237,108 @@ fn repair_governance() -> Result<()> {
     Ok(())
 }
 
+fn format_governance_report() -> JsonValue {
+    serde_json::json!({
+        "schema_version": "0.18.0",
+        "track": "M-135",
+        "status": "blocked_until_accepted_destructive_test_evidence",
+        "prerequisites": [
+            "accepted destructive-test evidence on disposable images",
+            "maintainer approval for any format beta",
+            "production claim guard passes before release claims",
+            "no physical-device format path exists in the implementation"
+        ],
+        "required_gates": [
+            "format_governance_audit",
+            "production_claim_guard",
+            "safety_case_check",
+        ],
+        "rollback_plan": [
+            "disable format-governance feature flags",
+            "revert to read-only inspection and extraction paths",
+            "publish refusal notes before any public format claim",
+        ],
+        "refused_operations": [
+            "format",
+            "mkfs",
+            "erase",
+            "initialize",
+            "metadata-rewrite",
+            "physical-device-write",
+        ],
+        "safety_constraints": [
+            "read-only default until accepted destructive-test evidence exists",
+            "no physical-device writes",
+            "no encryption bypass",
+            "no password recovery or format bypass",
+            "no live format beta without maintainer approval",
+        ],
+        "evidence_notes": [
+            "governance-only scaffold; it does not enable APFS format",
+            "the track remains blocked until destructive-test evidence is accepted",
+        ],
+    })
+}
+
+fn format_governance() -> Result<()> {
+    let dir = workspace_root().join("target/format-governance");
+    fs::create_dir_all(&dir)?;
+    let report = format_governance_report();
+    fs::write(
+        dir.join("README.md"),
+        "# APFS-RS APFS Format Governance\n\nGenerated scaffold. This is not APFS format.\n",
+    )?;
+    fs::write(
+        dir.join("format-governance-report.json"),
+        serde_json::to_string_pretty(&report)? + "\n",
+    )?;
+    let mut markdown = String::from("# APFS-RS APFS Format Governance\n\n");
+    markdown.push_str("Status: `blocked_until_accepted_destructive_test_evidence`.\n\n");
+    markdown.push_str("## Prerequisites\n\n");
+    for item in report
+        .get("prerequisites")
+        .and_then(JsonValue::as_array)
+        .into_iter()
+        .flatten()
+    {
+        let _ = writeln!(markdown, "- {}", item.as_str().unwrap_or("<prerequisite>"));
+    }
+    markdown.push_str("\n## Required gates\n\n");
+    for gate in report
+        .get("required_gates")
+        .and_then(JsonValue::as_array)
+        .into_iter()
+        .flatten()
+    {
+        let _ = writeln!(markdown, "- {}", gate.as_str().unwrap_or("<gate>"));
+    }
+    markdown.push_str("\n## Rollback plan\n\n");
+    for step in report
+        .get("rollback_plan")
+        .and_then(JsonValue::as_array)
+        .into_iter()
+        .flatten()
+    {
+        let _ = writeln!(markdown, "- {}", step.as_str().unwrap_or("<rollback step>"));
+    }
+    markdown.push_str("\n## Refused operations\n\n");
+    for operation in report
+        .get("refused_operations")
+        .and_then(JsonValue::as_array)
+        .into_iter()
+        .flatten()
+    {
+        let _ = writeln!(
+            markdown,
+            "- `{}`",
+            operation.as_str().unwrap_or("<operation>")
+        );
+    }
+    fs::write(dir.join("format-governance-report.md"), markdown)?;
+    println!("format-governance: wrote {}", dir.display());
+    Ok(())
+}
+
 fn workspace_root() -> PathBuf {
     PathBuf::from(env!("CARGO_MANIFEST_DIR"))
         .parent()
@@ -1244,8 +1349,9 @@ fn workspace_root() -> PathBuf {
 #[cfg(test)]
 mod tests {
     use super::{
-        release_publication_readiness, repair_governance, repair_governance_report,
-        windows_write_beta_governance_report, windows_write_governance, write_lab_evidence_report,
+        format_governance, format_governance_report, release_publication_readiness,
+        repair_governance, repair_governance_report, windows_write_beta_governance_report,
+        windows_write_governance, write_lab_evidence_report,
     };
     use apfs_win::WindowsWriteBetaGovernanceStatus;
     use apfs_write_lab::WriteLabEvidenceStatus;
@@ -1318,5 +1424,26 @@ mod tests {
             .iter()
             .any(|constraint| constraint == "no physical-device writes"));
         repair_governance().expect("repair governance evidence");
+    }
+
+    #[test]
+    fn format_governance_remains_blocked_until_destructive_test_evidence() {
+        let report = format_governance_report();
+
+        assert_eq!(
+            report["status"],
+            "blocked_until_accepted_destructive_test_evidence"
+        );
+        assert!(report["required_gates"]
+            .as_array()
+            .expect("required gates")
+            .iter()
+            .any(|gate| gate == "format_governance_audit"));
+        assert!(report["safety_constraints"]
+            .as_array()
+            .expect("safety constraints")
+            .iter()
+            .any(|constraint| constraint == "no physical-device writes"));
+        format_governance().expect("format governance evidence");
     }
 }

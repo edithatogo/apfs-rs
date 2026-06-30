@@ -2113,8 +2113,8 @@ capabilities:
     - no_access_bypass
     - safety_case_required
     - production_claim_guard_required
-    status: planned_roadmap
-    note: roadmap track for APFS format governance and refusal model
+    status: implemented_scaffold
+    note: governance-only scaffold for APFS format refusal and destructive-test gating
   M-136:
     name: Long-running fuzz property mutation coverage hardening
     milestone: quality

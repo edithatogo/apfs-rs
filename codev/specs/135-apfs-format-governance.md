@@ -1,6 +1,6 @@
 # Spec M-135: APFS format governance and refusal model
 
-Status: `planned_roadmap`.
+Status: `implemented_scaffold`.
 
 ## Objective
 

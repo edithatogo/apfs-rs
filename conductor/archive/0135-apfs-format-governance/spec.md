@@ -1,7 +1,7 @@
 # APFS format governance and refusal model
 
 Capability: `M-135`  
-Status: `planned_roadmap`  
+Status: `implemented_scaffold`  
 Category: `format`
 
 ## Goal
