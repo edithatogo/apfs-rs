@@ -2077,8 +2077,8 @@ capabilities:
     - no_physical_write_path
     - safety_case_required
     - production_claim_guard_required
-    status: planned_roadmap
-    note: roadmap track for Windows write-beta governance and refusal model
+    status: implemented_scaffold
+    note: governance-only scaffold for Windows write-beta refusal and rollout gating
   M-134:
     name: APFS repair governance and refusal model
     milestone: safety_governance

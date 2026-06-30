@@ -1,7 +1,7 @@
 # Windows write beta governance
 
 Capability: `M-133`  
-Status: `planned_roadmap`  
+Status: `implemented_scaffold`  
 Category: `write-beta`
 
 ## Goal

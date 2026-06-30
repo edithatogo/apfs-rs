@@ -14,6 +14,7 @@ jsonschema.workspace = true
 serde_json.workspace = true
 serde_yaml.workspace = true
 apfs-write-lab = { path = "../crates/apfs-write-lab" }
+apfs-win = { path = "../crates/apfs-win" }
 walkdir.workspace = true
 
 [lints]

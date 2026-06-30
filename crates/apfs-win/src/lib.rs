@@ -244,3 +244,93 @@ pub fn windows_mount_packaging_report(
         ],
     }
 }
+
+#[derive(Debug, Clone, Copy, Serialize, PartialEq, Eq)]
+#[serde(rename_all = "snake_case")]
+pub enum WindowsWriteBetaGovernanceStatus {
+    BlockedUntilAcceptedWriteLabEvidence,
+    PlanningOnly,
+}
+
+#[derive(Debug, Clone, Serialize, PartialEq, Eq)]
+pub struct WindowsWriteBetaGovernanceReport {
+    pub schema_version: String,
+    pub track: String,
+    pub status: WindowsWriteBetaGovernanceStatus,
+    pub prerequisites: Vec<String>,
+    pub required_gates: Vec<String>,
+    pub rollback_plan: Vec<String>,
+    pub refused_operations: Vec<String>,
+    pub safety_constraints: Vec<String>,
+    pub evidence_notes: Vec<String>,
+}
+
+#[must_use]
+pub fn windows_write_beta_governance_report() -> WindowsWriteBetaGovernanceReport {
+    WindowsWriteBetaGovernanceReport {
+        schema_version: "0.18.0".to_owned(),
+        track: "M-133".to_owned(),
+        status: WindowsWriteBetaGovernanceStatus::BlockedUntilAcceptedWriteLabEvidence,
+        prerequisites: vec![
+            "accepted image-only write-lab evidence (M-132)".to_owned(),
+            "maintainer approval for any write beta".to_owned(),
+            "production claim guard passes before release claims".to_owned(),
+        ],
+        required_gates: vec![
+            "windows_write_governance_audit".to_owned(),
+            "write_operations_refused".to_owned(),
+            "production_claim_guard".to_owned(),
+        ],
+        rollback_plan: vec![
+            "disable write-beta feature flags".to_owned(),
+            "revert to the read-only mount path".to_owned(),
+            "publish rollback notes before any public beta claim".to_owned(),
+        ],
+        refused_operations: vec![
+            "create".to_owned(),
+            "write".to_owned(),
+            "truncate".to_owned(),
+            "delete".to_owned(),
+            "rename".to_owned(),
+            "setattr".to_owned(),
+            "physical-device-write".to_owned(),
+        ],
+        safety_constraints: vec![
+            "read-only default until accepted write-lab evidence exists".to_owned(),
+            "no physical-device writes".to_owned(),
+            "no encryption bypass".to_owned(),
+            "no live write beta without maintainer approval".to_owned(),
+        ],
+        evidence_notes: vec![
+            "governance-only scaffold; it does not enable a Windows write beta".to_owned(),
+            "the beta remains blocked until image-only crash evidence is accepted".to_owned(),
+        ],
+    }
+}
+
+#[cfg(test)]
+mod governance_tests {
+    use super::{windows_write_beta_governance_report, WindowsWriteBetaGovernanceStatus};
+
+    #[test]
+    fn governance_report_stays_blocked_until_write_lab_evidence() {
+        let report = windows_write_beta_governance_report();
+
+        assert_eq!(
+            report.status,
+            WindowsWriteBetaGovernanceStatus::BlockedUntilAcceptedWriteLabEvidence
+        );
+        assert!(report
+            .prerequisites
+            .iter()
+            .any(|line| line.contains("accepted image-only write-lab evidence")));
+        assert!(report
+            .required_gates
+            .iter()
+            .any(|line| line == "production_claim_guard"));
+        assert!(report
+            .safety_constraints
+            .iter()
+            .any(|line| line.contains("no live write beta without maintainer approval")));
+    }
+}

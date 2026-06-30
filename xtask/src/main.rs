@@ -1,6 +1,7 @@
 #![forbid(unsafe_code)]
 
 use anyhow::{Context, Result};
+use apfs_win::windows_write_beta_governance_report;
 use apfs_write_lab::write_lab_evidence_report;
 use clap::{Parser, Subcommand};
 use serde_json::Value as JsonValue;
@@ -175,6 +176,8 @@ enum Command {
     ReleaseEvidence,
     /// Write an image-only write-lab crash-evidence scaffold.
     WriteLabEvidence,
+    /// Write a Windows write-beta governance scaffold.
+    WindowsWriteGovernance,
     QualityGateCheck,
     DocsSiteCheck,
     TestScaffoldAudit,
@@ -296,6 +299,7 @@ fn main() -> Result<()> {
         Command::TaskContext { capability_id } => task_context(&capability_id),
         Command::ReleaseEvidence => release_evidence(),
         Command::WriteLabEvidence => write_lab_evidence(),
+        Command::WindowsWriteGovernance => windows_write_governance(),
         Command::QualityGateCheck => run_python_tool("tools/quality_gate_check.py", &[]),
         Command::DocsSiteCheck => run_python_tool("tools/docs_site_static_check.py", &[]),
         Command::TestScaffoldAudit => run_python_tool("tools/test_scaffold_audit.py", &[]),
@@ -1090,6 +1094,41 @@ fn write_lab_evidence() -> Result<()> {
     Ok(())
 }
 
+fn windows_write_governance() -> Result<()> {
+    let dir = workspace_root().join("target/windows-write-governance");
+    fs::create_dir_all(&dir)?;
+    let report = windows_write_beta_governance_report();
+    fs::write(
+        dir.join("README.md"),
+        "# APFS-RS Windows Write-Beta Governance\n\nGenerated scaffold. This is not a write beta.\n",
+    )?;
+    fs::write(
+        dir.join("windows-write-governance-report.json"),
+        serde_json::to_string_pretty(&report)? + "\n",
+    )?;
+    let mut markdown = String::from("# APFS-RS Windows Write-Beta Governance\n\n");
+    markdown.push_str("Status: `blocked_until_accepted_write_lab_evidence`.\n\n");
+    markdown.push_str("## Prerequisites\n\n");
+    for item in &report.prerequisites {
+        let _ = writeln!(markdown, "- {item}");
+    }
+    markdown.push_str("\n## Required gates\n\n");
+    for gate in &report.required_gates {
+        let _ = writeln!(markdown, "- {gate}");
+    }
+    markdown.push_str("\n## Rollback plan\n\n");
+    for step in &report.rollback_plan {
+        let _ = writeln!(markdown, "- {step}");
+    }
+    markdown.push_str("\n## Refused operations\n\n");
+    for operation in &report.refused_operations {
+        let _ = writeln!(markdown, "- `{operation}`");
+    }
+    fs::write(dir.join("windows-write-governance-report.md"), markdown)?;
+    println!("windows-write-governance: wrote {}", dir.display());
+    Ok(())
+}
+
 fn workspace_root() -> PathBuf {
     PathBuf::from(env!("CARGO_MANIFEST_DIR"))
         .parent()
@@ -1099,7 +1138,11 @@ fn workspace_root() -> PathBuf {
 
 #[cfg(test)]
 mod tests {
-    use super::{release_publication_readiness, write_lab_evidence_report};
+    use super::{
+        release_publication_readiness, windows_write_beta_governance_report,
+        windows_write_governance, write_lab_evidence_report,
+    };
+    use apfs_win::WindowsWriteBetaGovernanceStatus;
     use apfs_write_lab::WriteLabEvidenceStatus;
 
     #[test]
@@ -1134,5 +1177,20 @@ mod tests {
             .safety_constraints
             .iter()
             .any(|constraint| constraint == "no physical-device writes"));
+    }
+
+    #[test]
+    fn windows_write_governance_remains_blocked_until_write_lab_evidence() {
+        let report = windows_write_beta_governance_report();
+
+        assert_eq!(
+            report.status,
+            WindowsWriteBetaGovernanceStatus::BlockedUntilAcceptedWriteLabEvidence
+        );
+        assert!(report
+            .required_gates
+            .iter()
+            .any(|gate| gate == "production_claim_guard"));
+        windows_write_governance().expect("windows write governance evidence");
     }
 }

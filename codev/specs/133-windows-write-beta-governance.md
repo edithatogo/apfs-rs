@@ -1,6 +1,6 @@
 # Spec M-133: Windows write beta governance
 
-Status: `planned_roadmap`.
+Status: `implemented_scaffold`.
 
 ## Objective
 
