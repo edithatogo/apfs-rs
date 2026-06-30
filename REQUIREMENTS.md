@@ -367,3 +367,39 @@ These requirements are configured and audited without Rust/Cargo. Enforcing the 
   `apfs-core` and `apfs-types`.
 - **M-119 Must:** Release automation dry-runs must keep publishing disabled until
   the accepted MVP release gates pass.
+
+## v0.30.0 Mature release roadmap requirements
+
+### Must
+
+- `M-120` — Executed Rust workspace validation closeout.
+- `M-121` — Real macOS APFS fixture execution.
+- `M-122` — Real fixture feedback promotion.
+- `M-123` — Real APFS parser semantics correction.
+
+### Should
+
+- `M-124` — Production checkpoint ring reconstruction.
+- `M-125` — Production object-map B-tree traversal.
+- `M-126` — Production filesystem tree decoding and metadata mapping.
+- `M-127` — Production file extent resolution and extraction.
+- `M-128` — Windows WinFsp read-only mount adapter and packaging.
+- `M-129` — Production software-encryption read support.
+- `M-130` — Signed release SBOM provenance installer and winget publication.
+- `M-131` — Linux macOS ChromeOS Android read-only adapters.
+- `M-132` — Image-only write lab crash-injection evidence.
+- `M-133` — Windows write beta governance.
+- `M-134` — APFS repair governance and refusal model.
+- `M-135` — APFS format governance and refusal model.
+- `M-136` — Long-running fuzz property mutation coverage hardening.
+- `M-137` — Branch protection and required-check governance.
+- `M-138` — Hosted Renovate lifecycle and dependency update governance.
+- `M-139` — cargo-vet and dependency policy enforcement maturation.
+- `M-140` — Mature release readiness dashboard and release train.
+
+### Notes
+
+- The must-track items are executed evidence slices that close the validation and
+  real-fixture feedback loop.
+- The should-track items are planned mature-release roadmap slices and remain
+  open until their spec, plan, review, and evidence are completed.

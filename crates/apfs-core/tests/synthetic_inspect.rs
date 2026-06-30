@@ -18,3 +18,17 @@ fn non_apfs_fixture_reports_not_apfs_or_refusal() {
         InspectStatus::NotApfs | InspectStatus::Refused
     ));
 }
+
+#[test]
+fn checkpoint_ring_fixture_selects_newest_valid_candidate() {
+    let bytes = include_bytes!("../../../fixtures/synthetic-checkpoint-ring.img");
+    let report = inspect_bytes(bytes);
+    assert_eq!(report.status, InspectStatus::ApfsContainerDetected);
+    let scan = report
+        .checkpoint_scan
+        .as_ref()
+        .expect("checkpoint scan should be present for the fixture");
+    assert_eq!(scan.candidates.len(), 2);
+    assert_eq!(scan.latest_valid_xid, Some(15));
+    assert_eq!(scan.latest_valid_block, Some(3));
+}

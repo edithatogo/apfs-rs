@@ -1,6 +1,6 @@
 schema_version: 0.29.0
 status: implementing
-updated: '2026-06-25'
+updated: '2026-06-30'
 capabilities:
   M-001:
     name: APFS image container detection
@@ -1798,3 +1798,403 @@ capabilities:
     - profiling_no_media_mutation
     - secret_redaction
     status: implemented
+  M-120:
+    name: Executed Rust workspace validation closeout
+    milestone: quality
+    moscow: Must
+    track: quality
+    crates:
+    - xtask
+    required_tests:
+    - cargo_fmt_check
+    - cargo_test_workspace
+    - cargo_xtask_registry_check
+    - cargo_xtask_safety_check
+    - cargo_xtask_precompile_check
+    safety_gates:
+    - quality_gate_check_required
+    - context_history_integrity
+    - current_environment_stop_condition
+    status: implemented
+    note: closes the Rust-enabled workspace validation blocker and records the evidence
+      boundary for the mature release roadmap
+  M-121:
+    name: Real macOS APFS fixture execution
+    milestone: current_environment_handoff_closure
+    moscow: Must
+    track: fixture-readiness
+    crates:
+    - apfs-test
+    - xtask
+    required_tests:
+    - real_fixture_generation
+    - fixture_manifest_check
+    - inspect_manifest_compare
+    - real_fixture_oracle_redaction
+    safety_gates:
+    - macos_fixture_no_personal_data
+    - oracle_manifest_required
+    - real_fixture_not_production_claim
+    status: implemented
+    note: records executed macOS fixture evidence and keeps the compatibility claim
+      boundary narrow
+  M-122:
+    name: Real fixture feedback promotion
+    milestone: current_environment_handoff_closure
+    moscow: Must
+    track: fixture-readiness
+    crates:
+    - apfs-test
+    - xtask
+    required_tests:
+    - real_fixture_feedback_report
+    - inspect_manifest_compare
+    - conductor_history_updated
+    safety_gates:
+    - read_only_default
+    - real_fixture_feedback_redacted
+    - real_fixture_not_production_claim
+    status: implemented
+    note: normalizes real-fixture feedback into generated Codev and Conductor follow-up
+      tracks
+  M-123:
+    name: Real APFS parser semantics correction
+    milestone: quality
+    moscow: Must
+    track: core-read
+    crates:
+    - apfs-types
+    - apfs-core
+    - apfs-cli
+    required_tests:
+    - real_fixture_checksum_semantics
+    - synthetic_fixture_regeneration
+    - cargo_test_workspace
+    - cargo_clippy_workspace
+    safety_gates:
+    - read_only_default
+    - bounds_checked_reads
+    - typed_error_no_panic
+    - checksum_refusal
+    status: implemented
+    note: corrects the real-fixture checksum semantics used by the APFS parser and
+      synthetic fixture generators
+  M-124:
+    name: Production checkpoint ring reconstruction
+    milestone: post_mvp_readiness
+    moscow: Must
+    track: core-read
+    crates:
+    - apfs-core
+    - apfs-cli
+    required_tests:
+    - checkpoint_ring_fixture_selects_newest_valid_candidate
+    - synthetic_checkpoint_candidate_scan
+    - checkpoint_scan_limit
+    safety_gates:
+    - read_only_default
+    - bounds_checked_reads
+    - scan_limit
+    - checksum_refusal
+    status: planned_roadmap
+    note: roadmap track for production checkpoint ring reconstruction; current code
+      still performs bounded checkpoint scanning only
+  M-125:
+    name: Production object-map B-tree traversal
+    milestone: post_mvp_readiness
+    moscow: Must
+    track: core-read
+    crates:
+    - apfs-core
+    - apfs-cli
+    required_tests:
+    - synthetic_bounded_btree_traversal
+    - checkpoint_mapped_lookup_limit
+    - resolver_report_available
+    safety_gates:
+    - read_only_default
+    - bounds_checked_reads
+    - typed_error_no_panic
+    - object_map_resolver_facade_boundary
+    - synthetic_btree_traversal_limit
+    status: planned_roadmap
+    note: roadmap track for production OMAP traversal through the resolver facade;
+      current code remains bounded to synthetic traversal paths
+  M-126:
+    name: Production filesystem tree decoding and metadata mapping
+    milestone: post_mvp_readiness
+    moscow: Must
+    track: core-read
+    crates:
+    - apfs-core
+    - apfs-cli
+    required_tests:
+    - synthetic_directory_listing
+    - synthetic_stat_found
+    - directory_not_available
+    safety_gates:
+    - read_only_default
+    - bounds_checked_reads
+    - typed_error_no_panic
+    - synthetic_directory_limit
+    - path_policy_safety
+    status: planned_roadmap
+    note: roadmap track for production filesystem tree decoding and metadata mapping
+      beyond the current synthetic directory facade
+  M-127:
+    name: Production file extent resolution and extraction
+    milestone: post_mvp_readiness
+    moscow: Must
+    track: core-read
+    crates:
+    - apfs-core
+    - apfs-cli
+    required_tests:
+    - synthetic_file_preview
+    - synthetic_extract_preview
+    - bounded_preview
+    safety_gates:
+    - read_only_default
+    - bounds_checked_reads
+    - typed_error_no_panic
+    - synthetic_file_preview_limit
+    - host_output_only
+    status: planned_roadmap
+    note: roadmap track for production file-extent extraction and host-side preview
+      only until production semantics are validated
+  M-128:
+    name: Windows WinFsp read-only mount adapter and packaging
+    milestone: cross_platform_readiness
+    moscow: Should
+    track: windows-mvp
+    crates:
+    - apfs-vfs
+    - apfs-win
+    - apfs-cli
+    required_tests:
+    - vfs_readonly_refusal
+    - mount_plan_drive_letter
+    - windows_readiness_check
+    - write_operations_refused
+    safety_gates:
+    - read_only_vfs_boundary
+    - windows_user_mode_adapter
+    - no_physical_write_path
+    status: planned_roadmap
+    note: roadmap track for the Windows read-only mount adapter and packaging path
+  M-129:
+    name: Production software-encryption read support
+    milestone: encryption_readiness
+    moscow: Should
+    track: encryption
+    crates:
+    - apfs-core
+    - apfs-cli
+    required_tests:
+    - encryption_read_refusal
+    - encryption_read_probe
+    - no_access_bypass
+    safety_gates:
+    - read_only_default
+    - bounds_checked_reads
+    - typed_error_no_panic
+    - no_access_bypass
+    status: planned_roadmap
+    note: roadmap track for read-only encryption handling without password recovery
+      or bypass behavior
+  M-130:
+    name: Signed release SBOM provenance installer and winget publication
+    milestone: release_readiness
+    moscow: Should
+    track: release
+    crates:
+    - xtask
+    required_tests:
+    - signed_release_publication
+    - provenance_verification_audit
+    - release_automation_audit
+    safety_gates:
+    - release_provenance_required
+    - no_media_mutation
+    - release_automation
+    status: planned_roadmap
+    note: roadmap track for signed release publication and winget delivery
+  M-131:
+    name: Linux macOS ChromeOS Android read-only adapters
+    milestone: cross_platform_readiness
+    moscow: Should
+    track: cross-platform
+    crates:
+    - apfs-vfs
+    - apfs-win
+    - apfs-cli
+    required_tests:
+    - read_only_adapter_scaffold
+    - android_readiness_check
+    - windows_readiness_check
+    safety_gates:
+    - read_only_adapter_scaffold
+    - android_no_raw_device_assumption
+    - windows_user_mode_adapter
+    - no_physical_write_path
+    status: planned_roadmap
+    note: roadmap track for cross-platform read-only adapters beyond the Windows
+      scaffold
+  M-132:
+    name: Image-only write lab crash-injection evidence
+    milestone: write_lab_readiness
+    moscow: Must
+    track: write-lab
+    crates:
+    - xtask
+    required_tests:
+    - image_only_write_lab
+    - macos_fixture_dry_run_image_only
+    - release_preflight
+    safety_gates:
+    - image_only_write_lab
+    - no_physical_write_path
+    - no_media_mutation
+    status: planned_roadmap
+    note: roadmap track for disposable-image crash evidence only; no physical-device
+      writes are permitted
+  M-133:
+    name: Windows write beta governance
+    milestone: safety_governance
+    moscow: Must
+    track: write-beta
+    crates:
+    - apfs-win
+    - xtask
+    required_tests:
+    - windows_write_governance_audit
+    - write_operations_refused
+    - production_claim_guard
+    safety_gates:
+    - no_physical_write_path
+    - safety_case_required
+    - production_claim_guard_required
+    status: planned_roadmap
+    note: roadmap track for Windows write-beta governance and refusal model
+  M-134:
+    name: APFS repair governance and refusal model
+    milestone: safety_governance
+    moscow: Must
+    track: repair
+    crates:
+    - xtask
+    required_tests:
+    - repair_governance_audit
+    - production_claim_guard
+    - safety_case_check
+    safety_gates:
+    - no_physical_write_path
+    - no_access_bypass
+    - safety_case_required
+    - production_claim_guard_required
+    status: planned_roadmap
+    note: roadmap track for APFS repair governance and refusal model
+  M-135:
+    name: APFS format governance and refusal model
+    milestone: safety_governance
+    moscow: Must
+    track: format
+    crates:
+    - xtask
+    required_tests:
+    - format_governance_audit
+    - production_claim_guard
+    - safety_case_check
+    safety_gates:
+    - no_physical_write_path
+    - no_access_bypass
+    - safety_case_required
+    - production_claim_guard_required
+    status: planned_roadmap
+    note: roadmap track for APFS format governance and refusal model
+  M-136:
+    name: Long-running fuzz property mutation coverage hardening
+    milestone: quality
+    moscow: Should
+    track: quality
+    crates:
+    - xtask
+    required_tests:
+    - profiling_budget_check
+    - benchmark_regression_audit
+    - bleeding_edge_repo_audit
+    safety_gates:
+    - profiling_no_media_mutation
+    - strict_ci_quality_gates_required
+    - property_mutation_fuzz_gate
+    status: planned_roadmap
+    note: roadmap track for long-running fuzz, property, and mutation coverage hardening
+  M-137:
+    name: Branch protection and required-check governance
+    milestone: repo_hardening
+    moscow: Should
+    track: governance
+    crates:
+    - xtask
+    required_tests:
+    - github_actions_hardening_audit
+    - action_pinning_audit
+    - github_workflow_policy_audit
+    safety_gates:
+    - github_workflow_policy_required
+    - strict_ci_quality_gates_required
+    - quality_gate_check_required
+    status: planned_roadmap
+    note: roadmap track for branch protection and required-check governance
+  M-138:
+    name: Hosted Renovate lifecycle and dependency update governance
+    milestone: repo_hardening
+    moscow: Should
+    track: dependency-automation
+    crates:
+    - xtask
+    required_tests:
+    - release_automation_audit
+    - dependency_policy_audit
+    - scorecard_dependency_review_audit
+    safety_gates:
+    - dependency_policy_config
+    - dependency_policy_audit_required
+    - security_automation
+    status: planned_roadmap
+    note: roadmap track for hosted Renovate lifecycle and dependency-update governance
+  M-139:
+    name: cargo-vet and dependency policy enforcement maturation
+    milestone: repo_hardening
+    moscow: Should
+    track: supply-chain
+    crates:
+    - xtask
+    required_tests:
+    - cargo_vet_policy_audit
+    - dependency_policy_audit
+    - provenance_verification_audit
+    safety_gates:
+    - supply_chain_review
+    - dependency_policy_audit_required
+    - production_claim_guard_required
+    status: planned_roadmap
+    note: roadmap track for cargo-vet and dependency-policy enforcement maturation
+  M-140:
+    name: Mature release readiness dashboard and release train
+    milestone: release_readiness
+    moscow: Must
+    track: release-governance
+    crates:
+    - xtask
+    required_tests:
+    - current_env_completion_report
+    - current_env_final_report
+    - production_gap_report
+    safety_gates:
+    - quality_gate_evidence_required
+    - release_preflight_required
+    - current_environment_stop_condition
+    - production_gap_report_required
+    status: planned_roadmap
+    note: roadmap track for the mature release readiness dashboard and release train

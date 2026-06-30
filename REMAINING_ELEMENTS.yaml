@@ -492,6 +492,74 @@ implemented_or_scaffolded: &id001
   title: Real APFS parser semantics correction
   category: core-read
   status: implemented
+- id: M-124
+  title: Production checkpoint ring reconstruction
+  category: core-read
+  status: planned_roadmap
+- id: M-125
+  title: Production object-map B-tree traversal
+  category: core-read
+  status: planned_roadmap
+- id: M-126
+  title: Production filesystem tree decoding and metadata mapping
+  category: core-read
+  status: planned_roadmap
+- id: M-127
+  title: Production file extent resolution and extraction
+  category: core-read
+  status: planned_roadmap
+- id: M-128
+  title: Windows WinFsp read-only mount adapter and packaging
+  category: windows-mvp
+  status: planned_roadmap
+- id: M-129
+  title: Production software-encryption read support
+  category: encryption
+  status: planned_roadmap
+- id: M-130
+  title: Signed release SBOM provenance installer and winget publication
+  category: release
+  status: planned_roadmap
+- id: M-131
+  title: Linux macOS ChromeOS Android read-only adapters
+  category: cross-platform
+  status: planned_roadmap
+- id: M-132
+  title: Image-only write lab crash-injection evidence
+  category: write-lab
+  status: planned_roadmap
+- id: M-133
+  title: Windows write beta governance
+  category: write-beta
+  status: planned_roadmap
+- id: M-134
+  title: APFS repair governance and refusal model
+  category: repair
+  status: planned_roadmap
+- id: M-135
+  title: APFS format governance and refusal model
+  category: format
+  status: planned_roadmap
+- id: M-136
+  title: Long-running fuzz property mutation coverage hardening
+  category: quality
+  status: planned_roadmap
+- id: M-137
+  title: Branch protection and required-check governance
+  category: governance
+  status: planned_roadmap
+- id: M-138
+  title: Hosted Renovate lifecycle and dependency update governance
+  category: dependency-automation
+  status: planned_roadmap
+- id: M-139
+  title: cargo-vet and dependency policy enforcement maturation
+  category: supply-chain
+  status: planned_roadmap
+- id: M-140
+  title: Mature release readiness dashboard and release train
+  category: release-governance
+  status: planned_roadmap
 remaining_windows_readonly_mvp:
 - id: MVP-R005
   track: M-124
@@ -553,8 +621,8 @@ remaining_beyond_mvp:
 current_environment_completable_required: 0
 implemented: *id001
 summary:
-  implemented_or_scaffolded: 123
-  remaining_overall: 9
+  implemented_or_scaffolded: 140
+  remaining_overall: 17
   remaining_windows_readonly_mvp: 5
   remaining_total_including_mvp_blockers: 17
   current_environment_completable_required: 0
