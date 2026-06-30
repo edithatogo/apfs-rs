@@ -1585,6 +1585,12 @@ fn renovate_lifecycle_report() -> JsonValue {
         "track": "M-138",
         "status": "hosted_renovate_ready",
         "renovate_configured": renovate.get("parse_error").is_none(),
+        "renovate_mode": renovate.get("mode").cloned().unwrap_or(JsonValue::Null),
+        "silent_mode_enabled": renovate
+            .get("mode")
+            .and_then(JsonValue::as_str)
+            .map(|mode| mode == "silent")
+            .unwrap_or(false),
         "dependabot_config_present": root.join(".github/dependabot.yml").exists()
             || root.join(".github/dependabot.yaml").exists(),
         "required_managers": required_managers,
@@ -1599,6 +1605,7 @@ fn renovate_lifecycle_report() -> JsonValue {
         ],
         "evidence_notes": [
             "renovate.json exists and is checked by local sanity validation",
+            "renovate.json runs in silent mode so hosted automation does not create or update dependency issues",
             "Dependabot config files are forbidden so Renovate remains the active update path",
             "workflow-security and release gates remain separate from dependency automation",
         ],
@@ -1810,6 +1817,8 @@ mod tests {
         assert_eq!(report["track"], "M-138");
         assert_eq!(report["status"], "hosted_renovate_ready");
         assert_eq!(report["renovate_configured"], true);
+        assert_eq!(report["renovate_mode"], "silent");
+        assert_eq!(report["silent_mode_enabled"], true);
         assert_eq!(report["dependabot_config_present"], false);
         assert!(report["required_managers"]
             .as_array()

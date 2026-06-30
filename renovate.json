@@ -10,6 +10,7 @@
     ":prHourlyLimitNone",
     ":prConcurrentLimit10"
   ],
+  "mode": "silent",
   "enabledManagers": [
     "cargo",
     "github-actions",
