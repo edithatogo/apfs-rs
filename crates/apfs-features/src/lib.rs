@@ -1,5 +1,6 @@
 #![forbid(unsafe_code)]
 
+use apfs_crypto::{crypto_readiness, CryptoReadinessStatus};
 use serde::Serialize;
 
 #[derive(Debug, Clone, Copy, Serialize, PartialEq, Eq)]
@@ -205,7 +206,19 @@ pub fn feature_readiness(feature: &str) -> FeatureReadinessReport {
             schema_version: "0.19.0".to_owned(),
             feature: "software-encryption-read".to_owned(),
             status: FeatureReadinessStatus::BlockedUntilDedicatedSpec,
-            implemented_scope: vec!["explicit refusal/readiness reporting only".to_owned()],
+            implemented_scope: vec![
+                match crypto_readiness().status {
+                    CryptoReadinessStatus::PolicyOnly => {
+                        "policy-only encryption readiness report".to_owned()
+                    }
+                    CryptoReadinessStatus::NotImplemented => {
+                        "encryption readiness remains unimplemented".to_owned()
+                    }
+                },
+                "explicit refusal for password recovery, key extraction, and hardware-bound unlock"
+                    .to_owned(),
+                "host-facing diagnostics never log secret material".to_owned(),
+            ],
             missing_production_steps: vec![
                 "accepted crypto/key-handling spec".to_owned(),
                 "security review".to_owned(),
@@ -216,6 +229,7 @@ pub fn feature_readiness(feature: &str) -> FeatureReadinessReport {
                 "no password recovery".to_owned(),
                 "no key extraction".to_owned(),
                 "no hardware-bound encryption bypass".to_owned(),
+                "no secret material in logs".to_owned(),
             ],
             next_track: "future-software-encryption-read".to_owned(),
         },
@@ -299,5 +313,23 @@ mod tests {
             report.status,
             FeatureReadinessStatus::UnsupportedUntilRealFixture
         );
+    }
+
+    #[test]
+    fn encryption_feature_stays_policy_only_and_redacts_secrets() {
+        let report = feature_readiness("encryption");
+
+        assert_eq!(
+            report.status,
+            FeatureReadinessStatus::BlockedUntilDedicatedSpec
+        );
+        assert!(report
+            .implemented_scope
+            .iter()
+            .any(|line| line.contains("policy-only encryption readiness report")));
+        assert!(report
+            .safety_constraints
+            .iter()
+            .any(|line| line.contains("no secret material in logs")));
     }
 }

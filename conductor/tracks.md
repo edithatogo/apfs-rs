@@ -166,7 +166,7 @@ Track count: `162`
 - `0126-production-filesystem-tree-decoding` — M-126 — Production filesystem tree decoding and metadata mapping
 - `0127-production-file-extent-extraction` — M-127 — Production file extent resolution and extraction
 - `0128-winfsp-readonly-mount-adapter` — M-128 — Windows WinFsp read-only mount adapter and packaging
-- `0129-production-software-encryption-read` — M-129 — Production software-encryption read support
+- `0129-production-software-encryption-read` — M-129 — Production software-encryption read support (implemented as policy-only readiness scaffold)
 - `0130-signed-release-publication` — M-130 — Signed release SBOM provenance installer and winget publication
 - `0131-cross-platform-readonly-adapters` — M-131 — Linux macOS ChromeOS Android read-only adapters
 - `0132-image-only-write-lab-crash-evidence` — M-132 — Image-only write lab crash-injection evidence

@@ -1,10 +1,10 @@
 # Spec M-129: Production software-encryption read support
 
-Status: `planned_roadmap`.
+Status: `implemented_scaffold`.
 
 ## Objective
 
-Support legitimate user-supplied unlock material for read-only encrypted APFS images.
+Provide the smallest safe readiness scaffold for legitimate user-supplied unlock material on read-only encrypted APFS images.
 
 ## Required safety gates
 

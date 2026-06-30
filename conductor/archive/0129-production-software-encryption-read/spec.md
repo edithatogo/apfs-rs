@@ -1,7 +1,7 @@
 # Production software-encryption read support
 
-Capability: `M-129`  
-Status: `planned_roadmap`  
+Capability: `M-129`
+Status: `implemented_scaffold`
 Category: `encryption`
 
 ## Goal
@@ -10,7 +10,7 @@ Support legitimate user-supplied unlock material for read-only encrypted APFS im
 
 ## Scope
 
-Implement production software-encryption read support only after accepted dependency and safety review.
+Implement the smallest safe software-encryption read readiness scaffold after accepted dependency and safety review.
 
 ## Safety
 

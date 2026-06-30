@@ -1999,9 +1999,9 @@ capabilities:
     - bounds_checked_reads
     - typed_error_no_panic
     - no_access_bypass
-    status: planned_roadmap
-    note: roadmap track for read-only encryption handling without password recovery
-      or bypass behavior
+    status: implemented_scaffold
+    note: policy-only encryption readiness scaffold for read-only handling without
+      password recovery or bypass behavior
   M-130:
     name: Signed release SBOM provenance installer and winget publication
     milestone: release_readiness

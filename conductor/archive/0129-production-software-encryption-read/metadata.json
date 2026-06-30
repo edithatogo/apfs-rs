@@ -1,13 +1,13 @@
 {
   "track_id": "0129-production-software-encryption-read",
   "capability": "M-129",
-  "status": "planned_roadmap",
+  "status": "implemented_scaffold",
   "category": "encryption",
   "package": "roadmap",
   "purpose": "Implement production software-encryption read support only after accepted dependency and safety review.",
   "review_status": "reviewed",
-  "archive_status": "open",
-  "archived": false,
+  "archive_status": "archived",
+  "archived": true,
   "archive_version": "0.29.0",
   "archive_evidence": "CONDUCTOR_TRACK_CLOSEOUT_AUDIT.md",
   "codev_review": "codev/reviews/129-production-software-encryption-read-review.md"
