@@ -1,14 +1,10 @@
 # APFS-RS Production Gap Report
 
-Implemented/scaffolded: `93`
-Windows read-only MVP blockers: `9`
-Broader production items: `8`
+Implemented/scaffolded: `140`
+Windows read-only MVP blockers: `5`
+Broader production items: `17`
 
 ## Windows read-only MVP blockers
-- **MVP-R001**: Compile, lint, test, and fix the current workspace on Rust-enabled machines — dependency: Rust-enabled machine
-- **MVP-R002**: Generate first real macOS APFS image and manifest — dependency: macOS
-- **MVP-R003**: Run real-fixture feedback loop and convert mismatches into tasks — dependency: M-012/M-013 and real fixture
-- **MVP-R004**: Correct APFS parser offsets/semantics against real APFS data — dependency: real fixture feedback
 - **MVP-R005**: Full checkpoint ring reconstruction — dependency: corrected parser and real fixture
 - **MVP-R006**: Production APFS object-map B-tree traversal — dependency: corrected checkpoint and B-tree parsing
 - **MVP-R007**: Production APFS filesystem tree record decoding and metadata/stat mapping — dependency: production OMAP traversal
@@ -24,3 +20,7 @@ Broader production items: `8`
 - **POST-R017**: Repair
 - **POST-R018**: Format
 - **POST-R019**: Long-running fuzz/property/mutation/coverage hardening on CI
+- **ADMIN-R001**: Branch protection and required-check governance
+- **ADMIN-R002**: Hosted Renovate lifecycle and dependency update governance
+- **ADMIN-R003**: cargo-vet and dependency policy enforcement maturation
+- **ADMIN-R004**: Mature release readiness dashboard and release train

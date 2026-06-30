@@ -3,6 +3,7 @@
 from __future__ import annotations
 import argparse
 import hashlib
+import json
 import subprocess
 import sys
 import runpy
@@ -98,6 +99,24 @@ def regenerate_sha256sums() -> None:
     (ROOT / "SHA256SUMS.txt").write_text("\n".join(lines) + "\n", encoding="utf-8")
     print("release-preflight: regenerated SHA256SUMS.txt")
 
+
+def enforce_release_dashboard() -> None:
+    dashboard_path = ROOT / "MATURE_RELEASE_READINESS_DASHBOARD.json"
+    try:
+        dashboard = json.loads(dashboard_path.read_text(encoding="utf-8"))
+    except FileNotFoundError:
+        fail("missing MATURE_RELEASE_READINESS_DASHBOARD.json")
+    except json.JSONDecodeError as exc:
+        fail(f"invalid MATURE_RELEASE_READINESS_DASHBOARD.json: {exc}")
+
+    go_no_go = str(dashboard.get("go_no_go") or "").strip().lower()
+    production_gap = dashboard.get("production_gap") or {}
+    production_state = str(production_gap.get("state") or "").strip().lower()
+
+    if go_no_go != "go" or production_state != "executed":
+        evidence = str(production_gap.get("evidence") or "unknown")
+        fail(f"dashboard is not release-ready (go_no_go={go_no_go or 'missing'}, production_gap={production_state or 'missing'}, evidence={evidence})")
+
 def main() -> int:
     global ROOT
     parser = argparse.ArgumentParser()
@@ -111,6 +130,7 @@ def main() -> int:
             fail(f"missing or empty required file {rel}")
     for command in CHECKS:
         run(command)
+    enforce_release_dashboard()
     if args.write_manifest:
         regenerate_sha256sums()
     print("release-preflight: passed")

@@ -87,6 +87,27 @@ def planned_roadmap_tracks() -> list[dict[str, str]]:
     return rows
 
 
+def production_gap_state() -> tuple[str, str, list[dict[str, object]]]:
+    report_path = ROOT / "PRODUCTION_GAP_REPORT.json"
+    if not report_path.exists():
+        return "configured", "PRODUCTION_GAP_REPORT.json", []
+
+    try:
+        report = json.loads(report_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return "failed", "PRODUCTION_GAP_REPORT.json is not valid JSON", []
+
+    summary = report.get("summary", {})
+    remaining_total = int(summary.get("remaining_total_including_mvp_blockers") or 0)
+    windows_mvp = report.get("windows_readonly_mvp_remaining", []) or []
+
+    if remaining_total > 0:
+        evidence = f"remaining_total={remaining_total}, windows_mvp={len(windows_mvp)}"
+        return "blocked", evidence, list(windows_mvp)
+
+    return "executed", "remaining_total=0", list(windows_mvp)
+
+
 def build_entries() -> list[dict[str, object]]:
     return [
         {
@@ -363,6 +384,7 @@ def main() -> int:
         state = entry["state"]
         counts[state] = counts.get(state, 0) + 1
     roadmap_tracks = planned_roadmap_tracks()
+    production_gap_status, production_gap_evidence, production_gap_blockers = production_gap_state()
     go_no_go = (
         "go"
         if counts["failed"] == 0
@@ -370,6 +392,7 @@ def main() -> int:
         and counts["manual"] == 0
         and counts["skipped"] == 0
         and not roadmap_tracks
+        and production_gap_status == "executed"
         else "no-go"
     )
     report = {
@@ -382,6 +405,11 @@ def main() -> int:
         "total_entry_count": len(entries),
         "entries": entries,
         "open_roadmap_tracks": roadmap_tracks,
+        "production_gap": {
+            "state": production_gap_status,
+            "evidence": production_gap_evidence,
+            "blockers": production_gap_blockers,
+        },
         "release_train": [
             {
                 "name": "Refresh evidence",
@@ -396,10 +424,10 @@ def main() -> int:
                 "notes": "preflight should remain the downstream gate after the dashboard refresh.",
             },
             {
-                "name": "Clear remaining roadmap tracks",
-                "state": "blocked" if roadmap_tracks else "executed",
-                "evidence": ", ".join(track["track_id"] for track in roadmap_tracks) if roadmap_tracks else "none",
-                "notes": "release is still gated by the remaining roadmap work.",
+                "name": "Clear remaining production gaps",
+                "state": "blocked" if production_gap_status != "executed" else "executed",
+                "evidence": production_gap_evidence,
+                "notes": "release is still gated by the remaining production work, even when roadmap tracks are archived.",
             },
         ],
     }
@@ -444,6 +472,20 @@ def main() -> int:
         lines.append(
             f"- **{step['name']}**: `{step['state']}` - {step['evidence']} ({step['notes']})"
         )
+
+    lines += [
+        "",
+        "## Production gap",
+        "",
+        f"- State: `{production_gap_status}`",
+        f"- Evidence: `{production_gap_evidence}`",
+        "",
+    ]
+    if production_gap_blockers:
+        for row in production_gap_blockers:
+            lines.append(f"- `{row.get('id', 'unknown')}`: {row.get('title', '')}")
+    else:
+        lines.append("- None")
 
     lines += [
         "",

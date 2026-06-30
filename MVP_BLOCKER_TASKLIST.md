@@ -1,37 +1,6 @@
 # MVP Blocker Tasklist
 
-Remaining MVP blockers: 9
-
-## MVP-R001: Compile, lint, test, and fix the current workspace on Rust-enabled machines
-
-Dependency: Rust-enabled machine
-
-- Run cargo fmt/test/clippy
-- Use cargo_error_to_tracks.py on failures
-- Fix one compiler class at a time
-
-## MVP-R002: Generate first real macOS APFS image and manifest
-
-Dependency: macOS
-
-- Run tools/macos/create_real_apfs_fixture.sh on macOS
-- Validate manifest with cargo xtask fixture-manifest-check
-
-## MVP-R003: Run real-fixture feedback loop and convert mismatches into tasks
-
-Dependency: M-012/M-013 and real fixture
-
-- Run real-fixture-feedback
-- Run promote-feedback
-- Review generated Codev/Conductor tasks
-
-## MVP-R004: Correct APFS parser offsets/semantics against real APFS data
-
-Dependency: real fixture feedback
-
-- Compare inspect JSON to manifest
-- Correct offsets/semantics
-- Add regression fixture
+Remaining MVP blockers: 5
 
 ## MVP-R005: Full checkpoint ring reconstruction
 

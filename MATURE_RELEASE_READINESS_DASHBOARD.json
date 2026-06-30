@@ -2,7 +2,7 @@
   "schema_version": "0.29.0",
   "track": "M-140",
   "status": "executed_scaffold",
-  "go_no_go": "go",
+  "go_no_go": "no-go",
   "required_summary": {
     "executed": 18,
     "configured": 0,
@@ -183,6 +183,42 @@
     }
   ],
   "open_roadmap_tracks": [],
+  "production_gap": {
+    "state": "blocked",
+    "evidence": "remaining_total=17, windows_mvp=5",
+    "blockers": [
+      {
+        "id": "MVP-R005",
+        "track": "M-124",
+        "title": "Full checkpoint ring reconstruction",
+        "dependency": "corrected parser and real fixture"
+      },
+      {
+        "id": "MVP-R006",
+        "track": "M-125",
+        "title": "Production APFS object-map B-tree traversal",
+        "dependency": "corrected checkpoint and B-tree parsing"
+      },
+      {
+        "id": "MVP-R007",
+        "track": "M-126",
+        "title": "Production APFS filesystem tree record decoding and metadata/stat mapping",
+        "dependency": "production OMAP traversal"
+      },
+      {
+        "id": "MVP-R008",
+        "track": "M-127",
+        "title": "Production file extent resolution and extraction",
+        "dependency": "production filesystem records"
+      },
+      {
+        "id": "MVP-R009",
+        "track": "M-128",
+        "title": "Windows WinFsp read-only mount adapter, smoke tests, and packaging baseline",
+        "dependency": "stable read API"
+      }
+    ]
+  },
   "release_train": [
     {
       "name": "Refresh evidence",
@@ -197,10 +233,10 @@
       "notes": "preflight should remain the downstream gate after the dashboard refresh."
     },
     {
-      "name": "Clear remaining roadmap tracks",
-      "state": "executed",
-      "evidence": "none",
-      "notes": "release is still gated by the remaining roadmap work."
+      "name": "Clear remaining production gaps",
+      "state": "blocked",
+      "evidence": "remaining_total=17, windows_mvp=5",
+      "notes": "release is still gated by the remaining production work, even when roadmap tracks are archived."
     }
   ]
 }

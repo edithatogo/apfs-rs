@@ -1,53 +1,11 @@
 {
   "schema_version": "0.27.0",
-  "generated_utc": "2026-06-29T16:49:32.385198+00:00",
-  "remaining_mvp_blockers": 9,
+  "generated_utc": "2026-06-30T14:39:24.620635+00:00",
+  "remaining_mvp_blockers": 5,
   "blockers": [
     {
-      "id": "MVP-R001",
-      "title": "Compile, lint, test, and fix the current workspace on Rust-enabled machines",
-      "dependency": "Rust-enabled machine",
-      "next_actions": [
-        "Run cargo fmt/test/clippy",
-        "Use cargo_error_to_tracks.py on failures",
-        "Fix one compiler class at a time"
-      ],
-      "current_environment_completable": false
-    },
-    {
-      "id": "MVP-R002",
-      "title": "Generate first real macOS APFS image and manifest",
-      "dependency": "macOS",
-      "next_actions": [
-        "Run tools/macos/create_real_apfs_fixture.sh on macOS",
-        "Validate manifest with cargo xtask fixture-manifest-check"
-      ],
-      "current_environment_completable": false
-    },
-    {
-      "id": "MVP-R003",
-      "title": "Run real-fixture feedback loop and convert mismatches into tasks",
-      "dependency": "M-012/M-013 and real fixture",
-      "next_actions": [
-        "Run real-fixture-feedback",
-        "Run promote-feedback",
-        "Review generated Codev/Conductor tasks"
-      ],
-      "current_environment_completable": false
-    },
-    {
-      "id": "MVP-R004",
-      "title": "Correct APFS parser offsets/semantics against real APFS data",
-      "dependency": "real fixture feedback",
-      "next_actions": [
-        "Compare inspect JSON to manifest",
-        "Correct offsets/semantics",
-        "Add regression fixture"
-      ],
-      "current_environment_completable": false
-    },
-    {
       "id": "MVP-R005",
+      "track": "M-124",
       "title": "Full checkpoint ring reconstruction",
       "dependency": "corrected parser and real fixture",
       "next_actions": [
@@ -59,6 +17,7 @@
     },
     {
       "id": "MVP-R006",
+      "track": "M-125",
       "title": "Production APFS object-map B-tree traversal",
       "dependency": "corrected checkpoint and B-tree parsing",
       "next_actions": [
@@ -69,6 +28,7 @@
     },
     {
       "id": "MVP-R007",
+      "track": "M-126",
       "title": "Production APFS filesystem tree record decoding and metadata/stat mapping",
       "dependency": "production OMAP traversal",
       "next_actions": [
@@ -80,6 +40,7 @@
     },
     {
       "id": "MVP-R008",
+      "track": "M-127",
       "title": "Production file extent resolution and extraction",
       "dependency": "production filesystem records",
       "next_actions": [
@@ -91,6 +52,7 @@
     },
     {
       "id": "MVP-R009",
+      "track": "M-128",
       "title": "Windows WinFsp read-only mount adapter, smoke tests, and packaging baseline",
       "dependency": "stable read API",
       "next_actions": [
