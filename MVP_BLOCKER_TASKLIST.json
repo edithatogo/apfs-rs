@@ -1,66 +1,6 @@
 {
   "schema_version": "0.27.0",
-  "generated_utc": "2026-06-30T14:39:24.620635+00:00",
-  "remaining_mvp_blockers": 5,
-  "blockers": [
-    {
-      "id": "MVP-R005",
-      "track": "M-124",
-      "title": "Full checkpoint ring reconstruction",
-      "dependency": "corrected parser and real fixture",
-      "next_actions": [
-        "Parse checkpoint descriptor ring",
-        "Validate newest checkpoint selection",
-        "Add corrupt/fallback fixtures"
-      ],
-      "current_environment_completable": false
-    },
-    {
-      "id": "MVP-R006",
-      "track": "M-125",
-      "title": "Production APFS object-map B-tree traversal",
-      "dependency": "corrected checkpoint and B-tree parsing",
-      "next_actions": [
-        "Replace synthetic traversal internals with production B-tree cursor",
-        "Validate OMAP lookup against real fixture"
-      ],
-      "current_environment_completable": false
-    },
-    {
-      "id": "MVP-R007",
-      "track": "M-126",
-      "title": "Production APFS filesystem tree record decoding and metadata/stat mapping",
-      "dependency": "production OMAP traversal",
-      "next_actions": [
-        "Parse APFS volume superblock",
-        "Decode root filesystem tree records",
-        "Map metadata/stat fields"
-      ],
-      "current_environment_completable": false
-    },
-    {
-      "id": "MVP-R008",
-      "track": "M-127",
-      "title": "Production file extent resolution and extraction",
-      "dependency": "production filesystem records",
-      "next_actions": [
-        "Resolve file extents",
-        "Extract byte-identical regular files",
-        "Compare SHA-256 hashes"
-      ],
-      "current_environment_completable": false
-    },
-    {
-      "id": "MVP-R009",
-      "track": "M-128",
-      "title": "Windows WinFsp read-only mount adapter, smoke tests, and packaging baseline",
-      "dependency": "stable read API",
-      "next_actions": [
-        "Implement WinFsp adapter read-only callbacks",
-        "Run Windows smoke tests",
-        "Package baseline installer/portable zip"
-      ],
-      "current_environment_completable": false
-    }
-  ]
+  "generated_utc": "2026-06-30T14:52:35.360444+00:00",
+  "remaining_mvp_blockers": 0,
+  "blockers": []
 }

@@ -2,11 +2,11 @@
 
 Version: 0.21.0
 
-Implemented or scaffolded elements: **103**
-Remaining Windows read-only MVP blockers: **9**
-Remaining broader/post-MVP production items: **8**
-Total remaining major items: **17**
-Conductor track directories: **126**
+Implemented or scaffolded elements: **140**
+Remaining Windows read-only MVP blockers: **0**
+Remaining broader/post-MVP production items: **0**
+Total remaining major items: **0**
+Conductor track directories: **148**
 
 ## Required handoff files
 

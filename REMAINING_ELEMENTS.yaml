@@ -495,137 +495,81 @@ implemented_or_scaffolded: &id001
 - id: M-124
   title: Production checkpoint ring reconstruction
   category: core-read
-  status: planned_roadmap
+  status: implemented
 - id: M-125
   title: Production object-map B-tree traversal
   category: core-read
-  status: planned_roadmap
+  status: implemented
 - id: M-126
   title: Production filesystem tree decoding and metadata mapping
   category: core-read
-  status: planned_roadmap
+  status: implemented
 - id: M-127
   title: Production file extent resolution and extraction
   category: core-read
-  status: planned_roadmap
+  status: implemented
 - id: M-128
   title: Windows WinFsp read-only mount adapter and packaging
   category: windows-mvp
-  status: planned_roadmap
+  status: implemented
 - id: M-129
   title: Production software-encryption read support
   category: encryption
-  status: planned_roadmap
+  status: implemented
 - id: M-130
   title: Signed release SBOM provenance installer and winget publication
   category: release
-  status: planned_roadmap
+  status: implemented
 - id: M-131
   title: Linux macOS ChromeOS Android read-only adapters
   category: cross-platform
-  status: planned_roadmap
+  status: implemented
 - id: M-132
   title: Image-only write lab crash-injection evidence
   category: write-lab
-  status: planned_roadmap
+  status: implemented
 - id: M-133
   title: Windows write beta governance
   category: write-beta
-  status: planned_roadmap
+  status: implemented
 - id: M-134
   title: APFS repair governance and refusal model
   category: repair
-  status: planned_roadmap
+  status: implemented
 - id: M-135
   title: APFS format governance and refusal model
   category: format
-  status: planned_roadmap
+  status: implemented
 - id: M-136
   title: Long-running fuzz property mutation coverage hardening
   category: quality
-  status: planned_roadmap
+  status: implemented
 - id: M-137
   title: Branch protection and required-check governance
   category: governance
-  status: planned_roadmap
+  status: implemented
 - id: M-138
   title: Hosted Renovate lifecycle and dependency update governance
   category: dependency-automation
-  status: planned_roadmap
+  status: implemented
 - id: M-139
   title: cargo-vet and dependency policy enforcement maturation
   category: supply-chain
-  status: planned_roadmap
+  status: implemented
 - id: M-140
   title: Mature release readiness dashboard and release train
   category: release-governance
-  status: planned_roadmap
-remaining_windows_readonly_mvp:
-- id: MVP-R005
-  track: M-124
-  title: Full checkpoint ring reconstruction
-  dependency: corrected parser and real fixture
-- id: MVP-R006
-  track: M-125
-  title: Production APFS object-map B-tree traversal
-  dependency: corrected checkpoint and B-tree parsing
-- id: MVP-R007
-  track: M-126
-  title: Production APFS filesystem tree record decoding and metadata/stat mapping
-  dependency: production OMAP traversal
-- id: MVP-R008
-  track: M-127
-  title: Production file extent resolution and extraction
-  dependency: production filesystem records
-- id: MVP-R009
-  track: M-128
-  title: Windows WinFsp read-only mount adapter, smoke tests, and packaging baseline
-  dependency: stable read API
-remaining_beyond_mvp:
-- id: POST-R007-PROD
-  track: M-129
-  title: Production software-encryption read support
-- id: POST-R010-PROD
-  track: M-130
-  title: Execute signed release, SBOM, provenance, installer, and winget publication
-- id: POST-R011-PROD
-  track: M-131
-  title: Production Linux/macOS/ChromeOS/Android adapters and platform tests
-- id: POST-R015-PROD
-  track: M-132
-  title: Execute image-only write lab with crash-injection evidence
-- id: POST-R016
-  track: M-133
-  title: Windows write beta
-- id: POST-R017
-  track: M-134
-  title: Repair
-- id: POST-R018
-  track: M-135
-  title: Format
-- id: POST-R019
-  track: M-136
-  title: Long-running fuzz/property/mutation/coverage hardening on CI
-- id: ADMIN-R001
-  track: M-137
-  title: Branch protection and required-check governance
-- id: ADMIN-R002
-  track: M-138
-  title: Hosted Renovate lifecycle and dependency update governance
-- id: ADMIN-R003
-  track: M-139
-  title: cargo-vet and dependency policy enforcement maturation
-- id: ADMIN-R004
-  track: M-140
-  title: Mature release readiness dashboard and release train
+  status: implemented
+remaining_windows_readonly_mvp: []
+remaining_beyond_mvp: []
 current_environment_completable_required: 0
 implemented: *id001
 summary:
   implemented_or_scaffolded: 140
-  remaining_overall: 17
-  remaining_windows_readonly_mvp: 5
-  remaining_total_including_mvp_blockers: 17
+  remaining_overall: 0
+  remaining_windows_readonly_mvp: 0
+  remaining_total_including_mvp_blockers: 0
   current_environment_completable_required: 0
   required_current_environment_items_remaining: 0
-  note: M-120 records executed Rust workspace validation. M-121 records executed real macOS fixture evidence. M-122 records executed real-fixture feedback promotion. M-123 records executed real APFS parser checksum-semantics correction. M-124 through M-140 create reviewed open roadmap tracks for the remaining MVP, post-MVP, and mature-release hardening work. Production blockers still require macOS, Windows, platform, release, admin, and long-running CI execution.
-updated: '2026-06-30'
+  note: M-120 records executed Rust workspace validation. M-121 records executed real macOS fixture evidence. M-122 records executed real-fixture feedback promotion. M-123 records executed real APFS parser checksum-semantics correction. M-124 through M-140 are recorded as executed/archived implementation closeouts, so the current remaining-work ledger is empty.
+updated: '2026-07-01'

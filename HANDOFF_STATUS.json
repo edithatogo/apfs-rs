@@ -1,10 +1,10 @@
 {
   "schema_version": "0.21.0",
-  "implemented_or_scaffolded": 103,
-  "remaining_windows_readonly_mvp": 9,
-  "remaining_beyond_mvp": 8,
-  "remaining_total": 17,
-  "conductor_track_count": 126,
+  "implemented_or_scaffolded": 140,
+  "remaining_windows_readonly_mvp": 0,
+  "remaining_beyond_mvp": 0,
+  "remaining_total": 0,
+  "conductor_track_count": 148,
   "required_files": {
     "rust-toolchain.toml": true,
     ".cargo/config.toml": true,
