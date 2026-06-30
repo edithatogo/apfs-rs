@@ -1,0 +1,1 @@
+M-132 closeout: implemented a disposable-image crash-evidence scaffold via apfs-write-lab and xtask, validated with crate/unit/workspace checks, then archived the Conductor track with synchronized Codev and ledger updates. No production APFS write behavior or physical-device writes were claimed.
