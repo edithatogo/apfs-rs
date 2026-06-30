@@ -1,6 +1,6 @@
 # Spec M-128: Windows WinFsp read-only mount adapter and packaging
 
-Status: `planned_roadmap`.
+Status: `implemented`.
 
 ## Objective
 

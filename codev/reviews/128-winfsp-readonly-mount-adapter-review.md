@@ -2,8 +2,8 @@
 
 ## Status
 
-`planned_roadmap`.
+`implemented`.
 
 ## Notes
 
-This roadmap track exists because the mature, hardened APFS-RS release is not fully implemented. It is reviewed as a planning/evidence track only; no production APFS behavior is claimed until its plan is executed and validated.
+This roadmap track now has a package-shaped read-only WinFsp readiness report backed by regression coverage. The CLI exposes the mount-plan and packaging summary without requiring a live WinFsp runtime, and the adapter continues to refuse all write-like operations.

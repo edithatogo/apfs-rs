@@ -127,3 +127,25 @@ fn extract_rejects_path_traversal_names() {
         .failure()
         .stderr(contains("unsafe synthetic extraction name"));
 }
+
+#[test]
+fn mount_plan_json_includes_packaging_report() {
+    let manifest_dir = std::path::PathBuf::from(env!("CARGO_MANIFEST_DIR"));
+    let fixture_path = manifest_dir.join("../../fixtures/synthetic-file-extract.img");
+    let mut cmd = Command::cargo_bin("apfs").expect("apfs binary");
+    cmd.arg("mount-plan")
+        .arg(fixture_path)
+        .arg("--mountpoint")
+        .arg("X:")
+        .arg("--json");
+    let output = cmd.assert().success().get_output().stdout.clone();
+    let json: serde_json::Value = serde_json::from_slice(&output).expect("mount plan json");
+    assert_eq!(json["plan"]["status"], "ready_read_only");
+    assert_eq!(json["plan"]["read_only"], true);
+    assert_eq!(json["packaging"]["package_name"], "apfs-win");
+    assert!(json["packaging"]["smoke_checks"]
+        .as_array()
+        .expect("smoke checks")
+        .iter()
+        .any(|value| value.as_str().is_some_and(|s| s.contains("mount-plan"))));
+}

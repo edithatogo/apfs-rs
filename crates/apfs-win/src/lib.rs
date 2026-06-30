@@ -108,7 +108,10 @@ pub fn is_simple_drive_mount_point(mount_point: &str) -> bool {
 
 #[cfg(test)]
 mod tests {
-    use super::{is_simple_drive_mount_point, plan_read_only_mount, WindowsMountPlanStatus};
+    use super::{
+        is_simple_drive_mount_point, plan_read_only_mount, windows_mount_packaging_report,
+        WindowsMountPlanStatus,
+    };
 
     #[test]
     fn validates_simple_drive_letters() {
@@ -125,6 +128,22 @@ mod tests {
         assert_eq!(plan.status, WindowsMountPlanStatus::ReadyReadOnly);
         assert!(plan.read_only);
         assert!(plan.refused_operations.iter().any(|op| op == "write"));
+    }
+
+    #[test]
+    fn packaging_report_combines_mount_and_callback_scaffolds() {
+        let report = windows_mount_packaging_report("fixture.img", "X:");
+        assert_eq!(report.package_name, "apfs-win");
+        assert!(report.mount_plan.read_only);
+        assert!(report
+            .callback_policy
+            .callbacks
+            .iter()
+            .any(|callback| callback.callback == "Write" && callback.decision == "refuse"));
+        assert!(report
+            .smoke_checks
+            .iter()
+            .any(|check| check.contains("mount-plan")));
     }
 }
 
@@ -188,5 +207,40 @@ pub fn winfsp_readonly_callback_matrix() -> ReadOnlyWinFspCallbackPolicy {
             })
             .collect(),
         safety_note: "Contract scaffold only: live WinFsp mounting is not implemented yet; all write-like callbacks must be refused.".to_owned(),
+    }
+}
+
+#[derive(Debug, Clone, Serialize, PartialEq, Eq)]
+pub struct WindowsMountPackagingReport {
+    pub schema_version: String,
+    pub package_name: String,
+    pub package_version: String,
+    pub mount_plan: WindowsMountPlan,
+    pub callback_policy: ReadOnlyWinFspCallbackPolicy,
+    pub smoke_checks: Vec<String>,
+    pub packaging_notes: Vec<String>,
+}
+
+#[must_use]
+pub fn windows_mount_packaging_report(
+    source: &str,
+    mount_point: &str,
+) -> WindowsMountPackagingReport {
+    WindowsMountPackagingReport {
+        schema_version: "0.18.0".to_owned(),
+        package_name: "apfs-win".to_owned(),
+        package_version: env!("CARGO_PKG_VERSION").to_owned(),
+        mount_plan: plan_read_only_mount(source, mount_point),
+        callback_policy: winfsp_readonly_callback_matrix(),
+        smoke_checks: vec![
+            "apfs mount-plan --json --source <image> --mountpoint X:".to_owned(),
+            "apfs winfsp-callback-matrix --json".to_owned(),
+            "all write-like WinFsp callbacks are refused".to_owned(),
+        ],
+        packaging_notes: vec![
+            "Adapter remains user-mode and read-only.".to_owned(),
+            "No kernel driver, physical-device writes, or live mount lifecycle are implemented yet."
+                .to_owned(),
+        ],
     }
 }

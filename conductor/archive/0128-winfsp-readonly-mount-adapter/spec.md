@@ -1,7 +1,7 @@
 # Windows WinFsp read-only mount adapter and packaging
 
 Capability: `M-128`  
-Status: `planned_roadmap`  
+Status: `implemented`
 Category: `windows-mvp`
 
 ## Goal

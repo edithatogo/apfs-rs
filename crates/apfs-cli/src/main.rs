@@ -16,7 +16,9 @@ use apfs_core::{
     MappedObjectReadStatus, ObjectLookupStatus, ObjectMapResolverStatus, VolumeReportStatus,
 };
 use apfs_features::{analyze_unicode_case_policy, feature_readiness, metadata_feature_report};
-use apfs_win::{plan_read_only_mount, winfsp_readonly_callback_matrix};
+use apfs_win::{
+    plan_read_only_mount, windows_mount_packaging_report, winfsp_readonly_callback_matrix,
+};
 use clap::{Parser, Subcommand};
 
 static LOG_LEVEL: OnceLock<LogLevel> = OnceLock::new();
@@ -922,8 +924,14 @@ fn winfsp_callback_matrix_command(json: bool) -> anyhow::Result<()> {
 
 fn mount_plan_command(source: PathBuf, mountpoint: String, json: bool) -> anyhow::Result<()> {
     let plan = plan_read_only_mount(&source.display().to_string(), &mountpoint);
+    let packaging = windows_mount_packaging_report(&source.display().to_string(), &mountpoint);
     if json {
-        println!("{}", serde_json::to_string_pretty(&plan)?);
+        let envelope = serde_json::json!({
+            "schema_version": "0.18.0",
+            "plan": plan,
+            "packaging": packaging,
+        });
+        println!("{}", serde_json::to_string_pretty(&envelope)?);
         return Ok(());
     }
 
@@ -936,6 +944,7 @@ fn mount_plan_command(source: PathBuf, mountpoint: String, json: bool) -> anyhow
     println!("WinFsp required: {}", plan.winfsp_required);
     println!("allowed operations: {}", plan.allowed_operations.join(", "));
     println!("refused operations: {}", plan.refused_operations.join(", "));
+    println!("smoke checks: {}", packaging.smoke_checks.join(" | "));
     for warning in &plan.warnings {
         eprintln!("warning: {warning}");
     }
