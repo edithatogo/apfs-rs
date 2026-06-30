@@ -1,0 +1,1 @@
+M-127 closeout: fixture-backed file extent extraction implemented, host-only extraction regressions added, synthetic extent fixture regenerated, and track archived. Validation passed: cargo test --workspace; cargo xtask registry-check; cargo xtask conductor-check; cargo xtask safety-check; python3 tools/context_integrity_check.py; cargo fmt --all -- --check; git diff --check.
