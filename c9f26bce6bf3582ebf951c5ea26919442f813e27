@@ -1,0 +1,1 @@
+M-129 closeout: implemented the policy-only software-encryption readiness scaffold, wired apfs-crypto into apfs-features, added unit coverage, and archived the track as implemented_scaffold after passing workspace validation and conductor checks.
