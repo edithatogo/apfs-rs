@@ -21,6 +21,7 @@ REQ_FILES=[
     '.github/workflows/supply-chain.yml',
     '.github/workflows/release.yml',
     '.github/workflows/release-automation.yml',
+    '.github/workflows/release-readiness.yml',
     '.github/workflows/provenance-verify.yml',
     '.github/workflows/workflow-security.yml',
     '.github/workflows/docs-site.yml',
@@ -50,6 +51,7 @@ REQ_TERMS={
     '.github/workflows/local-handoff.yml':['cargoless','precompile_static_check','handoff_status','repo_manifest'],
     'QUALITY_GATE_EVIDENCE.md':['>=90% coverage','mutation','fuzz smoke','Astro 7 docs'],
     'QUALITY_GATE_REPORT.md':['coverage_fail_under_90_configured','cargo_nextest_configured','cargo_mutants_configured'],
+    'MATURE_RELEASE_READINESS_DASHBOARD.md':['release-preflight','mature-release-readiness-dashboard','schedule','workflow_dispatch'],
 }
 def main():
     issues=[]

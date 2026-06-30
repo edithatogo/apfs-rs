@@ -1,7 +1,7 @@
 # Mature release readiness dashboard and release train
 
 Capability: `M-140`  
-Status: `planned_roadmap`  
+Status: `implemented_scaffold`  
 Category: `release-governance`
 
 ## Goal

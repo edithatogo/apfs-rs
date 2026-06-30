@@ -4,7 +4,7 @@ from __future__ import annotations
 import runpy, sys, json
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
-TOOLS=['github_actions_hardening_audit.py','action_pinning_audit.py','cargo_vet_policy_audit.py','provenance_verification_audit.py','release_automation_audit.py','scorecard_dependency_review_audit.py','astro7_docs_hardening_audit.py','benchmark_regression_audit.py']
+TOOLS=['github_actions_hardening_audit.py','action_pinning_audit.py','cargo_vet_policy_audit.py','provenance_verification_audit.py','release_automation_audit.py','mature_release_readiness_dashboard.py','scorecard_dependency_review_audit.py','astro7_docs_hardening_audit.py','benchmark_regression_audit.py']
 results=[]
 for tool in TOOLS:
     old=sys.argv[:]

@@ -1,0 +1,25 @@
+name: release-readiness
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 8 * * 1'
+
+permissions:
+  contents: read
+
+jobs:
+  dashboard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+      - run: rustup toolchain install stable --profile minimal
+      - run: rustup default stable
+      - run: cargo run -p xtask -- mature-release-readiness-dashboard
+      - run: cargo run -p xtask -- release-preflight
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: mature-release-readiness-dashboard
+          path: |
+            MATURE_RELEASE_READINESS_DASHBOARD.md
+            MATURE_RELEASE_READINESS_DASHBOARD.json

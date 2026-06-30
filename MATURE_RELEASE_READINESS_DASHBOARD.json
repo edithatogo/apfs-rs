@@ -1,0 +1,206 @@
+{
+  "schema_version": "0.29.0",
+  "track": "M-140",
+  "status": "executed_scaffold",
+  "go_no_go": "go",
+  "required_summary": {
+    "executed": 18,
+    "configured": 0,
+    "failed": 0,
+    "manual": 0,
+    "skipped": 0
+  },
+  "required_count": 18,
+  "total_entry_count": 21,
+  "entries": [
+    {
+      "domain": "CI",
+      "name": "M-140 dashboard artifact",
+      "required": "yes",
+      "state": "executed",
+      "evidence": "MATURE_RELEASE_READINESS_DASHBOARD.md, MATURE_RELEASE_READINESS_DASHBOARD.json",
+      "notes": "generated release-readiness evidence"
+    },
+    {
+      "domain": "CI",
+      "name": "Quality gate audit",
+      "required": "yes",
+      "state": "executed",
+      "evidence": "status=passed",
+      "notes": ".github/workflows/quality-gates.yml and the strict-quality workflow remain the configured gate surface."
+    },
+    {
+      "domain": "CI",
+      "name": "Testing infrastructure report",
+      "required": "yes",
+      "state": "executed",
+      "evidence": "status=present",
+      "notes": "documents the test matrix and the configured coverage/profiling scaffolds."
+    },
+    {
+      "domain": "CI",
+      "name": "Current-environment self-test",
+      "required": "yes",
+      "state": "executed",
+      "evidence": "status=pass",
+      "notes": "confirms the local shell-side evidence bundle can still be generated."
+    },
+    {
+      "domain": "CI",
+      "name": "Release-readiness workflow",
+      "required": "no",
+      "state": "configured",
+      "evidence": ".github/workflows/release-readiness.yml",
+      "notes": "uses `schedule` and `workflow_dispatch` to refresh the dashboard and preflight bundle."
+    },
+    {
+      "domain": "Fixture",
+      "name": "Real macOS APFS fixture",
+      "required": "yes",
+      "state": "executed",
+      "evidence": "fixtures/real/macos-minimal-apfs-001/manifest.json, fixtures/real/macos-minimal-apfs-001/file-hashes.sha256, fixtures/real/macos-minimal-apfs-001/macos-oracle.redacted.txt",
+      "notes": "executed macOS fixture evidence already captured in the repository."
+    },
+    {
+      "domain": "Fixture",
+      "name": "Real fixture feedback promotion",
+      "required": "no",
+      "state": "executed",
+      "evidence": "target/real-fixture-feedback/real-fixture-feedback.json, target/real-fixture-feedback/real-fixture-feedback.md, conductor/archive/0122-real-fixture-feedback-promotion/review.md",
+      "notes": "feedback promotion evidence exists, but the generated target artefacts are local-run outputs."
+    },
+    {
+      "domain": "Supply-chain",
+      "name": "Dependency policy audit",
+      "required": "yes",
+      "state": "executed",
+      "evidence": "status=inventory_only",
+      "notes": "covers dependency licensing and policy enforcement scaffolding."
+    },
+    {
+      "domain": "Supply-chain",
+      "name": "cargo-vet policy audit",
+      "required": "yes",
+      "state": "executed",
+      "evidence": "status=passed",
+      "notes": "verifies the local cargo-vet governance scaffolding and imports lock."
+    },
+    {
+      "domain": "Supply-chain",
+      "name": "Release automation audit",
+      "required": "yes",
+      "state": "executed",
+      "evidence": "status=present",
+      "notes": "checks the cargo-dist and release-plz automation surface."
+    },
+    {
+      "domain": "Supply-chain",
+      "name": "Bleeding-edge repo audit",
+      "required": "yes",
+      "state": "executed",
+      "evidence": "status=present",
+      "notes": "aggregates the repo hardening audits, including this dashboard generator."
+    },
+    {
+      "domain": "Docs",
+      "name": "Docs site check",
+      "required": "yes",
+      "state": "executed",
+      "evidence": "status=passed",
+      "notes": "checks the Astro docs site and its configured build path."
+    },
+    {
+      "domain": "Docs",
+      "name": "Docs package audit",
+      "required": "yes",
+      "state": "executed",
+      "evidence": "status=passed",
+      "notes": "verifies the docs package surface and package metadata."
+    },
+    {
+      "domain": "Docs",
+      "name": "Documentation index audit",
+      "required": "yes",
+      "state": "executed",
+      "evidence": "status=ok",
+      "notes": "keeps the root documentation map consistent."
+    },
+    {
+      "domain": "Security",
+      "name": "Action pinning audit",
+      "required": "yes",
+      "state": "executed",
+      "evidence": "status=present",
+      "notes": "confirms pinned GitHub Actions usage."
+    },
+    {
+      "domain": "Security",
+      "name": "GitHub workflow policy audit",
+      "required": "yes",
+      "state": "executed",
+      "evidence": "status=passed",
+      "notes": "checks repository workflow policy invariants."
+    },
+    {
+      "domain": "Security",
+      "name": "Scorecard dependency review audit",
+      "required": "yes",
+      "state": "executed",
+      "evidence": "status=present",
+      "notes": "tracks dependency-review and OpenSSF scorecard readiness."
+    },
+    {
+      "domain": "Security",
+      "name": "Provenance verification audit",
+      "required": "yes",
+      "state": "executed",
+      "evidence": "status=present",
+      "notes": "documents attestation/provenance verification readiness."
+    },
+    {
+      "domain": "Release",
+      "name": "Version consistency",
+      "required": "yes",
+      "state": "executed",
+      "evidence": "status=passed",
+      "notes": "keeps the dynamic versioning path aligned with the repo metadata."
+    },
+    {
+      "domain": "Release",
+      "name": "Production gap report",
+      "required": "yes",
+      "state": "executed",
+      "evidence": "status=present",
+      "notes": "summarizes the remaining production APFS gaps and local blockers."
+    },
+    {
+      "domain": "Release",
+      "name": "Release-train workflow",
+      "required": "no",
+      "state": "configured",
+      "evidence": ".github/workflows/release-readiness.yml",
+      "notes": "scheduled refresh path for the dashboard and preflight bundle."
+    }
+  ],
+  "open_roadmap_tracks": [],
+  "release_train": [
+    {
+      "name": "Refresh evidence",
+      "state": "configured",
+      "evidence": ".github/workflows/release-readiness.yml",
+      "notes": "`schedule` and `workflow_dispatch` keep the release-readiness dashboard fresh."
+    },
+    {
+      "name": "Run preflight",
+      "state": "configured",
+      "evidence": "cargo xtask release-preflight",
+      "notes": "preflight should remain the downstream gate after the dashboard refresh."
+    },
+    {
+      "name": "Clear remaining roadmap tracks",
+      "state": "executed",
+      "evidence": "none",
+      "notes": "release is still gated by the remaining roadmap work."
+    }
+  ]
+}

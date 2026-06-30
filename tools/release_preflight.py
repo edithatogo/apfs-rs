@@ -15,7 +15,7 @@ REQUIRED = [
     "TRACEABILITY.md", "LOOP_DASHBOARD.md", "CLI_CONTRACT.md", "API_SURFACE.md", "SOURCE_METRICS.md",
     "SAFETY_CASE.md", "SECURITY.md", "RUNBOOK.md", "AGENTS.md", "CLAUDE.md", "GEMINI.md",
     "LOCAL_FIRST_RUN.md", "KNOWN_UNCOMPILED_RISKS.md", "HANDOFF_STATUS.md", "REPO_MANIFEST.md",
-    "APFS_OFFSET_AUDIT.md", "GOLDEN_OUTPUTS.md", "DEPENDENCY_POLICY_AUDIT.md", "BACKLOG_ISSUE_EXPORT.md", "CURRENT_ENV_SELFTEST.md", "CURRENT_ENV_FINAL_REPORT.md", "LOCAL_MIGRATION_COMMANDS.md", "MVP_BLOCKER_DAG.md", "PRODUCTION_CLAIM_GUARD.md", "SOURCE_DEBT_REPORT.md",
+    "APFS_OFFSET_AUDIT.md", "GOLDEN_OUTPUTS.md", "DEPENDENCY_POLICY_AUDIT.md", "BACKLOG_ISSUE_EXPORT.md", "CURRENT_ENV_SELFTEST.md", "CURRENT_ENV_FINAL_REPORT.md", "MATURE_RELEASE_READINESS_DASHBOARD.md", "MATURE_RELEASE_READINESS_DASHBOARD.json", "LOCAL_MIGRATION_COMMANDS.md", "MVP_BLOCKER_DAG.md", "PRODUCTION_CLAIM_GUARD.md", "SOURCE_DEBT_REPORT.md",
     "QUALITY_GATES.md",
     "TEST_STRATEGY.md",
     "PROFILING.md",
@@ -47,6 +47,7 @@ CHECKS = [
     ["python3", "tools/scorecard_dependency_review_audit.py"],
     ["python3", "tools/astro7_docs_hardening_audit.py"],
     ["python3", "tools/benchmark_regression_audit.py"],
+    ["python3", "tools/mature_release_readiness_dashboard.py"],
     ["python3", "tools/bleeding_edge_repo_audit.py"],
 ]
 

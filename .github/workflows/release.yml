@@ -67,6 +67,8 @@ jobs:
           rustup toolchain install stable --profile minimal
           rustup default stable
           cargo test --workspace
+      - name: Run release preflight
+        run: cargo run -p xtask -- release-preflight
       - name: Install dist
         # we specify bash to get pipefail; it guards against the `curl` command
         # failing. otherwise `sh` won't catch that `curl` returned non-0

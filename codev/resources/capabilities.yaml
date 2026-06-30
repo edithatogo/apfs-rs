@@ -2200,5 +2200,5 @@ capabilities:
     - release_preflight_required
     - current_environment_stop_condition
     - production_gap_report_required
-    status: planned_roadmap
-    note: roadmap track for the mature release readiness dashboard and release train
+    status: implemented_scaffold
+    note: read-only mature release readiness dashboard and recurring release-train workflow, archived after local evidence and preflight integration

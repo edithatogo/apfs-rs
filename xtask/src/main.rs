@@ -113,6 +113,8 @@ enum Command {
     ReleaseAutomationAudit,
     /// Run the aggregate bleeding-edge repo hardening audit.
     BleedingEdgeRepoAudit,
+    /// Generate the mature release readiness dashboard and train summary.
+    MatureReleaseReadinessDashboard,
     /// Validate branch protection and required-check governance readiness.
     BranchProtectionGovernanceAudit,
     /// Validate hosted Renovate lifecycle and dependency-update governance readiness.
@@ -252,6 +254,9 @@ fn main() -> Result<()> {
             run_python_tool("tools/release_automation_audit.py", &[])
         }
         Command::BleedingEdgeRepoAudit => run_python_tool("tools/bleeding_edge_repo_audit.py", &[]),
+        Command::MatureReleaseReadinessDashboard => {
+            run_python_tool("tools/mature_release_readiness_dashboard.py", &[])
+        }
         Command::BranchProtectionGovernanceAudit => branch_protection_governance(),
         Command::RenovateLifecycleAudit => renovate_lifecycle_audit(),
         Command::ConfigSanityCheck => run_python_tool("tools/config_sanity_check.py", &[]),

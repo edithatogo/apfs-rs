@@ -2,8 +2,8 @@
 
 ## Status
 
-`planned_roadmap`.
+`implemented_scaffold`.
 
 ## Notes
 
-This roadmap track exists because the mature, hardened APFS-RS release is not fully implemented. It is reviewed as a planning/evidence track only; no production APFS behavior is claimed until its plan is executed and validated.
+This roadmap track now has a read-only mature release readiness dashboard, a recurring release-readiness workflow, and release-preflight integration. It still does not claim production APFS compatibility; the dashboard only reports configured versus executed evidence and the remaining roadmap tracks.

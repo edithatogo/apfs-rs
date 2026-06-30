@@ -1,6 +1,6 @@
 # Spec M-140: Mature release readiness dashboard and release train
 
-Status: `planned_roadmap`.
+Status: `implemented_scaffold`.
 
 ## Objective
 
