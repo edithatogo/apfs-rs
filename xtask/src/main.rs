@@ -107,6 +107,8 @@ enum Command {
     ProfilingPlanAudit,
     /// Validate benchmark regression scaffolding.
     BenchmarkRegressionAudit,
+    /// Validate long-running fuzz, property, mutation, and coverage hardening scaffolding.
+    LongRunningHardeningAudit,
     /// Validate release automation configuration.
     ReleaseAutomationAudit,
     /// Run the aggregate bleeding-edge repo hardening audit.
@@ -241,6 +243,7 @@ fn main() -> Result<()> {
         Command::BenchmarkRegressionAudit => {
             run_python_tool("tools/benchmark_regression_audit.py", &[])
         }
+        Command::LongRunningHardeningAudit => long_running_hardening(),
         Command::ReleaseAutomationAudit => {
             run_python_tool("tools/release_automation_audit.py", &[])
         }
@@ -1339,6 +1342,116 @@ fn format_governance() -> Result<()> {
     Ok(())
 }
 
+fn long_running_hardening_report() -> JsonValue {
+    serde_json::json!({
+        "schema_version": "0.18.0",
+        "track": "M-136",
+        "status": "scaffolded_read_only",
+        "release_gate_ready": false,
+        "configured_hardening": [
+            {
+                "name": "profiling_budget_check",
+                "configured": true,
+                "evidence": "profiling/profile_plan.json, profiling_budget_check.py, and profiling workflow"
+            },
+            {
+                "name": "benchmark_regression_audit",
+                "configured": true,
+                "evidence": "BENCHMARK_REGRESSION_PLAN.md, benches/, and profiling/"
+            },
+            {
+                "name": "bleeding_edge_repo_audit",
+                "configured": true,
+                "evidence": "aggregates hardening audits without running destructive operations"
+            },
+            {
+                "name": "quality_gate_check",
+                "configured": true,
+                "evidence": "quality gates, fuzz, mutation, coverage, and profiling scaffolding remain documented"
+            }
+        ],
+        "required_gates": [
+            "profiling_budget_check",
+            "benchmark_regression_audit",
+            "bleeding_edge_repo_audit",
+            "quality_gate_check",
+        ],
+        "safety_constraints": [
+            "read-only default until long-running gates are actually enforced",
+            "no physical-device writes",
+            "no encryption bypass",
+            "no production claim without sustained gate evidence",
+            "no media mutation from the hardening audit",
+        ],
+        "evidence_notes": [
+            "governance scaffolding for long-running hardening",
+            "the release gate remains configured rather than executed by this track",
+        ],
+    })
+}
+
+fn long_running_hardening() -> Result<()> {
+    let dir = workspace_root().join("target/long-running-hardening");
+    fs::create_dir_all(&dir)?;
+    let report = long_running_hardening_report();
+    fs::write(
+        dir.join("README.md"),
+        "# APFS-RS Long-Running Hardening\n\nGenerated scaffold. This is not a sustained release gate yet.\n",
+    )?;
+    fs::write(
+        dir.join("long-running-hardening-report.json"),
+        serde_json::to_string_pretty(&report)? + "\n",
+    )?;
+    let mut markdown = String::from("# APFS-RS Long-Running Hardening\n\n");
+    markdown.push_str("Status: `scaffolded_read_only`.\n\n");
+    markdown.push_str("## Configured hardening\n\n");
+    for item in report
+        .get("configured_hardening")
+        .and_then(JsonValue::as_array)
+        .into_iter()
+        .flatten()
+    {
+        let name = item
+            .get("name")
+            .and_then(JsonValue::as_str)
+            .unwrap_or("<gate>");
+        let configured = item
+            .get("configured")
+            .and_then(JsonValue::as_bool)
+            .unwrap_or(false);
+        let evidence = item
+            .get("evidence")
+            .and_then(JsonValue::as_str)
+            .unwrap_or("");
+        let _ = writeln!(markdown, "- `{name}`: {configured} - {evidence}");
+    }
+    markdown.push_str("\n## Required gates\n\n");
+    for gate in report
+        .get("required_gates")
+        .and_then(JsonValue::as_array)
+        .into_iter()
+        .flatten()
+    {
+        let _ = writeln!(markdown, "- {}", gate.as_str().unwrap_or("<gate>"));
+    }
+    markdown.push_str("\n## Safety constraints\n\n");
+    for constraint in report
+        .get("safety_constraints")
+        .and_then(JsonValue::as_array)
+        .into_iter()
+        .flatten()
+    {
+        let _ = writeln!(
+            markdown,
+            "- {}",
+            constraint.as_str().unwrap_or("<constraint>")
+        );
+    }
+    fs::write(dir.join("long-running-hardening-report.md"), markdown)?;
+    println!("long-running-hardening: wrote {}", dir.display());
+    Ok(())
+}
+
 fn workspace_root() -> PathBuf {
     PathBuf::from(env!("CARGO_MANIFEST_DIR"))
         .parent()
@@ -1349,9 +1462,10 @@ fn workspace_root() -> PathBuf {
 #[cfg(test)]
 mod tests {
     use super::{
-        format_governance, format_governance_report, release_publication_readiness,
-        repair_governance, repair_governance_report, windows_write_beta_governance_report,
-        windows_write_governance, write_lab_evidence_report,
+        format_governance, format_governance_report, long_running_hardening,
+        long_running_hardening_report, release_publication_readiness, repair_governance,
+        repair_governance_report, windows_write_beta_governance_report, windows_write_governance,
+        write_lab_evidence_report,
     };
     use apfs_win::WindowsWriteBetaGovernanceStatus;
     use apfs_write_lab::WriteLabEvidenceStatus;
@@ -1445,5 +1559,24 @@ mod tests {
             .iter()
             .any(|constraint| constraint == "no physical-device writes"));
         format_governance().expect("format governance evidence");
+    }
+
+    #[test]
+    fn long_running_hardening_remains_scaffolded_read_only() {
+        let report = long_running_hardening_report();
+
+        assert_eq!(report["status"], "scaffolded_read_only");
+        assert!(!report["release_gate_ready"].as_bool().unwrap_or(true));
+        assert!(report["required_gates"]
+            .as_array()
+            .expect("required gates")
+            .iter()
+            .any(|gate| gate == "profiling_budget_check"));
+        assert!(report["safety_constraints"]
+            .as_array()
+            .expect("safety constraints")
+            .iter()
+            .any(|constraint| constraint == "no production claim without sustained gate evidence"));
+        long_running_hardening().expect("long-running hardening evidence");
     }
 }

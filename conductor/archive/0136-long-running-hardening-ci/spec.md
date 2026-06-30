@@ -1,7 +1,7 @@
 # Long-running fuzz property mutation coverage hardening
 
 Capability: `M-136`  
-Status: `planned_roadmap`  
+Status: `implemented_scaffold`  
 Category: `quality`
 
 ## Goal

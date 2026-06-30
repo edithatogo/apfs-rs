@@ -1,6 +1,6 @@
 # Spec M-136: Long-running fuzz property mutation coverage hardening
 
-Status: `planned_roadmap`.
+Status: `implemented_scaffold`.
 
 ## Objective
 

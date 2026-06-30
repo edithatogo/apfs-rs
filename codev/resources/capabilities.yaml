@@ -2130,8 +2130,8 @@ capabilities:
     - profiling_no_media_mutation
     - strict_ci_quality_gates_required
     - property_mutation_fuzz_gate
-    status: planned_roadmap
-    note: roadmap track for long-running fuzz, property, and mutation coverage hardening
+    status: implemented_scaffold
+    note: governance-only scaffold for sustained long-running fuzz, property, mutation, and coverage hardening
   M-137:
     name: Branch protection and required-check governance
     milestone: repo_hardening

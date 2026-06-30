@@ -12,7 +12,7 @@ The first product milestone is a Windows-first read-only APFS inspection and ext
 
 ## Current implementation state
 
-Implementation is early and read-only. The package currently implements synthetic-fixture-driven APFS container inspection, GPT APFS partition detection, APFS object checksum validation, checkpoint map parsing, early object-map probing, synthetic OMAP B-tree probing, lookup, resolver, a production-shaped B-tree cursor facade, macOS real APFS fixture generation, real-fixture feedback promotion evidence, real-fixture checksum-semantics correction, a policy-only software-encryption readiness scaffold, cross-platform read-only adapter readiness scaffolds, disposable-image write-lab crash-evidence scaffolds, Windows write-beta governance scaffolds, APFS repair governance scaffolds, and APFS format governance scaffolds.
+Implementation is early and read-only. The package currently implements synthetic-fixture-driven APFS container inspection, GPT APFS partition detection, APFS object checksum validation, checkpoint map parsing, early object-map probing, synthetic OMAP B-tree probing, lookup, resolver, a production-shaped B-tree cursor facade, macOS real APFS fixture generation, real-fixture feedback promotion evidence, real-fixture checksum-semantics correction, a policy-only software-encryption readiness scaffold, cross-platform read-only adapter readiness scaffolds, disposable-image write-lab crash-evidence scaffolds, Windows write-beta governance scaffolds, APFS repair governance scaffolds, APFS format governance scaffolds, and long-running hardening scaffolds.
 
 ## Development history
 
