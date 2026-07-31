@@ -1261,7 +1261,7 @@ fn decode_c_string(bytes: &[u8]) -> String {
 }
 
 fn decode_utf16le_name(bytes: &[u8]) -> String {
-    let mut code_units = Vec::new();
+    let mut code_units = Vec::with_capacity(bytes.len() / 2);
     for chunk in bytes.chunks_exact(2) {
         let code_unit = u16::from_le_bytes([chunk[0], chunk[1]]);
         if code_unit == 0 {
