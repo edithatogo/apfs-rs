@@ -1547,3 +1547,40 @@ mod tests {
         assert_eq!(selected.selected_child_oid, Some(101));
     }
 }
+
+#[cfg(test)]
+mod tests_overflow {
+    use super::*;
+
+    #[test]
+    fn test_gpt_entries_byte_len_overflow() {
+        let header = GptHeader {
+            revision: 0,
+            header_size: 92,
+            stored_header_crc32: 0,
+            computed_header_crc32: 0,
+            header_crc32_valid: true,
+            current_lba: 1,
+            backup_lba: 2,
+            first_usable_lba: 34,
+            last_usable_lba: 100,
+            disk_guid: String::from("00000000-0000-0000-0000-000000000000"),
+            partition_entry_lba: 2,
+            number_of_partition_entries: u32::MAX,
+            size_of_partition_entry: u32::MAX,
+            stored_partition_entries_crc32: 0,
+        };
+
+        let result = gpt_entries_byte_len(&header);
+
+        let expected_total = (u32::MAX as u64) * (u32::MAX as u64);
+        if expected_total > (usize::MAX as u64) {
+            assert!(matches!(result, Err(ParseError::GptArithmeticOverflow)));
+        } else {
+            // Note: Since `gpt_entries_byte_len` uses `u64` multiplication, it won't overflow `u64`.
+            // But it might overflow `usize` on 32-bit platforms.
+            // On 64-bit platforms, it fits in `usize` and returns `Ok`.
+            assert!(matches!(result, Ok(_)));
+        }
+    }
+}
