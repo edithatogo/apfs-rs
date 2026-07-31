@@ -1546,4 +1546,71 @@ mod tests {
         let selected = select_synthetic_btree_child(&records, 800, 70);
         assert_eq!(selected.selected_child_oid, Some(101));
     }
+
+    #[test]
+    fn test_select_synthetic_btree_child_empty() {
+        let records: Vec<BTreeIndexRecord> = vec![];
+        let selection = select_synthetic_btree_child(&records, 123, 456);
+        assert!(!selection.matched);
+        assert_eq!(selection.requested_oid, 123);
+        assert_eq!(selection.requested_xid, 456);
+        assert_eq!(selection.selected_child_oid, None);
+        assert_eq!(selection.candidate_count, 0);
+    }
+
+    #[test]
+    fn test_select_synthetic_btree_child_match() {
+        let records = vec![
+            BTreeIndexRecord {
+                max_oid: 10,
+                max_xid: 5,
+                child_oid: 100,
+            },
+            BTreeIndexRecord {
+                max_oid: 20,
+                max_xid: 10,
+                child_oid: 200,
+            },
+            BTreeIndexRecord {
+                max_oid: 30,
+                max_xid: 15,
+                child_oid: 300,
+            },
+        ];
+
+        let selection = select_synthetic_btree_child(&records, 20, 10);
+        assert!(selection.matched);
+        assert_eq!(selection.selected_child_oid, Some(200));
+        assert_eq!(selection.selected_max_oid, Some(20));
+        assert_eq!(selection.selected_max_xid, Some(10));
+
+        let selection2 = select_synthetic_btree_child(&records, 15, 8);
+        assert!(selection2.matched);
+        assert_eq!(selection2.selected_child_oid, Some(200));
+        assert_eq!(selection2.selected_max_oid, Some(20));
+        assert_eq!(selection2.selected_max_xid, Some(10));
+    }
+
+    #[test]
+    fn test_select_synthetic_btree_child_fallback() {
+        let records = vec![
+            BTreeIndexRecord {
+                max_oid: 10,
+                max_xid: 5,
+                child_oid: 100,
+            },
+            BTreeIndexRecord {
+                max_oid: 20,
+                max_xid: 10,
+                child_oid: 200,
+            },
+        ];
+
+        let selection = select_synthetic_btree_child(&records, 30, 20);
+        assert!(selection.matched);
+        assert_eq!(selection.selected_child_oid, Some(200));
+        assert_eq!(selection.selected_max_oid, Some(20));
+        assert_eq!(selection.selected_max_xid, Some(10));
+        assert_eq!(selection.candidate_count, 2);
+    }
 }
