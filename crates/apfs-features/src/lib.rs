@@ -346,7 +346,7 @@ mod tests {
     fn refuses_path_separators_in_name_policy() {
         let report = analyze_unicode_case_policy("../secret", true);
         assert!(!report.safe_for_host_path);
-        assert!(!report.errors.is_empty());
+        assert_ne!(report.errors, Vec::<String>::new());
     }
 
     #[test]
